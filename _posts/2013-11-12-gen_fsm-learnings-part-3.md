@@ -3,7 +3,7 @@ layout: post
 title: "gen_fsm learnings, part 3"
 date: 2013-11-12T13:51:51.895Z
 tags: erlang gen_fsm
-alias: /post/UoIyouv77gAQAAAB/gen_fsm-learnings-part-3
+alias: /post/UoIyouv77gAQAAAB/gen-fsm-learnings-part-3
 ---
 
 Some odds and ends.

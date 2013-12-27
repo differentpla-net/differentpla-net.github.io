@@ -3,7 +3,7 @@ layout: post
 title: "gen_fsm learnings, part 2"
 date: 2013-11-11T16:12:36.207Z
 tags: erlang gen_fsm
-alias: /post/UoECF6kclQEmAAAC/gen_fsm-learnings-part-2
+alias: /post/UoECF6kclQEmAAAC/gen-fsm-learnings-part-2
 ---
 
 ## `handle_event` and `handle_sync_event`
