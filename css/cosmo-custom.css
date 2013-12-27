@@ -1,0 +1,20 @@
+h1 {
+  font-size: 38.5px;
+}
+
+@media (min-width: 1200px) {
+    #navbar-top .container {
+        width:1170px;
+    }   
+}
+@media (min-width: 979px) and (max-width: 1200px) {
+    #navbar-top .container {
+        width:960px;
+    }   
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    #navbar-top .container {
+        width:744px;
+    }   
+}
+
