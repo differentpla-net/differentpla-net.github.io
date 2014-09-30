@@ -1,0 +1,11 @@
+.about-me {
+    border-left-style: solid;
+    border-left-color: #008cba;
+    border-left-width: 1px;
+}
+.about-me ul {
+    padding-left: 0;
+}
+.about-me li {
+    list-style-type: none;
+}
