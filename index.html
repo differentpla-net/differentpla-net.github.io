@@ -1,23 +1,35 @@
 ---
-layout: default
+layout: home
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
+<div class="col-md-9">
     {% for post in site.posts %}
-      <li>
+    <article>
+        <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        <div class="details">
+            <span class="created_at timeago" title="{{ post.date }}">{{ post.date }}</span>
+        </div>
+        <!--      <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
-      </li>
+      </li> -->
+    </article>
     {% endfor %}
-  </ul>
+</div>
+<div class="col-md-3 about-me">
+    <img src="/img/roger-bw-190px.png">
+    <p>My name is <a href="http://rogerlipscombe.me">Roger Lipscombe</a>.
+    </p>
+    <p>I'm a software developer at <a href="http://electricimp.com">Electric Imp</a>, 
+    programming in <b>node.js</b>, <b>Erlang</b> and <b>C++</b>.
+    </p>
+    <p>I mostly blog about programming and other technology and gadget stuff.
+    </p>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+    <ul>
+        <li><a href="https://twitter.com/rogerlipscombe">@rogerlipscombe</a></li>
+    </ul>
 </div>
