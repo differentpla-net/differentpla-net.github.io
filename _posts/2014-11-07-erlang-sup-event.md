@@ -51,7 +51,7 @@ Great, now we've got an event manager, how do we add a handler?
 
 The documentation has:
 
-    gen_event:add_handler(my_event, my_event_handler, []).
+    ok = gen_event:add_handler(my_event, my_event_handler, []).
 
 The question that it doesn't answer is "when do I do this?". To answer this
 question, we need to realise that your application's supervision tree is built
@@ -66,7 +66,7 @@ So:
 
     start_link() ->
         {ok, Pid} = supervisor:start_link(?MODULE, []),
-        gen_event:add_handler(my_event, my_event_handler, []).
+        ok = gen_event:add_handler(my_event, my_event_handler, []).
         {ok, Pid}.
 
     init([]) ->
