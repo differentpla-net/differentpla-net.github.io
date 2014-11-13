@@ -62,6 +62,14 @@ Configuration](https://docs.vagrantup.com/v2/virtualbox/configuration.html):
       v.cpus = 2
     end
 
+## SSH tweaks
+
+You might also want to add the following:
+
+    # SSH configuration
+    config.ssh.forward_agent = true
+    config.ssh.forward_x11 = true
+
 ## Modeline tweaks
 
 I prefer the modeline to be at the bottom of the file, so I usually move it.

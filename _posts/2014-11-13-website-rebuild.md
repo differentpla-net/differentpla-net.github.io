@@ -10,5 +10,7 @@ I'm going to sort out my website. This is a rough table of contents for that pla
    - [First Vagrant VM]({% post_url 2014-11-13-first-vagrant-vm %})
  - Chef Solo
    - [Installing Chef and Berkshelf]({% post_url 2014-11-13-chef-and-berkshelf %})
+   - [Chef Server, Chef Zero or Chef Solo?]({% post_url 2014-11-13-which-chef %})
+   - [Using Chef Solo with Vagrant]({% post_url 2014-11-13-chef-solo-vagrant %})
  - ...
 
