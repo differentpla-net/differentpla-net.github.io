@@ -17,9 +17,12 @@ Or like this, for `lager_syslog_backend`, which doesn't need an ID (because
 you'd usually only have one), and where the configuration is given differently:
 
     Module = lager_syslog_backend,
-    Config = ["ident", local7, debug],
+    Ident = "ident",
+    Facility = local7,
+    Id = {Ident, Facility},
+    Config = [Ident, Facility, debug],
 
-    supervisor:start_child(lager_handler_watcher_sup, [lager_event, Module, Config]).
+    supervisor:start_child(lager_handler_watcher_sup, [lager_event, {Module, Id}, Config]).
 
 **Updated 2014-11-28:** This page used to document adding the event handler
 directly, but given what I've learned about [supervised event
