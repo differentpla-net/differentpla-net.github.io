@@ -67,7 +67,12 @@ supervised](http://blog.differentpla.net/blog/2014/11/07/erlang-sup-event/).
 This means that the supervisor *must* have a copy of the original configuration
 parameters -- otherwise it couldn't restart them properly.
 
-We can get hold of that:
+Unfortunately, we can't get hold of that information directly. What we can do
+is recognise that `lager_handler_watcher_sup` supervises
+`lager_handler_watcher` processes, and those, too, must have the original
+configuration somewhere:
+
+We can get hold of the watchers:
 
     (imp_server@roger-pc) 3> Watchers = supervisor:which_children(lager_handler_watcher_sup).
     [{undefined,<0.80.0>,worker,[lager_handler_watcher]},
