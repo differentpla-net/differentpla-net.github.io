@@ -62,9 +62,10 @@ as the *initial configuration parameters*. It's still useful, though.
 
 ## which_children
 
-More useful, however, is the realisation that lager event handlers are
-supervised. This means that the supervisor *must* have a copy of the original
-configuration parameters -- otherwise it couldn't restart them properly.
+More useful, however, is the realisation that lager event handlers [are
+supervised](http://blog.differentpla.net/blog/2014/11/07/erlang-sup-event/).
+This means that the supervisor *must* have a copy of the original configuration
+parameters -- otherwise it couldn't restart them properly.
 
 We can get hold of that:
 
