@@ -17,5 +17,6 @@ I'm going to sort out my website. This is a rough table of contents for that pla
    - [Installing Chef in AWS]({% post_url 2014-11-30-installing-chef-aws %})
    - [Installing berkshelf on AWS t2.micro]({% post_url 2014-11-30-berkshelf-t2-micro %})
  - [Starting with chef-solo]({% post_url 2014-11-30-starting-with-chef-solo %})
+ - [Using chef to add a user]({% post_url 2014-11-30-chef-add-user %})
  - ...
 
