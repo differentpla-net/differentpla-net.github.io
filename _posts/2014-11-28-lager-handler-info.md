@@ -16,12 +16,14 @@ configuration is slightly different in production.**
 
 Lager uses `gen_event` to distribute log events, so I started with:
 
+{% highlight erlang %}
     (imp_server@roger-pc) 1> gen_event:which_handlers(lager_event).
     [lager_rabbitmq_backend,lager_folsom_backend,
      {lager_syslog_backend,{"imp_server",local7}},
      {lager_file_backend,"log/console.log"},
      {lager_file_backend,"log/error.log"},
      lager_console_backend,lager_backend_throttle]
+{% endhighlight %}
 
 Here you can see that we have several different backends registered:
 
