@@ -5,7 +5,7 @@ date: 2015-01-28 08:26
 
 On my desk I have a dashboard (an "information radiator") that displays various
 useful things, such as the build status of various Jenkins jobs, clocks showing
-important timezones (Electric Imp is a distributed company).
+important timezones (Electric Imp is a distributed company), and so on.
 
 It's built from an Acer nettop, and it runs Chromium in kiosk mode. Here's how
 I got it to start everything automatically.
@@ -37,7 +37,7 @@ is installed in `/home/dashboard/dashboard`.
 ## Starting X
 
 Great! I've got a web server running the dashboard software; now I need to
-display it somewhere. The secret to this is to run an X session on the box.
+display it somewhere. To do this I run an X session on the box.
 
 This is done with two files: `/etc/init/startx.conf` starts X:
 
