@@ -12,9 +12,9 @@ I got it to start everything automatically.
 
 ## Dashboard Web Server
 
-The dashboard is currently implemented using [dashing](http://dashing.io/), and
-I use an upstart script (in `/etc/init/dashing.conf`) to ensure that it's
-running at bootup:
+The dashboard is implemented using [dashing](http://dashing.io/), and I use an
+upstart script (in `/etc/init/dashing.conf`) to ensure that it's running at
+bootup:
 
     #!upstart
     description "Dashing dashboards"
