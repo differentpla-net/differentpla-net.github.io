@@ -171,7 +171,7 @@ The cowboy handler (from above) would subscribe like this:
 
 Then it could send the event to the connected client like this:
 
-    info({event, Event}, State) ->
+    info({event, Event}, Req, State) ->
         % Convert the event to text (somehow):
         Data = to_text(Event),
         ok = cowboy_req:chunk(["data: ", Data, "\n", "\n"], Req),
