@@ -2,42 +2,54 @@
 title: "Using mod_rewrite, RewriteMap to re-arrange website content"
 date: 2006-10-27T12:39:30.000Z
 x-drupal-nid: 71
-x-needs-review: 2006-10-27T12:39:30.000Z
 ---
-When [moving](/content/2006/10/differentpla-net-is-moving) differentpla.net from one server to another, I decided to move the content (currently served using drupal) from the root to /content. I also decided to use more descriptive URLs.
+
+When [moving](/content/2006/10/differentpla-net-is-moving) differentpla.net
+from one server to another, I decided to move the content (currently served
+using drupal) from the root to `/content`. I also decided to use more descriptive
+URLs.
 
 But I didn't want to break too many external links.
 
-Here's how I used Apache's mod_rewrite - specifically RewriteMap - to achieve this.
+Here's how I used Apache's mod_rewrite - specifically RewriteMap - to achieve
+this.
 
-As explained in the linked page, I've moved differentpla.net from my Linux box at home to a Virtual Private Server (VPS), hosted in the US.
+As explained in the linked page, I've moved differentpla.net from my Linux box
+at home to a Virtual Private Server (VPS), hosted in the US.
 
-I'll also be moving a few other websites from this machine. In order to better implement a shared installation of both Gallery2 and drupal across those websites, I decided to move differentpla.net's content from the root to a subdirectory.
+I'll also be moving a few other websites from this machine. In order to better
+implement a shared installation of both Gallery2 and drupal across those
+websites, I decided to move differentpla.net's content from the root to a
+subdirectory.
 
-Along with this, I decided to make use of drupal's path remapping support to generate more descriptive URLs for the content.
+Along with this, I decided to make use of drupal's path remapping support to
+generate more descriptive URLs for the content.
 
-However, I don't particularly want to break external links to the website, so I looked into using mod_rewrite to help with this.
+However, I don't particularly want to break external links to the website, so I
+looked into using mod_rewrite to help with this.
 
-It turns out that mod_rewrite has a feature called RewriteMap, which does exactly what I want.
+It turns out that mod_rewrite has a feature called RewriteMap, which does
+exactly what I want.
 
-To use it, I simply added the following section to <tt>/etc/apache2/sites-available/differentpla.net</tt>:
+To use it, I simply added the following section to
+`/etc/apache2/sites-available/differentpla.net`:
 
-<pre><IfModule mod_rewrite.c>
-    RewriteEngine on
+    <IfModule mod_rewrite.c>
+        RewriteEngine on
 
-    RewriteLog /var/log/apache2/rewrite.log
-    RewriteLogLevel 0
+        RewriteLog /var/log/apache2/rewrite.log
+        RewriteLogLevel 0
 
-    # Anything matching /node/X or /node/view/X is remapped
-    # via this text file, which is keyed on X
-    RewriteMap txtmap txt:/home/www/sites/differentpla.net/map.txt
+        # Anything matching /node/X or /node/view/X is remapped
+        # via this text file, which is keyed on X
+        RewriteMap txtmap txt:/home/www/sites/differentpla.net/map.txt
 
-    RewriteCond %{REQUEST_URI}      ^/node/view/
-    RewriteRule ^/node/view/(.*)    /content/${txtmap:$1} [R]
+        RewriteCond %{REQUEST_URI}      ^/node/view/
+        RewriteRule ^/node/view/(.*)    /content/${txtmap:$1} [R]
 
-    RewriteCond %{REQUEST_URI}      ^/node/
-    RewriteRule ^/node/(.*)         /content/${txtmap:$1} [R]
-</IfModule></pre>
+        RewriteCond %{REQUEST_URI}      ^/node/
+        RewriteRule ^/node/(.*)         /content/${txtmap:$1} [R]
+    </IfModule>
 
 It's enclosed in a condition block, so that it only takes effect if mod_rewrite is enabled.
 
@@ -51,7 +63,9 @@ Everything else is passed through unchanged.
 
 Here's a snippet from map.txt:
 
-<pre>1       welcome
-10      2002/03/rsync-empegs</pre>
+    1       welcome
+    10      2002/03/rsync-empegs
 
-So, you can see that /node/1 or /node/view/1 are mapped to /content/welcome; and that /node/10 and /node/view/10 are mapped to /content/2002/03/rsync-empegs.
+So, you can see that /node/1 or /node/view/1 are mapped to /content/welcome;
+and that /node/10 and /node/view/10 are mapped to
+/content/2002/03/rsync-empegs.
