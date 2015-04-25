@@ -10,6 +10,9 @@
     list-style-type: none;
 }
 
+blockquote p {
+    font-size: 14px;
+}
 
 /**
  * Syntax highlighting styles
