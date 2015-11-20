@@ -1,6 +1,7 @@
 ---
 title: Failed to enumerate SSL bindings
 date: 2013-11-11T14:53:04Z
+redirect_from: /post/36
 ---
 In PowerShell, when I attempted to enumerate SSL bindings, I was getting the
 error message:
