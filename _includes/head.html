@@ -12,5 +12,5 @@
 <link rel="stylesheet" href="{{ "/css/site.css" | prepend: site.baseurl }}">
 
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-<link rel="feed" href="{{ "/feed.xml" | prepend: site.baseurl }}" title="{{ site.title }}">
+{% feed_meta %}
 </head>
