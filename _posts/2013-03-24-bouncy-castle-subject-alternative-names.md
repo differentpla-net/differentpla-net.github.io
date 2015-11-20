@@ -1,6 +1,7 @@
 ---
 title: Bouncy Castle - Subject Alternative Names
 date: 2013-03-24T14:20:58Z
+redirect_from: /b/2013/21/24/bouncy-castle---subject-alternative-names
 ---
 When you connect to a server using HTTPS, the server provides a certificate that identifies it. Your browser will then typically check that the name in the server certificate matches the address that you've gone to. In this way, you can be sure that you're connecting to the correct server.
 
