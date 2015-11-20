@@ -1,6 +1,6 @@
 ---
 title: No new blog engine
-date: 2015-04-26 08:13Z
+date: 2015-04-26 08:13:00Z
 ---
 
 Periodically, I become unhappy with my blog implementation and decide that I
