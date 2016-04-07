@@ -3,6 +3,7 @@ title: "Getting hold of the current directory in a batch file."
 date: 2004-05-19T16:33:00.000Z
 x-drupal-nid: 78
 x-needs-review: 2004-05-19T16:33:00.000Z
+redirect_from: /node/view/255
 ---
 A common UNIX shell idiom is to write things like <tt>cwd=`pwd`</tt> to save
 the current directory so that in case be used later when other things might
