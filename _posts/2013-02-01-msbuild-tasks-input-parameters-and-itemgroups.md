@@ -33,7 +33,7 @@ We also define a custom task that looks like this:
 	
 MSBuild will pass the item group (an array of items with metadata) to the `string` property as a semicolon-delimited string, discarding the metadata.
 
-Note that MSBuild doesn't look at the `string` and call the task for each item. If you want that to happen, you need to look at http://www.differentpla.net/content/2010/08/msbuild-target-batching-each-simplified.
+Note that MSBuild doesn't look at the `string` and call the task for each item. If you want that to happen, you need to look at http://blog.differentpla.net/blog/2010/08/19/msbuild-target-batching-for-each-simplified.
 
 A better way to do this is to declare the property as a string array:
 
