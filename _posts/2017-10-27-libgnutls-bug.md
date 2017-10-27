@@ -57,4 +57,4 @@ A little while later, after a bit of back-and-forth in comments, Steffen replied
 
 That bug report includes a patch.
 
-[Here's how to apply it](http://blog.differentpla.net/blog/2017/10/27/libgnutls-patch/).
+[Here's how to apply it](http://blog.differentpla.net/blog/2017/10/27/libgnutls-patch).
