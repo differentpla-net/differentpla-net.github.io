@@ -3,7 +3,7 @@ title: Updating libgnutls28 on Ubuntu trusty
 date: 2017-10-27 09:10+0000
 ---
 
-Previously, I [posted about a bug](http://blog.differentpla.net/blog/2017/10/27/libgnutls-bug/) we'd fallen foul of in libgnutls28 on Ubuntu 14.04. There's a patch.
+Previously, I [posted about a bug](http://blog.differentpla.net/blog/2017/10/27/libgnutls-bug) we'd fallen foul of in libgnutls28 on Ubuntu 14.04. There's a [patch](https://bugs.launchpad.net/ubuntu/+source/gnutls28/+bug/1722411).
 
 Here's how to apply it.
 
