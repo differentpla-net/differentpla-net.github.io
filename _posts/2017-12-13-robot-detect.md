@@ -1,4 +1,7 @@
-# Installing `robot-detect`
+---
+title: Installing 'robot-detect'
+date: 2017-12-13 11:44+0000
+---
 
 Linux Mint 18.3. Yak shaving.
 
