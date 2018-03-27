@@ -79,11 +79,14 @@ Time to apply the patch.
 
 ```
 $ cd ..
-$ wget https://bugs.launchpad.net/ubuntu/+source/gnutls28/+bug/1722411/+attachment/4966289/+files/gnutls28_3.2.11-2ubuntu1.1_lp1722411.debdiff
+$ wget https://bugs.launchpad.net/ubuntu/+source/gnutls28/+bug/1722411/+attachment/5039125/+files/gnutls28_3.2.11-2ubuntu1.1_lp1722411_v2.debdiff
 ```
 
+**Important:** The first patch attached to the bug has a memory leak; the link above is to the fixed patch.
+
+
 ```
-$ patch -p0 < gnutls28_3.2.11-2ubuntu1.1_lp1722411.debdiff
+$ patch -p0 < gnutls28_3.2.11-2ubuntu1.1_lp1722411_v2.debdiff
 ```
 
 ```
