@@ -45,7 +45,12 @@ Then you can start adding traces:
 
 If you want the return values:
 
-    8> dbg:tpl(another_module, some_other_function, '_', [{'_', [], [{return_trace}]}]). 
+    8> dbg:tpl(another_module, some_other_function, '_', [{'_', [], [{return_trace}]}]).
+    {ok,[{matched,mynode@myhost,1},{saved,1}]}
+
+Note that you can use `dbg:fun2ms/1` to make that slightly more readable:
+
+    8> dbg:tpl(another_module, some_other_function, '_', dbg:fun2ms(fun(_) -> return_trace() end)).
     {ok,[{matched,mynode@myhost,1},{saved,1}]}
 
 Make sure you tell it which processes you're interested in:
