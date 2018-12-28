@@ -8,7 +8,7 @@ github_username:  rlipscombe
 # Conversion
 markdown: kramdown
 
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:year/:month/:day/:title/
 
 defaults:
   -
