@@ -10,9 +10,11 @@ The WinInet functions allow an application to interact with Gopher, FTP and HTTP
 
 The first thing that the application needs to do is to initialise WinInet for use by that application:
 
-<pre>LPCTSTR lpszAgent = "WinInetGet/0.1";
+```
+LPCTSTR lpszAgent = "WinInetGet/0.1";
 HINTERNET hInternet = InternetOpen(lpszAgent,
-		INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);</pre>
+		INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
+```
 
 The `InternetOpen` function allows the user to specify the proxy to be used. Here we tell it to use whatever the user has already configured in Internet Explorer. It also requires the "user agent" string, which identifies the application. Here, our demo application is going to be called WinInetGet, so that's what we pass, along with a version number.
 When we're finished with the WinInet functions, we should remember to call `InternetCloseHandle`.
@@ -21,7 +23,8 @@ When we're finished with the WinInet functions, we should remember to call `Inte
 
 Having initialised the WinInet functions, the next thing we do is connect to a particular server:
 
-<pre>LPCTSTR lpszServerName = "vague.home.differentpla.net";
+```
+LPCTSTR lpszServerName = "vague.home.differentpla.net";
 INTERNET_PORT nServerPort = INTERNET_DEFAULT_HTTP_PORT;
 LPCTSTR lpszUserName = NULL;
 LPCTSTR lpszPassword = NULL;
@@ -31,7 +34,8 @@ HINTERNET hConnect = InternetConnect(hInternet,
 				lpszServerName, nServerPort,
 				lpszUserName, lpszPassword,
 				INTERNET_SERVICE_HTTP,
-				dwConnectFlags, dwConnectContext);</pre>
+				dwConnectFlags, dwConnectContext);
+```
 
 You'll need to change the server name (since this one refers to my Linux test box at home). We're not passing a user name or password, nor are we passing any connection flags. The `dwConnectContext` is an application-defined value that's passed to the callback function registered with `InternetSetStatusCallback`. Since we're not using `InternetSetStatusCallback`, we pass zero.
 
@@ -39,7 +43,8 @@ You'll need to change the server name (since this one refers to my Linux test bo
 
 The application then needs to form an HTTP request. This is done with the `HttpOpenRequest` function:
 
-<pre>LPCTSTR lpszVerb = "GET";
+```
+LPCTSTR lpszVerb = "GET";
 LPCTSTR lpszObjectName = "/";
 LPCTSTR lpszVersion = NULL;			// Use default.
 LPCTSTR lpszReferrer = NULL;		// No referrer.
@@ -56,7 +61,7 @@ DWORD dwOpenRequestContext = 0;
 HINTERNET hRequest = HttpOpenRequest(hConnect, lpszVerb, lpszObjectName, lpszVersion,
 		lpszReferrer, lplpszAcceptTypes,
 		dwOpenRequestFlags, dwOpenRequestContext);
-</pre>
+```
 
 The `HttpOpenRequest` function doesn't actually communicate with the server at this point. We use it to create the HTTP request object, which we can then fill in, before sending it.
 
@@ -66,14 +71,17 @@ The interesting thing (from the HTTP point of view) is that we specify "GET /" i
 
 Since we're done putting together our HTTP request, we can send it to the server using the `HttpSendRequest` function:
 
-<pre>BOOL bResult = HttpSendRequest(hRequest, NULL, 0, NULL, 0);</pre>
+```
+BOOL bResult = HttpSendRequest(hRequest, NULL, 0, NULL, 0);
+```
 
 The last four parameters allow us to supply additional headers and any optional data. The optional data is generally only used in `POST` and `PUT` operations.
 ## HttpQueryInfo
 
 After we've sent the request, and the response has come back, we ought to check the response headers. This is done with the `HttpQueryInfo` function:
 
-<pre>DWORD dwInfoLevel = HTTP_QUERY_RAW_HEADERS_CRLF;
+```
+DWORD dwInfoLevel = HTTP_QUERY_RAW_HEADERS_CRLF;
 DWORD dwInfoBufferLength = 10;
 BYTE *pInfoBuffer = (BYTE *)malloc(dwInfoBufferLength+1);
 while (!HttpQueryInfo(hRequest, dwInfoLevel, pInfoBuffer, &dwInfoBufferLength, NULL))
@@ -94,7 +102,8 @@ while (!HttpQueryInfo(hRequest, dwInfoLevel, pInfoBuffer, &dwInfoBufferLength, N
 
 pInfoBuffer[dwInfoBufferLength] = '\0';
 printf("%s", pInfoBuffer);
-free(pInfoBuffer);</pre>
+free(pInfoBuffer);
+```
 
 In common with many other Windows API functions, `HttpQueryInfo` will tell you if you have not allocated enough buffer space for the result. This `while` loop is a good way to make sure that you get it right. Note that we add a null terminator, so we allow for this in our call to `malloc`. The MSDN documentation implies that the string will already be zero-terminated, but it's a little ambiguous.
 
@@ -106,7 +115,8 @@ The `HttpQueryInfo` function can return a specific header value from the HTTP re
 
 To retrieve the entity body from the HTTP response, we'll use a loop like this:
 
-<pre>DWORD dwBytesAvailable;
+```
+DWORD dwBytesAvailable;
 while (InternetQueryDataAvailable(hRequest, &dwBytesAvailable, 0, 0))
 {
 	BYTE *pMessageBody = (BYTE *)malloc(dwBytesAvailable+1);
@@ -127,7 +137,8 @@ while (InternetQueryDataAvailable(hRequest, &dwBytesAvailable, 0, 0))
 	pMessageBody[dwBytesRead] = '\0';
 	printf("%s", pMessageBody);
 	free(pMessageBody);
-}</pre>
+}
+```
 
 Note that the `InternetQueryDataAvailable` function blocks until data is available or an error occurs.
 Full source code for this article is [here](/node/view/130).

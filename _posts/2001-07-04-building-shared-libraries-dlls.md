@@ -1,34 +1,30 @@
 ---
 title: "Building Shared Libraries (DLLs)"
 date: 2001-07-04T07:00:00.000Z
-x-drupal-nid: 123
-x-needs-review: 2001-07-04T07:00:00.000Z
 ---
 The default Jambase file doesn't come with a rule to make DLLs (or shared libraries in the Unix parlance).
 
 The fix consists of cloning the `Main` and `MainFromObjects` rules, and modifying them as follows, to create a `SharedLibrary` rule.
 
-<div class="after">
-<pre>rule **SharedLibrary**
+```
+rule SharedLibrary
 {
-	**SharedLibraryFromObjects** $(<) : $(>:S=$(SUFOBJ)) ;
+	SharedLibraryFromObjects $(<) : $(>:S=$(SUFOBJ)) ;
 	Objects $(>) ;
 }
-</pre>
-
-</div>
+```
 
 This is exactly the same as the `Main` rule, except that we've changed the names.
-<div class="after">
-<pre>rule **SharedLibraryFromObjects**
+
+```rule SharedLibraryFromObjects
 {
 	local _s _t ;
 
 	# Add grist to file names
-	**# Add suffix to dll/so**
+	# Add suffix to dll/so
 
 	_s = [ FGristFiles $(>) ] ;
-	_t = [ FAppendSuffix $(<) : **$(SUFSHR)** ] ;
+	_t = [ FAppendSuffix $(<) : $(SUFSHR) ] ;
 
 	if $(_t) != $(<)
 	{
@@ -42,19 +38,18 @@ This is exactly the same as the `Main` rule, except that we've changed the names
 	DEPENDS $(_t) : $(_s) ;
 	MakeLocate $(_t) : $(LOCATE_TARGET) ;
 
-	**# Tell jam where it can find the import library
-	MakeLocate $(_t:S=$(SUFLIB)) : $(LOCATE_TARGET) ;**
+	# Tell jam where it can find the import library
+	MakeLocate $(_t:S=$(SUFLIB)) : $(LOCATE_TARGET) ;
 
 	Clean clean : $(_t) ;
 
-	**LINKFLAGS on $(_t) += /dll ;**
+	LINKFLAGS on $(_t) += /dll ;
 	Link $(_t) : $(_s) ;
 }
-</pre>
-
-</div>
+```
 
 This is a clone of the `MainFromObjects`, except that we've:
+
 1.  Changed the name.
 2.  Changed the suffix for DLL/.so files.
 3.  Told jam where the import library is going to go.

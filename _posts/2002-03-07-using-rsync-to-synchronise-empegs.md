@@ -6,7 +6,7 @@ x-needs-review: 2002-03-07T12:21:00.000Z
 ---
 ## Introduction
 
-A while ago, I published my [Lazy Bastard's Guide to Cloning your empeg](/node/view/111). This has worked successfully for me and other people. However, it has one major limitation -- it's an all-or-nothing operation -- it clones the entire empeg. If you add a bunch of tracks to one of your empegs, you end up having to copy _all_ of your tracks again.
+A while ago, I published my [Lazy Bastard's Guide to Cloning your empeg]({% post_url posts/2002-03-18-lazy-bastards-guide-to-cloning-your-empeg %}). This has worked successfully for me and other people. However, it has one major limitation -- it's an all-or-nothing operation -- it clones the entire empeg. If you add a bunch of tracks to one of your empegs, you end up having to copy _all_ of your tracks again.
 
 In this document, I'll present an alternative: using [rsync](http://rsync.samba.org) to keep a pair of empegs in sync.
 
@@ -24,7 +24,7 @@ Instead, we'll use rsync as a daemon on one of the empegs, and connect to it fro
 
 ## Installing rsync
 
-As with my [cloning guide](/cloning.html), we'll grab the .deb files from a Debian mirror, remove the stuff we don't need, and then send them to the empeg.
+As with my [cloning guide]({% post_url 2002-03-18-lazy-bastards-guide-to-cloning-your-empeg %}), we'll grab the .deb files from a Debian mirror, remove the stuff we don't need, and then send them to the empeg.
 
 For this, you'll need the [rsync_2.3.2-1.2.deb](http://ftp.us.debian.org/debian/dists/potato/main/binary-arm/net/rsync_2.3.2-1.2.deb) file. Extract it, remove the /usr/share parts, and then pack it back up. Send this to the empeg, and then extract it. I generally store the .tar.gz files in /drive0, so that the files don't get overwritten by upgrades, and I can reinstate the software by unpacking them again.
 
