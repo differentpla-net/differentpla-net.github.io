@@ -12,19 +12,22 @@ The first thing that I needed to do in this case was enable CGI processing for t
 
 Something like the following added to `/etc/apache/httpd.conf` seemed to do the trick:
 
-<pre><DirectoryMatch ^/home/.*/public_html/cgi-bin>
+```
+<DirectoryMatch ^/home/.*/public_html/cgi-bin>
     AllowOverride None
     Options ExecCGI
     Order allow,deny
     allow from all
     SetHandler cgi-script
-</DirectoryMatch></pre>
+</DirectoryMatch>
+```
 
 ## The upload form
 
 Before the user can upload a file, they'll need to use an HTML form to specify the file to upload. This, again, is quite easy:
 
-<pre><HTML>
+```
+<HTML>
   <HEAD><TITLE>Upload File</TITLE>
     <LINK href="/~roger/upload.css" rel="stylesheet" type="text/css">
   </HEAD>
@@ -46,7 +49,7 @@ Before the user can upload a file, they'll need to use an HTML form to specify t
     </P>
   </BODY>
 </HTML>
-</pre>
+```
 
 The interesting part in here is the `<FORM METHOD="post" ENCTYPE="multipart/form-data" ACTION="cgi-bin/upload2">`. Normally, when you specify "GET" in `METHOD`, the values in the form are appended to the URL, after a question mark.
 
@@ -60,7 +63,8 @@ A common tactic is to have the upload script respond differently depending on wh
 
 Something like this:
 
-<pre>#!/usr/bin/env ruby
+```
+#!/usr/bin/env ruby
 
 require "cgi"
 require "ftools"
@@ -69,7 +73,7 @@ require "socket"
 def showFileStats(html, tmp)
 	html.table {
 		html.tr {
-			html.td { "Original Filename:" } + 
+			html.td { "Original Filename:" } +
 			html.td { tmp.original_filename }
 		} +
 		html.tr {
@@ -95,7 +99,7 @@ def copyFile(html, tmp)
 	toName = "/tmp/%d.M%dP%d.%s" %
 		[ Time.now.to_i, Time.now.usec, $$, Socket.gethostname ]
 	if File.syscopy(tmp.local_path, toName) then
-		html.p { "File " + html.code { tmp.local_path } + 
+		html.p { "File " + html.code { tmp.local_path } +
 			" successfully copied to " + html.code { toName } }
 	else
 		html.p { "Failed to copy " + html.code { tmp.local_path } +
@@ -140,7 +144,8 @@ html.out {
 			showBody(query, html)
 		}
 	)
-}</pre>
+}
+```
 
 This script accepts the file data attached to the `upload_file` field and saves it in `/tmp`, generating a unique filename for it.
 
