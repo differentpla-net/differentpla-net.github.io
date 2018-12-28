@@ -1,6 +1,7 @@
 ---
 title: "Empeg File Structures"
 date: 2005-02-13T10:17:00.000Z
+redirect-from: /node/view/387
 x-drupal-nid: 27
 x-needs-review: 2005-02-13T10:17:00.000Z
 ---
