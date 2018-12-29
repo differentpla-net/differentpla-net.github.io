@@ -27,7 +27,7 @@ The first thing I have to say is: "Wow". This thing's fast. I tried compiling g+
 
 It was quite an eye-opener compared to the lowly P133 that I run Linux on normally. I'm almost convinced to go out and buy another T900 to replace it.
 
-_Update 2000-12-08:_ [I did](/node/view/5).
+_Update 2000-12-08:_ [I did]({% post_url 2000-12-08-asus-a7v-linux-box %}).
 
 ## Adaptec 19160 and Linux
 
