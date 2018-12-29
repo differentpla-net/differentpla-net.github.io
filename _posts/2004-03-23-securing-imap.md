@@ -4,18 +4,18 @@ date: 2004-03-23T11:39:00.000Z
 x-drupal-nid: 147
 x-needs-review: 2004-03-23T11:39:00.000Z
 ---
-Part 12 of [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165). This article talks about configuring secure IMAP.
+Part 12 of [Installing qmail and vpopmail](/node/view/165). This article talks about configuring secure IMAP.
 
 BincIMAP supports IMAPS for communication. It can either do this if you compile in SSL support, or if you use an SSL tunnel, such as [stunnel](http://www.stunnel.org/) or [ucspi-ssl](http://www.superscript.com/ucspi-ssl/intro.html).
 
-I'm going to use the built-in SSL support. This got included when I [installed BincIMAP earlier](http://www.differentpla.net/node/view/171). To make it work, you need to create a `/etc/opt/bincimap/bincimap.pem` file containing your server key and server certificate. Since you'll have already generated a key and certificate for [using with SquirrelMail](http://www.differentpla.net/node/view/179), you can just use this:
+I'm going to use the built-in SSL support. This got included when I [installed BincIMAP earlier](/node/view/171). To make it work, you need to create a `/etc/opt/bincimap/bincimap.pem` file containing your server key and server certificate. Since you'll have already generated a key and certificate for [using with SquirrelMail](/node/view/179), you can just use this:
 
 <pre># cat /etc/apache/ssl.key/server.key /etc/apache/ssl.crt > /etc/opt/bincimap/bincimap.pem
 # chmod 400 /etc/opt/bincimap/bincimap.pem</pre>
 
 Now you can configure your email client to require secure IMAP connections. In Outlook XP, you can just check the box marked "This server requires an SSL-secured connection (SSL):
 
-![](http://www.differentpla.net/images/a470728f1b7c8c6154cbf7bc74425fdd-191.png)
+![](/images/a470728f1b7c8c6154cbf7bc74425fdd-191.png)
 
 And it'll just work.
 
@@ -42,4 +42,4 @@ When they come back, install them as you did before, but this time, you'll keep 
 
 Now, users should be able to connect to `imap.differentpla.test` using IMAPS, be presented with no warning messages and be able to bask in the warm feeling of secure IMAP.
 
-Next: [Securing SMTP](http://www.differentpla.net/node/view/196).
+Next: [Securing SMTP](/node/view/196).

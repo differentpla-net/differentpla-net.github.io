@@ -4,7 +4,7 @@ date: 2004-03-11T10:53:00.000Z
 x-drupal-nid: 84
 x-needs-review: 2004-03-11T10:53:00.000Z
 ---
-Part 6 of [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165).
+Part 6 of [Installing qmail and vpopmail](/node/view/165).
 
 ## Extension addresses
 
@@ -30,4 +30,4 @@ echo "./$VUSER/Maildir/" > $VDIR/../.qmail-$VUSER-default</pre>
 
 There might be a better fix, but I've not found it yet.
 
-Next: [Forwarding addresses to another account using vpopmail](http://www.differentpla.net/node/view/173).
+Next: [Forwarding addresses to another account using vpopmail](/node/view/173).

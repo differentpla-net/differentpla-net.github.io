@@ -8,16 +8,16 @@ Because the DVD-ROM drive supplied with the SRX87 is Firewire, and is not suppor
 
 I've expanded on those instructions here.
 
-*   [Installing Debian using Network booting](http://www.differentpla.net/node/view/155)
-*   [Upgrading to a 2.4 kernel and ext3](http://www.differentpla.net/node/view/152)
-*   [Installing XFree86](http://www.differentpla.net/node/view/158)
-*   [Miscellaneous](http://www.differentpla.net/node/view/154)
-*   [Compiling a new kernel](http://www.differentpla.net/node/view/153)
-*   [FireWire DVD-ROM drive](http://www.differentpla.net/node/view/150)
-*   [ACPI patches](http://www.differentpla.net/node/view/149)
-*   [Wireless Networking](http://www.differentpla.net/node/view/157)
-*   [Connecting my iPod](http://www.differentpla.net/node/view/151)
-*   [Getting sound working](http://www.differentpla.net/node/view/156)
+*   [Installing Debian using Network booting](/node/view/155)
+*   [Upgrading to a 2.4 kernel and ext3](/node/view/152)
+*   [Installing XFree86](/node/view/158)
+*   [Miscellaneous](/node/view/154)
+*   [Compiling a new kernel](/node/view/153)
+*   [FireWire DVD-ROM drive](/node/view/150)
+*   [ACPI patches](/node/view/149)
+*   [Wireless Networking](/node/view/157)
+*   [Connecting my iPod](/node/view/151)
+*   [Getting sound working](/node/view/156)
 *   Installing KDE3?
 *   Soft Modem
 *   USB

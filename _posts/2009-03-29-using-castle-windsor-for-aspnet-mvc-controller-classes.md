@@ -39,7 +39,7 @@ public IWindsorContainer Container
     get { return (IWindsorContainer)Application["WindsorContainer"]; }
 }</pre>
 
-You'll need [an implementation of ForEach that works on IEnumerable](http://www.differentpla.net/content/2009/03/linqs-foreach-doesnt-work-ienumerablet).
+You'll need [an implementation of ForEach that works on IEnumerable](/content/2009/03/linqs-foreach-doesnt-work-ienumerablet).
 
 You'll need a controller factory:
 

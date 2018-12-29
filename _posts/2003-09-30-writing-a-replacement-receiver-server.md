@@ -27,7 +27,7 @@ The original Rio Receiver server comprises a DHCP server, an NFS server and an H
 
 ## The HTTP server
 
-The easiest thing to write is going to be the webserver, so armed with a copy of RFC2616, I quickly hacked something simple together. You can find the source code [here](http://www.differentpla.net/node/view/46). Currently, this just echoes the client request. I'll be adding the other features required by the Rio Receiver as I figure them out.
+The easiest thing to write is going to be the webserver, so armed with a copy of RFC2616, I quickly hacked something simple together. You can find the source code [here](/node/view/46). Currently, this just echoes the client request. I'll be adding the other features required by the Rio Receiver as I figure them out.
 
 ## Getting started
 
@@ -49,7 +49,7 @@ The response is sent to the IP address of the Receiver, also on port 21075, and 
 
 This address refers to the portmap daemon. If the portmapper is running on a non-standard port (i.e. other than 111), this should be specified in the response. The included server software runs its portmapper on port 21076, and would respond with, e.g. "http://192.168.0.3:21076/descriptor.xml".
 
-Because I don't particularly fancy implementing an NFS server in C# just yet, I'm going to use my Linux box as the [NFS server](http://www.differentpla.net/node/view/14).
+Because I don't particularly fancy implementing an NFS server in C# just yet, I'm going to use my Linux box as the [NFS server](/node/view/14).
 
 ## Multiple Services in the Same Binary
 
@@ -63,7 +63,7 @@ The Audio Receiver server has the following services in the same binary:
 *   HTTP Server
 
 The NFS and HTTP services depend on the Service Discovery service.
-You can find source for this [here](http://www.differentpla.net/node/view/45). This assumes that you've got a copy of [the SC.EXE](http://msdn.microsoft.com/archive/default.asp?url=/archive/en-us/dnarpic/html/msdn_scmslite.asp) utility. I've written some batch files to make installation easier..
+You can find source for this [here](/node/view/45). This assumes that you've got a copy of [the SC.EXE](http://msdn.microsoft.com/archive/default.asp?url=/archive/en-us/dnarpic/html/msdn_scmslite.asp) utility. I've written some batch files to make installation easier..
 
 ## HTTP server discovery
 
@@ -77,7 +77,7 @@ For now, we'll just return a hard-coded list.
 
 ## /layout
 
-The next thing that the Receiver does is ask for its [layout definitions](http://www.differentpla.net/node/view/12). In the stock server, these are stored as files in the webserver's directory. For now, we'll go and grab them from the location where the stock server has them installed, by poking around in the registry.
+The next thing that the Receiver does is ask for its [layout definitions](/node/view/12). In the stock server, these are stored as files in the webserver's directory. For now, we'll go and grab them from the location where the stock server has them installed, by poking around in the registry.
 
 * * *
 

@@ -4,7 +4,7 @@ date: 2004-03-21T09:45:00.000Z
 x-drupal-nid: 146
 x-needs-review: 2004-03-21T09:45:00.000Z
 ---
-On my list of "things to do in my copious free time" is: "write a [replacement Rio Receiver server](http://www.differentpla.net/node/view/15) in C#". So I've started putting together snippets of code that might turn out to be useful as I start learning C#. This one is a recursive file finder. It uses delegates.
+On my list of "things to do in my copious free time" is: "write a [replacement Rio Receiver server](/node/view/15) in C#". So I've started putting together snippets of code that might turn out to be useful as I start learning C#. This one is a recursive file finder. It uses delegates.
 
 <pre>using System;
 using System.IO;

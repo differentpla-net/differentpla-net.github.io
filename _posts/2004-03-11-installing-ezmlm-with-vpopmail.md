@@ -4,7 +4,7 @@ date: 2004-03-11T12:17:00.000Z
 x-drupal-nid: 80
 x-needs-review: 2004-03-11T12:17:00.000Z
 ---
-Part 8 of [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165).
+Part 8 of [Installing qmail and vpopmail](/node/view/165).
 
 ## Installing ezmlm
 
@@ -47,4 +47,4 @@ Obviously, add whichever switches you need to `ezmlm-make`.
 
 And this works fine. Users can subscribe by sending email to the `list-subscribe@differentpla.test` address, and it all works as expected.
 
-Next: [Installing SquirrelMail](http://www.differentpla.net/node/view/175).
+Next: [Installing SquirrelMail](/node/view/175).

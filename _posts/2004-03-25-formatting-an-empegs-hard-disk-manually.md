@@ -4,7 +4,7 @@ date: 2004-03-25T09:37:00.000Z
 x-drupal-nid: 4
 x-needs-review: 2004-03-25T09:37:00.000Z
 ---
-The sequel to [Partitioning an empeg's Hard Disk Manually](http://www.differentpla.net/content/2004/03/partition-empeg).
+The sequel to [Partitioning an empeg's Hard Disk Manually](/content/2004/03/partition-empeg).
 
 So, if you've followed the instructions on the previous page, you've now got a freshly-partitioned empeg hard disk. It's time to format it.
 

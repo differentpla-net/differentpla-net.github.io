@@ -4,7 +4,7 @@ date: 2005-02-26T12:50:00.000Z
 x-drupal-nid: 17
 x-needs-review: 2005-02-26T12:50:00.000Z
 ---
-In this installment (see [here](http://www.differentpla.net/content/2005/02/implementing-wizard-c) for the previous installment), we'll be fixing a few things and making the whole thing prettier.
+In this installment (see [here](/content/2005/02/implementing-wizard-c) for the previous installment), we'll be fixing a few things and making the whole thing prettier.
 
 **Update: Source code now lives at [CodePlex](http://winformswizard.codeplex.com)**; please post comments, issues, etc., there instead.
 

@@ -4,7 +4,7 @@ date: 2004-03-11T09:33:00.000Z
 x-drupal-nid: 82
 x-needs-review: 2004-03-11T09:33:00.000Z
 ---
-Part 4 of [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165).
+Part 4 of [Installing qmail and vpopmail](/node/view/165).
 
 ## Installing vpopmail
 
@@ -195,4 +195,4 @@ Testing with Outlook Express shows that this works.
 
 To test that the accounts truly are separate, I configured another domain, this one `differentpla.test`, similarly to the above. Nothing exciting happened; it just worked.
 
-Next: [Installing BincIMAP](http://www.differentpla.net/node/view/171)
+Next: [Installing BincIMAP](/node/view/171)

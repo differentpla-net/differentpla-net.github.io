@@ -4,7 +4,7 @@ date: 2009-09-16T08:48:05.000Z
 x-drupal-nid: 240
 x-needs-review: 2009-09-16T08:48:05.000Z
 ---
-If you've [installed squid](http://www.differentpla.net/content/2009/09/setting-squid-windows) on a box, you'll probably want to use it.
+If you've [installed squid](/content/2009/09/setting-squid-windows) on a box, you'll probably want to use it.
 
 ## Internet Explorer
 

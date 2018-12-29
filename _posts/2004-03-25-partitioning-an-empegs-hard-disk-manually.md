@@ -140,4 +140,4 @@ Note that, if you see this:
 Reboot your system to ensure the partition table is updated.</pre>
 
 ...you'll need to reboot before continuing.
-Next: [Formatting an empeg's Hard Disk Manually](http://www.differentpla.net/content/2004/03/format-empeg).
+Next: [Formatting an empeg's Hard Disk Manually](/content/2004/03/format-empeg).

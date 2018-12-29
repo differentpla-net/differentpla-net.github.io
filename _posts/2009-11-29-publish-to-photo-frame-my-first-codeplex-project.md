@@ -10,4 +10,4 @@ Have you got a digital photo frame? Does it use SD cards? Compact Flash? A USB s
 
 I did, so I wrote this plug-in for Windows Live Photo Gallery that makes it easy to resize your photos and copy them to the media used for your digital photo frame.
 
-It's got a [project page on CodePlex](http://publishtophotoframe.codeplex.com/). Note that CodePlex doesn't offer licenses as simple as [mine](http://www.differentpla.net/content/2007/08/source-code-license), so it's under the Apache license.
+It's got a [project page on CodePlex](http://publishtophotoframe.codeplex.com/). Note that CodePlex doesn't offer licenses as simple as [mine](/content/2007/08/source-code-license), so it's under the Apache license.

@@ -4,7 +4,7 @@ date: 2004-03-11T11:03:00.000Z
 x-drupal-nid: 85
 x-needs-review: 2004-03-11T11:03:00.000Z
 ---
-Part 7 of [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165).
+Part 7 of [Installing qmail and vpopmail](/node/view/165).
 
 ## Forwarding
 
@@ -24,4 +24,4 @@ aliens@differentpla.test -> bob@somewhere.else.com</pre>
 
 `valias` works by putting a `.qmail-aliens` file in the relevant domain directory.
 
-Next: [Installing ezmlm with vpopmail](http://www.differentpla.net/node/view/174).
+Next: [Installing ezmlm with vpopmail](/node/view/174).

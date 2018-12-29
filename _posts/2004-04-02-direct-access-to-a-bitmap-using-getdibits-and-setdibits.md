@@ -4,7 +4,7 @@ date: 2004-04-02T11:28:00.000Z
 x-drupal-nid: 156
 x-needs-review: 2004-04-02T11:28:00.000Z
 ---
-In the [Grabbing a snapshot of the screen](http://www.differentpla.net/node/view/207) article, I said: "I'm planning on altering the snapshot before displaying it.". This article shows how to alter a bitmap by directly accessing the raw bits.
+In the [Grabbing a snapshot of the screen](/node/view/207) article, I said: "I'm planning on altering the snapshot before displaying it.". This article shows how to alter a bitmap by directly accessing the raw bits.
 
 If we start with the code from the previous article, it's as simple as adding the following code:
 

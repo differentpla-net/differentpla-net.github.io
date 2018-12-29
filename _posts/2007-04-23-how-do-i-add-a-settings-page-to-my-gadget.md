@@ -6,7 +6,7 @@ x-needs-review: 2007-04-23T09:47:28.000Z
 ---
 Some gadgets allow the user to configure extra settings.
 
-![](http://www.differentpla.net/content/system/files/images/gadget_settings.png)
+![](/content/system/files/images/gadget_settings.png)
 
 According to the Vista design guidelines, you should avoid doing this if possible, and you should always choose good defaults, rather than force the user to configure anything.
 

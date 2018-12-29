@@ -10,7 +10,7 @@ One of the many things that my former company, 1E, does well is its build and re
 
 I think that there are 4 goals to keep in mind when designing a build and release process:
 
-1.  A [new developer](http://www.differentpla.net/content/2010/07/release-process-new-developer) must be able to walk up to a new PC, get the latest source code and build it in a single step.
+1.  A [new developer](/content/2010/07/release-process-new-developer) must be able to walk up to a new PC, get the latest source code and build it in a single step.
 2.  When a developer commits changes to the project, they must be relatively certain that they’ve not broken anything.
 3.  When you’re ready to release something to your customers, you should be able to do this in a single step.
 4.  When a customer support case comes in, the developer responsible must be able to identify exactly which release the customer has, and exactly what went into that release.

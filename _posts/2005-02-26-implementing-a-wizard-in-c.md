@@ -8,7 +8,7 @@ Oddly, the Windows Forms libraries don't provide any support for writing wizards
 
 **Update: Source code now lives at [CodePlex](http://winformswizard.codeplex.com)**; please post comments, issues, etc., there instead.
 
-_This is part one; part two (which includes source code) is [here](http://www.differentpla.net/content/2005/02/implementing-wizard-c-part-2)._
+_This is part one; part two (which includes source code) is [here](/content/2005/02/implementing-wizard-c-part-2)._
 
 The design is based on the one I used for implementing a [paged Options dialog](/content/2004/10/implementing-a-paged-options-dialog). Essentially, each of the pages is implemented as a user control, and they live on a form.
 
@@ -57,7 +57,7 @@ What we do want is a Windows Form, so we'll create that. It's called **WizardShe
 
 We need to fix up a few things before it'll compile. First we need to add a reference from our TestWizard project to our Wizard.UI project, and then we need to add a "using" statement.
 
-We also need to implement our 3 page classes. Our next step is to create the **WizardPage** class that they'll be deriving from. More specifically, I'm going to be creating 3 new classes: the base **WizardPage** class, and **ExternalWizardPage** and **InternalWizardPage** . These two classes will be used for the first/last pages in a wizard and the middle pages respectively. By splitting it up like this, we'll make it easier to implement proper [Wizard97](http://www.differentpla.net/node/view/214)-style wizards.
+We also need to implement our 3 page classes. Our next step is to create the **WizardPage** class that they'll be deriving from. More specifically, I'm going to be creating 3 new classes: the base **WizardPage** class, and **ExternalWizardPage** and **InternalWizardPage** . These two classes will be used for the first/last pages in a wizard and the middle pages respectively. By splitting it up like this, we'll make it easier to implement proper [Wizard97](/node/view/214)-style wizards.
 
 **WizardPage** is a User Control class:
 
@@ -559,4 +559,4 @@ After all that, we end up with a working wizard:
 
 Note that I've turned on visual styles for the application, and I've moved the Back button a bit closer to the Next button.
 
-In the [next installment](http://www.differentpla.net/content/2005/02/implementing-wizard-c-part-2), we'll fix a few things, and make it a lot prettier. Also, there's source attached to that page.
+In the [next installment](/content/2005/02/implementing-wizard-c-part-2), we'll fix a few things, and make it a lot prettier. Also, there's source attached to that page.

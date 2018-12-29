@@ -4,7 +4,7 @@ date: 2004-03-11T09:35:00.000Z
 x-drupal-nid: 83
 x-needs-review: 2004-03-11T09:35:00.000Z
 ---
-Part 5 of [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165).
+Part 5 of [Installing qmail and vpopmail](/node/view/165).
 
 ## Configuring BincIMAP
 
@@ -143,4 +143,4 @@ ln -s ../Maildir $VDIR/IMAPdir/INBOX
 </pre>
 
 This script doesn't correctly handle switches passed to it. This is left as an exercise for the reader. If anyone fancies writing one, send it to me and I'll put it here.
-Next: [Using qmail extension addresses with vpopmail](http://www.differentpla.net/node/view/172).
+Next: [Using qmail extension addresses with vpopmail](/node/view/172).

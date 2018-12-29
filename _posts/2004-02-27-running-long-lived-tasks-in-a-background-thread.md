@@ -4,7 +4,7 @@ date: 2004-02-27T13:00:00.000Z
 x-drupal-nid: 185
 x-needs-review: 2004-02-27T13:00:00.000Z
 ---
-In earlier articles, [Displaying Progress in a Wizard](http://www.differentpla.net/node/view/30) and [Cancelling Long-Lived Tasks from a Wizard](http://www.differentpla.net/node/view/138), I discussed how to run a long-lived task from a wizard and how to display progress in the wizard.
+In earlier articles, [Displaying Progress in a Wizard](/node/view/30) and [Cancelling Long-Lived Tasks from a Wizard](/node/view/138), I discussed how to run a long-lived task from a wizard and how to display progress in the wizard.
 
 In this article, I'm going to show how to move the long-lived task to a background thread.
 
@@ -62,7 +62,7 @@ public:
 	}
 };</pre>
 
-class `Thread` is defined in [this page](http://www.differentpla.net/node/view/141).
+class `Thread` is defined in [this page](/node/view/141).
 ## Threading Issues
 
 As it is, this works (just about). We're not reenabling the Cancel button, and there's a memory leak because we're not deleting the `TaskThread` object.
@@ -159,4 +159,4 @@ LRESULT CProgressPage::OnBeginStub(WPARAM wParam, LPARAM lParam)
 	return 0;
 }</pre>
 
-As usual, source code is [here](http://www.differentpla.net/node/view/143).
+As usual, source code is [here](/node/view/143).

@@ -13,4 +13,4 @@ As far as I can tell, you'll have to go "old school", and do the equivalent of a
     f.Close();
 }</pre>
 
-**Update:** I figured out [how to use Visual Studio](http://www.differentpla.net/content/2007/04/debugging-sidebar-gadgets) to debug sidebar gadgets.
+**Update:** I figured out [how to use Visual Studio](/content/2007/04/debugging-sidebar-gadgets) to debug sidebar gadgets.

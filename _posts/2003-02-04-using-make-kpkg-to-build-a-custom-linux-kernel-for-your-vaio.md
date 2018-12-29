@@ -41,9 +41,9 @@ Now change to the `/usr/src/linux` directory and being configuring your kernel:
 
 </div>
 
-Prepare your kernel for later chapters by [installing the ACPI patches](http://www.differentpla.net/node/view/149), and by setting the following sets of kernel options now:
+Prepare your kernel for later chapters by [installing the ACPI patches](/node/view/149), and by setting the following sets of kernel options now:
 
-[Firewire DVD-ROM drive](http://www.differentpla.net/node/view/150):
+[Firewire DVD-ROM drive](/node/view/150):
 
 <div class="snippet">
     CONFIG_SCSI=m (SCSI Support ---> SCSI Support)
@@ -59,7 +59,7 @@ Prepare your kernel for later chapters by [installing the ACPI patches](http://w
 
 </div>
 
-[Wireless Networking](http://www.differentpla.net/node/view/157):
+[Wireless Networking](/node/view/157):
 
 <div class="snippet">
     CONFIG_PCMCIA=m
@@ -79,7 +79,7 @@ External Firewire hard disks:
 
 </div>
 
-[Apple iPod](http://www.differentpla.net/node/view/151) (experimental support):  
+[Apple iPod](/node/view/151) (experimental support):
  This is optional. If you don't have an Apple iPod, then you needn't set these options.
 
 <div class="snippet">
@@ -89,7 +89,7 @@ External Firewire hard disks:
 
 </div>
 
-[Intel i820 onboard soundcard](http://www.differentpla.net/node/view/156):
+[Intel i820 onboard soundcard](/node/view/156):
 
 <div class="snippet">
     CONFIG_SOUND=m (Sound ---> Sound card support)

@@ -8,7 +8,7 @@ My mail server runs `qmail`. This is the first of a multipart series showing how
 
 ## Introduction
 
-My webserver, on `peculiar.differentpla.net` is configured for virtual hosting. Among the different websites that it hosts are [differentpla.net](http://www.differentpla.net/) and [beerology.net](http://www.beerology.net/).
+My webserver, on `peculiar.differentpla.net` is configured for virtual hosting. Among the different websites that it hosts are [differentpla.net](/) and [beerology.net](http://www.beerology.net/).
 
 It also manages email for those domains. Unfortunately, the email system is not set up to allow virtual hosting. This means that any email to (e.g.) fred@differentpla.net gets delivered to the same place as fred@beerology.net. Now, this might not be a problem if the user accounts referred to the same person. Even here, fred might want to keep the two accounts separate.
 
@@ -36,16 +36,16 @@ For this, I've dug up my girlfriend's old PC (a Pentium-200), which should be ad
 ## The articles
 
 *   Part 1: This page.
-*   Part 2: [Removing exim and installing qmail](http://www.differentpla.net/node/view/166).
-*   Part 3: [Installing SMTP AUTH with qmail](http://www.differentpla.net/node/view/167).
-*   Part 4: [Installing vpopmail](http://www.differentpla.net/node/view/170).
-*   Part 5: [Installing BincIMAP](http://www.differentpla.net/node/view/171).
-*   Part 6: [Using qmail extension addresses with vpopmail](http://www.differentpla.net/node/view/172).
-*   Part 7: [Forwarding addresses to another account using vpopmail](http://www.differentpla.net/node/view/173).
-*   Part 8: [Installing ezmlm with vpopmail](http://www.differentpla.net/node/view/174).
-*   Part 9: [Installing SquirrelMail](http://www.differentpla.net/node/view/175).
-*   Part 10: [Installing ClamAV and Qmail-Scanner](http://www.differentpla.net/node/view/178).
-*   Part 11: [Securing SquirrelMail using HTTPS](http://www.differentpla.net/node/view/179).
-*   Part 12: [Securing IMAP](http://www.differentpla.net/node/view/190).
-*   Part 13: [SMTP over TLS](http://www.differentpla.net/node/view/196).
-*   Part 14: [Installing qmailAdmin](http://www.differentpla.net/node/view/198).
+*   Part 2: [Removing exim and installing qmail](/node/view/166).
+*   Part 3: [Installing SMTP AUTH with qmail](/node/view/167).
+*   Part 4: [Installing vpopmail](/node/view/170).
+*   Part 5: [Installing BincIMAP](/node/view/171).
+*   Part 6: [Using qmail extension addresses with vpopmail](/node/view/172).
+*   Part 7: [Forwarding addresses to another account using vpopmail](/node/view/173).
+*   Part 8: [Installing ezmlm with vpopmail](/node/view/174).
+*   Part 9: [Installing SquirrelMail](/node/view/175).
+*   Part 10: [Installing ClamAV and Qmail-Scanner](/node/view/178).
+*   Part 11: [Securing SquirrelMail using HTTPS](/node/view/179).
+*   Part 12: [Securing IMAP](/node/view/190).
+*   Part 13: [SMTP over TLS](/node/view/196).
+*   Part 14: [Installing qmailAdmin](/node/view/198).

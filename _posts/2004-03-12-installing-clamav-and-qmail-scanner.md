@@ -4,7 +4,7 @@ date: 2004-03-12T16:30:00.000Z
 x-drupal-nid: 87
 x-needs-review: 2004-03-12T16:30:00.000Z
 ---
-Part 10 of [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165). This part talks about installing a virus scanner to check mail before it's delivered.
+Part 10 of [Installing qmail and vpopmail](/node/view/165). This part talks about installing a virus scanner to check mail before it's delivered.
 
 ## Virus Scanner
 
@@ -122,4 +122,4 @@ Don't forget to reload it:
 
 <pre># qmailctl cdb</pre>
 
-Next: [Securing SquirrelMail using HTTPS](http://www.differentpla.net/node/view/179).
+Next: [Securing SquirrelMail using HTTPS](/node/view/179).

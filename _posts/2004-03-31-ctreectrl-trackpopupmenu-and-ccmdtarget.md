@@ -104,4 +104,4 @@ if (nCode != 0)
 
 And, if you start adding command handlers to the `CTreeCtrlItem` class, they'll be handled correctly. The magic of this, of course, is that the objects that you put in the tree only need to be derived from `CCmdTarget` in order for this to work, meaning that you can put different objects in there, and the commands will be handled polymorphically, and routed correctly.
 
-Source code is [here](http://www.differentpla.net/node/view/203).
+Source code is [here](/node/view/203).

@@ -4,7 +4,7 @@ date: 2004-03-11T14:22:00.000Z
 x-drupal-nid: 86
 x-needs-review: 2004-03-11T14:22:00.000Z
 ---
-Part 9 of [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165).
+Part 9 of [Installing qmail and vpopmail](/node/view/165).
 
 ## SquirrelMail
 
@@ -103,4 +103,4 @@ And I need to change the `/etc/apache/httpd.conf` file:
 
 And it just works. I can log in by going to http://flimsy/webmail/. Cool.
 
-Next: [Installing ClamAV and Qmail-Scanner](http://www.differentpla.net/node/view/178).
+Next: [Installing ClamAV and Qmail-Scanner](/node/view/178).

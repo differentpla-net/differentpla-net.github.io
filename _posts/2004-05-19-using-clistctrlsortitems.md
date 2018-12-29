@@ -4,7 +4,7 @@ date: 2004-05-19T14:38:00.000Z
 x-drupal-nid: 79
 x-needs-review: 2004-05-19T14:38:00.000Z
 ---
-In my [previous article](http://www.differentpla.net/node/view/253), I explained how to use `LPSTR_TEXTCALLBACK` and `LVN_GETDISPINFO`.
+In my [previous article](/node/view/253), I explained how to use `LPSTR_TEXTCALLBACK` and `LVN_GETDISPINFO`.
 
 This article will show how to use `SortItems` to sort the items in the list.
 

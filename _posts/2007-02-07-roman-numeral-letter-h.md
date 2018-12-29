@@ -11,4 +11,4 @@ Someone appears to have spent some time searching my site for the term "Roman Nu
 
 Valid Roman numerals are I, V, X, L, C, D, M. Numbers above 5000 use a bar over the letter. See [Wikipedia](http://en.wikipedia.org/wiki/Roman_numerals) for more details.
 
-This site _does_ contain an example of how to do Test-First- (or Test-Driven-) Design to create a Roman numeral converter. See [this page](http://www.differentpla.net/content/2004/01/test-first-roman-numeral-conversion).
+This site _does_ contain an example of how to do Test-First- (or Test-Driven-) Design to create a Roman numeral converter. See [this page](/content/2004/01/test-first-roman-numeral-conversion).

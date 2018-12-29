@@ -8,7 +8,7 @@ Since your code signing certificate probably lasts for two years, you’ll have 
 
 If you’re using [Verisign](http://www.verisign.com/), they’ll send you the certificate and key as two separate files named AcmeCertificate.spc and AcmePrivateKey.pvk (or similar).
 
-In order to use these for code signing without being prompted for the password each time, you’ll need to convert the two files into a PFX file and import it into the Windows certificate store. Think about [key security](http://www.differentpla.net/content/2010/05/release-process-code-signing-key-security) before you do this, though.
+In order to use these for code signing without being prompted for the password each time, you’ll need to convert the two files into a PFX file and import it into the Windows certificate store. Think about [key security](/content/2010/05/release-process-code-signing-key-security) before you do this, though.
 
 To do this, use pvk2pfx, as follows:
 

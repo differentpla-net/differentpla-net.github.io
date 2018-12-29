@@ -29,4 +29,4 @@ A couple of things to note:
 *   There's not a lot of room on the right-hand side of the Gadget Gallery, so keep your author name and copyright information short.
 *   The information field can handle different display and URL strings. This is useful because it's displayed on the right-hand side of the Gallery, and so should be kept reasonably short.
 
-The <tt>Logo.png</tt> file should be 48 pixels high, and 48 pixels wide. You can use the same file as [the icon used in the gallery](http://www.differentpla.net/content/2007/04/how-do-i-change-the-icon-used-by-my-gadget), but you'll probably put your company logo here instead.
+The <tt>Logo.png</tt> file should be 48 pixels high, and 48 pixels wide. You can use the same file as [the icon used in the gallery](/content/2007/04/how-do-i-change-the-icon-used-by-my-gadget), but you'll probably put your company logo here instead.

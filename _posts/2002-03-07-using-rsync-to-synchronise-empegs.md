@@ -28,7 +28,7 @@ As with my [cloning guide]({% post_url 2002-03-18-lazy-bastards-guide-to-cloning
 
 For this, you'll need the [rsync_2.3.2-1.2.deb](http://ftp.us.debian.org/debian/dists/potato/main/binary-arm/net/rsync_2.3.2-1.2.deb) file. Extract it, remove the /usr/share parts, and then pack it back up. Send this to the empeg, and then extract it. I generally store the .tar.gz files in /drive0, so that the files don't get overwritten by upgrades, and I can reinstate the software by unpacking them again.
 
-Anyway, binaries and source are [here](http://www.differentpla.net/~roger/empeg/car/files/).
+Anyway, binaries and source are [here](/~roger/empeg/car/files/).
 
 Install rsync on both empegs.
 

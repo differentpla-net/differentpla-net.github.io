@@ -4,7 +4,7 @@ date: 2004-02-27T10:23:00.000Z
 x-drupal-nid: 187
 x-needs-review: 2004-02-27T10:23:00.000Z
 ---
-This article, a follow-up to [this one](http://www.differentpla.net/node/view/30), shows how to modify our project to allow the user to cancel the long-lived operation.
+This article, a follow-up to [this one](/node/view/30), shows how to modify our project to allow the user to cancel the long-lived operation.
 
 There are at least three different ways to cancel a long-lived task:
 
@@ -13,7 +13,7 @@ There are at least three different ways to cancel a long-lived task:
 3.  Calling a cancellation function from the callback, or from another thread.
 
 Here, I'll consider the first case: returning a failure code from the progress callback.
-So, we need to modify our [existing code](http://www.differentpla.net/node/view/133) as follows:
+So, we need to modify our [existing code](/node/view/133) as follows:
 
 ## Adding a return value to the progress callback
 
@@ -175,4 +175,4 @@ Now we need to change `CCompletePage` so that it notifies the user:
 
 It works. Unfortunately, because the task runs in the foreground thread, and only periodically reports progress, we only service our message loop intermittently. This means that repaints aren't as quick as they should be; also pressing the Cancel button doesn't respond immediately.
 
-I'll look at these issues in a later article. In the meantime, [here's the source code](http://www.differentpla.net/node/view/139).
+I'll look at these issues in a later article. In the meantime, [here's the source code](/node/view/139).

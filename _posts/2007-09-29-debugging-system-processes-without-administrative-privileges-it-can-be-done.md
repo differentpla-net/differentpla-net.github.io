@@ -4,7 +4,7 @@ date: 2007-09-29T14:14:09.000Z
 x-drupal-nid: 196
 x-needs-review: 2007-09-29T14:14:09.000Z
 ---
-A short while ago, I asked whether it was possible to [debug system processes without administrative privileges](http://www.differentpla.net/content/2007/08/debugging-system-processes-without-administrative-privileges). I ran into a brick wall and couldn't figure it out.
+A short while ago, I asked whether it was possible to [debug system processes without administrative privileges](/content/2007/08/debugging-system-processes-without-administrative-privileges). I ran into a brick wall and couldn't figure it out.
 
 Today, inspiration strikes: **Use MSVSMON, the remote debugger**:
 

@@ -14,4 +14,4 @@ Moving to a VPS has a couple of advantages:
 
 Bear with me while I move the content from the old site to the new site. I'm doing this piecemeal, rather than in one go, because the old site was pretty broken. I'm taking the opportunity to fix it up.
 
-If you notice anything's broken or missing, please use the [feedback](http://www.differentpla.net/content/contact) link (also at the top of the page) to let me know. I can't promise that I'll fix it, though.
+If you notice anything's broken or missing, please use the [feedback](/content/contact) link (also at the top of the page) to let me know. I can't promise that I'll fix it, though.

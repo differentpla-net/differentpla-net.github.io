@@ -4,7 +4,7 @@ date: 2004-03-11T09:26:00.000Z
 x-drupal-nid: 72
 x-needs-review: 2004-03-11T09:26:00.000Z
 ---
-The second part of a multi-part series on installing [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165).
+The second part of a multi-part series on installing [Installing qmail and vpopmail](/node/view/165).
 
 ## Removing exim
 
@@ -53,4 +53,4 @@ To test it:
 
 This is done in the same way as given in Life with qmail, so go and read that. I didn't do anything different.
 
-Next: [Installing SMTP AUTH with qmail](http://www.differentpla.net/node/view/167).
+Next: [Installing SMTP AUTH with qmail](/node/view/167).

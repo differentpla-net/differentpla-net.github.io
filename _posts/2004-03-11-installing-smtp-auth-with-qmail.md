@@ -4,7 +4,7 @@ date: 2004-03-11T09:28:00.000Z
 x-drupal-nid: 81
 x-needs-review: 2004-03-11T09:28:00.000Z
 ---
-This is the third part in a multipart series on [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165)
+This is the third part in a multipart series on [Installing qmail and vpopmail](/node/view/165)
 
 ## Installing SMTP AUTH
 
@@ -15,7 +15,7 @@ There are several ways to allow selective relaying. The easiest is useful if all
 <pre>192.168.0.:allow,RELAYCLIENT=""</pre>
 
 I'm not going to do this yet, because I'm doing all of my testing from my internal network, so I'll not know if I've correctly configured relaying for my laptop until it's too late.
-Another way to allow selective relaying is SMTP-after-POP. Essentially, authenticating with the POP daemon adds you to the tcprules file for a limited time, allowing relaying. Most modern email clients can be configured to work like this. For example, in [Outlook XP](http://www.differentpla.net/images/946aa447a66295f55baa9ba0a0ebf32f-169.jpg), it's called "Log on to incoming mail server before sending email".
+Another way to allow selective relaying is SMTP-after-POP. Essentially, authenticating with the POP daemon adds you to the tcprules file for a limited time, allowing relaying. Most modern email clients can be configured to work like this. For example, in [Outlook XP](/images/946aa447a66295f55baa9ba0a0ebf32f-169.jpg), it's called "Log on to incoming mail server before sending email".
 
 The first thing that we need to do is test that it doesn't allow relaying by default. To do this, we'll set up a new account in Outlook Express (because I'm already using Outlook for my real email on my desktop PC) that tries to use `flimsy` as the SMTP server. If we attempt to send email like this, we should see something like the following:
 
@@ -45,6 +45,6 @@ Another problem is that, by default, `/bin/checkpassword` is installed with over
 # chmod 4755 /bin/checkpassword</pre>
 
 This is a potential security hole. I'm going to install vpopmail later, which has its own checkpassword program. When I've installed the replacement, I'll restore checkpassword to its original settings (or, in fact, delete it, since nothing will be using it).
-If we then [turn on SMTP AUTH](http://www.differentpla.net/images/ab44157cb410409dc6a8033aeb7fccf3-168.jpg) in Outlook Express, it works. I can send mail from my Windows PC to another host. If I quickly test it by turning off SMTP AUTH in Outlook Express, it fails, as expected.
+If we then [turn on SMTP AUTH](/images/ab44157cb410409dc6a8033aeb7fccf3-168.jpg) in Outlook Express, it works. I can send mail from my Windows PC to another host. If I quickly test it by turning off SMTP AUTH in Outlook Express, it fails, as expected.
 
-Next: [Installing vpopmail](http://www.differentpla.net/node/view/170).
+Next: [Installing vpopmail](/node/view/170).

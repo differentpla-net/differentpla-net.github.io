@@ -4,9 +4,9 @@ date: 2004-03-18T15:19:00.000Z
 x-drupal-nid: 88
 x-needs-review: 2004-03-18T15:19:00.000Z
 ---
-Part 11 of [Installing qmail and vpopmail](http://www.differentpla.net/node/view/165). This part is about securing webmail access by using HTTPS.
+Part 11 of [Installing qmail and vpopmail](/node/view/165). This part is about securing webmail access by using HTTPS.
 
-At the end of [Installing SquirrelMail](http://www.differentpla.net/node/view/175), I'd finished installing webmail on my test box. Currently, this uses HTTP. This is not really secure enough for webmail, so this article is going to look at adding HTTPS access to webmail.
+At the end of [Installing SquirrelMail](/node/view/175), I'd finished installing webmail on my test box. Currently, this uses HTTP. This is not really secure enough for webmail, so this article is going to look at adding HTTPS access to webmail.
 
 ## Apache-SSL or mod_ssl?
 
@@ -100,11 +100,11 @@ See these two mailing list posts (e.g.) for more information about which to choo
     <table align="center">
     <tbody>
     <tr>
-    <td valign="center">![](http://www.differentpla.net/images/18e4c9a767f8d1947bde086222013223-181.png)</td>
+    <td valign="center">![](/images/18e4c9a767f8d1947bde086222013223-181.png)</td>
 
     <td width="20px"> </td>
 
-    <td valign="center">![](http://www.differentpla.net/images/52fa0e235abb98bfcb831bd44254b7a9-185.png)</td>
+    <td valign="center">![](/images/52fa0e235abb98bfcb831bd44254b7a9-185.png)</td>
 
     </tr>
 
@@ -122,7 +122,7 @@ See these two mailing list posts (e.g.) for more information about which to choo
 
     Here are some possible different solutions:
 
-    *   Use [IP-based virtual hosts](http://httpd.apache.org/docs/vhosts/ip-based.html). This requires a different IP address for each virtual host. This can be done by installing more than one network card or by using IP aliasing with a single network card.  
+    *   Use [IP-based virtual hosts](http://httpd.apache.org/docs/vhosts/ip-based.html). This requires a different IP address for each virtual host. This can be done by installing more than one network card or by using IP aliasing with a single network card.
          Unfortunately, this won't work in my situation, because I've only got a single IP address for my DSL connection, and I'd need to upgrade my service and buy a router that supported more than one external IP address.
     *   Use a different port for each virtual HTTPS host. This would work in my case, but it's easy to forget to supply the port number when typing in the address.
     *   Don't worry about it. Use the same virtual host to access all of your mailboxes. This works with `vpopmail`, because the domain name is part of the username used to log in. You can do this as long as you don't mind that your users will see that all of your different domains are running off the same server. I don't particularly mind, so this is what I'll do.
@@ -130,7 +130,7 @@ See these two mailing list posts (e.g.) for more information about which to choo
 
     `peculiar`, my "production" server is already configured with several name-based virtual hosts. To try this out, I'll have to configure my test box in a similar fashion.
 
-    In [Part 4](http://www.differentpla.net/node/view/170), I configured my internal DNS so that both of my test domains would resolve to the same box. If I connect to [http://flimsy.differentpla.test/](http://flimsy.differentpla.test/) or [http://flimsy.beerology.test/](http://flimsy.beerology.test/), I am presented with the same page.
+    In [Part 4](/node/view/170), I configured my internal DNS so that both of my test domains would resolve to the same box. If I connect to [http://flimsy.differentpla.test/](http://flimsy.differentpla.test/) or [http://flimsy.beerology.test/](http://flimsy.beerology.test/), I am presented with the same page.
 
     Configuring name-based virtual hosts to handle this is very easy. Just put something like the following into `/etc/apache/httpd.conf`:
 
@@ -180,8 +180,8 @@ See these two mailing list posts (e.g.) for more information about which to choo
 
     If a user inadvertently tries to connect to [https://flimsy.differentpla.test](https://flimsy.differentpla.test/), which resolves to the same site, they'll be presented with a warning message:
 
-    ![](http://www.differentpla.net/images/a94a9bb5b44bf08238a6e8e97cd8a4a4-183.png)
+    ![](/images/a94a9bb5b44bf08238a6e8e97cd8a4a4-183.png)
 
     The user can choose "Yes", and they'll get the webmail login form as normal. In future, we'd probably prefer to use some `mod_rewrite` magic to redirect them to an information page if they've typed in the wrong address. We might also want to use `mod_rewrite` so that people who use HTTPS to connect to pages that don't need to be secure are redirected to use the HTTP variant, thus saving CPU cycles on the server.
 
-    Next: [Securing IMAP](http://www.differentpla.net/node/view/190).
+    Next: [Securing IMAP](/node/view/190).
