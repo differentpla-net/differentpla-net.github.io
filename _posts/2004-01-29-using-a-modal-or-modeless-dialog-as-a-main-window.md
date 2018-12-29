@@ -8,7 +8,8 @@ x-needs-review: 2004-01-29T20:37:00.000Z
 
 If you ask the MFC AppWizard to generate a dialog-based application, it generates code that looks like this:
 
-<pre>BOOL CModalApp::InitInstance()
+```
+BOOL CModalApp::InitInstance()
 {
     CModalDlg dlg;
     m_pMainWnd = &dlg;
@@ -19,7 +20,8 @@ If you ask the MFC AppWizard to generate a dialog-based application, it generate
     // Since the dialog has been closed, return FALSE so that we exit the
     //  application, rather than start the application's message pump.
     return FALSE;
-}</pre>
+}
+```
 
 ## Using a modeless dialog as a main window
 
@@ -27,7 +29,8 @@ Unfortunately, this doesn't work properly if you have control bars in your dialo
 
 We solve this by using a modeless dialog as our main window:
 
-<pre>BOOL CCustomDrawApp::InitInstance()
+```
+BOOL CCustomDrawApp::InitInstance()
 {
     CModelessDialog *dlg = new CModelessDialog;
     if (!dlg->Create())
@@ -36,16 +39,20 @@ We solve this by using a modeless dialog as our main window:
     m_pMainWnd = dlg;
 
     return TRUE;
-}</pre>
+}
+```
 
-<pre>BOOL CModelessDialog::Create(CWnd* pParent /*=NULL*/)
+```
+BOOL CModelessDialog::Create(CWnd* pParent /*=NULL*/)
 {
     return CDialog::Create(CModelessDialog::IDD, pParent);
-}</pre>
+}
+```
 
 To get this to work (otherwise the application doesn't exit when you press the OK or Cancel buttons), you'll also need to handle `OnOK` and `OnCancel`:
 
-<pre>void CModelessDialog::OnOK()
+```
+void CModelessDialog::OnOK()
 {
     CDialog::OnOK();
 
@@ -57,13 +64,16 @@ void CModelessDialog::OnCancel()
     CDialog::OnOK();
 
     DestroyWindow();
-}</pre>
+}
+```
 
 And to fix the memory leak, handle `PostNcDestroy`:
 
-<pre>void CModelessDialog::PostNcDestroy()
+```
+void CModelessDialog::PostNcDestroy()
 {
     CDialog::PostNcDestroy();
 
     delete this;
-}</pre>
+}
+```

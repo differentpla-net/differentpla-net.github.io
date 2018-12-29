@@ -1,8 +1,6 @@
 ---
 title: "Building an MFC Application with Jam"
 date: 2001-07-14T00:25:38.000Z
-x-drupal-nid: 124
-x-needs-review: 2001-07-14T00:25:38.000Z
 ---
 ## Introduction
 
@@ -24,15 +22,14 @@ When you've got your application generated, get Visual C++ to build it, just for
 
 The obvious thing to do at this point is to put the names of the .cpp files into a Jamfile, like this:
 
-<div class="snippet">
-<pre>Main mfc_exe : ChildFrm.cpp MainFrm.cpp mfc_exe.cpp mfc_exeDoc.cpp mfc_exeView.cpp StdAfx.cpp ;
-</pre>
-
-</div>
+```
+Main mfc_exe : ChildFrm.cpp MainFrm.cpp mfc_exe.cpp mfc_exeDoc.cpp mfc_exeView.cpp StdAfx.cpp ;
+```
 
 ...and then to try building it, using -d2 to see what's going on. Not surprisingly, it doesn't work:
-<div class="results">
-<pre>Link mfc_exe.exe
+
+```
+Link mfc_exe.exe
 nafxcw.lib(afxmem.obj) : error LNK2005: "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z) already def
 ined in libc.lib(new.obj)
 nafxcw.lib(afxmem.obj) : error LNK2005: "void __cdecl operator delete(void *)" (??3@YAXPAX@Z) already defined
@@ -47,9 +44,7 @@ obj   P:\VStudio\VC98\lib\advapi32.lib P:\VStudio\VC98\lib\libc.lib P:\VStudio\V
 o\VC98\lib\kernel32.lib
 
 ...failed Link mfc_exe.exe ...
-</pre>
-
-</div>
+```
 
 ## Compiler Flags
 
@@ -57,21 +52,18 @@ Essentially, jam's invocation of Visual C++ isn't using the multithreaded librar
 
 Let's take a look at the compiler settings and see what's different. Jam is invoking the compiler like this:
 
-<div class="snippet">
-<pre>cl /nologo /c /FoChildFrm.obj /IP:\VStudio\VC98\include /TpChildFrm.cpp
-</pre>
-
-</div>
+```
+cl /nologo /c /FoChildFrm.obj /IP:\VStudio\VC98\include /TpChildFrm.cpp
+```
 
 Developer Studio is invoking the compiler like this (taken from the .plg file):
-<div class="snippet">
-<pre>cl /nologo /MDd /W3 /Gm /GX /ZI /Od
+
+```
+cl /nologo /MDd /W3 /Gm /GX /ZI /Od
     /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS"
     /Fp"Debug/mfc_exe.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/"
     /FD /GZ   /c ChildFrm.cpp
-</pre>
-
-</div>
+```
 
 Looking at the results of `cl /?` tells us the following:
 <table>
@@ -190,30 +182,28 @@ Obviously, we'd like the warnings and debug information. We'll probably need the
 
 That leaves us with a file looking like this:
 
-<div class="snippet">
-<pre>C++FLAGS += /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" ;
+```
+C++FLAGS += /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" ;
 
 Main mfc_exe : ChildFrm.cpp MainFrm.cpp mfc_exe.cpp mfc_exeDoc.cpp mfc_exeView.cpp StdAfx.cpp ;
-</pre>
-
-</div>
+```
 
 ...and the following results:
-<div class="snippet">
-<pre>LINK : warning LNK4098: defaultlib "msvcrtd.lib" conflicts with use of other libs; use /NODEFAULTLIB:library
+
+```
+LINK : warning LNK4098: defaultlib "msvcrtd.lib" conflicts with use of other libs; use /NODEFAULTLIB:library
 libc.lib(crt0.obj) : error LNK2001: unresolved external symbol _main
 mfc_exe.exe : fatal error LNK1120: 1 unresolved externals
-</pre>
-
-</div>
+```
 
 ...which looks like it's caused by `Jambase` adding libraries we don't want.
+
 ## Link Libraries
 
 We'll copy `Jambase` from the distribution directory and put it in into `S:\jam-test`, which is where it'll end up in our final build system. Looking through the file reveals the following:
 
-<div class="snippet">
-<pre>    else if $(MSVCNT)
+```
+    else if $(MSVCNT)
     {
     ECHO "Compiler is Microsoft Visual C++" ;
 
@@ -233,38 +223,33 @@ We'll copy `Jambase` from the distribution directory and put it in into `S:\jam-
     STDHDRS     ?= $(MSVCNT)\\include ;
     UNDEFFLAG   ?= "/u _" ;
     }
-</pre>
-
-</div>
+```
 
 We'll take out the LINKLIBS line, leaving it looking like this:
-<div class="snippet">
-<pre>    LINKLIBS    ?= "" ;
-</pre>
 
-</div>
+```
+    LINKLIBS    ?= "" ;
+```
 
 Remembering to invoke jam as: `jam -f /jam-test/Jambase` leaves us with this:
 
-<div class="snippet">
-<pre>LINK : fatal error LNK1561: entry point must be defined</pre>
-
-</div>
+```
+LINK : fatal error LNK1561: entry point must be defined
+```
 
 ## Entry Point
 
 Jam is invoking link like this:
 
-<div class="snippet">
-<pre>link /nologo /out:mfc_exe.exe ChildFrm.obj MainFrm.obj mfc_exe.obj mfc_exeDoc.obj mfc_exeView.obj
+```
+link /nologo /out:mfc_exe.exe ChildFrm.obj MainFrm.obj mfc_exe.obj mfc_exeDoc.obj mfc_exeView.obj
  StdAfx.obj
-</pre>
-
-</div>
+```
 
 Developer Studio is invoking link with a response file containing the following:
-<div class="snippet">
-<pre>/nologo /subsystem:windows /incremental:yes /pdb:"Debug/mfc_exe.pdb"
+
+```
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/mfc_exe.pdb"
 /debug /machine:I386 /out:"Debug/mfc_exe.exe" /pdbtype:sept
 .\Debug\mfc_exe.obj
 .\Debug\StdAfx.obj
@@ -273,31 +258,29 @@ Developer Studio is invoking link with a response file containing the following:
 .\Debug\mfc_exeDoc.obj
 .\Debug\mfc_exeView.obj
 .\Debug\mfc_exe.res
-</pre>
-
-</div>
+```
 
 We'll add some of the more interesting switches to our Jamfile, and see what happens:
 
-<div class="snippet">
-<pre>C++FLAGS += /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" ;
+```
+C++FLAGS += /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" ;
 LINKFLAGS += /subsystem:windows /incremental:yes /debug /machine:I386 ;
 
 Main mfc_exe : ChildFrm.cpp MainFrm.cpp mfc_exe.cpp mfc_exeDoc.cpp mfc_exeView.cpp StdAfx.cpp ;
-</pre>
-
-</div>
+```
 
 It builds! Does it run? It does. Unfortunately, it bails out immediately. It should have brought up a window of some kind. Perhaps if we run it in the debugger?
+
 ## Resource File Dependencies
 
 Our [MFC application](../mfc_app/) has a resource script. This resource script suffers from a minor problem: It's not dependency-scanned. If we edit any file included by it -- for example the `.rc2` file, it's not rebuilt properly.
 
 We need to add the following to our `Resource` rule:
 
-<pre>	NEEDLIBS on $(_e) += $(_r) ;
+```
+	NEEDLIBS on $(_e) += $(_r) ;
 
-	**# .rc files have #includes, but this limits the dependency search to
+	# .rc files have #includes, but this limits the dependency search to
 	# the .rc's directory and the SubDirHdrs for this directory.
 
 	HDRS on $(_r) = $(HDRS) $(SEARCH_SOURCE) $(SUBDIRHDRS) ;
@@ -305,10 +288,10 @@ We need to add the following to our `Resource` rule:
 	HDRRULE on $(_s) = HdrRule ;
 	HDRSCAN on $(_s) = $(HDRPATTERN) ;
 	HDRSEARCH on $(_s) = $(SEARCH_SOURCE) $(SUBDIRHDRS) ;
-	HDRGRIST on $(_s) = $(HDRGRIST) ;**
+	HDRGRIST on $(_s) = $(HDRGRIST) ;
 
 	Rc $(_r) : $(_s) ;
-</pre>
+```
 
 Source is [here](../src/jam-test-20010717a.tar.gz).
 
@@ -316,29 +299,25 @@ Source is [here](../src/jam-test-20010717a.tar.gz).
 
 Running our newly-built MFC application in the debugger reveals the following smoking gun in the output window:
 
-<div class="snippet">
-<pre>Warning: no document names in string for template #129.
+```
+Warning: no document names in string for template #129.
 Warning: no document names in string for template #129.
 Warning: no shared menu for document template #129.
 Warning: no document names in string for template #129.
 Warning: no shared menu for document template #129.
 Warning: failed to load menu for CFrameWnd.
-</pre>
-
-</div>
+```
 
 Looks to me like it's not linking in the resource files. We'd better sort that out now. What we'd like to do is simply add the `.rc` file to the list of source files in the Jamfile, and have it magically work. However, when we try that, we get:
 
-<div class="snippet">
-<pre>Unknown suffix on mfc_exe.rc - see UserObject rule in Jamfile(5)
-</pre>
-
-</div>
+```
+Unknown suffix on mfc_exe.rc - see UserObject rule in Jamfile(5)
+```
 
 Looking in the `Jambase.html` file included in the distribution, we find a section that suggests overriding the `UserObject` rule in order to tell jam about .rc files. It says to put it in `Jamrules`, but since we don't have one, we'll put it in our `Jamfile` for the time being:
 
-<div class="snippet">
-<pre>RC ?= rc ;
+```
+RC ?= rc ;
 
 C++FLAGS += /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" ;
 LINKFLAGS += /subsystem:windows /incremental:yes /debug /machine:I386 ;
@@ -365,9 +344,7 @@ actions ResourceCompiler
 }
 
 Main mfc_exe : ChildFrm.cpp MainFrm.cpp mfc_exe.cpp mfc_exeDoc.cpp mfc_exeView.cpp StdAfx.cpp mfc_exe.rc ;
-</pre>
-
-</div>
+```
 
 Unfortunately, this approach is flawed: The generated file is called .obj, rather than .res. This causes a major problem in AppWizard-generated MFC applications, because the .rc file has the same base name as the main application source file, and they're both configured to generate a file with the .obj suffix.
 
@@ -377,10 +354,10 @@ It looks like we'll have to give up on our ideal of simply adding the filename t
 
 One of the mailing list participants, Chris Antos, forwarded me a copy of his Jambase file a little while ago. It contains all sorts of useful rules, but I'm not entirely sure what some of it does yet.
 
-Lifting the relevant sections, and simplifying them results in the following:
+Lifting the relevant sections (and simplifying them) results in the following:
 
-<div class="snippet">
-<pre># Resource prog : resources.rc ;
+```
+# Resource prog : resources.rc ;
 rule Resource
 {
     # _s is the source (.rc) file.
@@ -411,9 +388,7 @@ actions Rc
 {
     $(RC) $(RCFLAGS) /I$(HDRS) /I$(RCHDRS) /Fo $(<) $(>)
 }
-</pre>
-
-</div>
+```
 
 This works fine. If we build the program, we get a working executable!
 
@@ -421,9 +396,9 @@ This works fine. If we build the program, we get a working executable!
 
 We've just successfully built an MFC application using jam. There are a couple of things that we still need to consider:
 
-*   Resource Scripts can have include files. We've not done anything about dependency checking on them.
-*   Separate Debug/Release configurations.
-*   Visual C++ puts the output in Debug or Release. Currently, we just dump everything in the current directory.
-*   The AppWizard-generated project used precompiled headers. We ought to, as well. They dramatically improve compilation speed.
+* Resource Scripts can have include files. We've not done anything about dependency checking on them.
+* Separate Debug/Release configurations.
+* Visual C++ puts the output in Debug or Release. Currently, we just dump everything in the current directory.
+* The AppWizard-generated project used precompiled headers. We ought to, as well. They dramatically improve compilation speed.
 
 I'll come back to this later and deal with some of the above points.

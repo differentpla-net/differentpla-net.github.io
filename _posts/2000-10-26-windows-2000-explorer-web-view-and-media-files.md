@@ -12,21 +12,29 @@ This causes problems when the files in question are on the other end of a Samba 
 
 The fix? Just open the file C:\WINNT\Web\folder.htt, and remove the following snippet (don't forget to back the file up, just in case):
 
-> <pre><span id=MediaPlayerSpan>
-> </span></pre>
+```
+<span id=MediaPlayerSpan>
+</span>
+```
 
 Note: You might experience general wierdness with your editor, because the file is marked hidden.
 
 Media Player also leaches onto the Search Results view. To fix it, open the file C:\WINNT\Web\fsresult.htt, and find the line:
 
-> <pre>var gWantMedia = true;</pre>
+```
+var gWantMedia = true;
+```
 
 Change `true` to `false`. Again, back up the file.
 
 I've also had problems with the image preview in the search results. To fix this, find the line:
 
-> <pre>if (item.Size)</pre>
+```
+if (item.Size)
+```
 
 Change it to:
 
-> <pre>if (false && item.Size)</pre>
+```
+if (false && item.Size)
+```
