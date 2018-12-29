@@ -1,8 +1,6 @@
 ---
 title: "Using rsync to Synchronise empegs"
 date: 2002-03-07T12:21:00.000Z
-x-drupal-nid: 23
-x-needs-review: 2002-03-07T12:21:00.000Z
 ---
 ## Introduction
 

@@ -1,8 +1,6 @@
 ---
 title: "Rio Receiver: Layout Definitions"
 date: 2002-01-22T18:06:00.000Z
-x-drupal-nid: 26
-x-needs-review: 2002-01-22T18:06:00.000Z
 ---
 ## Introduction
 

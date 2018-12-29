@@ -1,8 +1,6 @@
 ---
 title: "Internet Explorer displays MP3 files, rather than downloading them"
 date: 2000-10-25T23:00:00.000Z
-x-drupal-nid: 112
-x-needs-review: 2000-10-25T23:00:00.000Z
 ---
 This one's very rare. I don't anticipate it ever happening to anyone else. It did, however, happen to me, so I thought I'd share it.
 

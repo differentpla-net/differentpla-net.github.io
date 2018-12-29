@@ -1,8 +1,6 @@
 ---
 title: "Jam - Separate Release/Debug Target Directories"
 date: 2002-02-01T12:05:00.000Z
-x-drupal-nid: 120
-x-needs-review: 2002-02-01T12:05:00.000Z
 ---
 By default, AppWizard-generated applications use separate directories for the output of the different debug and release builds. We'd like to replicate that functionality.
 
@@ -12,8 +10,8 @@ However, if we set `ALL_LOCATE_TARGET` to, e.g. `Debug` in our `Jamrules` file, 
 
 The comments in `Jambase` state that the `LOCATE_TARGET` variable should be set after invoking the `SubDir` rule, if required. This is a pain. We much prefer the following change to the `SubDir` rule:
 
-<div class="snippet">
-<pre>       # directory should not hold object files, LOCATE_TARGET can
+```
+       # directory should not hold object files, LOCATE_TARGET can
        # subsequently be redefined.
 
        **local path = [ FDirName $(SUBDIR) $(TARGET_PREFIX) ] ;
@@ -24,14 +22,12 @@ The comments in `Jambase` state that the `LOCATE_TARGET` variable should be set 
        SOURCE_GRIST = $(path) ;**
 
        # Reset per-directory ccflags, hdrs
-</pre>
-
-</div>
+```
 
 This allows us to place a rule like the following in our `Jamrules` file:
 
-<div class="snippet">
-<pre>if ! $(DEBUG) {
+```
+if ! $(DEBUG) {
 	ECHO Assuming DEBUG=1 ;
 	DEBUG = 1 ;
 }
@@ -42,6 +38,4 @@ if $(DEBUG) = 0 {
 else {
 	TARGET_PREFIX = Debug ;
 }
-</pre>
-
-</div>
+```

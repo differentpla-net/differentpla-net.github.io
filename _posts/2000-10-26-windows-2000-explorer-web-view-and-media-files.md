@@ -1,8 +1,6 @@
 ---
 title: "Windows 2000 Explorer Web View and Media Files"
 date: 2000-10-26T16:29:00.000Z
-x-drupal-nid: 104
-x-needs-review: 2000-10-26T16:29:00.000Z
 ---
 **Warning:** I've recently received a couple of emails stating that this technique totally breaks Web View in Windows Explorer. Use it at your own risk. Back up any files you change.
 

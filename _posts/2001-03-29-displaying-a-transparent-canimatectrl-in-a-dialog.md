@@ -1,8 +1,6 @@
 ---
 title: "Displaying a transparent CAnimateCtrl in a dialog"
 date: 2001-03-29T23:00:00.000Z
-x-drupal-nid: 106
-x-needs-review: 2001-03-29T23:00:00.000Z
 ---
 Microsoft's knowledge base article, [Q179907](http://support.microsoft.com/default.aspx?scid=kb;en-us;Q179907) explains how to use a transparent CAnimateCtrl in a CView or a CDialog.
 
@@ -10,7 +8,7 @@ Unfortunately, the instructions don't quite work properly for displaying the ani
 
 The fix is simple - just set the background colour of the DC:
 
-<div class="snippet">
+```
     HBRUSH CMyDialog::OnCtlColor(CDC *pDC, CWnd *pWnd, UINT nCtlColor)
     {
         if (pWnd->GetDlgCtrlID() == IDC_ANIMATE)
@@ -21,12 +19,11 @@ The fix is simple - just set the background colour of the DC:
 
         return CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
     }
-
-</div>
+```
 
 Apparently, this may not work with Visual Studio.NET and Windows XP. If this is the case, try handling `WM_CTLCOLORSTATIC`:
 
-<div class="snippet">
+```
     LRESULT CMyDialog::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
     {
         if( message == WM_CTLCOLORSTATIC  && ::GetDlgCtrlID( (HWND)lParam ) == IDC_ANIMATE) )
@@ -37,13 +34,12 @@ Apparently, this may not work with Visual Studio.NET and Windows XP. If this is 
         }
         return CDialog::WindowProc(message, wParam, lParam);
     }
-
-</div>
+```
 
 (Thanks to Mark Gullacher for sharing this with me).
 Unfortunately, this doesn't work with Visual C++ 6 and Windows XP, using a manifest file: the background of the animation is painted black. You want this instead:
 
-<div class="snippet">
+```
     class CMyDialog : public CDialog
     {
         //...
@@ -94,5 +90,4 @@ Unfortunately, this doesn't work with Visual C++ 6 and Windows XP, using a manif
 
         return Default();
     }
-
-</div>
+```

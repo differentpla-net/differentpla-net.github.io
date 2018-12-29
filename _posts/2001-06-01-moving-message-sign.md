@@ -1,8 +1,6 @@
 ---
 title: "Moving Message Sign"
 date: 2001-06-01T10:41:00.000Z
-x-drupal-nid: 110
-x-needs-review: 2001-06-01T10:41:00.000Z
 ---
 A couple of weeks ago, we got an LED message board at work. They had them on offer at Maplin (if I recall correctly). Anyway, the manual with the board is singularly useless. It's labelled "Moving Message Sign", and has a picture of the display with "Taiwan Kingpul" on it.
 
@@ -332,6 +330,6 @@ Messages are almost in ASCII.
 
 </table>
 
-* speed and wait should be immediately followed by a literal numeral (i.e. 0x31 to 0x39), dictating how fast, or how long.  
+* speed and wait should be immediately followed by a literal numeral (i.e. 0x31 to 0x39), dictating how fast, or how long.
  There are a bunch more graphical characters, which do things like put a clock up. I don't know the codes for those.
 **Update:** I no longer have access to this display, so I can't help you beyond what's published here.

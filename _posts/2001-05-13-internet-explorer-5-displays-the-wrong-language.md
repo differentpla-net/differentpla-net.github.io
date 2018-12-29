@@ -1,8 +1,6 @@
 ---
 title: "Internet Explorer 5 displays the wrong language"
 date: 2001-05-13T23:00:00.000Z
-x-drupal-nid: 111
-x-needs-review: 2001-05-13T23:00:00.000Z
 ---
 Recently, while wandering along to my local [Debian mirror](http://www.uk.debian.org/), I was surprised by the fact that it decided to come up in an Asian script.
 

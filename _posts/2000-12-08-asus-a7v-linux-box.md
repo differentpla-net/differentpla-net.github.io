@@ -1,8 +1,6 @@
 ---
 title: "Asus A7V Linux Box"
 date: 2000-12-08T00:02:00.000Z
-x-drupal-nid: 103
-x-needs-review: 2000-12-08T00:02:00.000Z
 ---
 Having been so impressed with the speed of Linux on the A7V (see [here]({% post_url 2000-12-08-asus-a7v-linux-box %})), I accidentally slipped while in [Cambridge Computers](http://www.cambridge-computers.com/) and bought another one.
 

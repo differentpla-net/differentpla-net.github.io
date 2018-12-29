@@ -1,8 +1,6 @@
 ---
 title: "Scanner trials and tribulations"
 date: 2001-09-25T15:50:00.000Z
-x-drupal-nid: 100
-x-needs-review: 2001-09-25T15:50:00.000Z
 ---
 This morning, I decided to buy myself a scanner. I'm planning on using it for document filing -- keeping my credit card statements on CDROM, etc.
 

@@ -1,8 +1,6 @@
 ---
 title: "Asus A7V Windows Box"
 date: 2000-12-08T00:01:00.000Z
-x-drupal-nid: 102
-x-needs-review: 2000-12-08T00:01:00.000Z
 ---
 As mentioned [here](/node/view/3), my Pentium II-400 got fried by an ocuk power supply. As they say, however: Every cloud has a silver lining. With a dead computer, I could finally persuade my girlfriend that some long-overdue upgrades were necessary.
 

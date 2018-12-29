@@ -1,8 +1,6 @@
 ---
 title: "Linux on Sony Vaio - Upgrading to a 2.4 kernel and ext3"
 date: 2003-01-13T15:44:00.000Z
-x-drupal-nid: 138
-x-needs-review: 2003-01-13T15:44:00.000Z
 ---
 ## Upgrading to a 2.4 kernel
 
@@ -20,18 +18,16 @@ When it comes back up, you should be running a 2.4 kernel. Log in as root and ru
 
 There's nothing to it:
 
-<div class="snippet">
-    # tune2fs -j /dev/hda2
-
-</div>
+```
+# tune2fs -j /dev/hda2
+```
 
 Having done this, edit `/etc/fstab` so that it reads `auto`, rather than `ext2`.
 
-<div class="snippet">
-    # touch /forcefsck
-    # exec shutdown -r now
-
-</div>
+```
+# touch /forcefsck
+# exec shutdown -r now
+```
 
 The last two steps are to trigger `fsck` at the next reboot (to fix up the .journal file), and to reboot.
 When it's finished rebooting, log in as root and `cat /proc/mounts` to check that your root filesystem was correctly mounted as ext3.
