@@ -4,7 +4,7 @@ date: 2004-02-27T13:00:00.000Z
 x-drupal-nid: 185
 x-needs-review: 2004-02-27T13:00:00.000Z
 ---
-In earlier articles, [Displaying Progress in a Wizard](/node/view/30) and [Cancelling Long-Lived Tasks from a Wizard](/node/view/138), I discussed how to run a long-lived task from a wizard and how to display progress in the wizard.
+In earlier articles, [Displaying Progress in a Wizard]({% post_url 2004-01-08-displaying-progress-in-a-wizard %}) and [Cancelling Long-Lived Tasks from a Wizard]({% post_url 2004-02-27-cancelling-long-lived-tasks-from-a-wizard %}), I discussed how to run a long-lived task from a wizard and how to display progress in the wizard.
 
 In this article, I'm going to show how to move the long-lived task to a background thread.
 
@@ -18,7 +18,8 @@ The second option is to move the task to another thread, leaving the UI thread f
 
 The first thing we need to do is to change `OnSetActive` so that it starts the task on a background thread:
 
-<pre>BOOL CProgressPage::OnSetActive()
+```
+BOOL CProgressPage::OnSetActive()
 {
 	if (!CPropertyPage::OnSetActive())
 		return FALSE;
@@ -28,23 +29,26 @@ The first thing we need to do is to change `OnSetActive` so that it starts the t
 
 	// First, we'll disable the buttons, to prevent the user from
 	// pressing anything before we get going.
-	static_cast<cpropertysheet *="">(GetParent())->SetWizardButtons(0);
+	static_cast<CPropertySheet *>(GetParent())->SetWizardButtons(0);
 	CWnd *pCancel = GetParent()->GetDlgItem(IDCANCEL);
 	if (pCancel)
 		pCancel->EnableWindow(FALSE);
 	m_bCancel = false;
 
-	**ASSERT(!m_pThread);
+	ASSERT(!m_pThread);
 	m_pThread = new TaskThread(this);
-	m_pThread->Start();**
+	m_pThread->Start();
 
 	return TRUE;
-}</cpropertysheet></pre>
+}
+```
 
 Because we're going to start the task in the background, we don't need to use `PostMessage` any more, so we can get rid of a bunch of other code.
+
 We also need to implement `TaskThread`:
 
-<pre>class TaskThread : public Thread
+```
+class TaskThread : public Thread
 {
 	TaskObserver *m_pObserver;
 
@@ -60,9 +64,11 @@ public:
 		task.Run();
 		return 0;
 	}
-};</pre>
+};
+```
 
 class `Thread` is defined in [this page](/node/view/141).
+
 ## Threading Issues
 
 As it is, this works (just about). We're not reenabling the Cancel button, and there's a memory leak because we're not deleting the `TaskThread` object.
@@ -73,19 +79,22 @@ Windows guarantees that a window procedure will be called on the same thread as 
 
 Moreover, when we fix the memory leak as follows:
 
-<pre>void CProgressPage::OnComplete(bool bResult)
+```
+void CProgressPage::OnComplete(bool bResult)
 {
 	*m_pbResult = bResult;
 
-	**// Wait for the thread to finish before deleting it:
+	// Wait for the thread to finish before deleting it:
 	m_pThread->Join();
 	delete m_pThread;
-	m_pThread = NULL;**
+	m_pThread = NULL;
 
-	static_cast<cpropertysheet *="">(GetParent())->PressButton(PSBTN_NEXT);
-}</cpropertysheet></pre>
+	static_cast<CPropertySheet *>(GetParent())->PressButton(PSBTN_NEXT);
+}
+```
 
 ...we'll cause an immediate deadlock, because `OnComplete` is called _on_ the thread that we're attempting to `Join`, so `Join` will never return because the thread's stuck in `Join`!
+
 ## PostMessage to the Rescue
 
 Now, since we're not actually bothered that the progress callback be notified immediately, we can use `PostMessage` to decouple the two threads. See, for example, `OnComplete`:

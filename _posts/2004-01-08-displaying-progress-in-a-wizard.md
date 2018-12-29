@@ -1,8 +1,6 @@
 ---
 title: "Displaying Progress in a Wizard"
 date: 2004-01-08T18:24:00.000Z
-x-drupal-nid: 42
-x-needs-review: 2004-01-08T18:24:00.000Z
 ---
 I'm adding a wizard to the program that I'm currently working on. The wizard walks the user through importing some information from a file. I'd like to be able to display the import progress as a seamless part of the wizard.
 
@@ -43,7 +41,7 @@ void CProgressPage::OnComplete()
 Initially, I tried to get this to work from `OnSetActive`, but it doesn't work. The property page is never displayed. I'd assumed that the `PumpMessages` call would allow the repaints to occur. Worse, because the handler for `OnComplete` calls `PressButton(PSBTN_NEXT)` while in the `OnSetActive` method, it gets called again, and again, and again,...
 
 <pre>// This doesn't work...
-BOOL CProgressPage::OnSetActive() 
+BOOL CProgressPage::OnSetActive()
 {
 	if (!CPropertyPage::OnSetActive())
 		return FALSE;
@@ -60,7 +58,7 @@ BOOL CProgressPage::OnSetActive()
 
 Luckily, it works OK if you call `PostMessage` to return from `OnSetActive` and then handle it later:
 
-<pre>BOOL CProgressPage::OnSetActive() 
+<pre>BOOL CProgressPage::OnSetActive()
 {
 	if (!CPropertyPage::OnSetActive())
 		return FALSE;
