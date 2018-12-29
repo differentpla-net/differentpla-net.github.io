@@ -6,7 +6,7 @@ x-needs-review: 2002-03-07T12:21:00.000Z
 ---
 ## Introduction
 
-A while ago, I published my [Lazy Bastard's Guide to Cloning your empeg]({% post_url posts/2002-03-18-lazy-bastards-guide-to-cloning-your-empeg %}). This has worked successfully for me and other people. However, it has one major limitation -- it's an all-or-nothing operation -- it clones the entire empeg. If you add a bunch of tracks to one of your empegs, you end up having to copy _all_ of your tracks again.
+A while ago, I published my [Lazy Bastard's Guide to Cloning your empeg]({% post_url 2002-03-18-lazy-bastards-guide-to-cloning-your-empeg %}). This has worked successfully for me and other people. However, it has one major limitation -- it's an all-or-nothing operation -- it clones the entire empeg. If you add a bunch of tracks to one of your empegs, you end up having to copy _all_ of your tracks again.
 
 In this document, I'll present an alternative: using [rsync](http://rsync.samba.org) to keep a pair of empegs in sync.
 
