@@ -1,8 +1,7 @@
 ---
 title: "Downloading from an HTTP Server using WinInet"
 date: 2004-02-26T11:45:00.000Z
-x-drupal-nid: 63
-x-needs-review: 2004-02-26T11:45:00.000Z
+redirect_from: /content/2004/02/downloading-from-an-http-server-using-wininet
 ---
 The WinInet functions allow an application to interact with Gopher, FTP and HTTP servers. This article shows how to use the WinInet API to download from an HTTP server.
 

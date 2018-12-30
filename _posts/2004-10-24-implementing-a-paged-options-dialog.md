@@ -1,8 +1,7 @@
 ---
 title: "Implementing a paged Options dialog"
 date: 2004-10-24T12:42:00.000Z
-x-drupal-nid: 49
-x-needs-review: 2004-10-24T12:42:00.000Z
+redirect_from: /content/2004/10/implementing-a-paged-options-dialog
 ---
 Several popular applications implement their options dialog as a collection of pages. Here's one way to do this in your application.
 
