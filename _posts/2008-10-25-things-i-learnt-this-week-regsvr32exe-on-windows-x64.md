@@ -1,8 +1,7 @@
 ---
 title: "Things I learnt this week: RegSvr32.EXE on Windows x64"
 date: 2008-10-25T16:17:29.000Z
-x-drupal-nid: 223
-x-needs-review: 2008-10-25T16:17:29.000Z
+redirect_from: /content/2008/10/things-i-learnt-week-regsvr32exe-windows-x64
 ---
 On Windows, 64-bit processes cannot load 32-bit DLLs, and 32-bit processes cannot load 64-bit DLLs. How does REGSVR32.EXE manage to successfully register both 32-bit and 64-bit COM DLLs?
 

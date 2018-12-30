@@ -1,8 +1,7 @@
 ---
 title: "Streaming HTTP responses in .NET"
 date: 2012-07-14T19:11:10.000Z
-x-drupal-nid: 279
-x-needs-review: 2012-07-14T19:11:10.000Z
+redirect_from: /content/2012/07/streaming-http-responses-net
 ---
 Sometimes you have a web service or web application, and, for one request, you need to transfer an unknown (and potentially unbounded) amount of data in the response.
 

@@ -1,8 +1,7 @@
 ---
 title: "Returning HTML from a WCF service"
 date: 2010-06-20T13:05:10.000Z
-x-drupal-nid: 258
-x-needs-review: 2010-06-20T13:05:10.000Z
+redirect_from: /content/2010/06/returning-html-wcf-service
 ---
 I’m messing around with writing yet another a blog engine, as a way to learn ASP.NET MVC. One of the things that I’d like to do is have it support uploading from Windows Live Writer. This means that it needs to support XML-RPC and [Really Simple Discovery](http://cyber.law.harvard.edu/blogs/gems/tech/rsd.html) (RSD). More on the XML-RPC stuff later.
 
@@ -39,7 +38,7 @@ Index is implemented as follows:
 		string html = "...";
 
 		// See http://blogs.msdn.com/b/justinjsmith/archive/2007/08/22/setting-http-headers-in-wcf-net-3-5.aspx
-		if (WebOperationContext.Current != null) 
+		if (WebOperationContext.Current != null)
 			WebOperationContext.Current.OutgoingResponse.ContentType = "text/html";
 
 		byte[] htmlBytes = Encoding.UTF8.GetBytes(html);

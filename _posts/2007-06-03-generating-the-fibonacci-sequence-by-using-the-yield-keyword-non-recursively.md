@@ -1,10 +1,11 @@
 ---
 title: "Generating the Fibonacci sequence by using the yield keyword, non-recursively"
 date: 2007-06-03T15:21:14.000Z
-x-drupal-nid: 183
-x-needs-review: 2007-06-03T15:21:14.000Z
+redirect_from: /content/2007/06/generating-the-fibonacci-sequence-by-using-the-yield-keyword-non-recursively
 ---
-<pre>class FibonacciSequence : IEnumerable
+
+```
+class FibonacciSequence : IEnumerable
 {
     public IEnumerator GetEnumerator()
     {
@@ -25,11 +26,14 @@ x-needs-review: 2007-06-03T15:21:14.000Z
             curr = next;
         }
     }
-}</pre>
+}
+```
 
 Call it like this:
 
-<pre>FibonacciSequence f = new FibonacciSequence(); 
+```
+FibonacciSequence f = new FibonacciSequence();
 
 foreach (long n in f)
-    Console.WriteLine(n);</pre>
+    Console.WriteLine(n);
+```

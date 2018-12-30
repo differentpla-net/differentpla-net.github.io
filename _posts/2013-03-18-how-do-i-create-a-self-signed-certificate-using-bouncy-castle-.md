@@ -1,6 +1,7 @@
 ---
 title: How do I create a self-signed certificate using Bouncy Castle?
 date: 2013-03-18T18:57:35Z
+redirect_from: /b/2013/21/18/how-do-i-create-a-self-signed-certificate-using-bouncy-castle-
 ---
 Occasionally, you might find that you need to create a self-signed server certificate. If you're on Windows, your options are basically:
 
@@ -112,7 +113,7 @@ We need to specify a date range for which this certificate is valid:
 
 	var notBefore = DateTime.UtcNow.Date;
 	var notAfter = notBefore.AddYears(2);
-	
+
 	certificateGenerator.SetNotBefore(notBefore);
 	certificateGenerator.SetNotAfter(notAfter);
 
@@ -131,13 +132,13 @@ Finally, we need to generate the important bit: the subject's key pair. The publ
 
 	const int strength = 2048;
 	var keyGenerationParameters = new KeyGenerationParameters(random, strength);
-	
+
 	var keyPairGenerator = new RsaKeyPairGenerator();
 	keyPairGenerator.Init(keyGenerationParameters);
 	var subjectKeyPair = keyPairGenerator.GenerateKeyPair();
 
 	certificateGenerator.SetPublicKey(subjectKeyPair.Public);
-	
+
 In this example, `strength` is the key length, in bits. For RSA, 2048-bits should be considered the minimum acceptable these days.
 
 Generating the Certificate
