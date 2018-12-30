@@ -1,10 +1,10 @@
 ---
 title: "regsvr32.exe reports error 0x80040200 on Windows Vista"
 date: 2007-01-17T14:52:59.000Z
-x-drupal-nid: 91
-x-needs-review: 2007-01-17T14:52:59.000Z
+redirect_from: /content/2007/01/regsvr32-exe-reports-error-0x80040200-on-windows-vista
 ---
-0x80040200 is SELFREG_E_TYPELIB. This result is returned from MFC ActiveX (.OCX) controls when AfxOleRegisterTypeLib fails.
+
+`0x80040200` is `SELFREG_E_TYPELIB`. This result is returned from MFC ActiveX (.OCX) controls when `AfxOleRegisterTypeLib` fails.
 
 On Windows Vista, this is probably because you have UAC enabled, and RegSvr32.exe doesn't correctly prompt for elevation.
 

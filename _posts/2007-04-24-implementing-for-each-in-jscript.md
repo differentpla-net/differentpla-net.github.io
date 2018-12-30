@@ -1,22 +1,25 @@
 ---
 title: "Implementing For Each in JScript"
 date: 2007-04-24T11:01:30.000Z
-x-drupal-nid: 176
-x-needs-review: 2007-04-24T11:01:30.000Z
+redirect_from: /content/2007/04/implementing-for-each-in-jscript
 ---
-<pre>function forEach(enumerable, delegate)
+
+```
+function forEach(enumerable, delegate)
 {
     for (var enumerator = new Enumerator(enumerable); !enumerator.atEnd(); enumerator.moveNext())
     {
         delegate(enumerator.item());
     }
-}</pre>
+}
+```
 
 Used like this:
 
-<pre>forEach(employees,
+```
+forEach(employees,
         function(employee)
         {
             WScript.Echo(employee.Salary);
-        }
-    );</pre>
+        });
+```
