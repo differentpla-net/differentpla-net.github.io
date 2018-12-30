@@ -50,5 +50,3 @@ A couple of days ago, I "cleaned out" my `%APPDATA%\Temp` folder. It seems that 
 The clue was on the [MS Connect site](http://connect.microsoft.com/SQLServer/feedback/details/573771/value-cannot-be-null).
 
 There's another clue as to how this might have happened on the [MSDN Forums](http://social.msdn.microsoft.com/Forums/en-US/sqltools/thread/236d9263-a67e-4926-a7a1-b1173553b8aa/), of which more [here](http://technet.microsoft.com/en-us/library/cc755098.aspx).
-
-**Update 2018-12-30 (from memory): I nuked the machine from orbit. It was the only way to be sure.**
