@@ -1,8 +1,7 @@
 ---
 title: "Installing BincIMAP"
 date: 2004-03-11T09:35:00.000Z
-x-drupal-nid: 83
-x-needs-review: 2004-03-11T09:35:00.000Z
+redirect_from: /node/view/171
 ---
 Part 5 of [Installing qmail and vpopmail](/node/view/165).
 

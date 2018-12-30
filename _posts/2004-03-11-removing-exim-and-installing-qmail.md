@@ -1,8 +1,7 @@
 ---
 title: "Removing exim and installing qmail"
 date: 2004-03-11T09:26:00.000Z
-x-drupal-nid: 72
-x-needs-review: 2004-03-11T09:26:00.000Z
+redirect_from: /node/view/166
 ---
 The second part of a multi-part series on installing [Installing qmail and vpopmail](/node/view/165).
 

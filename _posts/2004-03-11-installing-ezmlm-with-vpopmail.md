@@ -1,8 +1,7 @@
 ---
 title: "Installing ezmlm with vpopmail"
 date: 2004-03-11T12:17:00.000Z
-x-drupal-nid: 80
-x-needs-review: 2004-03-11T12:17:00.000Z
+redirect_from: /node/view/174
 ---
 Part 8 of [Installing qmail and vpopmail](/node/view/165).
 

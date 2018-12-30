@@ -1,8 +1,7 @@
 ---
 title: "Using SMTP-TLS with qmail"
 date: 2004-03-24T14:12:00.000Z
-x-drupal-nid: 89
-x-needs-review: 2004-03-24T14:12:00.000Z
+redirect_from: /node/view/196
 ---
 Lucky part 13 of [Installing qmail and vpopmail](/node/view/165). This one talks about SMTP-over-TLS.
 

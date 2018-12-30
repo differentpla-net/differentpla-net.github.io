@@ -1,8 +1,7 @@
 ---
 title: "Forwarding addresses to another account using vpopmail"
 date: 2004-03-11T11:03:00.000Z
-x-drupal-nid: 85
-x-needs-review: 2004-03-11T11:03:00.000Z
+redirect_from: /node/view/173
 ---
 Part 7 of [Installing qmail and vpopmail](/node/view/165).
 

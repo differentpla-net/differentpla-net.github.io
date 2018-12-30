@@ -1,8 +1,7 @@
 ---
 title: "Installing SquirrelMail"
 date: 2004-03-11T14:22:00.000Z
-x-drupal-nid: 86
-x-needs-review: 2004-03-11T14:22:00.000Z
+redirect_from: /node/view/175
 ---
 Part 9 of [Installing qmail and vpopmail](/node/view/165).
 
