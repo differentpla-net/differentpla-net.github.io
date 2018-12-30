@@ -4,7 +4,7 @@ date: 2008-10-25T12:17:14.000Z
 x-drupal-nid: 219
 x-needs-review: 2008-10-25T12:17:14.000Z
 ---
-<tt>RegSetValueEx</tt>, when passed <tt>REG_SZ</tt>, needs the length to be in bytes, so don't just use <tt>_tcslen</tt> like this:
+`RegSetValueEx`, when passed `REG_SZ`, needs the length to be in bytes, so don't just use `_tcslen` like this:
 
 <pre>    TCHAR sz[] = _T("Hello World");
     RegSetValueEx(hKey, bstrValueName, 0, REG_SZ, (const BYTE *)sz, _tcslen(sz));</pre>
@@ -13,9 +13,9 @@ That truncates the value placed in the registry (11 bytes where it actually need
 
 * * *
 
-<tt>RegSetValueEx</tt>, when passed <tt>REG_SZ</tt>, is documented as needing the length to include the NULL terminator.
+`RegSetValueEx`, when passed `REG_SZ`, is documented as needing the length to include the NULL terminator.
 
-It seems to cope OK without this, though. If you later ask for the size, it comes back with the NULL terminator included. To be on the safe side, always include the NULL terminator when passing the value to <tt>RegSetValueEx</tt>:
+It seems to cope OK without this, though. If you later ask for the size, it comes back with the NULL terminator included. To be on the safe side, always include the NULL terminator when passing the value to `RegSetValueEx`:
 
 <pre>    TCHAR sz[] = _T("Hello World");
     DWORD cb = (_tcslen(sz) + 1) * sizeof(TCHAR);
@@ -23,7 +23,7 @@ It seems to cope OK without this, though. If you later ask for the size, it come
 
 * * *
 
-<tt>RegSetValueEx</tt>, when passed REG_SZ, expects lpData to be TCHAR[], but does nothing to enforce this. This means that the following:
+`RegSetValueEx`, when passed REG_SZ, expects lpData to be TCHAR[], but does nothing to enforce this. This means that the following:
 
 <pre>    char sz[] = "Hello World";
     RegSetValueEx(hKey, bstrValueName, 0, REG_SZ, (const BYTE *)sz, strlen(sz) + 1);</pre>

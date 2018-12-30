@@ -34,7 +34,7 @@ namespace HelloWorld
     }
 }</pre>
 
-Then, you'll need to register the C# class so that COM can see it. You can use RegAsm.exe for this. Unfortunately, RegAsm doesn't always store the CodeBase (the full path to the DLL). The simplest way around this is to use <tt>RegAsm /regfile:HelloWorld.reg</tt> to create a .REG file. Then you can edit this to add the CodeBase entries. It should look like this:
+Then, you'll need to register the C# class so that COM can see it. You can use RegAsm.exe for this. Unfortunately, RegAsm doesn't always store the CodeBase (the full path to the DLL). The simplest way around this is to use `RegAsm /regfile:HelloWorld.reg` to create a .REG file. Then you can edit this to add the CodeBase entries. It should look like this:
 
 <pre>REGEDIT4
 

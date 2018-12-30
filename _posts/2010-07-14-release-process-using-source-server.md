@@ -8,7 +8,7 @@ One of the cool things you can do with the Microsoft Debugging Tools is set up a
 
 Which is pretty cool.
 
-The scripts are in the Microsoft [Debugging Tools for Windows](http://www.microsoft.com/whdc/devtools/debugging/default.mspx). By default, you'll find them in <tt>C:\Program Files (x86)\Microsoft Debugging Tools for Windows (x86)\srcsrv</tt>.
+The scripts are in the Microsoft [Debugging Tools for Windows](http://www.microsoft.com/whdc/devtools/debugging/default.mspx). By default, you'll find them in `C:\Program Files (x86)\Microsoft Debugging Tools for Windows (x86)\srcsrv`.
 
 They need Perl, and they [don't work](/content/2009/04/source-server-indexing-fails-svn-cant-get-details-sourcefile) with a default installation of [Cygwin](http://www.cygwin.com/), so you'll need to install [ActiveState Perl](http://www.activestate.com/activeperl/) instead. Make sure it appears in your PATH variable ahead of the Cygwin one.
 

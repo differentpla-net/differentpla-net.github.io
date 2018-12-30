@@ -99,7 +99,8 @@ void CProgressPage::OnComplete(bool bResult)
 
 Now, since we're not actually bothered that the progress callback be notified immediately, we can use `PostMessage` to decouple the two threads. See, for example, `OnComplete`:
 
-<pre>void CProgressPage::OnComplete(bool bResult)
+```
+void CProgressPage::OnComplete(bool bResult)
 {
 	PostMessage(MY_WM_COMPLETE, bResult);
 }
@@ -115,10 +116,11 @@ LRESULT CProgressPage::OnCompleteStub(WPARAM wParam, LPARAM lParam)
 	delete m_pThread;
 	m_pThread = NULL;
 
-	static_cast<cpropertysheet *="">(GetParent())->PressButton(PSBTN_NEXT);
+	static_cast<CPropertySheet *>(GetParent())->PressButton(PSBTN_NEXT);
 
 	return 0;
-}</cpropertysheet></pre>
+}
+```
 
 Now, because of the `PostMessage`, the call to `Join` will happen on the foreground thread, so we've avoided the deadlock.
 Note that the parameters that were originally passed to `OnComplete` still need to be passed to `OnCompleteStub`. Here, we package them in `wParam` and `lParam`. If we needed to pass anything more complicated, we could pass a pointer to a (heap-allocated) structure in `lParam`.
@@ -127,7 +129,8 @@ Reporting progress is just as simple, except that `OnProgress` is supposed to re
 
 It's easy. We just check `m_bCancel` from the background thread:
 
-<pre>bool CProgressPage::OnProgress(int current, int maximum)
+```
+bool CProgressPage::OnProgress(int current, int maximum)
 {
 	PostMessage(MY_WM_PROGRESS, current, maximum);
 	if (m_bCancel)
@@ -145,7 +148,8 @@ LRESULT CProgressPage::OnProgressStub(WPARAM wParam, LPARAM lParam)
 	m_progressCtrl.SetPos(current);
 
 	return 0;
-}</pre>
+}
+```
 
 Is this safe? Yes: `m_bCancel` is only ever set by the UI thread and only ever accessed by the background thread, and it's a boolean, so we're safe. It'll never be in an inconsistent state.
 
@@ -155,7 +159,8 @@ If we were concerned, or we needed something more complicated, we could use a cr
 
 Note that we managed to remove the code that enables the Cancel button. A good way to solve this is to add another method to the observer interface:
 
-<pre>void CProgressPage::OnBegin()
+```
+void CProgressPage::OnBegin()
 {
 	PostMessage(MY_WM_BEGIN);
 }
@@ -166,6 +171,7 @@ LRESULT CProgressPage::OnBeginStub(WPARAM wParam, LPARAM lParam)
 	if (pCancel)
 		pCancel->EnableWindow(TRUE);
 	return 0;
-}</pre>
+}
+```
 
 As usual, source code is [here](/node/view/143).

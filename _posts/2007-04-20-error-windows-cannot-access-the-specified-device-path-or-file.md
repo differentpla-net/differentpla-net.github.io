@@ -6,7 +6,7 @@ x-needs-review: 2007-04-20T10:38:13.000Z
 ---
 I started getting this error on one of my Windows 2003 boxes yesterday:
 
-<tt>Windows cannot access the specified device, path or file. You may not have the appropriate permissions to access the item.</tt>
+`Windows cannot access the specified device, path or file. You may not have the appropriate permissions to access the item.`
 
 This would happen whenever I double-clicked on an EXE file in Windows Explorer.
 

@@ -5,7 +5,7 @@ redirect_from: /node/view/387
 x-drupal-nid: 27
 x-needs-review: 2005-02-13T10:17:00.000Z
 ---
-If you've ever gone looking for the music and playlists on your empeg, you'll find them in the <tt>/empeg/fids0</tt> and <tt>/empeg/fids1</tt> directories.
+If you've ever gone looking for the music and playlists on your empeg, you'll find them in the `/empeg/fids0` and `/empeg/fids1` directories.
 
 Instead of the descriptive filenames you might have been expecting, the files are all named with cryptic numbers.
 
@@ -103,7 +103,7 @@ In v3.0, it writes the files to the new layout, but supports the old layout, to 
 
 As mentioned, each FID usually has two files, the *0 file and the *1 file. The *0 file contains the audio (or playlist data), and the *1 file contains the tag information for that file.
 
-Each *1 file is a plain Unix-style text file: line endings are a single LF (0x0a) character. Each line of the file is of the form <tt>tag=value</tt>. For example, one of the tag files on my player looks like this:
+Each *1 file is a plain Unix-style text file: line endings are a single LF (0x0a) character. Each line of the file is of the form `tag=value`. For example, one of the tag files on my player looks like this:
 
 <pre>artist=U2
 bitrate=vs205
@@ -123,7 +123,7 @@ In this particular example, all of my tags are in alphabetical order. This is an
 
 ## Common Tag Names
 
-The *1 files can contain any tags you like. Bear in mind that when the player builds the <tt>database</tt> file, all of these tags end up in there. Because the database file takes up memory, you'd be advised to put in the *1 file only information that's needed.
+The *1 files can contain any tags you like. Bear in mind that when the player builds the `database` file, all of these tags end up in there. Because the database file takes up memory, you'd be advised to put in the *1 file only information that's needed.
 
 <table id="Table2" cellspacing="1" cellpadding="1" border="1">
 <tbody>
@@ -596,7 +596,7 @@ Once a file is put onto the player, the player will not pay any attention to the
 
 Playlists are stored in a similar way to tracks. They have a pair of files: the *0 file for the playlist data, and the *1 file for the tag information.
 
-For a playlist, the only required tags are <tt>type</tt>, <tt>title</tt> and <tt>length</tt>. Playlists don't tend to have any other tags, because they're not displayed anywhere in the player software and they'd be uselessly taking up space in RAM.
+For a playlist, the only required tags are `type`, `title` and `length`. Playlists don't tend to have any other tags, because they're not displayed anywhere in the player software and they'd be uselessly taking up space in RAM.
 
 The *0 file is a list of the child FIDs, stored as little-endian 32-bit numbers. So, for example my "Remixes 81-04 - Disc 2" playlist (by Depeche Mode) has the following in its *0 file:
 
@@ -654,13 +654,13 @@ The *0 file is a list of the child FIDs, stored as little-endian 32-bit numbers.
 
 This means that it contains FIDs 0x230, 0x240, 0x250, ..., 0x2e0 as immediate children. Playlists can contain a mixture of playlists and tracks.
 
-The length tag in the *1 file is in bytes. In this example, the playlist has 12 children (tracks), so the *1 file contains the line <tt>length=48</tt>.
+The length tag in the *1 file is in bytes. In this example, the playlist has 12 children (tracks), so the *1 file contains the line `length=48`.
 
 ## Cached database
 
 Rather than read all of the *1 files into memory when starting up (which would take a long time), the player builds a cached copy of all of that information.
 
-It lives in three files in the <tt>/empeg/var</tt> directory:
+It lives in three files in the `/empeg/var` directory:
 
 <table id="Table9" cellspacing="1" cellpadding="1" border="1">
 <tbody>
@@ -674,7 +674,7 @@ It lives in three files in the <tt>/empeg/var</tt> directory:
 <tr>
 <td>database</td>
 
-<td>A cached copy of the information from each *1 file. On v3-alpha players, it's called <tt>database3</tt>, and supports UTF8 tags. The format is the same as the <tt>database</tt> file. See "database", below.</td>
+<td>A cached copy of the information from each *1 file. On v3-alpha players, it's called `database3`, and supports UTF8 tags. The format is the same as the `database` file. See "database", below.</td>
 
 </tr>
 
@@ -740,7 +740,7 @@ This is a binary file. It's built from the tag information for all of the tracks
 
 <td>1 byte</td>
 
-<td>Tag Number. This refers to the line number in the <tt>tags</tt> file, starting at zero. 0xFF is reserved.</td>
+<td>Tag Number. This refers to the line number in the `tags` file, starting at zero. 0xFF is reserved.</td>
 
 </tr>
 
@@ -840,7 +840,7 @@ This file contains all of the playlists on the player. It's a simple catenation 
 
 It's just a simple stream of little-endian 32-bit integers. It contains no record delimiters and no length prefixes.
 
-You can get the length of each record from its corresponding <tt>length</tt> tag in the <tt>database</tt> file.
+You can get the length of each record from its corresponding `length` tag in the `database` file.
 
 <table id="Table12" cellspacing="1" cellpadding="1" border="1">
 <tbody>
@@ -982,7 +982,7 @@ The next playlist is 0x130\. It's 4 bytes again, so it has one entry, FID 0x140.
 
 0x150 is 48 bytes long. It contains 12 entries: 0x160, 0x170, 0x180, 0x190, 0x1a0, 0x1b0, 0x1c0, 0x1d0, 0x1e0, 0x1f0, 0x200, 0x210\. If you load everything in a playlist at the same time as you create the playlist, you'll tend to see these increasing sequences in each playlist.
 
-FIDs 0x160 to 0x210 are tunes. The next playlist is FID 0x220 which, again, is 48 bytes long, giving us entries 0x230, ..., 0x2e0 from the <tt>playlists</tt> file.
+FIDs 0x160 to 0x210 are tunes. The next playlist is FID 0x220 which, again, is 48 bytes long, giving us entries 0x230, ..., 0x2e0 from the `playlists` file.
 
 The next playlist is 0x2f0\. It's 12 bytes long, which neatly uses up the last 3 entries: 0x300, 0x310, 0x320\. When you break it all out, it leads to a playlist hierarchy like this:
 

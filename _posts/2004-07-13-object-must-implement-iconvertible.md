@@ -6,7 +6,7 @@ x-needs-review: 2004-07-13T15:29:00.000Z
 ---
 While writing some ASP.NET, I got this error. I've just spent ten minutes figuring it out, so I thought I'd share.
 
-I have the following code in my ASP.NET page. <tt>userName</tt> and <tt>password</tt> are the text box controls on my login page. This code is in the handler for the login button:
+I have the following code in my ASP.NET page. `userName` and `password` are the text box controls on my login page. This code is in the handler for the login button:
 
 <pre>SqlConnection connection = new SqlConnection(connectionString);
 SqlCommand command = connection.CreateCommand();

@@ -54,7 +54,7 @@ cl /nologo /MTd /W3 /Gm /GX /ZI /Od
 	/FD /GZ /c
 ```
 
-We looked at what the compiler flags meant [here](../mfc_app/cpp_flags.html). The only one that's different is `/MTd`, rather than `/MDd`. This is building a multi-threaded application, and linking it to LIBCMT.LIB rather than to MSVCRT.LIB. Also promising are the `/D` switches. We'll put those into our Jamfile:
+We looked at what the compiler flags meant [here]({% post_url 2001-07-14-building-an-mfc-application-with-jam %}). The only one that's different is `/MTd`, rather than `/MDd`. This is building a multi-threaded application, and linking it to LIBCMT.LIB rather than to MSVCRT.LIB. Also promising are the `/D` switches. We'll put those into our Jamfile:
 
 ```
 C++FLAGS += /MTd /W3 /Gm /GX /ZI /Od

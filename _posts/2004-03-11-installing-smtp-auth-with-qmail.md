@@ -37,7 +37,7 @@ You'll also need a [checkpassword](http://cr.yp.to/checkpwd.html) program.
 
 Don't forget to read the `README.auth` in `/usr/local/src/netqmail-1.05/netqmail-1.05` for information on installing it correctly.
 
-In particular, if you get <tt>503 auth not available (#5.3.3)</tt> messages, you probably forgot to add /bin/checkpassword to /var/qmail/supervise/qmail-smtpd/run. Look in README.auth again.
+In particular, if you get `503 auth not available (#5.3.3)` messages, you probably forgot to add /bin/checkpassword to /var/qmail/supervise/qmail-smtpd/run. Look in README.auth again.
 
 Another problem is that, by default, `/bin/checkpassword` is installed with over-strict permissions. `qmail-smtpd` can't actually run it in the default configuration. To fix this, we need to change the permissions and make it setuid root.
 

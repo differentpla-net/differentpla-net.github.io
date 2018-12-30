@@ -16,7 +16,7 @@ I _could_ give my user account the SE_DEBUG_NAME privilege, but this allows unfe
 
 I've looking for something more focussed, where I can give myself permission to debug specific service processes.
 
-If you try attaching to the process from Visual Studio 2005, you get the message <tt>Unable to attach to the process. You do not have permission to debug the process.</tt>
+If you try attaching to the process from Visual Studio 2005, you get the message `Unable to attach to the process. You do not have permission to debug the process.`
 
 Using this as a search term mostly brings up people having problems with Windows Vista and UAC. I'm running on Windows 2003, so this isn't my problem. My problem is that, simply, I _don't_ have permission to debug the process.
 
@@ -26,7 +26,7 @@ My first attempt to work around this (which didn't work) was to tweak the permis
 2.  On the Security tab, you can see what account the process is running under, which groups it belongs to, and which privileges it has, showing whether they're enabled or disabled. This is interesting, but you need to click on the Permissions button.
 3.  You can add your user account, granting Full Control, using this dialog box.
 
-This time, we still can't attach the debugger, but we get a different error message: <tt>Unable to attach to the process. You do not have permission to inspect the process's identity</tt>. We're getting closer, but still no cigar.
+This time, we still can't attach the debugger, but we get a different error message: `Unable to attach to the process. You do not have permission to inspect the process's identity`. We're getting closer, but still no cigar.
 
 Unfortunately, searching for this message talks about remote debugging and Terminal Services, both of which are only vaguely related to what I'm trying to do here.
 

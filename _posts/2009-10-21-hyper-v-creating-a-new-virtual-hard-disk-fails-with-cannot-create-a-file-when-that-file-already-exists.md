@@ -12,4 +12,4 @@ UAC is what's going on.
 
 Disable UAC (well, turn it all the way down, given that this is R2) **and reboot the box**.
 
-But why the odd error message? Time for Process Monitor, but in short: the Hyper-V service attempts to open the <tt>C:\Users\Public\Documents\Hyper-V\Virtual hard disks</tt> directory and gets an Access Denied error (because of UAC). It misinterprets this, and attempts to create the directory. This gives the "file already exists" error, which is the one that's reported.
+But why the odd error message? Time for Process Monitor, but in short: the Hyper-V service attempts to open the `C:\Users\Public\Documents\Hyper-V\Virtual hard disks` directory and gets an Access Denied error (because of UAC). It misinterprets this, and attempts to create the directory. This gives the "file already exists" error, which is the one that's reported.

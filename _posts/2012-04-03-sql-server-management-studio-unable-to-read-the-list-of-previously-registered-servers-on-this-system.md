@@ -20,7 +20,7 @@ error CS2001: Source file 'C:\Windows\TEMP\gb_pz65v.0.cs' could not be found
 error CS2008: No inputs specified
 </pre>
 
-To fix this exception, I deleted my <tt>%APPDATA%\Microsoft\Microsoft SQL Server</tt> folder. When I ran SQL Server Management Studio again, this exception was gone, but I had to re-register all of my servers.
+To fix this exception, I deleted my `%APPDATA%\Microsoft\Microsoft SQL Server` folder. When I ran SQL Server Management Studio again, this exception was gone, but I had to re-register all of my servers.
 
 Unfortunately, after that I get another exception:
 
@@ -35,7 +35,7 @@ However, at the same time, Visual Studio 2010 (well, actually ReSharper) started
 
 ...which is almost identical to the error that I was seeing from SSMS.
 
-It appears that my %TEMP% environment variable is set incorrectly. If, on this machine, I go to Start / Run and enter <tt>%TEMP%</tt>, I get a UAC prompt. It looks like the variable's pointing to <tt>C:\Windows\Temp</tt>.
+It appears that my %TEMP% environment variable is set incorrectly. If, on this machine, I go to Start / Run and enter `%TEMP%`, I get a UAC prompt. It looks like the variable's pointing to `C:\Windows\Temp`.
 
 However, I can't figure out _where_ it's set. The variable looks fine in PowerShell, but not in Command Prompt.
 
@@ -43,7 +43,7 @@ Light-bulb moment. Rebooting to check something.
 
 Back from rebooting.
 
-A couple of days ago, I "cleaned out" my <tt>%APPDATA%\Temp</tt> folder. It seems that I deleted a bit too much. Recreating the <tt>2</tt> subdirectory and rebooting, everything seems fine.
+A couple of days ago, I "cleaned out" my `%APPDATA%\Temp` folder. It seems that I deleted a bit too much. Recreating the `2` subdirectory and rebooting, everything seems fine.
 
 The clue was on the [MS Connect site](http://connect.microsoft.com/SQLServer/feedback/details/573771/value-cannot-be-null).
 

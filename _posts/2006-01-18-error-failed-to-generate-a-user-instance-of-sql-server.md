@@ -6,9 +6,9 @@ x-needs-review: 2006-01-18T21:55:30.000Z
 ---
 I was just hacking something together in Visual Web Developer Express, and was attempting to add a database to my App_Data directory when I ran into problems.
 
-VWD kept timing out, and giving me a variety of error messages. Event Viewer contained the following: <tt>Failed to generate a user instance of SQL Server due to a failure in starting the process for the user instance. The connection will be closed. [CLIENT: <local machine="">]</local></tt>
+VWD kept timing out, and giving me a variety of error messages. Event Viewer contained the following: `Failed to generate a user instance of SQL Server due to a failure in starting the process for the user instance. The connection will be closed. [CLIENT: <local machine="">]</local>`
 
-I did some googling, and discovered the solution: you need to delete the <tt>C:\Documents and Settings\_username_\Local Settings\Application Data\Microsoft\Microsoft SQL Server Data\SQLEXPRESS</tt> directory.
+I did some googling, and discovered the solution: you need to delete the `C:\Documents and Settings\_username_\Local Settings\Application Data\Microsoft\Microsoft SQL Server Data\SQLEXPRESS` directory.
 
 What everyone else failed to emphasise is that you might need to **restart Windows**. Simply bouncing the SQL Server Express service doesn't always fix it.
 

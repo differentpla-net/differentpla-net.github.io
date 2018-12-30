@@ -10,7 +10,7 @@ I recently had a problem getting STARTTLS working on exim4 on Debian 4.0 (Etch).
 (cert/key setup: cert=/etc/ssl/certs/_whatever.crt_ key=/etc/ssl/private/_whatever.key_:
 Base64 decoding error.</pre>
 
-This was confirmed by running <tt>gnutls-serv --debug 5 --x509certfile foo.crt --x509keyfile foo.key</tt>, which reported the same error.
+This was confirmed by running `gnutls-serv --debug 5 --x509certfile foo.crt --x509keyfile foo.key`, which reported the same error.
 
 Turns out that what it actually means is not "Base64 decoding error". What it actually means is "You didn't remove the pass phrase from the key".
 

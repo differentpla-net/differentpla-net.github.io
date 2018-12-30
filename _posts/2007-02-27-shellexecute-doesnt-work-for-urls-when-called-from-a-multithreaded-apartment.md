@@ -6,7 +6,7 @@ x-needs-review: 2007-02-27T12:14:21.000Z
 ---
 I've got a dialog box with a SysLink (WC_SYSLINK) control on it. When the user clicks on the link, it should open our website in the user's default browser. In my test app, it works. In the production app, it doesn't.
 
-It turns out that the production app calls <tt>CoInitialize(NULL, COINIT_MULTITHREADED)</tt>, and the test app doesn't.
+It turns out that the production app calls `CoInitialize(NULL, COINIT_MULTITHREADED)`, and the test app doesn't.
 
 ShellExecute doesn't work from multithreaded apartments. At least, not on Windows XP or 2003\. The same code appears to work fine on Vista.
 

@@ -140,7 +140,7 @@ Then we implement SetValue and GetValue:
         return _dictionary[_key];
     }</pre>
 
-The <tt>component</tt> parameter passed to these two methods is whatever value was returned from ICustomTypeDescriptor.GetPropertyOwner. If it weren't for the fact that we need the dictionary object in PropertyType, we could avoid using the _dictionary member, and just grab it using this mechanism.
+The `component` parameter passed to these two methods is whatever value was returned from ICustomTypeDescriptor.GetPropertyOwner. If it weren't for the fact that we need the dictionary object in PropertyType, we could avoid using the _dictionary member, and just grab it using this mechanism.
 
 And that's it for interesting things. The rest of the class looks like this:
 

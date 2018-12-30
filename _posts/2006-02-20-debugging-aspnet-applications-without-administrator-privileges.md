@@ -6,12 +6,12 @@ x-needs-review: 2006-02-20T11:32:53.000Z
 ---
 I recently had my machine at work rebuilt with Windows 2003, and had a spot of difficulty getting Visual Studio to debug my ASP.NET applications. Here are the various error messages I encountered, and their fixes.
 
-The first thing you need to check is that your user account is a member of the <tt>VS Developers</tt> group. Fortunately, Visual Studio is usually pretty good about telling you this.
+The first thing you need to check is that your user account is a member of the `VS Developers` group. Fortunately, Visual Studio is usually pretty good about telling you this.
 
 <pre>Error while trying to run project: Unable to start debugging on the
 web server. The project is not configured to be debugged.</pre>
 
-First, verify that your Web.config has debug="true". This should be in the following location: <tt><configuration> <system.web> <compilation debug="true" ... /> ...</tt>
+First, verify that your Web.config has debug="true". This should be in the following location: `<configuration> <system.web> <compilation debug="true" ... /> ...`
 
 If this is set, you should check that your virtual directory is configured to run as an application.
 

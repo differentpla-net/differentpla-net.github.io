@@ -12,4 +12,4 @@ Instead of this:
 
 <pre>var author = dataContext.Authors.Single(a => a.Id == authorId);</pre>
 
-Also consider whether you wanted <tt>SingleOrDefault</tt>.
+Also consider whether you wanted `SingleOrDefault`.

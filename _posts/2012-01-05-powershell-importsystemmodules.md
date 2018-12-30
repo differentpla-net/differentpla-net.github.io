@@ -10,11 +10,11 @@ I've been tweaking my profile to pre-load a bunch of modules. I've got the [Powe
 
 One of the things that caught my eye was the "Import system modules" entry on the PowerShell jump list.
 
-This runs <tt>Powershell.exe -ImportSystemModules</tt>, which, in turn, runs the ImportSystemModules command. You can call this command as part of your profile, if you want these modules loaded each time you run PowerShell.
+This runs `Powershell.exe -ImportSystemModules`, which, in turn, runs the ImportSystemModules command. You can call this command as part of your profile, if you want these modules loaded each time you run PowerShell.
 
-Various places on the Internet state that it loads the available modules from <tt>C:\Windows\System32\WindowsPowerShell\v1.0\Modules</tt>. Among these are modules for managing IIS, Hyper-V, etc.
+Various places on the Internet state that it loads the available modules from `C:\Windows\System32\WindowsPowerShell\v1.0\Modules`. Among these are modules for managing IIS, Hyper-V, etc.
 
-It turns out that it also loads snap-ins from <tt>C:\Users\rogerl\Documents\WindowsPowerShell\Snapins</tt>, as you can see from running the following:
+It turns out that it also loads snap-ins from `C:\Users\rogerl\Documents\WindowsPowerShell\Snapins`, as you can see from running the following:
 
 <pre>PS> (Get-Command importsystemmodules).Definition
 $SnapIns = @(Get-PSSnapin -Registered -ErrorAction SilentlyContinue)

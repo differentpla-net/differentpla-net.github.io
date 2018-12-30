@@ -53,7 +53,7 @@ This writes as many zeros as possible to the dynamic data partition by reading t
 
 ## Creating directories on the music partition
 
-The empeg player software stores its database files in /empeg/var, which is usually a symlink to /drive0/var. If this directory doesn't exist, emplode will fail with a file not found error (0xC0041002). Both disks also need a <tt>fids</tt> directory, otherwise emplode won't see the extra space. <tt>/empeg/fids0</tt> is a symlink to <tt>/drive0/fids</tt> and <tt>/empeg/fids1</tt> is a symlink to <tt>/drive1/fids</tt>.
+The empeg player software stores its database files in /empeg/var, which is usually a symlink to /drive0/var. If this directory doesn't exist, emplode will fail with a file not found error (0xC0041002). Both disks also need a `fids` directory, otherwise emplode won't see the extra space. `/empeg/fids0` is a symlink to `/drive0/fids` and `/empeg/fids1` is a symlink to `/drive1/fids`.
 
 So, once you've formatted the partition, mount it somewhere (if you're using the empeg, `/drive1` is a good place):
 

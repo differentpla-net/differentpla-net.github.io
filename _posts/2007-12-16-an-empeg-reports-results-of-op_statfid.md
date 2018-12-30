@@ -11,4 +11,4 @@ The next packet that the empeg sends is the actual response to the OP_STATFID re
 
 (Don't worry; I'll stop showing the hex and I'll start talking about higher-level stuff shortly).
 
-This has 12 bytes (<tt>0c 00</tt>) payload (underlined above). The first 4 (<tt>00 00 00 00</tt>) are a STATUS value. These are similar to Win32's HRESULT values. In this case, zero means that there was no error. The next 4 (<tt>07 00 00 00</tt>) are the FILEID (this is the same as the FILEID we originally asked for). The last 4 bytes (<tt>0c 00 00 00</tt>) are the size (12 bytes).
+This has 12 bytes (`0c 00`) payload (underlined above). The first 4 (`00 00 00 00`) are a STATUS value. These are similar to Win32's HRESULT values. In this case, zero means that there was no error. The next 4 (`07 00 00 00`) are the FILEID (this is the same as the FILEID we originally asked for). The last 4 bytes (`0c 00 00 00`) are the size (12 bytes).

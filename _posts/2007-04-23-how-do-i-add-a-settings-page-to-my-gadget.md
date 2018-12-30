@@ -24,6 +24,6 @@ To add the settings button (the spanner icon), you need to add the following <sc
     }
   </script></pre>
 
-The <tt>settingsClosed</tt> function is called when the user closes the settings window. You'll probably use this to refresh the gadget's display.
+The `settingsClosed` function is called when the user closes the settings window. You'll probably use this to refresh the gadget's display.
 
 For more information, check out [this page](http://msdn2.microsoft.com/en-us/library/ms723694.aspx#_sidebar_gdo_08_GadgetSettings).

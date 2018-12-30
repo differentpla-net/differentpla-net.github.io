@@ -15,8 +15,8 @@ We've seen the format of the packet that emplode sends to find out the length of
 
 We already know how to parse the header, so we can see that the payload is 84 bytes long, that this is an OP_STATFID packet, and that it's a a progress packet (0x02 = OPTYPE_PROGRESS).
 
-The emptool sources tell us how to parse the rest of the packet. <tt>3c 00 00 00</tt> is a new timeout value. It's in seconds, so the empeg is telling us to hold on for another minute. The next 4 numbers are the progress values. A lot of the empeg source code assumes that things are broken down into stages, and that we can report progress on each stage. In this case, the numbers don't really mean much.
+The emptool sources tell us how to parse the rest of the packet. `3c 00 00 00` is a new timeout value. It's in seconds, so the empeg is telling us to hold on for another minute. The next 4 numbers are the progress values. A lot of the empeg source code assumes that things are broken down into stages, and that we can report progress on each stage. In this case, the numbers don't really mean much.
 
-What's puzzling me, though, is that the <tt>string</tt> member of the response packet appears to be total garbage. The name implies that it's a human-readable string returned from the player that can be displayed by emplode. It's passed to the protocol observer (if any). emptool doesn't provide one, and neither does (as far as I remember) emplode.
+What's puzzling me, though, is that the `string` member of the response packet appears to be total garbage. The name implies that it's a human-readable string returned from the player that can be displayed by emplode. It's passed to the protocol observer (if any). emptool doesn't provide one, and neither does (as far as I remember) emplode.
 
 This is probably a good thing, because it appears to be garbage. It's probably old stack frames or something similar.

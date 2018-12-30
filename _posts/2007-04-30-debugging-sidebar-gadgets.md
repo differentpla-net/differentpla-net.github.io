@@ -18,7 +18,7 @@ Then, to debug your gadget:
 
 1.  Ensure that your gadget is installed on the sidebar.
 2.  In Visual Studio, go to Debug -> Attach to Process.
-3.  In the **Available Processes** list, you'll see one or more instances of <tt>sidebar.exe</tt>. There's one for each loaded gadget, with the Title column telling you which one is which. The title is taken from your Gadget XML.
+3.  In the **Available Processes** list, you'll see one or more instances of `sidebar.exe`. There's one for each loaded gadget, with the Title column telling you which one is which. The title is taken from your Gadget XML.
 4.  Click on the one you want to debug.
 5.  Note that the **Attach to** label will show you which debugger will be invoked (normally it's the Script one).
 6.  Click the **Attach** button.
@@ -35,4 +35,4 @@ Then, to debug your gadget:
         // Rest of code goes here
     }</pre>
 
-    When the scripting engine reaches the <tt>debugBreak;</tt> line, you'll get a message box saying "A Runtime Error has occurred. Do you wish to Debug?". If you click on the Yes button, you can debug using Visual Studio. Note that you'll have to use the "Set Next Statement" command to skip over the offending statement.
+    When the scripting engine reaches the `debugBreak;` line, you'll get a message box saying "A Runtime Error has occurred. Do you wish to Debug?". If you click on the Yes button, you can debug using Visual Studio. Note that you'll have to use the "Set Next Statement" command to skip over the offending statement.

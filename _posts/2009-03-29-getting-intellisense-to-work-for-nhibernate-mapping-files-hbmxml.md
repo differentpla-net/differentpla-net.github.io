@@ -6,4 +6,4 @@ x-needs-review: 2009-03-29T09:05:24.000Z
 ---
 ## Getting IntelliSense to work for NHibernate mapping files (.hbm.xml)
 
-You'll need to copy the XSD files from <tt>C:\Program Files\NHibernate\src\NHibernate-src\src\NHibernate</tt> to <tt>C:\Program Files\Microsoft Visual Studio 9.0\Xml\Schemas</tt>.
+You'll need to copy the XSD files from `C:\Program Files\NHibernate\src\NHibernate-src\src\NHibernate` to `C:\Program Files\Microsoft Visual Studio 9.0\Xml\Schemas`.

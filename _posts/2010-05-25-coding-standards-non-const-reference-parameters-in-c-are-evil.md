@@ -18,7 +18,7 @@ In C++, const references are useful for parameters, because they avoid copying t
 
 </div>
 
-By looking at this, you can’t tell that ValidateVersion is declared as void <tt>ValidateVersion(int &version)</tt> and might actually change the value.
+By looking at this, you can’t tell that ValidateVersion is declared as void `ValidateVersion(int &version)` and might actually change the value.
 
 Use a pointer instead:
 

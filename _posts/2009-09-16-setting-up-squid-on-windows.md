@@ -9,8 +9,8 @@ At work, we do a lot of our testing and debugging with virtual machines (using M
 Here's my quick guide to setting up Squid on Windows.
 
 1.  Download the latest stable version of Squid from [http://squid.acmeconsulting.it/download/dl-squid.html](http://squid.acmeconsulting.it/download/dl-squid.html). At the time of writing this is [Squid 2.7-stable6](http://squid.acmeconsulting.it/download/squid-2.7.STABLE6-bin.zip).
-2.  Unzip it to <tt>C:\</tt>. You should end up with a directory called <tt>C:\squid</tt>.
-3.  In the <tt>C:\squid\etc</tt> directory, rename the configuration files as follows:
+2.  Unzip it to `C:\`. You should end up with a directory called `C:\squid`.
+3.  In the `C:\squid\etc` directory, rename the configuration files as follows:
     *   mime.conf.default to mime.conf
     *   squid.conf.default to squid.conf
 4.  If you want to put the cache and log directories on another drive -- they get quite large, edit the squid.conf file (see below).
