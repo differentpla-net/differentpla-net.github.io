@@ -8,7 +8,7 @@ At Electric Imp, we use a variety of different languages, and each project might
 Until recently, we've been using [kerl](https://github.com/kerl/kerl) to manage Erlang versions, [kiex](https://github.com/taylor/kiex) to manage
 Elixir versions, [rvm](https://rvm.io/) to manage Ruby versions and [nvm](https://github.com/creationix/nvm) to manage node versions. We've also been using virtualenv to manage Python 2.x virtual environments. We don't deliberately manage Go versions (yet).
 
-_Yes, we do use all of those languages -- plus C++, Clojure and bash -- at Electric Imp._
+_Yes, we do use all of those languages -- and more -- at Electric Imp._
 
 For experimentation, I also have Rust, Haskell and OCAML installed on my development PC. These are out of scope (for now).
 
