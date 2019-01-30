@@ -10,4 +10,4 @@ deleted ages ago, and you've got all of your installations in
     \ls ~/.kerl/erlangs/ | \
         awk -v home=$HOME '{print $1 " " home "/.kerl/erlangs/" $1 }' > ~/.kerl/otp_installations
 
-Note the backslash, which avoids any `ls` alias you might have.
+Note the backslash, which avoids any `ls` alias you might have. Specifically, it drops the trailing `/` from directory names that `ls -F` adds.

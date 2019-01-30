@@ -1,3 +1,4 @@
+```
 use_ruby() {
     RUBY_VERSION="$1"
     if [ -s "$HOME/.rbenv/versions/$RUBY_VERSION" ]; then
@@ -8,3 +9,4 @@ use_ruby() {
         tput sgr0
     fi
 }
+```
