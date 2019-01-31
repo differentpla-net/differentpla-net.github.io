@@ -13,12 +13,21 @@ Install `ruby-install`:
     tar -xzvf ruby-install-0.7.0.tar.gz
     ln -s ruby-install-0.7.0 ruby-install
 
+Create `~/.direnv/bin/ruby-install`:
+
+```
+cat > ~/.direnv/bin/ruby-install <<'EOF'
+#!/bin/sh
+~/.direnv/ruby-install/bin/ruby-install \
+    --src-dir ~/.rubies/src --cleanup $@
+EOF
+
+chmod +x ~/.direnv/bin/ruby-install
+```
+
 Then install your chosen Ruby version:
 
-    ~/.direnv/ruby-install/bin/ruby-install \
-        --src-dir ~/.rubies/src \
-        --cleanup \
-        ruby 2.4.4
+    ~/.direnv/bin/ruby-install ruby 2.4.4
 
 It will prompt you for your password before starting, so that it can ensure that all of Ruby's source dependencies are installed. You can use `--no-install-deps` to skip this.
 
