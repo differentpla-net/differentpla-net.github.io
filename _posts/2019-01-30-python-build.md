@@ -9,11 +9,11 @@ Install `pyenv`. We're not going to use it as-is, but it includes the `python-bu
 
     mkdir -p ~/.direnv/
     cd ~/.direnv/
-    wget -O pyenv-6309aaf2.tar.gz \
-        https://github.com/pyenv/pyenv/archive/6309aaf2.tar.gz
+    wget -O pyenv-1.2.9.tar.gz \
+        https://github.com/pyenv/pyenv/archive/v1.2.9.tar.gz
 
-    tar -xzvf pyenv-6309aaf2.tar.gz
-    ln -s pyenv-6309aaf2 pyenv
+    tar -xzvf pyenv-1.2.9.tar.gz
+    ln -s pyenv-1.2.9 pyenv
 
     mkdir -p ~/.direnv/bin/
     ln -s ~/.direnv/pyenv/plugins/python-build/bin/python-build ~/.direnv/bin/
