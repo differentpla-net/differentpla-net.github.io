@@ -19,16 +19,23 @@ Create `~/.direnv/bin/ruby-install`:
 cat > ~/.direnv/bin/ruby-install <<'EOF'
 #!/bin/sh
 ~/.direnv/ruby-install/bin/ruby-install \
-    --src-dir ~/.rubies/src --cleanup $@
+    --no-install-deps --src-dir ~/.rubies/src --cleanup $@
 EOF
 
 chmod +x ~/.direnv/bin/ruby-install
 ```
 
+The `--no-install-deps` above prevents `ruby-install` from attempting to, well, install dependencies. If you leave this off, it'll run a `sudo apt install` (or whatever) on your behalf, which leaves you with an annoying password prompt.
+
+The list of dependencies is in the `dependencies.txt` file, so we can install them ourselves:
+
+    sudo apt install $(
+    grep '^apt:' \
+        ~/.direnv/ruby-install/share/ruby-install/ruby/dependencies.txt | \
+        cut -d: -f2- )
+
 Then install your chosen Ruby version:
 
     ~/.direnv/bin/ruby-install ruby 2.4.4
-
-It will prompt you for your password before starting, so that it can ensure that all of Ruby's source dependencies are installed. You can use `--no-install-deps` to skip this.
 
 The above command will install Ruby 2.4.4 to `~/.rubies/ruby-2.4.4`, which is where `direnv` [will look for it]({% post_url 2019-01-30-ruby-direnv %}).
