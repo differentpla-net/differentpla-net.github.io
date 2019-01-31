@@ -1,3 +1,8 @@
+---
+title: Getting Erlang version
+date: 2019-01-30 16:07
+---
+
 Use this helper function:
 
 ```
