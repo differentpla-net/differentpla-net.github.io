@@ -16,6 +16,7 @@ Install `ruby-install`:
 Create `~/.direnv/bin/ruby-install`:
 
 ```
+mkdir -p ~/.direnv/bin/
 cat > ~/.direnv/bin/ruby-install <<'EOF'
 #!/bin/sh
 ~/.direnv/ruby-install/bin/ruby-install \
