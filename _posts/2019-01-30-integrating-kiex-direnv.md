@@ -1,3 +1,10 @@
+---
+title: Integrating direnv with kiex
+date: 2019-01-30 14:53
+---
+
+To integrate `direnv` with `kiex`, add the following to `~/.direnvrc`:
+
 ```
 use_elixir() {
     ELIXIR_VERSION="$1"
@@ -18,4 +25,10 @@ use_elixir() {
         tput sgr0
     fi
 }
+```
+
+Then add (e.g.) the following to your project's `.envrc`:
+
+```
+use elixir 1.8.1
 ```

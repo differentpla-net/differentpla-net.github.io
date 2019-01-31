@@ -1,21 +1,9 @@
-TODO: There's an older version of this post on here somewhere.
+---
+title: Integrating direnv with kerl
+date: 2019-01-30 14:53
+---
 
-Once you've installed your Erlang versions with kerl, you'll want to switch
-between them.
-
-You can do as kerl says:
-
-    . $HOME/.kerl/erlangs/OTP-21.2.4/activate
-
-...or you can use `direnv`.
-
-In the relevant project directory, create a .envrc file containing the
-following:
-
-    use erlang OTP-21.2.4
-
-This assumes that you have a function named `use_erlang` defined in
-`~/.direnvrc`. Here's mine:
+To integrate `direnv` with `kerl`, add the following to `~/.direnvrc`:
 
 ```
 use_erlang() {
@@ -42,3 +30,7 @@ use_erlang() {
     fi
 }
 ```
+
+Then add (e.g.) the following to your project's `.envrc`:
+
+    use erlang OTP-21.2.4

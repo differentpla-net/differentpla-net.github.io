@@ -1,16 +1,25 @@
+---
+title: Installing Ruby with ruby-install
+date: 2019-01-30 14:53
+---
 
-Use ruby-install:
+Install `ruby-install`:
 
-    mkdir -p ~/Source/postmodern
-    cd ~/Source/postmodern
-    wget -O ruby-install-0.7.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.7.0.tar.gz
+    mkdir -p ~/.direnv/
+    cd ~/.direnv/
+    wget -O ruby-install-0.7.0.tar.gz \
+        https://github.com/postmodern/ruby-install/archive/v0.7.0.tar.gz
+
     tar -xzvf ruby-install-0.7.0.tar.gz
-    cd ruby-install-0.7.0/
+    ln -s ruby-install-0.7.0 ruby-install
 
-    ./bin/ruby-install --install-dir ~/.rbenv/versions/2.4.4 ruby 2.4.4
+Then install your chosen Ruby version:
 
-Then, later:
+    ~/.direnv/ruby-install/bin/ruby-install \
+        --src-dir ~/.rubies/src \
+        --cleanup \
+        ruby 2.4.4
 
-    gem install bundler
-    bundle env | grep '^Ruby\s'
-    bundle install
+It will prompt you for your password before starting, so that it can ensure that all of Ruby's source dependencies are installed. You can use `--no-install-deps` to skip this.
+
+The above command will install Ruby 2.4.4 to `~/.rubies/ruby-2.4.4`, which is where `direnv` [will look for it]({% post_url 2019-01-30-ruby-direnv %}).
