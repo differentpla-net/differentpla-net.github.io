@@ -15,6 +15,7 @@ Install `pyenv`. We're not going to use it as-is, but it includes the `python-bu
     tar -xzvf pyenv-6309aaf2.tar.gz
     ln -s pyenv-6309aaf2 pyenv
 
+    mkdir -p ~/.direnv/bin/
     ln -s ~/.direnv/pyenv/plugins/python-build/bin/python-build ~/.direnv/bin/
 
 Then install your chosen Python version:
