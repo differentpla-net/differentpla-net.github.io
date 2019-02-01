@@ -5,8 +5,6 @@ date: 2019-01-30 14:53
 
 Install `pyenv`. We're not going to use it as-is, but it includes the `python-build` script that we will use:
 
-    PYENV_SHA=6309aaf2
-
     mkdir -p ~/.direnv/
     cd ~/.direnv/
     wget -O pyenv-1.2.9.tar.gz \
