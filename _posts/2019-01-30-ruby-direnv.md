@@ -30,3 +30,15 @@ layout ruby
 ```
 
 The `layout ruby` takes care of setting up a rough equivalent to Python's virtualenv, but for Ruby.
+
+I recommend adding the following to your `.envrc` after the `layout ruby` step:
+
+```
+# This has to come after 'layout ruby', which means it can't be in
+# ~/.direnvrc
+if [ -f Gemfile ]; then
+    gem list -i '^bundler$' >/dev/null || \
+        gem install --no-ri --no-rdoc bundler && \
+        bundle check
+fi
+```
