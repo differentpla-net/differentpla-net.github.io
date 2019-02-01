@@ -28,3 +28,11 @@ Then add (e.g.) the following to your project's `.envrc`:
 use python 2.7.15
 layout python
 ```
+
+**Important:** Make sure you've installed `virtualenv`, _outside_ any virtualenv:
+
+    $(/usr/bin/python -m site --user-base)/bin/pip install --user virtualenv
+
+*The `$(...)` bit is to escape from your virtualenv, if you're already in one. ([h/t](https://github.com/sjml/dotfiles/blob/master/zsh.d.symlink/functions/pip))*
+
+The `layout python` takes care of setting up a Python virtualenv for you.
