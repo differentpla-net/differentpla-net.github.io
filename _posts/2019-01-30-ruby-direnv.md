@@ -28,3 +28,5 @@ Then add the following (e.g., for Ruby 2.4.4) to your project's `.envrc`:
 use ruby 2.4.4
 layout ruby
 ```
+
+The `layout ruby` takes care of setting up a rough equivalent to Python's virtualenv, but for Ruby.
