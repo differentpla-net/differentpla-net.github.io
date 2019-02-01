@@ -36,3 +36,16 @@ layout python
 *The `$(...)` bit is to escape from your virtualenv, if you're already in one. ([h/t](https://github.com/sjml/dotfiles/blob/master/zsh.d.symlink/functions/pip))*
 
 The `layout python` takes care of setting up a Python virtualenv for you.
+
+If you're using a `requirements.txt` file to track your Python requirements, you might want to add the following:
+
+```
+# We have no way to do this automatically, so hint, rather than assert.
+if [ -f requirements.txt ]; then
+    tput setaf 3
+    echo "(Maybe) Install missing python packages with 'pip install -r requirements.txt'"
+    tput sgr0
+fi
+```
+
+Note that I find `requirements.txt` to be a bit parochial, so at Electric Imp, we use `python_requirements.txt`.
