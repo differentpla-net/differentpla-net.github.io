@@ -8,7 +8,7 @@ So, if you've followed the instructions on the previous page, you've now got a f
 
 ## Formatting the music partition
 
-The music partition is stored on /dev/hdc4\. You should format it with the following command:
+The music partition is stored on `/dev/hdc4`. You should format it with the following command:
 
 ```
 empeg:/empeg/bin# mke2fs -m 0 -s 1 -i 131072 /dev/hdc4
