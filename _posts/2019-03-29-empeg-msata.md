@@ -1,3 +1,8 @@
+---
+title: "Installing an mSATA disk in an empeg"
+date: 2019-03-29T15:25:00.000Z
+---
+
 ## Background
 
 The hard disk in my spare empeg player died at some point. It's getting harder to find 2.5" PATA SSDs, so I opted for a Kingston mSATA disk (240G) and a JMicron-based mSATA to PATA adapter.
