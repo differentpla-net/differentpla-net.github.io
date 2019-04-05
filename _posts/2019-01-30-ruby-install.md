@@ -40,3 +40,27 @@ Then install your chosen Ruby version:
     ~/.direnv/bin/ruby-install ruby 2.4.4
 
 The above command will install Ruby 2.4.4 to `~/.rubies/ruby-2.4.4`, which is where `direnv` [will look for it]({% post_url 2019-01-30-ruby-direnv %}).
+
+## Listing available Ruby versions
+
+```
+$ ~/.direnv/bin/ruby-install
+Stable ruby versions:
+  ruby:
+    2.3.8
+    2.4.6
+    2.5.5
+    2.6.2
+  jruby:
+    9.2.6.0
+... etc.
+```
+
+## Updating available Ruby versions
+
+```
+$ ~/.direnv/bin/ruby-install -L
+>>> Downloading latest ruby versions ...
+>>> Downloading latest jruby versions ...
+...etc.
+```
