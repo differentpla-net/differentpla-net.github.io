@@ -151,7 +151,7 @@ dd: writing to '/dev/sdd3': No space left on device
 ## Format the music partition
 
 ```
-roger@roger-pc:~ $ sudo mkfs.ext2 -v -b4096 -s 1 -i 262144 -m 0 -I 128 /dev/sdd4
+roger@roger-pc:~ $ sudo mkfs.ext2 -t ext2 -v -b4096 -s 1 -i 262144 -m 0 -I 128 /dev/sdd4
 mke2fs 1.42.13 (17-May-2015)
 fs_types for mke2fs.conf resolution: 'ext2'
 Filesystem label=
