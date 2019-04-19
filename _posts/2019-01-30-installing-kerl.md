@@ -1,6 +1,8 @@
 ---
 title: Installing kerl
-date: 2019-01-30 14:53
+date: 2019-01-30 17:01
+layout: series
+series: direnv-tool-versions
 ---
 
 ## Ubuntu

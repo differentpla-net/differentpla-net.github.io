@@ -1,6 +1,8 @@
 ---
 title: Getting Erlang version
-date: 2019-01-30 16:07
+date: 2019-01-30 17:04
+layout: series
+series: direnv-tool-versions
 ---
 
 Use this helper function:

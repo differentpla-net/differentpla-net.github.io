@@ -1,6 +1,8 @@
 ---
 title: Integrating direnv with python-build
-date: 2019-01-30 14:53
+date: 2019-01-30 17:09
+layout: series
+series: direnv-tool-versions
 ---
 
 To integrate `direnv` with `python-build` -- installation instructions [here]({% post_url 2019-01-30-python-build %}) -- add the following to `~/.direnvrc`:

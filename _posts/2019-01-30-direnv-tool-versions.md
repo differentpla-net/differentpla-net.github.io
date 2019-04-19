@@ -1,6 +1,8 @@
 ---
 title: Using direnv to manage tool versions
-date: 2019-01-30 17:08
+date: 2019-01-30 17:00
+layout: series
+series: direnv-tool-versions
 ---
 
 At Electric Imp, we use a [variety of different languages]({% post_url 2019-01-30-electricimp-languages %}), and each project might be using a different mix of versions.
@@ -33,20 +35,19 @@ That ... didn't work out so well.
 So I'm going back to *direnv*, but with some knobs on.
 
 This forms the first of a series of blog posts:
-- [Installing direnv]({% post_url 2019-01-30-installing-direnv %})
-- [Installing kerl]({% post_url 2019-01-30-installing-kerl %})
-- [Installing Erlang with kerl]({% post_url 2019-01-30-installing-erlang-with-kerl %})
-- [Integrating kerl with direnv]({% post_url 2019-01-30-integrating-kerl-direnv %})
-- [Getting Erlang version]({% post_url 2019-01-30-erlang-version%})
-- [Installing kiex]({% post_url 2019-01-30-installing-kiex %})
-- [Installing Elixir with kiex]({% post_url 2019-01-30-installing-elixir-with-kiex %})
-- [Integrating kiex with direnv]({% post_url 2019-01-30-integrating-kiex-direnv %})
-- [Installing Python with python-build]({% post_url 2019-01-30-python-build %})
-- [Managing Python versions with direnv]({% post_url 2019-01-30-python-direnv %})
-- [Installing Ruby with ruby-install]({% post_url 2019-01-30-ruby-install %})
-- [Managing Ruby versions with direnv]({% post_url 2019-01-30-ruby-direnv %})
-- [Integrating nvm with direnv]({% post_url 2019-01-30-nvm-direnv %})
+
+<ul>
+{% for post in site.posts reversed %}
+{% if post.series == page.series %}
+{% if post.url == page.url %}
+<li><a href="{{ post.url }}">{{ post.title }}</a> (this post)</li>
+{% else %}
+<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endif %}
+{% endif %}
+{% endfor %}
+</ul>
 
 ## Resources
 
-My `.direnvrc` file is in my `dotfiles` repo: https://github.com/rlipscombe/dotfiles/blob/master/direnvrc
+My `.direnvrc` file is in my `dotfiles` repo: [https://github.com/rlipscombe/dotfiles/blob/master/direnvrc](https://github.com/rlipscombe/dotfiles/blob/master/direnvrc)

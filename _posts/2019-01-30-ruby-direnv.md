@@ -1,6 +1,8 @@
 ---
 title: Integrating direnv with ruby-install
-date: 2019-01-30 14:53
+date: 2019-01-30 17:11
+layout: series
+series: direnv-tool-versions
 ---
 
 To integrate `direnv` with `ruby-install` -- installation instructions [here]({% post_url 2019-01-30-ruby-install %}) -- add the following to `~/.direnvrc`:
