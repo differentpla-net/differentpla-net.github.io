@@ -5,5 +5,5 @@ Use something to manage your Rubies and Gems; then...
 ```
 gem install bundler
 bundle
-jekyll serve --watch --drafts
+jekyll serve
 ```
