@@ -1,6 +1,7 @@
 ---
 title: PowerShell, Bouncy Castle and Subject Alternative Names
 date: 2013-04-17T15:21:13Z
+tags: bouncy-castle powershell
 ---
 Again, this is more-or-less a direct port from [the C# post](http://blog.differentpla.net/b/2013/21/24/bouncy-castle---subject-alternative-names).
 
@@ -10,24 +11,24 @@ Again, this is more-or-less a direct port from [the C# post](http://blog.differe
 	param(
 	    [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
 	    [Org.BouncyCastle.X509.X509V3CertificateGenerator] $CertificateGenerator,
-	
+
 	    [Parameter(Mandatory = $true)]
 	    [string[]] $DnsName
 	)
-	
+
 	    $names = $DnsName |
 	        foreach {
 	            New-Object Org.BouncyCastle.Asn1.X509.GeneralName(
 	                [Org.BouncyCastle.Asn1.X509.GeneralName]::DnsName, $_)
 	            }
-	
+
 	    $extension = New-Object Org.BouncyCastle.Asn1.DerSequence($names)
-	
+
 	    $CertificateGenerator.AddExtension(
 	        [Org.BouncyCastle.Asn1.X509.X509Extensions]::SubjectAlternativeName.Id,
 	        $false,
 	        $extension)
-	
+
 	    return $CertificateGenerator
 	}
 

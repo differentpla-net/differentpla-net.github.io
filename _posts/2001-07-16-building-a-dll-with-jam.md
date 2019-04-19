@@ -1,6 +1,7 @@
 ---
 title: "Building a DLL with Jam"
 date: 2001-07-16T17:29:57.000Z
+tags: jam
 ---
 ## Introduction
 

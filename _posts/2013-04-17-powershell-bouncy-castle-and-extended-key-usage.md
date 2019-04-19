@@ -1,6 +1,7 @@
 ---
 title: PowerShell, Bouncy Castle and Extended Key Usage
 date: 2013-04-17T12:46:44Z
+tags: bouncy-castle powershell
 ---
 *Note: This is a bit long, because I want to take a moment to show some of the problems you might have using PowerShell to call .NET code that's written in a certain style.*
 
@@ -116,11 +117,11 @@ But, in our function, which starts like this...
 	param(
 	    [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
 	    [Org.BouncyCastle.X509.X509V3CertificateGenerator] $certificateGenerator,
-	
+
 	    [Parameter(Position = 0, Mandatory = $false, ValueFromPipeline = $false)]
 	    [string[]] $Oid = $null
 	)
-	
+
 ...we want something like the following:
 
     $usages = $Oid | % { New-Object Org.BouncyCastle.Asn1.DerObjectIdentifier($_) }
@@ -149,4 +150,3 @@ This answer is to [add a comma](http://stackoverflow.com/q/9130045/8446). Yes, r
     [Org.BouncyCastle.Asn1.Asn1Object[]] $usages = @()
     $Oid | % { $usages += New-Object Org.BouncyCastle.Asn1.DerObjectIdentifier($_) }
     $extendedKeyUsage = New-Object Org.BouncyCastle.Asn1.X509.ExtendedKeyUsage(,$usages)
-

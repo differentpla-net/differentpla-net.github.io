@@ -3,6 +3,7 @@ title: "Getting the player type of an empeg"
 date: 2007-12-16T19:37:18.000Z
 x-drupal-nid: 205
 x-needs-review: 2007-12-16T19:37:18.000Z
+tags: empeg
 ---
 The last couple of entries have shown the hex dumps of the individual packets. We'll step back to a slightly higher-level view now.
 

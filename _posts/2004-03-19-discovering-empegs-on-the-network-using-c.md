@@ -3,6 +3,7 @@ title: "Discovering empegs on the Network Using C#"
 date: 2004-03-19T10:00:00.000Z
 x-drupal-nid: 145
 x-needs-review: 2004-03-19T10:00:00.000Z
+tags: empeg
 ---
 I've been playing around with learning C#. Today, I thought I'd write a C# program to find empegs on the local network.
 
@@ -43,7 +44,7 @@ namespace FindEmpeg
 
       byte[] requestBytes = Encoding.ASCII.GetBytes("?");
 
-      try 
+      try
       {
         Socket s = new Socket(sourceEndPoint.AddressFamily,
                               SocketType.Dgram, ProtocolType.Udp);

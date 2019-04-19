@@ -1,6 +1,7 @@
 ---
 title: "Installing an mSATA disk in an empeg"
 date: 2019-03-29T15:25:00.000Z
+tags: empeg
 ---
 
 ## Background

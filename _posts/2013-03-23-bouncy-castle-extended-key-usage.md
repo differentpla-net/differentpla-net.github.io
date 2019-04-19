@@ -1,6 +1,7 @@
 ---
 title: Bouncy Castle - Extended Key Usage
 date: 2013-03-23T13:13:35Z
+tags: bouncy-castle
 ---
 If you look at a certificate, you will see something like one of the following:
 
@@ -15,7 +16,7 @@ If you look at a certificate, you will see something like one of the following:
 There are two ways to specify these purposes: you can use the "key usage" extension, which is specified in [section 4.2.1.3](http://tools.ietf.org/html/rfc5280#section-4.2.1.3) of RFC 5820, or you can use the "extended key usage" extension, which is specified in [section 4.2.1.12](http://tools.ietf.org/html/rfc5280#section-4.2.1.12). The extended key usage extension is more flexible.
 
 To specify that a certificate can be used for "server authentication", we can use the following code:
-    
+
 	// Add the "Extended Key Usage" attribute, specifying "server authentication".
 	var usages = new[] { KeyPurposeID.IdKPServerAuth };
 	certificateGenerator.AddExtension(

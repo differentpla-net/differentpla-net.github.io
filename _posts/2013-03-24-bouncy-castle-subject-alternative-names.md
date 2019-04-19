@@ -2,6 +2,7 @@
 title: Bouncy Castle - Subject Alternative Names
 date: 2013-03-24T14:20:58Z
 redirect_from: /b/2013/21/24/bouncy-castle---subject-alternative-names
+tags: bouncy-castle
 ---
 When you connect to a server using HTTPS, the server provides a certificate that identifies it. Your browser will then typically check that the name in the server certificate matches the address that you've gone to. In this way, you can be sure that you're connecting to the correct server.
 
@@ -40,5 +41,5 @@ To add this extension, you need to use the following code:
 	var subjectAlternativeNamesExtension = new DerSequence(subjectAlternativeNames);
 	certificateGenerator.AddExtension(
 	    X509Extensions.SubjectAlternativeName.Id, false, subjectAlternativeNamesExtension);
-	
+
 Note that for this to work properly, you need to specify the value from the "Subject DN" property that you set earlier.

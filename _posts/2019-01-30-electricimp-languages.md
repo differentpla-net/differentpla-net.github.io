@@ -1,6 +1,7 @@
 ---
 title: Which programming languages do we use at Electric Imp?
 date: 2019-01-30 14:53
+tags: electric-imp
 ---
 
 I last posted on this topic about [4 years ago]({% post_url 2014-10-21-electricimp-languages %}). It's time for an update.

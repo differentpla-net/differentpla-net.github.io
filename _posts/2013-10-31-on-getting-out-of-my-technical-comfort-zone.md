@@ -1,6 +1,7 @@
 ---
 title: On getting out of my technical comfort zone
 date: 2013-10-31T09:56:17Z
+tags: electric-imp
 ---
 I've been working for [electric imp](http://electricimp.com/) for about three
 months now, and I've been planning to articulate why I made the change, or more

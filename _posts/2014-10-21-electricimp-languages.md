@@ -1,13 +1,14 @@
 ---
 title: Which programming languages do we use at Electric Imp?
 date: 2014-10-21 10:57:12Z
+tags: electric-imp
 ---
 
 This question just came up on Twitter:
 
 > [@electricimp](https://twitter.com/electricimp) i am looking to do an
 > internship with you, i was just wondering what would be the best programming
-> languages for me to develop? 
+> languages for me to develop?
 
 -- Callum Orr (@OrrCallum) [12:15 PM - 20 Oct 2014](https://twitter.com/OrrCallum/status/524156992127250432)
 

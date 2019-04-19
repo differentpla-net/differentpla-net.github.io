@@ -1,6 +1,7 @@
 ---
 title: Simple job control in bash
 date: 2017-08-23 09:03+0000
+tags: bash
 ---
 
 ## What?

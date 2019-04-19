@@ -1,6 +1,7 @@
 ---
 title: How do I use Bouncy Castle from PowerShell?
 date: 2013-04-17T09:54:27Z
+tags: bouncy-castle powershell
 ---
 I recently wrote a [series of blog posts](http://blog.differentpla.net/b/2013/21/18/how-do-i-create-a-self-signed-certificate-using-bouncy-castle-)
 on how to use the cryptography libraries from the [Legion of the BouncyCastle](http://www.bouncycastle.org/) in C#.
@@ -48,13 +49,13 @@ Serial Number
 				[Org.BouncyCastle.Math.BigInteger]::One,
 				[Org.BouncyCastle.Math.BigInteger]::ValueOf([Int64]::MaxValue),
 				$random)
-	
+
 		return $serialNumber
 	}
 
 	$random = New-SecureRandom
 	$serialNumber = New-SerialNumber $random
-	
+
 	$certificateGenerator.SetSerialNumber($serialNumber)
 
 Signature Algorithm
@@ -100,23 +101,23 @@ Subject Public Key
 	param(
 	    [Parameter(Mandatory = $true)]
 	    [Org.BouncyCastle.Security.SecureRandom] $random,
-	
+
 	    [Parameter(Mandatory = $false)]
 	    [int] $strength = 2048
 	)
-	
+
 	    $keyGenerationParameters =
 			New-Object Org.BouncyCastle.Crypto.KeyGenerationParameters($random, $strength)
-	
+
 	    $keyPairGenerator =
 			New-Object Org.BouncyCastle.Crypto.Generators.RsaKeyPairGenerator
 
 	    $keyPairGenerator.Init($keyGenerationParameters)
 	    $keyPair = $keyPairGenerator.GenerateKeyPair()
-	
+
 	    return $keyPair
 	}
-	
+
 	$subjectKeyPair = New-KeyPair $random
 	$certificateGenerator.SetPublicKey($subjectKeyPair.Public)
 
@@ -131,14 +132,14 @@ for discussion of how to do this in C#.
 	param(
 	    [Parameter(Mandatory = $true)]
 	    [string] $name,
-	
+
 	    [Parameter(Mandatory = $true)]
 	    [Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters] $publicKey,
-	
+
 	    [Parameter(Mandatory = $true)]
 	    [Org.BouncyCastle.Math.BigInteger] $serialNumber
 	)
-	
+
 	    $publicKeyInfo =
 			[Org.BouncyCastle.X509.SubjectPublicKeyInfoFactory]::CreateSubjectPublicKeyInfo($publicKey)
 
@@ -160,19 +161,19 @@ For the next bit, we'll go a bit "fluent". I'll discuss the pros and cons of thi
 	param(
 	    [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
 	    [Org.BouncyCastle.X509.X509V3CertificateGenerator] $certificateGenerator,
-	
+
 	    [Parameter(Position = 0, Mandatory = $true, ValueFromPipeline = $false)]
 	    [Org.BouncyCastle.Asn1.X509.AuthorityKeyIdentifier] $authorityKeyIdentifier
 	)
-	
+
 	    $certificateGenerator.AddExtension(
 	        [Org.BouncyCastle.Asn1.X509.X509Extensions]::AuthorityKeyIdentifier.Id,
 	        $false,
 	        $authorityKeyIdentifier)
-	
+
 	    return $certificateGenerator
 	}
-	
+
 This allows us to use the certificate generator as follows:
 
 	# Fluent; less repetition.
@@ -197,13 +198,13 @@ This bit's simpler than the authority key identifer...
 	    [Parameter(Mandatory = $true)]
 	    [Org.BouncyCastle.Crypto.Parameters.RsaKeyParameters] $publicKey
 	)
-	
+
 	    $publicKeyInfo =
 	        [Org.BouncyCastle.X509.SubjectPublicKeyInfoFactory]::CreateSubjectPublicKeyInfo($publicKey)
-	
+
 	    $subjectKeyIdentifier =
 	        New-Object Org.BouncyCastle.Asn1.X509.SubjectKeyIdentifier($publicKeyInfo)
-	
+
 	    return $subjectKeyIdentifier
 	}
 
@@ -215,16 +216,16 @@ This bit's more-or-less the same:
 	param(
 	    [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
 	    [Org.BouncyCastle.X509.X509V3CertificateGenerator] $certificateGenerator,
-	
+
 	    [Parameter(Position = 0, Mandatory = $true, ValueFromPipeline = $false)]
 	    [Org.BouncyCastle.Asn1.X509.SubjectKeyIdentifier] $subjectKeyIdentifier
 	)
-	
+
 	    $certificateGenerator.AddExtension(
 	        [Org.BouncyCastle.Asn1.X509.X509Extensions]::SubjectKeyIdentifier.Id,
 	        $false,
 	        $subjectKeyIdentifier)
-	
+
 	    return $certificateGenerator
 	}
 
@@ -237,18 +238,18 @@ Basic Constraints
 	param(
 	    [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
 	    [Org.BouncyCastle.X509.X509V3CertificateGenerator] $certificateGenerator,
-	
+
 	    [Parameter(Position = 0, Mandatory = $true, ValueFromPipeline = $false)]
 	    [bool] $isCertificateAuthority
 	)
-	
+
 	    $basicConstraints =
 	        New-Object Org.BouncyCastle.Asn1.X509.BasicConstraints($isCertificateAuthority)
 	    $certificateGenerator.AddExtension(
 	        [Org.BouncyCastle.Asn1.X509.X509Extensions]::BasicConstraints.Id,
 	        $true,
 	        $basicConstraints)
-	
+
 	    return $certificateGenerator
 	}
 
@@ -272,19 +273,19 @@ This is that, directly translated into PowerShell.
 	param(
 	    [Parameter(Mandatory = $true)]
 	    [Org.BouncyCastle.X509.X509Certificate] $certificate,
-	
+
 	    [Parameter(Mandatory = $true)]
 	    [Org.BouncyCastle.Crypto.AsymmetricCipherKeyPair] $subjectKeyPair,
-	
+
 	    [Parameter(Mandatory = $true)]
 	    [string] $friendlyName
 	)
 
 	    $store = New-Object Org.BouncyCastle.Pkcs.Pkcs12Store
-	
+
 	    $certificateEntry = New-Object Org.BouncyCastle.Pkcs.X509CertificateEntry($certificate)
 	    $store.SetCertificateEntry($friendlyName, $certificateEntry)
-	
+
 	    $keyEntry = New-Object Org.BouncyCastle.Pkcs.AsymmetricKeyEntry($subjectKeyPair.Private)
 	    $store.SetKeyEntry($friendlyName, $keyEntry, @($certificateEntry))
 
@@ -292,14 +293,14 @@ This is that, directly translated into PowerShell.
 	    $password = 'password'
 	    $stream = New-Object System.IO.MemoryStream
 	    $store.Save($stream, $password, $random)
-	
+
 	    $keyStorageFlags = 'PersistKeySet, Exportable'
 	    $result =
 			New-Object System.Security.Cryptography.X509Certificates.X509Certificate2(
 				$stream.ToArray(), $password, $keyStorageFlags)
-	
+
 	    $stream.Dispose()
-	
+
 	    return $result
 	}
 

@@ -1,6 +1,7 @@
 ---
 title: "Partitioning an empeg's Hard Disk Manually"
 date: 2004-03-25T09:20:00.000Z
+tags: empeg
 ---
 If you're attempting to upgrade the hard disk in your empeg, and the disk builder is not working for you (this is often the case with disks larger than 60Gb), then you might want to build your new disk manually.
 

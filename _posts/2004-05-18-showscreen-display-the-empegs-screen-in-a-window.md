@@ -3,6 +3,7 @@ title: "ShowScreen: display the empeg's screen in a window"
 date: 2004-05-18T13:15:00.000Z
 x-drupal-nid: 67
 x-needs-review: 2004-05-18T13:15:00.000Z
+tags: empeg
 ---
 Over on the [empeg BBS](http://empeg.comms.net/php/showthreaded.php?Cat=&Board=hackers_prog&Number=215408&page=0&view=collapsed&sb=5&o=0), tfabris said:
 

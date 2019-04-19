@@ -1,6 +1,7 @@
 ---
 title: Bouncy Castle - Being a Certificate Authority
 date: 2013-03-24T16:14:15Z
+tags: bouncy-castle
 ---
 Over the last few posts, we've seen how to create a self-signed server certificate in C#, by using the Bouncy Castle library. How do we create a CA certificate, and how do we issue certificates from that authority?
 
@@ -21,7 +22,7 @@ When we created our original self-signed certificate, [we added](https://blog.di
 
     certificateGenerator.AddExtension(
 	    X509Extensions.BasicConstraints.Id, true, new BasicConstraints(true));
-	
+
 And that really is all we need to do.
 
 Issuing Certificates
@@ -33,7 +34,7 @@ We need to load the existing certificate:
 
 	const string password = "password";
 	var issuerCertificate = new X509Certificate2(issuerFileName, password);
-	
+
 We need to get the issuer name from that certificate:
 
 	var issuerName = issuerCertificate.Subject;
@@ -67,4 +68,3 @@ To create a CA certificate:
 To issue a certificate using that CA:
 
 	CreateCertificate issue CA.pfx CN=issued issued.pfx
-

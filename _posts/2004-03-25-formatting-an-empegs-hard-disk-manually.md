@@ -1,6 +1,7 @@
 ---
 title: "Formatting an empeg's Hard Disk Manually"
 date: 2004-03-25T09:37:00.000Z
+tags: empeg
 ---
 The sequel to [Partitioning an empeg's Hard Disk Manually]({% post_url 2004-03-25-partitioning-an-empegs-hard-disk-manually %}).
 

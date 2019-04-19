@@ -1,6 +1,7 @@
 ---
 title: PowerShell and enums
 date: 2013-04-17T11:29:55Z
+tags: powershell
 ---
 PowerShell has a really cool feature where it'll coerce a string into an `enum` value. I'll demonstrate by exporting a certificate from the Windows certificate store:
 

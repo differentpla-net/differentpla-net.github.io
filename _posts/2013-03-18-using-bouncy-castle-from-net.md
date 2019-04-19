@@ -1,6 +1,7 @@
 ---
 title: Using Bouncy Castle from .NET
 date: 2013-03-18T18:50:00Z
+tags: bouncy-castle
 ---
 
 * [How do I create a self-signed certificate using Bouncy Castle?]({% post_url 2013-03-18-how-do-i-create-a-self-signed-certificate-using-bouncy-castle- %})

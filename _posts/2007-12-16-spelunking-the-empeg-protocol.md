@@ -3,6 +3,7 @@ title: "Spelunking the empeg protocol"
 date: 2007-12-16T17:58:46.000Z
 x-drupal-nid: 201
 x-needs-review: 2007-12-16T17:58:46.000Z
+tags: empeg
 ---
 I was bored this afternoon, so I thought I'd see how hard it would be to write an emplode clone in C#.
 
