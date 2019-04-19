@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "tag: TAG"
+title: "Tag: TAG"
 tag: TAG
 ---
