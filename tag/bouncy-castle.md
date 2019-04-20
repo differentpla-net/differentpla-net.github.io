@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "tag: bouncy-castle"
+title: "Tag: bouncy-castle"
 tag: bouncy-castle
 ---

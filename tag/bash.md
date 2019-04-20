@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "tag: bash"
+title: "Tag: bash"
 tag: bash
 ---

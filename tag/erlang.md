@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "tag: erlang"
+title: "Tag: erlang"
 tag: erlang
 ---

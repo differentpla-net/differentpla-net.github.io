@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "tag: electric-imp"
+title: "Tag: electric-imp"
 tag: electric-imp
 ---
