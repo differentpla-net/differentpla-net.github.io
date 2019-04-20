@@ -12,3 +12,9 @@ series: direnv-tool-versions
 Then ensure it's in your path. I copied it to `/usr/local/bin`:
 
     sudo cp ~/.kiex/bin/kiex /usr/local/bin
+
+Or you could follow the instructions that `install` gives you:
+
+> Add the following to your shell's config file (.bashrc/.zshrc/.cshrc):
+
+    test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
