@@ -1,6 +1,7 @@
 ---
 title: I installed discourse
 date: 2015-02-22 14:41
+tags: blogging
 ---
 
 I've installed [Discourse](http://www.discourse.org) at
@@ -16,3 +17,9 @@ I'll bother writing that up.
 Oh, apart from [configuring DNS for
 Mailgun](http://blog.differentpla.net/blog/2015/02/22/mailgun-enom/). I wrote
 that up.
+
+----
+
+#### Update: 20 Apr 2019
+
+I uninstalled Discourse; I'm at peace with not allowing comments.

@@ -1,6 +1,8 @@
 ---
 title: A bug in libgnutls
 date: 2017-10-27 09:06+0000
+layout: series
+series: libgnutls-bug
 ---
 
 ## Background

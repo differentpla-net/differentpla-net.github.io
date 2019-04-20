@@ -1,6 +1,9 @@
 ---
 title: gen_fsm learnings, part 3
 date: 2013-11-12T13:51:52Z
+tags: erlang
+layout: series
+series: gen_fsm
 ---
 Some odds and ends.
 

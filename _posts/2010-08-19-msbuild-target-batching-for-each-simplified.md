@@ -2,6 +2,7 @@
 title: "MSBuild Target Batching (For Each) Simplified"
 date: 2010-08-19T09:44:53.000Z
 redirect_from: /content/2010/08/msbuild-target-batching-each-simplified
+tags: msbuild
 ---
 It's actually quite simple:
 

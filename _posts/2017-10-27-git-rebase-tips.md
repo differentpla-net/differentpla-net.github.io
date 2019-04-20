@@ -1,6 +1,7 @@
 ---
 title: git rebase tips
 date: 2017-10-27 13:10+0000
+tags: git
 ---
 
 *This is an internal email I wrote almost exactly 2 years ago. I had to refer
@@ -80,4 +81,3 @@ to split the changes to a particular file across multiple commits.
 
 And that might make your rebase less conflict-prone, because you can deal with
 the conflicts in smaller pieces.
-

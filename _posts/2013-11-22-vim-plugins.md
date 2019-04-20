@@ -1,6 +1,7 @@
 ---
 title: vim plugins
 date: 2013-11-22T12:22:29Z
+tags: vim
 ---
 This, for no particular reason, is the list of vim plugins that I'm currently using:
 

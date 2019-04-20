@@ -1,6 +1,7 @@
 ---
 title: Chef Server, Chef Zero or Chef Solo?
 date: 2014-11-13 11:06:34
+tags: chef
 ---
 
 *This is part of my [quest to sort out my website]({% post_url 2014-11-13-website-rebuild %}).

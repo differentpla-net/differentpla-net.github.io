@@ -1,6 +1,7 @@
 ---
 title: Installing Chef and Berkshelf
 date: 2014-11-13 10:38:12
+tags: chef
 ---
 
 *This is part of my [quest to sort out my website]({% post_url 2014-11-13-website-rebuild %}).

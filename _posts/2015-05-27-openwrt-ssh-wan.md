@@ -1,6 +1,7 @@
 ---
 title: Enabling remote SSH access on OpenWRT 12.09
 date: 2015-05-27 20:15+0100
+tags: openwrt
 ---
 
 I don't recommend enabling remote SSH access to your router, but if you need

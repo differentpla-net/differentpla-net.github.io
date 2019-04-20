@@ -1,6 +1,9 @@
 ---
 title: gen_fsm learnings, part 2
 date: 2013-11-11T16:12:36Z
+tags: erlang
+layout: series
+series: gen_fsm
 ---
 ## `handle_event` and `handle_sync_event`
 

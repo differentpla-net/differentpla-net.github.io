@@ -1,6 +1,7 @@
 ---
 title: No new blog engine
 date: 2015-04-26 08:13:00Z
+tags: blogging
 ---
 
 Periodically, I become unhappy with my blog implementation and decide that I
@@ -21,6 +22,12 @@ However, I'm not going to continue to use GitHub pages, because I want better
 access to the webserver logs (for 'page not found' errors, etc.), and I might
 want to experiment with Jekyll plugins.
 
-And, because a [blog should allow
+~~And, because a [blog should allow
 comments](http://blog.codinghorror.com/a-blog-without-comments-is-not-a-blog/),
-I've installed [Discourse](http://discourse.differentpla.net/).
+I've installed [Discourse](http://discourse.differentpla.net/).~~
+
+----
+
+#### Update: 20 Apr 2019
+
+I _am_ going to continue with GitHub Pages; I use Google Analytics for 404 errors; the list of plugins supported by GitHub Pages is OK; I uninstalled Discourse; I'm at peace with not allowing comments.

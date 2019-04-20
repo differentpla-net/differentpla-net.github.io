@@ -1,12 +1,13 @@
 ---
 title: Starting with chef-solo
 date: 2014-11-30 18:39:07
+tags: chef
 ---
 
 *This is part of my [quest to sort out my website]({% post_url 2014-11-13-website-rebuild %}).
 Starting with chef-solo.*
 
-Earlier in this quest, I talked about 
+Earlier in this quest, I talked about
 [using Chef Solo with Vagrant]({% post_url 2014-11-13-chef-solo-vagrant %}).
 
 Now we need to use it in AWS. This is essentially the same as using it on any

@@ -1,6 +1,7 @@
 ---
 title: Capturing network traces with OpenWRT
 date: 2013-11-13T09:42:22Z
+tags: openwrt
 ---
 This is mostly a reminder to myself.
 
@@ -14,9 +15,9 @@ I don't want to waste internal storage on the capture files, so install the USB
 storage modules:
 
     opkg install kmod-usb-storage block-mount
-    
+
 You'll also need a filesystem driver:
-    
+
     opkg install kmod-fs-vfat
 
 Use 'vfat' because -- let's face it -- you'll be using a Windows-formatted USB

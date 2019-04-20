@@ -2,6 +2,8 @@
 title: gen_fsm learnings, part 1
 date: 2013-11-11T15:31:10Z
 tags: erlang
+layout: series
+series: gen_fsm
 ---
 ## Background
 

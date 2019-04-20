@@ -1,6 +1,7 @@
 ---
 title: MSBuild Tasks, Input Parameters and ItemGroups
 date: 2013-02-01T16:20:00Z
+tags: msbuild
 ---
 While looking through some MSBuild scripts recently at work, I came across some stuff to do with Task output parameters that I thought might be worth blogging about. First, however, I need to talk about Task input parameters.
 
@@ -23,14 +24,14 @@ We also define a custom task that looks like this:
 	{
 		[Required]
 		public string Services { get; set; }
-		
+
 		public override bool Execute()
 		{
 			Console.WriteLine(Services);
 			return true;
 		}
 	}
-	
+
 MSBuild will pass the item group (an array of items with metadata) to the `string` property as a semicolon-delimited string, discarding the metadata.
 
 Note that MSBuild doesn't look at the `string` and call the task for each item. If you want that to happen, you need to look at http://blog.differentpla.net/blog/2010/08/19/msbuild-target-batching-for-each-simplified.
