@@ -22,6 +22,15 @@ use_ruby() {
         tput sgr0
     fi
 }
+
+bundle_check() {
+    # This has to come after 'layout ruby'
+    if [ -f Gemfile ]; then
+        gem list -i '^bundler$' >/dev/null || \
+            gem install --no-ri --no-rdoc bundler && \
+            bundle check
+    fi
+}
 ```
 
 Then add the following (e.g., for Ruby 2.4.4) to your project's `.envrc`:
@@ -29,18 +38,7 @@ Then add the following (e.g., for Ruby 2.4.4) to your project's `.envrc`:
 ```
 use ruby 2.4.4
 layout ruby
+bundle_check
 ```
 
-The `layout ruby` takes care of setting up a rough equivalent to Python's virtualenv, but for Ruby.
-
-I recommend adding the following to your `.envrc` after the `layout ruby` step:
-
-```
-# This has to come after 'layout ruby', which means it can't be in
-# ~/.direnvrc
-if [ -f Gemfile ]; then
-    gem list -i '^bundler$' >/dev/null || \
-        gem install --no-ri --no-rdoc bundler && \
-        bundle check
-fi
-```
+The `layout ruby` takes care of setting up a rough equivalent to Python's virtualenv, but for Ruby. The `bundle_check` calls that function from `~/.direnvrc`, and checks that your gems are up to date.

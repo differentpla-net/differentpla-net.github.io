@@ -1,9 +1,7 @@
 # differentpla-net.github.io
 
-Use something to manage your Rubies and Gems; then...
+Use [something](http://blog.differentpla.net/blog/2019/01/30/ruby-direnv/) to manage your Rubies and Gems; then...
 
 ```
-gem install bundler
-bundle
 jekyll serve
 ```
