@@ -1,6 +1,7 @@
 ---
 title: When does terminate get called?
 date: 2014-11-13 13:22:12
+tags: erlang
 ---
 
 In Erlang, in a `gen_server`, when *does* terminate get called? Also, some
@@ -71,7 +72,7 @@ And, if we send it an exit signal, specifying `normal`:
 
 OK, let's try it the hard way:
 
-    10> exit(Pid, kill).  
+    10> exit(Pid, kill).
     (<0.47.0>) exit killed
     (<0.47.0>) unregister example_server
 

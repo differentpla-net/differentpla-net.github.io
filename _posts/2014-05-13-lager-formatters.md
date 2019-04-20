@@ -1,6 +1,7 @@
 ---
 title: lager formatters
 date: 2014-05-13T12:49:00Z
+tags: erlang lager
 ---
 ## Overview
 
@@ -26,7 +27,7 @@ The default format is defined [in lager_default_formatter.erl](https://github.co
                         {function, [":", function], ""},
                         {line, [":",line], ""}], ""},
                 " ", message, EOL]
-                
+
 What we have here looks a bit like an Erlang `iolist`, where certain atoms (`date`, `time`, `pid`, etc.)
 are replaced with values at runtime.
 
@@ -43,7 +44,7 @@ The language also supports [default values](https://github.com/basho/lager/blob/
 for example:
 
     {pid, ""}
-    
+
 ...states that the process ID should be output. If it's not defined, then output
 an empty string instead.
 
@@ -53,7 +54,7 @@ There's also support for [conditionals](https://github.com/basho/lager/blob/mast
 These are specified as `{Prop, Present, Absent}`. For example:
 
     {function, [":", function], ""}
-    
+
 ...states that if `function` is present in the metadata, then output `[":", function]`;
 otherwise output an empty string.
 

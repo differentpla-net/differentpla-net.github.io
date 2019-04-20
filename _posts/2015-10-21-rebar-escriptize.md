@@ -1,6 +1,7 @@
 ---
 title: How does rebar escriptize work?
 date: 2015-10-21 08:29+0000
+tags: erlang
 ---
 
 ## Hello World
@@ -89,7 +90,7 @@ Create the `hello_json.erl` file:
         {ok, JSON} = file:read_file(Path),
         {struct, Props} = mochijson2:decode(JSON),
         proplists:get_value(<<"greeting">>, Props).
-    
+
 And, to save typing, a Makefile:
 
     all:

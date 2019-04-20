@@ -1,6 +1,7 @@
 ---
 title: Debugging Erlang with a remote shell
 date: 2014-05-08T15:54:00Z
+tags: erlang
 ---
 If you're connected to an Erlang node via a remote shell, and you don't have
 access to stdout on the original node, you'll need to redirect the trace output

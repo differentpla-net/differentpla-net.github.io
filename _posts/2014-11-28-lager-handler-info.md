@@ -1,6 +1,7 @@
 ---
 title: Getting lager handler info
 date: 2014-11-28T11:08:49Z
+tags: erlang lager
 ---
 
 We use [lager](https://github.com/basho/lager) for our logging at [Electric Imp](http://www.electricimp.com).
@@ -88,7 +89,7 @@ We can get hold of the watchers:
 
 And then we can inspect any one of those to get the original configuration:
 
-    (imp_server@roger-pc) 4> sys:get_state(pid(0,91,0)).                       
+    (imp_server@roger-pc) 4> sys:get_state(pid(0,91,0)).
     {state,lager_folsom_backend,
            [imp_server,warning],
            lager_event}

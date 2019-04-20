@@ -1,6 +1,7 @@
 ---
 title: Dependency my_app is specified as a dependency but is not reachable by the system
 date: 2014-07-07T13:26:04Z
+tags: erlang
 ---
 While using `erlang.mk` and `relx` to build a newly-created Erlang application, I got the following error:
 
@@ -21,4 +22,4 @@ The solution is simply to add it:
       {modules, []},
       % etc.
      ]}.
-     
+

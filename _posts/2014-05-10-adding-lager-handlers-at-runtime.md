@@ -1,6 +1,7 @@
 ---
 title: Adding lager handlers at runtime
 date: 2014-05-10T08:49:00Z
+tags: erlang lager
 ---
 You're using lager for logging in your Erlang program, and you discover that
 your configuration isn't logging anything more verbose than `info`-level

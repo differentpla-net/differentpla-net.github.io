@@ -154,7 +154,7 @@ Then run the following command:
     Erlang R16B03-1 (erts-5.10.4) [source] [64-bit] [smp:12:12] [async-threads:10] [kernel-poll:false]
 
     Eshell V5.10.4  (abort with ^G)
-    1> 
+    1>
 
 ...seems to have done.
 

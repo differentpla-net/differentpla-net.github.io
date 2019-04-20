@@ -1,6 +1,7 @@
 ---
 title: Creating ZIP files in Erlang
 date: 2014-03-05T16:30:57
+tags: erlang
 ---
 It's pretty simple to create a ZIP file on disk.
 

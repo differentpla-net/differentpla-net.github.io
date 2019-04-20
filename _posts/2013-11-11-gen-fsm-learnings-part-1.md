@@ -1,6 +1,7 @@
 ---
 title: gen_fsm learnings, part 1
 date: 2013-11-11T15:31:10Z
+tags: erlang
 ---
 ## Background
 
@@ -92,11 +93,11 @@ it doesn't work:
     3> gen_fsm:sync_send_event(Pid, foo).
 
     =ERROR REPORT==== 9-Nov-2013::11:20:55 ===
-    ** State machine <0.41.0> terminating 
+    ** State machine <0.41.0> terminating
     ** Last message in was {'$gen_sync_event',{<0.33.0>,#Ref<0.0.0.102>},foo}
     ** When State == alpha
     **      Data  == []
-    ** Reason for termination = 
+    ** Reason for termination =
     ** {'function not exported',
            [{ab_fsm,alpha,[foo,{<0.33.0>,#Ref<0.0.0.102>},[]],[]},
             {gen_fsm,handle_msg,7,[{file,"gen_fsm.erl"},{line,505}]},

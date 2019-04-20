@@ -1,6 +1,7 @@
 ---
 title: "Library module name 'foo_nif' does not match calling module 'erl_eval'"
 date: 2014-10-09 13:43:00Z
+tags: erlang nif
 ---
 
 It turns out that you can't load Erlang NIF libraries from the shell.

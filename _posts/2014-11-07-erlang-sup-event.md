@@ -1,6 +1,7 @@
 ---
 title: Supervised event handlers in Erlang
 date: 2014-11-07 10:11:33Z
+tags: erlang
 ---
 
 I find Erlang's `gen_event` behaviour to be fairly tricky to understand,
@@ -84,7 +85,7 @@ probably implement that. To do that, we need:
     -module(my_event_handler).
     -export([start_link/0]).
     -behaviour(gen_event).
-    
+
     % The rest is left as an exercise for the reader,
     % as one of my Discrete Maths lecturers was fond of saying :-)
     % ...

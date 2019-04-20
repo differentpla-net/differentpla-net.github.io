@@ -1,6 +1,7 @@
 ---
 title: gen_server:enter_loop
 date: 2018-06-12 14:52
+tags: erlang
 ---
 
 When you use `gen_server:start/3,4` or `gen_server:start_link/3,4`, the call
