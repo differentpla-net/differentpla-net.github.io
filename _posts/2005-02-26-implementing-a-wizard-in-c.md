@@ -3,12 +3,16 @@ title: "Implementing a Wizard in C#"
 date: 2005-02-26T12:44:00.000Z
 x-drupal-nid: 6
 x-needs-review: 2005-02-26T12:44:00.000Z
+redirect_from: /content/2005/02/implementing-wizard-c
+layout: series
+series: winformswizard
+tags: csharp wizard
 ---
 Oddly, the Windows Forms libraries don't provide any support for writing wizards. Here's one way to do it.
 
 **Update: Source code now lives at [CodePlex](http://winformswizard.codeplex.com)**; please post comments, issues, etc., there instead.
 
-_This is part one; part two (which includes source code) is [here](/content/2005/02/implementing-wizard-c-part-2)._
+_This is part one; part two (which includes source code) is [here]({% post_url 2005-02-26-implementing-a-wizard-in-c-part-2 %})._
 
 The design is based on the one I used for implementing a [paged Options dialog](/content/2004/10/implementing-a-paged-options-dialog). Essentially, each of the pages is implemented as a user control, and they live on a form.
 
