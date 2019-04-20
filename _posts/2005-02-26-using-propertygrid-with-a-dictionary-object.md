@@ -3,6 +3,7 @@ title: "Using PropertyGrid with a dictionary object"
 date: 2005-02-26T16:04:00.000Z
 x-drupal-nid: 30
 x-needs-review: 2005-02-26T16:04:00.000Z
+redirect_from: /content/2005/02/using-propertygrid-with-dictionary
 ---
 If you try using IDictionary with the PropertyGrid control, the results aren't spectacular:
 

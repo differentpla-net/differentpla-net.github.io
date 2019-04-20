@@ -2,6 +2,7 @@
 title: How do I use Bouncy Castle from PowerShell?
 date: 2013-04-17T09:54:27Z
 tags: bouncy-castle powershell
+redirect_from: /b/2013/31/17/how-do-i-use-bouncy-castle-from-powershell-
 ---
 I recently wrote a [series of blog posts](http://blog.differentpla.net/b/2013/21/18/how-do-i-create-a-self-signed-certificate-using-bouncy-castle-)
 on how to use the cryptography libraries from the [Legion of the BouncyCastle](http://www.bouncycastle.org/) in C#.

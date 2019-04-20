@@ -3,6 +3,7 @@ title: "Error: Failed to generate a user instance of SQL Server..."
 date: 2006-01-18T21:55:30.000Z
 x-drupal-nid: 2
 x-needs-review: 2006-01-18T21:55:30.000Z
+redirect_from: /content/2006/01/failed-to-generate-a-user-instance-of-sql-server
 ---
 I was just hacking something together in Visual Web Developer Express, and was attempting to add a database to my App_Data directory when I ran into problems.
 

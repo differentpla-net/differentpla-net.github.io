@@ -3,6 +3,7 @@ title: "Debugging ASP.NET applications without Administrator privileges"
 date: 2006-02-20T11:32:53.000Z
 x-drupal-nid: 38
 x-needs-review: 2006-02-20T11:32:53.000Z
+redirect_from: /content/2006/02/debugging-asp-net-applications-without-administrator-privileges
 ---
 I recently had my machine at work rebuilt with Windows 2003, and had a spot of difficulty getting Visual Studio to debug my ASP.NET applications. Here are the various error messages I encountered, and their fixes.
 

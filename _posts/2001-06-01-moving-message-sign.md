@@ -1,6 +1,7 @@
 ---
 title: "Moving Message Sign"
 date: 2001-06-01T10:41:00.000Z
+redirect_from: /content/2001/06/moving-message-sign
 ---
 A couple of weeks ago, we got an LED message board at work. They had them on offer at Maplin (if I recall correctly). Anyway, the manual with the board is singularly useless. It's labelled "Moving Message Sign", and has a picture of the display with "Taiwan Kingpul" on it.
 
