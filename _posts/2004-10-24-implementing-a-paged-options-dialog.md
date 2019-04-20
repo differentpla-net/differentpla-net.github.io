@@ -2,6 +2,7 @@
 title: "Implementing a paged Options dialog"
 date: 2004-10-24T12:42:00.000Z
 redirect_from: /content/2004/10/implementing-a-paged-options-dialog
+tags: csharp windows-forms
 ---
 Several popular applications implement their options dialog as a collection of pages. Here's one way to do this in your application.
 
@@ -21,14 +22,16 @@ We'll look at implementing a paged dialog, using a list control, as FireFox does
 
 Our overall aim is that we can use the dialog like this:
 
-<pre>private void toolsOptionsMenuItem_Click(object sender, System.EventArgs e)
+```
+private void toolsOptionsMenuItem_Click(object sender, System.EventArgs e)
 {
     OptionsDialog dlg = new OptionsDialog();
     dlg.Pages.Add(new GeneralOptionsPage());
     dlg.Pages.Add(new DisplayOptionsPage());
     dlg.Pages.Add(new AdvancedOptionsPage());
     DialogResult result = dlg.ShowDialog(this);
-}</pre>
+}
+```
 
 We'll have a dialog (here called `OptionsDialog`) to which we'll add the pages, and it'll be responsible for displaying a list, and switching between them.
 
@@ -44,19 +47,22 @@ We then need to take a look at the code for `OptionsDialog`.
 
 The first item is the `Pages` collection. It's nothing particularly clever:
 
-<pre>ArrayList _pages = new ArrayList();
+```
+ArrayList _pages = new ArrayList();
 
 public IList Pages
 {
     get { return _pages; }
-}</pre>
+}
+```
 
 This probably ought to be made type-safe in future, but it'll do for now.
 Each page in this collection will derive from a common base class. Since Windows.Forms doesn't define one, I'll call this `PropertyPage`, similar to that in Win32.
 
 It looks like this:
 
-<pre>public class PropertyPage : System.Windows.Forms.UserControl
+```
+public class PropertyPage : System.Windows.Forms.UserControl
 {
     // ...
     public new virtual string Text
@@ -76,23 +82,29 @@ It looks like this:
     public virtual void OnApply()
     {
     }
-}</pre>
+}
+```
 
 More interesting is the code that handles the `Load` event:
 
-<pre>private void OptionsDialog_Load(object sender,
+```
+private void OptionsDialog_Load(object sender,
     System.EventArgs e)
-{</pre>
+{
+```
 
 First we load a default image to be used in the list box if the page itself doesn't provide one:
 
-<pre>    Bitmap defaultImage = new Bitmap(GetType(),
+```
+    Bitmap defaultImage = new Bitmap(GetType(),
         "Bitmaps.NullOptionsPage.bmp");
-    imageList.Images.Add(defaultImage);</pre>
+    imageList.Images.Add(defaultImage);
+```
 
 Then we iterate over the pages, adding each one to the right-hand panel and to the list box, and working out the size of the largest page, so that we can resize the dialog nicely.
 
-<pre>    Size maxPageSize = pagePanel.Size;
+```
+    Size maxPageSize = pagePanel.Size;
 
     foreach (PropertyPage page in _pages)
     {
@@ -107,7 +119,8 @@ Then we iterate over the pages, adding each one to the right-hand panel and to t
 
         page.Dock = DockStyle.Fill;
         page.Visible = false;
-    }</pre>
+    }
+```
 
 Note that we set the initial value of `maxPageSize` to the size of the right-hand panel. This allows us to control the minimum size of the options dialog, in case the pages are very small.
 
@@ -115,22 +128,27 @@ Note also that we set the `Dock` property of each page. More importantly, note t
 
 The next few lines resize the Options Dialog so that the largest dialog page fits:
 
-<pre>    Size newSize = new Size();
+```
+    Size newSize = new Size();
     newSize.Width = maxPageSize.Width + (this.Width - pagePanel.Width);
     newSize.Height = maxPageSize.Height + (this.Height - pagePanel.Height);
 
     this.Size = newSize;
-    CenterToParent();</pre>
+    CenterToParent();
+```
 
 Finally we select the first item in the list box:
 
-<pre>    if (listView.Items.Count != 0)
+```
+    if (listView.Items.Count != 0)
         listView.Items[0].Selected = true;
-}</pre>
+}
+```
 
 Adding an item to the list box looks like this:
 
-<pre>void AddListItemForPage(PropertyPage page)
+```
+void AddListItemForPage(PropertyPage page)
 {
     int imageIndex = 0;
 
@@ -144,11 +162,13 @@ Adding an item to the list box looks like this:
     ListViewItem item = new ListViewItem(page.Text, imageIndex);
     item.Tag = page;
     listView.Items.Add(item);
-}</pre>
+}
+```
 
 Then, when the user selects an item in the list, we switch out the right-hand page:
 
-<pre>PropertyPage _activePage;
+```
+PropertyPage _activePage;
 
 private void listView_SelectedIndexChanged(object sender, System.EventArgs e)
 {
@@ -167,7 +187,8 @@ private void listView_SelectedIndexChanged(object sender, System.EventArgs e)
         _activePage.Visible = true;
         _activePage.OnSetActive();
     }
-}</pre>
+}
+```
 
 Then all we have to is define a couple of pages to go in the options dialog, and we end up with this:
 

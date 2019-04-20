@@ -3,6 +3,9 @@ title: "Adding an extra (optional) page to the C# Wizard"
 date: 2008-10-29T16:53:37.000Z
 x-drupal-nid: 224
 x-needs-review: 2008-10-29T16:53:37.000Z
+layout: series
+series: winformswizard
+tags: csharp wizard windows-forms
 ---
 This seems to be causing a few problems, so I'll quickly walk through it. I'll try to throw some screenshots in later.
 

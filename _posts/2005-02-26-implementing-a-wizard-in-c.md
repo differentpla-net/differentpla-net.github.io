@@ -6,7 +6,7 @@ x-needs-review: 2005-02-26T12:44:00.000Z
 redirect_from: /content/2005/02/implementing-wizard-c
 layout: series
 series: winformswizard
-tags: csharp wizard
+tags: csharp wizard windows-forms
 ---
 Oddly, the Windows Forms libraries don't provide any support for writing wizards. Here's one way to do it.
 

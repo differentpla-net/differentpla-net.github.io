@@ -6,7 +6,7 @@ x-needs-review: 2005-02-26T12:50:00.000Z
 redirect_from: /content/2005/02/implementing-wizard-c-part-2
 layout: series
 series: winformswizard
-tags: csharp wizard
+tags: csharp wizard windows-forms
 ---
 In this installment (see [here]({% post_url 2005-02-26-implementing-a-wizard-in-c %}) for the previous installment), we'll be fixing a few things and making the whole thing prettier.
 
