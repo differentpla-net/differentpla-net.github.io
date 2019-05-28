@@ -1,5 +1,5 @@
 ---
-title: Building Erlang: Prerequisites (Ubuntu)
+title: "Building Erlang: Prerequisites (Ubuntu)"
 date: 2019-01-30 17:03
 layout: series
 series: direnv-tool-versions
