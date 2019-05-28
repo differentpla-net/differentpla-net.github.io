@@ -54,6 +54,8 @@ Note that you can use `dbg:fun2ms/1` to make that slightly more readable:
     8> dbg:tpl(another_module, some_other_function, '_', dbg:fun2ms(fun(_) -> return_trace() end)).
     {ok,[{matched,mynode@myhost,1},{saved,1}]}
 
+For more examples, see [this Stackoverflow answer](https://stackoverflow.com/a/1954980).
+
 Make sure you tell it which processes you're interested in:
 
     9> dbg:p(pid(0,891,0), c).
@@ -67,4 +69,3 @@ Do your thing; enjoy the tracing.
 Then turn it off:
 
     11> dbg:stop_clear().
-
