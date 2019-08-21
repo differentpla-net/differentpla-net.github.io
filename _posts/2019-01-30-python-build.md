@@ -18,6 +18,14 @@ Install `pyenv`. We're not going to use it as-is, but it includes the `python-bu
     mkdir -p ~/.direnv/bin/
     ln -s ~/.direnv/pyenv/plugins/python-build/bin/python-build ~/.direnv/bin/
 
+You might need to install some [prerequisites](https://github.com/pyenv/pyenv/wiki/common-build-problems) first.
+
+tl;dr:
+
+    sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+        libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+        xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+
 Then install your chosen Python version:
 
     ~/.direnv/bin/python-build 2.7.15 ~/.pyenv/pythons/2.7.15
