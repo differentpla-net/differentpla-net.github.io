@@ -140,4 +140,4 @@ What's in the ZIP file?
 ## We can do that ourselves!
 
 You don't need `rebar escriptize` to do this; it's quite simple to write an
-`escriptize` script. See https://github.com/rlipscombe/escriptize for example.
+`escriptize` script. See [https://github.com/rlipscombe/escriptize](https://github.com/rlipscombe/escriptize) for example.
