@@ -2,6 +2,8 @@
 title: Bouncy Castle - Extended Key Usage
 date: 2013-03-23T13:13:35Z
 tags: bouncy-castle
+layout: series
+series: bouncy-castle
 ---
 If you look at a certificate, you will see something like one of the following:
 

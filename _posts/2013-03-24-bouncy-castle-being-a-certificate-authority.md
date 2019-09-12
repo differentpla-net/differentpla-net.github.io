@@ -2,6 +2,8 @@
 title: Bouncy Castle - Being a Certificate Authority
 date: 2013-03-24T16:14:15Z
 tags: bouncy-castle
+layout: series
+series: bouncy-castle
 ---
 Over the last few posts, we've seen how to create a self-signed server certificate in C#, by using the Bouncy Castle library. How do we create a CA certificate, and how do we issue certificates from that authority?
 
