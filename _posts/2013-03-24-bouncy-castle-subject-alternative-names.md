@@ -14,8 +14,7 @@ However, there's a bit of a chicken-and-egg situation going on here: the server 
 
 A bit of a quandary that one. There are a few ways around it:
 
-Use Server Name Indication (SNI)
---
+## Use Server Name Indication (SNI)
 
 Server Name Indication is an extension to the TLS protocol that allows the client to indicate which server it's trying to reach, in a similar way to the HTTP `Host:` header.
 
@@ -23,13 +22,11 @@ For this to work, your client needs to be using Internet Explorer 7 or later. I'
 
 However, if you're stuck with IIS on Windows, you need to be using IIS 8, which means Windows Server 2012.
 
-Use a wildcard certificate
---
+## Use a wildcard certificate
 
-This one's easy: just issue a certificate for (e.g.) `CN=*.mydomain.com`. This certificate can then be used for any certificate in that domain (provided it's trusted, of course).
+This one's easy: just issue a certificate for (e.g.) `CN=*.mydomain.com`. This certificate can then be used for any server in that domain (provided the certificate's trusted, of course).
 
-Use a Subject Alternative Name extension
---
+## Use a Subject Alternative Name extension
 
 In other places, you might see this referred to as a Universal Communication (UC) certificate. In short, it allows a certificate to have more than one subject name.
 
