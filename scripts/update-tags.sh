@@ -1,6 +1,11 @@
 #!/bin/bash
 
+# Remove the existing tag indexes
 rm tag/*.md
+
+# Get a list of uniq tags, and generate tag/foo.md for each one, using scripts/_tag.md
+# scripts/_tag.md uses layout: tag, and _layouts/tag.html uses Liquid to iterate over
+# pages with that tag, generating the index.
 grep -h '^tags:' _posts/* | \
     cut -d: -f2- | \
     tr ' ' '\n' | \
