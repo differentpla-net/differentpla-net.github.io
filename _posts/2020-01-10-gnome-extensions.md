@@ -16,6 +16,10 @@ I installed the following extensions:
 
 "Dash to panel" and "Dash to dock" aren't quite the same size, but I'll live with it.
 
+## Update, about 20 minutes later
+
+The newest version (26, on https://extensions.gnome.org/extension/1160/dash-to-panel/) of Dash to panel is much improved. I've disabled "Dash to dock" and I'm experimenting with it. Note that you need to restart Gnome Shell (Alt+F2, r) in order to turn on the "Display panels on all monitors" setting.
+
 ## Others
 
 - Alternatetab. Because, seriously, why would you want two different keystrokes to switch between top-level windows? I use something similar on macOS.
