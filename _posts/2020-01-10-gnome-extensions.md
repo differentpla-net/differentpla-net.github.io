@@ -20,6 +20,8 @@ I installed the following extensions:
 
 The newest version (26, on https://extensions.gnome.org/extension/1160/dash-to-panel/) of Dash to panel is much improved. I've disabled "Dash to dock" and I'm experimenting with it. Note that you need to restart Gnome Shell (Alt+F2, r) in order to turn on the "Display panels on all monitors" setting.
 
+I installed it by following these instructions: https://linuxconfig.org/how-to-install-gnome-shell-extensions-from-zip-file-using-command-line-on-ubuntu-18-04-bionic-beaver-linux, but with `gnome-shell-extension-tool -r` at the end.
+
 ## Others
 
 - Alternatetab. Because, seriously, why would you want two different keystrokes to switch between top-level windows? I use something similar on macOS.
