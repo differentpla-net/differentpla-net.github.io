@@ -7,7 +7,7 @@ layout: default
         <div class="details">
             <span class="created_at timeago" title="{{ page.date }}">{{ page.date }}</span>
             {% for tag in page.tags %}
-            <span class="label label-default"><a href="/tag/{{tag}}">{{ tag }}</a></span>
+            <a href="/tag/{{tag}}"><span class="label label-primary">{{ tag }}</span></a>
             {% endfor %}
             </div>
         <p></p>
