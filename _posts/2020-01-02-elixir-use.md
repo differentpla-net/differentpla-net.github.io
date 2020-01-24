@@ -31,7 +31,7 @@ This injects the quoted code (the `baz` function) into the `Foo` module.
 You can do something with the args. For example, in Phoenix, you invoke it like this:
 
 ```
-use FooWeb, :controller
+use MyWeb, :controller
 ```
 
 Phoenix uses it to call another function in the module:
