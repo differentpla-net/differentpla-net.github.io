@@ -33,7 +33,7 @@ can sometimes get painful. At this point a couple of tricks come in useful.
 
 The first is that you don't have to rebase onto a branch. You can rebase onto a
 particular commit. This allows you to "ratchet" your branch closer to where you
-want it. It doesn't necessarily avoid fixing conflicts, but it make it easier
+want it. It doesn't necessarily avoid fixing conflicts, but it makes it easier
 to find out where the conflict is coming from.
 
 It also feels like you're doing something useful, and it makes `git rebase
