@@ -33,4 +33,6 @@ different directories. That's not a perfect match for what I do.
 
 But: one of the other answers has a link to [https://github.com/DrVanScott/git-clone-init](https://github.com/DrVanScott/git-clone-init). It allows you to match the remote URL against patterns in order to set email and name automatically, and it does it at `git clone` time.
 
+I've combined it with `git config --global user.useconfigonly true` to prevent git from guessing my email, and I'm not setting a default user in my ~/.gitconfig.
+
 So far, it appears to work perfectly.
