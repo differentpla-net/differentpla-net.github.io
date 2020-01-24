@@ -2,8 +2,6 @@
 title: "Gnome Extensions"
 date: 2020-01-10T20:07:00.000Z
 tags: ubuntu ubuntu-install
-layout: series
-series: ubuntu-install
 ---
 
 I installed the following extensions:

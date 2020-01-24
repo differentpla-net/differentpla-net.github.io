@@ -1,9 +1,7 @@
 ---
 title: "max_user_watches"
 date: 2020-01-10T20:07:00.000Z
-tags: ubuntu ubuntu-install
-layout: series
-series: ubuntu-install
+tags: ubuntu ubuntu-install vscode
 ---
 
 > Visual Studio Code is unable to watch for file changes in this large workspace
