@@ -12,6 +12,7 @@ Now that I've successfully run `nginx` on my cluster, I'm going to do the same w
 
 ```
 mkdir node-server
+cd node-server
 vi server.js    # see below
 vi Dockerfile   # see below
 ```
