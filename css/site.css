@@ -165,3 +165,11 @@ ul.nav.series > li.active {
     color: teal; }
   .highlight .il {
     color: #009999; }
+
+nav > .octicon-mark-github {
+  color: white;
+}
+
+svg {
+  fill: currentColor;
+}
