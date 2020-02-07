@@ -1,6 +1,7 @@
 ---
 title: "Installing Erlang and Elixir on Raspberry Pi"
 date: 2020-02-07T10:49:06Z
+tags: erlang elixir raspberry-pi
 ---
 
 ## Installing Erlang and Elixir

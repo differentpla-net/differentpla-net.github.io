@@ -81,6 +81,8 @@ Make it executable:
 chmod +x docker-entrypoint.sh
 ```
 
+Note that the above runs the Phoenix app in development mode.
+
 ## Create the docker image
 
 Note that we switch to using a hyphen in the name at this point.
