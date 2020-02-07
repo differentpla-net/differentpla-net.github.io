@@ -39,7 +39,7 @@ COPY server.js .
 CMD ["node", "server.js"]
 ```
 
-## Create the image
+## Create the docker image
 
 ```
 docker build -t node-server .
