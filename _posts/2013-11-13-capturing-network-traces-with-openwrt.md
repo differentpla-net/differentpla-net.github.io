@@ -7,6 +7,7 @@ This is mostly a reminder to myself.
 
 ## Install tcpdump
 
+    opkg update
     opkg install tcpdump
 
 ## External USB Modules
