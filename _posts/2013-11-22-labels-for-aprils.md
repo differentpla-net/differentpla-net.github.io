@@ -2,10 +2,13 @@
 title: Labels for Aprils
 date: 2013-11-22T08:57:22Z
 ---
-If you don't know what [electric imp](http://electricimp.com) is,
-what an [April Development Board](http://electricimp.com/docs/hardware/resources/reference-designs/april/),
-and you don't have a [Dymo LetraTag LT-100H](http://global.dymo.com/enGB/Products/LetraTag_LT-100H.html) label printer,
-then this isn't going to be of much use to you.
+
+If you don't know what [electric imp](http://electricimp.com) is, what an
+[April Development
+Board](http://electricimp.com/docs/hardware/resources/reference-designs/april/)
+is, and you don't have a [Dymo LetraTag
+LT-100H](http://global.dymo.com/enGB/Products/LetraTag_LT-100H.html) label
+printer, then this isn't going to be of much use to you.
 
 If you do know what all of those things are, and you have more than one April board,
 and you have more than one imp module, and you have a need to keep track of which
