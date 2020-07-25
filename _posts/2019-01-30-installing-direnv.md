@@ -19,7 +19,7 @@ Download the appropriate binary from the [releases page](https://github.com/dire
 
 For example:
 
-    curl -qfsSL https://github.com/direnv/direnv/releases/download/v2.19.0/direnv.linux-amd64 -o direnv
+    curl -qfsSL https://github.com/direnv/direnv/releases/download/v2.21.3/direnv.linux-amd64 -o direnv
     chmod +x direnv
     sudo mv direnv /usr/local/bin
 
