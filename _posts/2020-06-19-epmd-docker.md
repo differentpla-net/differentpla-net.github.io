@@ -40,7 +40,8 @@ the host name resolution.
 
 The first thing we'll need is a "discovery module". It looks like this:
 
-```
+{% raw %}
+```erlang
 -module(epmd_docker).
 -export([start_link/0,
          register_node/3,
@@ -74,11 +75,12 @@ get_container_ip(Host) ->
 port_please(Name, IP) ->
     erl_epmd:port_please(Name, IP).
 ```
+{% endraw %}
 
 Somewhat annoyingly, `inet_tcp_dist` _also_ looks up the host in DNS, so we need
 to subvert that too:
 
-```
+```erlang
 -module(epmd_docker_dist).
 -export([listen/1, listen/2, address/0, accept/1, accept_connection/5, select/1, setup/5, close/1, childspecs/0]).
 
@@ -119,12 +121,12 @@ childspecs() ->
 
 And then we can try it out:
 
-```
+```sh
 erlc -o ebin src/epmd_docker.erl
 erlc -o ebin src/epmd_docker_dist.erl
 ```
 
-```
+```sh
 erl -pa ebin \
     -proto_dist epmd_docker \
     -start_epmd false -epmd_module epmd_docker \
@@ -134,14 +136,14 @@ erl -pa ebin \
 
 ...or we can join the cluster (which allows us to run observer, etc.):
 
-```
+```sh
 erl -pa ebin \
     -proto_dist epmd_docker \
     -start_epmd false -epmd_module epmd_docker \
     -sname admin$$ -setcookie $COOKIE
 ```
 
-```
+```erlang
 net_kernel:connect_node(Node).
 observer:start().
 ```
