@@ -12,6 +12,8 @@ We do physical Internet-of-Things devices, so the "almost" allows us to exclude 
 
 Effectively what we do is stand up a cut-down clone of the production system, with data stores (Postgres, Redis, etc.), message brokers (RabbitMQ, VerneMQ, Redis), the customer-facing API (and its associated microservices), and a small number of instances of the device-facing services. All told, there are about 20 processes in the cut-down test environment.
 
+I should note that we use a mixture of languages (Erlang, Elixir, Go, etc.), so this technique isn't restricted to only testing Erlang or Elixir processes.
+
 At the moment, we run these processes directly on the developer's PC (or on the Jenkins worker), but we're in the process of converting them to run as docker containers, and this will also allow us to run the same tests against the staging environment, with some configuration changes.
 
 Then we run a few hundred test cases against this setup.
