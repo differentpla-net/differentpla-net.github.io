@@ -23,14 +23,21 @@ sudo apt-get -y install libncurses5-dev     # configure: error: No curses librar
 
 ## Recommended
 
+I'd consider this one "essential", because you need it to make observer work.
+
 ```
-# I'd consider this one "essential", because you need it to make observer work.
 sudo apt-get -y install libwxgtk3.0-dev     # wxWidgets not found, wx will NOT be usable
 ```
 
-This list is correct for Erlang/OTP-21.3 and Ubuntu 18.04. The following may not be, because I never bother installing them.
+This list is correct for Erlang/OTP-21.3 and Ubuntu 18.04; for Ubuntu 20.04, you'll need the following instead:
+
+```
+sudo apt-get -y install libwxgtk3.0-gtk3-dev     # wxWidgets not found, wx will NOT be usable
+```
 
 ## Optional
+
+The following may not be correct, because I never bother installing them.
 
 ```
 # I consider these "optional", because I've never noticed them missing.
