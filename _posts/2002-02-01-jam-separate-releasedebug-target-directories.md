@@ -1,6 +1,7 @@
 ---
 title: "Jam - Separate Release/Debug Target Directories"
 date: 2002-02-01T12:05:00.000Z
+tags: jam
 ---
 By default, AppWizard-generated applications use separate directories for the output of the different debug and release builds. We'd like to replicate that functionality.
 

@@ -1,6 +1,7 @@
 ---
 title: "Building Shared Libraries (DLLs)"
 date: 2001-07-04T07:00:00.000Z
+tags: jam
 ---
 The default Jambase file doesn't come with a rule to make DLLs (or shared libraries in the Unix parlance).
 

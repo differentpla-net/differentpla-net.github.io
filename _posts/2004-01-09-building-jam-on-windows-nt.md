@@ -1,6 +1,7 @@
 ---
 title: "Building Jam on Windows NT"
 date: 2004-01-09T10:28:00.000Z
+tags: jam
 x-drupal-nid: 115
 x-needs-review: 2004-01-09T10:28:00.000Z
 ---

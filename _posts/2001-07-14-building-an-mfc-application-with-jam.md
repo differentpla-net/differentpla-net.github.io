@@ -1,6 +1,7 @@
 ---
 title: "Building an MFC Application with Jam"
 date: 2001-07-14T00:25:38.000Z
+tags: jam
 ---
 ## Introduction
 

@@ -1,6 +1,7 @@
 ---
 title: "Jam: Linking with System Libraries"
 date: 2004-07-04T07:00:00.000Z
+tags: jam
 x-drupal-nid: 122
 x-needs-review: 2004-07-04T07:00:00.000Z
 ---
