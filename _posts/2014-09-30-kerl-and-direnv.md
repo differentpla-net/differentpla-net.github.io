@@ -1,6 +1,7 @@
 ---
 title: Using kerl with direnv
 date: 2014-09-30
+tags: kerl direnv
 ---
 `kerl` allows you to easily build and install multiple Erlang/OTP releases.
 It's kinda like `nvm` or `rvm`, but for Erlang. It doesn't do everything, and

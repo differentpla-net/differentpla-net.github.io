@@ -3,6 +3,7 @@ title: Installing Erlang with kerl
 date: 2019-01-30 17:02
 layout: series
 series: direnv-tool-versions
+tags: direnv erlang
 ---
 
 At Electric Imp, on developer PCs, we manage our Erlang versions with [kerl](https://github.com/yrashk/kerl).

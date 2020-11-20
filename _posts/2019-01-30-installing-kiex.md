@@ -3,6 +3,7 @@ title: Installing kiex
 date: 2019-01-30 17:05
 layout: series
 series: direnv-tool-versions
+tags: elixir kiex
 ---
 
 ```

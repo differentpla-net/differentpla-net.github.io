@@ -3,6 +3,7 @@ title: "Integrating direnv with ghc"
 date: 2020-02-02T15:32:31Z
 layout: series
 series: direnv-tool-versions
+tags: direnv haskell ghc
 ---
 
 I'm reading "Practical Haskell", which requires a different version of Haskell than

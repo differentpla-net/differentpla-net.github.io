@@ -3,6 +3,7 @@ title: Integrating direnv with python 3
 date: 2020-06-12T18:15
 layout: series
 series: direnv-tool-versions
+tags: direnv python python-3
 ---
 
 By now you should be using Python 3.x. You can integrate it with direnv (2.21 or newer)

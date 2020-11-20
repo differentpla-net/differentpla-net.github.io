@@ -3,6 +3,7 @@ title: Installing Elixir with kiex
 date: 2019-01-30 17:06
 layout: series
 series: direnv-tool-versions
+tags: direnv elixir
 ---
 
 At Electric Imp, we manage our Elixir versions with kiex.

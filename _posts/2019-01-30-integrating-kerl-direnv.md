@@ -3,6 +3,7 @@ title: Integrating direnv with kerl
 date: 2019-01-30 17:03
 layout: series
 series: direnv-tool-versions
+tags: direnv kerl erlang
 ---
 
 To integrate `direnv` with `kerl`, add the following to `~/.direnvrc`:

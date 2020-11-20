@@ -3,6 +3,7 @@ title: Integrating direnv with kiex
 date: 2019-01-30 17:07
 layout: series
 series: direnv-tool-versions
+tags: direnv elixir kiex
 ---
 
 To integrate `direnv` with `kiex`, add the following to `~/.direnvrc`:

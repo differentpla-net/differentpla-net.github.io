@@ -3,6 +3,7 @@ title: Integrating direnv with nvm
 date: 2019-01-30 17:12
 layout: series
 series: direnv-tool-versions
+tags: direnv nodejs
 ---
 
 To integrate `direnv` with `nvm`, add the following to `~/.direnvrc`:

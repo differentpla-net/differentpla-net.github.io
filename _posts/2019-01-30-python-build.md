@@ -3,6 +3,7 @@ title: Installing Python with python-build
 date: 2019-01-30 17:08
 layout: series
 series: direnv-tool-versions
+tags: direnv python
 ---
 
 Install `pyenv`. We're not going to use it as-is, but it includes the `python-build` script that we will use:

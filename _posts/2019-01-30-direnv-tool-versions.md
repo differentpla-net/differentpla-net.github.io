@@ -3,6 +3,7 @@ title: Using direnv to manage tool versions
 date: 2019-01-30 17:00
 layout: series
 series: direnv-tool-versions
+tags: direnv
 ---
 
 At Electric Imp, we use a [variety of different languages]({% post_url 2019-01-30-electricimp-languages %}), and each project might be using a different mix of versions.
