@@ -3,6 +3,7 @@ title: Installing direnv
 date: 2019-01-30 17:01
 layout: series
 series: direnv-tool-versions
+tags: direnv
 ---
 
 From [direnv.net](https://direnv.net/):
