@@ -22,3 +22,6 @@ were off yesterday morning.
 Fortunately -- because that's how I roll -- I had some spare IEC-60320-C14
 (reverse kettle) cable lying around, so I rewired the power strip with a less
 melted connector.
+
+And then I fixed a shelf to the wall and put the UPS on that, so that it's raised
+off the floor, where the vacuum cleaner can't get at it.
