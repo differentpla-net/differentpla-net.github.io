@@ -39,12 +39,12 @@ That's about 250 million years.
 <tr><td>Minutes</td><td>60</td><td>~63</td><td>6 bits</td><td>42 bits</td></tr>
 <tr><td>Hours</td><td>24</td><td>~31</td><td>5 bits</td><td>37 bits</td></tr>
 <tr><td>Days</td><td>365.25</td><td>~511</td><td>9 bits</td><td>28 bits</td></tr>
-<tr><td>Years</td><td>~250My <b>*</b></td><td></td><td>28 bits</td><td></td></tr>
+<tr><td>Years</td><td>~250My (but read on)</td><td></td><td>28 bits</td><td></td></tr>
 </table>
 
 As it happens, we're out by about a factor of 2. The actual number is roughly 536 million. Why?
 
-We wasted ~0.4 bits in the hours/day conversion, plus another ~0.5 bits in the days/year conversion. This gives us about a bit (i.e. our factor of two). We also wasted some other fractional bits elsewhere (1000 &#x2260; 1023 and 60 &#x2260; 63).
+We wasted ~0.4 bits in the hours/day conversion, plus another ~0.5 bits in the days/year conversion. This gives us about a bit (i.e. our factor of two). We also wasted some other fractional bits elsewhere (1000 &#x2260; 1023 and 60 &#x2260; 63). We erred on the cautious side, by using more bits than needed, so our result is a lower limit.
 
 But at these timescales it doesn't particularly matter (unless you're doing astrophysics, maybe).
 
