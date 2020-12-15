@@ -31,9 +31,9 @@ So I decided to subvert epmd instead.
 
 You can find a number of blog posts about doing Erlang distribution without epmd:
 
-- https://www.erlang-solutions.com/blog/erlang-and-elixir-distribution-without-epmd.html
-- https://github.com/tsloughter/epmdless
-- https://erlang.org/doc/apps/erts/alt_disco.html
+- [https://www.erlang-solutions.com/blog/erlang-and-elixir-distribution-without-epmd.html](https://www.erlang-solutions.com/blog/erlang-and-elixir-distribution-without-epmd.html)
+- [https://github.com/tsloughter/epmdless](https://github.com/tsloughter/epmdless)
+- [https://erlang.org/doc/apps/erts/alt_disco.html](https://erlang.org/doc/apps/erts/alt_disco.html)
 
 But epmd is working fine: it's running in the docker containers; I just need to subvert
 the host name resolution.
