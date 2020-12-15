@@ -1,5 +1,5 @@
 ---
-title: "Bit for timestamps"
+title: "How many bits for timestamps?"
 date: 2020-12-11T13:43:07Z
 ---
 
