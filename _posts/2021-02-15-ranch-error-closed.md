@@ -423,7 +423,7 @@ I then noticed the `tls_connection_sup` module, which sounds like it might be su
 
 So I'd got a `tls_connection` process, which was already in the `error` state. At this point I was starting to suspect that I wasn't looking at an `ssl_connection` process after all.
 
-It was at this point that I realised that `ssl:controlling_process` looks like this:
+Then I realised that `ssl:controlling_process` looks like this:
 
 ```erlang
 controlling_process(#sslsocket{pid = [Pid|_]}, NewOwner) when is_pid(Pid), is_pid(NewOwner) ->
