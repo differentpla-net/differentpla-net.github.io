@@ -1,0 +1,37 @@
+digraph G {
+    ranch_sup -> ranch_listener_sup;
+
+    ranch_listener_sup -> ranch_conns_sup_sup;
+
+    subgraph cluster_0 {
+        style=invis;
+
+        ranch_conns_sup_sup;
+
+        ranch_conns_sup1 [label="ranch_conns_sup"];
+        ranch_conns_sup2 [label="ranch_conns_sup"];
+        ranch_conns_sup3 [label="ranch_conns_sup"];
+
+        ranch_conns_sup_sup -> ranch_conns_sup1;
+        ranch_conns_sup_sup -> ranch_conns_sup2;
+        ranch_conns_sup_sup -> ranch_conns_sup3;
+    }
+
+    ranch_listener_sup -> ranch_acceptors_sup;
+
+    subgraph cluster_1 {
+        style=invis;
+
+        ranch_acceptor1 [label="ranch_acceptor"];
+        ranch_acceptor2 [label="ranch_acceptor"];
+        ranch_acceptor3 [label="ranch_acceptor"];
+
+        ranch_acceptors_sup -> ranch_acceptor1;
+        ranch_acceptors_sup -> ranch_acceptor2;
+        ranch_acceptors_sup -> ranch_acceptor3;
+    }
+
+    ranch_acceptor1 -> ranch_conns_sup1 [style="dotted"];
+    ranch_acceptor2 -> ranch_conns_sup2 [style="dotted"];
+    ranch_acceptor3 -> ranch_conns_sup3 [style="dotted"];
+}

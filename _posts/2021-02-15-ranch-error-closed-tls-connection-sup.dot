@@ -1,0 +1,14 @@
+digraph G {
+    ranch_ssl_handshake [label="ranch_ssl:handshake"];
+    ssl_handshake [label="ssl:handshake"];
+    ssl_connection_handshake [label="ssl_connection:handshake"];
+    connection_start_fsm [label="ConnectionCb:start_fsm"];
+    tls_connection_start_fsm [label="tls_connection:start_fsm"];
+    tls_connection_sup_start_child [label="tls_connection_sup:start_child"];
+
+    ranch_ssl_handshake -> ssl_handshake;
+    ssl_handshake -> ssl_connection_handshake;
+    ssl_connection_handshake -> connection_start_fsm;
+    connection_start_fsm -> tls_connection_start_fsm;
+    tls_connection_start_fsm -> tls_connection_sup_start_child;
+}
