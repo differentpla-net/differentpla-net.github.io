@@ -62,7 +62,7 @@ I started digging into the ranch source code, to see if I could figure out what 
 
 Ranch has a pool of `ranch_acceptor` processes, which are all listening on the socket and accepting connections. It defaults to 10 acceptors, but the diagram only shows 3.
 
-When there's an incoming connection, the operating system (and Erlang) will wake up one of them (arbitrarily) to accept the socket. The acceptor it will ask its associated `ranch_conns_sup` to start the protocol handler.
+When there's an incoming connection, the operating system (and Erlang) will wake up one of them (arbitrarily) to accept the socket. The acceptor will ask its associated `ranch_conns_sup` to start the protocol handler.
 
 The relevant part of the Ranch source code looks like this:
 
@@ -99,8 +99,6 @@ start_protocol(SupPid, MonitorRef, Socket) ->
 
 That is: it sends a `start_protocol` message to the relevant `ranch_conns_sup` (see the earlier supervision diagram) and waits for a response. If that fails, the whole thing errors out. That's uncaught, which means that the `ranch_acceptor` would be killed, and I wasn't seeing that.
 
-At this point, I should note that I hadn't actually implemented `example_protocol`, so Ranch would have been completely correct to error out.
-
 If you look at the handling for the `start_protocol` message, it looks like this:
 
 ```erlang
@@ -115,6 +113,8 @@ If you look at the handling for the `start_protocol` message, it looks like this
                 Transport:close(Socket),
                 loop(...)
 ```
+
+At this point, I should note that I hadn't actually implemented `example_protocol`, so Ranch would have been completely correct to error out.
 
 That is: it would have tried to invoke my non-existent protocol, which would have thrown an error, but that would have been caught, and Ranch would have logged a warning. I confirmed that that works properly by temporarily switching to using `ranch_tcp` rather than `ranch_ssl`. It logged the warning.
 
@@ -179,7 +179,7 @@ The `socket` value looks like this:
  [#PID<0.232.0>, #PID<0.231.0>]}
 ```
 
-_Aside: I wonder if `IO.inspect()` can be made to understand Erlang records._
+_Aside: I wonder if Elixir's `IO.inspect()` can be made to understand Erlang records._
 
 The record definition for `sslsocket` is in `ssl_api.hrl` and, well...
 
@@ -225,9 +225,9 @@ call(FsmPid, Event) ->
 
 ...which is extremely promising.
 
-But: I need to confess that at this point, I wasted an hour or so looking at how `new_user` was handled in `ssl_connection`, before figuring out that I should have been looking at `tls_connection` instead. That first pid in the list isn't an `ssl_connection`; it's a `tls_connection`.
-
 ### Down the rabbit hole
+
+I need to confess that at this point, I wasted an hour or so looking at how `new_user` was handled in `ssl_connection`, before figuring out that I was looking in the wrong place. That first pid in the list isn't an `ssl_connection`.
 
 Allow me to continue down this particular rabbit hole for a while first, though -- it's not without interest.
 
@@ -250,9 +250,9 @@ Answer: no. The process is still alive and kicking. So the `{error, closed}` has
 
 It can't be coming from `gen_statem:call` itself because why would `gen_statem` know anything about `closed` sockets? So I ignored that possibility.
 
-Also remember I was still looking at the wrong `ssl_connection` code at this point. If I'd been paying closer attention at this point, I'd have figured that out sooner. I'll pick that thread up later.
+Also remember I was still looking at the wrong code at this point. If I'd been paying closer attention at this point, I'd have figured that out sooner. I'll pick that thread up later.
 
-I spent some time digging in the `ssl_connection` source code, looking at how it handled `new_user`, and couldn't figure out exactly what was happening (because, remember, I was digging in the wrong place). I got to this piece of code:
+I spent some time digging in the `ssl_connection` source code, looking at how it handled `new_user`, and couldn't figure out exactly what was happening. I got to this piece of code:
 
 ```erlang
 % ssl_connection.erl
@@ -264,7 +264,7 @@ handle_call({new_user, User}, From, StateName,
      [{reply, From, ok}]};
 ```
 
-...but that doesn't return the error, and doesn't seem to have any way to fail.
+...but that doesn't return the error, and doesn't seem to have any obvious way to fail.
 
 Maybe the state machine's not in the state I think it is? We can query a `gen_statem` for its state by calling `sys:get_state(Pid)`, so I did that:
 
@@ -295,6 +295,8 @@ get_state(Name) ->
 
 Ah. `gen_statem` returns `{StateName, StateData}`, but our state machine is apparently in the `error` state, so it returns `{error, Data}`, which `sys:get_state` interprets, well, as an _error_, and converts it to an exception. Whoops.
 
+### dbg to the rescue?
+
 At this point, I broke out Erlang's `dbg` module:
 
 ```elixir
@@ -307,9 +309,12 @@ At this point, I broke out Erlang's `dbg` module:
 :dbg.p(:all, :c)
 ```
 
-This starts the text-mode debugger, registers a function as the tracer, enables call traces for the `ssl:controlling_process` function and for every function in the `ssl_connection` module, and logs the return values.
-
-Then it turns on call tracing for all processes.
+This:
+- starts the text-mode debugger
+- registers a function as the tracer
+- enables call traces for the `ssl:controlling_process` function and for every function in the `ssl_connection` module
+- and logs the return values.
+- turns on call tracing for all processes.
 
 The trace output from that was noisy, but I spotted an interesting thing in it: there was a call to `ssl_connection:ssl_config` immediately after the call to `ssl_connection:new_user` and its call to `ssl_connection:call`.
 
@@ -369,7 +374,7 @@ file_error(File, Throw) ->
     end.
 ```
 
-It throws the error, which means that some code somewhere is either catching it, or dying. I know that nothing's dying, because I checked for that earlier, so something's catching it and... what?
+It throws the error, which means that some code somewhere is either catching it, or dying. I know that nothing's dying, because I checked for that earlier, so something's catching it and... then what?
 
 Looking for `ssl_config` in the `ssl_connection.erl` file (remember: I'm still on a wild goose chase at this point) leads to this section of code:
 
