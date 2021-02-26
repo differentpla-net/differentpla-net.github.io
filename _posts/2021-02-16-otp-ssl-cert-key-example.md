@@ -1,6 +1,7 @@
 ---
 title: "Using 'cert' and 'key' with Erlang/OTP 'ssl'"
 date: 2021-02-26T16:16:00Z
+tags: erlang
 ---
 
 Ordinarily when writing an SSL/TLS server or client using Erlang/OTP, you'll use the `certfile` and `keyfile` options, as follows:

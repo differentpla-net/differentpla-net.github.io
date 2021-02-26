@@ -1,6 +1,7 @@
 ---
 title: "{error, closed}; nothing logged"
 date: 2021-02-25T16:04:07Z
+tags: erlang
 ---
 
 I've just spent about a day poking around in the guts of Erlang/OTP and [Ranch](https://github.com/ninenines/ranch), and I thought I'd write some of it down.
