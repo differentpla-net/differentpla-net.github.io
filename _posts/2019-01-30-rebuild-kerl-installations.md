@@ -1,6 +1,7 @@
 ---
 title: Rebuilding kerl Installations
 date: 2019-01-30 16:50
+tags: kerl erlang
 ---
 
 If `kerl list installations` is displaying Erlang installations that you

@@ -1,6 +1,7 @@
 ---
 title: "Connecting to an Erlang node in a Docker container"
 date: 2020-06-19T15:41:48Z
+tags: erlang docker
 ---
 
 I've got a bunch of Erlang nodes running in Docker containers, and I'd
