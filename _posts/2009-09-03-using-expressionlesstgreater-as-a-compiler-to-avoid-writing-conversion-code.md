@@ -2,9 +2,8 @@
 title: "Using Expression<T> as a Compiler, to avoid writing conversion code"
 date: 2009-09-03T15:22:33.000Z
 x-drupal-nid: 238
-x-needs-review: 2009-09-03T15:22:33.000Z
 ---
-Marc Gravell wrote about [using Expression<T> as a compiler](http://www.infoq.com/articles/expression-compiler). It was a bit of an eye-opener.
+Marc Gravell wrote about [using `Expression<T>` as a compiler](http://www.infoq.com/articles/expression-compiler). It was a bit of an eye-opener.
 
 There's a bit in it where he says:
 
@@ -12,92 +11,111 @@ There's a bit in it where he says:
 
 Say no more:
 
-<pre>    static class Conversion<TInput, TOutput>
+```c#
+static class Conversion<TInput, TOutput>
+{
+    private static readonly Func<TInput, TOutput> Converter;
+
+    static Conversion()
     {
-        private static readonly Func<TInput, TOutput> Converter;
+        Converter = CreateConverter();
+    }
 
-        static Conversion()
-        {
-            Converter = CreateConverter();
-        }
+    public static Func<TInput, TOutput> CreateConverter()
+    {
+        var input = Expression.Parameter(typeof(TInput), "input");
 
-        public static Func<TInput, TOutput> CreateConverter()
-        {
-            var input = Expression.Parameter(typeof(TInput), "input");
+        // For each property that exists in the destination object,
+        // is there a property with the same name in the source object?
 
-            // For each property that exists in the destination object, is there a property with the same name in the source object?
-            var destinationProperties = typeof(TOutput)
-                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                .Where(prop => prop.CanWrite);
-            var sourceProperties = typeof(TInput)
-                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                .Where(prop => prop.CanRead);
+        // Get a list of writable properties on the destination.
+        var destinationProperties = typeof(TOutput)
+            .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+            .Where(prop => prop.CanWrite);
 
-            var memberBindings = sourceProperties.Join(destinationProperties,
-                sourceProperty => sourceProperty.Name,
-                destinationProperty => destinationProperty.Name,
-                (sourceProperty, destinationProperty) =>
-                    (MemberBinding)Expression.Bind(destinationProperty,
-                        Expression.Property(input, sourceProperty)));
+        // Get a list of readable properties on the source.
+        var sourceProperties = typeof(TInput)
+            .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+            .Where(prop => prop.CanRead);
 
-            var body = Expression.MemberInit(Expression.New(typeof(TOutput)), memberBindings);
-            var lambda = Expression.Lambda<Func<TInput, TOutput>>(body, input);
-            return lambda.Compile();
-        }
+        // Where the named property exists in both, generate a 'bind' (assignment) expression.
+        var memberBindings = sourceProperties.Join(destinationProperties,
+            sourceProperty => sourceProperty.Name,
+            destinationProperty => destinationProperty.Name,
+            (sourceProperty, destinationProperty) =>
+                (MemberBinding)Expression.Bind(destinationProperty,
+                    Expression.Property(input, sourceProperty)));
 
-        public static TOutput From(TInput input)
-        {
-            return Converter(input);
-        }
-    }</pre>
+        // Generate a member initializer containing those bindings.
+        var body = Expression.MemberInit(Expression.New(typeof(TOutput)), memberBindings);
+
+        // Turn it into a function and compile it.
+        var lambda = Expression.Lambda<Func<TInput, TOutput>>(body, input);
+        return lambda.Compile();
+    }
+
+    public static TOutput From(TInput input)
+    {
+        return Converter(input);
+    }
+}
+```
 
 Use it like this:
 
-<pre>    CustomerDto customerDto = CustomerService.GetCustomerById(1);
-    Customer customer = Conversion<CustomerDto, Customer>.From(customerDto);</pre>
+```c#
+CustomerDto customerDto = CustomerService.GetCustomerById(1);
+Customer customer = Conversion<CustomerDto, Customer>.From(customerDto);
+```
 
 I also threw a fluent interface together as well...
 
-<pre>    static class Conversion
+```c#
+static class Conversion
+{
+    internal class ConversionFrom<TInput>
     {
-        internal class ConversionFrom<TInput>
+        private readonly TInput _input;
+
+        public ConversionFrom(TInput input)
         {
-            private readonly TInput _input;
-
-            public ConversionFrom(TInput input)
-            {
-                _input = input;
-            }
-
-            public TOutput To<TOutput>()
-            {
-                return Conversion<TInput, TOutput>.From(_input);
-            }
+            _input = input;
         }
 
-        internal class ConversionTo<TOutput>
+        public TOutput To<TOutput>()
         {
-            public TOutput From<TInput>(TInput input)
-            {
-                return Conversion<TInput, TOutput>.From(input);
-            }
+            return Conversion<TInput, TOutput>.From(_input);
         }
+    }
 
-        public static ConversionFrom<TInput> From<TInput>(TInput input)
+    internal class ConversionTo<TOutput>
+    {
+        public TOutput From<TInput>(TInput input)
         {
-            return new ConversionFrom<TInput>(input);
+            return Conversion<TInput, TOutput>.From(input);
         }
+    }
 
-        public static ConversionTo<TOutput> To<TOutput>()
-        {
-            return new ConversionTo<TOutput>();
-        }
-    }</pre>
+    public static ConversionFrom<TInput> From<TInput>(TInput input)
+    {
+        return new ConversionFrom<TInput>(input);
+    }
+
+    public static ConversionTo<TOutput> To<TOutput>()
+    {
+        return new ConversionTo<TOutput>();
+    }
+}
+```
 
 Use it like this:
 
-<pre>Customer customer = Conversion.From(customerDto).To<Customer>();</pre>
+```c#
+Customer customer = Conversion.From(customerDto).To<Customer>();
+```
 
 ...or like this:
 
-<pre>Customer customer = Conversion.To<Customer>().From(customerDto);</pre>
+```c#
+Customer customer = Conversion.To<Customer>().From(customerDto);
+```
