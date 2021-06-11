@@ -8,7 +8,7 @@ tags: direnv python
 
 Install `pyenv`. We're not going to use it as-is, but it includes the `python-build` script that we will use:
 
-    PYENV_VERSION=1.2.18
+    PYENV_VERSION=2.0.1
     mkdir -p ~/.direnv/
     cd ~/.direnv/
     wget -O pyenv-${PYENV_VERSION}.tar.gz \
@@ -19,7 +19,7 @@ Install `pyenv`. We're not going to use it as-is, but it includes the `python-bu
     ln -s pyenv-${PYENV_VERSION} pyenv
 
     mkdir -p ~/.direnv/bin/
-    ln -s ~/.direnv/pyenv/plugins/python-build/bin/python-build ~/.direnv/bin/
+    ln -sf ~/.direnv/pyenv/plugins/python-build/bin/python-build ~/.direnv/bin/
 
 You might need to install some [prerequisites](https://github.com/pyenv/pyenv/wiki/common-build-problems) first.
 
@@ -31,7 +31,7 @@ tl;dr:
 
 Then install your chosen Python version:
 
-    ~/.direnv/bin/python-build 2.7.17 ~/.pyenv/pythons/2.7.17
+    ~/.direnv/bin/python-build 3.9.5 ~/.pyenv/versions/3.9.5
 
 To get a list of available Python definitions, use:
 
