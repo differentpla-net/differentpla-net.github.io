@@ -17,7 +17,8 @@ rule SharedLibrary
 
 This is exactly the same as the `Main` rule, except that we've changed the names.
 
-```rule SharedLibraryFromObjects
+```
+rule SharedLibraryFromObjects
 {
 	local _s _t ;
 
