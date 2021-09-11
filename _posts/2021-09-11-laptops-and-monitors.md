@@ -29,7 +29,7 @@ In a conversation on the work Slack, someone pointed out that the Mac would work
 
 ## What about a dock?
 
-So I went back to Slack to ask about laptop dock recommendations. The CalDigit TS3 Plus seems to be the most popular answer, but it only has one DisplayPort interface, so in order to support two external monitors, you have to connect one via DP, and one via USB. To get the USB-connected one to work, you need to install some Displaylink software.
+So I went back to Slack to ask about laptop dock recommendations. The CalDigit TS3 Plus seems to be the most popular answer, but it only has one DisplayPort interface, so in order to support two external monitors, you have to connect one via DP, and one via the dock's USB-C port. To get the USB-connected one to work, you need to install some Displaylink software.
 
 That seemed untidy to me, and CalDigit offer a dock with two DisplayPort interfaces: the CalDigit USB-C Pro Dock, so I ordered one of those instead.
 
@@ -37,19 +37,21 @@ The plan is that it should work like this:
 
 ![](/images/2021-09-11-laptops-and-monitors/macos-dock-works.png)
 
-...and it does. For the Mac. It doesn't work with the Surface Book 3:
+...and it does. For the Mac.
+
+It doesn't work with the Surface Book 3:
 
 ![](/images/2021-09-11-laptops-and-monitors/windows-dock-nope.png)
 
 The laptop _detects_ the second monitor just fine. It just refuses to _use_ it.
 
-The Surface Book 3 doesn't have Thunderbolt, which means that (according to the CalDigit website) the dock only supports HD monitors, rather than 2K or 4K monitors. Both of my monitors are 2560 x 1440, which (I think) is bigger than HD. I'm not entirely sure why it doesn't work -- using USB-C without the dock works fine, as explained above.
+The Surface Book 3 doesn't have Thunderbolt, which means that (according to the CalDigit website) the dock only supports HD monitors, rather than 2K or 4K monitors. Both of my monitors are 2560 x 1440, which (I think) is bigger than HD. I'm not entirely sure why it doesn't work -- using USB-C without the dock works fine, as explained above, so there's plenty of bandwidth.
 
 This is kinda annoying. The point of the dock is that I should only have to move one cable to switch between laptops.
 
 ## Solution
 
-After some thought, I came up with a solution. It's not perfect, and it means that I've paid money for a dock that I'm only half using (I'll probably expense it).
+After some thought, I came up with a solution. It's not perfect, and it means that I've paid money for a dock that I'm only half using.
 
 When I'm using the Macbook:
 
@@ -74,3 +76,16 @@ It does mean that when I want to switch from Mac to Windows, I need to:
 It's possible that "Auto Input Select" will take care of some of this.
 
 It does mean, however, that -- ignoring the peripherals -- I can leave both laptops connected to both monitors.
+
+## And what about the Linux box?
+
+I can leave that connected to the HDMI inputs on the two monitors. Then the whole thing ends up looking like this:
+
+![](/images/2021-09-11-laptops-and-monitors/everything.png)
+
+...ignore the fact that all three computers seem to be connected to the USB hub at the same time.
+
+To switch to the Linux box, I need to:
+
+- Switch both monitors to HDMI.
+- Move the USB hub cable to the Linux box.
