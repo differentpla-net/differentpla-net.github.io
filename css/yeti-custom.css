@@ -57,3 +57,6 @@ a.anchorlink {
   font-size: smaller;
 }
 
+div.container {
+  padding-bottom: 30px;
+}
