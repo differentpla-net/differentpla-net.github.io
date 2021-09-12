@@ -45,9 +45,13 @@ It doesn't work with the Surface Book 3:
 
 The laptop _detects_ the second monitor just fine. It just refuses to _use_ it.
 
-The Surface Book 3 doesn't have Thunderbolt, which means that (according to the CalDigit website) the dock only supports HD monitors, rather than 2K or 4K monitors. Both of my monitors are 2560 x 1440, which (I think) is bigger than HD. I'm not entirely sure why it doesn't work -- using USB-C without the dock works fine, as explained above, so there's plenty of bandwidth.
+The Surface Book 3 doesn't have Thunderbolt, which means that (according to the CalDigit website) the dock only supports HD monitors, rather than 2K or 4K monitors.
 
-This is kinda annoying. The point of the dock is that I should only have to move one cable to switch between laptops.
+I kind of skipped over that bit. My thought process went something like this: HD is 1080p, and my monitors are 2560 x 1440, and 1440 isn't _that_ much more than 1080. But, apparently, they're 2K (or QHD), so that's out.
+
+I'm not entirely sure why it doesn't work -- using USB-C without the dock works fine, as explained above, so there's plenty of bandwidth.
+
+This is annoying. The point of the dock is that I should only have to move one cable to switch between laptops.
 
 ## Solution
 
