@@ -8,13 +8,15 @@ tags: direnv ruby
 
 Install `ruby-install`:
 
+https://github.com/postmodern/ruby-install/archive/refs/tags/v0.8.3.tar.gz
+
     mkdir -p ~/.direnv/
     cd ~/.direnv/
-    wget -O ruby-install-0.7.1.tar.gz \
-        https://github.com/postmodern/ruby-install/archive/v0.7.1.tar.gz
+    wget -O ruby-install-0.8.3.tar.gz \
+        https://github.com/postmodern/ruby-install/archive/v0.8.3.tar.gz
 
-    tar -xzvf ruby-install-0.7.1.tar.gz
-    ln -s ruby-install-0.7.1 ruby-install
+    tar -xzvf ruby-install-0.8.3.tar.gz
+    ln -sf ruby-install-0.8.3 ruby-install
 
 Create `~/.direnv/bin/ruby-install`:
 
@@ -38,11 +40,11 @@ The list of dependencies is in the `dependencies.txt` file, so we can install th
         ~/.direnv/ruby-install/share/ruby-install/ruby/dependencies.txt | \
         cut -d: -f2- )
 
-Then install your chosen Ruby version:
+Then install your chosen Ruby version (e.g. 2.6.6):
 
-    ~/.direnv/bin/ruby-install ruby 2.4.4
+    ~/.direnv/bin/ruby-install ruby 2.6.6
 
-The above command will install Ruby 2.4.4 to `~/.rubies/ruby-2.4.4`, which is where `direnv` [will look for it]({% post_url 2019-01-30-ruby-direnv %}).
+The above command will install Ruby 2.6.6 to `~/.rubies/ruby-2.6.6`, which is where `direnv` [will look for it]({% post_url 2019-01-30-ruby-direnv %}).
 
 ## Listing available Ruby versions
 
@@ -50,12 +52,12 @@ The above command will install Ruby 2.4.4 to `~/.rubies/ruby-2.4.4`, which is wh
 $ ~/.direnv/bin/ruby-install
 Stable ruby versions:
   ruby:
-    2.3.8
-    2.4.6
-    2.5.5
-    2.6.2
+    2.4.10
+    2.5.8
+    2.6.6
+    2.7.1
   jruby:
-    9.2.6.0
+    9.3.2.0
 ... etc.
 ```
 
@@ -67,3 +69,5 @@ $ ~/.direnv/bin/ruby-install -L
 >>> Downloading latest jruby versions ...
 ...etc.
 ```
+
+_Edited 2021-12-04: Update to ruby-install 0.8.3; more current Ruby versions._
