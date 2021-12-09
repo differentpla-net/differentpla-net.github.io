@@ -13,7 +13,7 @@ excerpt: none
 {% if post.url == page.url %}
 <li><a href="{{ post.url }}">{{ post.title }}</a> (this post)</li>
 {% else %}
-<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+<li><a href="{{ post.url }}">{{ post.title }}</a> (<span class="timeago" title="{{ post.date }}">{{ post.date }}</span>)</li>
 {% endif %}
 {% endif %}
 {% endfor %}
