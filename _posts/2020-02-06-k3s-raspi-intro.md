@@ -16,7 +16,7 @@ I'm not going to bother with the .NET Core / OpenFaas stuff yet, but here's how 
 {% for post in site.posts reversed %}
 {% if post.series == page.series %}
 {% if post.url == page.url %}
-<li><a href="{{ post.url }}">{{ post.title }}</a> (this post)</li>
+<li><a href="{{ post.url }}">{{ post.title }}</a> (this post; <span class="timeago" title="{{ post.date }}">{{ post.date }}</span>)</li>
 {% else %}
 <li><a href="{{ post.url }}">{{ post.title }}</a> (<span class="timeago" title="{{ post.date }}">{{ post.date }}</span>)</li>
 {% endif %}
