@@ -6,9 +6,9 @@ series: k3s
 tags: k3s raspberry-pi docker
 ---
 
-**Updated:** _See [Using k3s on Raspberry Pi: Docker Registry]({% post_url 2021-12-10-k3s-docker-registry %}), where I do it "properly"._
+**Updated:** See [Using k3s on Raspberry Pi: Docker Registry]({% post_url 2021-12-10-k3s-docker-registry %}), where I do it "properly".
 
----
+----
 
 In order to run our own apps on the cluster, we're going to need a private docker repository.
 
