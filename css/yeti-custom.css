@@ -1,19 +1,18 @@
 article h1 {
-  font-size: 1.9em;
+    font-size: 1.9em;
 }
 
 article h2 {
-  font-size: 1.6em;
+    font-size: 1.6em;
 }
 
 article h3 {
-  font-size: 1.4em;
+    font-size: 1.4em;
 }
 
 footer.navbar {
     margin-top: 0.8em;
     margin-bottom: 0;
-
     color: #fff;
 }
 
@@ -28,18 +27,18 @@ ul.tags {
 }
 
 ul.tags a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
-ul.tags > li {
-  background-color: #008cba;
-  border-bottom: 1px solid #006687;
-  border-right: 1px solid #006687;
-  display: inline;
-  margin-right: 8px;
-  padding: 1px 9px 2px 9px;
-  color: #fff;
+ul.tags>li {
+    background-color: #008cba;
+    border-bottom: 1px solid #006687;
+    border-right: 1px solid #006687;
+    display: inline;
+    margin-right: 8px;
+    padding: 1px 9px 2px 9px;
+    color: #fff;
 }
 
 h1[id]:hover a.anchorlink:before,
@@ -48,15 +47,17 @@ h3[id]:hover a.anchorlink:before,
 h4[id]:hover a.anchorlink:before,
 h5[id]:hover a.anchorlink:before,
 h6[id]:hover a.anchorlink:before {
-  content: "\00B6"; /* pilcrow */
-  color: #888;
-  font-size: smaller;
+    content: "\00B6";
+    /* pilcrow */
+    color: #888;
+    font-size: smaller;
 }
+
 a.anchorlink {
-  text-decoration: none;
-  font-size: smaller;
+    text-decoration: none;
+    font-size: smaller;
 }
 
 div.container {
-  padding-bottom: 30px;
+    padding-bottom: 30px;
 }
