@@ -271,5 +271,5 @@ Events:
 Yeah, we get the same `server gave HTTP response to HTTPS client` error as before,
 and the [last time I tried this]({% post_url 2020-02-06-k3s-raspi-private-docker %}), I gave up trying to get it to work and just created TLS certificates instead.
 
-So we'll do that next. I suspect that there's going to be a diversion
-into DNS first, though.
+So we'll aim to do that next. I suspect that there's going to be [a diversion
+into DNS first]({% post_url 2021-12-10-k3s-docker-registry-whats-in-a-name %}), though.
