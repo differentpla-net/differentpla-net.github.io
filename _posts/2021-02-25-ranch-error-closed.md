@@ -21,6 +21,7 @@ TransportOpts = #{socket_opts => [{port, 5555}, {certfile, "server.crt"}, {keyfi
 ```
 
 ```erlang
+% In another REPL
 {ok, Socket} = ssl:connect("localhost", 5555, []).
 ```
 
@@ -40,7 +41,7 @@ In order to check that the connection attempt was actually making it to the serv
 
 Because it's a pain to embed Wireshark in a blog post, here's some (abbreviated) tshark instead:
 
-```
+```bash
 $ tshark -i lo -f "port 5555"
 Capturing on 'Loopback: lo'
     1 0.000000000    127.0.0.1 → 127.0.0.1    TCP 74 55513 → 5555 [SYN] Seq=0 ...

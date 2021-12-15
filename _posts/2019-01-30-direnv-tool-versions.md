@@ -37,17 +37,7 @@ So I'm going back to *direnv*, but with some knobs on.
 
 This forms the first of a series of blog posts:
 
-<ul>
-{% for post in site.posts reversed %}
-{% if post.series == page.series %}
-{% if post.url == page.url %}
-<li><a href="{{ post.url }}">{{ post.title }}</a> (this post; <span class="timeago" title="{{ post.date }}">{{ post.date }}</span>)</li>
-{% else %}
-<li><a href="{{ post.url }}">{{ post.title }}</a> (<span class="timeago" title="{{ post.date }}">{{ post.date }}</span>)</li>
-{% endif %}
-{% endif %}
-{% endfor %}
-</ul>
+{% include _series_toc.html %}
 
 ## Resources
 

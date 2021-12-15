@@ -1,0 +1,39 @@
+.blog-navbar {
+    background-color: #008cba;
+}
+
+.sidebar {
+    border-left-style: solid;
+    border-left-color: #008cba;
+    border-left-width: 1px;
+}
+
+a {
+    color: #008cba;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #008cba;
+    text-decoration: underline;
+}
+
+.post-list h1 {
+    font-size: 1.9em;
+}
+
+.post-list article {
+    padding-bottom: 1.7em;
+}
+
+article > .details {
+    padding-bottom: 0.7em;
+}
+
+ul.nav.series > li.active {
+    font-weight: bold;
+}
+
+.bg-primary {
+    background-color: #008cba !important;
+}

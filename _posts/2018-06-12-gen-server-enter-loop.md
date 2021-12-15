@@ -18,15 +18,17 @@ until some unknown child process finishes (re-)starting.
 Occasionally, you'll see people suggest that you send yourself a message from
 `init/1`, like this:
 
-    start_link() ->
-        gen_server:start_link(?MODULE, [], []).
+```erlang
+start_link() ->
+    gen_server:start_link(?MODULE, [], []).
 
-    init([]) ->
-        self() ! continue_init,
-        {ok, #state{}}.
+init([]) ->
+    self() ! continue_init,
+    {ok, #state{}}.
 
-    handle_info(continue_init, State) ->
-        {noreply, continue_init_slowly()}.
+handle_info(continue_init, State) ->
+    {noreply, continue_init_slowly()}.
+```
 
 Most of the time, you'll get away with this, because there's no way for anyone
 else to send your process a message, and `continue_init` will be the first
@@ -51,33 +53,37 @@ you need to call `gen_server:enter_loop` at the end of `init`.
 
 For example:
 
-    start_link() ->
-        Pid = proc_lib:spawn_link(?MODULE, init, [[]]),
-        {ok, Pid}.
+```erlang
+start_link() ->
+    Pid = proc_lib:spawn_link(?MODULE, init, [[]]),
+    {ok, Pid}.
 
-    init([]) ->
-        io:format("async init~n"),
-        timer:sleep(1000),
-        io:format("async init done~n"),
-        gen_server:enter_loop(?MODULE, [], #state{}).
+init([]) ->
+    io:format("async init~n"),
+    timer:sleep(1000),
+    io:format("async init done~n"),
+    gen_server:enter_loop(?MODULE, [], #state{}).
+```
 
 ### `proc_lib:start_link`
 
 If you want to do some synchronous initialisation, you can use `proc_lib:start_link`:
 
-    start_link() ->
-        % Returns the value passed to proc_lib:init_ack, below.
-        proc_lib:start_link(?MODULE, init, [[]]).
+```erlang
+start_link() ->
+    % Returns the value passed to proc_lib:init_ack, below.
+    proc_lib:start_link(?MODULE, init, [[]]).
 
-    init([]) ->
-        io:format("sync init~n"),
-        timer:sleep(1000),
-        io:format("sync init done~n"),
+init([]) ->
+    io:format("sync init~n"),
+    timer:sleep(1000),
+    io:format("sync init done~n"),
 
-        proc_lib:init_ack({ok, self()}),
+    proc_lib:init_ack({ok, self()}),
 
-        io:format("async init~n"),
-        timer:sleep(1000),
-        io:format("async init done~n"),
+    io:format("async init~n"),
+    timer:sleep(1000),
+    io:format("async init done~n"),
 
-        gen_server:enter_loop(?MODULE, [], #state{}).
+    gen_server:enter_loop(?MODULE, [], #state{}).
+```

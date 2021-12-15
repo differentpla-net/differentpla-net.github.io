@@ -1,16 +1,83 @@
-<!DOCTYPE html>
-<html>
-{% include _head.html %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/rougify-style-github.css" rel="stylesheet">
+
+    <title>{{ site.title }}</title>
+</head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark blog-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/assets/profile-30px.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+                {{ site.title }}</a>
+        </div>
+    </nav>
 
-    {% include _navbar.html %}
+    <div class="container-xxl my-md-4">
+        <div class="row">
+            <div class="col-md-9 post-list">
+                {% for post in site.posts %}
+                <article>
+                    <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+                    <div class="details">
+                        <span class="created_at timeago" title="{{ post.date }}">{{ post.date }}</span>
+                    </div>
+                    <p></p>
+                    {{ post.excerpt }}
+                    <a href="{{ post.url | prepend: site.baseurl }}">&raquo; read more</a>
+                </article>
+                {% endfor %}
+            </div>
 
-    <div class="container">
-        {{ content }}
+            <div class="col-md-3 sidebar">
+                <img class="rounded-circle" src="/assets/profile-200px.png" alt="Roger Lipscombe">
+
+                <p>My name is <a href="http://rogerlipscombe.me">Roger Lipscombe</a>.
+                </p>
+                <p>I'm a technical lead in the IoT business unit at <a href="http://twilio.com">Twilio</a>, where I lead
+                    the Microvisor Cloud development team.
+                </p>
+                <p>I blog about programming and other technology and gadget stuff.
+                </p>
+
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://twitter.com/rogerlipscombe"><i
+                                class="bi bi-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="https://stackoverflow.com/users/8446/roger-lipscombe"><i
+                                class="bi bi-stack-overflow"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/rlipscombe"><i
+                                class="bi bi-github"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/rlipscombe/"><i
+                                class="bi bi-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    {% include _scripts.html %}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.timeago').timeago();
+        });
+    </script>
 </body>
 
 </html>

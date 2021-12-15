@@ -2,8 +2,6 @@
 title: Roger's Blog
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://blog.differentpla.net" # the base hostname & protocol for your site
-twitter_username: rogerlipscombe
-github_username:  rlipscombe
 
 # Conversion
 markdown: kramdown
@@ -27,4 +25,5 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
-  - jekyll-octicons
+
+strict_front_matter: true
