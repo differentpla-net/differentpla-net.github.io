@@ -27,7 +27,9 @@
                 <a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a>
                 {% endfor %}
             </div>
-            {{ content }}
+            <div class="body">
+                {{ content }}
+            </div>
         </article>
     </div>
 
@@ -42,6 +44,13 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('.timeago').timeago();
+
+            // Add anchorLink class; see CSS for pilcrow stuff.
+            $('div.body > h1, h2, h3, h4, h5, h6').each(function (i) {
+                $(this).append(
+                    '<a class="anchorlink" title="Link to ' +
+                    $(this).text() + '" href="#' + $(this).attr('id') + '"></a>');
+            });
         });
     </script>
 </body>
