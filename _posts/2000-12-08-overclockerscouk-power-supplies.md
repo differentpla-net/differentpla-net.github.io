@@ -1,6 +1,7 @@
 ---
 title: "Overclockers.co.uk Power Supplies"
 date: 2000-12-08T00:00:00.000Z
+tags: hardware pc-builds
 ---
 I don't know if there's something in particular about Overclockers.co.uk, but we've not had any good experiences with their power supplies. We've had two power supplies from ocuk, and they've both gone horribly wrong, and fried a whole shedload of hardware.
 

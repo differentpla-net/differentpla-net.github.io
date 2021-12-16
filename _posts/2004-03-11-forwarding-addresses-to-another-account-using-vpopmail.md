@@ -2,6 +2,9 @@
 title: "Forwarding addresses to another account using vpopmail"
 date: 2004-03-11T11:03:00.000Z
 redirect_from: /node/view/173
+tags: qmail
+layout: series
+series: qmail
 ---
 Part 7 of [Installing qmail and vpopmail](/node/view/165).
 

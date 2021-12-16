@@ -2,6 +2,9 @@
 title: "Securing SquirrelMail using HTTPS"
 date: 2004-03-18T15:19:00.000Z
 redirect_from: /node/view/179
+tags: qmail
+layout: series
+series: qmail
 ---
 Part 11 of [Installing qmail and vpopmail](/node/view/165). This part is about securing webmail access by using HTTPS.
 

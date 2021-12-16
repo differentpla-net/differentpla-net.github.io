@@ -1,6 +1,7 @@
 ---
 title: "Displaying Progress in a Wizard"
 date: 2004-01-08T18:24:00.000Z
+tags: mfc
 ---
 I'm adding a wizard to the program that I'm currently working on. The wizard walks the user through importing some information from a file. I'd like to be able to display the import progress as a seamless part of the wizard.
 

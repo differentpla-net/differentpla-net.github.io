@@ -2,6 +2,9 @@
 title: "Installing qmailadmin"
 date: 2004-03-24T18:41:00.000Z
 redirect_from: /node/view/198
+tags: qmail
+layout: series
+series: qmail
 ---
 To make it easier to manage the virtual domains on my email box, I've decided to install [qmailAdmin](http://www.inter7.com/qmailadmin.html).
 

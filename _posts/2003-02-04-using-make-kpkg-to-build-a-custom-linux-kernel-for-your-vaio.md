@@ -3,6 +3,9 @@ title: "Using make-kpkg to build a custom Linux kernel for your VAIO"
 date: 2003-02-04T15:10:00.000Z
 x-drupal-nid: 139
 x-needs-review: 2003-02-04T15:10:00.000Z
+layout: series
+series: linux-on-vaio
+tags: linux sony-vaio
 ---
 Debian provides a powerful utility called `make-kpkg` for compiling your own custom kernels. It integrates tightly with dpkg by making `.deb` files and you can even use this to prepare your kernel image on a faster system. Later on it will make complex operations, such as compiling in patches and modules, a snap.
 

@@ -3,6 +3,7 @@ title: "Using ON_COMMAND_RANGE and ON_UPDATE_COMMAND_UI_RANGE"
 date: 2003-07-07T17:13:00.000Z
 x-drupal-nid: 59
 x-needs-review: 2003-07-07T17:13:00.000Z
+tags: mfc
 ---
 The ON_COMMAND_RANGE and ON_UPDATE_COMMAND_UI_RANGE macros are useful when you want to treat a group of commands similarly. In this case, it's the commands for changing list view style. The command IDs must be contiguous, and you must specify the lower one first.
 

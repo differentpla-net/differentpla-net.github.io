@@ -1,6 +1,7 @@
 ---
 title: "Streaming to Winamp"
 date: 2001-12-18T22:44:00.000Z
+tags: rio-receiver
 ---
 Since the Audio Receiver Manager (the server) uses HTTP to stream the MP3 data to the Rio Receiver, it's possible (with some work) to stream directly to Winamp. Here's how.
 

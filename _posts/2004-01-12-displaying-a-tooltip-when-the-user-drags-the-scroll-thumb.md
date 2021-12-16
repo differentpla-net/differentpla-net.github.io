@@ -3,6 +3,7 @@ title: "Displaying a tooltip when the user drags the scroll thumb"
 date: 2004-01-12T12:24:00.000Z
 x-drupal-nid: 48
 x-needs-review: 2004-01-12T12:24:00.000Z
+tags: mfc
 ---
 ## You wanna do this?
 

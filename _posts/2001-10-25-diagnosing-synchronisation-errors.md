@@ -1,6 +1,7 @@
 ---
 title: "Diagnosing Synchronisation Errors"
 date: 2001-10-25T19:29:00.000Z
+tags: empeg
 ---
 _Note that this only applies to v1.x car player software. v2.x uses a different error numbering scheme._
 

@@ -3,6 +3,9 @@ title: "Vaio: ACPI patches"
 date: 2003-01-13T16:03:00.000Z
 x-drupal-nid: 135
 x-needs-review: 2003-01-13T16:03:00.000Z
+layout: series
+series: linux-on-vaio
+tags: linux sony-vaio
 ---
 You'll need to install the ACPI patches, and the ACPI daemon. Grab the patches from [here](http://sourceforge.net/project/showfiles.php?group_id=36832), and apply them to the kernel:
 

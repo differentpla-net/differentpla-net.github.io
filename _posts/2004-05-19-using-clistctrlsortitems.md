@@ -3,6 +3,7 @@ title: "Using CListCtrl::SortItems"
 date: 2004-05-19T14:38:00.000Z
 x-drupal-nid: 79
 x-needs-review: 2004-05-19T14:38:00.000Z
+tags: mfc
 ---
 In my [previous article](/node/view/253), I explained how to use `LPSTR_TEXTCALLBACK` and `LVN_GETDISPINFO`.
 

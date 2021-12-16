@@ -3,6 +3,7 @@ title: "Putting control bars in a dialog"
 date: 2003-04-17T08:30:00.000Z
 x-drupal-nid: 57
 x-needs-review: 2003-04-17T08:30:00.000Z
+tags: mfc
 ---
 There's some discussion of this in Microsoft Knowledge Base Article [Q141751](http://support.microsoft.com/default.aspx?scid=kb;en-us;141751).
 

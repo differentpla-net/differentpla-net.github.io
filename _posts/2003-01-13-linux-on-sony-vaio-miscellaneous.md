@@ -1,8 +1,12 @@
 ---
 title: "Linux on Sony Vaio - Miscellaneous"
+short_title: "Miscellaneous"
 date: 2003-01-13T16:03:00.000Z
 x-drupal-nid: 140
 x-needs-review: 2003-01-13T16:03:00.000Z
+layout: series
+series: linux-on-vaio
+tags: linux sony-vaio
 ---
 A [page](http://life.bio.sunysb.edu/~jhajagos/linux/SRX87/) that I found recommends installing the `spicctrl` and `sjog` packages to get control over the LCD brightness and JogDial.
 

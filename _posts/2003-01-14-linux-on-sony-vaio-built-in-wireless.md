@@ -1,8 +1,12 @@
 ---
 title: "Linux on Sony Vaio - Built-in Wireless"
+short_title: "Built-in Wireless"
 date: 2003-01-14T15:50:00.000Z
 x-drupal-nid: 143
 x-needs-review: 2003-01-14T15:50:00.000Z
+layout: series
+series: linux-on-vaio
+tags: linux sony-vaio
 ---
 First, you'll need to recompile your kernel, with the following options:
 

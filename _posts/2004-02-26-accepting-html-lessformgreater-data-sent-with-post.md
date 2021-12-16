@@ -3,6 +3,7 @@ title: "Accepting HTML <form> data sent with POST"
 date: 2004-02-26T10:06:00.000Z
 x-drupal-nid: 62
 x-needs-review: 2004-02-26T10:06:00.000Z
+tags: cgi-bin ruby
 ---
 How to write a CGI script (in Ruby) to accept files uploaded with `POST`.
 
@@ -26,7 +27,7 @@ Something like the following added to `/etc/apache/httpd.conf` seemed to do the 
 
 Before the user can upload a file, they'll need to use an HTML form to specify the file to upload. This, again, is quite easy:
 
-```
+```html
 <HTML>
   <HEAD><TITLE>Upload File</TITLE>
     <LINK href="/~roger/upload.css" rel="stylesheet" type="text/css">

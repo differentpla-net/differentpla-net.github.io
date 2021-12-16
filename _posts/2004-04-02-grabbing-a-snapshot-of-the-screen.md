@@ -2,6 +2,7 @@
 title: "Grabbing a snapshot of the screen"
 date: 2004-04-02T10:51:00.000Z
 redirect_from: /content/2004/04/grabbing-a-snapshot-of-the-screen
+tags: mfc
 ---
 Some (simple) code that shows how to grab a snapshot of the screen and display it in a window.
 

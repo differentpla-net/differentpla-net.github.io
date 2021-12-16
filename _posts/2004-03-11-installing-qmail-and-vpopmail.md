@@ -2,6 +2,9 @@
 title: "Installing qmail and vpopmail"
 date: 2004-03-11T09:24:00.000Z
 redirect_from: /node/view/165
+tags: qmail
+layout: series
+series: qmail
 ---
 My mail server runs `qmail`. This is the first of a multipart series showing how I went about installing `vpopmail` for virtual domain support.
 

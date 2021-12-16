@@ -1,8 +1,10 @@
 ---
 title: "Linux on Sony Vaio - Network Install"
+short_title: "Network Install"
 date: 2004-01-29T10:01:00.000Z
 x-drupal-nid: 141
 x-needs-review: 2004-01-29T10:01:00.000Z
+tags: linux sony-vaio
 ---
 ## Configure the Vaio for Network booting
 

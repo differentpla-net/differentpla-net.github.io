@@ -3,6 +3,7 @@ title: "Making clamd Run Automatically"
 date: 2004-03-23T13:25:00.000Z
 x-drupal-nid: 149
 x-needs-review: 2004-03-23T13:25:00.000Z
+tags: qmail
 ---
 Whoops. Back when I was [installing ClamAV](/node/view/178), I started `clamd` running so that I could test the virus checker. Yesterday, I rebooted the PC.
 

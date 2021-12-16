@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/rougify-style-github.css" rel="stylesheet">
+
+    <title>{{ site.title }}</title>
+</head>
+
+<body>
+    {% include _navbar.html %}
+
+    <div class="container-xxl my-md-4">
+        <h1>Tags</h1>
+
+        <ul class="nav flex-column">
+        {% assign sorted_tags = site.tags | sort %}
+        {% for it in sorted_tags %}
+            {% assign tag = it[0] %}
+            {% assign count = it[1] | size %}
+            <li><a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a> ({{ count }} {% if count == 1 %}post{% else %}posts{% endif %})</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.timeago').timeago();
+        });
+    </script>
+</body>
+
+</html>

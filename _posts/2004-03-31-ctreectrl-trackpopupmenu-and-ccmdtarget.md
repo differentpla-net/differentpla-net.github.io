@@ -3,6 +3,7 @@ title: "CTreeCtrl, TrackPopupMenu and CCmdTarget"
 date: 2004-03-31T17:17:00.000Z
 x-drupal-nid: 153
 x-needs-review: 2004-03-31T17:17:00.000Z
+tags: mfc
 ---
 Some twisted code showing how to combine MFC's `CTreeCtrl`, `CCmdTarget` and `TrackPopupMenu`.
 
@@ -10,11 +11,14 @@ Let's assume that you want to allow your users to get a context menu when they r
 
 ## Handling a right-click on the tree background
 
-<pre>BEGIN_MESSAGE_MAP(CTreeCtrlDlg, CDialog)
+```c++
+BEGIN_MESSAGE_MAP(CTreeCtrlDlg, CDialog)
     ON_NOTIFY(NM_RCLICK, IDC_TREECTRL, OnNMRclickTreectrl)
-END_MESSAGE_MAP()</pre>
+END_MESSAGE_MAP()
+```
 
-<pre>void CTreeCtrlDlg::OnNMRclickTreectrl(NMHDR *pNMHDR, LRESULT *pResult)
+```c++
+void CTreeCtrlDlg::OnNMRclickTreectrl(NMHDR *pNMHDR, LRESULT *pResult)
 {
     *pResult = 0;
 
@@ -38,7 +42,8 @@ END_MESSAGE_MAP()</pre>
                     ptScreen.x, ptScreen.y, this, NULL));
         }
     }
-}</pre>
+}
+```
 
 There are a few things to note here. The first is that the NM_RCLICK notification sent from a tree control doesn't include the mouse coordinates, so we have to get them ourselves. `GetCursorPos` returns the coordinates relative to the screen, so we have to convert them to client coordinates before calling `CTreeCtrl::HitTest`. `TrackPopupMenu` wants the coordinates in screen coordinates.
 When the user selects a command, it'll be sent to the window passed to `TrackPopupMenu` in a `WM_COMMAND` message, which is exactly what we want.
@@ -47,14 +52,16 @@ When the user selects a command, it'll be sent to the window passed to `TrackPop
 
 This code shows how to handle a right-click on the background of the tree control. What if we want to display a different popup menu if the user clicks on an item? That's easy:
 
-<pre>        if (hTreeItem && (flags & TVHT_ONITEM))
+```c++
+        if (hTreeItem && (flags & TVHT_ONITEM))
         {
             CMenu menu;
             VERIFY(menu.LoadMenu(IDR_POPUP_ONITEM));
             CMenu *popup = menu.GetSubMenu(0);
             ASSERT(popup);
             VERIFY(popup->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON,
-                    ptScreen.x, ptScreen.y, this, NULL);</pre>
+                    ptScreen.x, ptScreen.y, this, NULL);
+```
 
 One problem with this approach is that the command will be sent to the dialog, and we'll have forgotten which item the user clicked on. There are several possible solutions to this problem. Among them:
 
@@ -64,13 +71,15 @@ One problem with this approach is that the command will be sent to the dialog, a
 
 This last option looks like this:
 
-<pre>        UINT nCode = popup->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON |
+```c++
+        UINT nCode = popup->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON |
                         TPM_RETURNCMD,
                         ptScreen.x, ptScreen.y, this, NULL);
         if (nCode != 0)
         {
             /* do something with HTREEITEM and nCode. */
-        }</pre>
+        }
+```
 
 Now, what if we wanted to create a slightly more MFC-oriented solution, and make it a little more object-oriented? It's a little bit of a smell to have the dialog handling commands (even in this way) for some other object (namely the item in the tree control.
 
@@ -78,20 +87,24 @@ Now, what if we wanted to create a slightly more MFC-oriented solution, and make
 
 This can be easily resolved by creating a new class, `CTreeCtrlItem` (or whatever you'd prefer to call it), derived from `CCmdTarget`, and putting these in the tree control, like this:
 
-<pre>class CTreeCtrlItem : public CCmdTarget
+```c++
+class CTreeCtrlItem : public CCmdTarget
 {
     /* stuff */
-};</pre>
+};
 
-<pre>    CTreeCtrlItem *pItem = new CTreeCtrlItem;
+```c++
+    CTreeCtrlItem *pItem = new CTreeCtrlItem;
     LPARAM lParam = reinterpret_cast<LPARAM>(pItem);
     m_treeCtrl.InsertItem(TVIF_TEXT | TVIF_PARAM, "Root Item",
                             0, 0, 0, 0,
-                            lParam, TVI_ROOT, TVI_LAST);</pre>
+                            lParam, TVI_ROOT, TVI_LAST);
+```
 
 Then, when the user right-clicks on the tree control, you can get back the item and forward the message to it:
 
-<pre>UINT nCode = popup->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON |
+```c++
+UINT nCode = popup->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON |
                         TPM_RETURNCMD,
                         ptScreen.x, ptScreen.y, this, NULL);
 if (nCode != 0)
@@ -100,7 +113,8 @@ if (nCode != 0)
     CCmdTarget *pItem = reinterpret_cast<CCmdTarget *>(lParam);
     ASSERT(pItem && pItem->IsKindOf(RUNTIME_CLASS(CCmdTarget)));
     pItem->OnCmdMsg(nCode, CN_COMMAND, NULL, NULL);
-}</pre>
+}
+```
 
 And, if you start adding command handlers to the `CTreeCtrlItem` class, they'll be handled correctly. The magic of this, of course, is that the objects that you put in the tree only need to be derived from `CCmdTarget` in order for this to work, meaning that you can put different objects in there, and the commands will be handled polymorphically, and routed correctly.
 

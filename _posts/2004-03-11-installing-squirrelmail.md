@@ -2,6 +2,9 @@
 title: "Installing SquirrelMail"
 date: 2004-03-11T14:22:00.000Z
 redirect_from: /node/view/175
+tags: qmail
+layout: series
+series: qmail
 ---
 Part 9 of [Installing qmail and vpopmail](/node/view/165).
 

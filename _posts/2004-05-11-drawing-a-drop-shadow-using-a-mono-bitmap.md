@@ -3,6 +3,7 @@ title: "Drawing a drop shadow: using a mono bitmap"
 date: 2004-05-11T09:24:00.000Z
 x-drupal-nid: 159
 x-needs-review: 2004-05-11T09:24:00.000Z
+tags: mfc
 ---
 In an [earlier article](/node/view/239), I showed how to draw a drop shadow with the help of the ImageList control.
 

@@ -2,7 +2,7 @@
     {% for post in site.posts reversed %}
         {% if post.series == page.series %}
             {% if post.url == page.url %}
-                <li>
+                <li class="active">
                     <a href="{{ post.url }}">{{ post.title }}</a>
                         (this post; <span class="timeago" title="{{ post.date }}">{{ post.date }}</span>)
                 </li>

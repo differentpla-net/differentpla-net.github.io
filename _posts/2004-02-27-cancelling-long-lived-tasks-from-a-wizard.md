@@ -3,6 +3,7 @@ title: "Cancelling Long-Lived Tasks from a Wizard"
 date: 2004-02-27T10:23:00.000Z
 x-drupal-nid: 187
 x-needs-review: 2004-02-27T10:23:00.000Z
+tags: mfc
 ---
 This article, a follow-up to [this one]({% post_url 2004-01-08-displaying-progress-in-a-wizard %}), shows how to modify our project to allow the user to cancel the long-lived operation.
 

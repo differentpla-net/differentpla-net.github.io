@@ -2,6 +2,9 @@
 title: "Installing ClamAV and Qmail-Scanner"
 date: 2004-03-12T16:30:00.000Z
 redirect_from: /node/view/178
+tags: qmail
+layout: series
+series: qmail
 ---
 Part 10 of [Installing qmail and vpopmail](/node/view/165). This part talks about installing a virus scanner to check mail before it's delivered.
 

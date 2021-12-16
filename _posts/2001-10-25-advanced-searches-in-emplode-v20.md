@@ -1,6 +1,7 @@
 ---
 title: "Advanced Searches in emplode v2.0"
 date: 2001-10-25T19:29:00.000Z
+tags: empeg
 ---
 emplode v2.0 adds the ability to search your music database. It provides two methods of doing this: simple searches (which are hopefully so simple that I won't explain them here), and advanced searches.
 

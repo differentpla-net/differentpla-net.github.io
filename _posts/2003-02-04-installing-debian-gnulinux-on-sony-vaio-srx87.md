@@ -1,28 +1,20 @@
 ---
 title: "Installing Debian GNU/Linux on Sony Vaio SRX87"
+short_title: "Installing Debian GNU/Linux"
 date: 2003-02-04T15:10:00.000Z
 x-drupal-nid: 134
 x-needs-review: 2003-02-04T15:10:00.000Z
+layout: series
+series: linux-on-vaio
+tags: linux sony-vaio
 ---
 Because the DVD-ROM drive supplied with the SRX87 is Firewire, and is not supported by the standard Debian boot images, you'll need to use network booting (using PXE) to get it going. This [page](http://theo.me.uk/pages.shtml?page=debremoteboot) has some instructions for installing Debian in this manner.
 
 I've expanded on those instructions here.
 
-*   [Installing Debian using Network booting](/node/view/155)
-*   [Upgrading to a 2.4 kernel and ext3](/node/view/152)
-*   [Installing XFree86](/node/view/158)
-*   [Miscellaneous](/node/view/154)
-*   [Compiling a new kernel](/node/view/153)
-*   [FireWire DVD-ROM drive](/node/view/150)
-*   [ACPI patches](/node/view/149)
-*   [Wireless Networking](/node/view/157)
-*   [Connecting my iPod](/node/view/151)
-*   [Getting sound working](/node/view/156)
-*   Installing KDE3?
-*   Soft Modem
-*   USB
+{% include _series_toc.html %}
 
-* * *
+----
 
 ## Other Resources
 

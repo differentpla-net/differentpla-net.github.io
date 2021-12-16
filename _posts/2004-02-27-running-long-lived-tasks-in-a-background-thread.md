@@ -3,6 +3,7 @@ title: "Running Long-lived Tasks in a Background Thread"
 date: 2004-02-27T13:00:00.000Z
 x-drupal-nid: 185
 x-needs-review: 2004-02-27T13:00:00.000Z
+tags: mfc
 ---
 In earlier articles, [Displaying Progress in a Wizard]({% post_url 2004-01-08-displaying-progress-in-a-wizard %}) and [Cancelling Long-Lived Tasks from a Wizard]({% post_url 2004-02-27-cancelling-long-lived-tasks-from-a-wizard %}), I discussed how to run a long-lived task from a wizard and how to display progress in the wizard.
 

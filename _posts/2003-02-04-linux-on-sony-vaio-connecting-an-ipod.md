@@ -1,8 +1,12 @@
 ---
 title: "Linux on Sony Vaio - Connecting an iPod"
+short_title: "Connecting an iPod"
 date: 2003-02-04T15:10:00.000Z
 x-drupal-nid: 137
 x-needs-review: 2003-02-04T15:10:00.000Z
+layout: series
+series: linux-on-vaio
+tags: linux sony-vaio ipod
 ---
 **Note:** This is a preliminary version of this document. I've not fully verified that the stuff in here works.
 
@@ -12,56 +16,52 @@ I decided to connect my iPod to it. I don't currently have any software for tran
 
 You'll need to configure your kernel with the following options:
 
-<div class="snippet">
-    CONFIG_IEEE1394_RAWIO=m (IEEE 1394 ---> Raw IEEE1394 I/O support)
-    CONFIG_BLK_DEV_SD=m (SCSI Support ---> SCSI disk support)
-    CONFIG_SD_EXTRA_DEVS=40 (automatic)
-    CONFIG_CHR_DEV_SG=m (SCSI Support ---> SCSI generic support)
-    CONFIG_PARTITION_ADVANCED=y (File systems ---> Partition Types ---> Advanced partition selection)
-    CONFIG_MAC_PARTITION=y (File systems ---> Partition Types ---> Macintosh partition map support)
-
-</div>
+```
+CONFIG_IEEE1394_RAWIO=m (IEEE 1394 ---> Raw IEEE1394 I/O support)
+CONFIG_BLK_DEV_SD=m (SCSI Support ---> SCSI disk support)
+CONFIG_SD_EXTRA_DEVS=40 (automatic)
+CONFIG_CHR_DEV_SG=m (SCSI Support ---> SCSI generic support)
+CONFIG_PARTITION_ADVANCED=y (File systems ---> Partition Types ---> Advanced partition selection)
+CONFIG_MAC_PARTITION=y (File systems ---> Partition Types ---> Macintosh partition map support)
+```
 
 I don't know if it'll be needed, but I also turned on SCSI generic support.
 Once you've compiled (and rebooted with) your new kernel, you should be able to, as root:
 
-<div class="snippet">
-    # modprobe ohci1394
-    # modprobe sbp2
-
-</div>
+```
+# modprobe ohci1394
+# modprobe sbp2
+```
 
 These are the same modules commands used for the firewire DVD-ROM drive.
 To check that your iPod was recognised, you can:
 
-<div class="snippet">
-    $ cat /proc/scsi/scsi
-    Attached devices:
-    **Host: scsi0 Channel: 00 Id: 00 Lun: 00
-      Vendor: Apple    Model: iPod             Rev: 1.21
-      Type:   Direct-Access                    ANSI SCSI revision: 02**
+```
+$ cat /proc/scsi/scsi
+Attached devices:
+**Host: scsi0 Channel: 00 Id: 00 Lun: 00
+    Vendor: Apple    Model: iPod             Rev: 1.21
+    Type:   Direct-Access                    ANSI SCSI revision: 02**
 
-    $ cat /proc/partitions
-    major minor  #blocks  name
+$ cat /proc/partitions
+major minor  #blocks  name
 
-     **8     0    9765630 scsi/host0/bus0/target0/lun0/disc
-       8     1         31 scsi/host0/bus0/target0/lun0/part1
-       8     2      32768 scsi/host0/bus0/target0/lun0/part2
-       8     3    9732828 scsi/host0/bus0/target0/lun0/part3**
-       3     0   19535040 ide/host0/bus0/target0/lun0/disc
-       3     1   12289693 ide/host0/bus0/target0/lun0/part1
-       3     2    7028437 ide/host0/bus0/target0/lun0/part2
-       3     3     216877 ide/host0/bus0/target0/lun0/part3
-
-</div>
+    **8     0    9765630 scsi/host0/bus0/target0/lun0/disc
+    8     1         31 scsi/host0/bus0/target0/lun0/part1
+    8     2      32768 scsi/host0/bus0/target0/lun0/part2
+    8     3    9732828 scsi/host0/bus0/target0/lun0/part3**
+    3     0   19535040 ide/host0/bus0/target0/lun0/disc
+    3     1   12289693 ide/host0/bus0/target0/lun0/part1
+    3     2    7028437 ide/host0/bus0/target0/lun0/part2
+    3     3     216877 ide/host0/bus0/target0/lun0/part3
+```
 
 The parts in **bold** are what you're looking for.
 You should also be able to (as root):
 
-<div class="snippet">
-    # dd if=/dev/sda of=/dev/null
-
-</div>
+```
+# dd if=/dev/sda of=/dev/null
+```
 
 This can take a while, so press Ctrl+C after a short time.
 Note that `fdisk` doesn't recognise Mac partitions, so the `cat /proc/partitions` is to confirm that the disk has been recognised. You should be able to repeat the `dd` command from above for each partition.

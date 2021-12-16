@@ -2,6 +2,9 @@
 title: "Installing vpopmail"
 date: 2004-03-11T09:33:00.000Z
 redirect_from: /node/view/170
+tags: qmail
+layout: series
+series: qmail
 ---
 Part 4 of [Installing qmail and vpopmail](/node/view/165).
 

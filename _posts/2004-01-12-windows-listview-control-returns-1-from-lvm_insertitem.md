@@ -3,6 +3,7 @@ title: "Windows ListView Control Returns -1 From LVM_INSERTITEM"
 date: 2004-01-12T12:21:00.000Z
 x-drupal-nid: 46
 x-needs-review: 2004-01-12T12:21:00.000Z
+tags: mfc
 ---
 I just spent the best part of a morning chasing this one down, so I thought I'd share it with you:
 

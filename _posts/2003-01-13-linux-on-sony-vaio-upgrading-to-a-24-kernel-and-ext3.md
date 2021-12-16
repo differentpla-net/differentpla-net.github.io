@@ -1,6 +1,10 @@
 ---
 title: "Linux on Sony Vaio - Upgrading to a 2.4 kernel and ext3"
+short_title: "Upgrading to a 2.4 kernel and ext3"
 date: 2003-01-13T15:44:00.000Z
+layout: series
+series: linux-on-vaio
+tags: linux sony-vaio
 ---
 ## Upgrading to a 2.4 kernel
 

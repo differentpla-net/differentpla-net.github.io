@@ -2,6 +2,9 @@
 title: "Securing IMAP"
 date: 2004-03-23T11:39:00.000Z
 redirect_from: /node/view/190
+tags: qmail
+layout: series
+series: qmail
 ---
 Part 12 of [Installing qmail and vpopmail](/node/view/165). This article talks about configuring secure IMAP.
 

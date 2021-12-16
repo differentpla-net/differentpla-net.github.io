@@ -2,6 +2,9 @@
 title: "Using qmail extension addresses with vpopmail"
 date: 2004-03-11T10:53:00.000Z
 redirect_from: /node/view/172
+tags: qmail
+layout: series
+series: qmail
 ---
 Part 6 of [Installing qmail and vpopmail](/node/view/165).
 

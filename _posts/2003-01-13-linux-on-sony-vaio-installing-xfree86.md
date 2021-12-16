@@ -1,6 +1,10 @@
 ---
 title: "Linux on Sony Vaio - Installing XFree86"
+short_title: "Installing XFree86"
 date: 2003-01-13T15:44:00.000Z
+layout: series
+series: linux-on-vaio
+tags: linux sony-vaio
 ---
 ## XFree86
 

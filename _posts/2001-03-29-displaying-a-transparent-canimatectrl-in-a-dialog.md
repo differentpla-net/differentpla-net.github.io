@@ -1,6 +1,7 @@
 ---
 title: "Displaying a transparent CAnimateCtrl in a dialog"
 date: 2001-03-29T23:00:00.000Z
+tags: mfc
 ---
 Microsoft's knowledge base article, [Q179907](http://support.microsoft.com/default.aspx?scid=kb;en-us;Q179907) explains how to use a transparent CAnimateCtrl in a CView or a CDialog.
 
