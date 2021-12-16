@@ -20,7 +20,7 @@ a:hover {
 
 blockquote p {
     font-style: italic;
-    border-left: 3px solid #d8d8d8;
+    border-left: 3px solid #dee2e6;
     margin-left: 0.3em;
     padding-left: 0.5em;
 }
@@ -41,8 +41,10 @@ blockquote p {
     padding-bottom: 1.7em;
 }
 
-article > .details {
-    padding-bottom: 0.7em;
+article > div.details {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 0.6em;
 }
 
 ul.nav.series > li.active {
@@ -56,7 +58,7 @@ h4[id]:hover a.anchorlink:before,
 h5[id]:hover a.anchorlink:before,
 h6[id]:hover a.anchorlink:before {
   content: "\00B6"; /* pilcrow */
-  color: #888;
+  color: #adb5bd;
   font-size: smaller;
 }
 a.anchorlink {
