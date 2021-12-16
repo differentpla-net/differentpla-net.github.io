@@ -1,5 +1,6 @@
 ---
 title: "k3s on Raspberry Pi: Installing nginx"
+short_title: "Installing nginx"
 date: 2020-02-06T17:44:00
 layout: series
 series: k3s

@@ -1,5 +1,6 @@
 ---
 title: "k3s on Raspberry Pi: Hardware"
+short_title: "Hardware"
 date: 2020-02-06T16:44:00
 layout: series
 series: k3s

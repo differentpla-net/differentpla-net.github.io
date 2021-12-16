@@ -1,5 +1,6 @@
 ---
 title: "k3s on Raspberry Pi: Private Docker"
+short_title: "Private Docker"
 date: 2020-02-06T17:52:00
 layout: series
 series: k3s

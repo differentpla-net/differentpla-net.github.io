@@ -1,5 +1,6 @@
 ---
 title: "k3s on Raspberry Pi: node.js Server"
+short_title: "node.js Server"
 date: 2020-02-06T19:03:00
 layout: series
 series: k3s

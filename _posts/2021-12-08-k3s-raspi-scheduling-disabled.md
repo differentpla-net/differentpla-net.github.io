@@ -1,5 +1,6 @@
 ---
 title: "k3s on Raspberry Pi: SchedulingDisabled"
+short_title: "SchedulingDisabled"
 date: 2021-12-08T09:42:00Z
 layout: series
 series: k3s

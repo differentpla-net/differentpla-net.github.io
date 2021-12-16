@@ -1,5 +1,6 @@
 ---
 title: "k3s on Raspberry Pi: Introduction"
+short_title: "Introduction"
 date: 2020-02-06T16:34:00
 layout: series
 series: k3s

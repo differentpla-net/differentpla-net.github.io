@@ -1,5 +1,6 @@
 ---
 title: "k3s on Raspberry Pi: iSCSI"
+short_title: "iSCSI"
 date: 2021-12-09T19:42:00Z
 layout: series
 series: k3s

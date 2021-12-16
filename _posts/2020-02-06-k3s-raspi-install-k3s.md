@@ -1,5 +1,6 @@
 ---
 title: "k3s on Raspberry Pi: Installing k3s"
+short_title: "Installing k3s"
 date: 2020-02-06T17:04:00
 layout: series
 series: k3s

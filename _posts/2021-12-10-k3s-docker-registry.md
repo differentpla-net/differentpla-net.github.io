@@ -1,5 +1,6 @@
 ---
 title: "k3s on Raspberry Pi: Docker Registry"
+short_title: "Docker Registry"
 date: 2021-12-10T09:49:00Z
 layout: series
 series: k3s
