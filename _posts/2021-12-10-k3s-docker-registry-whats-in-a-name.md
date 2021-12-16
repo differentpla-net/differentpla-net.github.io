@@ -1,5 +1,5 @@
 ---
-title: "Using k3s on Raspberry Pi: Docker Registry: What's in a name?"
+title: "k3s on Raspberry Pi: Docker Registry: What's in a name?"
 date: 2021-12-10T12:27:00Z
 layout: series
 series: k3s

@@ -1,5 +1,5 @@
 ---
-title: "Using k3s on Raspberry Pi: Installing Raspbian"
+title: "k3s on Raspberry Pi: Installing Raspbian"
 date: 2020-02-06T16:54:00
 layout: series
 series: k3s

@@ -1,5 +1,5 @@
 ---
-title: "Using k3s on Raspberry Pi: Hardware"
+title: "k3s on Raspberry Pi: Hardware"
 date: 2020-02-06T16:44:00
 layout: series
 series: k3s

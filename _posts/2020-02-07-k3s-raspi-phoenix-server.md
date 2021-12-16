@@ -1,5 +1,5 @@
 ---
-title: "Using k3s on Raspberry Pi: Phoenix Server"
+title: "k3s on Raspberry Pi: Phoenix Server"
 date: 2020-02-07T11:17:00
 layout: series
 series: k3s
