@@ -4,6 +4,8 @@ date: 2020-02-07T10:49:06Z
 tags: erlang elixir raspberry-pi
 ---
 
+Quick reference for installing Erlang and Elixir on a Raspberry Pi, using the Erlang Solutions packages.
+
 ## Installing Erlang and Elixir
 
 ```

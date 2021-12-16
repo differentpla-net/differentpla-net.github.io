@@ -3,8 +3,6 @@ title: "Multiple Laptops, Multiple Monitors"
 date: 2021-09-11T19:04:00Z
 ---
 
-## Background
-
 At home, I've got a rather nice setup with two Dell U2520D monitors on my desk, which I'm currently using from my (work) Linux desktop. However, more recently, I'm trying to strike a better work/life balance, so I've decided to start making more use of my (personal) Microsoft Surface Book 3 laptop, but I'd like to continue using the two monitors (which are also mine; I never bothered filing the expense claim).
 
 ## Surface Book 3

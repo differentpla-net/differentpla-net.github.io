@@ -33,8 +33,9 @@
                     <div class="details">
                         <span class="created_at timeago" title="{{ post.date }}">{{ post.date }}</span>
                     </div>
-                    <p></p>
-                    {{ post.excerpt }}
+                    <div class="excerpt">
+                        {{ post.excerpt }}
+                    </div>
                     <a href="{{ post.url | prepend: site.baseurl }}">&raquo; read more</a>
                 </article>
                 {% endfor %}
