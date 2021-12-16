@@ -8,7 +8,9 @@ The [Sidebar Gadgets SDK documentation](http://msdn2.microsoft.com/en-us/library
 
 You should do this by putting the following in your CSS file:
 
-<pre>body {
+```css
+body {
     font-family: Segoe UI, Tahoma, Verdana;
     font-size: 9pt;
-}</pre>
+}
+```
