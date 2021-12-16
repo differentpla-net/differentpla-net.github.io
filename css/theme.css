@@ -18,6 +18,13 @@ a:hover {
     text-decoration: underline;
 }
 
+blockquote p {
+    font-style: italic;
+    border-left: 3px solid #d8d8d8;
+    margin-left: 0.3em;
+    padding-left: 0.5em;
+}
+
 .navbar a {
     text-decoration: none;
 }
