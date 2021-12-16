@@ -43,6 +43,11 @@ blockquote p {
 
 article > div.details {
     padding-bottom: 0.3em;
+    margin-bottom: 0.6em;
+}
+
+article.post > div.details {
+    padding-bottom: 0.3em;
     border-bottom: 1px solid #dee2e6;
     margin-bottom: 0.6em;
 }

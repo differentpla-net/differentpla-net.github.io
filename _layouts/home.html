@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-9 post-list">
                 {% for post in site.posts %}
-                <article>
+                <article class="excerpt">
                     <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
                     <div class="details">
                         <span class="created_at timeago" title="{{ post.date }}">{{ post.date }}</span>
