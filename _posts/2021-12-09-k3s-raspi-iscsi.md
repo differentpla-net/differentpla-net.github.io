@@ -4,7 +4,7 @@ short_title: "iSCSI"
 date: 2021-12-09T19:42:00Z
 layout: series
 series: k3s
-tags: k3s raspberry-pi iscsi
+tags: k3s raspberry-pi iscsi synology-nas
 ---
 
 The default option for persistent volumes on k3s is `local-storage`, which provisions (on-demand) the storage on the node's local disk. This has the unfortunate side-effect that the container is now tied to that particular node.
