@@ -86,6 +86,19 @@ a.anchorlink {
   font-size: smaller;
 }
 
+:target {
+    animation: highlight 1s ease;
+}
+
+@keyframes highlight {
+    0% { background-color: #7ac8e2; }
+    10% { background-color: initial; }
+    20% { background-color: #7ac8e2; }
+    30% { background-color: initial; }
+    40% { background-color: #7ac8e2; }
+    100% { background-color: initial; }
+}
+
 .callout {
     padding: 1.25rem;
     margin-top: 1.25rem;
