@@ -281,20 +281,20 @@ So far, we've got a private docker registry running in a pod, and we can use it 
 
 But there are problems, and they all come down to the same two things: DNS and load-balancing.
 
-- The name changes every time we do a deploy.
-- We can't push images from outside the cluster.
-- If we use a NodePort service, that improves matters slightly:
+- We're using ClusterIP, so we can't push images from outside the cluster.
+- If we add a NodePort service:
   - The name changes if the pod moves to a different node.
-  - We can add multiple endpoints in `registries.yaml`, which would help.
   - We can deal with that for external pushes if we're prepared to look up the IP
     address each time.
 - We _really_ ought to be using TLS.
   - But we can't do that if the name's going to keep changing.
+  - ...or if it's got two different names. I can't be bothering with SNI.
 - Docker image tags have the registry name in them.
   - Currently this is the dotted IP address.
   - We can use a fixed mirror name in `registries.yaml` to deal with that.
   - But that won't work outside the cluster.
   - If the registry name changes, does that break the image tags?
 
-We can work around these problems for a while, but at some point we'll need to
-bite the bullet. We're getting there.
+We can work around these problems for a while, but at some point we'll
+need to bite the bullet. That moment is getting closer, but we've got a
+few other things to poke at first.
