@@ -98,3 +98,7 @@ a.anchorlink {
 .callout-info {
     border-left-color: var(--main-color);
 }
+
+.callout-warning {
+    border-left-color: #ffecb5;
+}
