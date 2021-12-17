@@ -18,11 +18,20 @@ a:hover {
     text-decoration: underline;
 }
 
+hr {
+    background-color: #dee2e6;
+    opacity: 1.0;
+}
+
 blockquote p {
     font-style: italic;
     border-left: 3px solid #dee2e6;
     margin-left: 0.3em;
     padding-left: 0.5em;
+}
+
+code {
+    color: #4c96af;
 }
 
 .navbar a {
