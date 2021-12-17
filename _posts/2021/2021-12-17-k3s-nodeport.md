@@ -15,7 +15,7 @@ The [Kubernetes documentation][publishing-services-service-types] says the follo
 > the `NodePort` Service routes, is automatically created. You'll be able to contact the `NodePort` Service, from
 > outside the cluster, by requesting `<NodeIP>:<NodePort>`.
 
-This page -- [Kubernetes: ClusterIP, NodePort, or Ingress? When to Use Each][when-to-use-each] finally made it
+This page -- [Kubernetes: ClusterIP, NodePort, or Ingress? When to Use Each][when-to-use-each] -- finally made it
 click:
 
 > Creating a NodePort will open that port on every node in your cluster. Kubernetes will automatically route port
