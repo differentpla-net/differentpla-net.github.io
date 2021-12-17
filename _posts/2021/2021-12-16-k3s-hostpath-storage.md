@@ -18,7 +18,7 @@ directly in the container specification. That allows us to mount a file
 or directory from the host.
 
 {% capture warning %}
-**Warning:** This doesn't work. There are ways to make it work [at the bottom](#how-to-fix-it). For something that does work, see [k3s on Raspberry Pi: Docker Registry Persistent Volumes]({% post_url 2021/2021-12-17-k3s-docker-registry-pv %}).
+**Warning:** This doesn't work. There are ways to make it work [at the bottom](#how-to-fix-it). For something that does work, see [k3s on Raspberry Pi: Dynamic Persistent Volumes]({% post_url 2021/2021-12-17-k3s-dynamic-pv %}).
 {% endcapture %}
 {% include alerts/warning.html content=warning %}
 

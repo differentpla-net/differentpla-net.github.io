@@ -10,7 +10,7 @@ tags: k3s raspberry-pi
 We need to give our Docker registry some persistent storage. Currently,
 if we restart it, it loses its stored data.
 
-We tried [hostPath]({% post_url 2021/2021-12-16-k3s-docker-registry-hostpath-storage %}), but that didn't work. Let's try persistent volumes.
+We tried [hostPath]({% post_url 2021/2021-12-16-k3s-hostpath-storage %}), but that didn't work. Let's try persistent volumes.
 
 ## Dynamic Persistent Volumes
 
@@ -134,7 +134,7 @@ pvc-46cdbfbe-7db7-4079-a6ce-625740f658d5   1Gi        RWO            Delete     
 
 ## Is it persistent?
 
-As [before]({% post_url 2021/2021-12-16-k3s-docker-registry-hostpath-storage %}), we'll push a "hello-world" image to the registry.
+As [before]({% post_url 2021/2021-12-16-k3s-hostpath-storage %}), we'll push a "hello-world" image to the registry.
 
 ```
 $ docker pull hello-world
