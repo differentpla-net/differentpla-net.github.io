@@ -1,37 +1,42 @@
+:root {
+    --light-background-color: #dee2e6;
+    --main-color: #008cba; /* given */
+}
+
 .blog-navbar {
-    background-color: #008cba;
+    background-color: var(--main-color);
 }
 
 .sidebar {
     border-left-style: solid;
-    border-left-color: #008cba;
+    border-left-color: var(--main-color);
     border-left-width: 1px;
 }
 
 a {
-    color: #008cba;
+    color: var(--main-color);
     text-decoration: none;
 }
 
 a:hover {
-    color: #008cba;
+    color: var(--main-color);
     text-decoration: underline;
 }
 
 hr {
-    background-color: #dee2e6;
+    background-color: var(--light-background-color);
     opacity: 1.0;
 }
 
 blockquote p {
     font-style: italic;
-    border-left: 3px solid #dee2e6;
+    border-left: 3px solid var(--light-background-color);
     margin-left: 0.3em;
     padding-left: 0.5em;
 }
 
 code {
-    color: #4c96af;
+    color: var(--primary-color);
 }
 
 .navbar a {
@@ -39,7 +44,7 @@ code {
 }
 
 .bg-primary {
-    background-color: #008cba !important;
+    background-color: var(--main-color) !important;
 }
 
 .post-list h1 {
@@ -57,7 +62,7 @@ article > div.details {
 
 article.post > div.details {
     padding-bottom: 0.3em;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--light-background-color);
     margin-bottom: 0.6em;
 }
 
@@ -72,10 +77,23 @@ h4[id]:hover a.anchorlink:before,
 h5[id]:hover a.anchorlink:before,
 h6[id]:hover a.anchorlink:before {
   content: "\00B6"; /* pilcrow */
-  color: #adb5bd;
+  color: var(--light-background-color);
   font-size: smaller;
 }
 a.anchorlink {
   text-decoration: none;
   font-size: smaller;
+}
+
+.callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.15rem;
+    border: 1px solid var(--light-background-color);
+    border-left-width: .25rem;
+    border-radius: .25rem;
+}
+
+.callout-info {
+    border-left-color: var(--main-color);
 }
