@@ -71,9 +71,3 @@ I tried to allow overriding the icon, but couldn't get it to work.
 {% include alerts/info.html content="An info alert" %}
 {% include alerts/light.html content="A light alert" %}
 {% include alerts/dark.html content="A dark alert" %}
-
-## References
-
-- <https://idratherbewriting.com/documentation-theme-jekyll/mydoc_alerts.html>
-- The [bootstrap docs for alerts](https://getbootstrap.com/docs/5.1/components/alerts/). This is relevant because I'm using a Bootstrap 5 theme.
-- TODO: Bootstrap icons.
