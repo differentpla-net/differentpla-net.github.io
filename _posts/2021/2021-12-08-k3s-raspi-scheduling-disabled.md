@@ -11,7 +11,7 @@ This morning, I grabbed [my Raspberry Pi cluster]({% post_url 2021/2021-07-04-k3
 
 But my docker repository wasn't starting. I'd left it broken:
 
-- By using the default k3s `local-storage` storage class, the container was tied to a specific node.
+- By using the default k3s `local-path` storage class, the container was tied to a specific node.
 - That node was showing as `SchedulingDisabled`:
 
 ```
