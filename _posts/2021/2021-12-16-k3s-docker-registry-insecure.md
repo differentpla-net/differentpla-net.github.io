@@ -269,6 +269,12 @@ Events:
 
 This bit right here: `Successfully pulled image "10.43.236.176:5000/hello-world" in 203.508818ms`. Yes, it's good.
 
+We still need to clean up, though:
+
+```
+$ kubectl --namespace docker-registry delete deployment hello-world
+```
+
 ## Recap
 
 So far, we've got a private docker registry running in a pod, and we can use it to provide images to our nodes.
