@@ -45,12 +45,28 @@ Status: Downloaded newer image for hello-world:latest
 docker.io/library/hello-world:latest
 ```
 
+## docker permissions
+
+That `sudo docker` stuff is going to get old quickly. Let's sort out permissions:
+
+```
+$ sudo usermod -aG docker pi
+$ exit   # and log back in
+```
+
+Note that if you're using Ubuntu, systemd will re-use your
+session when you log back in. You basically need to reboot to sort it
+out.
+
+Fortunately, we're not on Ubuntu; we're accessing the node over SSH, so
+a simple `Ctrl+D`, `Up`, `Enter` gets us logged back in.
+
 ## Pushing an image
 
 ```bash
-$ sudo docker tag hello-world 10.43.236.176:5000/hello-world
+$ docker tag hello-world 10.43.236.176:5000/hello-world
 
-$ sudo docker push 10.43.236.176:5000/hello-world
+$ docker push 10.43.236.176:5000/hello-world
 Using default tag: latest
 The push refers to repository [10.43.236.176:5000/hello-world]
 Get "https://10.43.236.176:5000/v2/": http: server gave HTTP response to HTTPS client
