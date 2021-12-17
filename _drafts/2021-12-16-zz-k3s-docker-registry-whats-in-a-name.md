@@ -15,9 +15,9 @@ If we use our [private docker registry]({% post_url 2021/2021-12-10-k3s-docker-r
 ```
 
 This is because k8s (presumably `kubelet`) wants to use HTTPS when talking to the docker registry. This means
-we need to either persuade it to use HTTP, like we did with the normal Docker engine, or we need to set up HTTPS.
+we need to either [persuade it to use HTTP]({% post_url 2021-12-10-k3s-docker-registry %}#configuring-docker-to-use-an-insecure-registry), or we need to set up HTTPS.
 
-For HTTPS, we need to generate a certificate, which needs to contain the server name. This is where we run into a problem: We're using ClusterIP networking, and the server name (which is an IP address) changes every time the pod is redeployed. Our image tags also refer to the registry name, and I'm not happy about that either.
+For HTTPS, we need to generate a certificate, which needs to contain the server name. This is where we run into a problem: We're using ClusterIP networking, and the server name (which is an IP address) changes **it doesn't** every time the pod is redeployed. Our image tags also refer to the registry name, and I'm not happy about that either.
 
 From inside our containers, our service has a consistent name: `docker-registry.docker-registry.svc.cluster.local`, but that name doesn't mean anything outside a container. I wonder whether the container creator can deal with it? Let's try something:
 
