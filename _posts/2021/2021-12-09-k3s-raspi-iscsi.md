@@ -63,7 +63,8 @@ I didn't do this until later, and I think it caused me some problems.
 
 <div class="callout callout-info" markdown="span">
 Aside: you can probably use node labels and selectors so that
-iSCSI-using containers are only scheduled on iSCSI-having nodes.
+iSCSI-using containers are only scheduled on nodes that have `open-scsi`
+installed.
 </div>
 
 ## Mount the volume
