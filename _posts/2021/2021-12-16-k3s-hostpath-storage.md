@@ -152,8 +152,7 @@ We could fix this in a few different ways:
 - Use node affinity to always start the pod on the same node.
 - Use some kind of shared storage, such as NFS, so that all nodes have the same view of the volume.
 
-Or we could use persistent volumes. For that, skip to the [Persistent
-Volumes](#persistent-volumes) section below.
+Or we could use [persistent volumes]({% post_url 2021/2021-12-17-k3s-static-pv %}).
 
 ## References
 
