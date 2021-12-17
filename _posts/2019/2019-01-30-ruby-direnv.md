@@ -6,7 +6,7 @@ series: direnv-tool-versions
 tags: direnv ruby
 ---
 
-To integrate `direnv` with `ruby-install` -- installation instructions [here]({% post_url 2019-01-30-ruby-install %}) -- add the following to `~/.direnvrc`:
+To integrate `direnv` with `ruby-install` -- installation instructions [here]({% post_url 2019/2019-01-30-ruby-install %}) -- add the following to `~/.direnvrc`:
 
 ```
 use_ruby() {

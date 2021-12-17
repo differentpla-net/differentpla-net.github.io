@@ -126,4 +126,4 @@ How fast is it? Approximately 1Gb/hour. I cloned 32Gb, it took a little over 32 
 
 ## More Information
 
-You might also want to check out my page on [using rsync to clone your empeg]({% post_url 2002-03-07-using-rsync-to-synchronise-empegs %}).
+You might also want to check out my page on [using rsync to clone your empeg]({% post_url 2002/2002-03-07-using-rsync-to-synchronise-empegs %}).

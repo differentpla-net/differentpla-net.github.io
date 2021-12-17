@@ -3,7 +3,7 @@ title: Moving to AWS
 date: 2014-11-30 11:02:54
 ---
 
-*This is part of my [quest to sort out my website]({% post_url 2014-11-13-website-rebuild %}).
+*This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).
 Moving to AWS.*
 
 My website hosting has been a little sketchy over the years. I've hosted it on

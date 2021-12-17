@@ -4,7 +4,7 @@ date: 2014-11-30 18:35:11
 tags: chef
 ---
 
-*This is part of my [quest to sort out my website]({% post_url 2014-11-13-website-rebuild %}).
+*This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).
 Installing Chef in AWS.*
 
 ## Updating Ubuntu

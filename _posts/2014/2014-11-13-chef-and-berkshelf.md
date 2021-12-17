@@ -4,7 +4,7 @@ date: 2014-11-13 10:38:12
 tags: chef
 ---
 
-*This is part of my [quest to sort out my website]({% post_url 2014-11-13-website-rebuild %}).
+*This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).
 Installing Chef and Berkshelf.*
 
 In order to avoid "server rot" -- which appears to be a term I just coined --

@@ -7,7 +7,7 @@ series: k3s
 tags: k3s raspberry-pi
 ---
 
-If we use our [private docker registry]({% post_url 2021-12-10-k3s-docker-registry %}) when specifying a container image, it fails:
+If we use our [private docker registry]({% post_url 2021/2021-12-10-k3s-docker-registry %}) when specifying a container image, it fails:
 
 ```
   Warning  Failed     12s (x4 over 93s)  kubelet            Failed to pull image "10.43.236.176:5000/hello-world": rpc error: code = Unknown desc = failed to pull and unpack image "10.43.236.176:5000/hello-world:latest": failed to resolve reference "10.43.236.176:5000/hello-world:latest": failed to do request: Head "https://10.43.236.176:5000/v2/hello-world/manifests/latest": http: server gave HTTP response to HTTPS client

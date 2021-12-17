@@ -44,7 +44,7 @@ Then install your chosen Ruby version (e.g. 2.6.6):
 
     ~/.direnv/bin/ruby-install ruby 2.6.6
 
-The above command will install Ruby 2.6.6 to `~/.rubies/ruby-2.6.6`, which is where `direnv` [will look for it]({% post_url 2019-01-30-ruby-direnv %}).
+The above command will install Ruby 2.6.6 to `~/.rubies/ruby-2.6.6`, which is where `direnv` [will look for it]({% post_url 2019/2019-01-30-ruby-direnv %}).
 
 ## Listing available Ruby versions
 

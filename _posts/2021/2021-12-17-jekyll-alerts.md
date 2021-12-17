@@ -40,14 +40,14 @@ If you want to use Liquid (e.g. `{% raw %}{% post_url %}{% endraw %}`) in your a
 ```liquid
 {% raw %}{% capture warning %}
 **Warning:** An alternative rail-replacement bus service is in operation this weekend.<br/>
-For updated timetables, click [here]({% post_url 2021-12-17-jekyll-alerts %}).
+For updated timetables, click [here]({% post_url 2021/2021-12-17-jekyll-alerts %}).
 {% endcapture %}
 {% include alerts/warning.html content=warning %}{% endraw %}
 ```
 
 {% capture warning %}
 **Warning:** An alternative rail replacement bus service is in operation this weekend.<br/>
-For updated timetables, click [here]({% post_url 2021-12-17-jekyll-alerts %}).
+For updated timetables, click [here]({% post_url 2021/2021-12-17-jekyll-alerts %}).
 {% endcapture %}
 {% include alerts/warning.html content=warning %}
 

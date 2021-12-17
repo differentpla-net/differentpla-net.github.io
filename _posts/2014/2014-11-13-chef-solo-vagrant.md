@@ -4,7 +4,7 @@ date: 2014-11-13 11:17:13
 tags: chef
 ---
 
-*This is part of my [quest to sort out my website]({% post_url 2014-11-13-website-rebuild %}).
+*This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).
 Using Chef Solo with Vagrant.*
 
 Having decided to use Chef Solo to manage my web server, at least initially,

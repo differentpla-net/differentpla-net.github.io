@@ -3,7 +3,7 @@ title: Installing berkshelf on AWS t2.micro
 date: 2014-11-30 18:26:45
 ---
 
-*This is part of my [quest to sort out my website]({% post_url 2014-11-13-website-rebuild %}).
+*This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).
 Installing berkshelf on a t2.micro.*
 
 If you use `sudo gem install berkshelf` on an AWS **t2.micro**, you will run

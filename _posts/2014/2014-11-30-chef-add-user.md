@@ -4,7 +4,7 @@ date: 2014-11-30 19:22:37
 tags: chef
 ---
 
-*This is part of my [quest to sort out my website]({% post_url 2014-11-13-website-rebuild %}).
+*This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).
 Using chef to add a user.*
 
 While I _could_ continue to log into my new EC2 instance as the default

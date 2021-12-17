@@ -8,7 +8,7 @@ layout: series
 series: winformswizard
 tags: csharp wizard windows-forms
 ---
-In this installment (see [here]({% post_url 2005-02-26-implementing-a-wizard-in-c %}) for the previous installment), we'll be fixing a few things and making the whole thing prettier.
+In this installment (see [here]({% post_url 2005/2005-02-26-implementing-a-wizard-in-c %}) for the previous installment), we'll be fixing a few things and making the whole thing prettier.
 
 **Update: Source code now lives at [CodePlex](http://winformswizard.codeplex.com)**; please post comments, issues, etc., there instead.
 

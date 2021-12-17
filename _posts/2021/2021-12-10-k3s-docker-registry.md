@@ -8,7 +8,7 @@ tags: k3s raspberry-pi
 ---
 
 In order to deploy our own applications, we're going to need a private docker repository.
-When I [first did this]({% post_url 2020-02-06-k3s-raspi-private-docker %}), I used a standalone container.
+When I [first did this]({% post_url 2020/2020-02-06-k3s-raspi-private-docker %}), I used a standalone container.
 
 This time, I'm going to run the registry "properly", inside the k8s cluster. I'm going to start
 with a basic docker container and add features as we go along.

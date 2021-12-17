@@ -7,11 +7,11 @@ series: k3s
 tags: k3s raspberry-pi docker elixir phoenix
 ---
 
-Note: This is basically the same as [the node.js server]({% post_url 2020-02-06-k3s-raspi-node-server %}).
+Note: This is basically the same as [the node.js server]({% post_url 2020/2020-02-06-k3s-raspi-node-server %}).
 
 ## Creating the Phoenix app
 
-It's entirely possible to create the app inside the docker container, or on a completely different machine, but I'm going to do it locally, which means [installing Erlang, Elixir and Phoenix first]({% post_url 2020-02-07-rpi-elixir %}).
+It's entirely possible to create the app inside the docker container, or on a completely different machine, but I'm going to do it locally, which means [installing Erlang, Elixir and Phoenix first]({% post_url 2020/2020-02-07-rpi-elixir %}).
 
 Then:
 

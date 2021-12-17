@@ -149,4 +149,4 @@ Reboot your system to ensure the partition table is updated.
 ```
 
 ...you'll need to reboot before continuing.
-Next: [Formatting an empeg's Hard Disk Manually]({% post_url 2004-03-25-formatting-an-empegs-hard-disk-manually %}).
+Next: [Formatting an empeg's Hard Disk Manually]({% post_url 2004/2004-03-25-formatting-an-empegs-hard-disk-manually %}).

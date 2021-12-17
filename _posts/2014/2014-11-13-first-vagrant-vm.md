@@ -3,7 +3,7 @@ title: First Vagrant VM
 date: 2014-11-13 10:18:45
 ---
 
-*This is part of my [quest to sort out my website]({% post_url 2014-11-13-website-rebuild %}).
+*This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).
 Bringing up the VM.*
 
 To bring up a new VM using vagrant, we're going to run `vagrant init`. This

@@ -7,7 +7,7 @@ series: k3s
 tags: k3s raspberry-pi docker
 ---
 
-**Updated:** _See [k3s on Raspberry Pi: Docker Registry]({% post_url 2021-12-10-k3s-docker-registry %}), where I do it "properly"._
+**Updated:** _See [k3s on Raspberry Pi: Docker Registry]({% post_url 2021/2021-12-10-k3s-docker-registry %}), where I do it "properly"._
 
 ---
 

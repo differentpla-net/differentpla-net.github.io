@@ -6,7 +6,7 @@ series: direnv-tool-versions
 tags: direnv python
 ---
 
-To integrate `direnv` with `python-build` -- installation instructions [here]({% post_url 2019-01-30-python-build %}) -- add the following to `~/.direnvrc`:
+To integrate `direnv` with `python-build` -- installation instructions [here]({% post_url 2019/2019-01-30-python-build %}) -- add the following to `~/.direnvrc`:
 
 ```
 use_python() {

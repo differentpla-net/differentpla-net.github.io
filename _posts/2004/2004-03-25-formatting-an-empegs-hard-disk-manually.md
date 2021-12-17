@@ -3,7 +3,7 @@ title: "Formatting an empeg's Hard Disk Manually"
 date: 2004-03-25T09:37:00.000Z
 tags: empeg
 ---
-The sequel to [Partitioning an empeg's Hard Disk Manually]({% post_url 2004-03-25-partitioning-an-empegs-hard-disk-manually %}).
+The sequel to [Partitioning an empeg's Hard Disk Manually]({% post_url 2004/2004-03-25-partitioning-an-empegs-hard-disk-manually %}).
 
 So, if you've followed the instructions on the previous page, you've now got a freshly-partitioned empeg hard disk. It's time to format it.
 

@@ -7,7 +7,7 @@ series: k3s
 tags: k3s raspberry-pi
 ---
 
-This morning, I grabbed [my Raspberry Pi cluster]({% post_url 2021-07-04-k3s-raspi-updates %}) out of the box and fired it up again.
+This morning, I grabbed [my Raspberry Pi cluster]({% post_url 2021/2021-07-04-k3s-raspi-updates %}) out of the box and fired it up again.
 
 But my docker repository wasn't starting. I'd left it broken:
 

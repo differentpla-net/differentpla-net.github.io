@@ -5,7 +5,7 @@ tags: jam
 ---
 ## Introduction
 
-empeg's code base contains several Windows DLL projects. I'm going to investigate getting these built with jam the [same way]({% post_url 2001-07-14-building-an-mfc-application-with-jam %}) as I did for the MFC applications -- by building a simple project with the AppWizard, and getting the project built.
+empeg's code base contains several Windows DLL projects. I'm going to investigate getting these built with jam the [same way]({% post_url 2001/2001-07-14-building-an-mfc-application-with-jam %}) as I did for the MFC applications -- by building a simple project with the AppWizard, and getting the project built.
 
 ## Using AppWizard to generate the DLL
 
@@ -27,7 +27,7 @@ The `Main` rule section in the `Jambase` file is geared up to create a .EXE file
 	_t = [ FAppendSuffix $(<) : $(SUFSHR) ] ;
 ```
 
-We have to go and define SUFSHR somewhere, though. The definition of the `SharedLibrary` rule is [here]({% post_url 2001-07-04-building-shared-libraries-dlls %}).
+We have to go and define SUFSHR somewhere, though. The definition of the `SharedLibrary` rule is [here]({% post_url 2001/2001-07-04-building-shared-libraries-dlls %}).
 Once we've added the new rules to Jambase, and changed "Main" to "SharedLibrary" in our Jamfile, we get the following:
 
 ```
@@ -55,7 +55,7 @@ cl /nologo /MTd /W3 /Gm /GX /ZI /Od
 	/FD /GZ /c
 ```
 
-We looked at what the compiler flags meant [here]({% post_url 2001-07-14-building-an-mfc-application-with-jam %}). The only one that's different is `/MTd`, rather than `/MDd`. This is building a multi-threaded application, and linking it to LIBCMT.LIB rather than to MSVCRT.LIB. Also promising are the `/D` switches. We'll put those into our Jamfile:
+We looked at what the compiler flags meant [here]({% post_url 2001/2001-07-14-building-an-mfc-application-with-jam %}). The only one that's different is `/MTd`, rather than `/MDd`. This is building a multi-threaded application, and linking it to LIBCMT.LIB rather than to MSVCRT.LIB. Also promising are the `/D` switches. We'll put those into our Jamfile:
 
 ```
 C++FLAGS += /MTd /W3 /Gm /GX /ZI /Od

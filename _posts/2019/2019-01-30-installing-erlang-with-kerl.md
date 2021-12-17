@@ -8,7 +8,7 @@ tags: direnv erlang
 
 At Electric Imp, on developer PCs, we manage our Erlang versions with [kerl](https://github.com/yrashk/kerl).
 
-Assuming you have `kerl` available in your path (and you've installed the [prerequisites]({% post_url 2019-01-30-erlang-build-prerequisites %})), installing a version of Erlang is simple:
+Assuming you have `kerl` available in your path (and you've installed the [prerequisites]({% post_url 2019/2019-01-30-erlang-build-prerequisites %})), installing a version of Erlang is simple:
 
     kerl update releases
     kerl build 21.2 21.2

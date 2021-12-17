@@ -14,7 +14,7 @@ layout pyenv 3.6.7
 ```
 
 Note that `pyenv` needs to be in your PATH. If you installed `pyenv` by
-following the instructions [from earlier]({% post_url 2019-01-30-python-build %}),
+following the instructions [from earlier]({% post_url 2019/2019-01-30-python-build %}),
 then do this:
 
 ```

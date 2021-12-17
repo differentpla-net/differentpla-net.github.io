@@ -6,7 +6,7 @@ series: direnv-tool-versions
 tags: direnv
 ---
 
-At Electric Imp, we use a [variety of different languages]({% post_url 2019-01-30-electricimp-languages %}), and each project might be using a different mix of versions.
+At Electric Imp, we use a [variety of different languages]({% post_url 2019/2019-01-30-electricimp-languages %}), and each project might be using a different mix of versions.
 
 Until recently, we've been using [kerl](https://github.com/kerl/kerl) to manage Erlang versions, [kiex](https://github.com/taylor/kiex) to manage
 Elixir versions, [rvm](https://rvm.io/) to manage Ruby versions and [nvm](https://github.com/creationix/nvm) to manage node versions. We've also been using virtualenv to manage Python 2.x virtual environments. We don't deliberately manage Go versions (yet).
