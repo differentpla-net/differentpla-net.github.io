@@ -1,5 +1,5 @@
 <div class="details">
-    <span class="created_at timeago" title="{{ page.date }}">{{ page.date }}</span>
+    <span class="created_at timeago" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.date }}">{{ page.date | date: "%-d %b %Y %H:%M" }}</span>
 
     <span class="tags">
     {% for tag in page.tags %}

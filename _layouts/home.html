@@ -13,7 +13,7 @@
                 <article class="excerpt">
                     <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
                     <div class="details">
-                        <span class="created_at timeago" title="{{ post.date }}">{{ post.date }}</span>
+                        <span class="created_at timeago" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>
                     </div>
                     <div class="excerpt">
                         {{ post.excerpt }}
@@ -59,6 +59,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('.timeago').timeago();
+
+            $('[data-bs-toggle="tooltip"]').tooltip();
         });
     </script>
 </body>
