@@ -360,6 +360,12 @@ In a word: abstraction.
 
 We're moving the volume details one step back from the pod, allowing us more flexibility in how we provision it.
 
+Maybe it would be clearer if the PV and PVC weren't in the same YAML file.
+
+The claim should go in the deployment YAML. It's saying "this deployment needs a volume; it should have this much capacity,
+and it should be in this storage class". It's up to the scheduler to match that up with an available volume, or to provision
+one dynamically.
+
 Ideally, we'd invent a storage provisioner that used the Synology NAS API (does it have one?) to carve out targets and
 LUNs on demand. That'd be cool, but it's overkill for my home test lab.
 
@@ -368,3 +374,7 @@ one step back as well. Now we have a "NAS is unavailable, we can't start the pod
 
 But, in theory, a reasonable NAS system (even a 10-year old one) is more reliable than a bunch of Raspberry Pi 4s
 precariously balanced on the edge of my desk.
+
+<div class="callout callout-warning" markdown="span">
+Maybe I spoke [too soon]({% post_url 2021/2021-12-18-k3s-raspi-docker-push-fails %})?
+</div>
