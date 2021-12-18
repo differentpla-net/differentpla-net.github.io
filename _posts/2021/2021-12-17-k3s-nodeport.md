@@ -1,6 +1,6 @@
 ---
-title: "k3s on Raspberry Pi: NodePort"
-short_title: "NodePort"
+title: "k3s on Raspberry Pi: NodePort Services"
+short_title: "NodePort Services"
 date: 2021-12-17T20:58:00Z
 layout: series
 series: k3s
