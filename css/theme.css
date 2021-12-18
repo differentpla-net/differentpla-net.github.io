@@ -67,6 +67,22 @@ article.post > div.details {
     margin-bottom: 0.6em;
 }
 
+article.post > div.details > .tags {
+    padding-left: 0.5rem;
+}
+
+article.post > div.details > .icons {
+    padding-left: 0.75rem;
+}
+
+article.post > div.details > .icons {
+    color: var(--main-color);
+}
+
+svg.octicon {
+    fill: currentColor;
+}
+
 ul.nav.series > li.active {
     font-weight: bold;
 }

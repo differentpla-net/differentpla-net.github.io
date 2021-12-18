@@ -9,12 +9,7 @@
     <div class="container-xxl my-md-4">
         <article class="post">
             <h1>{{ page.title }}</h1>
-            <div class="details">
-                <span class="created_at timeago" title="{{ page.date }}">{{ page.date }}</span>
-                {% for tag in page.tags %}
-                <a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a>
-                {% endfor %}
-            </div>
+            {% include _details.html %}
             <div class="body">
                 {{ content }}
             </div>
@@ -39,6 +34,8 @@
                     '<a class="anchorlink" title="Link to ' +
                     $(this).text() + '" href="#' + $(this).attr('id') + '"></a>');
             });
+
+            $('[data-bs-toggle="tooltip"]').tooltip();
         });
     </script>
 </body>

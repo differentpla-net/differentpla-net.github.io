@@ -3,6 +3,10 @@ title: Roger's Blog
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://blog.differentpla.net" # the base hostname & protocol for your site
 
+# GitHub links
+discussions_link: https://github.com/differentpla-net/differentpla-net.github.io/discussions
+issues_link: https://github.com/differentpla-net/differentpla-net.github.io/issues/new
+
 # Conversion
 markdown: kramdown
 
@@ -25,5 +29,6 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-octicons
 
 strict_front_matter: true

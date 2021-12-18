@@ -1,0 +1,14 @@
+<div class="details">
+    <span class="created_at timeago" title="{{ page.date }}">{{ page.date }}</span>
+
+    <span class="tags">
+    {% for tag in page.tags %}
+    <a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a>
+    {% endfor %}
+    </span>
+
+    <span class="icons">
+        <a href="{{ site.discussions_link }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Discuss this post">{% octicon comment-discussion height:16 %}</a>
+        <a href="{{ site.issues_link }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Report a problem with this post">{% octicon bug height:16 %}</a>
+    </span>
+</div>
