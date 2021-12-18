@@ -91,10 +91,23 @@ This bit:
 This is not funny. Filesystems only do this when they're extremely distressed.
 </div>
 
-## Conclusion
+I restarted the pod on another node, which remounted the filesystem read-write and tried again.
+
+{% capture warning %}
+Don't try this at home. You should [recover the volume](https://stackoverflow.com/questions/49859036/how-to-manual-recover-a-pv) and run `fsck` first. But, hey, test rig. **#yolo**.
+{% endcapture %}
+{% include alerts/warning.html content=warning %}
+
+When retrying, that also failed after a while:
+
+![](/images/2021-12-18-k3s-raspi-docker-push-fails/jbd2-blocked.png)
 
 To be honest, I think that my DS211 might be a bit underpowered to act as an iSCSI target (at least without some tweaks to the client configuration, anyway).
-I should have done some soak-testing with it.
+Or maybe it's just a bad disk -- I found it in my parts bin, and it's several years old. It also reports power-on time of ~30K hours. I should have done some more soak-testing first.
 
-I'll give up on that for the time-being. Let's go back to [dynamically-provisioned storage]({% post_url 2021/2021-12-17-k3s-dynamic-pv %}), even if it does make the pod have node affinity. We can take
+## Conclusion
+
+I'll give up on that for the time-being.
+
+Let's go back to [dynamically-provisioned storage]({% post_url 2021/2021-12-17-k3s-dynamic-pv %}), even if it does make the pod have node affinity. We can take
 another look at alternatives later.
