@@ -1,6 +1,7 @@
 ---
 title: Replacing dnsmasq on OpenWRT
 date: 2013-10-30T11:34:11Z
+tags: openwrt dns
 ---
 ## Overview
 
