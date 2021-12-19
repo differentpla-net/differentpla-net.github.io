@@ -147,6 +147,11 @@ the claim:
 
 {% include alerts/warning.html content="**Warning:** This leaves the claim Pending; read on for why." %}
 
+<div class="callout callout-info" markdown="span">
+I later discovered that you can reserve (pre-bind) volume claims to volumes.
+See [Reserving a PersistentVolume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#reserving-a-persistentvolume) in the K8s documentation.
+</div>
+
 ```yaml
 apiVersion: v1
 kind: PersistentVolume
