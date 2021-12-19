@@ -106,8 +106,7 @@ spec:
 ```
 
 <div class="callout callout-warning" markdown="span">
-Note the IP address for the `targetPortal`. This is **important** (and
-also annoying).
+Note the **IP address** for the `targetPortal`, rather than a host name. This is **important** (and also annoying).
 
 See [rancher#12433](https://github.com/rancher/rancher/issues/12433).
 </div>
