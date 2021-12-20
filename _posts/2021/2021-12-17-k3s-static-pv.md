@@ -110,14 +110,14 @@ spec:
 If you apply the above, you'll end up with a dynamic PVC (and PV) and an (unused) static PV:
 
 ```
-$ kubectl --namespace docker-registry get pvc
+$ kubectl get pvc
 NAME                  STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-docker-registry-pvc   Bound    pvc-938faff3-c285-4105-83bc-221bb93a6603   1Gi        RWO            local-path     8m32s
+docker-repo-pvc       Bound    pvc-938faff3-c285-4105-83bc-221bb93a6603   1Gi        RWO            local-path     8m32s
 
-$ kubectl --namespace docker-registry get pv
+$ kubectl get pv
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM                                 STORAGECLASS   REASON   AGE
-docker-registry-pv                         1Gi        RWO            Retain           Available                                                                 18m
-pvc-938faff3-c285-4105-83bc-221bb93a6603   1Gi        RWO            Delete           Bound       docker-registry/docker-registry-pvc   local-path              3m42s
+docker-repo-pv                             1Gi        RWO            Retain           Available                                                                 18m
+pvc-938faff3-c285-4105-83bc-221bb93a6603   1Gi        RWO            Delete           Bound       default/docker-repo-pvc               local-path              3m42s
 ```
 
 You can see that we have one PVC listed, but two PV's. One of the PV's is marked "Available", showing that it's unused.
