@@ -2,6 +2,8 @@
 title: "Upgrading RaspiOS to arm64"
 date: 2021-12-20T10:26:00Z
 tags: raspberry-pi
+layout: series
+series: k3s
 ---
 
 Can I upgrade my Raspberry Pi 4-powered k3s cluster to arm64? Without rebuilding everything? tl;dr: no.
