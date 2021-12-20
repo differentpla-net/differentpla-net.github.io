@@ -43,4 +43,4 @@ How to upgrade userland to 64-bit? [Just don't bother](https://forums.raspberryp
 > more likely to result in a working system. But yes: it *can* be done. Just
 > don't bother.
 
-Vladimir over at <https://rpi4cluster.com/> [went with](https://rpi4cluster.com/k3s/k3s-design/) 64-bit Ubuntu 20.10.
+Vladimir over at `rpi4cluster.com` [went with](https://rpi4cluster.com/k3s/k3s-design/) 64-bit Ubuntu 20.10.
