@@ -9,7 +9,7 @@ tags: k3s raspberry-pi
 
 This morning, I grabbed [my Raspberry Pi cluster]({% post_url 2021/2021-07-04-k3s-raspi-updates %}) out of the box and fired it up again.
 
-But my docker repository wasn't starting. I'd left it broken:
+But my docker repository (of which [more later]({% post_url 2021/2021-12-17-k3s-dynamic-pv %}))wasn't starting. I'd left it broken:
 
 - By using the default k3s `local-path` storage class, the container was tied to a specific node.
 - That node was showing as `SchedulingDisabled`:
