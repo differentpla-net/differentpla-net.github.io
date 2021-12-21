@@ -1,6 +1,6 @@
 ---
 title: Installing Ruby with ruby-install
-date: 2019-01-30 17:10
+date: 2019-01-30 17:40
 layout: series
 series: direnv-tool-versions
 tags: direnv ruby

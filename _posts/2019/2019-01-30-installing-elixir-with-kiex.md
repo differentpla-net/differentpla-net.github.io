@@ -1,6 +1,6 @@
 ---
 title: Installing Elixir with kiex
-date: 2019-01-30 17:06
+date: 2019-01-30 17:12
 layout: series
 series: direnv-tool-versions
 tags: direnv elixir

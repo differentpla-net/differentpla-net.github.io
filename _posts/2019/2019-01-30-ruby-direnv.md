@@ -1,6 +1,6 @@
 ---
 title: Integrating direnv with ruby-install
-date: 2019-01-30 17:11
+date: 2019-01-30 17:45
 layout: series
 series: direnv-tool-versions
 tags: direnv ruby

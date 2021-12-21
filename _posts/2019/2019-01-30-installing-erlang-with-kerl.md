@@ -1,6 +1,6 @@
 ---
 title: Installing Erlang with kerl
-date: 2019-01-30 17:02
+date: 2019-01-30 17:04
 layout: series
 series: direnv-tool-versions
 tags: direnv erlang

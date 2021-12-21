@@ -1,6 +1,6 @@
 ---
 title: Integrating direnv with python-build
-date: 2019-01-30 17:09
+date: 2019-01-30 17:25
 layout: series
 series: direnv-tool-versions
 tags: direnv python

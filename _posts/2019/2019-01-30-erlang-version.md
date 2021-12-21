@@ -1,6 +1,6 @@
 ---
 title: Getting Erlang version
-date: 2019-01-30 17:04
+date: 2019-01-30 17:05
 layout: series
 series: direnv-tool-versions
 tags: erlang
