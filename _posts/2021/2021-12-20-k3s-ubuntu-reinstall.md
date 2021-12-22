@@ -55,7 +55,7 @@ export KUBECONFIG=$HOME/.k3s/k3s.yaml   # add this to ~/.bashrc
 
 ## Shell auto-completion
 
-From <https://kubernetes.io/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/>:
+Per <https://kubernetes.io/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/>
 
 ```bash
 echo 'source <(kubectl completion bash)' >>~/.bashrc
