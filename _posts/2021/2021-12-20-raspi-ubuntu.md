@@ -80,4 +80,14 @@ ubuntu@ubuntu:~$ dpkg --print-architecture
 arm64
 ```
 
+## Install some basics
+
+```bash
+sudo apt-get install --no-install-recommends vim-nox
+sudo update-alternatives --set editor /usr/bin/vim.nox
+
+mkdir "$HOME/bin"
+echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+```
+
 Next: reinstall k3s.
