@@ -7,6 +7,11 @@ series: k3s
 tags: k3s raspberry-pi
 ---
 
+{% capture info %}
+**Updated:** See [Docker Registry Redux]({% post_url 2021/2021-12-21-docker-registry-redux %}).
+{% endcapture %}
+{% include alerts/light.html content=info %}
+
 In order to deploy our own applications, we're going to need a private docker repository.
 When I [first did this]({% post_url 2020/2020-02-06-k3s-raspi-private-docker %}), I used a standalone container.
 
