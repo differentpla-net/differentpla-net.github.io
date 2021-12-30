@@ -42,3 +42,39 @@ NAME                 PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE  
 longhorn (default)   driver.longhorn.io      Delete          Immediate              true                   19m
 local-path           rancher.io/local-path   Delete          WaitForFirstConsumer   false                  20h
 ```
+
+## User Interface
+
+The Longhorn frontend is accessible through a ClusterIP endpoint:
+
+```
+$ kubectl --namespace longhorn-system get service longhorn-frontend
+NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+longhorn-frontend   ClusterIP   10.43.174.121   <none>        80/TCP    9d
+```
+
+We can expose this in a number of different ways:
+
+### kubectl port-forward
+
+```
+$ kubectl --namespace longhorn-system port-forward --address 0.0.0.0 service/longhorn-frontend 5080:80
+```
+
+This makes the UI accessible at <http://rpi401:5080/#/dashboard>. If you're running `kubectl` _on_ one of the nodes,
+you'll need the `--address 0.0.0.0` option, but note that this is insecure: it exposes the UI to the local network. If
+you're running `kubectl` on your desktop, you can omit the `--address 0.0.0.0`, and the port will be opened to
+`localhost` only.
+
+### ssh port forward
+
+```
+$ ssh -L5080:10.43.174.121:80 ubuntu@rpi401
+```
+
+This makes the UI accessible at <http://localhost:5080/#/dashboard>. It's more secure (localhost only, and the traffic
+goes over SSH), but it requires figuring out the ClusterIP, rather than just specifying the service name.
+
+<div class="callout callout-info" markdown="span">
+Tip: You can use an SSH escape sequence to forward the port without disconnecting. Press `Enter`, then `~C`, then `L5080:10.43.174.121:80`, then `Enter`.
+</div>
