@@ -33,7 +33,7 @@ We'll be using the root CA for other certificates in future, so the certificate 
 
 ### Install root CA
 
-You need to do the following on every node.
+You need to do the following on every node (and on any other host that needs to push to the registry):
 
 ```
 sudo mkdir -p /usr/local/share/ca-certificates/differentpla.net
@@ -42,6 +42,12 @@ sudo update-ca-certificates
 ```
 
 ### Restart services
+
+Locally, restart the docker service:
+
+```
+sudo systemctl restart docker
+```
 
 On the control node, restart `k3s`:
 
@@ -53,12 +59,6 @@ On the worker nodes, restart `k3s-agent`:
 
 ```
 sudo systemctl restart k3s-agent
-```
-
-Locally, restart the docker service:
-
-```
-sudo systemctl restart docker
 ```
 
 ### Create server keypair and certificate
