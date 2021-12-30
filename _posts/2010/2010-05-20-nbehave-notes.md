@@ -8,13 +8,14 @@ We’ve just started using NBehave, so this is a random selection of notes:
 
 If you try to use NBehave-Console with a .NET 4.0-compiled assembly, you’ll see a BadImageFormatException. You can fix this by creating the NBehave-Console.exe.config file, as follows:
 
-<pre class="code"><span style="color: blue"><?</span><span style="color: #a31515">xml </span><span style="color: red">version</span><span style="color: blue">=</span>"<span style="color: blue">1.0</span>" <span style="color: red">encoding</span><span style="color: blue">=</span>"<span style="color: blue">utf-8</span>" <span style="color: blue">?>
-<</span><span style="color: #a31515">configuration</span><span style="color: blue">>
-  <</span><span style="color: #a31515">startup</span><span style="color: blue">>
-    <</span><span style="color: #a31515">supportedRuntime </span><span style="color: red">version</span><span style="color: blue">=</span>"<span style="color: blue">v4.0.30319</span>"<span style="color: blue">/>
-  </</span><span style="color: #a31515">startup</span><span style="color: blue">>
-</</span><span style="color: #a31515">configuration</span><span style="color: blue">>
-</span></pre>
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0.30319"/>
+  </startup>
+</configuration>
+```
 
 This makes it use the v4.0 CLR. See [this question on StackOverflow](http://stackoverflow.com/questions/2046089/force-an-application-to-run-under-specific-net-runtime-version).
 
