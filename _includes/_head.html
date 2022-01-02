@@ -15,6 +15,12 @@
     <meta property="og:description"
         content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.title }}{% endif %}" />
 
+    <meta name="twitter:card" content="sumamry" />
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta name="twitter:description"
+        content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.title }}{% endif %}" />
+    <meta name="twitter:site" content="{{ site.twitter_username }}" />
+
     <link rel="icon" type="image/png" href="/assets/profile-30px.png">
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

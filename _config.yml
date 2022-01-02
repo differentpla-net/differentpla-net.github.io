@@ -7,6 +7,9 @@ url: "http://blog.differentpla.net" # the base hostname & protocol for your site
 discussions_link: https://github.com/differentpla-net/differentpla-net.github.io/discussions
 issues_link: https://github.com/differentpla-net/differentpla-net.github.io/issues/new
 
+# Usernames
+twitter_username: rogerlipscombe
+
 # Conversion
 markdown: kramdown
 
