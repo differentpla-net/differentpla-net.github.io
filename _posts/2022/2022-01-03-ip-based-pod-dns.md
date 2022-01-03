@@ -61,4 +61,5 @@ So, yeah, in `insecure` mode, it simply parses the dashed-IP and converts it to 
 ## References
 
 - <https://www.digitalocean.com/community/tutorials/an-introduction-to-the-kubernetes-dns-service>
+- <https://docs.aws.amazon.com/eks/latest/userguide/managing-coredns.html>
 - <https://coredns.io/plugins/kubernetes/>
