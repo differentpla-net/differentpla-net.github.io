@@ -1,5 +1,5 @@
 :root {
-    --light-background-color: #dee2e6;
+    --light-border-color: #dee2e6;
     --code-color: #008080;
     --main-color: #008cba; /* given */
 }
@@ -25,15 +25,15 @@ a:hover {
 }
 
 hr {
-    background-color: var(--light-background-color);
+    background-color: var(--light-border-color);
     opacity: 1.0;
 }
 
-blockquote p {
-    font-style: italic;
-    border-left: 3px solid var(--light-background-color);
-    margin-left: 0.3em;
-    padding-left: 0.5em;
+blockquote {
+    border-left: .25rem solid var(--main-color);
+    background-color: #dee2e6;
+    margin-left: 0.3rem;
+    padding-left: 0.5rem;
 }
 
 code {
@@ -63,7 +63,7 @@ article > div.details {
 
 article.post > div.details {
     padding-bottom: 0.3em;
-    border-bottom: 1px solid var(--light-background-color);
+    border-bottom: 1px solid var(--light-border-color);
     margin-bottom: 0.6em;
 }
 
@@ -94,7 +94,7 @@ h4[id]:hover a.anchorlink:before,
 h5[id]:hover a.anchorlink:before,
 h6[id]:hover a.anchorlink:before {
   content: "\00B6"; /* pilcrow */
-  color: var(--light-background-color);
+  color: var(--main-color);
   font-size: smaller;
 }
 a.anchorlink {
@@ -121,7 +121,7 @@ a.anchorlink {
     padding: 1.25rem;
     margin-top: 1.25rem;
     margin-bottom: 1.15rem;
-    border: 1px solid var(--light-background-color);
+    border: 1px solid var(--light-border-color);
     border-left-width: .25rem;
     border-radius: .25rem;
 }
