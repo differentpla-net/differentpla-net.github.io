@@ -82,7 +82,7 @@ The `kubernetes` plugin is documented [here](https://coredns.io/plugins/kubernet
 So, yeah, in `insecure` mode, it simply parses the dashed-IP and converts it to a dotted-IP.
 
 <div class="callout callout-info" markdown="span">
-Back to my original problem: how do I get the pod _name_ to resolve? ~~I could write a CoreDNS plugin that would do it correctly.~~ The `endpoint_pod_names` directive does this. I don't see Twilio's Platform/SRE team being too enthusiatic about that, though.<br/>So I guess I'll have to look into [subverting epmd](https://github.com/rlipscombe/epmd_docker). Again.
+Back to my original problem: how do I get the pod _name_ to resolve? ~~I could write a CoreDNS plugin that would do it correctly.~~ The `endpoint_pod_names` directive does this. I don't see Twilio's Platform/SRE team being too enthusiastic about that, though.<br/>So I guess I'll have to look into [subverting epmd](https://github.com/rlipscombe/epmd_docker). Again.
 </div>
 
 ## References
