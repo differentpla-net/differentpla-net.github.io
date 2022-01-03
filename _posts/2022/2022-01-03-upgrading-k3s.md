@@ -41,8 +41,20 @@ This is a non-HA cluster (I've only got one server node), and `kubectl drain rpi
 ```
 sudo apt update
 sudo apt upgrade
-curl -sfL https://get.k3s.io | sh -
+curl -sfL https://get.k3s.io | sh -   # but see below, re: Klipper
 ```
+
+## Disabling Klipper
+
+A few hours later, I realised that I forgot to disable Klipper. I've not gone back and tried again, but based on the documentation (see below for links), I'm going to assume that the following is the correct incantation for the installation script:
+
+```
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable servicelb" sh -
+```
+
+- [Disabling Klipper]({% post_url 2021/2021-12-21-disabling-klipper %})
+- [Rancher Docs: Networking: Disabling the Service LB](https://rancher.com/docs/k3s/latest/en/networking/#disabling-the-service-lb)
+- [Rancher Docs: Installation Options: INSTALL_K3S_EXEC](https://rancher.com/docs/k3s/latest/en/installation/install-options/how-to-flags/#example-b-install-k3s-exec)
 
 ## error: cannot delete Pods
 
