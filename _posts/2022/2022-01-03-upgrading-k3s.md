@@ -1,6 +1,8 @@
 ---
 title: "Upgrading k3s"
 date: 2022-01-03T14:38:00Z
+layout: series
+series: k3s
 tags: k3s
 ---
 
