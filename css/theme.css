@@ -138,3 +138,23 @@ a.anchorlink {
     background-color: #f4f5f7;
     border-color: #f2f3f5;
 }
+
+th {
+    border-bottom: black solid 1px;
+}
+
+tr {
+    border-bottom: var(--light-border-color) solid 1px;
+}
+
+td, th {
+    padding-right: 1.0rem;
+}
+
+td:last-child {
+    padding-right: 0;
+}
+
+table {
+    margin-bottom: 0.5rem;
+}
