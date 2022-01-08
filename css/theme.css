@@ -87,6 +87,18 @@ ul.nav.series > li.active {
     font-weight: bold;
 }
 
+div.highlight {
+    padding: 0.5rem;
+}
+
+div.highlighter-rouge {
+    margin-bottom: 0.5rem;
+}
+
+pre.highlight {
+    margin: 0;
+}
+
 h1[id]:hover a.anchorlink:before,
 h2[id]:hover a.anchorlink:before,
 h3[id]:hover a.anchorlink:before,
