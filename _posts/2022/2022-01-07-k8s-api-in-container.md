@@ -25,7 +25,7 @@ you, drop the `--rm` and you can reattach to the pod later.
 ## Install some tools
 
 ```
-apk add iputils curl jq
+apk add iputils bind-tools curl jq
 ```
 
 ## Run curl
