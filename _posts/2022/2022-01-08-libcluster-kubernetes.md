@@ -34,15 +34,17 @@ When an Erlang node (the "initiator") connects to another Erlang node (the "acce
 part of setting up the session. The initiator's idea of the acceptor's node name MUST match the acceptor's idea of its own node name.
 </div>
 
-So, how does this all work? `libcluster` provides three different Kubernetes strategies, each of which has multiple modes:
+So, how does this all work? `libcluster` provides three different Kubernetes strategies:
 
 - `Cluster.Strategy.Kubernetes`
 - `Cluster.Strategy.Kubernetes.DNS`
 - `Cluster.Strategy.Kubernetes.DNSSRV`
 
+Let's dig into them and work out what they're doing and why.
+
 ## Cluster.Strategy.Kubernetes
 
-Let's dig into them and work out what they're doing and why. First up: `Cluster.Strategy.Kubernetes`.
+First up: `Cluster.Strategy.Kubernetes`.
 
 ### Lookup Mode: Endpoints
 
@@ -212,9 +214,9 @@ This is the same as for `Cluster.Strategy.Kubernetes` and `mode: :hostname`, as 
 
 ## Which one to use?
 
-- If you can't run your pod under a service account, you will need to use one of the DNS-based options. You'll need a headless service.
+- If you can't run your pod under a custom service account, you will need to use one of the DNS-based options. You'll need a headless service.
   - If you're not using a StatefulSet, use `Cluster.Strategy.Kubernetes.DNS`. You'll have to use IP addresses.
   - If you're using a StatefulSet, use `Cluster.Strategy.Kubernetes.DNSSRV`.
-- If you're prepared to use a service account, you can use `Cluster.Strategy.Kubernetes`.
+- If you're prepared to use a custom service account, you can use `Cluster.Strategy.Kubernetes`.
   - If you're not using a StatefulSet, use `mode: :ip` (IP addresses) or `mode: :dns` (dashed IP pod names).
   - If you're using a StatefulSet, use `mode: :hostname`.
