@@ -56,7 +56,7 @@ cookie in `vm.args`; here's the relevant snippet from the template:
 
 ```conf
 ## Cookie for distributed erlang
--setcookie {{ rel_name }}
+{% raw %}-setcookie {{ rel_name }}{% endraw %}
 ```
 
 Yes, it's predictable; you can change it. The point is that, because `vm.args` is part of the release, every node will
