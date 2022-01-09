@@ -8,7 +8,7 @@ series: qmail
 ---
 BincIMAP supports IMAPS for communication. It can either do this if you compile in SSL support, or if you use an SSL tunnel, such as [stunnel](http://www.stunnel.org/) or [ucspi-ssl](http://www.superscript.com/ucspi-ssl/intro.html).
 
-I'm going to use the built-in SSL support. This got included when I [installed BincIMAP earlier](/node/view/171). To make it work, you need to create a `/etc/opt/bincimap/bincimap.pem` file containing your server key and server certificate. Since you'll have already generated a key and certificate for [using with SquirrelMail](/node/view/179), you can just use this:
+I'm going to use the built-in SSL support. This got included when I [installed BincIMAP earlier]({% post_url 2004/2004-03-11-installing-bincimap %}). To make it work, you need to create a `/etc/opt/bincimap/bincimap.pem` file containing your server key and server certificate. Since you'll have already generated a key and certificate for [using with SquirrelMail]({% post_url 2004/2004-03-18-securing-squirrelmail-using-https %}), you can just use this:
 
 <pre># cat /etc/apache/ssl.key/server.key /etc/apache/ssl.crt > /etc/opt/bincimap/bincimap.pem
 # chmod 400 /etc/opt/bincimap/bincimap.pem</pre>
@@ -29,10 +29,12 @@ If you plunk down more cash, you can buy what's called a [wildcard certificate](
 
 It doesn't appear that you can generate self-signed wildcard certificates, so we'll just have to create two certificates: one for HTTPS and one for IMAPS:
 
-<pre>$ openssl genrsa -out www.differentpla.test.key 1024
+```
+$ openssl genrsa -out www.differentpla.test.key 1024
 $ openssl req -new -key www.differentpla.test.key -out www.differentpla.test.csr
 $ openssl genrsa -out imap.differentpla.test.key 1024
-$ openssl req -new -key imap.differentpla.test.key -out imap.differentpla.test.csr</pre>
+$ openssl req -new -key imap.differentpla.test.key -out imap.differentpla.test.csr
+```
 
 Then send those off to be signed, or sign them with your own CA.
 
