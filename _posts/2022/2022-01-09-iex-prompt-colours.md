@@ -35,7 +35,8 @@ This applies the colour to only the node name, so it only works with `--sname` o
 Feel free to edit it for your needs.
 
 The name of the environment variable (`WHICH_ENVIRONMENT`), and the possible values for it (`dev`, `test`, etc.), are
-completely up to you (or your ops team; go and talk to them).
+completely up to you (or your ops team; go and talk to them). I've assumed that the variable will be unset on your local
+machine, and that unrecognised values should be treated as if they were `prod` (because potentially dangerous).
 
 Elixir searches for this file in the current directory, then in `$HOME`, so you should just put it at the top level of
 your project. If you're using containers, copy it to `$HOME` with something like this:
