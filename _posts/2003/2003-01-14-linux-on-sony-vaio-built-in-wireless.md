@@ -2,6 +2,7 @@
 title: "Linux on Sony Vaio - Built-in Wireless"
 short_title: "Built-in Wireless"
 date: 2003-01-14T15:50:00.000Z
+redirect_from: /node/view/157
 layout: series
 series: linux-on-vaio
 tags: linux sony-vaio

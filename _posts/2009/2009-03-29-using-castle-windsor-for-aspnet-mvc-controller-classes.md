@@ -37,7 +37,7 @@ public IWindsorContainer Container
     get { return (IWindsorContainer)Application["WindsorContainer"]; }
 }</pre>
 
-You'll need [an implementation of ForEach that works on IEnumerable](/content/2009/03/linqs-foreach-doesnt-work-ienumerablet).
+You'll need [an implementation of ForEach that works on IEnumerable]({% post_url 2009/2009-03-29-linqs-foreach-doesnt-work-on-ienumerable-t %}).
 
 You'll need a controller factory:
 

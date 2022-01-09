@@ -2,6 +2,7 @@
 title: "Linux on Sony Vaio - Connecting an iPod"
 short_title: "Connecting an iPod"
 date: 2003-02-04T15:10:00.000Z
+redirect_from: /node/view/151
 layout: series
 series: linux-on-vaio
 tags: linux sony-vaio ipod

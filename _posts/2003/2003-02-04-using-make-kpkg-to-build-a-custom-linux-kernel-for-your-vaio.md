@@ -49,7 +49,7 @@ $ make menuconfig
 Prepare your kernel for later chapters by [installing the ACPI patches]({% post_url 2003/2003-01-13-vaio-acpi-patches %}),
 and by setting the following sets of kernel options now:
 
-[Firewire DVD-ROM drive](/node/view/150):
+[Firewire DVD-ROM drive]({% post_url 2003/2003-02-04-linux-on-sony-vaio-firewire-dvd-rom-drive %}):
 
 ```
 CONFIG_SCSI=m (SCSI Support ---> SCSI Support)
@@ -64,7 +64,7 @@ CONFIG_ZISOFS_FS=m (automatic)
 CONFIG_ZLIB_INFLATE=m (automatic)
 ```
 
-[Wireless Networking](/node/view/157):
+[Wireless Networking]({% post_url 2003/2003-01-14-linux-on-sony-vaio-built-in-wireless %}):
 
 ```
 CONFIG_PCMCIA=m
@@ -82,7 +82,7 @@ CONFIG_SD_EXTRA_DEVS=40 (automatic)
 CONFIG_CHR_DEV_SG=m (SCSI Support ---> SCSI generic support)
 ```
 
-[Apple iPod](/node/view/151) (experimental support):
+[Apple iPod]({% post_url 2003/2003-02-04-linux-on-sony-vaio-connecting-an-ipod %}) (experimental support):
 
 This is optional. If you don't have an Apple iPod, then you needn't set these options.
 
@@ -92,7 +92,7 @@ CONFIG_PARTITION_ADVANCED=y (File systems ---> Partition Types ---> Advanced par
 CONFIG_MAC_PARTITION=y (File systems ---> Partition Types ---> Macintosh partition map support)
 ```
 
-[Intel i820 onboard soundcard](/node/view/156):
+[Intel i820 onboard soundcard]({% post_url 2003/2003-01-17-linux-on-sony-vaio-intel-i820-onboard-soundcard %}):
 
 ```
 CONFIG_SOUND=m (Sound ---> Sound card support)

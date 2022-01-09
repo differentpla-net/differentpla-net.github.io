@@ -8,7 +8,8 @@ When you click on "Show details" in the Windows Vista gadget gallery, Windows di
 
 These details come from your Gadget.xml file:
 
-<pre><?xml version="1.0" encoding="utf-8" ?>
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
 <gadget>
   <name>BasicGadget</name>
   <version>1.0.0.0</version>
@@ -20,11 +21,12 @@ These details come from your Gadget.xml file:
 
   <copyright>(C) 2007</copyright>
   <description>Basic Sidebar Gadget</description>
-</gadget></pre>
+</gadget>
+```
 
 A couple of things to note:
 
 *   There's not a lot of room on the right-hand side of the Gadget Gallery, so keep your author name and copyright information short.
 *   The information field can handle different display and URL strings. This is useful because it's displayed on the right-hand side of the Gallery, and so should be kept reasonably short.
 
-The `Logo.png` file should be 48 pixels high, and 48 pixels wide. You can use the same file as [the icon used in the gallery](/content/2007/04/how-do-i-change-the-icon-used-by-my-gadget), but you'll probably put your company logo here instead.
+The `Logo.png` file should be 48 pixels high, and 48 pixels wide. You can use the same file as [the icon used in the gallery]({% post_url 2007/2007-04-23-how-do-i-change-the-icon-used-by-my-gadget %}), but you'll probably put your company logo here instead.

@@ -6,17 +6,21 @@ When your gadget is docked, it displays a background image, which is allowed to 
 
 This is controlled by the CSS for your gadget:
 
-<pre>body {
+```css
+body {
     background-image: url(GadgetBackground.png);
     background-repeat: no-repeat;
-}</pre>
+}
+```
 
 Your background should be 130 pixels wide when docked, but the height can vary. The size is controlled by another CSS rule:
 
-<pre>body.docked {
+```css
+body.docked {
     width: 130px;
     height: 113px;
-}</pre>
+}
+```
 
 Note that this assumes that you're using different class names for the docked and undocked state of your gadget.
 

@@ -2,7 +2,9 @@
 title: "PowerShell Closures"
 date: 2012-05-25T12:07:04.000Z
 ---
-<pre># Create a script block. It doesn't capture $x.
+
+```powershell
+# Create a script block. It doesn't capture $x.
 $x = 'A'
 $sb = { Write-Host $x }
 
@@ -21,4 +23,4 @@ $x = 'C'
 
 # For comparison, run the script block. Nope. Still tracking the current value.
 & $sb                  # ... C
-</pre>
+```

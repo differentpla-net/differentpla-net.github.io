@@ -12,23 +12,24 @@ To get started, I installed [xUnit.NET](http://xunit.codeplex.com/) (I already h
 
 So, here's the results:
 
-<pre>module Module1  
+```fsharp
+module Module1
 
-let HelloWorld1 =  
-    "Hello World"  
+let HelloWorld1 =
+    "Hello World"
 
-let HelloWorld2 x =  
-    sprintf "Hello %s" x  
+let HelloWorld2 x =
+    sprintf "Hello %s" x
 
-open Xunit  
+open Xunit
 
-[<Fact>]  
-let HelloWorld_ShouldReturnHelloWorld() =  
-    Assert.Equal("Hello World", HelloWorld1)  
+[<Fact>]
+let HelloWorld_ShouldReturnHelloWorld() =
+    Assert.Equal("Hello World", HelloWorld1)
 
-[<Fact>]  
-let HelloWorld_WithFred_ShouldReturnHelloFred() =  
-    Assert.Equal("Hello Fred", HelloWorld2 "Fred")  
-</pre>
+[<Fact>]
+let HelloWorld_WithFred_ShouldReturnHelloFred() =
+    Assert.Equal("Hello Fred", HelloWorld2 "Fred")
+```
 
 Nothing particularly interesting there. I was surprised to find out that [F# doesn't support overloaded functions](http://stackoverflow.com/questions/2260939/f-overloading-functions), except as members.

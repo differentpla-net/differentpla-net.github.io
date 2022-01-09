@@ -103,10 +103,10 @@ For now, we'll just return a hard-coded list.
 
 ## /layout
 
-The next thing that the Receiver does is ask for its [layout definitions](/node/view/12). In the stock server, these are
+The next thing that the Receiver does is ask for its [layout definitions]({% post_url 2002/2002-01-22-rio-receiver-layout-definitions %}). In the stock server, these are
 stored as files in the webserver's directory. For now, we'll go and grab them from the location where the stock server
 has them installed, by poking around in the registry.
 
-* * *
+----
 
 Update: I've since found gainful employment, so this is on hold. For more info, you might want to check out [this thread](http://empeg.comms.net/php/showthreaded.php?Cat=&Board=hackers_prog&Number=181804) on the empeg BBS.

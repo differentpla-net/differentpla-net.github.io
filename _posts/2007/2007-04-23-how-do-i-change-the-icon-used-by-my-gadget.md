@@ -8,10 +8,12 @@ When you add a new gadget to the sidebar (by right-clicking and selecting "Add G
 
 This icon is controlled by your Gadget.xml file:
 
-<pre><gadget>
+```xml
+<gadget>
   <icons>
     <icon height="48" width="48" src="GadgetIcon.png" />
   </icons>
-</gadget></pre>
+</gadget>
+```
 
 The icon should be 48 pixels wide and 48 pixels hide. You'll normally use a .PNG file. As you can see from the above screenshot, I took the normal icon and recoloured it (in [Paint.NET](http://www.getpaint.net/)) slightly to demonstrate.

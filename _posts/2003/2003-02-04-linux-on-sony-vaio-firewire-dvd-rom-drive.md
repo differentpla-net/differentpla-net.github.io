@@ -2,6 +2,7 @@
 title: "Linux on Sony Vaio - Firewire DVD-ROM drive"
 short_title: "Firewire DVD-ROM drive"
 date: 2003-02-04T14:47:00.000Z
+redirect_from: /node/view/150
 layout: series
 series: linux-on-vaio
 tags: linux sony-vaio
@@ -23,7 +24,7 @@ CONFIG_ZLIB_INFLATE=m (automatic)
 
 You don't need any of the SCSI low-level drivers.
 
-This should be sufficient to support the Firewire controller, and to support the DVD-ROM drive. Build and install your [new kernel](/drupal-4.7.3/make-kpkg.html), and reboot.
+This should be sufficient to support the Firewire controller, and to support the DVD-ROM drive. Build and install your [new kernel]({% post_url 2003/2003-02-04-using-make-kpkg-to-build-a-custom-linux-kernel-for-your-vaio %}), and reboot.
 
 Connect the DVD-ROM drive and put in a CD-ROM or DVD-ROM (or a DVD video or audio disc).
 

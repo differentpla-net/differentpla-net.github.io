@@ -14,7 +14,8 @@ The first thing that you'll need is a project file. Start with a "Win32 Dynamic-
 
 ## my_interface.idl
 
-<pre>import "oaidl.idl";
+```midl
+import "oaidl.idl";
 import "ocidl.idl";
 
 [ object, uuid(12345678-9ABC-DEF0-1234-56789ABCDEF0),
@@ -23,7 +24,8 @@ import "ocidl.idl";
 interface IMyInterface : IUnknown
 {
     // methods go here
-};</pre>
+};
+```
 
 Add this file to the project. Open the settings dialog and go to the "MIDL" tab. Visual Studio should have automatically added it. Select your IDL file.
 
