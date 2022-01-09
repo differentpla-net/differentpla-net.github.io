@@ -11,9 +11,11 @@ It occurred to me last night that there's a simpler way to do the masking for th
 
 In the previous article, we used a colour bitmap and a special ROP code to draw the selected brush on the output DC.
 
-There's an easier way: if we use a mono bitmap, SRCCOPY will do the necessary magic; as long as we've called `SetBkColor` and `SetTextColor` appropriately.
+There's an easier way: if we use a mono bitmap, SRCCOPY will do the necessary magic; as long as we've called
+`SetBkColor` and `SetTextColor` appropriately.
 
-<pre>void DrawImageListItem(CDC *pDC, int x, int y,
+```c++
+void DrawImageListItem(CDC *pDC, int x, int y,
                             CImageList *piml, int nImage,
                             COLORREF crBack, bool bDropShadow, COLORREF crShadow)
 {
@@ -58,6 +60,8 @@ There's an easier way: if we use a mono bitmap, SRCCOPY will do the necessary ma
         // just get the image list to draw on the DC directly.
         piml->Draw(pDC, nImage, CPoint(x,y), ILD_NORMAL | ILD_TRANSPARENT);
     }
-}</pre>
+}
+```
 
-Essentially, when given a mono bitmap as the source, `BitBlt(..., SRCCOPY)` will treat black pixels as the foreground colour, and white pixels as the background colour.
+Essentially, when given a mono bitmap as the source, `BitBlt(..., SRCCOPY)` will treat black pixels as the foreground
+colour, and white pixels as the background colour.

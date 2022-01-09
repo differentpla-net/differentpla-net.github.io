@@ -36,6 +36,7 @@ It's not too bad. Simply:
 6.  Reboot.
 
 Obviously, YMMV. It worked for me -- I've got an Asus CD-ROM drive on /dev/hda (Linux complains if there isn't anything there, it would seem), and a pair of IBM disks on /dev/hde and /dev/hdg.
+
 _Update 2001-01-15:_ Once again, the spectre of dodgy PSUs comes back to haunt me. See [here](/node/view/144) for more information.
 
 _Update 2001-06-25:_ I'd just like to point out that this board is the original A7V. It doesn't use the VIA 686B Southbridge that people have been complaining about so much recently.

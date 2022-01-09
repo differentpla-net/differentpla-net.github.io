@@ -10,6 +10,6 @@ Which is pretty cool.
 
 The scripts are in the Microsoft [Debugging Tools for Windows](http://www.microsoft.com/whdc/devtools/debugging/default.mspx). By default, you'll find them in `C:\Program Files (x86)\Microsoft Debugging Tools for Windows (x86)\srcsrv`.
 
-They need Perl, and they [don't work](/content/2009/04/source-server-indexing-fails-svn-cant-get-details-sourcefile) with a default installation of [Cygwin](http://www.cygwin.com/), so you'll need to install [ActiveState Perl](http://www.activestate.com/activeperl/) instead. Make sure it appears in your PATH variable ahead of the Cygwin one.
+They need Perl, and they [don't work]({% post_url 2009/2009-04-23-source-server-indexing-fails-with-svn-cant-get-details-for-sourcefile %}) with a default installation of [Cygwin](http://www.cygwin.com/), so you'll need to install [ActiveState Perl](http://www.activestate.com/activeperl/) instead. Make sure it appears in your PATH variable ahead of the Cygwin one.
 
 Then, to index your source, change to your source directory, and run SSINDEX.CMD, passing (at least) the -System switch. If you're using Subversion, it should work as-is. If you're using Perforce or (heaven forbid) Visual SourceSafe, you'll need to enter some server details in SRCSRV.INI. Use the -Debug switch to see what's happening.

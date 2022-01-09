@@ -3,8 +3,13 @@ title: "Setting up Squid on Windows"
 date: 2009-09-16T08:38:27.000Z
 x-drupal-nid: 239
 x-needs-review: 2009-09-16T08:38:27.000Z
+tags: squid
 ---
-At work, we do a lot of our testing and debugging with virtual machines (using Microsoft Virtual Server or Hyper-V, mostly). The virtual guests are generally not allowed any access to our live network, which makes accessing the Internet difficult. To get around this, I usually set up Squid on the host machine. This allows the guests to access (e.g.) Windows Update and Microsoft Symbol Server, which makes things a bit easier.
+
+At work, we do a lot of our testing and debugging with virtual machines (using Microsoft Virtual Server or Hyper-V,
+mostly). The virtual guests are generally not allowed any access to our live network, which makes accessing the Internet
+difficult. To get around this, I usually set up Squid on the host machine. This allows the guests to access (e.g.)
+Windows Update and Microsoft Symbol Server, which makes things a bit easier.
 
 Here's my quick guide to setting up Squid on Windows.
 
@@ -21,7 +26,8 @@ Here's my quick guide to setting up Squid on Windows.
 
 ## Using a different drive for the cache and log directories
 
-<pre>--- squid.conf.default  2008-10-21 00:03:06.000000000 +0100
+```patch
+--- squid.conf.default  2008-10-21 00:03:06.000000000 +0100
 +++ squid.conf  2009-01-06 10:03:48.160910000 +0000
 @@ -1928,7 +1928,7 @@
  #      (hard coded at 1 MB).
@@ -68,4 +74,4 @@ Here's my quick guide to setting up Squid on Windows.
 
  #  TAG: chroot
  #      Use this to have Squid do a chroot() while initializing.  This
-</pre>
+```
