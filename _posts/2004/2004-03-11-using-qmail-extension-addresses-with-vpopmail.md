@@ -6,7 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-Part 6 of [Installing qmail and vpopmail](/node/view/165).
 
 ## Extension addresses
 
@@ -31,5 +30,3 @@ VUSER=`/home/vpopmail/bin/vuserinfo -n $1`
 echo "./$VUSER/Maildir/" > $VDIR/../.qmail-$VUSER-default</pre>
 
 There might be a better fix, but I've not found it yet.
-
-Next: [Forwarding addresses to another account using vpopmail](/node/view/173).

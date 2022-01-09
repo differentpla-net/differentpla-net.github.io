@@ -6,8 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-Lucky part 13 of [Installing qmail and vpopmail](/node/view/165). This one talks about SMTP-over-TLS.
-
 If you install [this patch](http://shupp.org/patches/netqmail-1.05-tls-smtpauth-20040207.patch) (mentioned [here](/node/view/167)), then you'll get SMTP-over-TLS in qmail.
 
 It's implemented using the STARTTLS command, and goes over the standard SMTP port.
@@ -38,5 +36,3 @@ STARTTLS
 220 ready for tls</pre>
 
 For more information, check out [http://iain.cx/ssl/?qmailtls](http://iain.cx/ssl/?qmailtls).
-
-Next: [Installing qmailAdmin](/node/view/198).

@@ -1,6 +1,7 @@
 ---
 title: "Rio Receiver: Layout Definitions"
 date: 2002-01-22T18:06:00.000Z
+redirect_from: /node/view/12
 tags: rio-receiver
 ---
 ## Introduction

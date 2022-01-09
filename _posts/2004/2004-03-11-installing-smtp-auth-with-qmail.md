@@ -6,7 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-This is the third part in a multipart series on [Installing qmail and vpopmail](/node/view/165)
 
 ## Installing SMTP AUTH
 
@@ -48,5 +47,3 @@ Another problem is that, by default, `/bin/checkpassword` is installed with over
 
 This is a potential security hole. I'm going to install vpopmail later, which has its own checkpassword program. When I've installed the replacement, I'll restore checkpassword to its original settings (or, in fact, delete it, since nothing will be using it).
 If we then [turn on SMTP AUTH](/images/ab44157cb410409dc6a8033aeb7fccf3-168.jpg) in Outlook Express, it works. I can send mail from my Windows PC to another host. If I quickly test it by turning off SMTP AUTH in Outlook Express, it fails, as expected.
-
-Next: [Installing vpopmail](/node/view/170).

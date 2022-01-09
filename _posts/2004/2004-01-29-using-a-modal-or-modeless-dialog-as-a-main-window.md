@@ -9,7 +9,7 @@ tags: mfc
 
 If you ask the MFC AppWizard to generate a dialog-based application, it generates code that looks like this:
 
-```
+```c++
 BOOL CModalApp::InitInstance()
 {
     CModalDlg dlg;
@@ -30,20 +30,19 @@ Unfortunately, this doesn't work properly if you have control bars in your dialo
 
 We solve this by using a modeless dialog as our main window:
 
-```
+```c++
 BOOL CCustomDrawApp::InitInstance()
 {
     CModelessDialog *dlg = new CModelessDialog;
     if (!dlg->Create())
-	return FALSE;
+	    return FALSE;
 
     m_pMainWnd = dlg;
-
     return TRUE;
 }
 ```
 
-```
+```c++
 BOOL CModelessDialog::Create(CWnd* pParent /*=NULL*/)
 {
     return CDialog::Create(CModelessDialog::IDD, pParent);
@@ -52,7 +51,7 @@ BOOL CModelessDialog::Create(CWnd* pParent /*=NULL*/)
 
 To get this to work (otherwise the application doesn't exit when you press the OK or Cancel buttons), you'll also need to handle `OnOK` and `OnCancel`:
 
-```
+```c++
 void CModelessDialog::OnOK()
 {
     CDialog::OnOK();
@@ -70,7 +69,7 @@ void CModelessDialog::OnCancel()
 
 And to fix the memory leak, handle `PostNcDestroy`:
 
-```
+```c++
 void CModelessDialog::PostNcDestroy()
 {
     CDialog::PostNcDestroy();

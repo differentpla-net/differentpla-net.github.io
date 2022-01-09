@@ -6,7 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-Part 5 of [Installing qmail and vpopmail](/node/view/165).
 
 ## Configuring BincIMAP
 
@@ -145,4 +144,3 @@ ln -s ../Maildir $VDIR/IMAPdir/INBOX
 </pre>
 
 This script doesn't correctly handle switches passed to it. This is left as an exercise for the reader. If anyone fancies writing one, send it to me and I'll put it here.
-Next: [Using qmail extension addresses with vpopmail](/node/view/172).

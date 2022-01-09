@@ -6,7 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-Part 10 of [Installing qmail and vpopmail](/node/view/165). This part talks about installing a virus scanner to check mail before it's delivered.
 
 ## Virus Scanner
 
@@ -123,5 +122,3 @@ In order to scan incoming and outgoing email, you'll need to change your `/etc/t
 Don't forget to reload it:
 
 <pre># qmailctl cdb</pre>
-
-Next: [Securing SquirrelMail using HTTPS](/node/view/179).

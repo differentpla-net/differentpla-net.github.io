@@ -6,4 +6,4 @@ x-needs-review: 2007-04-01T10:49:31.000Z
 ---
 Shame that the DrawEdge() documentation doesn't include examples. Fixed.
 
-![](/content/system/files/images/draw_edge.png)
+![](/files/images/draw_edge.png)

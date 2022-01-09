@@ -282,7 +282,7 @@ But first, we've got to deal with the following:
 - Maybe we don't like the default location of `/var/lib/rancher/k3s/storage`.
   - We need to talk about static provisioning.
 - Because it's got node affinity, if that node's dead, we've got problems.
-  - We can use shared storage, such as [iSCSI](% post_url 2021/2021-12-09-k3s-raspi-iscsi %}) for that.
+  - We can use shared storage, such as [iSCSI]({% post_url 2021/2021-12-09-k3s-raspi-iscsi %}) for that.
 - We're still using the dotted IP name. We don't have TLS certificates.
   - Both of these require that we get into naming and DNS.
 - We don't have any auth.

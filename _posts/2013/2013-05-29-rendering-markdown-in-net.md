@@ -1,6 +1,8 @@
 ---
 title: Rendering Markdown in .NET
 date: 2013-05-29T17:19:58Z
+layout: series
+series: visual-studio-extension-in-a-weekend
 ---
 There are several options for rendering Markdown to HTML in .NET. If you bring
 up the NuGet Package Manager dialog and search for "markdown", you get three
@@ -14,8 +16,7 @@ quickly play with that.
 At this point, we need is a simple web application that we can host in IIS Express.
 We need to be able to provide it with a path containing a `README.md` file.
 
-Spike: Rendering Markdown
---
+## Spike: Rendering Markdown
 
 I'm going to use **Nancy** for this, for two reasons:
 
@@ -28,37 +29,41 @@ more than a `Web.config` file.
 
 To this, we add the `Nancy.Hosting.Aspnet` NuGet package, and add the home page:
 
-    public class HomeModule : NancyModule
+```c#
+public class HomeModule : NancyModule
+{
+    public HomeModule()
     {
-        public HomeModule()
-        {
-            Get["/"] = _ => "Hello World";
-        }
+        Get["/"] = _ => "Hello World";
     }
-
+}
+```
 
 At this point, I double-check that it works in IIS Express if I run it as we're
 planning to:
 
-    Start-Process $iisexpress `
-	  ('/path:"{0}"' -f 'C:\Usersoger\Source\vs-start-page\StartPage.WebApplication'), '/port:15510' `
-	  -WindowStyle Hidden
+```
+Start-Process $iisexpress `
+    ('/path:"{0}"' -f 'C:\Usersoger\Source\vs-start-page\StartPage.WebApplication'), '/port:15510' `
+    -WindowStyle Hidden
+```
 
 Yep. That's all good.
 
-Next up is actually rendering something, so we'll add the `Kiwi.Markdown` package
-to the project, and add some code to use it:
+Next up is actually rendering something, so we'll add the `Kiwi.Markdown` package to the project, and add some code to
+use it:
 
-	Get["/"] = context =>
-	    {
-	        var contentProvider = new FileContentProvider(@"C:\Usersoger\Source\vs-start-page");
-	        var converter = new MarkdownService(contentProvider);
-	        var document = converter.GetDocument("README");
-	        return document.Content;
-	    };
+```c#
+Get["/"] = context =>
+    {
+        var contentProvider = new FileContentProvider(@"C:\Usersoger\Source\vs-start-page");
+        var converter = new MarkdownService(contentProvider);
+        var document = converter.GetDocument("README");
+        return document.Content;
+    };
+```
 
-Cool. That works. `MarkdownService` outputs an HTML snippet, rather than a full
-document, assuming that you'll include it in something, but IE renders it fine,
-so we can call that a success.
+Cool. That works. `MarkdownService` outputs an HTML snippet, rather than a full document, assuming that you'll include
+it in something, but IE renders it fine, so we can call that a success.
 
 *Note:* It turns out that `Kiwi.Markdown` uses `MarkdownSharp` anyway.

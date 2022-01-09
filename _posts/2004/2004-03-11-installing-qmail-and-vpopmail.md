@@ -37,17 +37,4 @@ For this, I've dug up my girlfriend's old PC (a Pentium-200), which should be ad
 
 ## The articles
 
-*   Part 1: This page.
-*   Part 2: [Removing exim and installing qmail](/node/view/166).
-*   Part 3: [Installing SMTP AUTH with qmail](/node/view/167).
-*   Part 4: [Installing vpopmail](/node/view/170).
-*   Part 5: [Installing BincIMAP](/node/view/171).
-*   Part 6: [Using qmail extension addresses with vpopmail](/node/view/172).
-*   Part 7: [Forwarding addresses to another account using vpopmail](/node/view/173).
-*   Part 8: [Installing ezmlm with vpopmail](/node/view/174).
-*   Part 9: [Installing SquirrelMail](/node/view/175).
-*   Part 10: [Installing ClamAV and Qmail-Scanner](/node/view/178).
-*   Part 11: [Securing SquirrelMail using HTTPS](/node/view/179).
-*   Part 12: [Securing IMAP](/node/view/190).
-*   Part 13: [SMTP over TLS](/node/view/196).
-*   Part 14: [Installing qmailAdmin](/node/view/198).
+{% include _series_toc.html %}

@@ -6,8 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-The second part of a multi-part series on installing [Installing qmail and vpopmail](/node/view/165).
-
 ## Removing exim
 
 The first thing to do is to remove exim. Because of Debian's package management system, you can't remove exim without installing another package that provides mail-transfer-agent. Because qmail isn't available as a binary Debian package, this is a little trickier than it needs to be. The answer to this conundrum is in the `equivs` package, so we install that:
@@ -54,5 +52,3 @@ To test it:
 ## Configuring POP3
 
 This is done in the same way as given in Life with qmail, so go and read that. I didn't do anything different.
-
-Next: [Installing SMTP AUTH with qmail](/node/view/167).

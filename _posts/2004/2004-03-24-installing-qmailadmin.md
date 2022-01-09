@@ -8,8 +8,6 @@ series: qmail
 ---
 To make it easier to manage the virtual domains on my email box, I've decided to install [qmailAdmin](http://www.inter7.com/qmailadmin.html).
 
-This is Part 14 of [Installing qmail and vpopmail](/node/view/165).
-
 Before installing it, you need to install some prerequisites. It needs qmail (obviously), vpopmail (which I've already installed) and ezmlm or ezmlm-idx (I've already installed ezmlm-idx). It also needs `autorespond`, which I've not yet installed, so I'd better do that first.
 
 ## Installing autorespond

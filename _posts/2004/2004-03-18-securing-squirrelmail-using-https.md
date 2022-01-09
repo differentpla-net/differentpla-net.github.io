@@ -6,8 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-Part 11 of [Installing qmail and vpopmail](/node/view/165). This part is about securing webmail access by using HTTPS.
-
 At the end of [Installing SquirrelMail](/node/view/175), I'd finished installing webmail on my test box. Currently, this uses HTTP. This is not really secure enough for webmail, so this article is going to look at adding HTTPS access to webmail.
 
 ## Apache-SSL or mod_ssl?
@@ -185,5 +183,3 @@ See these two mailing list posts (e.g.) for more information about which to choo
     ![](/images/a94a9bb5b44bf08238a6e8e97cd8a4a4-183.png)
 
     The user can choose "Yes", and they'll get the webmail login form as normal. In future, we'd probably prefer to use some `mod_rewrite` magic to redirect them to an information page if they've typed in the wrong address. We might also want to use `mod_rewrite` so that people who use HTTPS to connect to pages that don't need to be secure are redirected to use the HTTP variant, thus saving CPU cycles on the server.
-
-    Next: [Securing IMAP](/node/view/190).

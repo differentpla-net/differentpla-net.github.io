@@ -7,4 +7,5 @@ tags: mfc
 ---
 I just spent the best part of a morning chasing this one down, so I thought I'd share it with you:
 
-If you try calling CListCtrl::InsertItem (or LVM_INSERTITEM), using LPSTR_TEXTCALLBACK, you can't use either of the LVS_SORTASCENDING or LVS_SORTDESCENDING styles for the list view.
+If you try calling `CListCtrl::InsertItem` (or `LVM_INSERTITEM`), using `LPSTR_TEXTCALLBACK`, you can't use either of
+the `LVS_SORTASCENDING` or `LVS_SORTDESCENDING` styles for the list view.

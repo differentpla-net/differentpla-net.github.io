@@ -6,7 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-Part 4 of [Installing qmail and vpopmail](/node/view/165).
 
 ## Installing vpopmail
 
@@ -196,5 +195,3 @@ Testing with Outlook Express shows that this works.
 ## Adding another domain
 
 To test that the accounts truly are separate, I configured another domain, this one `differentpla.test`, similarly to the above. Nothing exciting happened; it just worked.
-
-Next: [Installing BincIMAP](/node/view/171)

@@ -6,7 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-Part 7 of [Installing qmail and vpopmail](/node/view/165).
 
 ## Forwarding
 
@@ -14,16 +13,18 @@ Some of the email addresses on `peculiar` are "vanity addresses". The people con
 
 This is easy to configure using `valias`:
 
-<pre># /home/vpopmail/bin/valias -i neil@somewhere.else.com aliens@differentpla.test
-# /home/vpopmail/bin/valias -i bob@somewhere.else.com aliens@differentpla.test</pre>
+```
+# /home/vpopmail/bin/valias -i neil@somewhere.else.com aliens@differentpla.test
+# /home/vpopmail/bin/valias -i bob@somewhere.else.com aliens@differentpla.test
+```
 
 This sets up the email address `aliens@differentpla.test` so that email is forwarded to `neil` and `bob` on a different server.
 To check that it's set up correctly:
 
-<pre># /home/vpopmail/bin/valias aliens@differentpla.test
+```
+# /home/vpopmail/bin/valias aliens@differentpla.test
 aliens@differentpla.test -> neil@somewhere.else.com
-aliens@differentpla.test -> bob@somewhere.else.com</pre>
+aliens@differentpla.test -> bob@somewhere.else.com
+```
 
 `valias` works by putting a `.qmail-aliens` file in the relevant domain directory.
-
-Next: [Installing ezmlm with vpopmail](/node/view/174).

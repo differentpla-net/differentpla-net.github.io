@@ -6,7 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-Part 9 of [Installing qmail and vpopmail](/node/view/165).
 
 ## SquirrelMail
 
@@ -104,5 +103,3 @@ And I need to change the `/etc/apache/httpd.conf` file:
 </pre>
 
 And it just works. I can log in by going to http://flimsy/webmail/. Cool.
-
-Next: [Installing ClamAV and Qmail-Scanner](/node/view/178).

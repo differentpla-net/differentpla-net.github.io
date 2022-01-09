@@ -4,7 +4,7 @@ date: 2004-06-28T12:30:00.000Z
 x-drupal-nid: 184
 x-needs-review: 2004-06-28T12:30:00.000Z
 ---
-In an earlier article, [Running Long-lived Tasks in a Background Thread](/node/view/142), I talked about some of the problems associated with reporting progress from a background thread in a Win32 application.
+In an earlier article, [Running Long-lived Tasks in a Background Thread]({% post_url 2004/2004-02-27-running-long-lived-tasks-in-a-background-thread %}), I talked about some of the problems associated with reporting progress from a background thread in a Win32 application.
 
 In my [Upload Wizard](/node/view/282) source code, you'll find a better way to implement it, using three of the GoF patterns: the `Observer`, `Proxy` and `Command` patterns.
 
@@ -12,7 +12,7 @@ Here's how it all works.
 
 ## The Problem
 
-As explained on the [Running Long-lived Tasks in a Background Thread](/node/view/142) page, you'll probably use some variant of the Observer pattern, like this:
+As explained on the [Running Long-lived Tasks in a Background Thread]({% post_url 2004/2004-02-27-running-long-lived-tasks-in-a-background-thread %}) page, you'll probably use some variant of the Observer pattern, like this:
 
 [img_assist|nid=188|title=|desc=|link=none|align=center|width=420|height=169]
 

@@ -3,6 +3,7 @@ title: "Running Long-lived Tasks in a Background Thread"
 date: 2004-02-27T13:00:00.000Z
 x-drupal-nid: 185
 x-needs-review: 2004-02-27T13:00:00.000Z
+redirect_from: /node/view/142
 tags: mfc
 ---
 In earlier articles, [Displaying Progress in a Wizard]({% post_url 2004/2004-01-08-displaying-progress-in-a-wizard %}) and [Cancelling Long-Lived Tasks from a Wizard]({% post_url 2004/2004-02-27-cancelling-long-lived-tasks-from-a-wizard %}), I discussed how to run a long-lived task from a wizard and how to display progress in the wizard.
@@ -19,7 +20,7 @@ The second option is to move the task to another thread, leaving the UI thread f
 
 The first thing we need to do is to change `OnSetActive` so that it starts the task on a background thread:
 
-```
+```c++
 BOOL CProgressPage::OnSetActive()
 {
 	if (!CPropertyPage::OnSetActive())
@@ -48,7 +49,7 @@ Because we're going to start the task in the background, we don't need to use `P
 
 We also need to implement `TaskThread`:
 
-```
+```c++
 class TaskThread : public Thread
 {
 	TaskObserver *m_pObserver;
@@ -80,7 +81,7 @@ Windows guarantees that a window procedure will be called on the same thread as 
 
 Moreover, when we fix the memory leak as follows:
 
-```
+```c++
 void CProgressPage::OnComplete(bool bResult)
 {
 	*m_pbResult = bResult;
@@ -100,7 +101,7 @@ void CProgressPage::OnComplete(bool bResult)
 
 Now, since we're not actually bothered that the progress callback be notified immediately, we can use `PostMessage` to decouple the two threads. See, for example, `OnComplete`:
 
-```
+```c++
 void CProgressPage::OnComplete(bool bResult)
 {
 	PostMessage(MY_WM_COMPLETE, bResult);
@@ -130,7 +131,7 @@ Reporting progress is just as simple, except that `OnProgress` is supposed to re
 
 It's easy. We just check `m_bCancel` from the background thread:
 
-```
+```c++
 bool CProgressPage::OnProgress(int current, int maximum)
 {
 	PostMessage(MY_WM_PROGRESS, current, maximum);
@@ -160,7 +161,7 @@ If we were concerned, or we needed something more complicated, we could use a cr
 
 Note that we managed to remove the code that enables the Cancel button. A good way to solve this is to add another method to the observer interface:
 
-```
+```c++
 void CProgressPage::OnBegin()
 {
 	PostMessage(MY_WM_BEGIN);

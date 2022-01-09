@@ -6,7 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-Part 8 of [Installing qmail and vpopmail](/node/view/165).
 
 ## Installing ezmlm
 
@@ -48,5 +47,3 @@ Obviously, add whichever switches you need to `ezmlm-make`.
 ## Testing
 
 And this works fine. Users can subscribe by sending email to the `list-subscribe@differentpla.test` address, and it all works as expected.
-
-Next: [Installing SquirrelMail](/node/view/175).

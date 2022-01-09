@@ -6,8 +6,6 @@ tags: qmail
 layout: series
 series: qmail
 ---
-Part 12 of [Installing qmail and vpopmail](/node/view/165). This article talks about configuring secure IMAP.
-
 BincIMAP supports IMAPS for communication. It can either do this if you compile in SSL support, or if you use an SSL tunnel, such as [stunnel](http://www.stunnel.org/) or [ucspi-ssl](http://www.superscript.com/ucspi-ssl/intro.html).
 
 I'm going to use the built-in SSL support. This got included when I [installed BincIMAP earlier](/node/view/171). To make it work, you need to create a `/etc/opt/bincimap/bincimap.pem` file containing your server key and server certificate. Since you'll have already generated a key and certificate for [using with SquirrelMail](/node/view/179), you can just use this:
@@ -43,5 +41,3 @@ When they come back, install them as you did before, but this time, you'll keep 
 **Important:** Remember that they're not protected with a passphrase, so make sure that they're readable only by `root`.
 
 Now, users should be able to connect to `imap.differentpla.test` using IMAPS, be presented with no warning messages and be able to bask in the warm feeling of secure IMAP.
-
-Next: [Securing SMTP](/node/view/196).
