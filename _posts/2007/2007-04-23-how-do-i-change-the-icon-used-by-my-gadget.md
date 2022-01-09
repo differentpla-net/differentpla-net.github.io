@@ -1,8 +1,6 @@
 ---
 title: "How do I change the icon used by my gadget?"
 date: 2007-04-23T08:50:36.000Z
-x-drupal-nid: 167
-x-needs-review: 2007-04-23T08:50:36.000Z
 ---
 When you add a new gadget to the sidebar (by right-clicking and selecting "Add Gadgets..."), Windows Vista displays an icon for it.
 

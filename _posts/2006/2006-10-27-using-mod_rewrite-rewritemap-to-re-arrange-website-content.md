@@ -1,7 +1,6 @@
 ---
 title: "Using mod_rewrite, RewriteMap to re-arrange website content"
 date: 2006-10-27T12:39:30.000Z
-x-drupal-nid: 71
 ---
 
 When [moving]({% post_url 2006/2006-10-06-differentplanet-is-moving %}) differentpla.net from one server to another, I

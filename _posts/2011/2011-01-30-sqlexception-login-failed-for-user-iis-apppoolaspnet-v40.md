@@ -1,8 +1,6 @@
 ---
 title: "SqlException: Login failed for user 'IIS APPPOOL\\ASP.NET v4.0'"
 date: 2011-01-30T13:55:19.000Z
-x-drupal-nid: 266
-x-needs-review: 2011-01-30T13:55:19.000Z
 ---
 I’m spiking a WCF service hosted in IIS this weekend. It uses SQL Server, and I was getting the following error in WCF Tracing:
 

@@ -1,8 +1,6 @@
 ---
 title: "Subtracting dates in Javascript"
 date: 2007-04-30T17:04:13.000Z
-x-drupal-nid: 180
-x-needs-review: 2007-04-30T17:04:13.000Z
 ---
 Here's how to find the time 30 minutes ago:
 

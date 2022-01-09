@@ -1,8 +1,6 @@
 ---
 title: "Running Long-lived Tasks in a Background Thread"
 date: 2004-02-27T13:00:00.000Z
-x-drupal-nid: 185
-x-needs-review: 2004-02-27T13:00:00.000Z
 redirect_from: /node/view/142
 tags: mfc
 ---

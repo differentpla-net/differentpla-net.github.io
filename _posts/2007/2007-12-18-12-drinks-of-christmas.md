@@ -1,8 +1,6 @@
 ---
 title: "12 Drinks of Christmas"
 date: 2007-12-18T16:29:27.000Z
-x-drupal-nid: 206
-x-needs-review: 2007-12-18T16:29:27.000Z
 ---
 To the tune of [the twelve days of Christmas](http://www.carols.org.uk/the_twelve_days_of_christmas.htm)...
 

@@ -1,8 +1,6 @@
 ---
 title: "Misleading Error: \"Parent class code is read only\" (Visual Studio.NET)"
 date: 2004-01-29T21:09:00.000Z
-x-drupal-nid: 60
-x-needs-review: 2004-01-29T21:09:00.000Z
 tags: mfc
 ---
 I just had a strange error message from Visual Studio.NET when attempting to add a handler for `WM_DESTROY` to a C++ dialog class. It said:

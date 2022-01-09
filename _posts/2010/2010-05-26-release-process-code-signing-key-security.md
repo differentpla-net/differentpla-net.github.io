@@ -1,8 +1,6 @@
 ---
 title: "Release Process: Code Signing - Key Security"
 date: 2010-05-26T10:10:41.000Z
-x-drupal-nid: 254
-x-needs-review: 2010-05-26T10:10:41.000Z
 ---
 The key used for signing your releases should be kept secure. It should be impossible for a rogue developer or 3rd party to use this key unofficially.
 

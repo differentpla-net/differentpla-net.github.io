@@ -1,8 +1,6 @@
 ---
 title: "An empeg reports results of OP_STATFID"
 date: 2007-12-16T18:59:05.000Z
-x-drupal-nid: 204
-x-needs-review: 2007-12-16T18:59:05.000Z
 tags: empeg
 ---
 The next packet that the empeg sends is the actual response to the OP_STATFID request. It looks like this:

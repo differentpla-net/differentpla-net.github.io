@@ -1,8 +1,6 @@
 ---
 title: "Win32 Threads in C++"
 date: 2003-04-15T10:20:00.000Z
-x-drupal-nid: 186
-x-needs-review: 2003-04-15T10:20:00.000Z
 ---
 <div class="snippet">
     /* thread.cpp

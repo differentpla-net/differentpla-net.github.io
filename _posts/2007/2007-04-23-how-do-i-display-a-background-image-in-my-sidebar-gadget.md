@@ -1,8 +1,6 @@
 ---
 title: "How do I display a background image in my sidebar gadget?"
 date: 2007-04-23T08:57:13.000Z
-x-drupal-nid: 168
-x-needs-review: 2007-04-23T08:57:13.000Z
 ---
 When your gadget is docked, it displays a background image, which is allowed to be alpha-transparent.
 

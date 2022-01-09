@@ -1,8 +1,6 @@
 ---
 title: "Visual Studio 2010 Splash Screen"
 date: 2010-04-15T09:57:37.000Z
-x-drupal-nid: 245
-x-needs-review: 2010-04-15T09:57:37.000Z
 ---
 The [Visual Studio 2010 splash screen](http://blogs.msdn.com/visualstudio/archive/2009/11/11/behind-the-scenes-splash-screen.aspx) is stored in `C:\ProgramData\Microsoft\VisualStudio\10.0\vs000223.dat`. It's a hidden file. It's a PNG file.
 

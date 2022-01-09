@@ -2,8 +2,6 @@
 title: "Linux on Sony Vaio - Intel i820 onboard soundcard"
 short_title: "Intel i820 onboard soundcard"
 date: 2003-01-17T14:39:00.000Z
-x-drupal-nid: 142
-x-needs-review: 2003-01-17T14:39:00.000Z
 layout: series
 series: linux-on-vaio
 tags: linux sony-vaio

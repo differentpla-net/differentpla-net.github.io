@@ -1,8 +1,6 @@
 ---
 title: "Using a modal or modeless dialog as a main window"
 date: 2004-01-29T20:37:00.000Z
-x-drupal-nid: 58
-x-needs-review: 2004-01-29T20:37:00.000Z
 tags: mfc
 ---
 ## Using a modal dialog as a main window

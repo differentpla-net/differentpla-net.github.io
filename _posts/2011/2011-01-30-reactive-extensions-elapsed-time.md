@@ -1,8 +1,6 @@
 ---
 title: "Reactive Extensions: Elapsed Time"
 date: 2011-01-30T15:05:53.000Z
-x-drupal-nid: 267
-x-needs-review: 2011-01-30T15:05:53.000Z
 ---
 I’m using SqlBulkCopy to insert a large number of rows into a database table. I used Observable.FromEvent to hook the SqlRowsCopied event. Rx provides the .TimeStamp() method, but I wanted to know the elapsed time, so I did the following:
 

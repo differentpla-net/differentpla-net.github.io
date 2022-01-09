@@ -2,8 +2,6 @@
 title: "Building Jam on Windows NT"
 date: 2004-01-09T10:28:00.000Z
 tags: jam
-x-drupal-nid: 115
-x-needs-review: 2004-01-09T10:28:00.000Z
 ---
 First, you'll need to download jam version 2.3.2 from ftp.perforce.com in [zip format](ftp://ftp.perforce.com/pub/jam/jam-2.3.2.zip) or [as a tar.gz](ftp://ftp.perforce.com/pub/jam/jam-2.3.2.tar.gz)
 

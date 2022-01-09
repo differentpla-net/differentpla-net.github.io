@@ -2,8 +2,6 @@
 title: "Installing Debian GNU/Linux on Sony Vaio SRX87"
 short_title: "Installing Debian GNU/Linux"
 date: 2003-02-04T15:10:00.000Z
-x-drupal-nid: 134
-x-needs-review: 2003-02-04T15:10:00.000Z
 layout: series
 series: linux-on-vaio
 tags: linux sony-vaio

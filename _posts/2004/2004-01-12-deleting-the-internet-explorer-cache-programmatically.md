@@ -1,8 +1,6 @@
 ---
 title: "Deleting the Internet Explorer Cache programmatically"
 date: 2004-01-12T12:05:00.000Z
-x-drupal-nid: 44
-x-needs-review: 2004-01-12T12:05:00.000Z
 ---
     char buffer[4096];
     DWORD cb = 4096;

@@ -1,8 +1,6 @@
 ---
 title: "Debugging system processes without administrative privileges: can it be done?"
 date: 2007-08-13T10:17:36.000Z
-x-drupal-nid: 192
-x-needs-review: 2007-08-13T10:17:36.000Z
 ---
 I've been running with a normal, non-administrator (LUA) account for the past 2 years or so, without any real problems. Most of the time, the problem is simply that you can't install something, or register something, or you need to install a service.
 

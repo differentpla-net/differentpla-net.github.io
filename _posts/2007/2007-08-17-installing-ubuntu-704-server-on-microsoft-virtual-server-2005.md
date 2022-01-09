@@ -1,8 +1,6 @@
 ---
 title: "Installing Ubuntu 7.04 Server on Microsoft Virtual Server 2005"
 date: 2007-08-17T12:04:43.000Z
-x-drupal-nid: 193
-x-needs-review: 2007-08-17T12:04:43.000Z
 ---
 ## Installation
 

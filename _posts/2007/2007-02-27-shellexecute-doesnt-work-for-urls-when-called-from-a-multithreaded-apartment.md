@@ -1,8 +1,6 @@
 ---
 title: "ShellExecute doesn't work for URLs when called from a multithreaded apartment"
 date: 2007-02-27T12:14:21.000Z
-x-drupal-nid: 99
-x-needs-review: 2007-02-27T12:14:21.000Z
 ---
 I've got a dialog box with a SysLink (WC_SYSLINK) control on it. When the user clicks on the link, it should open our website in the user's default browser. In my test app, it works. In the production app, it doesn't.
 

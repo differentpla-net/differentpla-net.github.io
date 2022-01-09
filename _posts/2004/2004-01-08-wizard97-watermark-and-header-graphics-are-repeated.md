@@ -1,8 +1,6 @@
 ---
 title: "Wizard97: Watermark and Header Graphics are repeated"
 date: 2004-01-08T17:14:00.000Z
-x-drupal-nid: 113
-x-needs-review: 2004-01-08T17:14:00.000Z
 tags: mfc
 ---
 I was adding a new wizard to the program that I'm currently working on, so I copied some code from a [Wizard97 demo program](/node/view/214) that I wrote some time ago.

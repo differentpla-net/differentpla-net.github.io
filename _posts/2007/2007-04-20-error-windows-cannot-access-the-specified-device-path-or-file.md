@@ -1,8 +1,6 @@
 ---
 title: "Error: Windows cannot access the specified device, path or file."
 date: 2007-04-20T10:38:13.000Z
-x-drupal-nid: 164
-x-needs-review: 2007-04-20T10:38:13.000Z
 ---
 I started getting this error on one of my Windows 2003 boxes yesterday:
 

@@ -2,8 +2,6 @@
 title: "Constructing a Medium-sized Project with Jam"
 date: 2004-01-09T10:27:00.000Z
 tags: jam
-x-drupal-nid: 114
-x-needs-review: 2004-01-09T10:27:00.000Z
 ---
 ## Introduction
 

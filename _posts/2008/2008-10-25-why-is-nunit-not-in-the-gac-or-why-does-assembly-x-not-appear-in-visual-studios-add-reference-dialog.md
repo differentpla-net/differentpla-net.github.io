@@ -1,8 +1,6 @@
 ---
 title: "Why is NUnit not in the GAC? (or Why does [assembly X] not appear in Visual Studio's Add Reference dialog?)"
 date: 2008-10-25T10:58:08.000Z
-x-drupal-nid: 218
-x-needs-review: 2008-10-25T10:58:08.000Z
 ---
 Because Visual Studio doesn’t look for references in the GAC:
 

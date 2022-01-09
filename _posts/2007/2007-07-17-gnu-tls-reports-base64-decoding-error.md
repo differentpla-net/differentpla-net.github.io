@@ -1,8 +1,6 @@
 ---
 title: "GNU TLS reports \"Base64 Decoding Error\""
 date: 2007-07-17T18:54:22.000Z
-x-drupal-nid: 190
-x-needs-review: 2007-07-17T18:54:22.000Z
 ---
 I recently had a problem getting STARTTLS working on exim4 on Debian 4.0 (Etch). It kept reporting:
 

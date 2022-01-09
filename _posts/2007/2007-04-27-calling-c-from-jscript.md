@@ -1,8 +1,6 @@
 ---
 title: "Calling C# from JScript"
 date: 2007-04-27T09:03:18.000Z
-x-drupal-nid: 177
-x-needs-review: 2007-04-27T09:03:18.000Z
 ---
 It's possible, through the magic of COM interop, to call C# code from JScript or VBScript. Here's an example of how to do it from JScript.
 

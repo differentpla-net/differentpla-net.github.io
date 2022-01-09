@@ -1,8 +1,6 @@
 ---
 title: "A list of HRESULT codes"
 date: 2007-02-16T10:50:44.000Z
-x-drupal-nid: 98
-x-needs-review: 2007-02-16T10:50:44.000Z
 ---
 ...because every time I search for a given HRESULT, all I get is yet another frigging VB website regurgitating the contents of WinError.h
 

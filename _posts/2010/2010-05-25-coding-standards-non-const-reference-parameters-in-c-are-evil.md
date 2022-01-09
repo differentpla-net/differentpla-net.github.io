@@ -1,8 +1,6 @@
 ---
 title: "Coding Standards: Non-const reference parameters in C++ are evil"
 date: 2010-05-25T14:08:46.000Z
-x-drupal-nid: 253
-x-needs-review: 2010-05-25T14:08:46.000Z
 ---
 This is just a minor rant:
 

@@ -2,8 +2,6 @@
 title: "Linker Command Line Length"
 date: 2004-01-09T10:37:00.000Z
 tags: jam
-x-drupal-nid: 116
-x-needs-review: 2004-01-09T10:37:00.000Z
 ---
 Jam imposes a hard limit of 996 characters on command lines when built on NT. This limit is higher for other operating
 systems, and can actually be raised to around 10Kb on Windows 2000. However, it's still not high enough for some link

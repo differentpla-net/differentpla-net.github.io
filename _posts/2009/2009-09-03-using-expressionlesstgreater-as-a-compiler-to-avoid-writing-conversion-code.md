@@ -1,7 +1,6 @@
 ---
 title: "Using Expression<T> as a Compiler, to avoid writing conversion code"
 date: 2009-09-03T15:22:33.000Z
-x-drupal-nid: 238
 ---
 Marc Gravell wrote about [using `Expression<T>` as a compiler](http://www.infoq.com/articles/expression-compiler). It was a bit of an eye-opener.
 

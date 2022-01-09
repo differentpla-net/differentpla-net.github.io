@@ -1,8 +1,6 @@
 ---
 title: "Packet format"
 date: 2007-12-16T18:18:47.000Z
-x-drupal-nid: 202
-x-needs-review: 2007-12-16T18:18:47.000Z
 tags: empeg
 ---
 The format of the packets in the empeg's TCP/IP protocol owe a lot to the fact that the empeg mk1 communicated over a serial link. This means that there's a certain amount of cruft still in the protocol.

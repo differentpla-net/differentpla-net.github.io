@@ -1,8 +1,6 @@
 ---
 title: "Recursively Finding Files"
 date: 2004-03-21T09:45:00.000Z
-x-drupal-nid: 146
-x-needs-review: 2004-03-21T09:45:00.000Z
 ---
 
 On my list of "things to do in my copious free time" is: "write a [replacement Rio Receiver server]({% post_url 2003/2003-09-30-writing-a-replacement-receiver-server %}) in

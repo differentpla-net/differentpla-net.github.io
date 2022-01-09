@@ -1,8 +1,6 @@
 ---
 title: "Release Process: Goals"
 date: 2010-07-14T13:33:06.000Z
-x-drupal-nid: 259
-x-needs-review: 2010-07-14T13:33:06.000Z
 ---
 One of the many things that my former company, 1E, does well is its build and release process. That got me thinking: what makes a good build process?
 

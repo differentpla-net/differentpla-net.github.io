@@ -1,8 +1,6 @@
 ---
 title: "Setting up Squid on Windows"
 date: 2009-09-16T08:38:27.000Z
-x-drupal-nid: 239
-x-needs-review: 2009-09-16T08:38:27.000Z
 tags: squid
 ---
 

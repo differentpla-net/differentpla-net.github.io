@@ -1,8 +1,6 @@
 ---
 title: "F# Coding Kata: Fizz Buzz"
 date: 2010-10-26T10:53:55.000Z
-x-drupal-nid: 265
-x-needs-review: 2010-10-26T10:53:55.000Z
 ---
 Described [here](http://codingkata.org/katas/unit/fizz-buzz).
 

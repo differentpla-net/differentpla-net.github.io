@@ -1,8 +1,6 @@
 ---
 title: "Unplanned downtime"
 date: 2009-03-04T07:14:34.000Z
-x-drupal-nid: 227
-x-needs-review: 2009-03-04T07:14:34.000Z
 ---
 At the end of February, differentpla.net suffered filesystem corruption. I had to revert pretty much everything to a previous backup, which meant losing about a week's worth of stuff.
 

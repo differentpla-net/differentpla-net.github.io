@@ -1,8 +1,6 @@
 ---
 title: "unresolved external symbol \"public: void __thiscall std::_String_base::_Xran(void)const"
 date: 2006-09-13T14:20:54.000Z
-x-drupal-nid: 24
-x-needs-review: 2006-09-13T14:20:54.000Z
 redirect_from: /content/2006/09/unresolved-external-symbol-std-string-base-xran
 ---
 When compiling a C++ program with Visual C++ 2003, you might get the error:

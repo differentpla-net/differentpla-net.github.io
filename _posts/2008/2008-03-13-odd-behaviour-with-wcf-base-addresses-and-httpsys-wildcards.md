@@ -1,8 +1,6 @@
 ---
 title: "Odd behaviour with WCF base addresses and HTTP.SYS wildcards"
 date: 2008-03-13T21:30:10.000Z
-x-drupal-nid: 215
-x-needs-review: 2008-03-13T21:30:10.000Z
 ---
 I'm at [DevWeek](http://www.devweek.com/) this week, and I went (among other things) to a couple of WCF presentations by Aaron Skonnard.
 

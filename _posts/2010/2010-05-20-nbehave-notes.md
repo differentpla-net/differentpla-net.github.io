@@ -1,8 +1,6 @@
 ---
 title: "NBehave Notes"
 date: 2010-05-20T08:55:37.000Z
-x-drupal-nid: 248
-x-needs-review: 2010-05-20T08:55:37.000Z
 ---
 We’ve just started using NBehave, so this is a random selection of notes:
 

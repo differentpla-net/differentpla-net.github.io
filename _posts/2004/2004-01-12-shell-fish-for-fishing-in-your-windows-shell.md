@@ -1,8 +1,6 @@
 ---
 title: "Shell Fish : For Fishing in your Windows Shell"
 date: 2004-01-12T11:55:00.000Z
-x-drupal-nid: 119
-x-needs-review: 2004-01-12T11:55:00.000Z
 ---
 Provides a quick way to find out where Windows is putting your "Favorites", "Application Data" etc. folders.
 

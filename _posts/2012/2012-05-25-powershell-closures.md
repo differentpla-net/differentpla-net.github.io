@@ -1,8 +1,6 @@
 ---
 title: "PowerShell Closures"
 date: 2012-05-25T12:07:04.000Z
-x-drupal-nid: 278
-x-needs-review: 2012-05-25T12:07:04.000Z
 ---
 <pre># Create a script block. It doesn't capture $x.
 $x = 'A'

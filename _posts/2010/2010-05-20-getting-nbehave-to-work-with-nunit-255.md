@@ -1,8 +1,6 @@
 ---
 title: "Getting NBehave to work with NUnit 2.5.5"
 date: 2010-05-20T14:37:51.000Z
-x-drupal-nid: 251
-x-needs-review: 2010-05-20T14:37:51.000Z
 ---
 NBehave depends on NUnit 2.5.2\. To get it to work with NUnit 2.5.5, you can create an NBehave-Console.exe.config file containing the following:
 

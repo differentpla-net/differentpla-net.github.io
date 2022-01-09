@@ -1,8 +1,6 @@
 ---
 title: "PowerShell: ImportSystemModules"
 date: 2012-01-05T13:58:41.000Z
-x-drupal-nid: 274
-x-needs-review: 2012-01-05T13:58:41.000Z
 ---
 I've been using PowerShell as a better Command Prompt for a while now. Increasingly, however, it's one of the first tools I reach for when I come across a problem, rather than being an afterthought.
 

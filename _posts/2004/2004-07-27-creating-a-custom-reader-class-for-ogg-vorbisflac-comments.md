@@ -1,8 +1,6 @@
 ---
 title: "Creating a Custom Reader Class for Ogg Vorbis/FLAC Comments"
 date: 2004-07-27T15:49:00.000Z
-x-drupal-nid: 75
-x-needs-review: 2004-07-27T15:49:00.000Z
 ---
 In Dino Esposito's "Cutting Edge" column in [MSDN Magazine](http://msdn.microsoft.com/msdnmag/issues/02/08/CuttingEdge/default.aspx), he talks about the various readers (`BinaryReader`, `XmlReader`, etc.) available in .NET.
 

@@ -1,8 +1,6 @@
 ---
 title: "Enabling Concurrent Remote Desktop Sessions in Vista"
 date: 2007-04-22T20:26:08.000Z
-x-drupal-nid: 165
-x-needs-review: 2007-04-22T20:26:08.000Z
 ---
 At work, I do all of my development on a Windows 2003 box. I generally log in as a normal user, and then use Remote Desktop to concurrently log in as Administrator. This means that I'm relatively safe from malware when doing day-to-day stuff, but that I can still get hold of Administrator privileges when I need them.
 

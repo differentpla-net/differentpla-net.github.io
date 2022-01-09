@@ -1,8 +1,6 @@
 ---
 title: "CTreeCtrl, TrackPopupMenu and CCmdTarget"
 date: 2004-03-31T17:17:00.000Z
-x-drupal-nid: 153
-x-needs-review: 2004-03-31T17:17:00.000Z
 tags: mfc
 ---
 Some twisted code showing how to combine MFC's `CTreeCtrl`, `CCmdTarget` and `TrackPopupMenu`.

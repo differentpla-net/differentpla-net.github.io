@@ -1,8 +1,6 @@
 ---
 title: "Sent Items: Thunderbird and Outlook Express on the same account"
 date: 2004-03-23T11:46:00.000Z
-x-drupal-nid: 148
-x-needs-review: 2004-03-23T11:46:00.000Z
 ---
 Outlook Express likes to store a copy of your outgoing email in a folder called "Sent Items". Thunderbird likes to store a copy of your outgoing email in a folder called "Sent". If you use both to access the same email account using IMAP, you'll end up with both folders being created, and your outgoing email will end up in either, depending on which client you used at the time.
 

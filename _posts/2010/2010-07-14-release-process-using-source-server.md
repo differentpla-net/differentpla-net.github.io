@@ -1,8 +1,6 @@
 ---
 title: "Release Process: Using Source Server"
 date: 2010-07-14T13:33:54.000Z
-x-drupal-nid: 260
-x-needs-review: 2010-07-14T13:33:54.000Z
 ---
 One of the cool things you can do with the Microsoft Debugging Tools is set up a source server. This works by embedding source control details in your PDB files. Once you've published these to a symbol server, and set that up properly, you should be able to load a minidump file in Visual Studio (or WinDbg) and be taken to the correct line of the correct revision of the source file where the crash happened.
 

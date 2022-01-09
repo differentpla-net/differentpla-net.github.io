@@ -1,7 +1,6 @@
 ---
 title: "Did you know that .NET already had an IoC container?"
 date: 2011-12-20T16:30:49.000Z
-x-drupal-nid: 271
 ---
 Talking to [@ptrelford](https://twitter.com/#!/ptrelford) at the [TDD & Refactoring workshop](http://www.codemanship.co.uk/) run by [Jason Gorman](https://twitter.com/#!/jasongorman), Phil mentioned that he'd implemented a really simple IoC container in F#. "But there's a really simple one already built into .NET" says I...
 

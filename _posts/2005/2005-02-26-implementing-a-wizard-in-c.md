@@ -1,8 +1,6 @@
 ---
 title: "Implementing a Wizard in C#"
 date: 2005-02-26T12:44:00.000Z
-x-drupal-nid: 6
-x-needs-review: 2005-02-26T12:44:00.000Z
 redirect_from:
  - /content/2005/02/implementing-wizard-c
  - /content/2005/02/wizard-csharp1

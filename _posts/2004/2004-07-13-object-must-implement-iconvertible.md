@@ -1,8 +1,6 @@
 ---
 title: "Object must implement IConvertible"
 date: 2004-07-13T15:29:00.000Z
-x-drupal-nid: 73
-x-needs-review: 2004-07-13T15:29:00.000Z
 ---
 While writing some ASP.NET, I got this error. I've just spent ten minutes figuring it out, so I thought I'd share.
 

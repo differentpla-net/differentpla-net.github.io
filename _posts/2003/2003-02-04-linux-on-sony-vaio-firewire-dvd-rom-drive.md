@@ -2,7 +2,6 @@
 title: "Linux on Sony Vaio - Firewire DVD-ROM drive"
 short_title: "Firewire DVD-ROM drive"
 date: 2003-02-04T14:47:00.000Z
-x-drupal-nid: 136
 layout: series
 series: linux-on-vaio
 tags: linux sony-vaio

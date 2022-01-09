@@ -1,8 +1,6 @@
 ---
 title: "Converting IEnumerable<T> to IDataReader"
 date: 2011-01-30T15:09:06.000Z
-x-drupal-nid: 268
-x-needs-review: 2011-01-30T15:09:06.000Z
 redirect_from: /content/2011/01/converting-ienumerablet-idatareader
 ---
 If you’ve got an enumerable, and you want to pass it to SqlBulkCopy, you can turn it into an IDataReader. Something like the following might be useful:

@@ -1,8 +1,6 @@
 ---
 title: "FileInfo doesn't cache its contents"
 date: 2004-07-23T08:21:00.000Z
-x-drupal-nid: 74
-x-needs-review: 2004-07-23T08:21:00.000Z
 ---
 Imagine this code:
 

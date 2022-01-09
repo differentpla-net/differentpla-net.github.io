@@ -1,8 +1,6 @@
 ---
 title: "Shell_NotifyIcon: Displaying a balloon from a hidden notification icon"
 date: 2007-10-01T08:05:56.000Z
-x-drupal-nid: 198
-x-needs-review: 2007-10-01T08:05:56.000Z
 ---
 You should hide your notification icon unless you've got something important to tell the user. More and more applications insist on putting mysterious icons in the notification area, and most users have no idea what they're for.
 

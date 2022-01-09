@@ -1,8 +1,6 @@
 ---
 title: "Source Server indexing fails with \"SVN: Can't Get details for <sourcefile>\""
 date: 2009-04-23T09:34:24.000Z
-x-drupal-nid: 234
-x-needs-review: 2009-04-23T09:34:24.000Z
 redirect_from: /content/2009/04/source-server-indexing-fails-svn-cant-get-details-sourcefile
 ---
 I'm making some improvements to our build scripts at work, and I ran into a problem where Source Server indexing wasn't working.

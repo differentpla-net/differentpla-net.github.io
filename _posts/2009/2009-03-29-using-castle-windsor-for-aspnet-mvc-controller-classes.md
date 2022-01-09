@@ -1,8 +1,6 @@
 ---
 title: "Using Castle Windsor for ASP.NET MVC Controller classes"
 date: 2009-03-29T09:41:41.000Z
-x-drupal-nid: 233
-x-needs-review: 2009-03-29T09:41:41.000Z
 ---
 If you want to use Castle Windsor's MicroKernel (or another IoC container) for ASP.NET MVC controllers, it's fairly easy. The ASP.NET MVC team allowed you to replace the factory used to create controller objects.
 

@@ -1,8 +1,6 @@
 ---
 title: "Generating SSL certificates for differentpla.net"
 date: 2008-05-17T06:29:50.000Z
-x-drupal-nid: 217
-x-needs-review: 2008-05-17T06:29:50.000Z
 ---
 Because I keep forgetting how to.
 

@@ -1,8 +1,6 @@
 ---
 title: "Outlook XP: Storing Sent Items on the IMAP Server"
 date: 2004-03-24T14:33:00.000Z
-x-drupal-nid: 150
-x-needs-review: 2004-03-24T14:33:00.000Z
 ---
 By default, Outlook stores a copy of your outgoing email in the "Sent Items" folder in your local "Personal Folders" `.pst` file.
 

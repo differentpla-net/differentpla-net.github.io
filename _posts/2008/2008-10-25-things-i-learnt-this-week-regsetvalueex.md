@@ -1,8 +1,6 @@
 ---
 title: "Things I learnt this week: RegSetValueEx"
 date: 2008-10-25T12:17:14.000Z
-x-drupal-nid: 219
-x-needs-review: 2008-10-25T12:17:14.000Z
 ---
 `RegSetValueEx`, when passed `REG_SZ`, needs the length to be in bytes, so don't just use `_tcslen` like this:
 

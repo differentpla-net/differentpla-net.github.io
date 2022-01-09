@@ -1,8 +1,6 @@
 ---
 title: "How do I change the details displayed for my sidebar gadget?"
 date: 2007-04-23T09:08:09.000Z
-x-drupal-nid: 170
-x-needs-review: 2007-04-23T09:08:09.000Z
 ---
 When you click on "Show details" in the Windows Vista gadget gallery, Windows displays various information about the selected gadget.
 

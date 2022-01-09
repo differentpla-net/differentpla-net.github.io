@@ -1,8 +1,6 @@
 ---
 title: "Turning off Registry Virtualization"
 date: 2007-02-15T10:51:58.000Z
-x-drupal-nid: 97
-x-needs-review: 2007-02-15T10:51:58.000Z
 ---
 On Windows Vista, applications running without admin privileges can write to HKEY_LOCAL_MACHINE, and they'll be transparently redirected to HKEY_CURRENT_USER\Software\Classes\VirtualStore. Similar redirection applies to C:\Program Files.
 

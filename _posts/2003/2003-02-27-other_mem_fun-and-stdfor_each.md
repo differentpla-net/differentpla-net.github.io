@@ -1,8 +1,6 @@
 ---
 title: "other_mem_fun and std::for_each"
 date: 2003-02-27T14:53:00.000Z
-x-drupal-nid: 56
-x-needs-review: 2003-02-27T14:53:00.000Z
 tags: c++
 ---
 How many times have you found yourself writing something like the following?

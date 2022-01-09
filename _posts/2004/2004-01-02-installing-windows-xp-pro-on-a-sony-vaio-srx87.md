@@ -1,8 +1,6 @@
 ---
 title: "Installing Windows XP Pro on a Sony Vaio SRX87"
 date: 2004-01-02T16:52:00.000Z
-x-drupal-nid: 55
-x-needs-review: 2004-01-02T16:52:00.000Z
 tags: sony-vaio windows-xp
 ---
 ## Introduction

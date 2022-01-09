@@ -1,8 +1,6 @@
 ---
 title: "Using a Linux box to serve Rio Receiver Firmware"
 date: 2003-09-30T23:00:00.000Z
-x-drupal-nid: 108
-x-needs-review: 2003-09-30T23:00:00.000Z
 tags: rio-receiver
 ---
 First, you'll need to install a stock NFS server. On Debian, that's as simple as "apt-get install nfs-user-server".

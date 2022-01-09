@@ -1,8 +1,6 @@
 ---
 title: "Tweaking TeamCity"
 date: 2008-01-12T14:11:52.000Z
-x-drupal-nid: 209
-x-needs-review: 2008-01-12T14:11:52.000Z
 ---
 I just started using TeamCity Professional Edition for some personal projects (and we're evaluating the Enterprise edition for use at work).
 

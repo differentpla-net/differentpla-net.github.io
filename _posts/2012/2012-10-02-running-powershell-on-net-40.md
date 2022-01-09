@@ -1,8 +1,6 @@
 ---
 title: "Running PowerShell on .NET 4.0"
 date: 2012-10-02T12:39:18.000Z
-x-drupal-nid: 281
-x-needs-review: 2012-10-02T12:39:18.000Z
 ---
 Attempting to use **Add-Type** to load a .NET assembly in PowerShell this afternoon, I got the following error:
 

@@ -1,8 +1,6 @@
 ---
 title: "Things I learnt this week: RegQueryValueEx"
 date: 2008-10-25T12:21:49.000Z
-x-drupal-nid: 220
-x-needs-review: 2008-10-25T12:21:49.000Z
 ---
 RegQueryValueEx, when passed lpData = NULL, will set *lpcbData to the length required in bytes, even if it's already set to something. If lpData != NULL, and *lpcbData is too short, RegQueryValueEx will return ERROR_MORE_DATA.
 

@@ -1,8 +1,6 @@
 ---
 title: "Release Process: Source Indexing using P4INDEX reports \"zero source files found\""
 date: 2010-05-28T09:03:33.000Z
-x-drupal-nid: 255
-x-needs-review: 2010-05-28T09:03:33.000Z
 ---
 When you use P4INDEX (or SSINDEX -System=P4), you might see "zero source files found". Check that your workspace doesn't have forward slashes in the name (e.g. D:/Source/depot/).
 

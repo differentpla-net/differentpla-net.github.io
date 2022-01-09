@@ -1,8 +1,6 @@
 ---
 title: "Removing duplicates from a table"
 date: 2007-05-08T12:21:37.000Z
-x-drupal-nid: 181
-x-needs-review: 2007-05-08T12:21:37.000Z
 ---
 Let's assume that you've got a table:
 

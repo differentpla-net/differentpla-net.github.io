@@ -1,8 +1,6 @@
 ---
 title: "Unable to open Web Project"
 date: 2006-11-16T12:43:08.000Z
-x-drupal-nid: 76
-x-needs-review: 2006-11-16T12:43:08.000Z
 ---
 <pre>Unable to open Web Project 'foo'.
 The file path 'C:\wherever\foo' does not correspond to the URL 'http://localhost/foo'.

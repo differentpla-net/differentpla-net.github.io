@@ -1,8 +1,6 @@
 ---
 title: "Bad UI: Why SQL Query Analyzer sucks"
 date: 2006-10-19T10:40:31.000Z
-x-drupal-nid: 69
-x-needs-review: 2006-10-19T10:40:31.000Z
 ---
 I'm doing a bunch of SQL hacking at the moment, and I've decided to use SQL Query Analyzer as a good template for how not to write a text editor.
 

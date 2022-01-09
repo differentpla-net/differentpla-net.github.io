@@ -1,8 +1,6 @@
 ---
 title: "Things I learnt this week: SetWaitableTimer"
 date: 2008-10-25T12:23:56.000Z
-x-drupal-nid: 222
-x-needs-review: 2008-10-25T12:23:56.000Z
 ---
 SetWaitableTimer doesn't accept NULL for the pDueTime parameter. It returns FALSE; GetLastError() returns ERROR_NOACCESS (998). If you specify zero (i.e. a LARGE_INTEGER containing zero) for pDueTime, the timer is signalled immediately.
 

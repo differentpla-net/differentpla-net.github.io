@@ -1,8 +1,6 @@
 ---
 title: "Test First: Roman Numeral Conversion"
 date: 2004-01-12T12:07:00.000Z
-x-drupal-nid: 45
-x-needs-review: 2015-05-05
 tags: tdd roman-numerals
 ---
 Question: Everyone "knows" that you should write a decimal to Roman number

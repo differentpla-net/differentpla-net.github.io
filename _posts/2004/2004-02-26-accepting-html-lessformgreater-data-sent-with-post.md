@@ -1,8 +1,6 @@
 ---
 title: "Accepting HTML <form> data sent with POST"
 date: 2004-02-26T10:06:00.000Z
-x-drupal-nid: 62
-x-needs-review: 2004-02-26T10:06:00.000Z
 tags: cgi-bin ruby
 ---
 How to write a CGI script (in Ruby) to accept files uploaded with `POST`.

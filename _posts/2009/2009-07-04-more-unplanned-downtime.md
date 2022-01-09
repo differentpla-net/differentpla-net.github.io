@@ -1,8 +1,6 @@
 ---
 title: "More unplanned downtime"
 date: 2009-07-04T14:54:37.000Z
-x-drupal-nid: 236
-x-needs-review: 2009-07-04T14:54:37.000Z
 ---
 The hosting outfit that I've been using for differentpla.net is cheap for a reason: they're not very good.
 

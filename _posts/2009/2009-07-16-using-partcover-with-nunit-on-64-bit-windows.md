@@ -1,8 +1,6 @@
 ---
 title: "Using PartCover with NUnit on 64-bit Windows"
 date: 2009-07-16T13:04:26.000Z
-x-drupal-nid: 237
-x-needs-review: 2009-07-16T13:04:26.000Z
 ---
 Some random notes:
 

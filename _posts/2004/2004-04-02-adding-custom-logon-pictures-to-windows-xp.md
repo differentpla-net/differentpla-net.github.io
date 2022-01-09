@@ -1,8 +1,6 @@
 ---
 title: "Adding custom logon pictures to Windows XP"
 date: 2004-04-02T12:25:00.000Z
-x-drupal-nid: 157
-x-needs-review: 2004-04-02T12:25:00.000Z
 ---
 Inspired by [this post](http://blogs.msdn.com/oldnewthing/archive/2004/04/01/105582.aspx) on Raymond Chen's [blog](http://blogs.msdn.com/oldnewthing/), I thought I might explain how to change the logon pictures.
 

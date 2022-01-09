@@ -1,8 +1,6 @@
 ---
 title: "Making clamd Run Automatically"
 date: 2004-03-23T13:25:00.000Z
-x-drupal-nid: 149
-x-needs-review: 2004-03-23T13:25:00.000Z
 tags: qmail
 ---
 Whoops. Back when I was [installing ClamAV]({% post_url 2004/2004-03-12-installing-clamav-and-qmail-scanner %}), I

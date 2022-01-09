@@ -1,8 +1,6 @@
 ---
 title: "Things I found out today while looking at Side-by-Side DLLs"
 date: 2007-02-07T16:37:45.000Z
-x-drupal-nid: 95
-x-needs-review: 2007-02-07T16:37:45.000Z
 ---
 *   You can add DLL dependencies to your EXE file's manifest by using the `/manifestdependency` linker switch. As with several other linker switches, this can be done using `#pragma comment(linker, ...)`.
 *   The Visual C++ 2005 compiler automatically inserts a `/manifestdependency` switch into .OBJ files that it creates. It marks them as dependent on the Microsoft.VC80.CRT DLL, version 8.0.50727.762\. It does this in the VC\include\crtdefs.h file.

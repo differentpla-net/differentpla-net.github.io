@@ -1,8 +1,6 @@
 ---
 title: "Implementing a Wizard in C#, Part 2"
 date: 2005-02-26T12:50:00.000Z
-x-drupal-nid: 17
-x-needs-review: 2005-02-26T12:50:00.000Z
 redirect_from: /content/2005/02/implementing-wizard-c-part-2
 layout: series
 series: winformswizard

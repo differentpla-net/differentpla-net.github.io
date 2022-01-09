@@ -1,8 +1,6 @@
 ---
 title: "SQL Server: INSERT WHERE NOT EXISTS"
 date: 2010-02-03T16:32:08.000Z
-x-drupal-nid: 244
-x-needs-review: 2010-02-03T16:32:08.000Z
 ---
 Because whenever I've been away from SQL Server for more than a couple of weeks, I forget.
 

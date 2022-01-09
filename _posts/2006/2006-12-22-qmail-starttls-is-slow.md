@@ -1,8 +1,6 @@
 ---
 title: "qmail STARTTLS is slow"
 date: 2006-12-22T11:01:59.000Z
-x-drupal-nid: 90
-x-needs-review: 2006-12-22T11:01:59.000Z
 redirect_from: /content/2006/12/qmail-starttls-is-slow
 ---
 I've recently been struggling to reliably send email via my qmail server. I've got STARTTLS and SMTP AUTH enabled, in order to allow relaying for authenticated users. However, it's been really slow, and Thunderbird quite often times out and gives up on the connection.

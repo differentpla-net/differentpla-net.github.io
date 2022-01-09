@@ -1,8 +1,6 @@
 ---
 title: "F# Coding Kata: Hello World"
 date: 2010-10-26T10:34:34.000Z
-x-drupal-nid: 264
-x-needs-review: 2010-10-26T10:34:34.000Z
 ---
 So, I thought I might learn F# by doing some [Code Kata](http://codekata.pragprog.com/). I'll start by doing the exercises from [codekata.org](http://codingkata.org/). Unfortunately, they don't have any F# templates, which means I'll have to improvise at points.
 

@@ -2,8 +2,6 @@
 title: "empeg: Serial Port Commands"
 date: 2003-04-02T10:29:00.000Z
 tags: empeg
-x-drupal-nid: 25
-x-needs-review: 2003-04-02T10:29:00.000Z
 ---
 You can send the empeg player commands using the serial port. This is a list.
 

@@ -1,8 +1,6 @@
 ---
 title: "Essential Google Chrome Extensions"
 date: 2010-05-21T09:56:01.000Z
-x-drupal-nid: 252
-x-needs-review: 2010-05-21T09:56:01.000Z
 ---
 These are the extensions that I have to install whenever I set up a new copy of Google Chrome.
 

@@ -1,8 +1,6 @@
 ---
 title: "Tip: Use the LINQ methods that take a predicate"
 date: 2010-02-03T09:33:09.000Z
-x-drupal-nid: 243
-x-needs-review: 2010-02-03T09:33:09.000Z
 ---
 Instead of this:
 

@@ -1,8 +1,6 @@
 ---
 title: "PowerShell tip: Deleting certificates"
 date: 2012-07-31T10:20:48.000Z
-x-drupal-nid: 280
-x-needs-review: 2012-07-31T10:20:48.000Z
 ---
     $certs = Get-ChildItem cert:\LocalMachine\My | where { $_.Subject –like 'CN=Victim*' }
     foreach ($cert in $certs) {

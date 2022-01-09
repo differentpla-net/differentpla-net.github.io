@@ -1,8 +1,6 @@
 ---
 title: "Publish to Photo Frame - my first CodePlex project"
 date: 2009-11-29T13:15:52.000Z
-x-drupal-nid: 242
-x-needs-review: 2009-11-29T13:15:52.000Z
 ---
 Publish to Digital Photo Frame is a plug-in for Windows Live Photo Gallery that makes it easy to upload your photos to a digital photo frame.
 

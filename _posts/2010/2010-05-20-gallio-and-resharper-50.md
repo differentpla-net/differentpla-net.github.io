@@ -1,8 +1,6 @@
 ---
 title: "Gallio and ReSharper 5.0"
 date: 2010-05-20T12:53:54.000Z
-x-drupal-nid: 250
-x-needs-review: 2010-05-20T12:53:54.000Z
 ---
 In attempting to see if I could get my [NBehave tests](https://www.differentpla.net/content/2010/05/nbehave-notes) working inside Visual Studio 2010, I stumbled across [Gallio](http://www.gallio.org/), which, as far as I can tell, claims support for ReSharper and NBehave.
 

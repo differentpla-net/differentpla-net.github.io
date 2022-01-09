@@ -1,8 +1,6 @@
 ---
 title: "RJ45/UTP Crimps"
 date: 2003-06-23T15:16:00.000Z
-x-drupal-nid: 36
-x-needs-review: 2003-06-23T15:16:00.000Z
 ---
 (Seen from the bottom of the connector, so that the tab is facing away from you, and the gold pins are facing towards you) Pin 1 is on the left. Pin 8 is on the right.
 

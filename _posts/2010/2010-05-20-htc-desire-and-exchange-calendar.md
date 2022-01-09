@@ -1,8 +1,6 @@
 ---
 title: "HTC Desire and Exchange Calendar"
 date: 2010-05-20T10:22:09.000Z
-x-drupal-nid: 249
-x-needs-review: 2010-05-20T10:22:09.000Z
 ---
 At the weekend, I picked up a shiny new [HTC Desire](http://www.htc.com/www/product/desire/overview.html), which has first-class support for GMail, including Google Apps. It also has support for Exchange ActiveSync.
 

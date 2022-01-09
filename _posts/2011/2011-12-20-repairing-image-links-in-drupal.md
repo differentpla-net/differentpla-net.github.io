@@ -1,8 +1,6 @@
 ---
 title: "Repairing image links in drupal"
 date: 2011-12-20T15:52:56.000Z
-x-drupal-nid: 269
-x-needs-review: 2011-12-20T15:52:56.000Z
 ---
 Somehow -- I'm not sure how, and I'm not exactly sure when -- my website (powered by drupal) lost all of its images. They were still there in the filesystem, and the rows were still in the `node` table, but they'd vanished from the actual pages.
 

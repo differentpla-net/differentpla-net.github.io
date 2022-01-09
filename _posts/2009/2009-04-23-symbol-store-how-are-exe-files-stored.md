@@ -1,8 +1,6 @@
 ---
 title: "Symbol Store: How are EXE files stored?"
 date: 2009-04-23T15:12:23.000Z
-x-drupal-nid: 235
-x-needs-review: 2009-04-23T15:12:23.000Z
 ---
 If you're using the Microsoft Symbol Server to pull down symbols for Windows, or if you're using SYMSTORE.EXE for your own stuff, you'll see that EXE (and other binary files) are stored in a path similar to `C:\WebSymbols\user32.dll\4226015990000\user32.dll`.
 

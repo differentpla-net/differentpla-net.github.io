@@ -1,8 +1,6 @@
 ---
 title: "Generating a Proxy/Stub DLL for an interface, the sane way"
 date: 2004-01-29T10:01:00.000Z
-x-drupal-nid: 158
-x-needs-review: 2004-01-29T10:01:00.000Z
 ---
 Note: This article applies to Visual C++ 6\. There might be an easier way to do this in Visual Studio .NET
 

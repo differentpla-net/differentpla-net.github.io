@@ -1,8 +1,6 @@
 ---
 title: "Release Process: New Developer"
 date: 2010-07-14T13:52:24.000Z
-x-drupal-nid: 262
-x-needs-review: 2010-07-14T13:52:24.000Z
 ---
 This is related to “Can you make a build in one step?” on The Joel Test. But it’s not the same.
 

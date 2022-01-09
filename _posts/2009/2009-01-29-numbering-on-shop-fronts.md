@@ -1,8 +1,6 @@
 ---
 title: "Numbering on shop fronts"
 date: 2009-01-29T16:50:22.000Z
-x-drupal-nid: 226
-x-needs-review: 2009-01-29T16:50:22.000Z
 ---
 When I'm supreme ruler of the universe: shops will be required to place the "house" number somewhere on the front of the shop. It should be easily visible.
 

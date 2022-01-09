@@ -1,8 +1,6 @@
 ---
 title: "Release Process: Software Publisher Certificates"
 date: 2010-07-14T13:35:11.000Z
-x-drupal-nid: 261
-x-needs-review: 2010-07-14T13:35:11.000Z
 ---
 Since your code signing certificate probably lasts for two years, you’ll have forgotten what to do with it when you receive your new one.
 

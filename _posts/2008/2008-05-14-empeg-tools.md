@@ -1,8 +1,6 @@
 ---
 title: "empeg tools"
 date: 2008-05-14T06:28:15.000Z
-x-drupal-nid: 216
-x-needs-review: 2008-05-14T06:28:15.000Z
 tags: empeg
 ---
 In response to [this thread](http://empegbbs.com/ubbthreads.php/ubb/showflat/Number/306574) on the empeg BBS, I hacked together a couple of small tools for the empeg car player.

@@ -1,8 +1,6 @@
 ---
 title: "An empeg reports progress of OP_STATFID"
 date: 2007-12-16T18:53:10.000Z
-x-drupal-nid: 203
-x-needs-review: 2007-12-16T18:53:10.000Z
 tags: empeg
 ---
 We've seen the format of the packet that emplode sends to find out the length of a file on the empeg (OP_STATFID). The empeg seems to always send a progress packet in response. The packet looks like this:

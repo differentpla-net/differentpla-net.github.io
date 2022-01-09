@@ -1,8 +1,6 @@
 ---
 title: "Roman Numeral letter H"
 date: 2007-02-07T17:26:27.000Z
-x-drupal-nid: 96
-x-needs-review: 2007-02-07T17:26:27.000Z
 tags: roman-numerals
 ---
 Someone appears to have spent some time searching my site for the term "Roman Numeral letter H". This is pointless, for two reasons:

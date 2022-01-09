@@ -1,8 +1,6 @@
 ---
 title: "Writing a Replacement Receiver Server"
 date: 2003-09-30T23:01:00.000Z
-x-drupal-nid: 109
-x-needs-review: 2003-09-30T23:01:00.000Z
 redirect_from: /node/view/15
 tags: empeg rio-receiver
 ---

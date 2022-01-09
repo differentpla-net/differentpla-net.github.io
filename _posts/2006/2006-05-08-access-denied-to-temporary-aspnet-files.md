@@ -1,8 +1,6 @@
 ---
 title: "Access Denied to Temporary ASP.NET Files"
 date: 2006-05-08T16:17:35.000Z
-x-drupal-nid: 37
-x-needs-review: 2006-05-08T16:17:35.000Z
 ---
 Sometimes, when attempting to debug an ASP.NET Web Service, you'll get the following error: `Access to the path "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\Temporary ASP.NET Files\_somewhere_`" is denied.
 

@@ -1,8 +1,6 @@
 ---
 title: "Setting Internet Explorer and Windows Update to use Squid"
 date: 2009-09-16T08:48:05.000Z
-x-drupal-nid: 240
-x-needs-review: 2009-09-16T08:48:05.000Z
 ---
 If you've [installed squid]({% post_url 2009/2009-09-16-setting-up-squid-on-windows %}) on a box, you'll probably want to use it.
 

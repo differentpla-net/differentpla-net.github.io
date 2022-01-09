@@ -1,8 +1,6 @@
 ---
 title: "Hyper-V: creating a new Virtual Hard Disk fails with \"Cannot create a file when that file already exists\""
 date: 2009-10-21T08:12:36.000Z
-x-drupal-nid: 241
-x-needs-review: 2009-10-21T08:12:36.000Z
 ---
 My desktop PC is Windows 2008, with Hyper-V disabled. I've got a Windows 2008 R2 box to act as a Hyper-V server. I created an administrator user account with my name on the R2 box, and used [HVRemote](http://code.msdn.microsoft.com/HVRemote) to allow remote access.
 
