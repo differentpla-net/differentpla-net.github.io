@@ -10,7 +10,7 @@ In Thunderbird, choose "Account Settings..." from the "Tools" menu. Click on the
 
 In the section "When sending messages, automatically:", click on the "Other" radio button. Pop down the souped up combo box and choose the "Sent Items on..." item.
 
-![](/images/e9a7259397c5d26acc6720a9ee7c1417-193.png)
+![[broken image]](/images/e9a7259397c5d26acc6720a9ee7c1417-193.png)
 
 Unfortunately, your "Sent" folder will still be there, and I can't find a way to change the "Sent Items" folder to show the nice icon.
 
@@ -18,4 +18,4 @@ Unfortunately, your "Sent" folder will still be there, and I can't find a way to
 
 Under Tools / Accounts, choose the relevant email account and hit "Properties". On the "IMAP" tab, you can change the names of the special folders.
 
-![](/images/68a7b382cb491c347a36918ca2e08809-195.png)
+![[broken image]](/images/68a7b382cb491c347a36918ca2e08809-195.png)

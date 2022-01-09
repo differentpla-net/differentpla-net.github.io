@@ -9,7 +9,10 @@ When it comes up, the header and watermark graphics are displayed repeated.
 
 This is shown in the following pictures:
 
-![](/system/files?file=ce6a83801bd16839db16c54b3188c904-27.png)![](/system/files?file=58b05661d2f05bdcc20646c386a1b45d-26.png)
+![[broken image]](/system/files?file=ce6a83801bd16839db16c54b3188c904-27.png)
+
+![[broken image]](/system/files?file=58b05661d2f05bdcc20646c386a1b45d-26.png)
+
 The problem? `PSH_WIZARD97` is defined differently, according to which version of IE you claim to be targetting:
 
 ```c
@@ -32,7 +35,10 @@ The simple fix, assuming that you're only supporting IE5 or newer is to add the 
 #endif
 ```
 
-![](/system/files?file=ee21e3d40ae5d0ec3a103a3630d9c321-29.png)![](/system/files?file=32c517fe7d65b567370d8289097a7380-28.png)
+![[broken image]](/system/files?file=ee21e3d40ae5d0ec3a103a3630d9c321-29.png)
+
+![[broken image]](/system/files?file=32c517fe7d65b567370d8289097a7380-28.png)
+
 That's better.
 
 Note that if you claim to only support IE5 or later, you should put runtime checks for this in your code as necessary.

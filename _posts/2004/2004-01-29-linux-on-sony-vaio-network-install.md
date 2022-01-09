@@ -12,7 +12,9 @@ To do this:
 2.  In the "Advanced" page, set "Network Boot" to "Enabled".
 3.  In the "Boot" page, move "Network Boot" to the top of the list. Alternatively, hit F12 to trigger network booting when the "Sony" screen is displayed at startup.
 
-![](/images/26cb8a77ebbe717a193b665d44b7f9d4-163.jpg)![](/images/3f46e31ae2f33794c9708fe8a4e90807-162.jpg)
+![[broken image]](/images/26cb8a77ebbe717a193b665d44b7f9d4-163.jpg)
+
+![[broken image]](/images/3f46e31ae2f33794c9708fe8a4e90807-162.jpg)
 
 ## Configure DHCP
 

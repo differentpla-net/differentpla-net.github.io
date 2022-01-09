@@ -4,7 +4,7 @@ date: 2004-01-12T11:55:00.000Z
 ---
 Provides a quick way to find out where Windows is putting your "Favorites", "Application Data" etc. folders.
 
-![](/system/files?file=5fbc0bfcaee75dfb7834d806335d75e6-51.png)
+![[broken image]](/system/files?file=5fbc0bfcaee75dfb7834d806335d75e6-51.png)
 
 Note that this also demonstrates:
 

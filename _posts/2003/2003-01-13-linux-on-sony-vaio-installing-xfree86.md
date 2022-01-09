@@ -35,7 +35,7 @@ Try starting X:
 
 You should get a login prompt. It won't be pretty, though:
 
-![](/images/1a5b10afc983b9a91e9bbb8b2027cec5-164.jpg)
+![[broken image]](/images/1a5b10afc983b9a91e9bbb8b2027cec5-164.jpg)
 
 Check that the touchpad moves the mouse pointer and that you can log in.
 

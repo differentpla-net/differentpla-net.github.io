@@ -128,9 +128,9 @@ your CA certificate.
 To see it, click on `Tools` / `Options` and go to the "Content" tab. Click on the "Certificates" button. Your
 certificate will be shown under "Trusted Root Certification Authorities".
 
-![](/images/18e4c9a767f8d1947bde086222013223-181.png)
+![[broken image]](/images/18e4c9a767f8d1947bde086222013223-181.png)
 
-![](/images/52fa0e235abb98bfcb831bd44254b7a9-185.png)
+![[broken image]](/images/52fa0e235abb98bfcb831bd44254b7a9-185.png)
 
 Now you can point your browser at (in this example)
 [https://flimsy.home.differentpla.net/webmail/](https://flimsy.home.differentpla.net/webmail/) and it connects without
@@ -227,7 +227,7 @@ Success! Users can connect to either of the name-based virtual hosts, and they c
 If a user inadvertently tries to connect to [https://flimsy.differentpla.test](https://flimsy.differentpla.test/), which
 resolves to the same site, they'll be presented with a warning message:
 
-![](/images/a94a9bb5b44bf08238a6e8e97cd8a4a4-183.png)
+![[broken image]](/images/a94a9bb5b44bf08238a6e8e97cd8a4a4-183.png)
 
 The user can choose "Yes", and they'll get the webmail login form as normal. In future, we'd probably prefer to use some
 `mod_rewrite` magic to redirect them to an information page if they've typed in the wrong address. We might also want to

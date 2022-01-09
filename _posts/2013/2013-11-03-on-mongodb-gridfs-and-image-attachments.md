@@ -11,4 +11,4 @@ Still, that's the point of experimenting, I guess.
 
 On the bright side, this blog now supports drag-and-drop image attachments:
 
-![](/upload/UnYdIwiBeCMQAAAC)
+![[broken image]](/upload/UnYdIwiBeCMQAAAC)

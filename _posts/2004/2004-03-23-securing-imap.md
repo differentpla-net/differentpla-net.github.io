@@ -15,7 +15,7 @@ I'm going to use the built-in SSL support. This got included when I [installed B
 
 Now you can configure your email client to require secure IMAP connections. In Outlook XP, you can just check the box marked "This server requires an SSL-secured connection (SSL):
 
-![](/images/a470728f1b7c8c6154cbf7bc74425fdd-191.png)
+![[broken image]](/images/a470728f1b7c8c6154cbf7bc74425fdd-191.png)
 
 And it'll just work.
 
