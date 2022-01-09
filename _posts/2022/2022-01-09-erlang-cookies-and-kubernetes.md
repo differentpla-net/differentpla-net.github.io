@@ -73,7 +73,7 @@ Rotating cookies is _hard_. I'm not going to cover it here.
 
 If you're using [`mix release`](https://hexdocs.pm/mix/Mix.Tasks.Release.html), a random cookie is created at build time
 and written to `_build/prod/rel/myapp/releases/COOKIE`. This means that the cookie changes every time you build from
-clean, which will break your cluster. Alternatively, you can use a ConfigMap
+clean, which will break your cluster.
 
 You can specify a cookie with the `:cookie` option in `mix.exs`. I would avoid doing this because it means that the
 cookie is now visible in source control history.
