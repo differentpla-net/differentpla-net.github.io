@@ -18,7 +18,7 @@ The design is based on the one I used for implementing a [paged Options dialog](
 
 First, we start with a new C# application; this is our test app:
 
-[img_assist|align=center|nid=5|width=640|height=439]
+![[img_assist|align=center|nid=5|width=640|height=439]](/broken-image-link)
 
 The first thing I tend to do with C# apps these days is move **Main** somewhere else, the way that Visual Studio 2005 does, so we'll have a class called **Program** that looks like this:
 
@@ -47,17 +47,17 @@ Now we've got a **Program.cs** file, we don't need the **Form1.cs** file, so we'
 
 Our next step is to create a library project which will implement the wizard classes. Right click on the solution in Solution Explorer and select Add / New Project:
 
-[img_assist|nid=7|width=595|height=640]
+![[img_assist|nid=7|width=595|height=640]](/broken-image-link)
 
 We want a Windows Control Library, called "Wizard.UI":
 
-[img_assist|nid=8|width=640|height=436]
+![[img_assist|nid=8|width=640|height=436]](/broken-image-link)
 
 By default, Visual Studio puts a custom user control into the project. We don't want it, so we'll delete it.
 
 What we do want is a Windows Form, so we'll create that. It's called **WizardSheet**:
 
-[img_assist|nid=9|width=640|height=473]
+![[img_assist|nid=9|width=640|height=473]](/broken-image-link)
 
 We need to fix up a few things before it'll compile. First we need to add a reference from our TestWizard project to our Wizard.UI project, and then we need to add a "using" statement.
 
@@ -65,13 +65,13 @@ We also need to implement our 3 page classes. Our next step is to create the **W
 
 **WizardPage** is a User Control class:
 
-[img_assist|nid=10|width=640|height=473]
+![[img_assist|nid=10|width=640|height=473]](/broken-image-link)
 
 We don't bother adding any UI elements to it, so we just end up with a boring grey square. The interesting UI will be added in the other two classes. We'll add these as "Inherited User Control" classes:
 
-[img_assist|nid=11|width=640|height=473]
+![[img_assist|nid=11|width=640|height=473]](/broken-image-link)
 
-[img_assist|nid=12|width=640|height=356]
+![[img_assist|nid=12|width=640|height=356]](/broken-image-link)
 
 Again, for the moment, we'll leave these as boring grey squares. At this point, however, we can create our three missing **WelcomePage**, **MiddlePage** and **CompletePage** classes.
 
@@ -94,7 +94,7 @@ We need to put some buttons on the wizard. We need 4 buttons: Back, Next, Finish
 
 The 4 buttons should have their **Anchor** property set to "Bottom, Right". That should all look like this:
 
-[img_assist|nid=13|width=640|height=299]
+![[img_assist|nid=13|width=640|height=299]](/broken-image-link)
 
 ## The Etched Line
 
@@ -171,7 +171,7 @@ Color LightColor
 
 Now, if we look at the form in the designer, it's got a natty etched line running across it above the buttons:
 
-[img_assist|nid=14|width=640|height=311]
+![[img_assist|nid=14|width=640|height=311]](/broken-image-link)
 
 ## Displaying the Pages
 
@@ -559,7 +559,7 @@ The **OnWizardFinish** method is implemented as you'd expect.
 
 After all that, we end up with a working wizard:
 
-[img_assist|nid=15|width=640|height=355]
+![[img_assist|nid=15|width=640|height=355]](/broken-image-link)
 
 Note that I've turned on visual styles for the application, and I've moved the Back button a bit closer to the Next button.
 

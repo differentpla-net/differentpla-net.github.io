@@ -8,15 +8,15 @@ Several popular applications implement their options dialog as a collection of p
 
 For example, Internet Explorer uses the familiar tabbed dialog:
 
-[img_assist|nid=51|title=|desc=|link=none|align=left|width=575|height=640]
+![[img_assist|nid=51|title=|desc=|link=none|align=left|width=575|height=640]](/broken-image-link)
 
 Visual Studio .NET uses a tree control to organise its options:
 
-[img_assist|nid=53|title=|desc=|link=none|align=left|width=640|height=402]
+![[img_assist|nid=53|title=|desc=|link=none|align=left|width=640|height=402]](/broken-image-link)
 
 Mozilla FireFox uses a list control to group its options:
 
-[img_assist|nid=50|title=|desc=|link=none|align=left|width=640|height=524]
+![[img_assist|nid=50|title=|desc=|link=none|align=left|width=640|height=524]](/broken-image-link)
 
 We'll look at implementing a paged dialog, using a list control, as FireFox does it.
 
@@ -37,7 +37,7 @@ We'll have a dialog (here called `OptionsDialog`) to which we'll add the pages, 
 
 First, we need the `OptionsDialog` class. It's a normal dialog, which contains 3 panels. I've hilighted the panels in this picture:
 
-[img_assist|nid=54|title=|desc=|link=none|align=left|width=640|height=462]
+![[img_assist|nid=54|title=|desc=|link=none|align=left|width=640|height=462]](/broken-image-link)
 
 The panel across the bottom contains the OK and Cancel buttons; the panel on the left contains the ListView control which will display the icons and text; and the panel on the right is empty -- it'll hold the currently active page.
 
@@ -192,6 +192,6 @@ private void listView_SelectedIndexChanged(object sender, System.EventArgs e)
 
 Then all we have to is define a couple of pages to go in the options dialog, and we end up with this:
 
-[img_assist|nid=52|title=|desc=|link=none|align=left|width=640|height=410]
+![[img_assist|nid=52|title=|desc=|link=none|align=left|width=640|height=410]](/broken-image-link)
 
 Source code is [on github](https://github.com/rlipscombe/paged-options-dialog).

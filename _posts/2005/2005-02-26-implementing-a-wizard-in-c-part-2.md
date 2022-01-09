@@ -55,7 +55,7 @@ First, making it prettier. We'll implement a banner for the middle page.
 
 In the Wizard.UI project, create a new user control. The class is called **WizardBanner**. Its **BackColor** property is set to "Window", and it has two label controls and an etched line on it:
 
-[img_assist|nid=18|width=640|height=133]
+![[img_assist|nid=18|width=640|height=133]](/broken-image-link)
 
 The Anchor and Dock properties for the labels and line are set appropriately.
 
@@ -125,11 +125,11 @@ public string Subtitle
 
 Then we can drop it onto the Internal wizard page, dock it, give it a name and set it to public:
 
-[img_assist|nid=19|title=|desc=|link=none|align=left|width=640|height=219]
+![[img_assist|nid=19|title=|desc=|link=none|align=left|width=640|height=219]](/broken-image-link)
 
 Making it public means that we can change the text in **MiddlePage**, which is derived from **InternalWizardPage**:
 
-[img_assist|nid=20|title=|desc=|link=none|align=left|width=640|height=309]
+![[img_assist|nid=20|title=|desc=|link=none|align=left|width=640|height=309]](/broken-image-link)
 
 Next we need to implement the sidebar for the outer pages. This is done similarly.
 
@@ -137,7 +137,7 @@ Next we need to implement the sidebar for the outer pages. This is done similarl
 
 We add a new user control to the **Wizard.UI** project, called **WizardSidebar**. It does nothing particularly interesting. Then we drop it onto **ExternalWizardPage**, and set its properties appropriately. The background colour of the **ExternalWizardPage** form is set to "Window". If we drop some controls onto the WelcomePage form and set the sidebar graphic, we'll end up with something that looks like this:
 
-[img_assist|nid=21|title=|desc=|link=none|align=left|width=640|height=523]
+![[img_assist|nid=21|title=|desc=|link=none|align=left|width=640|height=523]](/broken-image-link)
 
 And that's much prettier.
 

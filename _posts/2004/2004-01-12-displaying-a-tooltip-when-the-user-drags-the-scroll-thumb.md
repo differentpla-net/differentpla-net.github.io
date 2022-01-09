@@ -5,7 +5,7 @@ tags: mfc
 ---
 ## You wanna do this?
 
-[img_assist|nid=47|title=|desc=|link=none|align=left|width=377|height=640]
+![[img_assist|nid=47|title=|desc=|link=none|align=left|width=377|height=640]](/broken-image-link)
 
 ## Here's How:
 

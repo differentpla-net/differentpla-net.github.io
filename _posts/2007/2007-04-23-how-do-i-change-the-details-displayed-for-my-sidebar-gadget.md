@@ -4,7 +4,7 @@ date: 2007-04-23T09:08:09.000Z
 ---
 When you click on "Show details" in the Windows Vista gadget gallery, Windows displays various information about the selected gadget.
 
-[img_assist|nid=171|title=|desc=|link=none|align=left|width=640|height=361]
+![[img_assist|nid=171|title=|desc=|link=none|align=left|width=640|height=361]](/broken-image-link)
 
 These details come from your Gadget.xml file:
 

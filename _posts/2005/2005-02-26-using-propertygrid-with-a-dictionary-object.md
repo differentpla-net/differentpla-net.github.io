@@ -5,7 +5,7 @@ redirect_from: /content/2005/02/using-propertygrid-with-dictionary
 ---
 If you try using IDictionary with the PropertyGrid control, the results aren't spectacular:
 
-[img_assist|nid=31|title=|desc=|link=none|align=left|width=640|height=640]
+![[img_assist|nid=31|title=|desc=|link=none|align=left|width=640|height=640]](/broken-image-link)
 
 Here's how to do it properly.
 
@@ -182,4 +182,4 @@ Then you can just use it like this:
 
 And it comes out looking like this:
 
-[img_assist|nid=32|title=|desc=|link=none|align=left|width=640|height=640]
+![[img_assist|nid=32|title=|desc=|link=none|align=left|width=640|height=640]](/broken-image-link)

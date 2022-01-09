@@ -4,7 +4,7 @@ date: 2007-04-23T08:50:36.000Z
 ---
 When you add a new gadget to the sidebar (by right-clicking and selecting "Add Gadgets..."), Windows Vista displays an icon for it.
 
-[img_assist|nid=166|title=|desc=|link=none|align=left|width=640|height=281]
+![[img_assist|nid=166|title=|desc=|link=none|align=left|width=640|height=281]](/broken-image-link)
 
 This icon is controlled by your Gadget.xml file:
 

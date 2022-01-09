@@ -14,9 +14,9 @@ date: 2003-06-23T15:16:00.000Z
 </tr>
 
 <tr>
-<td>[img_assist|nid=34|title=utp-crimp-586a.gif|desc=UTP Crimp: 586A. G/ G O/ B B/ O Br/ Br|link=none|align=left|width=233|height=326]</td>
+<td>![[img_assist|nid=34|title=utp-crimp-586a.gif|desc=UTP Crimp: 586A. G/ G O/ B B/ O Br/ Br|link=none|align=left|width=233|height=326]](/broken-image-link)</td>
 
-<td>[img_assist|nid=35|title=utp-crimp-586b.gif|desc=UTP Crimp: 586B. O/ O G/ B B/ G Br/ Br|link=none|align=left|width=233|height=326]</td>
+<td>![[img_assist|nid=35|title=utp-crimp-586b.gif|desc=UTP Crimp: 586B. O/ O G/ B B/ G Br/ Br|link=none|align=left|width=233|height=326]](/broken-image-link)</td>
 
 </tr>
 
