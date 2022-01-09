@@ -7,9 +7,12 @@ In my [previous article](/node/view/253), I explained how to use `LPSTR_TEXTCALL
 
 This article will show how to use `SortItems` to sort the items in the list.
 
-Why would we want to do this? If we'd just stored the text in the list control, rather than use `LPSTR_TEXTCALLBACK`, it would have sorted for us.
+Why would we want to do this? If we'd just stored the text in the list control, rather than use `LPSTR_TEXTCALLBACK`, it
+would have sorted for us.
 
-Well, yes it would, but it would have been wrong. In the last article, we used a variety of functions (e.g. `StrFormatKBSize`) to produce the strings that went into the list control. When sorting, we'd prefer to order the underlying values, not the formatted text.
+Well, yes it would, but it would have been wrong. In the last article, we used a variety of functions (e.g.
+`StrFormatKBSize`) to produce the strings that went into the list control. When sorting, we'd prefer to order the
+underlying values, not the formatted text.
 
 This is where `SortItems` comes in.
 
@@ -17,12 +20,17 @@ This is where `SortItems` comes in.
 
 When you call `SortItems`, you need to pass a comparison function, like this:
 
-<pre>int CALLBACK CompareFunction(LPARAM lParam1, LPARAM lParam2, LPARAM lParamSort);</pre>
+```
+int CALLBACK CompareFunction(LPARAM lParam1, LPARAM lParam2, LPARAM lParamSort);
+```
 
-`lParam1` and `lParam2` are the `lParam` values from the two items to be compared. `lParamSort` is user-defined data passed to `SortItems`. The return value of your comparison function should be like that of `strcmp`. That is: it should return a negative value if lhs < rhs, a positive value if lhs > rhs, or zero if lhs is equal to rhs.
-Our comparison function looks like this:
+`lParam1` and `lParam2` are the `lParam` values from the two items to be compared. `lParamSort` is user-defined data
+passed to `SortItems`. The return value of your comparison function should be like that of `strcmp`. That is: it should
+return a negative value if lhs < rhs, a positive value if lhs > rhs, or zero if lhs is equal to rhs. Our comparison
+function looks like this:
 
-<pre>int CALLBACK CompareFunction(LPARAM lParam1, LPARAM lParam2, LPARAM lParamSort)
+```c++
+int CALLBACK CompareFunction(LPARAM lParam1, LPARAM lParam2, LPARAM lParamSort)
 {
     int iSubItem = (int)lParamSort;
 
@@ -57,13 +65,17 @@ Our comparison function looks like this:
     }
 
     return 0;
-}</pre>
+}
+```
 
-As you can see, we can use the same function for sorting on each of the different columns if we pass the sub-item ID in `lParamSort`. This function also demonstrates how to compare different types of data. Note that the string comparison is not technically correct: it doesn't take into account locale settings.
+As you can see, we can use the same function for sorting on each of the different columns if we pass the sub-item ID in
+`lParamSort`. This function also demonstrates how to compare different types of data. Note that the string comparison is
+not technically correct: it doesn't take into account locale settings.
 
 We call it from our `HDN_ITEMCLICK` handler:
 
-<pre>void CListSortDlg::OnHdnItemclickListctrl(NMHDR *pNMHDR, LRESULT *pResult)
+```c++
+void CListSortDlg::OnHdnItemclickListctrl(NMHDR *pNMHDR, LRESULT *pResult)
 {
     LPNMHEADER phdr = reinterpret_cast<LPNMHEADER>(pNMHDR);
 
@@ -79,4 +91,5 @@ We call it from our `HDN_ITEMCLICK` handler:
     VERIFY(m_listCtrl.SortItems(CompareFunction, iSubItem));
 
     *pResult = 0;
-}</pre>
+}
+```

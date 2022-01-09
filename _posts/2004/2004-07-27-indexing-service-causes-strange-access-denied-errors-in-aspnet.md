@@ -1,6 +1,7 @@
 ---
 title: "Indexing Service causes strange Access Denied errors in ASP.NET"
 date: 2004-07-27T18:14:00.000Z
+redirect_from: /content/2004/07/indexing-service-causes-strange-access-denied-errors-in-asp-net
 ---
 A couple of weeks ago, I installed a trial copy of the Dundas .NET charting controls to play with in ASP.NET. It's actually pretty cool, but I was attempting to show it to someone on my laptop when it stopped working.
 

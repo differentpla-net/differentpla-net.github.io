@@ -1,6 +1,7 @@
 ---
 title: "Release Process: Code Signing - Key Security"
 date: 2010-05-26T10:10:41.000Z
+redirect_from: /content/2010/05/release-process-code-signing-key-security
 ---
 The key used for signing your releases should be kept secure. It should be impossible for a rogue developer or 3rd party to use this key unofficially.
 

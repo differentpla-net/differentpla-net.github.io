@@ -9,7 +9,8 @@ To use `DrawDragRect`, you pass it the a rectangle to highlight. You also pass i
 
 The code looks like this:
 
-<pre>void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
+```c++
+void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
 {
     CWnd::OnLButtonDown(nFlags, point);
 
@@ -54,13 +55,15 @@ void CChildView::OnLButtonUp(UINT nFlags, CPoint point)
     }
 
     CWnd::OnLButtonUp(nFlags, point);
-}</pre>
+}
+```
 
 There is (at least) one problem with this code, though: If the user Alt+Tabs away from your application, you'll lose mouse capture, but won't erase the selection rectangle.
 
 To fix it, you need to add the following:
 
-<pre>void CChildView::OnCancelMode()
+```c++
+void CChildView::OnCancelMode()
 {
     if (GetCapture() == this)
     {
@@ -73,4 +76,5 @@ To fix it, you need to add the following:
     }
 
     CWnd::OnCancelMode();
-}</pre>
+}
+```

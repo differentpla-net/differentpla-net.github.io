@@ -7,7 +7,8 @@ I've been playing around with learning C#. Today, I thought I'd write a C# progr
 
 It uses `Socket.BeginReceiveFrom` and `Socket.EndReceiveFrom`.
 
-<pre>using System;
+```c#
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -118,4 +119,5 @@ namespace FindEmpeg
       }
     }
   }
-}</pre>
+}
+```

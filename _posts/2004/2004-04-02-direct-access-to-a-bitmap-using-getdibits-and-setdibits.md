@@ -4,11 +4,12 @@ date: 2004-04-02T11:28:00.000Z
 redirect_from: /content/2004/04/direct-access-to-a-bitmap-using-getdibits-and-setdibits
 tags: mfc
 ---
-In the [Grabbing a snapshot of the screen](/node/view/207) article, I said: "I'm planning on altering the snapshot before displaying it.". This article shows how to alter a bitmap by directly accessing the raw bits.
+In the [Grabbing a snapshot of the screen]({% post_url 2004/2004-04-02-grabbing-a-snapshot-of-the-screen %}) article, I said: "I'm planning on altering the snapshot before displaying it.". This article shows how to alter a bitmap by directly accessing the raw bits.
 
 If we start with the code from the previous article, it's as simple as adding the following code:
 
-<pre>// BLOCK: Copy a chunk of the screen to the memory DC.
+```c++
+// BLOCK: Copy a chunk of the screen to the memory DC.
 {
     CWindowDC screenDC(NULL);
     memoryDC.BitBlt(0, 0, clientRect.Width(), clientRect.Height(),
@@ -46,13 +47,15 @@ If we start with the code from the previous article, it's as simple as adding th
 
     // We're done; free the memory.
     free(pSourceBits);
-}</pre>
+}
+```
 
 This shows one way to call `GetDIBits`. We call it twice: once to find out about the bitmap, and then again to copy the actual data.
 
 We also need the implementations of `dib::ApplyBitmapTransform` and `dib::GetBitmapBytes`. They look like this:
 
-<pre>namespace dib
+```c++
+namespace dib
 {
     int GetBytesPerPixel(int depth)
     {
@@ -138,4 +141,5 @@ We also need the implementations of `dib::ApplyBitmapTransform` and `dib::GetBit
             return result;
         }
     };
-};</pre>
+};
+```
