@@ -29,7 +29,7 @@ interface IMyInterface : IUnknown
 
 Add this file to the project. Open the settings dialog and go to the "MIDL" tab. Visual Studio should have automatically added it. Select your IDL file.
 
-![[broken image]](/images/b409ba5376acdf3a345831bf8a7221e8-211.png)
+![](/images/2004/2004-01-29-generating-a-proxystub-dll-for-an-interface-the-sane-way/idl_proxy_midl.png)
 
 In the "Output file name" box, put the name of the .tlb file that you'd like to generate. In this case, it shouldn't particularly matter, because we don't have a "library" section in our IDL file. However, if we have a name in this box, Visual Studio fails to work out its dependencies correctly, and builds things in the wrong order. Unless you _do_ have a "library" section, it's probably best to leave this empty.
 
@@ -67,7 +67,7 @@ Your project should now compile and link.
 
 The AppWizard-generated COM DLLs are automatically registered at the end of the build process. To add this, go to the "Custom Build" tab for the project, and enter the following information:
 
-![[broken image]](/images/e2a082965d1a57593273cf84e835c573-212.png)
+![](/images/2004/2004-01-29-generating-a-proxystub-dll-for-an-interface-the-sane-way/idl_proxy_regsvr32.png)
 
 Done. Source is here: [my_interface.zip](/drupal-4.7.3/my_interface.zip).
 
