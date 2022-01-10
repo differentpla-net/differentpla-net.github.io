@@ -9,9 +9,9 @@ When it comes up, the header and watermark graphics are displayed repeated.
 
 This is shown in the following pictures:
 
-![[broken image]](/system/files?file=ce6a83801bd16839db16c54b3188c904-27.png)
+![](/images/2004/2004-01-08-wizard97-watermark-and-header-graphics-are-repeated/ce6a83801bd16839db16c54b3188c904-27.png)
 
-![[broken image]](/system/files?file=58b05661d2f05bdcc20646c386a1b45d-26.png)
+![](/images/2004/2004-01-08-wizard97-watermark-and-header-graphics-are-repeated/58b05661d2f05bdcc20646c386a1b45d-26.png)
 
 The problem? `PSH_WIZARD97` is defined differently, according to which version of IE you claim to be targetting:
 
@@ -35,9 +35,9 @@ The simple fix, assuming that you're only supporting IE5 or newer is to add the 
 #endif
 ```
 
-![[broken image]](/system/files?file=ee21e3d40ae5d0ec3a103a3630d9c321-29.png)
+![](/images/2004/2004-01-08-wizard97-watermark-and-header-graphics-are-repeated/ee21e3d40ae5d0ec3a103a3630d9c321-29.png)
 
-![[broken image]](/system/files?file=32c517fe7d65b567370d8289097a7380-28.png)
+![](/images/2004/2004-01-08-wizard97-watermark-and-header-graphics-are-repeated/32c517fe7d65b567370d8289097a7380-28.png)
 
 That's better.
 
