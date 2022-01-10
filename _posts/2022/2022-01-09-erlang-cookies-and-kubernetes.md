@@ -118,7 +118,7 @@ Because they're basically the same as Secrets.
 
 The code to generate a new Erlang cookie is in `lib/kernel/src/auth.erl`. It generates 20 random characters from `[A-Z]`.
 
-It doesn't actually use the standard RNG; it uses one taken from _Knuth: The Art of Computer Programming, Volume II, Seminumericlal Algorithms_. I can only assume that it does this because the rest of the runtime (including the standard RNG) isn't available yet.
+It doesn't actually use the standard RNG; it uses one taken from _Knuth: The Art of Computer Programming, Volume II, Seminumerical Algorithms_. I can only assume that it does this because the rest of the runtime (including the standard RNG) isn't available yet.
 
 It's broadly the equivalent of this:
 
