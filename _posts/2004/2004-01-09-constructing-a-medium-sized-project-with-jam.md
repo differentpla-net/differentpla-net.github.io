@@ -19,7 +19,7 @@ I've written this article in the form of a tutorial, because I think better when
 
 *   [Building an MFC program]({% post_url 2001/2001-07-14-building-an-mfc-application-with-jam %}).
 *   [Building a shared library (DLL)]({% post_url 2001/2001-07-04-building-shared-libraries-dlls %}).
-*   [Bringing it together with the SubDir rule](/drupal-4.7.3/tutorial/sub_dir/).
+*   [Bringing it together with the SubDir rule]({% post_url 2001/2001-07-13-jam-subdir-rule %}).
 *   [Linking with a shared library](/drupal-4.7.3/tutorial/link_dll/).
 *   [Building (and linking with) static libraries](/drupal-4.7.3/tutorial/static_lib/).
 *   [Resource script dependencies](/content/2004/01/jam-resource-file-dependencies).
