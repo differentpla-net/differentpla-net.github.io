@@ -54,7 +54,7 @@ Go along to [http://ftp.us.debian.org/debian/dists/stable/main/binary-arm/net/](
 
 3.  Repeat, but for the other empeg.
 
-**Note:** For the Linux-challenged amongst you, I've put the netcat_1.10-12.1-minimal.tar.gz file [here](/node/view/227). Copy it to the empeg in step 2, above, changing the 'tar xvfz' command to suit.
+**Note:** For the Linux-challenged amongst you, I've put the netcat_1.10-12.1-minimal.tar.gz file [here](/files/netcat_1.10-12.1-minimal.tar.gz). Copy it to the empeg in step 2, above, changing the 'tar xvfz' command to suit.
 
 ### Transfer the data files
 
