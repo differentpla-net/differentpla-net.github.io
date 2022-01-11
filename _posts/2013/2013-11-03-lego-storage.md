@@ -1,6 +1,7 @@
 ---
 title: Lego Storage
 date: 2013-11-03T19:59:11Z
+tags: lego
 ---
 My son has quite a lot of Lego, but he stopped playing with it. It turns out
 that he gets frustrated when he can't find a particular piece. So we started
@@ -37,9 +38,9 @@ Store](http://www.amazon.co.uk/Lego-Sort-Store-Cheeky-Face/dp/B007I0C5NA).
 These are relatively expensive, and don't seem to be useful for categorising
 the LEGO bricks. That is: there's no way to separate the really small pieces.
 The "Sort and Store" is a clever idea, but these are basically just
-LEGO-branded buckets. 
+LEGO-branded buckets.
 
-## Chima Sorting System 
+## Chima Sorting System
 
 However, completely coincidentally, I found the [LEGO Chima - Sorting System
 Storage
