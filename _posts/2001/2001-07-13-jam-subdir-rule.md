@@ -162,4 +162,4 @@ That was easy enough.  We've still got a couple of things to work out:
 - We're not actually attempting to link the EXE with the DLL, so there's no dependency established.
 - The resource compiler flags aren't being reset.  We've only got one resource script so far, so it's not an issue yet.
 
-You can find the source resulting from this <a href="../src/jam-test-20010713a.tar.gz">here</a>.
+You can find the source resulting from this [here](/files/jam-test-20010713a.tar.gz).

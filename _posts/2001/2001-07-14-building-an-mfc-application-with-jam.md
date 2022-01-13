@@ -9,9 +9,7 @@ Since the majority of our Windows applications are written using MFC, it's a use
 
 I've attempted to break down the process of getting an MFC application to build into discrete chunks. They're not particularly self-contained at the moment, but they attempt to describe one problem (and hopefully its solution) each:
 
-You can find the resulting source code from this example [here](../src/jam-test-20010711a.tar.gz).
-
-* * *
+You can find the resulting source code from this example [here](/files/jam-test-20010711a.tar.gz).
 
 ## Using AppWizard to generate the application
 
@@ -294,7 +292,7 @@ We need to add the following to our `Resource` rule:
 	Rc $(_r) : $(_s) ;
 ```
 
-Source is [here](../src/jam-test-20010717a.tar.gz).
+Source is [here](/files/jam-test-20010717a.tar.gz).
 
 ## Resource Files
 

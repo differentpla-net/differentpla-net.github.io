@@ -100,6 +100,7 @@ SharedLibrary win32_dll : StdAfx.cpp win32_dll.cpp ;
 ```
 
 It builds!
+
 It seems to me that the extra LINKFLAGS should really be added in the SharedLibrary rule, rather than here. Also, for some reason, Visual C++ is passing a `/implib` switch to the linker which we didn't seem to need (it built an import library correctly). I'll come back to this later.
 
-You can find the resulting source code from this example [here](../src/jam-test-20010712a.tar.gz).
+You can find the resulting source code from this example [here](/files/jam-test-20010712a.tar.gz).
