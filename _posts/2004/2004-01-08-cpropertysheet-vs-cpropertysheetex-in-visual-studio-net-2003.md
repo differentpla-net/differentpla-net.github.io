@@ -4,7 +4,7 @@ date: 2004-01-08T17:05:00.000Z
 tags: mfc
 ---
 The program that I'm working on at the moment needs a wizard to walk the user through something. I copied over some
-files from a [Wizard97 demo project](/node/view/214) that I wrote a while ago. It all seemed to be going well.
+files from a [Wizard97 demo project](/files/wizard97.zip) that I wrote a while ago. It all seemed to be going well.
 
 Except, that is, that IntelliSense in Visual Studio kept pretending that my classes were derived from `CPropertySheet`
 or `CPropertyPage`, rather than `CPropertySheetEx` or `CPropertyPageEx` respectively.
