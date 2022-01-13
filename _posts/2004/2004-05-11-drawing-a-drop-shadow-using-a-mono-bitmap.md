@@ -3,7 +3,7 @@ title: "Drawing a drop shadow: using a mono bitmap"
 date: 2004-05-11T09:24:00.000Z
 tags: mfc
 ---
-In an [earlier article](/node/view/239), I showed how to draw a drop shadow with the help of the ImageList control.
+In an [earlier article]({% post_url 2004/2004-05-11-drawing-a-drop-shadow-from-imagelist %}), I showed how to draw a drop shadow with the help of the ImageList control.
 
 It occurred to me last night that there's a simpler way to do the masking for the shadow.
 
