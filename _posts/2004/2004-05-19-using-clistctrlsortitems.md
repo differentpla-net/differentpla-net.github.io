@@ -3,7 +3,7 @@ title: "Using CListCtrl::SortItems"
 date: 2004-05-19T14:38:00.000Z
 tags: mfc
 ---
-In my [previous article](/node/view/253), I explained how to use `LPSTR_TEXTCALLBACK` and `LVN_GETDISPINFO`.
+In my [previous article]({% post_url 2004/2004-05-19-handling-lvn-getdispinfo %}), I explained how to use `LPSTR_TEXTCALLBACK` and `LVN_GETDISPINFO`.
 
 This article will show how to use `SortItems` to sort the items in the list.
 
