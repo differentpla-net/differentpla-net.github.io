@@ -17,7 +17,7 @@ This is not for the faint-hearted. If you're not reasonably competent with Linux
 
 ## The Plan
 
-I originally attempted to get rsync working [using rsh](/rsh-client.html). However, I couldn't get a rsh server working on the empeg, so I gave up. I didn't try very hard, though, so I may try again later.
+I originally attempted to get rsync working [using rsh]({% post_url 2002/2002-03-07-empeg-rsh-client %}). However, I couldn't get a rsh server working on the empeg, so I gave up. I didn't try very hard, though, so I may try again later.
 
 Instead, we'll use rsync as a daemon on one of the empegs, and connect to it from the other.
 
