@@ -35,7 +35,7 @@ support this as well. There's also a database of the music, and something to upd
 ## The HTTP server
 
 The easiest thing to write is going to be the webserver, so armed with a copy of RFC2616, I quickly hacked something
-simple together. You can find the source code [here](/node/view/46). Currently, this just echoes the client request.
+simple together. You can find the source code [here](/files/simple_httpd.zip). Currently, this just echoes the client request.
 I'll be adding the other features required by the Rio Receiver as I figure them out.
 
 ## Getting started
@@ -86,7 +86,7 @@ The Audio Receiver server has the following services in the same binary:
 
 The NFS and HTTP services depend on the Service Discovery service.
 
-You can find source for this [here](/node/view/45). This assumes that you've got a copy of [the SC.EXE](http://msdn.microsoft.com/archive/default.asp?url=/archive/en-us/dnarpic/html/msdn_scmslite.asp) utility. I've written some batch files to make installation easier..
+You can find source for this [here](/files/shared_services.zip). This assumes that you've got a copy of [the SC.EXE](http://msdn.microsoft.com/archive/default.asp?url=/archive/en-us/dnarpic/html/msdn_scmslite.asp) utility. I've written some batch files to make installation easier..
 
 ## HTTP server discovery
 
