@@ -79,41 +79,7 @@ iex(cluster_demo@cluster-demo-566c999cd-2mfd5)3> :inet_res.getbyname('kubernetes
 
 The part after our original query, `kubernetes.default.svc` -- `.cluster.local`, is the cluster domain.
 
-We can enumerate pods with:
-
-```
-$ kubectl get pods -l app.kubernetes.io/name=cluster-demo
-```
-
-...which looks them up in the current namespace.
-
-```
-KUBERNETES_SERVICE_HOST=10.43.0.1
-KUBERNETES_SERVICE_PORT=443
-KUBERNETES_SERVICE_PORT_HTTPS=443
-```
-
-```elixir
-# Or we can just use "https://kubernetes.default", which is guaranteed to be available.
-host = System.fetch_env!("KUBERNETES_SERVICE_HOST")
-port = System.fetch_env!("KUBERNETES_SERVICE_PORT") |> String.to_integer()
-namespace = File.read!("/var/run/secrets/kubernetes.io/serviceaccount/namespace")
-path = "/api/v1/namespaces/#{namespace}/pods"
-query = "labelSelector=app.kubernetes.io/name=cluster-demo"
-uri = :uri_string.recompose(%{scheme: "https", host: host, port: port, path: path, query: query})
-
-token = File.read!("/var/run/secrets/kubernetes.io/serviceaccount/token")
-headers = [{'authorization', 'Bearer #{token}'}]
-
-opts = [ssl: [verify: :verify_none], timeout: 15_000]
-
-{% raw %}
-{:ok, {{_, 200, _}, _, body }} = :httpc.request(:get, {uri, headers}, opts, [])
-{% endraw %}
-
-pod_list = Jason.decode!(body)
-names = for item <- pod_list["items"], do: item["metadata"]["name"]
-```
+Service account name is in the JWT token, or you can expose it (`spec.serviceAccountName`) via the downward API.
 
 We actually _have_ the IP address at this point, so it seems kinda daft to look it up again.
 
