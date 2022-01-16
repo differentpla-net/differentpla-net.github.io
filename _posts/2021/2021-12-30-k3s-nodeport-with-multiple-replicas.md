@@ -168,6 +168,13 @@ $ curl http://rpi401:30184
 pod node-server-fcb84c684-xngdm on node rpi402
 ```
 
+To emphasise the point that the service is available on any node, not just the ones it's running on:
+
+```
+$ curl http://rpi404:30184
+pod node-server-fcb84c684-psf64 on node rpi401
+```
+
 ## References
 
 - [How to Make Kubectl Jsonpath Output On Separate Lines](https://downey.io/notes/dev/kubectl-jsonpath-new-lines/)
