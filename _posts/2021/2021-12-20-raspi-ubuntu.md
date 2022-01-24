@@ -83,7 +83,9 @@ arm64
 ## Install some basics
 
 ```bash
-sudo apt-get install --no-install-recommends vim-nox
+sudo apt-get install \
+    --no-install-recommends \
+    vim-nox silversearcher-ag
 sudo update-alternatives --set editor /usr/bin/vim.nox
 
 mkdir "$HOME/bin"
