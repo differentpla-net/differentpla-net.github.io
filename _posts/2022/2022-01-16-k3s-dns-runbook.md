@@ -1,7 +1,7 @@
 ---
 title: "Custom CoreDNS Runbook"
 date: 2022-01-16T10:08:00Z
-tags: runbook
+tags: runbook core-dns post-mortem
 layout: series
 series: k3s
 ---

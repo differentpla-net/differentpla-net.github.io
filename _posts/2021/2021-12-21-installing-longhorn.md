@@ -1,7 +1,7 @@
 ---
 title: "Installing Longhorn"
 date: 2021-12-21T11:28:00Z
-tags: raspberry-pi
+tags: raspberry-pi longhorn k3s
 layout: series
 series: k3s
 ---

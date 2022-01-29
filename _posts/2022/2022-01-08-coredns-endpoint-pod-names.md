@@ -1,7 +1,7 @@
 ---
 title: "CoreDNS: endpoint_pod_names"
 date: 2022-01-08T19:34:00Z
-tags: elixir kubernetes libcluster
+tags: elixir kubernetes libcluster core-dns
 ---
 
 I'm still on the hunt for a way to connect Erlang nodes in a Kubernetes cluster by using pod names.

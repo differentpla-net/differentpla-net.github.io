@@ -1,6 +1,7 @@
 ---
 title: "A UPS post-mortem"
 date: 2019-02-21T10:48:07Z
+tags: post-mortem
 ---
 
 This morning, something electrical went wrong in my "network cabinet" (hall
