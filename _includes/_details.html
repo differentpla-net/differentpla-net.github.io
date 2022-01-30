@@ -12,7 +12,7 @@
         <a href="{{ site.discussions_link }}"
             data-bs-toggle="tooltip" data-bs-placement="top"
             title="Discuss this post">{% octicon comment-discussion height:16 %}</a>
-        <a href="{{ site.issues_link }}?title={{ page.title | url_encode }}"
+        <a href="{{ site.issues_link }}?title={{ page.title | url_encode }}&body=https://github.com/differentpla-net/differentpla-net.github.io/blob/master/{{ page.path | url_encode }}"
             data-bs-toggle="tooltip" data-bs-placement="top"
             title="Report a problem with this post">{% octicon bug height:16 %}</a>
     </span>
