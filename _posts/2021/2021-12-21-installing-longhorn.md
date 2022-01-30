@@ -43,6 +43,12 @@ longhorn (default)   driver.longhorn.io      Delete          Immediate          
 local-path           rancher.io/local-path   Delete          WaitForFirstConsumer   false                  20h
 ```
 
+<div class="callout callout-warning" markdown="span">
+Restarting a node (to install Ubuntu updates, e.g.) causes the `local-path` storage class to be re-registered as the default.
+See [this issue](https://github.com/k3s-io/k3s/issues/3441). Consider disabling it entirely, or just be aware that occasionally
+you'll get `Internal error occurred: 2 default StorageClasses were found` errors, and you'll have to patch it again.
+</div>
+
 ## User Interface
 
 The Longhorn frontend is accessible through a ClusterIP endpoint:
