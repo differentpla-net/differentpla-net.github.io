@@ -138,12 +138,36 @@ a.anchorlink {
     border-radius: .25rem;
 }
 
-.callout-info {
+.callout-primary {
     border-left-color: var(--main-color);
+}
+
+.callout-secondary {
+    border-left-color: #748287;
+}
+
+.callout-success {
+    border-left-color: #badbcc;
+}
+
+.callout-danger {
+    border-left-color: #f5c2c7;
 }
 
 .callout-warning {
     border-left-color: #ffecb5;
+}
+
+.callout-info {
+    border-left-color: var(--main-color);
+}
+
+.callout-light {
+    border-left-color: #f2f3f5;
+}
+
+.callout-dark {
+    border-left-color: #bcbebf;
 }
 
 .alert-light {
