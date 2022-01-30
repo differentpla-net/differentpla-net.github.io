@@ -44,3 +44,7 @@ sudo shutdown -r now
 ```
 
 To save myself a bunch of typing, I mostly did the above by using `tmux`, incidentally.
+
+<div class="callout callout-info" markdown="span">
+**Update:** I've since [replaced Raspbian with Ubuntu]({% post_url 2021/2021-12-20-raspi-ubuntu %}), for 64-bit goodness.
+</div>

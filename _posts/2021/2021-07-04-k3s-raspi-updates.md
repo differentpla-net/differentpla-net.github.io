@@ -8,7 +8,7 @@ tags: k3s raspberry-pi
 ---
 
 About 2 years ago, I spent some time messing around with k3s on a cluster made
-from 5x _Raspberry Pi 2 Model B_ nodes.
+from [5x Raspberry Pi 2 Model B]({% post_url 2020/2020-02-06-k3s-raspi-hardware %}) nodes.
 
 I'm rebuilding it with 5x _Raspberry Pi 4 Model B (8GB)_ nodes.
 

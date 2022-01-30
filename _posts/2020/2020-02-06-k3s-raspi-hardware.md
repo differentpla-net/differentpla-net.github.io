@@ -18,3 +18,7 @@ I had a bunch of hardware lying around from an earlier abandoned side project:
 - 1x medium Ethernet cable, connected to the Netgear GS116E under my desk.
 - A USB keyboard (didn't need it).
 - A monitor (didn't need it).
+
+<div class="callout callout-info" markdown="span">
+**Update:** I've since rebuilt the cluster with [RPi 4 nodes]({% post_url 2021/2021-07-04-k3s-raspi-updates %})
+</div>
