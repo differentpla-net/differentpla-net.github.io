@@ -16,34 +16,15 @@ I'd like to run it in a separate namespace:
 $ kubectl create namespace docker-registry
 ```
 
-## TLS
+## Create certificates
 
-Rather than [use an insecure registry]({% post_url 2021/2021-12-16-k3s-docker-registry-insecure %}), we should create a TLS certificate. Because OpenSSL sucks, I'm using [an Elixir script](https://github.com/rlipscombe/elixir-certs) that uses the 'x509' library.
+Rather than [use an insecure registry]({% post_url 2021/2021-12-16-k3s-docker-registry-insecure %}), we should create a TLS certificate. Because OpenSSL sucks, I'm using [an Elixir script]({% post_url 2021/2021-12-21-elixir-certs %}) that uses the 'x509' library.
 
-### Create root CA
+Read that post for instructions for creating the root CA and installing it. Or use OpenSSL. You do you.
 
-```
-./certs self-signed \
-    --out-cert k3s-ca.crt --out-key k3s-ca.key \
-    --template root-ca \
-    --subject "/C=GB/L=London/O=differentpla.net/CN=differentpla.net k3s CA"
-```
+## Restart services
 
-We'll be using the root CA for other certificates in future, so the certificate and key need to be copied somewhere safe.
-
-### Install root CA
-
-You need to do the following on every node (and on any other host that needs to push to the registry):
-
-```
-sudo mkdir -p /usr/local/share/ca-certificates/differentpla.net
-sudo cp k3s-ca.crt /usr/local/share/ca-certificates/differentpla.net/differentpla.net_K3S_CA.crt
-sudo update-ca-certificates
-```
-
-### Restart services
-
-Locally, restart the docker service:
+Once you've installed the root certificate, you need to restart the docker service:
 
 ```
 sudo systemctl restart docker
