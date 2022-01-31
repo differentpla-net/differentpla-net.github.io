@@ -1,7 +1,7 @@
 :root {
     --light-border-color: #dee2e6;
     --code-color: #008080;
-    --main-color: #008cba; /* given */
+    --main-color: #008cba;
 }
 
 .blog-navbar {
@@ -143,23 +143,23 @@ a.anchorlink {
 }
 
 .callout-secondary {
-    border-left-color: #748287;
+    border-left-color: #185977;
 }
 
 .callout-success {
-    border-left-color: #badbcc;
+    border-left-color: #45c945;
 }
 
 .callout-danger {
-    border-left-color: #f5c2c7;
+    border-left-color: #d9534f;
 }
 
 .callout-warning {
-    border-left-color: #ffecb5;
+    border-left-color: #f0ad4e;
 }
 
 .callout-info {
-    border-left-color: var(--main-color);
+    border-left-color: #5bc0de;
 }
 
 .callout-light {
