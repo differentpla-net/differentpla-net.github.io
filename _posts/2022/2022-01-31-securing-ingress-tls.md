@@ -95,4 +95,4 @@ time="2022-01-31T18:53:20Z" level=error msg="Error configuring TLS: secret whoam
 
 ## Links
 
-- <https://kubernetes.io/docs/concepts/services-networking/ingress/tls>
+- <https://kubernetes.io/docs/concepts/services-networking/ingress#tls>
