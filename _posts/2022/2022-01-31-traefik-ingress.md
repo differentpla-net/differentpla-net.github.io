@@ -40,8 +40,63 @@ IP: 10.42.3.140
 
 Yeah; that works.
 
-## Next steps
+## Host-based routing?
 
-- Host-based routing. Presumably some [DNS-fettling]({% post_url 2021/2021-12-29-coredns %}) is required.
-- TLS termination with Traefik, rather than the individual services.
-  - Investigate `cert-manager`.
+Can we persuade `whoami.k3s.differentpla.net` to work as well?
+
+### Configure DNS
+
+We'll need to edit our [custom DNS]({% post_url 2021/2021-12-29-coredns %}):
+
+```
+kubectl --namespace k3s-dns edit configmap k3s-dns
+```
+
+```
+data:
+...
+  NodeHosts: |
+    192.168.28.10 whoami.k3s.differentpla.net
+...
+```
+
+You can specify multiple hosts for the same IP address by putting them on separate lines.
+
+Note: It can take up to 15 seconds for the file to be reloaded.
+
+### Edit the Ingress
+
+This manifest defines a global `/whoami` path route and a `whoami.k3s.differentpla.net` host route:
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: whoami
+  namespace: whoami
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /whoami
+        pathType: Prefix
+        backend:
+          service:
+            name: whoami
+            port:
+              number: 80
+  - host: whoami.k3s.differentpla.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: whoami
+            port:
+              number: 80
+```
