@@ -1,5 +1,5 @@
 ---
-title: "Ingress"
+title: "Traefik Ingress"
 date: 2022-01-31T08:46:00Z
 tags: ingress k3s traefik
 ---
