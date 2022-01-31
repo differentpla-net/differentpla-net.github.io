@@ -2,6 +2,8 @@
 title: "Traefik Ingress"
 date: 2022-01-31T08:46:00Z
 tags: ingress k3s traefik
+layout: series
+series: k3s
 ---
 
 Rather than use up another LoadBalancer IP address for ArgoCD (and mess around with TLS), let's talk about using an
