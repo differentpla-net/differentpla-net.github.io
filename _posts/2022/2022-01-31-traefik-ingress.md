@@ -6,8 +6,9 @@ layout: series
 series: k3s
 ---
 
-Rather than use up another LoadBalancer IP address for ArgoCD (and mess around with TLS), let's talk about using an
-Ingress. It's entirely possible that I can convert docker and Gitea to use one as well.
+I'm in the middle of installing ArgoCD (blog post will appear later). Rather than use up another LoadBalancer IP address
+for it (and mess around with TLS), let's talk about using an Ingress. It's entirely possible that I can convert the
+previously-installed docker registry and Gitea to use one as well.
 
 There's a really good diagram of how Traefik works [here](https://bryanbende.com/development/2021/05/08/k3s-raspberry-pi-ingress).
 
@@ -55,6 +56,7 @@ kubectl --namespace k3s-dns edit configmap k3s-dns
 ```
 
 ```
+...
 data:
 ...
   NodeHosts: |
@@ -64,11 +66,11 @@ data:
 
 You can specify multiple hosts for the same IP address by putting them on separate lines.
 
-Note: It can take up to 15 seconds for the file to be reloaded.
+Note: It can take up to 15 seconds for CoreDNS to reload the file.
 
 ### Edit the Ingress
 
-This manifest defines a global `/whoami` path route and a `whoami.k3s.differentpla.net` host route:
+This manifest defines a global `/whoami` path route _and_ a `whoami.k3s.differentpla.net` host route:
 
 ```yaml
 apiVersion: networking.k8s.io/v1
