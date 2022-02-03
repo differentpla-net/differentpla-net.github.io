@@ -4,7 +4,7 @@ short_title: "Private Docker Registry"
 date: 2021-12-10T09:49:00Z
 layout: series
 series: k3s
-tags: k3s raspberry-pi
+tags: k3s raspberry-pi docker
 ---
 
 {% capture info %}

@@ -4,7 +4,7 @@ short_title: "Using an Insecure Docker Registry"
 date: 2021-12-16T16:16:00Z
 layout: series
 series: k3s
-tags: k3s raspberry-pi
+tags: k3s raspberry-pi docker
 ---
 
 Let's see if we can push an image to our new Docker Registry.
