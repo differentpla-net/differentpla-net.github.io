@@ -105,7 +105,7 @@ h3[id]:hover a.anchorlink:before,
 h4[id]:hover a.anchorlink:before,
 h5[id]:hover a.anchorlink:before,
 h6[id]:hover a.anchorlink:before {
-  content: "\00A7"; /* section sign */
+  content: "#";
   color: var(--main-color);
   font-size: smaller;
 }
