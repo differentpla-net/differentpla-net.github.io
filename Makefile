@@ -23,4 +23,4 @@ proof:
 	htmlproofer --disable-external --empty-alt-ignore ./_site/
 
 serve:
-	jekyll serve --livereload
+	jekyll serve --future --unpublished --livereload

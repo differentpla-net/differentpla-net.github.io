@@ -20,6 +20,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            $.timeago.settings.allowFuture = true;
             $('.timeago').timeago();
 
             $('[data-bs-toggle="tooltip"]').tooltip();
