@@ -22,5 +22,7 @@ proof:
 	jekyll build
 	htmlproofer --disable-external --empty-alt-ignore ./_site/
 
+# GitHub Pages doesn't use `--future` when generating your site, but neither does it re-generate the site
+# when a post from the future becomes a post from the present. So you'll need to trigger a rebuild, somehow.
 serve:
 	jekyll serve --future --unpublished --livereload
