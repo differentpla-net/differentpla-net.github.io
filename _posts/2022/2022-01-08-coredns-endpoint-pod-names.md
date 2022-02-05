@@ -113,8 +113,8 @@ Seems to work.
 - You're going to need to set the node name to the long form anyway.
   - By default, k8s pods only have a short name, so `hostname -f` returns the same as `hostname`.
   - You can force long names by using a StatefulSet. We don't want to do this.
-  - Alternatively, set the `subdomain` field in the Deployment.
-- libcluster doesn't know anything about this, so you'll need to use something else.
+  - Alternatively, set the `subdomain` field in the Deployment, giving `cluster-demo-559f5454df-v8wrd.cluster-demo.cluster-demo.svc.cluster.local`.
+- libcluster doesn't know anything about `endpoint_pod_names` or `subdomain`, so you'll need to use something else.
   - That's not _that_ big a deal; libcluster's convenient, but not necessary.
 
 ## Alternatives
