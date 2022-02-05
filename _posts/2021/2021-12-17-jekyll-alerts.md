@@ -53,10 +53,10 @@ For updated timetables, click [here]({% post_url 2021/2021-12-17-jekyll-alerts %
 
 ## Icons
 
-The icons are from the [Bootstrap Icons](https://icons.getbootstrap.com/). They're used like this:
+The icons are from the [Octicons](https://github.com/primer/octicons). With the `jekyll-octicons` plugin, they can be used like this:
 
-```html
-<i class="bi bi-exclamation-triangle-fill"></i>
+```liquid
+{% raw %}{% octicon alert height:24 %}{% endraw %}
 ```
 
 I tried to allow overriding the icon, but couldn't get it to work.
