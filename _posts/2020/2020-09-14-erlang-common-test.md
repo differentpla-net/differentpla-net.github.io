@@ -1,7 +1,7 @@
 ---
 title: "Using Erlang's Common Test for System Testing"
 date: 2020-09-14T18:21:52Z
-tags: erlang testing
+tags: erlang testing electric-imp
 ---
 
 At Electric Imp (now part of Twilio), my team uses Erlang's Common Test for driving our system tests. These are (almost-)end-to-end tests that exercise (almost) the whole platform.
