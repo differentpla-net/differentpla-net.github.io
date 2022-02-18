@@ -1,6 +1,7 @@
 ---
 title: "Package python was not found in the pkg-config search path when using scons"
 date: 2020-09-28T17:49:52Z
+tags: python scons
 ---
 
 After upgrading to Ubuntu 20.04 at the weekend (this is not strictly relevant),
