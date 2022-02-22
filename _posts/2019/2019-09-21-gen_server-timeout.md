@@ -1,6 +1,6 @@
 ---
 title: Debugging gen_server timeouts
-date: 2019-09-21 15:01
+date: 2019-09-21T15:01:00Z
 tags: erlang
 ---
 
