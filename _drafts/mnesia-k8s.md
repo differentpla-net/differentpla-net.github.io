@@ -1,0 +1,2 @@
+- <https://medium.com/@wttj_tech/elixir-how-to-distribute-mnesia-between-multiple-nodes-cb7c851b1ed1>
+- <https://www.welcometothejungle.com/en/articles/redis-mnesia-distributed-database>
