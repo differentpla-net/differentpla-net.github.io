@@ -1,0 +1,4 @@
+- Databases?
+  - Everyone seems to be "don't use k8s for your database", but it's gotta go _somewhere_.
+- Redis sentinel in a k8s cluster. How reliable is it?
+  - Can we ignore it from the pov of a client, if it's all hidden behind a service?
