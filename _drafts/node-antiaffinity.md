@@ -1,0 +1,1 @@
+- Node anti-affinity: how do I dissuade a pod from being on the same node as another pod?
