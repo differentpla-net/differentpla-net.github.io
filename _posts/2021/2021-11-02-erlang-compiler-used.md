@@ -43,5 +43,8 @@ $ find ~/.kerl/erlangs/ -name 'compiler-*' | sort
 If you've got a local `erlang/otp` repo, you can use the following:
 
 ```bash
-git tag | grep "^OTP-" | while read -r tag ; do vsn="$(git show "$tag:lib/compiler/vsn.mk")" ; echo "$tag: $vsn" ; done
+git tag | grep "^OTP-" | while read -r tag ; do vsn="$(git show "${tag}:lib/compiler/vsn.mk")" ; echo "$tag: $vsn" ; done
 ```
+
+Alternatively, you could use `git blame lib/compiler/doc/src/notes.xml` to see which commit added the change notes.
+From there, you can use `git tag --contains <commit>`.
