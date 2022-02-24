@@ -1,7 +1,7 @@
 ---
 title: "Elixir Livebook on k3s"
 date: 2022-02-23T20:42:00Z
-tags: k3s raspberry-pi elixir livebook
+tags: k3s elixir livebook
 layout: series
 series: k3s
 ---
