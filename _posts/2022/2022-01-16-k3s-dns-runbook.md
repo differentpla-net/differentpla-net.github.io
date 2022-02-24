@@ -69,7 +69,7 @@ I considered changing the forwarding rule to use the name, rather than the IP ad
 
 ```
 # This won't work.
-server=/k3s.differentpla.net/192.168.28.181#32053
+server=/k3s.differentpla.net/rpi401#32053
 ```
 
 But it doesn't work:
