@@ -85,7 +85,7 @@ arm64
 ```bash
 sudo apt-get install \
     --no-install-recommends \
-    vim-nox silversearcher-ag
+    vim-nox silversearcher-ag jq gron
 sudo update-alternatives --set editor /usr/bin/vim.nox
 
 mkdir "$HOME/bin"
