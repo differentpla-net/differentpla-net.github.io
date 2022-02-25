@@ -335,4 +335,4 @@ My router is set up for "Stateless" RA mode, so the `fe80::...` nameserver is ap
 ## Using a custom override
 
 As noted above, CoreDNS supports importing custom zones by placing files in the `/etc/coredns/custom` directory. I'll
-cover this in a separate post.
+cover this in a [separate post]({% post_url 2022/2022-02-25-coredns-custom %}).
