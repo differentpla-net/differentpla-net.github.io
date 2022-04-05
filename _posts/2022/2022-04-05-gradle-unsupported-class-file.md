@@ -40,14 +40,3 @@ Edit `android\gradle\wrapper\gradle-wrapper.properties`, and change the last lin
 ```
 distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-all.zip
 ```
-
-## Unresolved references
-
-That leaves a bunch of "problems":
-
-```
-Unresolved reference: NonNull
-Unresolved reference: io
-Unresolved reference: FlutterPlugin
-...
-```
