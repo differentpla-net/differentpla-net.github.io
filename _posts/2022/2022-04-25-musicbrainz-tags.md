@@ -4,8 +4,8 @@ date: 2022-04-25T14:13:00Z
 tags: musicbrainz
 ---
 
-I noticed that some of my music collection doesn't have the correct album art. While investigating, I discovered
-something confusing about the MusicBrainz tags.
+I noticed that some of my music collection doesn't have the correct album art. While investigating, I discovered an
+unrelated problem with the MusicBrainz tags.
 
 Because I'm old-school, I rip physical CDs to .FLAC files, tag the FLAC files with [MusicBrainz
 Picard](https://picard.musicbrainz.org/), and then transcode those to .MP3 files using a `Rakefile` and `ffmpeg`. I
@@ -20,7 +20,9 @@ Using the "Lookup" function on an arbitrary file in Picard correctly identified 
 discrepancy: The track had `MUSICBRAINZ_ALBUMID` tags, and Picard was suggesting the addition of `MusicBrainz Album Id`
 tags.
 
-Some quick searching on the internet later, and I found this: <https://community.metabrainz.org/t/what-tag-names-are-correct/16998>, which pointed me to <https://picard-docs.musicbrainz.org/en/appendices/tag_mapping.html>, which lays out the cause:
+Some quick searching on the internet later, and I found this:
+<https://community.metabrainz.org/t/what-tag-names-are-correct/16998>, which pointed me to
+<https://picard-docs.musicbrainz.org/en/appendices/tag_mapping.html>, which lays out the cause:
 
 - For MP3 files (i.e. ID3v2 tags), Picard uses `TXXX: MusicBrainz Album Id` tags.
 - For FLAC files (i.e. Vorbis tags), Picard uses `MUSICBRAINZ_ALBUMID` tags.
@@ -29,7 +31,8 @@ My transcoding script -- which is [here](https://gist.github.com/rlipscombe/6f1a
 uses `ffmpeg` to transcode each FLAC file into an MP3 file. It would seem that ffmpeg just converts the Vorbis tags to
 `TXXX` ID3v2 tags. Which makes sense -- why would it know that MusicBrainz uses different names?
 
-There doesn't _seem_ to be a way to fine-tune the behaviour of the `-map_metadata` option to `ffmpeg` (which is apparently implied by default, since I don't use it explicitly), so my options seem to be as follows:
+There doesn't _seem_ to be a way to fine-tune the behaviour of the `-map_metadata` option to `ffmpeg` (which is
+apparently implied by default, since I don't use it explicitly), so my options seem to be as follows:
 
 1. Accept the situation; my MP3 files won't be properly grouped by album, etc., as far as MusicBrainz is concerned.
 2. Use something other than ffmpeg to transcode the files.
