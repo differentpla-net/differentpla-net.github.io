@@ -1,6 +1,6 @@
 ---
 title: "Flutter ListView selection on nVidia Shield"
-date: 2022-05-10T10:55:00Z
+date: 2022-05-10T09:55:00Z
 tags: flutter
 ---
 

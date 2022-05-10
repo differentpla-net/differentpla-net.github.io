@@ -1,6 +1,6 @@
 ---
 title: "Enable Network Debugging on nVidia Shield"
-date: 2022-05-10T10:43:00Z
+date: 2022-05-10T09:43:00Z
 tags: android
 ---
 
