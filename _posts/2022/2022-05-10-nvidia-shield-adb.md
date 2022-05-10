@@ -8,9 +8,11 @@ Here's how to debug your apps over the network on an nVidia Shield device.
 
 On the Shield:
 
-1. Navigate to `Settings` / `Device Preferences` / `Developer options` (it's right at the bottom).
-2. `Enable developer options`.
-3. Under `Debugging`, enable `Network Debugging`. Make a note of the IP address, e.g. `192.168.1.221`.
+1. Navigate to `Settings` / `Device Preferences` / `About`.
+2. Scroll down to Build and press select 7 times. This unhides the developer options.
+3. Navigate to `Settings` / `Device Preferences` / `Developer options` (it's right at the bottom).
+4. `Enable developer options`.
+5. Under `Debugging`, enable `Network Debugging`. Make a note of the IP address, e.g. `192.168.1.221`.
 
 On your PC:
 
