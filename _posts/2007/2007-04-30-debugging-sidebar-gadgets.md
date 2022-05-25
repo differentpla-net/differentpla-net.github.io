@@ -21,17 +21,20 @@ Then, to debug your gadget:
 4.  Click on the one you want to debug.
 5.  Note that the **Attach to** label will show you which debugger will be invoked (normally it's the Script one).
 6.  Click the **Attach** button.
-    ![[img_assist|nid=179|title=|desc=|link=none|align=left|width=640|height=444]](/broken-image-link)
 
-    Once you've done this, you should be able to place breakpoints in your Javascript and then step through your code.
+![[img_assist|nid=179|title=|desc=|link=none|align=left|width=640|height=444]](/broken-image-link)
 
-    If you want to debug your gadget's startup code, you'll need to do something like this:
+Once you've done this, you should be able to place breakpoints in your Javascript and then step through your code.
 
-    <pre>function onLoad()
-    {
-        debugBreak;
+If you want to debug your gadget's startup code, you'll need to do something like this:
 
-        // Rest of code goes here
-    }</pre>
+```js
+function onLoad()
+{
+    debugBreak;
 
-    When the scripting engine reaches the `debugBreak;` line, you'll get a message box saying "A Runtime Error has occurred. Do you wish to Debug?". If you click on the Yes button, you can debug using Visual Studio. Note that you'll have to use the "Set Next Statement" command to skip over the offending statement.
+    // Rest of code goes here
+}
+```
+
+When the scripting engine reaches the `debugBreak;` line, you'll get a message box saying "A Runtime Error has occurred. Do you wish to Debug?". If you click on the Yes button, you can debug using Visual Studio. Note that you'll have to use the "Set Next Statement" command to skip over the offending statement.
