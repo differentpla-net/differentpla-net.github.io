@@ -3,7 +3,7 @@ title: "Asus A7V Linux Box"
 date: 2000-12-08T00:02:00.000Z
 tags: hardware pc-builds
 ---
-Having been so impressed with the speed of Linux on the A7V (see [here]({% post_url 2000/2000-12-08-asus-a7v-linux-box %})), I accidentally slipped while in [Cambridge Computers](http://www.cambridge-computers.com/) and bought another one.
+Having been so impressed with the speed of Linux on the A7V (see [here]({% post_url 2000/2000-12-08-asus-a7v-windows-box %})), I accidentally slipped while in [Cambridge Computers](http://www.cambridge-computers.com/) and bought another one.
 
 It installed well enough. There were just two problems:
 
