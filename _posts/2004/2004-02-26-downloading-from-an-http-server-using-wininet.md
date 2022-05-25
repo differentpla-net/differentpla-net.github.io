@@ -162,4 +162,4 @@ while (InternetQueryDataAvailable(hRequest, &dwBytesAvailable, 0, 0))
 ```
 
 Note that the `InternetQueryDataAvailable` function blocks until data is available or an error occurs. Full source code
-for this article is [here](/node/view/130).
+for this article is [here](https://github.com/rlipscombe/WinInetGet).
