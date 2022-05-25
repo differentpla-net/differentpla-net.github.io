@@ -10,7 +10,7 @@ tags: csharp wizard windows-forms
 ---
 Oddly, the Windows Forms libraries don't provide any support for writing wizards. Here's one way to do it.
 
-**Update: Source code now lives at [CodePlex](/winformswizard.codeplex.com)**; please post comments, issues, etc., there instead.
+**Update: Source code now lives at on [GitHub](https://github.com/rlipscombe/Wizard-in-CSharp)**; please post comments, issues, etc., there instead.
 
 _This is part one; part two (which includes source code) is [here]({% post_url 2005/2005-02-26-implementing-a-wizard-in-csharp-part-2 %})._
 

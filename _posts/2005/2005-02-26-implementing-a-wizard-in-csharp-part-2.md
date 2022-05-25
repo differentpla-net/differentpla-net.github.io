@@ -8,7 +8,7 @@ tags: csharp wizard windows-forms
 ---
 In this installment (see [here]({% post_url 2005/2005-02-26-implementing-a-wizard-in-csharp %}) for the previous installment), we'll be fixing a few things and making the whole thing prettier.
 
-**Update: Source code now lives at [CodePlex](/winformswizard.codeplex.com)**; please post comments, issues, etc., there instead.
+**Update: Source code now lives on [GitHub](https://github.com/rlipscombe/Wizard-in-CSharp)**; please post comments, issues, etc., there instead.
 
 ## Implementing the Cancel Button
 
@@ -153,4 +153,4 @@ And that's much prettier.
 
 And that's about it. Source code is attached.
 
-**Update:** Source code now lives [at CodePlex](/winformswizard.codeplex.com/).
+**Update:** Source code now lives on [GitHub](https://github.com/rlipscombe/Wizard-in-CSharp).
