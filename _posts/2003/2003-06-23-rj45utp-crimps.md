@@ -4,26 +4,16 @@ date: 2003-06-23T15:16:00.000Z
 ---
 (Seen from the bottom of the connector, so that the tab is facing away from you, and the gold pins are facing towards you) Pin 1 is on the left. Pin 8 is on the right.
 
-<table>
-<tbody>
-<tr>
-<th>586A</th>
+## 568A
 
-<th>586B</th>
+![UTP Crimp: 568A. G/ G O/ B B/ O Br/ Br](/images/2003/2003-06-23-rj45utp-crimps/utp-crimp-568a.gif)
 
-</tr>
+## 568B
 
-<tr>
-<td>![[img_assist|nid=34|title=utp-crimp-586a.gif|desc=UTP Crimp: 586A. G/ G O/ B B/ O Br/ Br|link=none|align=left|width=233|height=326]](/broken-image-link)</td>
+![UTP Crimp: 568B. O/ O G/ B B/ G Br/ Br](/images/2003/2003-06-23-rj45utp-crimps/utp-crimp-568b.gif)
 
-<td>![[img_assist|nid=35|title=utp-crimp-586b.gif|desc=UTP Crimp: 586B. O/ O G/ B B/ G Br/ Br|link=none|align=left|width=233|height=326]](/broken-image-link)</td>
+If you're making a normal (straight-through) cable, pick either 568A or 568B and make sure that both ends are the same.
+I usually pick 568B.
 
-</tr>
-
-</tbody>
-
-</table>
-
-If you're making a normal (straight-through) cable, pick either 586A or 586B and make sure that both ends are the same. I usually pick 586B.
-
-If you're making a cross-over cable, one end should be 586A and the other end should be 586B.
+If you're making a cross-over cable, one end should be 568A and the other end should be 568B. Many network devices today
+support auto-crossover.
