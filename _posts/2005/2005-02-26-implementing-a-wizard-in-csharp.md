@@ -10,19 +10,20 @@ tags: csharp wizard windows-forms
 ---
 Oddly, the Windows Forms libraries don't provide any support for writing wizards. Here's one way to do it.
 
-**Update: Source code now lives at [CodePlex](http://winformswizard.codeplex.com)**; please post comments, issues, etc., there instead.
+**Update: Source code now lives at [CodePlex](/winformswizard.codeplex.com)**; please post comments, issues, etc., there instead.
 
-_This is part one; part two (which includes source code) is [here]({% post_url 2005/2005-02-26-implementing-a-wizard-in-c-part-2 %})._
+_This is part one; part two (which includes source code) is [here]({% post_url 2005/2005-02-26-implementing-a-wizard-in-csharp-part-2 %})._
 
-The design is based on the one I used for implementing a [paged Options dialog](/content/2004/10/implementing-a-paged-options-dialog). Essentially, each of the pages is implemented as a user control, and they live on a form.
+The design is based on the one I used for implementing a [paged Options dialog]({% post_url 2004/2004-10-24-implementing-a-paged-options-dialog %}). Essentially, each of the pages is implemented as a user control, and they live on a form.
 
 First, we start with a new C# application; this is our test app:
 
-![[img_assist|align=center|nid=5|width=640|height=439]](/broken-image-link)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/creating-wizard-test-app.png)
 
 The first thing I tend to do with C# apps these days is move **Main** somewhere else, the way that Visual Studio 2005 does, so we'll have a class called **Program** that looks like this:
 
-<pre>using System;
+```c#
+using System;
 using System.Windows.Forms;
 
 namespace TestWizard
@@ -39,7 +40,8 @@ namespace TestWizard
             Application.Run(wizard);
         }
     }
-}</pre>
+}
+```
 
 Now we've got a **Program.cs** file, we don't need the **Form1.cs** file, so we'll delete it. Obviously, this won't compile, because we've not implemented the **WizardSheet** class nor any of the pages.
 
@@ -47,17 +49,17 @@ Now we've got a **Program.cs** file, we don't need the **Form1.cs** file, so we'
 
 Our next step is to create a library project which will implement the wizard classes. Right click on the solution in Solution Explorer and select Add / New Project:
 
-![[img_assist|nid=7|width=595|height=640]](/broken-image-link)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/create-library-project.png)
 
 We want a Windows Control Library, called "Wizard.UI":
 
-![[img_assist|nid=8|width=640|height=436]](/broken-image-link)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/wizard-ui-control-library.png)
 
 By default, Visual Studio puts a custom user control into the project. We don't want it, so we'll delete it.
 
 What we do want is a Windows Form, so we'll create that. It's called **WizardSheet**:
 
-![[img_assist|nid=9|width=640|height=473]](/broken-image-link)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/add-wizard-sheet.png)
 
 We need to fix up a few things before it'll compile. First we need to add a reference from our TestWizard project to our Wizard.UI project, and then we need to add a "using" statement.
 
@@ -65,13 +67,13 @@ We also need to implement our 3 page classes. Our next step is to create the **W
 
 **WizardPage** is a User Control class:
 
-![[img_assist|nid=10|width=640|height=473]](/broken-image-link)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/add-wizard-page.png)
 
 We don't bother adding any UI elements to it, so we just end up with a boring grey square. The interesting UI will be added in the other two classes. We'll add these as "Inherited User Control" classes:
 
-![[img_assist|nid=11|width=640|height=473]](/broken-image-link)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/missing-1.png)
 
-![[img_assist|nid=12|width=640|height=356]](/broken-image-link)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/missing-2.png)
 
 Again, for the moment, we'll leave these as boring grey squares. At this point, however, we can create our three missing **WelcomePage**, **MiddlePage** and **CompletePage** classes.
 
@@ -79,12 +81,14 @@ We add these to the "TestWizard" project as inherited user controls. **WelcomePa
 
 Now we need to implement "Pages", as in "wizard.Pages.Add":
 
-<pre>private IList _pages = new ArrayList();
+```c#
+private IList _pages = new ArrayList();
 
 public IList Pages
 {
     get { return _pages; }
-}</pre>
+}
+```
 
 Hurrah. It compiles. Doesn't do anything yet, though.
 
@@ -94,7 +98,7 @@ We need to put some buttons on the wizard. We need 4 buttons: Back, Next, Finish
 
 The 4 buttons should have their **Anchor** property set to "Bottom, Right". That should all look like this:
 
-![[img_assist|nid=13|width=640|height=299]](/broken-image-link)
+![[img_assist|nid=13|width=640|height=299]](/broken-image-link-13)
 
 ## The Etched Line
 
@@ -106,7 +110,8 @@ Now, if we add a reference from **Wizard.UI** to **Wizard.Controls**, we can dro
 
 We'll need to implement the drawing behaviour, which is easy:
 
-<pre>Color _darkColor = SystemColors.ControlDark;
+```c#
+Color _darkColor = SystemColors.ControlDark;
 Color _lightColor = SystemColors.ControlLightLight;
 
 protected override void OnPaint(PaintEventArgs e)
@@ -120,31 +125,37 @@ protected override void OnPaint(PaintEventArgs e)
 
     e.Graphics.DrawLine(darkPen, 0, 0, this.Width, 0);
     e.Graphics.DrawLine(lightPen, 0, 1, this.Width, 1);
-}</pre>
+}
+```
 
 To get it to redraw properly when resized, we need to call **Refresh**:
 
-<pre>protected override void OnResize(EventArgs e)
+```c#
+protected override void OnResize(EventArgs e)
 {
     base.OnResize (e);
 
     Refresh();
-}</pre>
+}
+```
 
 One small wrinkle is that we don't want our control to appear in the tab order for the dialog, so we need to add a little snippet to our constructor:
 
-<pre>public EtchedLine()
+```c#
+public EtchedLine()
 {
     // This call is required by the Windows.Forms Form Designer.
     InitializeComponent();
 
     // Avoid receiving the focus.
     SetStyle(ControlStyles.Selectable, false);
-}</pre>
+}
+```
 
 We'll also make the colours editable in the designer. The defaults will generally be OK, though:
 
-<pre>[Category("Appearance")]
+```c#
+[Category("Appearance")]
 Color DarkColor
 {
 
@@ -167,7 +178,8 @@ Color LightColor
         _lightColor = value;
         Refresh();
     }
-}</pre>
+}
+```
 
 Now, if we look at the form in the designer, it's got a natty etched line running across it above the buttons:
 
@@ -183,7 +195,8 @@ Note that this means that your pages might be resized even if the wizard itself 
 
 This is implemented in the **Load** event:
 
-<pre>private void WizardSheet_Load(object sender, System.EventArgs e)
+```c#
+private void WizardSheet_Load(object sender, System.EventArgs e)
 {
     if (_pages.Count != 0)
     {
@@ -216,32 +229,38 @@ private void ResizeToFit()
 
     Size newSize = maxPageSize + extraSize;
     this.Size = newSize;
-}</pre>
+}
+```
 
 We'll stub out the two missing functions:
 
-<pre>public void SetActivePage(int pageIndex)
+```c#
+public void SetActivePage(int pageIndex)
 {
 }
 
 public void SetWizardButtons(WizardButtons buttons)
 {
-}</pre>
+}
+```
 
 **WizardButtons** is an enum. It lives at namespace level:
 
-<pre>[Flags]
+```c#
+[Flags]
 public enum WizardButtons
 {
     None = 0x0000,
     Back = 0x0001,
     Next = 0x0002,
     Finish = 0x0004,
-}</pre>
+}
+```
 
 That compiles, so we can get on with implementing the **SetActivePage** method:
 
-<pre>public void SetActivePage(int pageIndex)
+```c#
+public void SetActivePage(int pageIndex)
 {
     if (pageIndex < 0 || pageIndex >= _pages.Count)
         throw new ArgumentOutOfRangeException("pageIndex");
@@ -267,17 +286,19 @@ private void SetActivePage(WizardPage newPage)
         if (page != newPage)
             page.Visible = false;
     }
-}</pre>
+}
+```
 
 To check that that's working properly, we need to throw a few controls on the three pages. A label control with the name of the page is fine.
 
 ## OnSetActive
 
-The next thing to do is to implement the Back, Next, Finish and Cancel buttons. We need to implement **SetWizardButtons**, and we probably ought to implement an **OnSetActive** method. Let's start with **OnSetActive**, which requires some changes (in bold) to the **SetActivePage** method as well:
+The next thing to do is to implement the Back, Next, Finish and Cancel buttons. We need to implement **SetWizardButtons**, and we probably ought to implement an **OnSetActive** method. Let's start with **OnSetActive**, which requires some changes to the **SetActivePage** method as well:
 
-<pre>private void SetActivePage(WizardPage newPage)
+```c#
+private void SetActivePage(WizardPage newPage)
 {
-    **WizardPage oldActivePage = _activePage;**
+    WizardPage oldActivePage = _activePage;     // CHANGE
 
     // If this page isn't in the Controls collection, add it.
     // This is what causes the Load event, so we defer
@@ -288,9 +309,10 @@ The next thing to do is to implement the Back, Next, Finish and Cancel buttons. 
     // Show this page.
     newPage.Visible = true;
 
-    **_activePage = newPage;**
+    // CHANGE vv
+    _activePage = newPage;
 
-    **// Allow the page to cancel this.
+    // Allow the page to cancel this.
     CancelEventArgs e = new CancelEventArgs();
     newPage.OnSetActive(e);
 
@@ -298,40 +320,46 @@ The next thing to do is to implement the Back, Next, Finish and Cancel buttons. 
     {
         newPage.Visible = false;
         _activePage = oldActivePage;
-    }**
+    }
+    // CHANGE ^^
 
     // Hide all of the other pages.
     foreach (WizardPage page in _pages)
     {
-        if (page != **_activePage**)
+        if (page != _activePage)     // CHANGE
             page.Visible = false;
     }
-}</pre>
+}
+```
 
 Note that we allow the page to cancel the event.
 
 Now we need to implement the **OnSetActive** function:
 
-<pre>[Category("Wizard")]
+```c#
+[Category("Wizard")]
 public event CancelEventHandler SetActive;
 
 public virtual void OnSetActive(CancelEventArgs e)
 {
     if (SetActive != null)
         SetActive(this, e);
-}</pre>
+}
+```
 
 This way, the derived classes can either override the virtual function, or they can handle the event. Note that the event is put into a "Wizard" category. We'll be adding other events to this category later.
 
-The other thing we do at this point is add a [DefaultEvent("SetActive")] attribute to the class. This means that when you double-click on the page in the designer, it will automatically add a handler for the **SetActive** event and allow you to edit it.
+The other thing we do at this point is add a `[DefaultEvent("SetActive")]` attribute to the class. This means that when you double-click on the page in the designer, it will automatically add a handler for the **SetActive** event and allow you to edit it.
 
 Now we can test this by handling the event in our three page classes:
 
-<pre>private void WelcomePage_SetActive(object sender,
+```c#
+private void WelcomePage_SetActive(object sender,
     System.ComponentModel.CancelEventArgs e)
 {
     SetWizardButtons(WizardButtons.Next);
-}</pre>
+}
+```
 
 The other pages are similar: **MiddlePage** has Back and Next buttons; **CompletePage** has Back and Finish buttons.
 
@@ -339,7 +367,8 @@ The other pages are similar: **MiddlePage** has Back and Next buttons; **Complet
 
 We need to implement the **WizardPage.SetWizardButtons** helper function:
 
-<pre>protected WizardSheet GetWizard()
+```c#
+protected WizardSheet GetWizard()
 {
     WizardSheet wizard = (WizardSheet)this.ParentForm;
     return wizard;
@@ -348,11 +377,13 @@ We need to implement the **WizardPage.SetWizardButtons** helper function:
 protected void SetWizardButtons(WizardButtons buttons)
 {
     GetWizard().SetWizardButtons(buttons);
-}</pre>
+}
+```
 
 And we need to implement that **WizardSheet.SetWizardButtons** function:
 
-<pre>internal void SetWizardButtons(WizardButtons buttons)
+```c#
+internal void SetWizardButtons(WizardButtons buttons)
 {
     // The Back button is simple.
     backButton.Enabled = ((buttons & WizardButtons.Back) != 0);
@@ -379,7 +410,8 @@ And we need to implement that **WizardSheet.SetWizardButtons** function:
 
         this.AcceptButton = nextButton;
     }
-}</pre>
+}
+```
 
 Note that this code also sets the **AcceptButton** value, so that pressing Enter will press the right button.
 
@@ -389,7 +421,8 @@ When the user presses the Next button, we need to let the page know. By default,
 
 It looks like this:
 
-<pre>private void nextButton_Click(object sender, System.EventArgs e)
+```c#
+private void nextButton_Click(object sender, System.EventArgs e)
 {
     // Figure out which page is next.
     int activeIndex = GetActiveIndex();
@@ -414,13 +447,15 @@ It looks like this:
 
     // Go to the new page.
     SetActivePage(wnea.NewPage);
-}</pre>
+}
+```
 
 First we figure out which page is next by default. Then we ask the current page to handle the event. It can cancel the event, in which case we'll stay where we were, or it can nominate a different page to go to.
 
 The **WizardPageEventArgs.cs** file looks like this:
 
-<pre>using System;
+```c#
+using System;
 using System.ComponentModel;
 
 namespace Wizard.UI
@@ -437,11 +472,13 @@ namespace Wizard.UI
     }
 
     public delegate void WizardPageEventHandler(object sender, WizardPageEventArgs e);
-}</pre>
+}
+```
 
 We need to implement **GetActiveIndex** as well:
 
-<pre>private int GetActiveIndex()
+```c#
+private int GetActiveIndex()
 {
     WizardPage activePage = GetActivePage();
 
@@ -457,22 +494,26 @@ We need to implement **GetActiveIndex** as well:
 private WizardPage GetActivePage()
 {
     return _activePage;
-}</pre>
+}
+```
 
 We need to implement the **OnWizardNext** function:
 
-<pre>[Category("Wizard")]
+```c#
+[Category("Wizard")]
 public event WizardPageEventHandler WizardNext;
 
 public virtual void OnWizardNext(WizardPageEventArgs e)
 {
     if (WizardNext != null)
         WizardNext(this, e);
-}</pre>
+}
+```
 
 And we need to implement the overload of **SetActivePage** that takes a page name. It looks like this:
 
-<pre>private WizardPage FindPage(string pageName)
+```c#
+private WizardPage FindPage(string pageName)
 {
     foreach (WizardPage page in _pages)
     {
@@ -491,7 +532,8 @@ private void SetActivePage(string newPageName)
         throw new Exception(string.Format("Can't find page named {0}", newPageName));
 
     SetActivePage(newPage);
-}</pre>
+}
+```
 
 Note that sometimes, when you create a new wizard page, the **Name** property doesn't take immediately. This appears to be a (minor) bug in the designer. If you make a change to the page, it seems to work OK.
 
@@ -499,7 +541,8 @@ Note that sometimes, when you create a new wizard page, the **Name** property do
 
 As you'd probably expect, the code for the Back button is almost identical to the code for the Next button. So much so that we can do a little refactoring and end up with this:
 
-<pre>private WizardPageEventArgs PreChangePage(int delta)
+```c#
+private WizardPageEventArgs PreChangePage(int delta)
 {
     // Figure out which page is next.
     int activeIndex = GetActiveIndex();
@@ -536,7 +579,8 @@ private void backButton_Click(object sender, System.EventArgs e)
     WizardPageEventArgs wpea = PreChangePage(-1);
     _activePage.OnWizardBack(wpea);
     PostChangePage(wpea);
-}</pre>
+}
+```
 
 Don't forget to implement **OnWizardBack**.
 
@@ -544,7 +588,8 @@ Don't forget to implement **OnWizardBack**.
 
 Easy:
 
-<pre>private void finishButton_Click(object sender, System.EventArgs e)
+```c#
+private void finishButton_Click(object sender, System.EventArgs e)
 {
     CancelEventArgs cea = new CancelEventArgs();
     _activePage.OnWizardFinish(cea);
@@ -553,14 +598,15 @@ Easy:
 
     this.DialogResult = DialogResult.OK;
     this.Close();
-}</pre>
+}
+```
 
 The **OnWizardFinish** method is implemented as you'd expect.
 
 After all that, we end up with a working wizard:
 
-![[img_assist|nid=15|width=640|height=355]](/broken-image-link)
+![[img_assist|nid=15|width=640|height=355]](/broken-image-link-15)
 
 Note that I've turned on visual styles for the application, and I've moved the Back button a bit closer to the Next button.
 
-In the [next installment](/content/2005/02/implementing-wizard-c-part-2), we'll fix a few things, and make it a lot prettier. Also, there's source attached to that page.
+In the [next installment]({% post_url 2005/2005-02-26-implementing-a-wizard-in-csharp-part-2 %}), we'll fix a few things, and make it a lot prettier. Also, there's source attached to that page.
