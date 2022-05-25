@@ -12,7 +12,7 @@ Here's how it all works.
 
 As explained on the [Running Long-lived Tasks in a Background Thread]({% post_url 2004/2004-02-27-running-long-lived-tasks-in-a-background-thread %}) page, you'll probably use some variant of the Observer pattern, like this:
 
-![[img_assist|nid=188|title=|desc=|link=none|align=center|width=420|height=169]](/broken-image-link)
+![[img_assist|nid=188|title=|desc=|link=none|align=center|width=420|height=169]](/broken-image-link-188)
 
 Here the Uploader object makes calls on an UploadObserver interface, which is implemented by the progress dialog (here called CProgressPage).
 
@@ -54,7 +54,7 @@ Unfortunately, this removes our `UploadObserver` object from the picture. The ba
 
 My preferred solution to this (and I've seen it in other places, too) is to use the Proxy pattern:
 
-![[img_assist|nid=189|title=|desc=|link=none|align=left|width=431|height=147]](/broken-image-link)
+![[img_assist|nid=189|title=|desc=|link=none|align=left|width=431|height=147]](/broken-image-link-189)
 
 In this implementation, the `Uploader` object calls methods on the `UploadObserver` interface, as normal. The implementation of `UploadObserver` in `UploadObserverProxy` turns each of these calls into a call to `PostMessage`, sending the messages to itself.
 

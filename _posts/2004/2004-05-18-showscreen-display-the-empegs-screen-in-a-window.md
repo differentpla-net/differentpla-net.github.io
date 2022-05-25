@@ -9,6 +9,6 @@ Over on the [empeg BBS](http://empeg.comms.net/php/showthreaded.php?Cat=&Board=h
 
 He's right: it took me 20 minutes in C#:
 
-![[img_assist|nid=68|link=none|align=left|width=640|height=427]](/broken-image-link)
+![[img_assist|nid=68|link=none|align=left|width=640|height=427]](/broken-image-link-68)
 
 The source code is attached.
