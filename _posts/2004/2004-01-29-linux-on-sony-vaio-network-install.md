@@ -82,7 +82,7 @@ Now, when you power on your Sony Vaio, you should see it grab an IP address and 
 
 1.  Select a language. I chose English (U.K.).
 2.  Configure the keyboard. I chose querty/us.
-3.  Partition your hard disk. When I [installed Windows XP Pro](../xp-pro.html), I left about 7Gb unpartitioned. I'm allocating my root partition and swap out of that.
+3.  Partition your hard disk. When I [installed Windows XP Pro]({% post_url 2004/2004-01-02-installing-windows-xp-pro-on-a-sony-vaio-srx87 %}), I left about 7Gb unpartitioned. I'm allocating my root partition and swap out of that.
 4.  Initialise and activate a swap partition.
 5.  Initialise a Linux partition. Because the images you downloaded are for a 2.2 kernel, this will be an ext2, rather than ext3 partition. We'll convert it later.
 6.  Next, the installer will ask you to "Install Kernel and Driver Modules". Select "network" as the method. It'll think that you've not configured your network, so you'll have to do that. I set the host name to "joplin". For some reason, once you've booted using TFTP, configuring the network interface using DHCP doesn't work. I had to configure the interface manually. It asks for an IP address, a netmask, a gateway and a DNS server.
