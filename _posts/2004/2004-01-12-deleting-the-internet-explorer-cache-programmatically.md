@@ -3,6 +3,8 @@ title: "Deleting the Internet Explorer Cache programmatically"
 date: 2004-01-12T12:05:00.000Z
 ---
 
+Here's some C source code that does it.
+
 ```c
 char buffer[4096];
 DWORD cb = 4096;
