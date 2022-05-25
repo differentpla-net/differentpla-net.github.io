@@ -6,7 +6,7 @@ tags: msbuild
 ---
 It's actually quite simple:
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="Default">
    <ItemGroup>
