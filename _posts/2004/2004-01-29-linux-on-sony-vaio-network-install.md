@@ -12,34 +12,33 @@ To do this:
 2.  In the "Advanced" page, set "Network Boot" to "Enabled".
 3.  In the "Boot" page, move "Network Boot" to the top of the list. Alternatively, hit F12 to trigger network booting when the "Sony" screen is displayed at startup.
 
-![[broken image]](/images/26cb8a77ebbe717a193b665d44b7f9d4-163.jpg)
+![Enable network boot](/images/2004/2004-01-29-linux-on-sony-vaio-network-install/26cb8a77ebbe717a193b665d44b7f9d4-163.jpg)
 
-![[broken image]](/images/3f46e31ae2f33794c9708fe8a4e90807-162.jpg)
+![Boot Order, Network Boot at top](/images/2004/2004-01-29-linux-on-sony-vaio-network-install/3f46e31ae2f33794c9708fe8a4e90807-162.jpg)
 
 ## Configure DHCP
 
 I've already got DHCP working on my network, so all I had to do was add the `host joplin` block to my `/etc/dhcpd.conf` file:
 
-<div class="snippet">
-    subnet 192.168.10.0 netmask 255.255.255.0 {
-      range 192.168.10.100 192.168.10.200;
-      option broadcast-address 192.168.10.255;
-      option routers 192.168.10.1;
-      option domain-name-servers 192.168.10.1;
-      option domain-name "home.differentpla.net";
-      option subnet-mask 255.255.255.0;
-      allow bootp;
+```
+subnet 192.168.10.0 netmask 255.255.255.0 {
+    range 192.168.10.100 192.168.10.200;
+    option broadcast-address 192.168.10.255;
+    option routers 192.168.10.1;
+    option domain-name-servers 192.168.10.1;
+    option domain-name "home.differentpla.net";
+    option subnet-mask 255.255.255.0;
+    allow bootp;
 
-     **host joplin {
+    host joplin {
         hardware ethernet 01:23:45:67:89:ab;
         fixed-address joplin.home.differentpla.net;
         server-name "192.168.10.2";
         next-server 192.168.10.2;
         filename "/tftpboot/pxelinux.0";
-      }**
     }
-
-</div>
+}
+```
 
 You'll probably need the `allow bootp;` statement as well. I already had that configured.
 I have two servers -- one (my firewall on 192.168.10.1) hands out the DHCP information; the other (my fileserver on 192.168.10.2) will hand out the boot files.
@@ -63,14 +62,13 @@ If you want to use a 2.4 kernel (I didn't), you'll need to grab:
 and put them in `/tftpboot`. The problem with using a 2.4 kernel is that (by default) it doesn't support the eepro100 network card in the Vaio. You'll have to work out some kind of solution to this yourself.
 Next, create the `/tftpboot/pxelinux.cfg/` directory, and put the following into a file `/tftpboot/pxelinux.cfg/default`:
 
-<div class="snippet">
-    DEFAULT
+```
+DEFAULT
 
-    LABEL linux
-     KERNEL tftpboot.img
-     APPEND initrd=root.bin root=/dev/ram
-
-</div>
+LABEL linux
+KERNEL tftpboot.img
+APPEND initrd=root.bin root=/dev/ram
+```
 
 ## Configuring NFS
 
@@ -126,22 +124,22 @@ Reboot to check that it all comes back up. `exec shutdown -r now`
 
 ## Configuring the network modules
 
-During the previous reboot, you'll notice that it failed to configure the network. This is because it doesn't know which driver to load. Also, it's still configured for manual configuration. We should fix this now.
+During the previous reboot, you'll notice that it failed to configure the network. This is because it doesn't know which
+driver to load. Also, it's still configured for manual configuration. We should fix this now.
 
 Log in as root again, and add the following line to `/etc/modutils/aliases`:
 
-<div class="snippet">
-    alias eth0 eepro100
-
-</div>
+```
+alias eth0 eepro100
+```
 
 Run `update-modules` to rebuild `/etc/modules.conf`.
 To configure for DHCP, edit `/etc/network/interfaces` and replace the `eth0` block with the following:
 
-<div class="snippet">
-    auto eth0
-    iface eth0 inet dhcp
+```
+auto eth0
+iface eth0 inet dhcp
+```
 
-</div>
-
-You'll then need to `ifdown eth0 ; ifup eth0`. This step should automatically install the correct network module and use DHCP to configure the network interface. Run `ifconfig` to confirm that the network interface was configured correctly.
+You'll then need to `ifdown eth0 ; ifup eth0`. This step should automatically install the correct network module and use
+DHCP to configure the network interface. Run `ifconfig` to confirm that the network interface was configured correctly.
