@@ -5,7 +5,7 @@ tags: mfc
 ---
 ## You wanna do this?
 
-![[img_assist|nid=47|title=|desc=|link=none|align=left|width=377|height=640]](/broken-image-link)
+![](/images/2004/2004-01-12-displaying-a-tooltip-when-the-user-drags-the-scroll-thumb/thumbtrack_tooltips.png)
 
 ## Here's How:
 
@@ -23,7 +23,7 @@ void CMyListCtrl::OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 
     if (nSBCode == SB_THUMBTRACK)
     {
-        CString s = FigureText(si.nPos);
+        CString s = GetThumbtrackText(si.nPos);
         DisplayThumbTrackToolTip(s);
     }
     else if (nSBCode == SB_THUMBPOSITION)
@@ -191,6 +191,6 @@ void CMyListCtrl::OnDestroy()
 
 ## That's it!
 
-Of course, you have to go and implement `CString CMyListCtrl::FigureText(int nPos)`, but that's your problem.
+Of course, you have to go and implement `CString CMyListCtrl::GetThumbtrackText(int nPos)`, but that's your problem.
 
 Source code [is attached](/broken-link-to-source-code).
