@@ -10,8 +10,7 @@ You'll need a line saying `root::0:0:root:/:/bin/sh` in `/etc/passwd` on the emp
 
 You'll need a line saying `empeg-ip-address root` in `.rhosts` on your server.
 
-
-```
+```sh
 rsh -l fred server-ip-address ls
 ```
 

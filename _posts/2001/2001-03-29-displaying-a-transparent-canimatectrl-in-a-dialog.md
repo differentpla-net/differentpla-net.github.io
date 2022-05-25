@@ -9,7 +9,7 @@ Unfortunately, the instructions don't quite work properly for displaying the ani
 
 The fix is simple - just set the background colour of the DC:
 
-```
+```c++
     HBRUSH CMyDialog::OnCtlColor(CDC *pDC, CWnd *pWnd, UINT nCtlColor)
     {
         if (pWnd->GetDlgCtrlID() == IDC_ANIMATE)
@@ -24,7 +24,7 @@ The fix is simple - just set the background colour of the DC:
 
 Apparently, this may not work with Visual Studio.NET and Windows XP. If this is the case, try handling `WM_CTLCOLORSTATIC`:
 
-```
+```c++
     LRESULT CMyDialog::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
     {
         if( message == WM_CTLCOLORSTATIC  && ::GetDlgCtrlID( (HWND)lParam ) == IDC_ANIMATE) )
@@ -40,7 +40,7 @@ Apparently, this may not work with Visual Studio.NET and Windows XP. If this is 
 (Thanks to Mark Gullacher for sharing this with me).
 Unfortunately, this doesn't work with Visual C++ 6 and Windows XP, using a manifest file: the background of the animation is painted black. You want this instead:
 
-```
+```c++
     class CMyDialog : public CDialog
     {
         //...

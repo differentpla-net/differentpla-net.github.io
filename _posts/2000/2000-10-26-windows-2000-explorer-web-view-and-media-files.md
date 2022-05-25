@@ -39,12 +39,12 @@ Change `true` to `false`. Again, back up the file.
 I've also had problems with the image preview in the search results. To
 fix this, find the line:
 
-```
+```js
 if (item.Size)
 ```
 
 Change it to:
 
-```
+```js
 if (false && item.Size)
 ```
