@@ -193,4 +193,4 @@ void CMyListCtrl::OnDestroy()
 
 Of course, you have to go and implement `CString CMyListCtrl::GetThumbtrackText(int nPos)`, but that's your problem.
 
-Source code [is attached](/broken-link-to-source-code).
+Source code is [on GitHub](https://github.com/rlipscombe/ThumbTips).
