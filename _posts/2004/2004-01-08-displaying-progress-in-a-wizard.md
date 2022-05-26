@@ -90,7 +90,7 @@ LRESULT CProgressPage::OnStartTask(WPARAM wParam, LPARAM lParam)
 }
 ```
 
-![[img_assist|nid=41|title=|desc=|link=none|align=left|width=640|height=496]](/broken-image-link-41)
+![](/images/2004/2004-01-08-displaying-progress-in-a-wizard/wizard-displaying-progress.png)
 
 I still need to implement the Cancel button, and there's other things I should say about running long processes in the
 foreground thread, but I'll save that for another article.
