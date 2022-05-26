@@ -3,6 +3,7 @@ title: "Cancelling Long-Lived Tasks from a Wizard"
 date: 2004-02-27T10:23:00.000Z
 tags: mfc
 ---
+
 This article, a follow-up to [this one]({% post_url 2004/2004-01-08-displaying-progress-in-a-wizard %}), shows how to modify our project to allow the user to cancel the long-lived operation.
 
 There are at least three different ways to cancel a long-lived task:
@@ -12,13 +13,13 @@ There are at least three different ways to cancel a long-lived task:
 3.  Calling a cancellation function from the callback, or from another thread.
 
 Here, I'll consider the first case: returning a failure code from the progress callback.
-So, we need to modify our [existing code](/node/view/133) as follows:
+So, we need to modify our existing code as follows:
 
 ## Adding a return value to the progress callback
 
 Simple, this one:
 
-```
+```c++
 class TaskObserver
 {
 public:
@@ -43,7 +44,7 @@ Obviously, the return value of the progress callback doesn't have to be `bool`. 
 
 We also need to change the progress callback so that it returns `true` or `false`:
 
-```
+```c++
 bool CProgressPage::OnProgress(int current, int maximum)
 {
 	PumpMessages();
@@ -61,7 +62,7 @@ bool CProgressPage::OnProgress(int current, int maximum)
 The call to `CheckCancelButton` returns `true` if the Cancel button has been pressed.
 `CheckCancelButton` is as follows:
 
-```
+```c++
 bool CProgressPage::CheckCancelButton()
 {
 	PumpMessages();
@@ -82,7 +83,7 @@ bool CProgressPage::CheckCancelButton()
 
 We also need some way of setting `m_bCancel` when the Cancel button is pressed. In a normal dialog, we'd handle `IDCANCEL`. In a property page, we have to do something a little different:
 
-```
+```c++
 /** Called when the Cancel button is pressed.
  * Return FALSE to prevent cancellation.
  * Remember that the button was pressed for CheckCancelButton.
@@ -96,7 +97,7 @@ BOOL CProgressPage::OnQueryCancel()
 
 We also need to modify the long-lived operation to check the progress callback result:
 
-```
+```c++
 bool b = ReportProgress(i, MAX_ITERATIONS);
 if (!b)
 	break;
@@ -104,7 +105,7 @@ if (!b)
 
 And the Cancel button needs to be enabled:
 
-```
+```c++
 LRESULT CProgressPage::OnStartTask(WPARAM /*wParam*/, LPARAM /*lParam*/)
 {
 	CWaitCursor wait;
@@ -128,7 +129,7 @@ This all works, so far. Unfortunately, even if the task was cancelled, the last 
 
 The first thing to do is change `ReportComplete` so that it reports the result:
 
-```
+```c++
 inline void Task::ReportComplete(bool bResult)
 {
 	if (m_pObserver)
@@ -143,7 +144,7 @@ We've got a couple of options here: We could have `CProgressPage::OnComplete` sa
 
 Another option is to get the result into the final page of the wizard some other way. Something like this (in the constructor of `CProgressWizard`) ought to work:
 
-```
+```c++
 m_bResult = true;
 
 AddPage(new CWelcomePage);
@@ -154,7 +155,7 @@ AddPage(new CCompletePage(&m_bResult));
 The progress page is now free to change the value of `m_bResult` and it'll get communicated successfully to `CCompletePage` without either page knowing about the other. This has the added benefit that, if our task returns some data (other than a true/false result), we can communicate it between the property pages in the same way.
 Now we need to change `CCompletePage` so that it notifies the user:
 
-```
+```c++
 BOOL CCompletePage::OnSetActive()
 {
 	if (!CPropertyPage::OnSetActive())
@@ -190,5 +191,3 @@ BOOL CCompletePage::OnSetActive()
 ## Conclusions
 
 It works. Unfortunately, because the task runs in the foreground thread, and only periodically reports progress, we only service our message loop intermittently. This means that repaints aren't as quick as they should be; also pressing the Cancel button doesn't respond immediately.
-
-I'll look at these issues in a later article. In the meantime, [here's the source code](/node/view/139).
