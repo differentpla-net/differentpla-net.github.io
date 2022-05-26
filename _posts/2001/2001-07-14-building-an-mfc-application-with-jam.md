@@ -65,119 +65,89 @@ cl /nologo /MDd /W3 /Gm /GX /ZI /Od
 ```
 
 Looking at the results of `cl /?` tells us the following:
+
 <table>
+<thead>
+ <tr>
+  <th>Switch</th>
+  <th>Description</th>
+
+  <th>Switch</th>
+  <th>Description</th>
+ </tr>
+</thead>
 <tbody>
-<tr>
-<th>Switch</th>
+ <tr>
+  <td>/nologo</td>
+  <td>Don't output a version banner</td>
 
-<th>Description</th>
+  <td>/MDd</td>
+  <td>Link with the MSVCRTD.lib file.</td>
+ </tr>
+ <tr>
+   <td>/W3</td>
+   <td>Set the warning level</td>
 
-<th>Switch</th>
+   <td>/Gm</td>
+   <td>Enable minimal rebuild</td>
+ </tr>
+ <tr>
+  <td>/GX</td>
+  <td>Enable exceptions</td>
 
-<th>Description</th>
+  <td>/ZI</td>
+  <td>Enable Edit and Continue debug info</td>
+ </tr>
+ <tr>
+  <td>/Od</td>
+  <td>Disable optimisations (debug)</td>
 
-</tr>
+  <td>/D</td>
+  <td>Define some stuff</td>
+ </tr>
 
-<tr>
-<td>/nologo</td>
+ <tr>
+  <td>/Fp</td>
+  <td>Name precompiled header file</td>
 
-<td>Don't output a version banner</td>
+  <td>/Yu</td>
+  <td>Use .PCH file</td>
+ </tr>
 
-<td>/MDd</td>
+ <tr>
+  <td>/Fo</td>
+  <td>Name object file</td>
 
-<td>Link with the MSVCRTD.lib file.</td>
+  <td>/Fd</td>
+  <td>Name .PDB file</td>
+ </tr>
 
-</tr>
+ <tr>
+  <td>/FD</td>
+  <td>Generate file dependencies</td>
 
-<tr>
-<td>/W3</td>
+  <td>/GZ</td>
+  <td>Enable runtime debug checks</td>
+ </tr>
 
-<td>Set the warning level</td>
+ <tr>
+  <td>/c</td>
+  <td>Don't link; just compile</td>
 
-<td>/Gm</td>
+  <td>/I</td>
+  <td>Name include directory</td>
+ </tr>
 
-<td>Enable minimal rebuild</td>
-
-</tr>
-
-<tr>
-<td>/GX</td>
-
-<td>Enable exceptions</td>
-
-<td>/ZI</td>
-
-<td>Enable Edit and Continue debug info</td>
-
-</tr>
-
-<tr>
-<td>/Od</td>
-
-<td>Disable optimisations (debug)</td>
-
-<td>/D</td>
-
-<td>Define some stuff</td>
-
-</tr>
-
-<tr>
-<td>/Fp</td>
-
-<td>Name precompiled header file</td>
-
-<td>/Yu</td>
-
-<td>Use .PCH file</td>
-
-</tr>
-
-<tr>
-<td>/Fo</td>
-
-<td>Name object file</td>
-
-<td>/Fd</td>
-
-<td>Name .PDB file</td>
-
-</tr>
-
-<tr>
-<td>/FD</td>
-
-<td>Generate file dependencies</td>
-
-<td>/GZ</td>
-
-<td>Enable runtime debug checks</td>
-
-</tr>
-
-<tr>
-<td>/c</td>
-
-<td>Don't link; just compile</td>
-
-<td>/I</td>
-
-<td>Name include directory</td>
-
-</tr>
-
-<tr>
-<td>/Tp</td>
-
-<td>Treat the file as C++</td>
-
-</tr>
-
+ <tr>
+  <td>/Tp</td>
+  <td>Treat the file as C++</td>
+ </tr>
 </tbody>
-
 </table>
 
-Obviously, we'd like the warnings and debug information. We'll probably need the `/D` switches, as well. Diagnosing the error messages above suggests that we'll need `/MDd`. For now we can ignore the precompiled header stuff, and we'll come back to the file naming things.
+Obviously, we'd like the warnings and debug information. We'll probably need the `/D` switches, as well. Diagnosing the
+error messages above suggests that we'll need `/MDd`. For now we can ignore the precompiled header stuff, and we'll come
+back to the file naming things.
 
 That leaves us with a file looking like this:
 
@@ -269,30 +239,6 @@ Main mfc_exe : ChildFrm.cpp MainFrm.cpp mfc_exe.cpp mfc_exeDoc.cpp mfc_exeView.c
 ```
 
 It builds! Does it run? It does. Unfortunately, it bails out immediately. It should have brought up a window of some kind. Perhaps if we run it in the debugger?
-
-## Resource File Dependencies
-
-Our [MFC application](../mfc_app/) has a resource script. This resource script suffers from a minor problem: It's not dependency-scanned. If we edit any file included by it -- for example the `.rc2` file, it's not rebuilt properly.
-
-We need to add the following to our `Resource` rule:
-
-```
-	NEEDLIBS on $(_e) += $(_r) ;
-
-	# .rc files have #includes, but this limits the dependency search to
-	# the .rc's directory and the SubDirHdrs for this directory.
-
-	HDRS on $(_r) = $(HDRS) $(SEARCH_SOURCE) $(SUBDIRHDRS) ;
-
-	HDRRULE on $(_s) = HdrRule ;
-	HDRSCAN on $(_s) = $(HDRPATTERN) ;
-	HDRSEARCH on $(_s) = $(SEARCH_SOURCE) $(SUBDIRHDRS) ;
-	HDRGRIST on $(_s) = $(HDRGRIST) ;
-
-	Rc $(_r) : $(_s) ;
-```
-
-Source is [here](/files/jam-test-20010717a.tar.gz).
 
 ## Resource Files
 
@@ -390,6 +336,30 @@ actions Rc
 ```
 
 This works fine. If we build the program, we get a working executable!
+
+## Resource File Dependencies
+
+Our MFC application has a resource script. This resource script suffers from a minor problem: It's not dependency-scanned. If we edit any file included by it -- for example the `.rc2` file, it's not rebuilt properly.
+
+We need to add the following to our `Resource` rule:
+
+```
+	NEEDLIBS on $(_e) += $(_r) ;
+
+	# .rc files have #includes, but this limits the dependency search to
+	# the .rc's directory and the SubDirHdrs for this directory.
+
+	HDRS on $(_r) = $(HDRS) $(SEARCH_SOURCE) $(SUBDIRHDRS) ;
+
+	HDRRULE on $(_s) = HdrRule ;
+	HDRSCAN on $(_s) = $(HDRPATTERN) ;
+	HDRSEARCH on $(_s) = $(SEARCH_SOURCE) $(SUBDIRHDRS) ;
+	HDRGRIST on $(_s) = $(HDRGRIST) ;
+
+	Rc $(_r) : $(_s) ;
+```
+
+Source is [here](/files/jam-test-20010717a.tar.gz).
 
 ## What Next?
 
