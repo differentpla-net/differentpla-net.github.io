@@ -4,6 +4,7 @@ date: 2003-09-30T23:01:00.000Z
 redirect_from: /node/view/15
 tags: empeg rio-receiver
 ---
+
 ## Introduction
 
 While I was at empeg, I wrote the original server software for the Rio Receiver. It has, shall we say, certain
@@ -35,8 +36,8 @@ support this as well. There's also a database of the music, and something to upd
 ## The HTTP server
 
 The easiest thing to write is going to be the webserver, so armed with a copy of RFC2616, I quickly hacked something
-simple together. You can find the source code [here](/files/simple_httpd.zip). Currently, this just echoes the client request.
-I'll be adding the other features required by the Rio Receiver as I figure them out.
+simple together. You can find the source code [here](/files/simple_httpd.zip). Currently, this just echoes the client
+request. I'll be adding the other features required by the Rio Receiver as I figure them out.
 
 ## Getting started
 
@@ -71,7 +72,7 @@ this should be specified in the response. The included server software runs its 
 respond with, e.g. "http://192.168.0.3:21076/descriptor.xml".
 
 Because I don't particularly fancy implementing an NFS server in C# just yet, I'm going to use my Linux box as the
-[NFS server](/node/view/14).
+[NFS server]({% post_url 2003/2003-09-30-using-a-linux-box-to-serve-rio-receiver-firmware %}).
 
 ## Multiple Services in the Same Binary
 
@@ -86,7 +87,9 @@ The Audio Receiver server has the following services in the same binary:
 
 The NFS and HTTP services depend on the Service Discovery service.
 
-You can find source for this [here](/files/shared_services.zip). This assumes that you've got a copy of [the SC.EXE](http://msdn.microsoft.com/archive/default.asp?url=/archive/en-us/dnarpic/html/msdn_scmslite.asp) utility. I've written some batch files to make installation easier..
+You can find source for this [here](/files/shared_services.zip). This assumes that you've got a copy of [the
+SC.EXE](http://msdn.microsoft.com/archive/default.asp?url=/archive/en-us/dnarpic/html/msdn_scmslite.asp) utility. I've
+written some batch files to make installation easier..
 
 ## HTTP server discovery
 
