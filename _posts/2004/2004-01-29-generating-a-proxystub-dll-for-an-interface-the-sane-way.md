@@ -1,8 +1,9 @@
 ---
 title: "Generating a Proxy/Stub DLL for an interface, the sane way"
 date: 2004-01-29T10:01:00.000Z
+tags: idl
 ---
-Note: This article applies to Visual C++ 6\. There might be an easier way to do this in Visual Studio .NET
+Note: This article applies to Visual C++ 6. There might be an easier way to do this in Visual Studio .NET
 
 It seems that the only way to get some boilerplate IDL generated is to use the ATL wizard. Unfortunately, this requires that you create an object that will implement the interface at the same time. This is not necessarily what you want.
 

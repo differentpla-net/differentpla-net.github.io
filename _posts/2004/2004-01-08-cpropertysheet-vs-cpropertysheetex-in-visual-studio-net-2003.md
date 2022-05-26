@@ -1,7 +1,7 @@
 ---
 title: "CPropertySheet vs CPropertySheetEx in Visual Studio .NET 2003"
 date: 2004-01-08T17:05:00.000Z
-tags: mfc
+tags: mfc visual-studio
 ---
 The program that I'm working on at the moment needs a wizard to walk the user through something. I copied over some
 files from a [Wizard97 demo project](/files/wizard97.zip) that I wrote a while ago. It all seemed to be going well.
