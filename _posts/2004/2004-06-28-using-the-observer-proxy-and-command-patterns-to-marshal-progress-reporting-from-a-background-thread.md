@@ -5,7 +5,7 @@ date: 2004-06-28T12:30:00.000Z
 
 In an earlier article, [Running Long-lived Tasks in a Background Thread]({% post_url 2004/2004-02-27-running-long-lived-tasks-in-a-background-thread %}), I talked about some of the problems associated with reporting progress from a background thread in a Win32 application.
 
-In my [Upload Wizard](/node/view/282/file-upload-wizard) source code, you'll find a better way to implement it, using three of the GoF patterns: the `Observer`, `Proxy` and `Command` patterns.
+In my [Upload Wizard](https://github.com/rlipscombe/WinInetPost) source code, you'll find a better way to implement it, using three of the GoF patterns: the `Observer`, `Proxy` and `Command` patterns.
 
 Here's how it all works.
 
@@ -234,4 +234,4 @@ PostMessage(WM_MY_OBSERVER_COMMAND, 0,
         (LPARAM)commandObject);
 ```
 
-You can see this code in action -- although some of the names are different, and it's been factored a little differently -- in my [File Upload Wizard](/node/view/282/file-upload-wizard) example.
+You can see this code in action -- although some of the names are different, and it's been factored a little differently -- in my [File Upload Wizard](https://github.com/rlipscombe/WinInetPost) example.
