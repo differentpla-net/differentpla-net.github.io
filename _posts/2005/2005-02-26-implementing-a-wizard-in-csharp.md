@@ -63,7 +63,7 @@ What we do want is a Windows Form, so we'll create that. It's called **WizardShe
 
 We need to fix up a few things before it'll compile. First we need to add a reference from our TestWizard project to our Wizard.UI project, and then we need to add a "using" statement.
 
-We also need to implement our 3 page classes. Our next step is to create the **WizardPage** class that they'll be deriving from. More specifically, I'm going to be creating 3 new classes: the base **WizardPage** class, and **ExternalWizardPage** and **InternalWizardPage** . These two classes will be used for the first/last pages in a wizard and the middle pages respectively. By splitting it up like this, we'll make it easier to implement proper [Wizard97](/node/view/214)-style wizards.
+We also need to implement our 3 page classes. Our next step is to create the **WizardPage** class that they'll be deriving from. More specifically, I'm going to be creating 3 new classes: the base **WizardPage** class, and **ExternalWizardPage** and **InternalWizardPage** . These two classes will be used for the first/last pages in a wizard and the middle pages respectively. By splitting it up like this, we'll make it easier to implement proper Wizard97-style wizards.
 
 **WizardPage** is a User Control class:
 
