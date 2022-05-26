@@ -19,7 +19,8 @@ Here the Uploader object makes calls on an UploadObserver interface, which is im
 
 The code would look a bit like this:
 
-<pre>struct UploadObserver {
+```c++
+struct UploadObserver {
     virtual void OnProgress(int num, int denom) = 0;
 };
 
@@ -32,7 +33,8 @@ void Uploader::DoUpload()
     // ...
     m_pObserver->OnProgress(bytesDone, bytesTotal);
     // ...
-}</pre>
+}
+```
 
 Since the Uploader is running on a background thread, the calls to the UploadObserver interface are also made on the background thread.
 
@@ -65,7 +67,8 @@ In this way, the proxy ensures that the progress dialog sees the calls on the fo
 
 This generally results in code that looks a bit like this:
 
-<pre>class CProxyWindow : public CWnd, public UploadObserver {
+```c++
+class CProxyWindow : public CWnd, public UploadObserver {
     UploadObserver *m_pOther;
 
     // ...
@@ -79,7 +82,8 @@ This generally results in code that looks a bit like this:
         m_pOther->OnProgress(wParam, lParam);
         return 0;
     }
-};</pre>
+};
+```
 
 The `CProxyWindow::OnProgress` method is called on the background thread, and it uses `PostMessage` to marshal the parameters to the foreground thread.
 
@@ -89,8 +93,13 @@ In the foreground thread, the message is processed by `CProxyWindow::OnMyProgres
 
 This approach has some limitations, though:
 
-*   We're restricted to passing parameters in wParam and lParam. In practice, this isn't such a big deal: we can pass pointers to structs. This can lead to confusion, though: some methods don't need parameters, some need simple integers, some need more complicated things. We also need to be careful about the lifetime of the struct. This function will probably have exited by the time the message arrives, meaning that we can't pass an automatic (stack) variable.
-*   We need a message for each progress callback. In practice, we can use the same message and decide what's happening by looking at (e.g.) wParam.
+- We're restricted to passing parameters in `wParam` and `lParam`. In practice, this isn't such a big deal: we can pass
+  pointers to structs. This can lead to confusion, though: some methods don't need parameters, some need simple
+  integers, some need more complicated things. We also need to be careful about the lifetime of the struct. This
+  function will probably have exited by the time the message arrives, meaning that we can't pass an automatic (stack)
+  variable.
+- We need a message for each progress callback. In practice, we can use the same message and decide what's happening by
+  looking at (e.g.) wParam.
 
 ## Enter the Command Pattern
 
@@ -99,7 +108,9 @@ The blurb for the Command pattern in the GoF book says this:
 > Encapsulate a request as an object, thereby letting you parameterize clients with different requests...
 
 This is essentially what we want. We can change the proxy window to use the command pattern by doing the following:
-<pre>struct Command {
+
+```c++
+struct Command {
     virtual void Execute() = 0;
     virtual ~Command() { /* nothing */ };
 };
@@ -137,7 +148,8 @@ class CProxyWindow : public CWnd, public UploadObserver {
         delete pCommand;
         return 0;
     }
-};</pre>
+};
+```
 
 Here, we define an abstract class, called `Command`, which defines a method, `Execute`. The various derived classes will override this as appropriate. Note also that (since this is C++) we need to have a virtual destructor in the `Command` class, because we're deleting them through a base-class pointer.
 
@@ -151,7 +163,8 @@ In this way, we have successfully combined the `Observer`, `Proxy` and `Command`
 
 There's more, though. Normally a proxy method would look like this:
 
-<pre>void CProxyWindow::OnSomething(int arg1, char *arg2)
+```c++
+void CProxyWindow::OnSomething(int arg1, char *arg2)
 {
     class OnSomethingCommand : public Command {
         int m_arg1;
@@ -167,16 +180,17 @@ There's more, though. Normally a proxy method would look like this:
     };
     Command *commandObject = new OnSomethingCommand(m_pProgress, hr);
     PostMessage(WM_MY_OBSERVER_COMMAND, 0, (LPARAM)commandObject);
-}</pre>
+}
+```
 
 As you can see, using command objects can soon get a little unwieldy. Each observer method on the proxy needs to define its own `Command`-derived object, to encapsulate which method is to be called. We also need to specify each parameter multiple times:
 
-*   As parameters to this function.
-*   As a member variable of the command class.
-*   As constructor parameters.
-*   In the initialiser list.
-*   In the call to the constructor.
-*   In the actual call inside Execute.
+- As parameters to this function.
+- As a member variable of the command class.
+- As constructor parameters.
+- In the initialiser list.
+- In the call to the constructor.
+- In the actual call inside Execute.
 
 It turns out that, usually, the observer methods will take no arguments, or a single string parameter, or a single integer parameter. We'd therefore expect to be able to handle the three different cases by using a `VoidCommand`, a `StringCommand` and a `IntegerCommand`.
 
@@ -186,7 +200,8 @@ Enter one of C++'s more arcane pieces of syntax (at least it was before template
 
 We can define our `VoidCommand` object as follows:
 
-<pre>class VoidCommand : public Command
+```c++
+class VoidCommand : public Command
 {
 public:
     typedef void (UploadObserver::*OBSERVER_VOID_FUNC) ();
@@ -204,16 +219,19 @@ public:
 private:
     UploadObserver *m_pObserver;
     OBSERVER_VOID_FUNC m_pFunc;
-};</pre>
+};
+```
 
 The `typedef` at the top of the class definition defines `OBSERVER_VOID_FUNC` as being a pointer to a method that takes no arguments and returns void, _and that is a member of `UploadObserver`_.
 
 We can use this object as follows:
 
-<pre>Command *commandObject =
+```c++
+Command *commandObject =
         new VoidCommand(m_pProgress,
                 &UploadObserver::OnReceivingResponse);
 PostMessage(WM_MY_OBSERVER_COMMAND, 0,
-        (LPARAM)commandObject);</pre>
+        (LPARAM)commandObject);
+```
 
 You can see this code in action -- although some of the names are different, and it's been factored a little differently -- in my [File Upload Wizard](/node/view/282) example.
