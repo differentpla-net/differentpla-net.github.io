@@ -5,7 +5,10 @@ tags: mfc
 ---
 Some twisted code showing how to combine MFC's `CTreeCtrl`, `CCmdTarget` and `TrackPopupMenu`.
 
-Let's assume that you want to allow your users to get a context menu when they right-click on a tree control. The first part is simple. You can subclass the control (which is easy in MFC) and handle WM_CONTEXTMENU. Alternatively, if you don't want to subclass the control, you can handle the NM_RCLICK notification that you'll receive from the tree control:
+Let's assume that you want to allow your users to get a context menu when they right-click on a tree control. The first
+part is simple. You can subclass the control (which is easy in MFC) and handle `WM_CONTEXTMENU`. Alternatively, if you
+don't want to subclass the control, you can handle the `NM_RCLICK` notification that you'll receive from the tree
+control:
 
 ## Handling a right-click on the tree background
 
@@ -43,8 +46,11 @@ void CTreeCtrlDlg::OnNMRclickTreectrl(NMHDR *pNMHDR, LRESULT *pResult)
 }
 ```
 
-There are a few things to note here. The first is that the NM_RCLICK notification sent from a tree control doesn't include the mouse coordinates, so we have to get them ourselves. `GetCursorPos` returns the coordinates relative to the screen, so we have to convert them to client coordinates before calling `CTreeCtrl::HitTest`. `TrackPopupMenu` wants the coordinates in screen coordinates.
-When the user selects a command, it'll be sent to the window passed to `TrackPopupMenu` in a `WM_COMMAND` message, which is exactly what we want.
+There are a few things to note here. The first is that the `NM_RCLICK` notification sent from a tree control doesn't
+include the mouse coordinates, so we have to get them ourselves. `GetCursorPos` returns the coordinates relative to the
+screen, so we have to convert them to client coordinates before calling `CTreeCtrl::HitTest`. `TrackPopupMenu` wants the
+coordinates in screen coordinates. When the user selects a command, it'll be sent to the window passed to
+`TrackPopupMenu` in a `WM_COMMAND` message, which is exactly what we want.
 
 ## Handling right-click on an item
 
@@ -58,14 +64,19 @@ This code shows how to handle a right-click on the background of the tree contro
             CMenu *popup = menu.GetSubMenu(0);
             ASSERT(popup);
             VERIFY(popup->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON,
-                    ptScreen.x, ptScreen.y, this, NULL);
+                    ptScreen.x, ptScreen.y, this, NULL));
 ```
 
 One problem with this approach is that the command will be sent to the dialog, and we'll have forgotten which item the user clicked on. There are several possible solutions to this problem. Among them:
 
-*   Remember which item was clicked on. Add a handler for the command to the dialog. In the command handler, we can look at which item was clicked previously do decide what to do. This means carrying around a piece of data (the `HTREEITEM`) between messages, which is a smell.
-*   Call `CTreeCtrl::SelectItem` to make the clicked item current, making the handler (again in the dialog) simpler. This is the simplest option, but has its own disadvantages -- what if selecting the item causes a bunch of unnecessary work? Imagine if we enumerated the contents of the folder, only to find that the user had selected the "Delete" menu item.
-*   Pass the `TPM_RETURNCMD` flag to `TrackPopupMenu`.
+- Remember which item was clicked on. Add a handler for the command to the dialog. In the command handler, we can look
+  at which item was clicked previously to decide what to do. This means carrying around a piece of data (the
+  `HTREEITEM`) between messages, which is a smell.
+- Call `CTreeCtrl::SelectItem` to make the clicked item current, making the handler (again in the dialog) simpler. This
+  is the simplest option, but has its own disadvantages -- what if selecting the item causes a bunch of unnecessary
+  work? Imagine if we enumerated the contents of the folder, only to find that the user had selected the "Delete" menu
+  item.
+- Pass the `TPM_RETURNCMD` flag to `TrackPopupMenu`.
 
 This last option looks like this:
 
@@ -79,7 +90,7 @@ This last option looks like this:
         }
 ```
 
-Now, what if we wanted to create a slightly more MFC-oriented solution, and make it a little more object-oriented? It's a little bit of a smell to have the dialog handling commands (even in this way) for some other object (namely the item in the tree control.
+Now, what if we wanted to create a slightly more MFC-oriented solution, and make it a little more object-oriented? It's a little bit of a smell to have the dialog handling commands (even in this way) for some other object (namely the item in the tree control).
 
 ## Using CCmdTarget and OnCmdMsg
 
@@ -114,6 +125,9 @@ if (nCode != 0)
 }
 ```
 
-And, if you start adding command handlers to the `CTreeCtrlItem` class, they'll be handled correctly. The magic of this, of course, is that the objects that you put in the tree only need to be derived from `CCmdTarget` in order for this to work, meaning that you can put different objects in there, and the commands will be handled polymorphically, and routed correctly.
+And, if you start adding command handlers to the `CTreeCtrlItem` class, they'll be handled correctly. The magic of this,
+of course, is that the objects that you put in the tree only need to be derived from `CCmdTarget` in order for this to
+work, meaning that you can put different objects in there, and the commands will be handled polymorphically, and routed
+correctly.
 
-Source code is [here](/node/view/203).
+Source code is [on GitHub](https://github.com/rlipscombe/TreeCtrlContextMenu).
