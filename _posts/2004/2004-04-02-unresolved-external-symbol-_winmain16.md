@@ -1,6 +1,7 @@
 ---
 title: "Unresolved external symbol _WinMain@16"
 date: 2004-04-02T08:55:00.000Z
+tags: visual-studio
 ---
 I got this error message today:
 

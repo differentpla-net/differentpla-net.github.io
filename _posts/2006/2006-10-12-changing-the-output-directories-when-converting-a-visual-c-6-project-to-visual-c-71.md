@@ -1,6 +1,7 @@
 ---
 title: "Changing the output directories when converting a Visual C++ 6 project to Visual C++ 7.1"
 date: 2006-10-12T11:16:21.000Z
+tags: visual-studio
 ---
 When you import a project from Visual C++ 6 into Visual Studio 2003 (i.e. Visual C++ 7.1), it doesn't fix up the output directories to use the correct definitions.
 
