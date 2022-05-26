@@ -12,7 +12,7 @@ msvcrt.lib(crtexew.obj) : error LNK2019: unresolved external symbol _WinMain@16 
 The most common cause for this error message is adding Unicode configurations to your project and forgetting to change
 the entry point to `wWinMainCRTStartup`.
 
-See [this Microsoft KB article](http://support.microsoft.com/default.aspx?scid=kb;EN-US;125750) (or [my article](/node/view/135)) for more information.
+See [this Microsoft KB article](http://support.microsoft.com/default.aspx?scid=kb;EN-US;125750).
 
 This wasn't my problem: I'd already done that.
 
