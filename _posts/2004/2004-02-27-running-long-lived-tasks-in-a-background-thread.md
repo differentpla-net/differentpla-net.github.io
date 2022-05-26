@@ -67,7 +67,7 @@ public:
 };
 ```
 
-class `Thread` is defined in [this page](/node/view/141).
+class `Thread` is defined in [this page]({% post_url 2003/2003-04-15-win32-threads-in-c %}).
 
 ## Threading Issues
 
@@ -174,4 +174,4 @@ LRESULT CProgressPage::OnBeginStub(WPARAM wParam, LPARAM lParam)
 }
 ```
 
-As usual, source code is [here](/node/view/143).
+Source code is [on GitHub](https://github.com/rlipscombe/WizardProgress).

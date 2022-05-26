@@ -95,4 +95,4 @@ LRESULT CProgressPage::OnStartTask(WPARAM wParam, LPARAM lParam)
 I still need to implement the Cancel button, and there's other things I should say about running long processes in the
 foreground thread, but I'll save that for another article.
 
-Source code for this article [is attached](/no-its-not).
+Source code is [on GitHub](https://github.com/rlipscombe/WizardProgress).
