@@ -71,9 +71,9 @@ We also need to implement our 3 page classes. Our next step is to create the **W
 
 We don't bother adding any UI elements to it, so we just end up with a boring grey square. The interesting UI will be added in the other two classes. We'll add these as "Inherited User Control" classes:
 
-![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/missing-1.png)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/add-external-wizard-page.png)
 
-![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/missing-2.png)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/inherit-wizard-page.png)
 
 Again, for the moment, we'll leave these as boring grey squares. At this point, however, we can create our three missing **WelcomePage**, **MiddlePage** and **CompletePage** classes.
 
@@ -98,7 +98,7 @@ We need to put some buttons on the wizard. We need 4 buttons: Back, Next, Finish
 
 The 4 buttons should have their **Anchor** property set to "Bottom, Right". That should all look like this:
 
-![[img_assist|nid=13|width=640|height=299]](/broken-image-link-13)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/empty-wizard-designer.png)
 
 ## The Etched Line
 
@@ -183,7 +183,7 @@ Color LightColor
 
 Now, if we look at the form in the designer, it's got a natty etched line running across it above the buttons:
 
-![[img_assist|nid=14|width=640|height=311]](/broken-image-link)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/etched-line-in-designer.png)
 
 ## Displaying the Pages
 
@@ -605,7 +605,7 @@ The **OnWizardFinish** method is implemented as you'd expect.
 
 After all that, we end up with a working wizard:
 
-![[img_assist|nid=15|width=640|height=355]](/broken-image-link-15)
+![](/images/2005/2005-02-26-implementing-a-wizard-in-csharp/example-wizard-page.png)
 
 Note that I've turned on visual styles for the application, and I've moved the Back button a bit closer to the Next button.
 
