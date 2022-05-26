@@ -7,6 +7,8 @@ tags: mfc
 
 Here's how:
 
+```c++
     CWnd *pCancel = GetParent()->GetDlgItem(IDCANCEL);
     if (pCancel)
     	pCancel->EnableWindow(FALSE);
+```
