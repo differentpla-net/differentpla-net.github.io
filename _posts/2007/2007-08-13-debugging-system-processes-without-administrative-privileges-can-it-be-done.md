@@ -29,3 +29,8 @@ This time, we still can't attach the debugger, but we get a different error mess
 Unfortunately, searching for this message talks about remote debugging and Terminal Services, both of which are only vaguely related to what I'm trying to do here.
 
 And that's where I run into a brick wall. Is this even possible?
+
+
+<div class="callout callout-info" markdown="span">
+Update: Yes, [it can be done]({% post_url 2007/2007-09-29-debugging-system-processes-without-administrative-privileges-it-can-be-done %}).
+</div>
