@@ -234,4 +234,4 @@ PostMessage(WM_MY_OBSERVER_COMMAND, 0,
         (LPARAM)commandObject);
 ```
 
-You can see this code in action -- although some of the names are different, and it's been factored a little differently -- in my [File Upload Wizard](/node/view/282) example.
+You can see this code in action -- although some of the names are different, and it's been factored a little differently -- in my [File Upload Wizard](/node/view/282/file-upload-wizard) example.
