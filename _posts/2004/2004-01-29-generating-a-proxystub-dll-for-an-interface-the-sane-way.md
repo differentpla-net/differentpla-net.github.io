@@ -70,17 +70,19 @@ The AppWizard-generated COM DLLs are automatically registered at the end of the 
 
 ![](/images/2004/2004-01-29-generating-a-proxystub-dll-for-an-interface-the-sane-way/idl_proxy_regsvr32.png)
 
-Done. Source is here: [my_interface.zip](/drupal-4.7.3/my_interface.zip).
+Done. Source is here: [my_interface.zip](/files/2004/2004-01-29-generating-a-proxystub-dll-for-an-interface-the-sane-way/my_interface.zip).
 
 Late note: You might need to add a .def file to the project. I'm not sure why. It should look like this:
 
-    ; my_interface.def : Declares the module parameters.
+```
+; my_interface.def : Declares the module parameters.
 
-    LIBRARY      "my_interface.DLL"
+LIBRARY      "my_interface.DLL"
 
-    EXPORTS
-    	DllGetClassObject       @1	PRIVATE
-    	DllCanUnloadNow         @2	PRIVATE
-    	GetProxyDllInfo         @3	PRIVATE
-    	DllRegisterServer		@4	PRIVATE
-    	DllUnregisterServer		@5	PRIVATE
+EXPORTS
+    DllGetClassObject       @1	PRIVATE
+    DllCanUnloadNow         @2	PRIVATE
+    GetProxyDllInfo         @3	PRIVATE
+    DllRegisterServer		@4	PRIVATE
+    DllUnregisterServer		@5	PRIVATE
+```
