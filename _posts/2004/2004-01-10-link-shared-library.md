@@ -6,7 +6,7 @@ tags: jam
 
 ## Introduction
 
-Now we've got our <a href="../mfc_app/">application</a> and <a href="../shared_lib/">DLL</a> building as part of the same project, we really ought to persuade them to link together.
+Now we've got our [application]({% post_url 2001/2001-07-14-building-an-mfc-application-with-jam %}) and [DLL]({% post_url 2001/2001-07-16-building-a-dll-with-jam %}) building as part of the same project, we really ought to persuade them to link together.
 
 The first thing we ought to do is establish some kind of dependency in the code.  It's test-first, but for Jamfiles.
 We'll do this by attempting to use one of the symbols exported from the DLL in our MFC application.  We'll add this
@@ -48,4 +48,4 @@ If we use shared libraries on Unix, we'll have to invent a `SharedLinkLibraries`
 because `gcc` wants the name of the `.so` file in order to establish the
 runtime dependency, and `LinkLibraries` assumes `.lib`.
 
-Source code is <a href="../src/jam-test-20010716a.tar.gz">here</a>.
+Source code is [here](/files/jam-test-20010716a.tar.gz).

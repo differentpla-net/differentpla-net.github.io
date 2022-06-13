@@ -1,9 +1,13 @@
-Building a static library with Jam
+---
+title: "Building a static library with Jam"
+date: 2001-07-04T21:49:22.000Z
+tags: jam
+---
 
 ## Introduction
 
-Once again, we're going to do what we did with the <a href="../mfc_app/">MFC application</a> and
-<a href="../shared_lib/">DLL</a> examples: build the project with AppWizard, and then get it built
+Once again, we're going to do what we did with the [MFC application]({% post_url 2001/2001-07-14-building-an-mfc-application-with-jam %}) and
+[DLL]({% post_url 2001/2001-07-16-building-a-dll-with-jam %}) examples: build the project with AppWizard, and then get it built
 with jam.
 
 ## Using AppWizard to generate the library
@@ -62,13 +66,13 @@ and there's over 180KLOC in there.  That rules out option one.
 
 I haven't figured out the implications of using grist on the target name, and a brief look at the example suggests
 that this isn't viable anyway, so that kinda leaves us with option 2 -- changing Jambase.  See
-<a href="../../misc/conflict_lib.html">here</a>.
+[here]({% post_url 2004/2004-01-09-conflicting-lib-target %}).
 
 ## Linking
 
-Now we've built the static library, we'd better attempt to link with it.  This involves modifying
-the <a href="../mfc_app/">application</a> we built earlier, so that it calls the library.  We'll
-add this piece of code to `InitInstance`:
+Now we've built the static library, we'd better attempt to link with it.  This involves modifying the
+[application]({% post_url 2001/2001-07-14-building-an-mfc-application-with-jam %}) we built earlier, so that it calls the
+library.  We'll add this piece of code to `InitInstance`:
 
 ```
     int k = something("The quick brown fox jumps over the lazy dog");
@@ -131,4 +135,4 @@ SubInclude TOP lib win32_lib ;
 Note that we keep the `SubInclude` well clear of the rest of the Jamfile contents.
 It should either occur at the end, or before the `SubDir` rule.
 
-You can find the source resulting from this <a href="../src/jam-test-20010713b.tar.gz">here</a>.
+You can find the source resulting from this [here](/files/jam-test-20010713b.tar.gz).
