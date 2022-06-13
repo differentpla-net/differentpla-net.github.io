@@ -22,7 +22,7 @@ Then, to debug your gadget:
 5.  Note that the **Attach to** label will show you which debugger will be invoked (normally it's the Script one).
 6.  Click the **Attach** button.
 
-![[img_assist|nid=179|title=|desc=|link=none|align=left|width=640|height=444]](/broken-image-link)
+![](/images/2007/2007-04-30-debugging-sidebar-gadgets/debug-sidebar.png)
 
 Once you've done this, you should be able to place breakpoints in your Javascript and then step through your code.
 
