@@ -6,7 +6,9 @@ tags: empeg
 
 ## Background
 
-The hard disk in my spare empeg player died at some point. It's getting harder to find 2.5" PATA SSDs, so I opted for a Kingston mSATA disk (240G) and a JMicron-based mSATA to PATA adapter.
+The hard disk in my spare empeg player ("toothgnip") died at some point. I'm using a 64GiB Transcend 2.5" PATA SSDs in
+my main empeg player ("crowley"), but they're getting harder and harder to find, so I opted for a Kingston mSATA disk
+(240G) and a JMicron-based mSATA to PATA adapter.
 
 But that left me with a problem: I had no way to install the player software. Ordinarily, you'd download the `.upgrade` file and apply it over a serial port with _empegUpgrade_.
 
