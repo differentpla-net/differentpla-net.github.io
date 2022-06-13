@@ -811,7 +811,7 @@ So, for example, if I have a track where the artist is "Depeche Mode", the tag w
 
 Now, for each track, there's a sequence of these, terminated by a 0xFF sentinel value. Here's another example:
 
-![](/images/broken-image-link-28)
+![](/images/2005/2005-02-13-empeg-file-structures/empeg-database-hex-dump.png)
 
 I've highlighted the same artist=Depeche Mode tag as above. You can see that it's followed by tag 0x08 (bitrate), with length 0x05, containing "vs176", and so on. The end of the record is marked with 0xFF. You can read the database record with some code like this:
 
@@ -985,7 +985,7 @@ FIDs 0x160 to 0x210 are tunes. The next playlist is FID 0x220 which, again, is 4
 
 The next playlist is 0x2f0\. It's 12 bytes long, which neatly uses up the last 3 entries: 0x300, 0x310, 0x320\. When you break it all out, it leads to a playlist hierarchy like this:
 
-![](/images/broken-image-link-29.png)
+![](/images/2005/2005-02-13-empeg-file-structures/example-fid-tree.png)
 
 ## See Also
 
