@@ -197,6 +197,10 @@ roger@roger-pc:~ $ sudo sh -c "echo '[hijack]' > /mnt/var/config.ini"
 roger@roger-pc:~ $ sudo umount /mnt
 ```
 
+<div class="callout callout-info" markdown="span">
+Mark tells me that the `-b4096` can cause weird behaviour, so maybe omit that...
+</div>
+
 ## Extract the `.upgrade` file parts
 
 With Mark Lord's `upgrader` and `car2_v3a11_hijack.upgrade`:
