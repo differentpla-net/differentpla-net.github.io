@@ -9,7 +9,7 @@ tags: mfc
 
 ## Here's How:
 
-**Note:** For details on how to do the full-row colouring, see [this](/node/view/63).
+**Note:** For details on how to do the full-row colouring, see [this]({% post_url 2004/2004-01-12-colouring-alternate-rows-in-clistctrl %}).
 
 The first thing to do is to intercept the relevant scrollbar messages. This involves adding code to handle `WM_VSCROLL`, and looking for `SB_THUMBTRACK` and `SB_THUMBPOSITION`. In the sample code, we'll assume that you've got a class `CMyListCtrl`, derived from `CListCtrl`.
 
