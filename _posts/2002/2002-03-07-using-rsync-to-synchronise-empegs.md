@@ -27,7 +27,7 @@ As with my [cloning guide]({% post_url 2002/2002-03-18-lazy-bastards-guide-to-cl
 
 For this, you'll need the [rsync_2.3.2-1.2.deb](http://ftp.us.debian.org/debian/dists/potato/main/binary-arm/net/rsync_2.3.2-1.2.deb) file. Extract it, remove the /usr/share parts, and then pack it back up. Send this to the empeg, and then extract it. I generally store the .tar.gz files in /drive0, so that the files don't get overwritten by upgrades, and I can reinstate the software by unpacking them again.
 
-Anyway, binaries and source are [here](/~roger/empeg/car/files/).
+Anyway, binaries and source are [here]({% post_url 2002/2002-03-07-empeg-files %}).
 
 Install rsync on both empegs.
 
@@ -66,7 +66,7 @@ The _easy_ way to fix it is to put some stuff in /etc/hosts, like this:
 <pre>127.0.0.1 localhost
 my-empeg-ip my-empeg-name (none)</pre>
 
-The _right_ way to fix it is to install `hostname`, from [hostname_2.07.deb](http://ftp.us.debian.org/debian/dists/stable/binary-arm/base/hostname_2.07.deb), and then to use this to set the hostname of the empeg that will be running rsync as a daemon. You can grab a copy from [here](/files/).
+The _right_ way to fix it is to install `hostname`, from [hostname_2.07.deb](http://ftp.us.debian.org/debian/dists/stable/binary-arm/base/hostname_2.07.deb), and then to use this to set the hostname of the empeg that will be running rsync as a daemon. You can grab a copy from [here]({% post_url 2002/2002-03-07-empeg-files %}).
 
 Even if you fix it the right way, you'll still need to put some stuff in /etc/hosts, but you can forget the "(none)" hack:
 
