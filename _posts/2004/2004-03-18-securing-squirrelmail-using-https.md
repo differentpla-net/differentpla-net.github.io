@@ -39,11 +39,13 @@ on SSL. I'll talk about self-signed certificates (and installing them under Wind
 
 When Apache starts, it'll prompt for the passphrase used to protect the server certificate. See [this](http://bsdvault.net/sections.php?op=viewarticle&artid=85) for one way to work around this. Alternatively, you could just not enter a passphrase.
 
-With a certificate installed using this method, you'll see a warning like the following:
+With a certificate installed using this method, you'll see a warning like the following from Internet Explorer:
 
-![](/images/broken-image-link-211)
+![](/images/2004/2004-03-18-securing-squirrelmail-using-https/b73d0590dd52971d6a36d2961f4b079a-184.jpg)
 
-![](/images/broken-image-link-212)
+The warning from Firefox is similar:
+
+![](/images/2004/2004-03-18-securing-squirrelmail-using-https/310a65ea631b9133051e4f2eafd18a89-186.jpg)
 
 When you create the certificate, you should specify the "Common Name" as the name by which clients will connect to this
 server. This is generally `www.wherever.com`. If you don't, you'll get a warning: "The name on the security certificate
@@ -110,9 +112,9 @@ files: `server.crt` and `server.key`. If you've installed Debian's `mod_ssl`, yo
 If, when presented with the certificate error message, you click on "View Certificate", you'll see your webserver's
 certificate.
 
-![](/images/broken-image-link-213)
+![](/images/2004/2004-03-18-securing-squirrelmail-using-https/cdef0389431e23bd8b18660d7948718a-182.png)
 
-![](/images/broken-image-link-214)
+![](/images/2004/2004-03-18-securing-squirrelmail-using-https/b713f24f19fb2efa3e94bfdf7befda55-180.png)
 
 You'd think that clicking the "Install Certificate" button would suffice, but it doesn't.
 
