@@ -1,6 +1,7 @@
 ---
 title: "How do I change the details displayed for my sidebar gadget?"
 date: 2007-04-23T09:08:09.000Z
+tags: sidebar-gadgets
 ---
 When you click on the "Show details" expander in the Windows Vista gadget gallery, Windows displays various information
 about the selected gadget ("Calendar 1.0.0.0" etc., in this example).

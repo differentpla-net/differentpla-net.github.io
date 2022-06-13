@@ -1,6 +1,7 @@
 ---
 title: "How do I add a settings page to my gadget?"
 date: 2007-04-23T09:47:28.000Z
+tags: sidebar-gadgets
 ---
 Some gadgets allow the user to configure extra settings.
 

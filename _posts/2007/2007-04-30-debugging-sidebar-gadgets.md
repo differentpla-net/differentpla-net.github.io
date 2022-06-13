@@ -2,6 +2,7 @@
 title: "Debugging Sidebar Gadgets"
 date: 2007-04-30T16:01:29.000Z
 redirect_from: /content/2007/04/debugging-sidebar-gadgets
+tags: sidebar-gadgets
 ---
 Apparently, you can debug JScript in Visual Studio.
 
