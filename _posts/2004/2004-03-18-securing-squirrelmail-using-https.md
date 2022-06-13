@@ -41,9 +41,9 @@ When Apache starts, it'll prompt for the passphrase used to protect the server c
 
 With a certificate installed using this method, you'll see a warning like the following:
 
-![img_assist|nid=211|title=|desc=|link=none|align=left|width=288|height=226](/broken-image-link-211)
+![](/images/broken-image-link-211)
 
-![img_assist|nid=212|title=|desc=|link=none|align=left|width=389|height=278](/broken-image-link-212)
+![](/images/broken-image-link-212)
 
 When you create the certificate, you should specify the "Common Name" as the name by which clients will connect to this
 server. This is generally `www.wherever.com`. If you don't, you'll get a warning: "The name on the security certificate
@@ -110,9 +110,9 @@ files: `server.crt` and `server.key`. If you've installed Debian's `mod_ssl`, yo
 If, when presented with the certificate error message, you click on "View Certificate", you'll see your webserver's
 certificate.
 
-![img_assist|nid=213|title=|desc=|link=none|align=left|width=288|height=226](/broken-image-link-213)
+![](/images/broken-image-link-213)
 
-![img_assist|nid=214|title=|desc=|link=none|align=left|width=307|height=357](/broken-image-link-214)
+![](/images/broken-image-link-214)
 
 You'd think that clicking the "Install Certificate" button would suffice, but it doesn't.
 
