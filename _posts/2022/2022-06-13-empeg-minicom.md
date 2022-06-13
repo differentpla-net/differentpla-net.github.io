@@ -87,6 +87,10 @@ from bash should restart the player.
 
 For a list of serial port commands, see [this page]({% post_url 2003/2003-04-02-empeg-serial-port-commands %}).
 
+## Quitting minicom
+
+Press `Ctrl+A`, `X`.
+
 ## Windows?
 
 I initially attempted to use the converter with Windows, but there are apparently no drivers for Windows 11, so that's a
