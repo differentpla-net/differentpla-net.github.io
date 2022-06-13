@@ -1,6 +1,6 @@
 ---
 title: "Building a DLL with Jam"
-date: 2001-07-16T17:29:57.000Z
+date: 2001-07-16T10:29:57.000Z
 tags: jam
 ---
 ## Introduction
@@ -27,7 +27,7 @@ The `Main` rule section in the `Jambase` file is geared up to create a .EXE file
 	_t = [ FAppendSuffix $(<) : $(SUFSHR) ] ;
 ```
 
-We have to go and define SUFSHR somewhere, though. The definition of the `SharedLibrary` rule is [here]({% post_url 2001/2001-07-04-building-shared-libraries-dlls %}).
+We have to go and define SUFSHR somewhere, though. The definition of the `SharedLibrary` rule is [here]({% post_url 2001/2001-07-04-shared-lib-rule %}).
 Once we've added the new rules to Jambase, and changed "Main" to "SharedLibrary" in our Jamfile, we get the following:
 
 ```

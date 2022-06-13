@@ -297,6 +297,8 @@ Thus, one of the build steps will overwrite the output from the other. This is a
 
 It looks like we'll have to give up on our ideal of simply adding the filename to the list of .cpp files -- at least until we can figure out the magic in the `Main` rule in `Jambase`. Since the odds of that happening are slim, we'll cast our net a little further afield.
 
+## Resource Files: A working solution
+
 One of the mailing list participants, Chris Antos, forwarded me a copy of his Jambase file a little while ago. It contains all sorts of useful rules, but I'm not entirely sure what some of it does yet.
 
 Lifting the relevant sections (and simplifying them) results in the following:
@@ -336,30 +338,6 @@ actions Rc
 ```
 
 This works fine. If we build the program, we get a working executable!
-
-## Resource File Dependencies
-
-Our MFC application has a resource script. This resource script suffers from a minor problem: It's not dependency-scanned. If we edit any file included by it -- for example the `.rc2` file, it's not rebuilt properly.
-
-We need to add the following to our `Resource` rule:
-
-```
-	NEEDLIBS on $(_e) += $(_r) ;
-
-	# .rc files have #includes, but this limits the dependency search to
-	# the .rc's directory and the SubDirHdrs for this directory.
-
-	HDRS on $(_r) = $(HDRS) $(SEARCH_SOURCE) $(SUBDIRHDRS) ;
-
-	HDRRULE on $(_s) = HdrRule ;
-	HDRSCAN on $(_s) = $(HDRPATTERN) ;
-	HDRSEARCH on $(_s) = $(SEARCH_SOURCE) $(SUBDIRHDRS) ;
-	HDRGRIST on $(_s) = $(HDRGRIST) ;
-
-	Rc $(_r) : $(_s) ;
-```
-
-Source is [here](/files/jam-test-20010717a.tar.gz).
 
 ## What Next?
 

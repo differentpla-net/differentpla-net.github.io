@@ -6,9 +6,9 @@ tags: jam
 
 ## Introduction
 
-Now we've built [an MFC application]({% post_url 2001/2001-07-14-building-an-mfc-application-with-jam %}) and [a DLL]({%
-post_url 2001/2001-07-04-building-shared-libraries-dlls %}), we'd like to include them in the same build process.  This
-is what Jam's `SubDir` rule does.
+Now we've built [an MFC application]({% post_url 2001/2001-07-14-building-an-mfc-application-with-jam %})
+and [a DLL]({% post_url 2001/2001-07-16-building-a-dll-with-jam %}), we'd like to include them in
+the same build process. This is what Jam's `SubDir` rule does.
 
 In the top-level directory, i.e. `jam-test`, we place a `Jamfile` looking like this:
 

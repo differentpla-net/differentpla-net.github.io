@@ -18,11 +18,11 @@ I'm attempting to use jam to build our Windows code, but in order to keep the sc
 I've written this article in the form of a tutorial, because I think better when trying to formulate reproducible instructions for this kind of thing.
 
 *   [Building an MFC program]({% post_url 2001/2001-07-14-building-an-mfc-application-with-jam %}).
-*   [Building a shared library (DLL)]({% post_url 2001/2001-07-04-building-shared-libraries-dlls %}).
+*   [Building a shared library (DLL)]({% post_url 2001/2001-07-16-building-a-dll-with-jam %}).
 *   [Bringing it together with the SubDir rule]({% post_url 2001/2001-07-13-jam-subdir-rule %}).
-*   [Linking with a shared library](/drupal-4.7.3/tutorial/link_dll/).
-*   [Building (and linking with) static libraries](/drupal-4.7.3/tutorial/static_lib/).
-*   [Resource script dependencies](/content/2004/01/jam-resource-file-dependencies).
+*   [Linking with a shared library]({% post_url 2004/2004-01-10-link-shared-library %}).
+*   [Building (and linking with) static libraries]({% post_url 2004/2004-01-10-link-static-library %}).
+*   [Resource script dependencies]({% post_url 2004/2004-01-10-rc-depends %}).
 *   [Separate Debug/Release directories]({% post_url 2002/2002-02-01-jam-separate-releasedebug-target-directories %}).
 
 ## Other Stuff
