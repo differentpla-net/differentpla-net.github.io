@@ -50,7 +50,7 @@ tar cvfz strace_4.2-4-minimal.tar.gz usr/bin
 
 The exact list of files you need will vary; this'll do for `strace`.
 
-It's worth point out, however, that `strace` slows down the process being traced. On the empeg, that means it's _really_
-slow.
-
 Then send the files to the empeg, as described [here]({% post_url 2002/2002-03-07-empeg-files %}).
+
+It's worth pointing out, however, that `strace` slows down the process being traced. On the empeg, that means it's
+_really_ slow.
