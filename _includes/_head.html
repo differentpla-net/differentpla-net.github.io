@@ -11,16 +11,16 @@
     <link href="/css/rougify-style-github.css" rel="stylesheet">
     <link href="/css/theme.css" rel="stylesheet">
 
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}</title>
 
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
     <meta property="og:description"
-        content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.title }}{% endif %}" />
+        content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
     <meta name="twitter:description"
-        content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.title }}{% endif %}" />
+        content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
     <meta name="twitter:site" content="{{ site.twitter_username }}" />
 
     <link rel="icon" type="image/png" href="/assets/profile-30px.png">

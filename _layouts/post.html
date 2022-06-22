@@ -8,7 +8,7 @@
 
     <div class="container-xxl my-md-4">
         <article class="post">
-            <h1>{{ page.title }}</h1>
+            <h1>{{ page.title | xml_escape }}</h1>
             {% include _details.html %}
             <div class="body">
                 {{ content }}

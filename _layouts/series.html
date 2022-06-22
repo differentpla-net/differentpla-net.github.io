@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-9">
                 <article class="post">
-                    <h1>{{ page.title }}</h1>
+                    <h1>{{ page.title | xml_escape }}</h1>
                     {% include _details.html %}
                     <div class="body">
                         {{ content }}
@@ -29,9 +29,9 @@
                             {% endif %}
                             <a href="{{ post.url }}">
                                 {% if post.short_title %}
-                                    {{ post.short_title }}
+                                    {{ post.short_title | xml_escape }}
                                 {% else %}
-                                    {{ post.title }}
+                                    {{ post.title | xml_escape }}
                                 {% endif %}</a>
                             </li>
                         {% endif %}

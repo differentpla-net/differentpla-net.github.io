@@ -11,7 +11,7 @@
             <div class="col-md-9 post-list">
                 {% for post in site.posts %}
                 <article class="excerpt">
-                    <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+                    <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xml_escape }}</a></h1>
                     <div class="details">
                         <span class="created_at timeago" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>
                     </div>
