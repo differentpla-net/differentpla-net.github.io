@@ -47,5 +47,5 @@ offer the most advanced, scalable and innovative connectivity platform possible.
 -- Roger Lipscombe, Backend Developer
 
 <div class="callout callout-info" markdown="span">
-This post is no longer available on the Electric Imp blog, so to preserve it, I took a copy from the [Internet Archive Wayback Machine.](https://web.archive.org/)
+This post is no longer available on the Electric Imp blog, so to preserve it, I took a copy from the [Internet Archive Wayback Machine](https://web.archive.org/web/20140702010121/http://blog.electricimp.com/post/85932940180/electric-imp-moves-to-erlang-programming-language).
 </div>
