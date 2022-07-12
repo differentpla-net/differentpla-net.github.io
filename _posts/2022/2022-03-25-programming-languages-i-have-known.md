@@ -102,6 +102,7 @@ These are languages that I used a _lot_, but haven't used in _years_:
   happens).
 - QuickBASIC. I once wrote a multi-windowed chat app using a mix of QuickBASIC, QuickC and MASM.
 - RM BASIC. I used this at school until QuickBASIC became the new hotness.
+- ZX BASIC. I first learned to program on the ZX81 by typing in the listings from Sinclair User and other magazines.
 
 ## Ancient, Beginner
 
