@@ -22,6 +22,9 @@ These are the languages I'm currently familiar with:
   language version from a decade ago? The thing is: when you're writing for an embedded platform, or you're maintaining
   a legacy code base, there doesn't tend to be much call for using newer language features.
 - [Bash scripting](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html).
+- [jq](https://stedolan.github.io/jq/). Yes, it's a programming language.
+- [AWK](https://www.gnu.org/software/gawk/manual/gawk.html).
+- [Sed](https://www.gnu.org/software/sed/manual/sed.html).
 
 ## Current, Intermediate
 
@@ -36,9 +39,6 @@ The list of languages that I use daily, or have used recently, but where I've no
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript). If I _had_ to do Javascript development, I'd use
   [TypeScript](https://www.typescriptlang.org/) or a transpiler these days, I think. [Fable](https://fable.io/) looks
   cool.
-- [jq](https://stedolan.github.io/jq/). Yes, it's a programming language.
-- [AWK](https://www.gnu.org/software/gawk/manual/gawk.html).
-- [Sed](https://www.gnu.org/software/sed/manual/sed.html).
 
 ## Current, Learning
 
