@@ -5,6 +5,8 @@ redirect_from:
  - /b/2013/21/18/how-do-i-create-a-self-signed-certificate-using-bouncy-castle-
  - /post/53/how-do-i-create-a-self-signed-certificate-using-bouncy-castle-
 tags: bouncy-castle
+layout: series
+series: bouncy-castle
 ---
 Occasionally, you might find that you need to create a self-signed server certificate. If you're on Windows, your options are basically:
 
