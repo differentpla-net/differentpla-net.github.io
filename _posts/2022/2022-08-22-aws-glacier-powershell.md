@@ -88,7 +88,7 @@ PS> Remove-GLCVault -Force -VaultName MyVault
 Remove-GLCVault: Vault not empty or recently written to: arn:aws:glacier:eu-west-2:<account>:vaults/MyVault
 ```
 
-Nope. Still can't delete the vault; I guess we really _do_ have to the delete the archives first.
+Nope. Still can't delete the vault; I guess we really _do_ have to delete the archives first.
 
 ## Getting an inventory
 
