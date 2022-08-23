@@ -1,6 +1,7 @@
 ---
 title: MessageSecurityException
 date: 2013-04-18T14:59:49Z
+tags: wcf
 ---
 As I run across them, I'm going to update this page with various causes of the WCF `MessageSecurityException`.
 
@@ -9,7 +10,7 @@ The HTTP request was forbidden with client authentication scheme 'Anonymous'; Th
 
     System.ServiceModel.Security.MessageSecurityException: The HTTP request was forbidden with client authentication scheme 'Anonymous'.
     ---> System.Net.WebException: The remote server returned an error: (403) Forbidden.
-    
+
 I have security turned off, so I'm not expecting to see anything about authentication,
 but what WCF is attempting to tell me is that we're *not* using any security.
 

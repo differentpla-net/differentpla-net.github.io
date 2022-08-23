@@ -1,12 +1,14 @@
 ---
 title: "Odd behaviour with WCF base addresses and HTTP.SYS wildcards"
 date: 2008-03-13T21:30:10.000Z
+tags: wcf
 ---
 I'm at [DevWeek](http://www.devweek.com/) this week, and I went (among other things) to a couple of WCF presentations by Aaron Skonnard.
 
 So, anyway, last night I put together a really simple WCF service. It looks like this:
 
-<pre>using System;
+```c#
+using System;
 using System.ServiceModel;
 
 namespace WcfHost
@@ -38,7 +40,8 @@ namespace WcfHost
             host.Close();
         }
     }
-}</pre>
+}
+```
 
 Note how I'm using the HTTP.SYS wildcard syntax for the URI. Unfortunately, WCF doesn't like that, and I get a UriFormatException: `Invalid URI: The hostname could not be parsed.`
 

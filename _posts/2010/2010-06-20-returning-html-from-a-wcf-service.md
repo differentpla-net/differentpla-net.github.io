@@ -2,6 +2,7 @@
 title: "Returning HTML from a WCF service"
 date: 2010-06-20T13:05:10.000Z
 redirect_from: /content/2010/06/returning-html-wcf-service
+tags: wcf
 ---
 I’m messing around with writing yet another a blog engine, as a way to learn ASP.NET MVC. One of the things that I’d like to do is have it support uploading from Windows Live Writer. This means that it needs to support XML-RPC and [Really Simple Discovery](http://cyber.law.harvard.edu/blogs/gems/tech/rsd.html) (RSD). More on the XML-RPC stuff later.
 
@@ -11,15 +12,18 @@ Since I’m spiking my XML-RPC solution in a console WCF application, I also nee
 
 It’s quite easy:
 
-<pre>ServiceHost discoveryServiceHost = new ServiceHost(typeof(ReallySimpleDiscovery));
+```c#
+ServiceHost discoveryServiceHost = new ServiceHost(typeof(ReallySimpleDiscovery));
 Uri discoveryAddress = baseUri;
 var discoveryEndpoint = discoveryServiceHost.AddServiceEndpoint(typeof(IReallySimpleDiscovery), new WebHttpBinding(WebHttpSecurityMode.None), discoveryAddress);
 discoveryEndpoint.Behaviors.Add(new WebHttpBehavior());
-discoveryServiceHost.Open();</pre>
+discoveryServiceHost.Open();
+```
 
-IReallySimpleDiscovery is defined as follows:
+`IReallySimpleDiscovery` is defined as follows:
 
-<pre>[ServiceContract]
+```c#
+[ServiceContract]
 public interface IReallySimpleDiscovery
 {
 	[OperationContract, WebGet(UriTemplate = "/")]
@@ -27,11 +31,13 @@ public interface IReallySimpleDiscovery
 
 	[OperationContract, WebGet(UriTemplate = "/rsd.xml", ResponseFormat = WebMessageFormat.Xml)]
 	ReallySimpleDiscoveryFormatter Discover();
-}</pre>
+}
+```
 
 Index is implemented as follows:
 
-<pre>internal class ReallySimpleDiscovery : IReallySimpleDiscovery
+```c#
+internal class ReallySimpleDiscovery : IReallySimpleDiscovery
 {
 	public Stream Index()
 	{
@@ -43,6 +49,7 @@ Index is implemented as follows:
 
 		byte[] htmlBytes = Encoding.UTF8.GetBytes(html);
 		return new MemoryStream(htmlBytes);
-	}</pre>
+	}
+```
 
 Obviously, I need to implement ReallySimpleDiscoveryFormatter, but this should be enough to show that you can return plain HTML from a WCF service. If you really need to.
