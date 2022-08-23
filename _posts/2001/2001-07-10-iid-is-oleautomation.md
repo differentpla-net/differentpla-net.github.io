@@ -27,4 +27,4 @@ Possible solutions? Try one of these:
 
 - Lose the `[iid_is]` parameter, and query the `IUnknown` once you've got it.
 - Specify the exact interface you're expecting.
-- Stop using TLB marshalling. This requires messing around with proxy-stub DLLs.
+- Stop using typelib marshalling. This requires messing around with proxy-stub DLLs.
