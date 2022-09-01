@@ -1,7 +1,7 @@
 ---
 title: "Livebook as K8s Cluster Admin"
 date: 2022-03-09T12:29:00Z
-tags: k8s
+tags: kubernetes
 layout: series
 series: k3s
 ---
