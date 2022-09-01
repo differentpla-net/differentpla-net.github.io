@@ -52,7 +52,7 @@ Now, the problem I had:
         typedef std::vector<TestCase *> testcases_t;
         testcases_t m_testcases;
 
-        void runTest(TestCase? *testCase);
+        void runTest(TestCase *testCase);
 
     public:
         void runTests();
