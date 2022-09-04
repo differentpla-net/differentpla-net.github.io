@@ -1,7 +1,7 @@
 ---
 title: "Removing duplicates from a table"
 date: 2007-05-08T12:21:37.000Z
-tags: sql
+tags: sql sql-server
 ---
 Let's assume that you've got a table:
 

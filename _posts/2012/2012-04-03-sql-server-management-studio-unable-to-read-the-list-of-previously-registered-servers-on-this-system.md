@@ -2,6 +2,7 @@
 title: "SQL Server Management Studio: Unable to read the list of previously registered servers on this system"
 date: 2012-04-03T13:28:41.000Z
 redirect_from: /content/2012/04/sql-server-management-studio-unable-read-list-previously-registered-servers-system
+tags: sql-server
 ---
 I recently started having odd problems with SQL Server Management Studio on my work PC.
 
