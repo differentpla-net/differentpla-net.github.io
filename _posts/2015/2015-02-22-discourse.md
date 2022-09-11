@@ -4,6 +4,10 @@ date: 2015-02-22 14:41
 tags: blogging
 ---
 
+<div class="callout callout-info" markdown="span">
+**2022-09-11:** This blog continues to be hosted on GitHub Pages; this page is of historical interest only. If that.
+</div>
+
 I've installed [Discourse](http://www.discourse.org) at
 [discourse.differentpla.net](http://discourse.differentpla.net) as a way of
 enabling comments on this blog.

@@ -1,7 +1,13 @@
 ---
 title: What is this?
 date: 2013-02-06T21:25:00Z
+tags: blogging
 ---
+
+<div class="callout callout-info" markdown="span">
+**2022-09-11:** This blog continues to be hosted on GitHub Pages; this page is of historical interest only. If that.
+</div>
+
 I got fed up with my existing blog, so I decided to write a new blog engine, as a way to learn some new tech.
 
 I do this every two or three years: spend a few hours playing with new technology, and then getting distracted and moving on to something else. It's a good way to learn new technology though.

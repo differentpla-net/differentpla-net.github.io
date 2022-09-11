@@ -1,7 +1,12 @@
 ---
 title: Moving to AWS
 date: 2014-11-30 11:02:54
+tags: blogging
 ---
+
+<div class="callout callout-info" markdown="span">
+**2022-09-11:** This blog continues to be hosted on GitHub Pages; this page is of historical interest only. If that.
+</div>
 
 *This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).
 Moving to AWS.*

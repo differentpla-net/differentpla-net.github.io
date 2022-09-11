@@ -4,6 +4,10 @@ date: 2015-04-26 08:13:00Z
 tags: blogging
 ---
 
+<div class="callout callout-info" markdown="span">
+**2022-09-11:** This blog continues to be hosted on GitHub Pages; this page is of historical interest only. If that.
+</div>
+
 Periodically, I become unhappy with my blog implementation and decide that I
 should do something about it.
 
