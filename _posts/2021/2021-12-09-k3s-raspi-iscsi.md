@@ -24,6 +24,7 @@ Setting up the iSCSI target is relatively simple:
 
 1. Log into the DS211.
 2. Open the main menu and choose "iSCSI Manager".
+   - This is renamed to "SAN Manager" in DSM 7.x, and things have moved around a bit.
 3. On the "Target" page, click "Create".
 4. Give it a sensible name. Since I'm just testing, I called it "testing". I also edited the IQN, replacing "Target-1" with "testing".
 5. I did not enable CHAP. This is all on a local, trusted, network, and I didn't want to deal with auth at this point.
