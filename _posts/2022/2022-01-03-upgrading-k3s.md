@@ -6,35 +6,9 @@ series: k3s
 tags: k3s
 ---
 
-The basic plan is to drain each node in turn, apply the upgrade and then uncordon the node. I'm upgrading from `v1.21.7+k3s1` to `v1.22.5+k3s1`.
-
-Because I'm running Longhorn, it's a little bit more complicated.
-
-## Worker Nodes
-
-On the master:
-
-```
-kubectl drain rpi405 --ignore-daemonsets --pod-selector='app!=csi-attacher,app!=csi-provisioner'
-```
-
-On the worker (rpi405, in this example):
-
-```
-sudo apt update
-sudo apt upgrade
-curl -sfL https://get.k3s.io | K3S_URL=https://rpi401:6443 K3S_TOKEN=K... sh -
-```
-
-The above command line was in bash history, so I didn't need to dig out the token. It's in `/var/lib/rancher/k3s/server/node-token` on the server node, if you need it.
-
-On the master:
-
-```
-kubectl uncordon rpi405
-```
-
-Repeat for each worker.
+<div class="callout callout-info" markdown="span">
+The Rancher docs say that you should update the server first, then the workers.
+</div>
 
 ## Control Plane
 
@@ -57,6 +31,36 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable servicelb" sh -
 - [Disabling Klipper]({% post_url 2021/2021-12-21-disabling-klipper %})
 - [Rancher Docs: Networking: Disabling the Service LB](https://rancher.com/docs/k3s/latest/en/networking/#disabling-the-service-lb)
 - [Rancher Docs: Installation Options: INSTALL_K3S_EXEC](https://rancher.com/docs/k3s/latest/en/installation/install-options/how-to-flags/#example-b-install-k3s-exec)
+
+The basic plan is to drain each node in turn, apply the upgrade and then uncordon the node. I'm upgrading from `v1.21.7+k3s1` to `v1.22.5+k3s1`.
+
+## Worker Nodes
+
+On the master:
+
+```
+kubectl drain rpi405 \
+    --ignore-daemonsets \
+    --pod-selector='app!=csi-attacher,app!=csi-provisioner' # because of Longhorn
+```
+
+On the worker (rpi405, in this example):
+
+```
+sudo apt update
+sudo apt upgrade
+curl -sfL https://get.k3s.io | K3S_URL=https://rpi401:6443 K3S_TOKEN=K... sh -
+```
+
+The above command line was in bash history, so I didn't need to dig out the token. It's in `/var/lib/rancher/k3s/server/node-token` on the server node, if you need it.
+
+On the master:
+
+```
+kubectl uncordon rpi405
+```
+
+Repeat for each worker.
 
 ## error: cannot delete Pods
 

@@ -9,7 +9,7 @@ tags: raspberry-pi ubuntu
 My [Raspberry Pi 4 cluster]({% post_url 2021/2021-07-04-k3s-raspi-updates %}) is currently 32-bit. It's got a 32-bit
 kernel with a 32-bit userland. But I need to run 64-bit software on it. I looked into [upgrading it in place]({% post_url 2021/2021-12-20-upgrading-raspios-to-arm64 %}), but that's infeasible. So I need to reinstall it.
 
-This time I'm going to use Ubuntu 20.10 rather than Raspbian / Raspi OS.
+This time I'm going to use Ubuntu 21.10 rather than Raspbian / Raspi OS.
 
 Since there's nothing of value on my cluster, I simply re-flashed the USB storage of each node with Ubuntu Server
 by following [the instructions](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#1-overview)
