@@ -12,7 +12,8 @@ The Rancher docs say that you should update the server first, then the workers.
 
 ## Control Plane
 
-This is a non-HA cluster (I've only got one server node), and `kubectl drain rpi401` doesn't want to evict pods with local storage. So I guess I just apply the upgrade and hope that it recovers after a restart:
+This is a non-HA cluster (I've only got one server node), and `kubectl drain rpi401` (the server) doesn't want to evict
+pods with local storage. So I guess I just apply the upgrade and hope that it recovers after a restart:
 
 ```
 sudo apt update
@@ -22,7 +23,9 @@ curl -sfL https://get.k3s.io | sh -   # but see below, re: Klipper
 
 ## Disabling Klipper
 
-A few hours later, I realised that I forgot to disable Klipper. I've not gone back and tried again, but based on the documentation (see below for links), I'm going to assume that the following is the correct incantation for the installation script:
+A few hours later, I realised that I forgot to [disable Klipper]({% post_url 2021/2021-12-21-disabling-klipper %}). I've
+not gone back and tried again, but based on the documentation (see below for links), I'm going to assume that the
+following is the correct incantation for the installation script:
 
 ```
 curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable servicelb" sh -
