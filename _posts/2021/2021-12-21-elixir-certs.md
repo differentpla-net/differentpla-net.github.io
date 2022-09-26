@@ -40,7 +40,7 @@ sudo update-ca-certificates
 
 ### Firefox
 
-1. Go to Settings -> Privacy & Security -> Certificates -> View Certificates -> Authorities.
+1. Go to Settings -> Privacy & Security -> Security -> Certificates -> View Certificates -> Authorities.
 2. Click on "Import"; select the `k3s-ca.crt` file.
 3. Ensure that "Trust this CA to identify web sites" is checked.
 4. Click OK.
