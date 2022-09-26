@@ -45,6 +45,22 @@ sudo update-ca-certificates
 3. Ensure that "Trust this CA to identify web sites" is checked.
 4. Click OK.
 
+### Windows
+
+<div class="callout callout-warning" markdown="span">
+Note that doing this makes your Windows PC trust certificates issued by this CA, and the script above doesn't restrict
+certificate usage. I take no responsibility for any breakage or data loss. **Keep the key secure.**
+</div>
+
+1. Double-click on the `k3s-ca.crt` file. Windows will display the certificate properties.
+2. Click the "Install Certificate..." button. The Certificate Import Wizard will open.
+3. Under "Store Location", select "Local Machine" and click "Next".
+4. A UAC prompt will appear; say "Yes".
+5. Under "Certificate Store", choose "Place all certificates in the following store" and press the "Browse..." button.
+6. Choose the "Trusted Root Certification Authorities" store. Click "OK".
+7. Click "Next". Click "Finish".
+8. You should see a success message. Click "OK".
+
 ### Other operating systems and browsers
 
 Left as an exercise for the reader.
