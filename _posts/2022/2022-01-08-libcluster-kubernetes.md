@@ -118,7 +118,7 @@ This requires a `StatefulSet`, otherwise (as described above), `hostname` is not
 # rel/env.sh.eex
 MY_SERVICE_NAME="cluster-demo"    # :kubernetes_service_name from config, must match Service name.
 CLUSTER_DOMAIN="cluster.local"    # correct value left as an exercise for the reader.
-export RELEASE_NODE="myapp@$(hostname).${MY_SERVICE_NAME}.${MY_POD_NAMESPACE}.pod.${CLUSTER_DOMAIN}"
+export RELEASE_NODE="myapp@$(hostname).${MY_SERVICE_NAME}.${MY_POD_NAMESPACE}.svc.${CLUSTER_DOMAIN}"
 ```
 
 Alternatively, `hostname -f` returns the whole thing, so you can:
