@@ -44,7 +44,7 @@ In order to authenticate with the Kubernetes API, you'll need the service accoun
 token = File.read!("/var/run/secrets/kubernetes.io/serviceaccount/token")
 ```
 
-Rather than take a dependency on an external HTTP client, we can juse use Erlang's built-in `httpc`:
+Rather than take a dependency on an external HTTP client, we can use use Erlang's built-in `httpc`:
 
 ```elixir
 headers = [{'authorization', 'Bearer #{token}'}]
