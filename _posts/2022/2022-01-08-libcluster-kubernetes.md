@@ -14,7 +14,7 @@ in `:dns` mode, it requires that my Erlang node is named with the dashed-IP pod 
 ```bash
 # MY_POD_IP, MY_POD_NAMESPACE are injected.
 # See https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/
-POD_A_RECORD=$(echo $MY_POD_IP | sed 's/./-/g')
+POD_A_RECORD=$(echo $MY_POD_IP | sed 's/\./-/g')
 CLUSTER_DOMAIN="cluster.local"    # correct value left as an exercise for the reader.
 erl -name app@"${POD_A_RECORD}.${MY_POD_NAMESPACE}.pod.${CLUSTER_DOMAIN}"
 ```
@@ -132,7 +132,7 @@ For `mode: :dns`, it uses [IP-based pod A records]({% post_url 2022/2022-01-03-i
 
 ```bash
 # rel/env.sh.eex
-POD_A_RECORD=$(echo $MY_POD_IP | sed 's/./-/g')
+POD_A_RECORD=$(echo $MY_POD_IP | sed 's/\./-/g')
 CLUSTER_DOMAIN="cluster.local"    # correct value left as an exercise for the reader.
 export RELEASE_NODE="myapp@${POD_A_RECORD}.${MY_POD_NAMESPACE}.pod.${CLUSTER_DOMAIN}"
 ```
