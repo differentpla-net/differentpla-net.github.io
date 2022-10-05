@@ -1,6 +1,6 @@
 ---
 title: "Formatting Erlang code in Visual Studio Code"
-date: 2022-09-24T13:58:00Z
+date: 2022-10-05T10:23:00Z
 tags: vscode erlang
 ---
 
