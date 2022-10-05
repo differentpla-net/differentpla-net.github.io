@@ -12,5 +12,5 @@ grep -h '^tags:' -R _posts | \
     grep -v '^$' | \
     sort | \
     uniq | \
-    xargs -n1 -r -I{} \
+    xargs -r -I{} \
         sh -c "sed 's/TAG/{}/g' < scripts/_tag.md > tag/{}.md"
