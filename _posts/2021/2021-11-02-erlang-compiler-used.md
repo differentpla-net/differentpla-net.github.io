@@ -1,6 +1,7 @@
 ---
 title: "Which Erlang compiler was used?"
 date: 2021-11-02T09:04:00Z
+tags: erlang
 ---
 
 To get the version of the compiler used to compile a particular `.beam` file:

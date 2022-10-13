@@ -1,6 +1,7 @@
 ---
 title: Sorting out my website
 date: 2014-11-13 09:34:54
+tags: blogging
 ---
 
 I'm going to sort out my website. This is a rough table of contents for that plan:
