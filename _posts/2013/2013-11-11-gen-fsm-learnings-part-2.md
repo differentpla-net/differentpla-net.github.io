@@ -60,7 +60,7 @@ makes a synchronous call to `Module:StateName/3`, such as:
       {reply, ok, alpha, StateData}.
 
 Most of the time, you'll want to return `{reply, Result, NextStateName,
-NewStateData}` -- check the [documentation][gen-fsm-ms3] for other possible
+NewStateData}` -- check the documentation for other possible
 return values.
 
 The `Result` is the second member of the tuple, and is returned to the caller,
