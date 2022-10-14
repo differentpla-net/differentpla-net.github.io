@@ -1,22 +1,25 @@
 ---
 title: Using Reflection to get constructor details in PowerShell
 date: 2013-06-25T18:54:25Z
+tags: powershell
 ---
 I was attempting to convert some Java code that uses Bouncy Castle into the
 equivalent PowerShell. The Java code was using the `PKCS10CertificationRequest` class,
-and I needed to see if there was an equivalent in the .NET libraries: 
+and I needed to see if there was an equivalent in the .NET libraries:
 
-    Add-Type -Path .\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll
+```powershell
+Add-Type -Path .\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll
 
-	$assembly = [AppDomain]::CurrentDomain.GetAssemblies() |
-		where { $_.GetName().Name -eq 'BouncyCastle.Crypto' }
+$assembly = [AppDomain]::CurrentDomain.GetAssemblies() |
+	where { $_.GetName().Name -eq 'BouncyCastle.Crypto' }
 
-	$assembly.GetExportedTypes() |
-		where { $_.Name -like '*CertificationRequest*' } |
-		% { $_.FullName }
+$assembly.GetExportedTypes() |
+	where { $_.Name -like '*CertificationRequest*' } |
+	% { $_.FullName }
 
-	[Org.BouncyCastle.Pkcs.Pkcs10CertificationRequest].GetConstructors() |
-		% { $_.ToString() }
+[Org.BouncyCastle.Pkcs.Pkcs10CertificationRequest].GetConstructors() |
+	% { $_.ToString() }
+```
 
 This gives us (reformatted slightly):
 

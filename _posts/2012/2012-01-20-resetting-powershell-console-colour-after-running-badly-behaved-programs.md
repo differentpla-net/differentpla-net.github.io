@@ -1,6 +1,7 @@
 ---
 title: "Resetting PowerShell console colour after running badly-behaved programs"
 date: 2012-01-20T09:30:57.000Z
+tags: powershell
 ---
 Some programs write their output in different colours. If they're badly-behaved and don't reset the colours when they've finished, your PowerShell console might be left with the wrong background or foreground colours.
 

@@ -1,6 +1,7 @@
 ---
 title: How to do .NET Reflection in PowerShell
 date: 2013-04-17T11:29:29Z
+tags: powershell
 ---
 This is all just .NET reflection code, converted from C# to PowerShell, but it can be useful...
 
@@ -41,8 +42,7 @@ Get a list of constructors for a particular type
 
 	PS> [Org.BouncyCastle.Asn1.X509.ExtendedKeyUsage].GetConstructors() |
 			foreach { $_.ToString() }
-	
+
 	Void .ctor(Org.BouncyCastle.Asn1.X509.KeyPurposeID[])
 	Void .ctor(System.Collections.ArrayList)
 	Void .ctor(System.Collections.IEnumerable)
-

@@ -1,6 +1,7 @@
 ---
 title: "PowerShell Closures"
 date: 2012-05-25T12:07:04.000Z
+tags: powershell
 ---
 
 ```powershell

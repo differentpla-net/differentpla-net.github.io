@@ -1,6 +1,7 @@
 ---
 title: "Tips for making it easier to consume .NET APIs from PowerShell"
 date: 2012-10-02T12:45:26.000Z
+tags: powershell
 ---
 ### Prefer `enum` types over constants or properties
 

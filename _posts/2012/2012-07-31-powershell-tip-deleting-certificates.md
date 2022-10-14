@@ -1,14 +1,18 @@
 ---
 title: "PowerShell tip: Deleting certificates"
 date: 2012-07-31T10:20:48.000Z
+tags: powershell
 ---
-    $certs = Get-ChildItem cert:\LocalMachine\My | where { $_.Subject –like 'CN=Victim*' }
-    foreach ($cert in $certs) {
-        $store = Get-Item $cert.PSParentPath
-        $store.Open('ReadWrite')
-        $store.Remove($cert)
-        $store.Close()
-    }
+
+```powershell
+$certs = Get-ChildItem cert:\LocalMachine\My | where { $_.Subject –like 'CN=Victim*' }
+foreach ($cert in $certs) {
+    $store = Get-Item $cert.PSParentPath
+    $store.Open('ReadWrite')
+    $store.Remove($cert)
+    $store.Close()
+}
+```
 
 The first line finds certificates with the matching subject. The loop goes through those certificates, using .NET class library methods to delete them.
 

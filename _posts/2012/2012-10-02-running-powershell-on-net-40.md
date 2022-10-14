@@ -1,6 +1,7 @@
 ---
 title: "Running PowerShell on .NET 4.0"
 date: 2012-10-02T12:39:18.000Z
+tags: powershell
 ---
 Attempting to use **Add-Type** to load a .NET assembly in PowerShell this afternoon, I got the following error:
 

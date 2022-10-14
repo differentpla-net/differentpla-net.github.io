@@ -1,11 +1,12 @@
 ---
 title: Running PowerShell 2.0 on .NET 4.0
 date: 2012-10-02T12:39:00Z
+tags: powershell
 ---
 Attempting to use `Add-Type` to load a .NET assembly in PowerShell this afternoon, I got the following error:
 
     This assembly is built by a runtime newer than the currently loaded runtime
-    
+
 By default, PowerShell 2.0 runs using the v2.0 .NET runtime, and my assembly is built
 against .NET 4.0. To get this to work, we need to persuade PowerShell to run on .NET 4.0
 

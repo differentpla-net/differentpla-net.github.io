@@ -1,6 +1,7 @@
 ---
 title: "PowerShell: ImportSystemModules"
 date: 2012-01-05T13:58:41.000Z
+tags: powershell
 ---
 
 I've been using PowerShell as a better Command Prompt for a while now. Increasingly, however, it's one of the first
