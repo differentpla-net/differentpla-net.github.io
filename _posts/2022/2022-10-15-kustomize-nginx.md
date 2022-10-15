@@ -162,6 +162,11 @@ then fix up the deployment to refer to the correct suffix.
 Note that you need the namespace, because otherwise Kustomize messes up the above step, and doesn't fix up the
 deployment correctly. See [kustomize#1301](https://github.com/kubernetes-sigs/kustomize/issues/1301).
 
+Also note that, because the configmap has a suffix (based on a hash of the content of the files), and that suffix is
+used by the deployment, every time you push a new configmap, you're effectively pushing a new deployment. This means
+that your pods will be redeployed every time. If this seems like overkill, you can turn off the suffix generation. I
+didn't bother.
+
 ## Links
 
 - <https://scriptcrunch.com/change-nginx-index-configmap/>
