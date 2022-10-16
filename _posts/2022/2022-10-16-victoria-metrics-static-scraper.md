@@ -1,7 +1,7 @@
 ---
 title: "VictoriaMetrics static scraper"
 short_title: "VMStaticScraper"
-date: 2022-10-16T12:07:00Z
+date: 2022-10-16T15:07:00Z
 tags: k3s kubernetes victoria-metrics electric-imp
 layout: series
 series: k3s
