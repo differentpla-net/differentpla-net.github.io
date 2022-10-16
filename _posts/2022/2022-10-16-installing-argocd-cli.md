@@ -2,7 +2,7 @@
 title: "Installing ArgoCD Command Line Interface"
 short_title: ArgoCD CLI
 date: 2022-10-16T09:37:00Z
-tags: k3s kubernetes argocd
+tags: k3s kubernetes argo-cd
 layout: series
 series: k3s
 ---
