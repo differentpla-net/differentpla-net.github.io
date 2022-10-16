@@ -26,6 +26,8 @@ Context 'argocd.k3s.differentpla.net' updated
 Something like this:
 
 ```
-% argocd app create grafana --repo https://git.k3s.differentpla.net/roger/grafana.git --path . --dest-server https://kubernetes.default.svc --dest-namespace grafana
+% argocd app create grafana \
+  --repo https://git.k3s.differentpla.net/roger/grafana.git --path . \
+  --dest-server https://kubernetes.default.svc --dest-namespace grafana
 application 'grafana' created
 ```
