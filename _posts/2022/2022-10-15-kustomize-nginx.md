@@ -11,7 +11,8 @@ As I add more things to my k3s cluster, I find myself wishing that I had a handy
 I've got ArgoCD and Gitea installed. I probably want to expose the Longhorn console, and the Kubernetes console. I think
 Traefik has a console, too. I'll also be adding Grafana at some point soon.
 
-I decided to add a static HTML page with a list of useful links in it. I'll host it in nginx.
+I decided to add a static HTML page with a list of useful links in it. I'll host it in nginx. Rather than create a new
+image using a Dockerfile, I decided to look into using a ConfigMap to inject the HTML.
 
 ## Deployment
 
