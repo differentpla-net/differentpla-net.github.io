@@ -46,7 +46,7 @@ And now I can use `ip.addr==127.0.0.2` in Wireshark to see my client's traffic, 
 
 ## macOS, though
 
-On macOS, the `lo` device is only bound to `127.0.0.1`, so you'll have to fix that first. See [this Superuser
+On macOS, the `lo0` loopback device is only bound to `127.0.0.1`, so you'll have to fix that first. See [this Superuser
 question](https://superuser.com/questions/458875/how-do-you-get-loopback-addresses-other-than-127-0-0-1-to-work-on-os-x),
 but (tl;dr):
 
