@@ -11,23 +11,25 @@ Usually, when you use `localhost`, it'll use the `127.0.0.1` loopback address. D
 
 ## Load testing with multiple connections
 
-One example is if you're running load tests locally. Because each end of a connection requires two port numbers, and
-there are only a limited number of ephemeral ports (~32K on Linux, by default), you'll hit a limit with only ~16K test
-connections.
+One example is if you're running load tests locally. Because each end of an established connection requires two port
+numbers, and there are only a limited number of ephemeral ports (~32K on Linux, by default), you'll hit a limit with
+only ~16K test connections.
 
-You can increase the limit (depending on OS), but that only gives you a little more breathing room.
+You can increase the limit (depending on OS), but port numbers are 16-bit (i.e. ~64K) and a large chunk of that range is
+reserved. That only gives you a little more breathing room.
 
-Or you can bind your client connections to (e.g.) `127.0.0.2`, meaning that you can now have ~32K connections.
+Or you can bind your client connections to (e.g.) `127.0.0.2`, meaning that you can now have ~32K connections (the
+server uses ~32K ports on `127.0.0.1` and the client uses ~32K ports on `127.0.0.2`).
 
 If you want to get clever, you can have your server listen on multiple loopback addresses, have your clients bind to
 different loopback addresses, and (somehow; this is the bit where you'll have to get clever) spread them out to the
 point that you've got ~256M connections (back of the envelope, so possibly wrong: `127.0.0.0/8` is ~16.7M addresses,
-each with ~32K port numbers, divided by 2 for client/server). You'll run out of some other kernel resource before that
-point, though.
+each with ~32K port numbers, divided by 2 for client/server). You'll run out of some other resource before that point,
+though.
 
 ## Identifying traffic in Wireshark
 
-One other reason you might want to do this is if you're capturing a network trace (in Wireshark, e.g.) and your trying
+One other reason you might want to do this is if you're capturing a network trace (in Wireshark, e.g.) and you're trying
 to isolate a particular client. In my particular case, I've got a 3-node Kafka cluster running in Docker. Because of the
 replication and heartbeating between the nodes, there's a lot of Kafka traffic. Because the cluster traffic uses the
 same ports as the client, I can't easily use a filter in Wireshark to only see the client traffic.
