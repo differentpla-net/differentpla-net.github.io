@@ -38,7 +38,7 @@ On the other hand, if I can persuade the client to bind to `127.0.0.2`, then I _
 traffic. The exact mechanism for this depends on the client.
 
 <div class="callout callout-secondary" markdown="span">
-In my case, I'm using Erlang, so I hacked on the Kafka client library to add `{port, {127,0,0,2}}` to the options passed
+In my case, I'm using Erlang, so I hacked on the Kafka client library to add `{ip, {127,0,0,2}}` to the options passed
 to `gen_tcp:connect`.
 </div>
 
