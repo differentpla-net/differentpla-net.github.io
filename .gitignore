@@ -3,3 +3,5 @@ _site
 .direnv/
 tmp
 .DS_Store
+*.swp
+*.swo
