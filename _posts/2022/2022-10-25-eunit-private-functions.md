@@ -103,6 +103,15 @@ problem.
 If I can't figure out a way to pull the functions into their own module, then this is my preferred option. It's
 deliberate, and it makes it clear that you intended to export just the relevant functions.
 
+{% capture warning %}
+With `erlang.mk`, this technique runs into a problem: `erlang.mk` doesn't keep the `.beam` files separate for `dev` vs.
+`test` targets, and doesn't notice that `-DTEST` changed. It doesn't recompile the file, so you get inconsistent results
+depending on whether you last ran `make eunit` or `make app`.
+
+`rebar3` (and `mix`) keep the configurations separate (in `_build/dev`, e.g.), so you don't run into this problem.
+{% endcapture %}
+{% include alerts/warning.html content=warning %}
+
 ## Conclusions
 
 Are there any? As with many things, it depends. Do what works for you.
