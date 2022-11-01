@@ -1,6 +1,7 @@
 ---
 title: "channel_setup_fwd_listener: cannot listen to port"
 date: 2013-11-01T12:24:29Z
+tags: ssh
 ---
 I was attempting to use SSH to set up a tunnel (to our build server) this morning,
 so I typed the following:
@@ -24,7 +25,7 @@ I've got the following in my `~/.ssh/config` file:
 
     Host jenkins
       LocalForward 8080 127.0.0.1:8080
-  
+
 Doh! SSH itself had already opened the port, and was complaining that it couldn't
 do it a second time.
 
