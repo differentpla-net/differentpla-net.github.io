@@ -1,6 +1,7 @@
 ---
 title: "Installing node.js, iisnode and npm on Windows"
 date: 2012-01-19T14:21:51.000Z
+tags: nodejs
 ---
 I thought I might have a quick play with node.js on Windows. There's a bunch of conflicting information out there about how to install it. Here's what works for me.
 

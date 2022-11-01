@@ -1,6 +1,7 @@
 ---
 title: Dependency Injection in node.js
 date: 2013-10-05T19:26:44Z
+tags: nodejs
 ---
 node.js modules are singletons. If you `require('foo')` from one module, and
 then `require('foo')` from a different module, you'll get the same instance.
@@ -26,7 +27,7 @@ This can make dependency injection trickier, whether you're using class-style no
             // ...
         }
     };
-    
+
 Whoops, now A and B have an implicit dependency on the DB. That's gonna make
 unit testing harder.
 

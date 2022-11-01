@@ -4,7 +4,7 @@ short_title: "node.js Server"
 date: 2020-02-06T19:03:00
 layout: series
 series: k3s
-tags: k3s raspberry-pi docker
+tags: k3s raspberry-pi docker nodejs
 ---
 
 Now that I've successfully run `nginx` on my cluster, I'm going to do the same with a simple `node.js` server.

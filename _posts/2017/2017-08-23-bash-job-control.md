@@ -11,8 +11,9 @@ time, and have them restart if they crash.
 
 I also want them all to die at the same time if I stop the foreground process.
 
-I can't use `monit` or `upstart` or `systemd`, because these aren't system
-processes; I'm running them locally (probably from a Makefile). I also spent some time messing around with `forever`, but I couldn't persuade it to run non-node processes.
+I can't use `monit` or `upstart` or `systemd`, because these aren't system processes; I'm running them locally (probably
+from a Makefile). I also spent some time messing around with `forever`, but I couldn't persuade it to run non-node
+processes.
 
 Let's use bash instead...
 
