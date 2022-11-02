@@ -118,7 +118,7 @@ external system to do the validation.
 
 ## Public Key Authentication
 
-We'd prefer to use public key authentication. That's pretty easy, too:
+Passwords are bad. We'd prefer to use public key authentication. That's pretty easy, too:
 
 ```erlang
 {ok, _} = application:ensure_all_started(ssh).
