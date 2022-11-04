@@ -170,20 +170,16 @@ Port Module   Recv Sent Owner     Local Address   Foreign Address State        T
 `<0.104.0>` is our SSH connection...
 
 ```
-{% raw %}
-7> ssh:connection_info(pid(0,104,0), [peer, user]).
+{% raw %}7> ssh:connection_info(pid(0,104,0), [peer, user]).
 [{peer,{undefined,{{127,0,0,1},53357}}},
- {user,"roger"}]
-{% endraw %}
+ {user,"roger"}]{% endraw %}
 ```
 
 Alternatively you can get the connections and users like this:
 
 ```erlang
-{% raw %}
-Daemons = [D || {{ssh_system_sup,_},D,supervisor,_} <- supervisor:which_children(sshd_sup)].
+{% raw %}Daemons = [D || {{ssh_system_sup,_},D,supervisor,_} <- supervisor:which_children(sshd_sup)].
 CSups = [S || D <- Daemons, {Id,S,_,_} <- supervisor:which_children(D), is_reference(Id)].
 Connections = [C || S <- CSups, {connection,C,_,_} <- supervisor:which_children(S)].
-Users = [{C, ssh:connection_info(C, [user])} || C <- Connections].
-{% endraw %}
+Users = [{C, ssh:connection_info(C, [user])} || C <- Connections].{% endraw %}
 ```
