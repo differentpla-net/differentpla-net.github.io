@@ -18,9 +18,11 @@ images/2021-02-15-ranch-error-closed-ranch-sup.png: images/2021-02-15-ranch-erro
 images/2021-02-15-ranch-error-closed-tls-connection-sup.png: images/2021-02-15-ranch-error-closed-tls-connection-sup.svg
 	convert -resize x400 $< $@
 
-proof:
+build:
 	jekyll build
-	htmlproofer --disable-external --empty-alt-ignore ./_site/
+
+proof:
+	htmlproofer --disable-external --empty-alt-ignore --enforce-https=false ./_site/
 
 serve:
 	jekyll serve --livereload
