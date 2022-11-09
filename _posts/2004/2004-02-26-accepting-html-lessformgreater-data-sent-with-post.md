@@ -62,7 +62,7 @@ A common tactic is to have the upload script respond differently depending on wh
 
 Something like this:
 
-```
+```ruby
 #!/usr/bin/env ruby
 
 require "cgi"
