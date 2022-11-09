@@ -1,6 +1,7 @@
 ---
 title: First Vagrant VM
 date: 2014-11-13 10:18:45
+tags: vagrant
 ---
 
 *This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).
