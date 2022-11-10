@@ -1,6 +1,7 @@
 ---
 title: "&lt;define&gt; task for NAnt"
 date: 2008-01-24T15:42:02.000Z
+tags: nant
 ---
 Essentially, you write a new task like this:
 
