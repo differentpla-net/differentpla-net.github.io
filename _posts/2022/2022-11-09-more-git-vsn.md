@@ -58,7 +58,7 @@ search_up() {
 }
 ```
 
-The function is taken from https://stackoverflow.com/a/19011599/8446; we can use it as follows:
+The function is taken from <https://stackoverflow.com/a/19011599/8446>; we can use it as follows:
 
 ```bash
 git_vsn_file="$(search_up ".git-vsn")/.git-vsn"
