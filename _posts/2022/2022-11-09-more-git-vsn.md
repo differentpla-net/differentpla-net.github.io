@@ -123,13 +123,13 @@ Let's say that you've just tagged `v1.2.0` and started work on what will eventua
 But then (oh no), a bug report comes in, and you want to do a maintenance release. So you:
 
 ```bash
-git checkout v1.2.0   # tag on 'main'.
-git checkout -b v1.2  # create maintenance branch
+git checkout v1.2.0   # check out the 'v1.2.0' tag on 'main'.
+git checkout -b v1.2  # create a 'v1.2' maintenance branch
 # hack hack hack
 # fix fix fix
 # test test test
 git add hack fix test
-git commit -m "Fix: whatever was wrong with it"
+git commit -m "Fix: whatever was wrong with it [JIRA-1234]"
 git push
 git-vsn     # v1.3.0-pre+...
 ```
