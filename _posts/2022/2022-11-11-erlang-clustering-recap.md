@@ -158,4 +158,4 @@ true
 
 That works. We can repeat all of the message-sending stuff, and that works too.
 
-Cool, so clustering's working. How do we secure it with TLS? That'll be in a later blog post.
+Cool, so clustering's working. Next, we'll [secure it with TLS]({% post_url 2022/2022-11-12-erlang-tls-distribution %}).
