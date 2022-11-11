@@ -34,7 +34,7 @@ If the `~/.erlang.cookie` file doesn't exist, it will be created and a randomly-
 Alternatively, you can specify the cookie on the command-line:
 
 ```
-$ erl -sname foo -cookie KMZWIWWTBVPEBURCLHVQ
+$ erl -sname foo -setcookie KMZWIWWTBVPEBURCLHVQ
 (foo@rpi401)1> erlang:get_cookie().
 'KMZWIWWTBVPEBURCLHVQ'
 
@@ -44,7 +44,7 @@ iex(foo@rpi401)1> Node.get_cookie()
 ```
 
 <div class="callout callout-warning" markdown="span">
-By today's standards, Erlang cookies would not be considered good security. They're relatively-easily guessable
+By today's standards, Erlang cookies would *not* be considered good security. They're relatively-easily guessable
 and sniffable. If you want a properly-secure cluster, you need to use TLS with mutual authentication, and you should set
 up your network policy to restrict which pods can communicate with each other.
 </div>
