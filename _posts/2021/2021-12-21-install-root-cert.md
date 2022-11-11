@@ -9,8 +9,8 @@ Here's how to install a root CA certificate on various operating systems and pla
 ## Windows
 
 <div class="callout callout-warning" markdown="span">
-Note that doing this makes your Windows PC trust certificates issued by this CA, and the script above doesn't restrict
-certificate usage. I take no responsibility for any breakage or data loss. **Keep the key secure.**
+Note that doing this makes your Windows PC trust certificates issued by this CA, and [the script from earlier]({% post_url 2021/2021-12-21-elixir-certs %})
+doesn't restrict certificate usage. I take no responsibility for any breakage or data loss. **Keep the key secure.**
 </div>
 
 1. Double-click on the `k3s-ca.crt` file. Windows will display the certificate properties.
