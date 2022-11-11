@@ -83,8 +83,6 @@ working first. We'll worry about mutual authentication later.
 The documentation also says that the `certfile` must be a PEM file containing both the certificate and key. This isn't
 true; you can use `certfile` and `keyfile` to specify them separately.
 
-**TODO: Look up secure defaults for this stuff, including (e.g.) algos, etc. There was definitely a website with this stuff in, with Apache and nginx sample configs.**
-
 Note that you can pass the options on the command line using `-ssl_dist_opt`, but the documentation says that's legacy,
 and I'd prefer a file anyway, because (later) when I'm doing this in Kubernetes, I can use a ConfigMap.
 
