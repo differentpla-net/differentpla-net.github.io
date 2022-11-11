@@ -1,7 +1,7 @@
 ---
 title: "elixir-certs"
 date: 2021-12-21T11:50:00Z
-tags: elixir certificates
+tags: elixir
 ---
 
 I need to secure my Docker registry. Because OpenSSL sucks, I'm using
