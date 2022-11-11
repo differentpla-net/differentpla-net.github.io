@@ -99,12 +99,12 @@ Since I'm writing Erlang, I'll have to do it explicitly:
 What happens if we try to cluster nodes that are running on different hosts?
 
 ```
-roger-nuc1$ erl -name demo
+roger-nuc1$ erl -sname demo
 (demo@roger-nuc1)1>
 ```
 
 ```
-roger-nuc2$ erl -name demo
+roger-nuc2$ erl -sname demo
 (demo@roger-nuc2)1>
 ```
 
@@ -132,12 +132,12 @@ The other host prints an error message:
 It's because the two nodes are using different cookies. We can fix that. Kill both of the Erlang nodes and restart them:
 
 ```
-roger-nuc1$ erl -name demo -setcookie KMZWIWWTBVPEBURCLHVQ
+roger-nuc1$ erl -sname demo -setcookie KMZWIWWTBVPEBURCLHVQ
 (demo@roger-nuc1)1>
 ```
 
 ```
-roger-nuc2$ erl -name demo -setcookie KMZWIWWTBVPEBURCLHVQ
+roger-nuc2$ erl -sname demo -setcookie KMZWIWWTBVPEBURCLHVQ
 (demo@roger-nuc2)1>
 ```
 
