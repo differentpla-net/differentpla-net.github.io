@@ -154,7 +154,7 @@ to the `server` section, of the `inet_tls.conf` file as follows:
 ...but now clustering doesn't work:
 
 ```
-(demo@roger-nuc0)1> net_kernel:connect_node('demo@roger-nuc3').
+(demo@roger-nuc1)1> net_kernel:connect_node('demo@roger-nuc2').
 false
 ```
 
@@ -163,15 +163,15 @@ To fix that, we'll need some server certificates that actually have the correct 
 ```
 ./certs create-cert \
     --issuer-cert inet-tls-ca.crt --issuer-key inet-tls-ca.key \
-    --out-cert roger-nuc0.crt --out-key roger-nuc0.key \
+    --out-cert roger-nuc1.crt --out-key roger-nuc1.key \
     --template server \
-    --subject '/CN=roger-nuc0'
+    --subject '/CN=roger-nuc1'
 
 ./certs create-cert \
     --issuer-cert inet-tls-ca.crt --issuer-key inet-tls-ca.key \
-    --out-cert roger-nuc3.crt --out-key roger-nuc3.key \
+    --out-cert roger-nuc2.crt --out-key roger-nuc2.key \
     --template server \
-    --subject '/CN=roger-nuc3'
+    --subject '/CN=roger-nuc2'
 ```
 
 Ideally, you'd keep the CA key separate and secure, and you'd use certificate signing requests and all of that jazz. I
@@ -220,10 +220,10 @@ $ ./run.sh
 Erlang/OTP 25 [erts-13.0.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]
 
 Eshell V13.0.4  (abort with ^G)
-(demo@roger-nuc0)1> net_kernel:connect_node('demo@roger-nuc3').
+(demo@roger-nuc1)1> net_kernel:connect_node('demo@roger-nuc2').
 true
-(demo@roger-nuc0)2> nodes().
-['demo@roger-nuc3']
+(demo@roger-nuc1)2> nodes().
+['demo@roger-nuc2']
 ```
 
 ### Aside: Using an Intermediate CA
@@ -234,7 +234,7 @@ the server certificate file. You don't need to include the root CA certificate.
 It should come _after_ the server certificate (see RFC 4346):
 
 ```
-cat roger-nuc0.crt intermediate-ca.crt > roger-nuc0.pem
+cat roger-nuc1.crt intermediate-ca.crt > roger-nuc1.pem
 ```
 
 ## Client Authentication
