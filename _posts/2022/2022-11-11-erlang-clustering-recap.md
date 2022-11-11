@@ -75,7 +75,14 @@ Shell got hello
 ok
 ```
 
+Erlang clustering's working between two nodes running on the same host. That's a good start.
+
 ### Autoclustering using epmd
+
+We had to explicitly name the node name in `net_kernel:connect_node`, above. Can we do that automatically?
+
+Yes, we can. Since the two nodes are running on the same node, they'll have registered in `epmd`, the Erlang Port
+Mapping Daemon. We can use that for discovery.
 
 If you're writing an Elixir program, you can use `libcluster` for this, using its `epmd` strategy.
 
@@ -89,35 +96,35 @@ Since I'm writing Erlang, I'll have to do it explicitly:
 
 ## Different hosts
 
-What happens if we try to do the same thing on different hosts?
+What happens if we try to cluster nodes that are running on different hosts?
 
 ```
-roger-nuc0$ erl -name demo
-(demo@roger-nuc0)1>
+roger-nuc1$ erl -name demo
+(demo@roger-nuc1)1>
 ```
 
 ```
-roger-nuc3$ erl -name demo
-(demo@roger-nuc3)1>
+roger-nuc2$ erl -name demo
+(demo@roger-nuc2)1>
 ```
 
-The first thing to note is that the node name (`demo`) can be the same because the nodes are running on different nodes.
+The node names (`demo`) can be the same because the nodes are running on different nodes.
 
-The second thing to note is that I'm missing `roger-nuc1` and `roger-nuc2`. They're boxed up on my desk, because they
-shipped without UK power leads; I'm waiting for those to be delivered.
+We can't use epmd to discover nodes on other hosts, unless we already know the host name, so we'll have to go back to
+doing it explicitly.
 
 Can we connect them?
 
 ```
-(demo@roger-nuc0)1> net_kernel:connect_node('demo@roger-nuc3').
+(demo@roger-nuc1)1> net_kernel:connect_node('demo@roger-nuc2').
 false
 ```
 
 The other host prints an error message:
 
 ```
-(demo@roger-nuc3)1> =ERROR REPORT==== 11-Nov-2022::20:16:34.138961 ===
-** Connection attempt from node 'demo@roger-nuc0' rejected. Invalid challenge reply. **
+(demo@roger-nuc2)1> =ERROR REPORT==== 11-Nov-2022::20:16:34.138961 ===
+** Connection attempt from node 'demo@roger-nuc1' rejected. Invalid challenge reply. **
 ```
 
 ## Cookies
@@ -125,22 +132,28 @@ The other host prints an error message:
 It's because the two nodes are using different cookies. We can fix that. Kill both of the Erlang nodes and restart them:
 
 ```
-roger-nuc0$ erl -name demo -setcookie KMZWIWWTBVPEBURCLHVQ
-(demo@roger-nuc0)1>
+roger-nuc1$ erl -name demo -setcookie KMZWIWWTBVPEBURCLHVQ
+(demo@roger-nuc1)1>
 ```
 
 ```
-roger-nuc3$ erl -name demo -setcookie KMZWIWWTBVPEBURCLHVQ
-(demo@roger-nuc3)1>
+roger-nuc2$ erl -name demo -setcookie KMZWIWWTBVPEBURCLHVQ
+(demo@roger-nuc2)1>
+```
+
+The cookie is an arbitrary string. The one above was randomly generated with the following:
+
+```
+env LC_CTYPE=C tr -dc 'A-Z' < /dev/random | head -c 20
 ```
 
 Can we connect them?
 
 ```
-(demo@roger-nuc0)1> net_kernel:connect_node('demo@roger-nuc3').
+(demo@roger-nuc1)1> net_kernel:connect_node('demo@roger-nuc2').
 true
-(demo@roger-nuc0)2> net_kernel:connect_node('demo@roger-nuc3').
-['demo@roger-nuc3']
+(demo@roger-nuc1)2> net_kernel:connect_node('demo@roger-nuc2').
+['demo@roger-nuc2']
 ```
 
 That works. We can repeat all of the message-sending stuff, and that works too.
