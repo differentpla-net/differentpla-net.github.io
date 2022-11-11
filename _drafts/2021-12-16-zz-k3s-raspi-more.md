@@ -17,7 +17,6 @@ tags: k3s raspberry-pi
   - Everyone seems to be "don't use k8s for your database", but it's gotta go _somewhere_.
 - Redis sentinel in a k8s cluster. How reliable is it?
   - Can we ignore it from the pov of a client, if it's all hidden behind a service?
-- Git self host: https://www.inmotionhosting.com/support/website/git/git-server/
 - How best to manage k8s yaml files?
 - CI, using, e.g., ArgoCD. ArgoCD because Twilio seems to be leaning that way. What others are available, and why not use those?
 - What does `ReclaimPolicy` on a `PersistentVolume` do? How can I be sure that my data's getting/not getting deleted appropriately?
