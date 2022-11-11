@@ -42,3 +42,27 @@ How do you prevent the PV from being deleted? It's got ReclaimPolicy=Delete, but
 `kubectl describe service my-service` lists endpoints. If there are none, then the service isn't backed by an app.
 
 - Cross-compiling arm64 containers on arm64/x86_64 PCs? Because Pi4 is kinda slow.
+
+
+How _do_ you tell it not to run on a particular arch?
+
+```
+kubectl --namespace gitea edit statefulset gitea-postgresql
+```
+
+```yaml
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+```
+
+But: unless I spin up an amd64 node, this doesn't help. So still got to find an arm64 PG and memcached container and stand them up.
+
+
+Troubleshooting
+
+- https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/ -- overriding the entry command, so that you can see what's in the volume before it starts.
+- https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/ -- sleep 1d as the entry point, so that it doesn't start.
+
+
+- https://krew.sigs.k8s.io/plugins/
