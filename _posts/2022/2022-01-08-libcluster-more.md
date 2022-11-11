@@ -103,3 +103,79 @@ to, but it'll ignore other nodes in the pod.
 On the bright side, you can go epmdless, because libcluster allows you to swap out the connect/disconnect functions. Or
 not. Maybe that's not what that's for. That's for implementations that don't want to use Erlang distribution at all.
 TODO: Clarify this.
+
+You can look up your own name happily, 'cos it's in `/etc/hosts`, and the default for Erlang is to look there. But you can't look up other names.
+
+```
+iex(cluster_demo@cluster-demo-587859c9b4-2dfzf)34> :inet.gethostbyname('cluster-demo-587859c9b4-2dfzf')
+{:ok,
+ {:hostent, 'cluster-demo-587859c9b4-2dfzf', ['cluster-demo-587859c9b4-2dfzf'],
+  :inet, 4, [{10, 42, 2, 99}]}}
+iex(cluster_demo@cluster-demo-587859c9b4-2dfzf)35> :inet.gethostbyname('cluster-demo-587859c9b4-sjlw7')
+{:error, :nxdomain}
+```
+
+You still need to expose a service for `endpoint_pod_names` to work:
+
+```
+iex(cluster_demo@cluster-demo-587859c9b4-2dfzf)47> :inet.gethostbyname('cluster-demo-587859c9b4-2dfzf.cluster-demo.cluster-demo.svc.cluster.local')
+{:ok,
+ {:hostent,
+  'cluster-demo-587859c9b4-2dfzf.cluster-demo.cluster-demo.svc.cluster.local',
+  ['cluster-demo-587859c9b4-2dfzf.cluster-demo.cluster-demo.svc.cluster.local'],
+  :inet, 4, [{10, 42, 2, 99}]}}
+```
+
+The duplication is because the service name and the namespace are both "cluster-demo".
+
+Pods are namespaced. So if you wanted to subvert epmd (or write a CoreDNS plugin), and modelling it after
+`1-1-1-1.default.pod.cluster.local`, you'd need something like this:
+
+```elixir
+:"node@pod-name-DEPLOY-SUFFIX.NAMESPACE.pod.cluster.local"
+```
+
+Could use `dnsConfig` to make that implicit...? See https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config.
+
+By which I mean that you could:
+1. have node names of `node@pod-name-DEPLOY-SUFFIX`
+2. use `dnsConfig` to add `search NAMESPACE.pod.cluster.local`
+3. CoreDNS plugin to implement `POD.NS.pod.cluster.local` searches (in addition to the dotted-IP ones).
+
+But you're never going to get ops to agree to that.
+
+Oh, here's an idea:
+1. node names as above.
+2. `dnsConfig` also points to a sidecar DNS, which...
+3. does the pod lookups. It'll need to defer to the default later, though.
+
+Or an epmd module:
+
+It needs configuration:
+
+- If I'm looking up POD, it needs to know NS (it can get the current NS from the serviceaccount directory), and it needs
+  to do a Kubernetes query to find the IP address.
+- If I'm looking up POD.NS, we're good.
+
+Or you just give up and use the headless service or dotted-IP modes.
+
+`subdomain` gives:
+
+```elixir
+iex(cluster_demo@cluster-demo-559f5454df-v8wrd.cluster-demo.cluster-demo.svc.cluster.local)1> :inet.gethostbyname('cluster-demo-559f5454df-v8wrd.cluster-demo.cluster-demo.svc.cluster.local')
+{:ok,
+ {:hostent,
+  'cluster-demo-559f5454df-v8wrd.cluster-demo.cluster-demo.svc.cluster.local',
+  ['cluster-demo-559f5454df-v8wrd.cluster-demo.cluster-demo.svc.cluster.local'],
+  :inet, 4, [{10, 42, 3, 109}]}}
+
+iex(cluster_demo@cluster-demo-559f5454df-v8wrd.cluster-demo.cluster-demo.svc.cluster.local)2> :inet.gethostbyname('cluster-demo-559f5454df-w4q4b.cluster-demo.cluster-demo.svc.cluster.local')
+{:ok,
+ {:hostent,
+  'cluster-demo-559f5454df-w4q4b.cluster-demo.cluster-demo.svc.cluster.local',
+  ['cluster-demo-559f5454df-w4q4b.cluster-demo.cluster-demo.svc.cluster.local'],
+  :inet, 4, [{10, 42, 1, 91}]}}
+```
+
+...but libcluster doesn't have a way to build hostnames like that (duplicate `cluster-demo`; service and namespace). It
+_might_ have worked in `hostname` mode, but that requires a `StatefulSet`. This is annoying.
