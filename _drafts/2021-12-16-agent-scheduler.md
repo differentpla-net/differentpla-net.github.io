@@ -1,0 +1,36 @@
+## Agent scheduling
+
+- We need a scheduler; this should be single-instance (or sharded, one instance per shard; resharding is a potential problem, however).
+  - It will maintain the desired list of running agents.
+  - It will periodically check in with the agent nodes to see whether the agents are running.
+    - We might be able to optimise this by having _it_ know which agents are on which node, so that if a node dies, it instantly knows which agents are dead.
+  - For agents that are not running, but should be, it will pick an agent server and tell it to run that agent.
+  - Scheduling is a complex thing, but we can simplify it by just working out a score for each node:
+    - How many agents is it running? How loaded is it? We can use memory/CPU/etc. metrics for this.
+    - Is it draining?
+- It would be interesting to see if we could add a custom controller/scheduler to represent agents. I'm not sure how that would work, however.
+  - <https://kubernetes.io/docs/concepts/scheduling-eviction/>
+- To partition agents into dev/prod/etc., we can use different schedulers?
+  - They can't be in different clusters, though, because we need all device servers to be able to see all agent servers.
+- Device servers must be able to find an agent. If the agent cannot be found, that's NOT our problem; that's the scheduler's problem.
+  - If the agent comes up _after_ the device is connected, who associates the two? Suspect that having the device server periodically reattach is the correct answer.
+- Where is the desired agent list persisted to?
+- If we have a single replica, then k8s deals with recovery, and we don't need leader elections.
+  - How does this work with a deploy? How do we transfer ownership to the new pod?
+  - Otherwise, leadership elections can occur by using k8s leases.
+    - <https://kubernetes.io/blog/2016/01/simple-leader-election-with-kubernetes/>
+    - <https://itnext.io/leader-election-in-kubernetes-using-client-go-a19cbe7a9a85>
+    - <https://pkg.go.dev/k8s.io/client-go/tools/leaderelection>
+    - <https://github.com/kubernetes/client-go/blob/56656ba0e04ff501549162385908f5b7d14f5dc8/tools/leaderelection/leaderelection.go#L265>
+    - <https://docs.sysdig.com/en/docs/installation/sysdig-agent/agent-installation/using-node-leases/>
+- Inbound HTTP -- can we just use an ingress? How many rules can it support? Can it be reconfigured on the fly?
+- Outbound HTTP
+  - Currently using an extra network interface with custom firewall rules.
+  - Can we use network policy for that?
+    - <https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/>
+  - Can we use an outbound proxy instead?
+- Things I can blog about:
+  - Transferring ownership during a deploy.
+  - Data persistence. -- <https://medium.com/@wttj_tech/elixir-how-to-distribute-mnesia-between-multiple-nodes-cb7c851b1ed1> ...? https://www.welcometothejungle.com/en/articles/redis-mnesia-distributed-database
+  - Draining a node. Grace periods, etc.
+- Redis on k8s.
