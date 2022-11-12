@@ -13,12 +13,14 @@
 
     <title>{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}</title>
 
-    <meta property="og:title" content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
+    <meta property="og:title"
+        content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
     <meta property="og:description"
         content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
+    <meta name="twitter:title"
+        content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
     <meta name="twitter:description"
         content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
     <meta name="twitter:site" content="{{ site.twitter_username }}" />
@@ -28,6 +30,7 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <script defer data-domain="blog.differentpla.net" src="https://plausible.io/js/script.js"></script>
+    <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
     {% feed_meta %}
 </head>
