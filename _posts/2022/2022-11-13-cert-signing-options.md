@@ -8,11 +8,11 @@ I want to set up an Erlang cluster in Kubernetes, using TLS with mutual authenti
 potential options for doing that. It's also applicable to general mutual TLS between pods.
 
 When doing mutual TLS authentication between pods, we need each pod to have its own certificate. It will use this
-certificate both as a server certificate and as a client certificate. All of the certificates should be issued by the
-same certificate authority.
+certificate as both a server certificate and a client certificate. All of the certificates should be issued by the same
+certificate authority.
 
 The problem is that we can't easily create the certificates ahead of time, because the pod names aren't known at that
-point. Moreover, the usual way to make keys and certificates available to containers is as Secrets, which aren't
+point. Moreover, the usual way to make keys and certificates available to containers is as secrets, which aren't
 pod-specific.
 
 ## Certificate Signing Requests
@@ -61,8 +61,8 @@ it creates (and keeps in sync) a `Secret` resource containing the generated cert
 
 The problem with that is that `Secret` resources aren't pod-specific, and we need a unique certificate for each pod.
 
-But it _does_ also provide [`CertificateRequest`](https://cert-manager.io/docs/concepts/certificaterequest/) resources,
-which are functionally the same as `CertificateSigningRequest` resources.
+But cert-manager _does_ also provide [`CertificateRequest`](https://cert-manager.io/docs/concepts/certificaterequest/)
+resources, which are functionally the same as `CertificateSigningRequest` resources.
 
 To see it in action, you can follow the [Normal User](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#normal-user) example in the Kubernetes _"Certificate Signing Requests"_ documentation. But instead of a Kubernetes `CertificateSigningRequest`, create a cert-manager `CertificateRequest` instead:
 
