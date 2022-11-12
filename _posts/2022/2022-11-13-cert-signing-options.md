@@ -81,7 +81,7 @@ spec:
   # 90 days
   duration: 2160h
   issuerRef:
-    name: k3s-ca-cluster-issuer
+    name: my-cluster-issuer
     kind: ClusterIssuer
 EOF
 ```
