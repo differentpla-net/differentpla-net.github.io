@@ -113,7 +113,8 @@ kubectl --namespace myapp create secret generic erlang-cookie --from-literal=coo
 ```
 
 Remember:
-- Secrets are scoped to the namespace, so you might want to put your app name as a prefix, unless you're using a dedicated namespace.
+- Secrets are scoped to the namespace, so you might want to put your app name as a prefix, unless you're using a
+  dedicated namespace.
 - A secret can contain multiple items. The example above uses `cookie` as the key.
 - Secrets aren't actually that secret. Fortunately, Erlang cookies aren't actually that secret either.
 
