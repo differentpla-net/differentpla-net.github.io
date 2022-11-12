@@ -41,4 +41,4 @@ This forms the first of a series of blog posts:
 
 ## Resources
 
-My `.direnvrc` file is in my `dotfiles` repo: [https://github.com/rlipscombe/dotfiles/blob/master/direnvrc](https://github.com/rlipscombe/dotfiles/blob/master/direnvrc)
+My direnv config is here: [https://github.com/rlipscombe/direnv-tools](https://github.com/rlipscombe/direnv-tools)
