@@ -57,11 +57,22 @@ cookie in `vm.args`; here's the relevant snippet from the template:
 
 ```conf
 ## Cookie for distributed erlang
-{% raw %}-setcookie {{ rel_name }}{% endraw %}
+{% raw %}-setcookie {{name}}_cookie{% endraw %}
 ```
 
-Yes, it's predictable; you can change it. The point is that, because `vm.args` is part of the release, every node will
-be using the same cookie, and you're done.
+...which, when rebar creates your app, expands to (e.g.):
+
+```conf
+## Cookie for distributed erlang
+-setcookie myapp_cookie
+```
+
+Because `vm.args` is part of the release, every node will be using the same cookie, which is what you want. Yes, it's
+predictable; you can change it.
+
+<div class="callout callout-warning" markdown="span">
+Rotating cookies is _hard_. I'm not going to cover it here.
+</div>
 
 Unfortunately, `vm.args` is usually checked into source control, which means that your cookie is checked into source
 control.
@@ -79,9 +90,8 @@ You'll also have to update your `relx.config` (or the `relx` section in `rebar.c
 {vm_args_src, "./config/vm.args.src"}
 ```
 
-<div class="callout callout-warning" markdown="span">
-Rotating cookies is _hard_. I'm not going to cover it here.
-</div>
+If you do the above, then the startup script will automatically expand environment variables at runtime, meaning that
+you can set control the cookie by setting the `RELEASE_COOKIE` environment variable.
 
 ## Elixir releases
 
