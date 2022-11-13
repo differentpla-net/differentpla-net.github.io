@@ -173,7 +173,7 @@ To fix that, we'll need some server certificates that actually have the correct 
 ```
 
 Ideally, you'd keep the CA key separate and secure, and you'd use certificate signing requests and all of that jazz. I
-don't feel like jumping through all of those hoops for a demo. Don't do this in production (or even in stage).
+don't feel like jumping through all of those hoops for a demo.
 
 Copy the server certificates and keys to the correct hosts.
 
