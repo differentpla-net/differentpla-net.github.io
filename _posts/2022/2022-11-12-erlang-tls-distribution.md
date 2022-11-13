@@ -131,8 +131,8 @@ Done. It's encrypted, but it's not authenticated (that's what the `WARNING REPOR
 
 ## Server authentication
 
-We can turn on server authentication by adding `{verify, verify_peer}` to the `client` section, and the CA certificate
-to the `server` section, of the `inet_tls.conf` file as follows:
+We can turn on server authentication by adding `{verify, verify_peer}` and `cacertfile` options to the `client` section
+of the `inet_tls.conf` file as follows:
 
 ```erlang
 [
