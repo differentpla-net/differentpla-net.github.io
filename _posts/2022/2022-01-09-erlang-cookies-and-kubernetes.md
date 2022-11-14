@@ -8,11 +8,8 @@ Distributed Erlang and Elixir applications use a shared secret called a "cookie"
 characters. All nodes in the cluster must use the same cookie. Let's take a look at what that means in a Kubernetes
 context.
 
-<div class="callout callout-warning" markdown="span">
-**2022-11-14**: It turns out that I misremembered how the relx startup script works. The following won't work for Erlang releases. See [issue #29](https://github.com/differentpla-net/differentpla-net.github.io/issues/29).
-</div>
-
-**tl;dr:** Use Kubernetes secrets to set the `RELX_COOKIE` (Erlang) or `RELEASE_COOKIE` (Elixir) environment variable.
+**tl;dr:** Use Kubernetes secrets to set the `RELEASE_COOKIE` environment variable. For Erlang, also edit
+`config/vm.args.src`.
 
 ## The `~/.erlang.cookie` file
 
@@ -66,8 +63,21 @@ cookie in `vm.args`; here's the relevant snippet from the template:
 Yes, it's predictable; you can change it. The point is that, because `vm.args` is part of the release, every node will
 be using the same cookie, and you're done.
 
-Unfortunately, `vm.args` is usually checked into source control. You should prefer setting it with the `RELX_COOKIE`
-environment variable.
+Unfortunately, `vm.args` is usually checked into source control, which means that your cookie is checked into source
+control.
+
+Instead, rename `vm.args` to `vm.args.src`, and change it as follows:
+
+```conf
+## Cookie for distributed erlang
+{% raw %}-setcookie ${RELEASE_COOKIE}{% endraw %}
+```
+
+You'll also have to update your `relx.config` (or the `relx` section in `rebar.config`) to include the following:
+
+```erlang
+{vm_args_src, "./config/vm.args.src"}
+```
 
 <div class="callout callout-warning" markdown="span">
 Rotating cookies is _hard_. I'm not going to cover it here.
@@ -107,7 +117,7 @@ There don't appear to be any widespread conventions for this yet. RabbitMQ recom
 containers:
 - name: myapp
   env:
-  - name: RELEASE_COOKIE  # or RELX_COOKIE (or just set both)
+  - name: RELEASE_COOKIE
     valueFrom:
       secretKeyRef:
         name: erlang-cookie
