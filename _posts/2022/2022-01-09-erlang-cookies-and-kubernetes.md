@@ -8,6 +8,10 @@ Distributed Erlang and Elixir applications use a shared secret called a "cookie"
 characters. All nodes in the cluster must use the same cookie. Let's take a look at what that means in a Kubernetes
 context.
 
+<div class="callout callout-warning" markdown="span">
+**2022-11-14**: It turns out that I misremembered how the relx startup script works. The following won't work for Erlang releases. See [issue #29](https://github.com/differentpla-net/differentpla-net.github.io/issues/29).
+</div>
+
 **tl;dr:** Use Kubernetes secrets to set the `RELX_COOKIE` (Erlang) or `RELEASE_COOKIE` (Elixir) environment variable.
 
 ## The `~/.erlang.cookie` file
