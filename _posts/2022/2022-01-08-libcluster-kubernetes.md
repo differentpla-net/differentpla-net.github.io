@@ -187,7 +187,8 @@ An SRV query for a headless service returns multiple entries, but the response d
 ```
 
 <div class="callout callout-info" markdown="span">
-The numbers are a `(priority, weight, port)` tuple. Lower priorities should be tried first. Records with the same priority should be load-balanced according to the weight. The port is, well, the port (here port 80, HTTP).
+The numbers are a `(priority, weight, port)` tuple. Lower priorities should be tried first. Records with the same priority should be load-balanced according to the weight. The port is, well, the port (here port 80, HTTP).<br>
+**Note:** If you don't specify any ports in the headless service spec, then it won't respond to `SRV` queries; it will respond to `A` queries.
 </div>
 
 If it's headless _and_ a StatefulSet, you get the following:
