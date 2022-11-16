@@ -25,6 +25,7 @@ export PATH=$PATH:~/.cache/rebar3/bin
 ## Choose default rebar3 formatter
 
 ```sh
+mkdir -p ~/.config/rebar3/
 echo -e "{plugins, [erlfmt]}." >> ~/.config/rebar3/rebar.config
 ```
 
