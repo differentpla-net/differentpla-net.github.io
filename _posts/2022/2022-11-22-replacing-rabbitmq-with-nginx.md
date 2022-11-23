@@ -92,7 +92,7 @@ The agent server writes the agent's location to redis when the agent starts, and
 That required a web server in the agent server that could route the request to the customer's code. We used
 [cowboy](https://github.com/ninenines/cowboy/).
 
-Once I'd got that spiked out (I recall that it took my roughly an afternoon), I tossed it over the wall for the DevOps
+Once I'd got that spiked out (I recall that it took me roughly an afternoon), I tossed it over the wall for the DevOps
 guys to harden.
 
 This solution has several advantages over the RabbitMQ-based request/response scheme:
