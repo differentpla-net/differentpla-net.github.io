@@ -120,4 +120,5 @@ This solution has several advantages over the RabbitMQ-based request/response sc
 ## Incidents
 
 We misconfigured replication at one point, which led to
-[this March 2021 incident](https://status.electricimp.com/incidents/2k6znjp9km84).
+[this March 2021 incident](https://status.electricimp.com/incidents/2k6znjp9km84). I did an internal presentation to the
+rest of the business unit, but I don't think the incident report was made available externally.
