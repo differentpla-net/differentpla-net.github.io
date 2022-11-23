@@ -11,7 +11,7 @@ agent-inbound HTTP routing at Electric Imp.
 > as a proxy, using a tiny bit of lua to look up the destination in redis. Much simpler. Way more performant and
 > scalable.
 
--- https://twitter.com/rogerlipscombe/status/1574808928835276800
+-- <https://twitter.com/rogerlipscombe/status/1574808928835276800>
 
 ## Caveat
 
@@ -26,12 +26,12 @@ connected. That agent can expose an HTTP endpoint.
 > runs in the cloud (agent code). Every device has its own, unique agent instance, which acts as the device’s
 > intermediary for all Internet communication.
 
--- https://developer.electricimp.com/software-development-overview
+-- <https://developer.electricimp.com/software-development-overview>
 
 > The unique URL at which a given agent can be contacted via HTTPS. It comprises the base URL agent.electricimp.com plus
 > the agent’s ID.
 
--- https://developer.electricimp.com/faqs/terminology
+-- <https://developer.electricimp.com/faqs/terminology>
 
 In the Electric Imp production environment, the running agents are distributed across multiple servers. There are about
 10,000-15,000 agents on each server. This meant that we had to route an incoming HTTP request to the correct agent
@@ -39,14 +39,15 @@ server, and ensure that the response is sent back to the client successfully.
 
 ## Original Implementation
 
-The original implementation of this used an AWS Elastic Load Balancer (ELB), in front of a few instances of the inbound
-HTTP service, written in node.js. In order to route to the correct agent server, the HTTP request would be serialized
-and published to a RabbitMQ exchange, with the agent ID as the routing key.
+The original implementation of this used a node.js application behind an AWS Elastic Load Balancer (ELB). In order to
+route to the correct agent server, the HTTP request would be serialized and published to a RabbitMQ exchange, with the
+agent ID as the routing key.
 
 Each agent server would subscribe to the RabbitMQ queues corresponding to the agents running on that server. In this
 way, the request would make its way to the correct agent, where it could be correctly handled by the customer's code.
 
-When the customer's code needed to send the response back to the client (browser, mobile app, whatever), it would send it back to the originating inbound HTTP service (the response queue would be in one of the RabbitMQ message headers).
+When the customer's code needed to send the response back to the client (browser, mobile app, whatever), it would send
+it back to the originating inbound HTTP service (the response queue would be in one of the RabbitMQ message headers).
 
 This is essentially straight out of
 [one of the RabbitMQ tutorials](https://www.rabbitmq.com/tutorials/tutorial-six-python.html), and it's a fairly common
@@ -59,13 +60,13 @@ together.
 
 It became clear later that there were a few problems with it:
 
-- If the agent never responds, or if the agent crashes, we had to write our own timeout logic.
+- We had to write our own timeout logic to handle cases where the agent never responds, or if the agent crashes.
 - If the agent responds late, we need our own logic to discard the unneeded response, since we've already sent a timeout
   response to the client.
 - It was difficult to add rate-limiting.
-- It made it difficult to diagnose problems.
-- As the amount of traffic grew, RabbitMQ became overwhelmed, and harder to manage. To be fair, we were using RabbitMQ
-  for a _lot_ of other things at the time, so it could have been something else that pushed it over the edge.
+- It made it difficult to diagnose problems, because of the disconnected nature of the system.
+- As the amount of traffic grew, we found we were putting a lot of strain on RabbitMQ, which we were using for many
+  other things as well.
 - Because of the simple request/response scheme, it would have been extremely difficult to add streaming (chunked
   encoding) or websockets later. As it happens, we never really got around to it, but it wouldn't have been a good fit
   for a simple request/response mechanism.
@@ -91,6 +92,9 @@ The agent server writes the agent's location to redis when the agent starts, and
 That required a web server in the agent server that could route the request to the customer's code. We used
 [cowboy](https://github.com/ninenines/cowboy/).
 
+Once I'd got that spiked out (I recall that it took my roughly an afternoon), I tossed it over the wall for the DevOps
+guys to harden.
+
 This solution has several advantages over the RabbitMQ-based request/response scheme:
 
 - We could easily make use of nginx's built-in rate-limiting functionality, rather than write and maintain our own.
@@ -100,9 +104,9 @@ This solution has several advantages over the RabbitMQ-based request/response sc
 
 ## Related Links
 
-- Someone else is working through it here: https://stackoverflow.com/questions/70657542/dynamic-routing-with-nginx-lua-and-redis
-- And here: https://medium.com/@VarshaChahal/using-lua-nginx-module-for-dynamic-routing-based-on-redis-values-1740a10f9905
-- And literally in the openresty docs: https://openresty.org/en/dynamic-routing-based-on-redis.html
+- Someone else working through it here: <https://stackoverflow.com/questions/70657542/dynamic-routing-with-nginx-lua-and-redis>
+- And here: <https://medium.com/@VarshaChahal/using-lua-nginx-module-for-dynamic-routing-based-on-redis-values-1740a10f9905>
+- And literally in the openresty docs: <https://openresty.org/en/dynamic-routing-based-on-redis.html>
 
 ## Downsides
 
@@ -110,7 +114,8 @@ This solution has several advantages over the RabbitMQ-based request/response sc
   place.
 - If the backend process dies, that's not as important, since the cowboy handler can deal with that -- the handler
   returns 404 if the agent isn't running on the current server.
-- We ended up needing a redis replica on each nginx node, and had to be careful that those replicas couldn't be promoted.
+- We ended up needing a redis replica of the routing table on each nginx node, and had to be careful that those replicas
+  couldn't be promoted.
 
 ## Incidents
 
