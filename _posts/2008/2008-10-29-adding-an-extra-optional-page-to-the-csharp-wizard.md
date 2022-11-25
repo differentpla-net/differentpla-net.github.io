@@ -1,6 +1,8 @@
 ---
 title: "Adding an extra (optional) page to the C# Wizard"
 date: 2008-10-29T16:53:37.000Z
+redirect_from:
+  - /content/2008/10/adding-extra-optional-page-c-wizard
 layout: series
 series: winformswizard
 tags: csharp wizard windows-forms

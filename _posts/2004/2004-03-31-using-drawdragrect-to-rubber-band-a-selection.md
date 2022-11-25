@@ -1,6 +1,8 @@
 ---
 title: "Using DrawDragRect to rubber-band a selection"
 date: 2004-03-31T13:54:00.000Z
+redirect_from:
+  - /content/2004/03/using-drawdragrect-to-rubber-band-a-selection
 tags: mfc
 ---
 If you're allowing the user to "rubber-band" a selection in your application, you might choose to use the `DrawDragRect` function. Here's how.
