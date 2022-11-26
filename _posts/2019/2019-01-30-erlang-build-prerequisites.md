@@ -39,6 +39,11 @@ Note: If you've got a new enough version of WSL 2, you can install the above, an
 The following may not be correct, because I never bother installing them.
 
 ```
+# If you want wxWebView:
+#   wxWidgets was not compiled with --enable-webview or wxWebView developer package is not installed,
+#   wxWebView will NOT be available
+sudo apt-get -y install libwxgtk-webview3.0-gtk3-dev
+
 # I consider these "optional", because I've never noticed them missing.
 sudo apt-get -y install default-jdk         # jinterface     : No Java compiler found
 sudo apt-get -y install unixodbc-dev        # odbc           : ODBC library - link check failed
