@@ -59,7 +59,7 @@ Install `jq`; see https://stedolan.github.io/jq/
 
 You'll need this:
 
-```
+```bash
 base64url() {
     base64 -w 0 | tr '+/' '-_' | tr -d '='
 }
@@ -70,7 +70,7 @@ base64url() {
 
 You'll need to deal with the JSON file you just downloaded:
 
-```
+```bash
 PRIVATE_KEY_JSON_PATH=$HOME/Downloads/foo-bar-bbec76ee9047.json
 service_account_email=$(jq -r '.client_email' < $PRIVATE_KEY_JSON_PATH)
 jq -r '.private_key' < $PRIVATE_KEY_JSON_PATH > my.key
@@ -80,7 +80,7 @@ jq -r '.private_key' < $PRIVATE_KEY_JSON_PATH > my.key
 
 You need a header:
 
-```
+```bash
 jwt_header=$(echo -n '{"alg":"RS256","typ":"JWT"}' | base64url)
 ```
 
@@ -94,7 +94,7 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9
 
 ### JWT Claims
 
-```
+```bash
 # The 'jq -Mc' uses jq to validate the JSON, and removes the whitespace (and colour).
 jwt_claims=$(cat <<EOF |
 {
@@ -110,20 +110,20 @@ jq -Mc '.' | base64url)
 
 ### JWT Signature
 
-```
+```bash
 jwt_signature=$(echo -n "${jwt_header}.${jwt_claims}" | \
     openssl dgst -sha256 -sign my.key | base64url)
 ```
 
 ### JWT
 
-```
+```bash
 jwt="${jwt_header}.${jwt_claims}.${jwt_signature}"
 ```
 
 ### Exchange the JWT for an access token
 
-```
+```bash
 token_json=$(curl -s -X POST \
     https://www.googleapis.com/oauth2/v4/token \
     --data-urlencode \
@@ -135,7 +135,7 @@ access_token=$(echo $token_json | jq -r '.access_token')
 
 ### Subscribe
 
-```
+```bash
 # set these appropriately
 project=<project-name>
 sub=<subscription-name>
@@ -162,7 +162,7 @@ A message has a body and can have zero or more key/value pairs (both strings).
 
 When you publish the message, your `curl` pull command should complete (if it hasn't already timed out); it will print out something like the following:
 
-```
+```json
 {
   "receivedMessages": [
     {
@@ -193,7 +193,7 @@ If you run the `curl` pull command again, you'll get the same message again. Thi
 
 To do this, take the `ackId` field from the message and run the following:
 
-```
+```bash
 acknowledge='{"ackIds": ["QV5A...LLD5-PT5F"]}'
 curl -s -X POST \
     https://pubsub.googleapis.com/v1/$subscription:acknowledge \
@@ -206,7 +206,7 @@ Note that you have to do this before the ack deadline expires. The deadline is p
 
 ### Publishing a message
 
-```
+```bash
 # set these appropriately
 project=<project-name>
 top=<subscription-name>
