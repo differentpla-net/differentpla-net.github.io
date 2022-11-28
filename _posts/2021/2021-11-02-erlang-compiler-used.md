@@ -12,13 +12,21 @@ Beam = "path/to/foo.beam".
 CVsn = proplists:get_value(version, CInf).
 ```
 
-However, the compiler is versioned independently from the main Erlang/OTP version. For example, Erlang/OTP 24.0.6 has compiler version 8.0.2.
+## Erlang/OTP version?
 
-To find out which compiler goes with which OTP version, it gets tricky.
+However, the compiler is versioned independently from the main Erlang/OTP version. For example, Erlang/OTP 24.0.6 has
+compiler version 8.0.2.
 
-The release notes can be found here: https://www.erlang.org/news/tag/release. For each of those, find the corresponding README (for example https://erlang.org/download/OTP-24.1.README). That, however, doesn't track point-releases.
+If you want to find out which compiler goes with which OTP version, it gets tricky.
 
-The compiler has its own release notes, here: http://erlang.org/doc/apps/compiler/notes.html, which tracks point releases, but doesn't mention Erlang/OTP versions.
+The release notes can be found here: <https://www.erlang.org/news/tag/release>. For each of those, find the
+corresponding README (for example <https://erlang.org/download/OTP-24.1.README>). That, however, doesn't track
+point-releases.
+
+The compiler has its own release notes, here: <http://erlang.org/doc/apps/compiler/notes.html>, which tracks point
+releases, but doesn't mention Erlang/OTP versions.
+
+## kerl
 
 If you're using `kerl` to manage your Erlang versions, you can try this:
 
@@ -41,11 +49,15 @@ $ find ~/.kerl/erlangs/ -name 'compiler-*' | sort
 /home/roger/.kerl/erlangs/OTP-24.1/lib/compiler-8.0.3
 ```
 
+## Erlang/OTP repository
+
 If you've got a local `erlang/otp` repo, you can use the following:
 
 ```bash
 git tag | grep "^OTP-" | while read -r tag ; do vsn="$(git show "${tag}:lib/compiler/vsn.mk")" ; echo "$tag: $vsn" ; done
 ```
 
-Alternatively, you could use `git blame lib/compiler/doc/src/notes.xml` to see which commit added the change notes.
-From there, you can use `git tag --contains <commit>`.
+## git blame / git tag
+
+Alternatively, you could use `git blame lib/compiler/doc/src/notes.xml` to see which commit added the change notes. From
+there, you can use `git tag --contains <commit>`.
