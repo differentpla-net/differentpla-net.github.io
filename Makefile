@@ -31,3 +31,11 @@ serve:
 # from the future becomes a post from the present. So you'll need to trigger a rebuild, somehow.
 serve-unpublished:
 	jekyll serve --future --unpublished --livereload
+
+build-container:
+	podman build -f Dockerfile -t differentpla-net
+
+run-container:
+	podman run -p 4000:4000 \
+		--volume $(shell pwd):/web differentpla-net \
+		jekyll serve --host 0.0.0.0
