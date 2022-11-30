@@ -38,4 +38,4 @@ build-container:
 run-container:
 	podman run -p 4000:4000 \
 		--volume $(shell pwd):/web differentpla-net \
-		jekyll serve --host 0.0.0.0
+		jekyll serve --livereload --host 0.0.0.0
