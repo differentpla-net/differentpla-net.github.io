@@ -1,6 +1,7 @@
 ---
 title: "Finding it difficult to export content from Drupal"
 date: 2011-12-20T16:14:38.000Z
+published: false
 ---
 This is some background to my [Finding it difficult to export content from #drupal.](https://twitter.com/#!/rogerlipscombe/status/146682447667544064) tweet.
 
