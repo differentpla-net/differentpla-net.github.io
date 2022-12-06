@@ -4,7 +4,9 @@ date: 2013-03-18T19:57:54Z
 tags: bouncy-castle
 layout: series
 series: bouncy-castle
-redirect_from: /b/2013/21/18/how-do-i-convert-a-bouncy-castle-certificate-to-a-net-certificate-
+redirect_from:
+  - /b/2013/21/18/how-do-i-convert-a-bouncy-castle-certificate-to-a-net-certificate-
+  - /post/20/how-do-i-convert-a-bouncy-castle-certificate-to-a-net-certificate
 ---
 In the last installment, we created a *Bouncy Castle* certificate. How do we now create a .NET `X509Certificate2` object?
 

@@ -2,6 +2,7 @@
 title: "Using SQL Server Compact Edition for Unit Testing"
 date: 2009-03-29T09:02:11.000Z
 tags: sql-server-ce
+redirect_from: /content/2009/03/using-sql-server-compact-edition-unit-testing
 ---
 
 Ayende shows how to use SQLite with an in-memory database for unit testing your NHibernate code ([here](http://ayende.com/Blog/archive/2006/10/14/UnitTestingWithNHibernateActiveRecord.aspx)). This is a great idea: your unit tests will run more quickly, and you don't have to worry about tearing the database down when you've finished. On the other hand, it's not an exact match for Microsoft SQL Server (which is probably what your production website will run against).
