@@ -8,7 +8,7 @@ tags: ubuntu ubuntu-install vscode
 
 VS Code documentation is [here](https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc).
 
-Rather than editing `/etc/sysctl.conf`, I added `/etc/sysctl.d/60-inotify.conf`,
+Rather than editing `/etc/sysctl.conf`, I added `/etc/sysctl.d/60-fs-inotify.conf`,
 with the following contents:
 
 ```
