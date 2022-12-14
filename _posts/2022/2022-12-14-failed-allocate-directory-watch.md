@@ -6,7 +6,9 @@ tags: ubuntu ubuntu-install
 
 While running `apt-get upgrade`, I was getting a `Failed to allocate directory watch: Too many open files` error.
 
-It's similar to [this problem]({% post_url 2020/2020-01-10-max-user-watches %}).
+It's similar to [this warning from Visual Studio Code]({% post_url
+2020/2020-01-10-max-user-watches %}), but _this_ warning seems to be caused by
+having a large number of containers running.
 
 You can see the current limits with `sysctl fs.inotify`. On Ubuntu, with the
 defaults, these are as follows:
