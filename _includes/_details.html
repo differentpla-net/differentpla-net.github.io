@@ -2,11 +2,7 @@
     <span class="created_at timeago" data-bs-toggle="tooltip" data-bs-placement="top"
         title="{{ page.date }}">{{ page.date | date: "%-d %b %Y %H:%M" }}</span>
 
-    <span class="tags">
-        {% for tag in page.tags %}
-        <a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a>
-        {% endfor %}
-    </span>
+    {% include _tag_badges.html %}
 
     <span class="icons">
         <a href="{{ site.discussions_link }}"

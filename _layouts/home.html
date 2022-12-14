@@ -16,11 +16,7 @@
                         <span class="created_at timeago" data-bs-toggle="tooltip" data-bs-placement="top"
                             title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>
 
-                        <span class="tags">
-                            {% for tag in post.tags %}
-                            <a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a>
-                            {% endfor %}
-                        </span>
+                        {% include _tag_badges.html %}
                     </div>
                     <div class="excerpt">
                         {{ post.excerpt }}
