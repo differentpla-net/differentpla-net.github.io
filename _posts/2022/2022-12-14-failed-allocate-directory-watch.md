@@ -8,7 +8,8 @@ While running `apt-get upgrade`, I was getting a `Failed to allocate directory w
 
 It's similar to [this problem]({% post_url 2020/2020-01-10-max-user-watches %}).
 
-You can see the current limits with `sysctl fs.inotify`, which are as follows:
+You can see the current limits with `sysctl fs.inotify`. On Ubuntu, with the
+defaults, these are as follows:
 
 ```
 fs.inotify.max_queued_events = 16384
@@ -26,5 +27,3 @@ fs.inotify.max_user_watches = 524288
 ```
 
 To reload the new settings, you need to run `sudo sysctl --system`.
-
-The defaults were, respectively, 16384, 128 and 65536.
