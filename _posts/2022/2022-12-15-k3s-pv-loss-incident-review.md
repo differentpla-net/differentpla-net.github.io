@@ -1,7 +1,7 @@
 ---
 title: "K3s PV loss: Incident Review"
 date: 2022-12-15T10:37:00.000Z
-tags: k3s
+tags: k3s incident-review
 ---
 
 On December 14th, 2022 at approximately 10:15, Kubernetes wiped the persistent volumes of a number of applications in
