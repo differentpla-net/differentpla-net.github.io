@@ -5,16 +5,19 @@ tags: k3s incident-review
 ---
 
 On December 14th, 2022 at approximately 10:15, Kubernetes wiped the persistent volumes of a number of applications in
-the cluster. This is the incident review.
+the K3s cluster in my homelab. This is the incident review.
 
 ## Background
 
 My K3s cluster consists of 3 nodes: `roger-nuc0` (the server), `roger-nuc1` and `roger-nuc3`. `roger-nuc2` doesn't exist
 yet.
 
-I use ArgoCD and Gitea for GitOps.
+I use ArgoCD and Gitea for GitOps. The cluster contains a Docker registry. I'm using VictoriaMetrics and Grafana for
+monitoring. I use Longhorn for persistent volumes and MetalLB for load balancers.
 
 ## Timeline
+
+All times are in UTC (I'm in London).
 
 December 14th:
 
@@ -161,5 +164,7 @@ You don't have a backup unless you can restore it. I should test the backups mor
 ### Alerting
 
 Is there any way that I could have spotted the wiped volumes earlier (before it backed up the blank data)? Obviously,
-this problem impacted the monitoring system, so that's not gonna work. But, for example, if I were displaying the
-dashboard on the wall, I'd have spotted the problem immediately.
+this problem impacted the monitoring system, so that's not gonna work.
+
+But, for example, if I were displaying the dashboard on the wall, I'd have spotted the problem immediately. Consider
+extended health checks. Maybe some CronJobs to exercise things?
