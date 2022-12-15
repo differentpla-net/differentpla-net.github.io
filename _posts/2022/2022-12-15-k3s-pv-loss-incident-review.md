@@ -112,9 +112,13 @@ Because the only retained automatic backup occurred _after_ the data loss, the b
 count would mitigate this. Since the backups are kept in S3, which costs money, the exact number to be decided. I'll use
 3 for now.
 
+I also changed the backup frequency from daily to every second day. This trades off the retention period of the backups
+(a week) and the size/count of the backups (3) against the risk of less frequent backups (two days at risk, rather than
+one).
+
 ## Root Cause
 
-Root causes are unnecessarily reductive, but in this case: shrug, who knows?
+Root causes are unnecessarily reductive, but in this case: shrug, who knows? Something in Kubernetes fucked up.
 
 ## Further Actions
 
@@ -123,6 +127,16 @@ Root causes are unnecessarily reductive, but in this case: shrug, who knows?
 Upgrading Ubuntu and K3s on all cluster nodes at the same time made it hard to determine the cause of the problem.
 
 In future, perform upgrades separately from each other.
+
+### Take snapshots or backups before upgrades
+
+If I'd taken a snapshot before performing the upgrade, I wouldn't need to revert all the way back to November. This
+ought to be addressed by more frequent snapshots and by increased backup retention, describe below.
+
+### Drain nodes before upgrading and restarting
+
+I didn't bother draining the nodes as I was performing the upgrades and restarts. I _suspect_ that this might have
+triggered the situation where Kubernetes wiped the persistent volumes. Consider draining the nodes properly in future.
 
 ### Longhorn: Long-term retention of backups
 
