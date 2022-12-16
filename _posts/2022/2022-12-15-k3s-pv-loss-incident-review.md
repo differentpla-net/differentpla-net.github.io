@@ -148,6 +148,12 @@ the last 7 days, the last 4 week and the last 6 months.
 Since the problem appears to be caused by the pod reinitialising the volume on startup, volume snapshots would make
 recovery easier. It should be possible to configure Longhorn to take more frequent local snapshots.
 
+### Longhorn: Recurring jobs are ambiguous
+
+It's not obvious in the UI how jobs are associated with volumes. I created a snapshot job that _appears_ to apply to all (or no) volumes.
+
+I've got recurring backup jobs for each volume, but that's not obvious in the UI.
+
 ### Storage: investigate using local Synology DiskStation
 
 I've got a DS211 and a DS416 which could be used for either backups or as an iSCSI target. Longhorn (as far as I can
