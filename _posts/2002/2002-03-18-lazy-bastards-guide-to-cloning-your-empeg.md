@@ -1,7 +1,9 @@
 ---
 title: "Lazy Bastard's Guide to Cloning your empeg"
 date: 2002-03-18T07:59:00.000Z
-redirect_from: /node/view/111
+redirect_from:
+- /node/view/111
+- /~roger/empeg/car/cloning.html
 tags: empeg
 ---
 ## Problem/Context

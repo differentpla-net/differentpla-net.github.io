@@ -2,6 +2,7 @@
 title: "other_mem_fun and std::for_each"
 date: 2003-02-27T14:53:00.000Z
 tags: c++
+redirect_from: /content/2003/02/other-mem-fun-and-std-for-each
 ---
 How many times have you found yourself writing something like the following?
 
