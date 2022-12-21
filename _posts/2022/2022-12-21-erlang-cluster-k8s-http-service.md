@@ -109,3 +109,7 @@ spec:
   replicas: 5
 ...
 ```
+
+I added the host to my [custom CoreDNS server]({% post_url 2022/2022-02-25-coredns-custom %}). By navigating to
+`erlclu.k3s.differentpla.net` and hitting Refresh, I can see that it's hitting the 5 different nodes. They're not
+clustered yet. I'll fix that shortly.
