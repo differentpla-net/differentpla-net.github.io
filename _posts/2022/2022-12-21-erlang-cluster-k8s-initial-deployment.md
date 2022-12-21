@@ -46,7 +46,7 @@ It uses an `erlang:alpine` image as the base, and runs `rebar3 release` to build
 ### Makefile
 
 I'm doing this on my Windows laptop, using WSL2 and I've got Docker Desktop installed. Because I can't figure out how to
-get Docker Desktop to trust the private CA on my cluster's docker registry, I'm using `podman` instead.
+get Docker Desktop to trust the private CA on my cluster's docker registry, I'm using [podman](https://podman.io/) instead.
 
 That ends up looking like this:
 
