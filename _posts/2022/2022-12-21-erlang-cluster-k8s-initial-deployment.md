@@ -51,7 +51,7 @@ get Docker Desktop to trust the private CA on my cluster's docker registry, I'm 
 That ends up looking like this:
 
 ```makefile
-RELEASE_VERSION ?= 0.1.0
+RELEASE_VSN ?= 0.1.0
 DOCKER_REGISTRY ?= docker.k3s.differentpla.net
 
 all: build-image push-image
@@ -66,8 +66,7 @@ push-image:
 	podman push erlclu $(DOCKER_REGISTRY)/erlclu:$(RELEASE_VERSION)
 ```
 
-Nothing particularly surprising here. There's an extra `release` target so that I can run it locally. I'll be renaming
-`RELEASE_VERSION` to `RELEASE_VSN` (for consistency with Elixir) later.
+Nothing particularly surprising here. There's an extra `release` target so that I can run it locally.
 
 ### deployment.yaml
 
