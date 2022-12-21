@@ -8,7 +8,8 @@ tags: erlang kubernetes
 ---
 
 A few weeks ago, I decided to write a blog post about using mutual TLS to secure Erlang distribution (clustering), with
-auto-provisioning of certificates when running in Kubernetes. It turned into a series of blog posts. This is the first.
+auto-provisioning of certificates when running in Kubernetes. It took a little longer to write up than I expected, and
+turned into a series of blog posts.
 
 {% include _series_toc.html %}
 
