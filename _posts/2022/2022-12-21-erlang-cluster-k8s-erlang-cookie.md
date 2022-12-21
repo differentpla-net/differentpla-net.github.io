@@ -9,7 +9,8 @@ tags: erlang kubernetes
 
 I've covered this previously; see ["Erlang/Elixir Cookies and Kubernetes"]({% post_url 2022/2022-01-09-erlang-cookies-and-kubernetes %}). Here's the quick version.
 
-First, we update the cowboy handler to report the Erlang cookie, so we can check that all of the nodes (remember: they're behind an ingress; refreshing the browser will cycle through them).
+First, we update the cowboy handler to report the Erlang cookie, so we can check that all of the nodes (remember:
+they're behind an ingress; refreshing the browser will cycle through them) are using the same cookie.
 
 ```erlang
 init(Req0, Opts) ->
