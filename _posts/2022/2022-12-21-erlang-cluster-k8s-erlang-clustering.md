@@ -157,12 +157,12 @@ init(Req0, Opts) ->
 </body>{% endraw %}
 ```
 
-Aside: I'm using Jekyll for this website; it uses Liquid templating. Mustache templates use a lot of the same markup.
-Including mustache templates in Jekyll pages is annoying.
-
 ## Does it work?
 
-Yes. We have successfully implemented basic discovery and clustering between Erlang nodes in a Kubernetes cluster. That's, like, about 20% of what I came here to do, however.
+Yes.
+
+We have successfully implemented basic discovery and clustering between Erlang nodes in a Kubernetes cluster. That's,
+like, about 20% of what I came here to do, however.
 
 ## Related posts
 
