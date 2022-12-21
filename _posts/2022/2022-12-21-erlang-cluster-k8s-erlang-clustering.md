@@ -7,8 +7,9 @@ series: erlang-cluster-k8s
 tags: erlang kubernetes
 ---
 
-Based on my investigation with libcluster in Elixir, I've decided to use DNS-based discovery for finding the other
-Erlang nodes in the cluster. To do this, we'll need a headless service.
+Based on my [investigation with libcluster]({% post_url 2022/2022-01-08-libcluster-kubernetes %}) in Elixir, I've
+decided to use DNS-based discovery for finding the other Erlang nodes in the cluster. To do this, we'll need a headless
+service.
 
 ## Headless service
 
