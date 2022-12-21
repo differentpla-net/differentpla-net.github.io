@@ -38,4 +38,8 @@ dependencies to be cached.
 Only _then_ do we copy the rest of the files and build the release.
 
 Note: changing the version number in `rebar.config` invalidates the cache and causes dependencies to be fetched and
-compiled again. I'll fix that later (when I look into automatically versioning everything).
+compiled again.
+
+At this point, I'm not editing the version number (I'm relying on `imagePullPolicy: Always` and deleting the deployment
+to force container updates), so I'll ignore it for now. It'll need fixing later, once I start actually updating version
+numbers.
