@@ -39,3 +39,8 @@ run-container:
 	podman run -p 4000:4000 -p 35729:35729 \
 		--volume $(shell pwd):/web differentpla-net \
 		jekyll serve --livereload --host 0.0.0.0
+
+proof-container:
+	podman run \
+		--volume $(shell pwd):/web differentpla-net \
+		htmlproofer --disable-external --empty-alt-ignore --enforce-https=false ./_site/
