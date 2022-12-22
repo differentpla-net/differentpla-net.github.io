@@ -5,7 +5,7 @@ tags: erlang rebar3
 ---
 
 When you're investigating a problem with a deployed application, it's useful to know precisely which version you're
-looking at. Here's how to automatically set the version number in an Erlang release.
+looking at. Here's how to automatically set the version number in an Erlang project.
 
 Erlang actually allows you to set the version number for your release, for each application within that release, and for
 each module within an application. I'll write about how these are usually controlled, how to find out what they are at
