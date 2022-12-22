@@ -20,7 +20,7 @@ We start the daemon (in `erlclu_app.erl`) as follows:
     SystemDir = filename:join([code:priv_dir(?APPLICATION), "ssh", "system"]),
     {ok, _} = ssh:daemon(10022, [
         {system_dir, SystemDir},
-        {pwdfun, fun(_User, _Password, _Peer, _State) -> true end}
+        {no_auth_needed, true}
     ]),
 ```
 
@@ -42,10 +42,5 @@ The `kubectl port-forward` command connects to an arbitrary pod in the deploymen
 second command uses SSH to connect. It turns off strict host key checking (because the host key will keep changing), and
 disables the `known_hosts` file by directing it to `/dev/null`.
 
-The server allows any password -- `{pwdfun, fun(_User, _Password, _Peer, _State) -> true end}`, so all we need to do is
-press Enter to log in.
-
-Note: I later discovered the `{no_auth_needed, true}` option. A later blog post will talk about how to enable public key
-authentication, so we can ignore that.
-
-None of this is particularly secure, but it'll do for now. I'll fix it later.
+Note: The server completely disables authentication. The next blog post will talk about how to enable public key
+authentication, so we'll fix it then.
