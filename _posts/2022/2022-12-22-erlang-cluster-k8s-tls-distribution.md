@@ -7,8 +7,9 @@ series: erlang-cluster-k8s
 tags: erlang kubernetes
 ---
 
-Lifting from the investigation that I wrote up [here]({% post_url 2022/2022-11-12-erlang-tls-distribution %}), I'll add
-TLS distribution to my Erlang cluster, but only with server certificates and with no verification (for now).
+In the [previous post]({% post_url 2022/2022-12-21-erlang-cluster-k8s-erlang-clustering %}), we got clustering working
+_without TLS_. Lifting from the investigation that I wrote up [here]({% post_url 2022/2022-11-12-erlang-tls-distribution %}),
+I'll add TLS distribution to my Erlang cluster, but only with server certificates and with no verification (for now).
 
 We need server certificates to allow encryption. We can't use verification because the certificates don't match the host
 names.
@@ -112,7 +113,7 @@ Well, according to the home page, all of the nodes are talking to each other.
 Is their communication encrypted? It's hard to test. I'll write two posts later to discuss that. One will be a complete
 hack; the other will use Wireshark.
 
-## Remote Console
+## Broken remote console
 
 This does introduce one problem, however: `kubectl exec ... bin/erlclu remote_console` command now longer works. The
 relx-generated script uses `erl_call` but `erl_call` knows nothing about TLS.
