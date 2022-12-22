@@ -28,3 +28,4 @@ free to read it as one.
 - [Erlang TLS Distribution]({% post_url 2022/2022-11-12-erlang-tls-distribution %})
 - [Options for automatically creating certificates for mutual pod authentication]({% post_url 2022/2022-11-13-cert-signing-options %})
 - [Installing cert-manager]({% post_url 2022/2022-02-06-cert-manager %})
+- [Erlang application versioning]({% post_url 2022/2022-12-22-erlang-versioning %})

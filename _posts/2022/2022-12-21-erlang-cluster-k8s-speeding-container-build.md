@@ -43,3 +43,7 @@ compiled again.
 At this point, I'm not editing the version number (I'm relying on `imagePullPolicy: Always` and deleting the deployment
 to force container updates), so I'll ignore it for now. It'll need fixing later, once I start actually updating version
 numbers.
+
+<div class="callout callout-info" markdown="span">
+By putting the version number in `rebar.config.script` -- see [this post]({% post_url 2022/2022-12-22-erlang-versioning %}) -- and by omitting that file from the first stage of the build, we can avoid invalidating the cached layers.
+</div>
