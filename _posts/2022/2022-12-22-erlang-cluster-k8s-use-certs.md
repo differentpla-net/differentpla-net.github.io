@@ -4,6 +4,7 @@ short_title: "Using the generated certificates"
 date: 2022-12-22T10:04:00.000Z
 layout: series
 series: erlang-cluster-k8s
+tags: erlang kubernetes
 ---
 
 In the previous two posts, we [generated signing requests with OpenSSL]({% post_url
