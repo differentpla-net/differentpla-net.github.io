@@ -37,8 +37,9 @@ ok
 
 There are a number of different connections in there. We can identify them as follows:
 
-- The ones on port 10022 are the SSH daemon and the current remote console connection.
-- The one listening on `http-alt` is the cowboy endpoint.
+- The ones on port 10022 are the [SSH daemon]({% post_url 2022/2022-12-22-erlang-cluster-k8s-ssh %}) and the current
+  remote console connection.
+- The one listening on `http-alt` is the [cowboy endpoint]({% post_url 2022/2022-12-21-erlang-cluster-k8s-http-service %}).
 - The one connected to `epmd` is, well, connected to epmd.
 - The one listening on `9153` is the metrics endpoint (the subject of a future blog post).
 - This means that the one listening on port 46025 is probably the TLS distribution endpoint.
