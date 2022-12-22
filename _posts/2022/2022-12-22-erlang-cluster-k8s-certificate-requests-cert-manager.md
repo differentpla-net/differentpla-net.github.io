@@ -24,7 +24,8 @@ metadata:
   namespace: erlclu
 ```
 
-We need a role that can request certificates:
+We need a role that can request certificates. It needs `create` (to submit the request) and `get` (to retrieve the
+generated certificate):
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
