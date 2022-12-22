@@ -29,6 +29,10 @@ Then I updated the rebar-generated config files to pull the cookie from an envir
     %...
 ```
 
+<div class="callout callout-info" markdown="span">
+This is not needed since rebar 3.14.0. It automatically uses the presence of `config/vm.args.src` to enable this mode.
+</div>
+
 ```erlang
 % vm.args.src
 -setcookie ${RELEASE_COOKIE}

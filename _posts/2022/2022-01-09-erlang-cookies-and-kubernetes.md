@@ -90,6 +90,10 @@ You'll also have to update your `relx.config` (or the `relx` section in `rebar.c
 {vm_args_src, "./config/vm.args.src"}
 ```
 
+<div class="callout callout-info" markdown="span">
+This is not needed since rebar 3.14.0. It automatically uses the presence of `config/vm.args.src` to enable this mode.
+</div>
+
 If you do the above, then the startup script will automatically expand environment variables at runtime, meaning that
 you can set control the cookie by setting the `RELEASE_COOKIE` environment variable.
 
