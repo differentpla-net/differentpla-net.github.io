@@ -5,7 +5,6 @@ date: 2022-12-22T09:56:00.000Z
 layout: series
 series: erlang-cluster-k8s
 tags: erlang kubernetes
-published: false
 ---
 
 As explained [here]({% post_url 2022/2022-11-13-cert-signing-options %}), I'm going to use an [init
