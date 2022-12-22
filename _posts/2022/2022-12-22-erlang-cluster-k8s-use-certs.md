@@ -40,7 +40,7 @@ certificates:
 ```
 
 Tiny steps really helps at this point, because TLS (and particularly mutual TLS) is fiddly. It's a lot easier if you can
-identify precisely _what_ you just changed to break everything.
+identify precisely _what you just changed_ that broke everything.
 
 ## Server verification
 

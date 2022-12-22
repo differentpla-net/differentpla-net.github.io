@@ -13,7 +13,8 @@ turned into a series of blog posts.
 
 {% include _series_toc.html %}
 
-These first six posts don't even get as far as using TLS. I'll publish the next tranche tomorrow.
+These eleven (!) posts are enough to get everything working. There are some loose ends that need addressing, and some
+asides I'd like to mention. I'll publish those later today or tomorrow. I should probably also write a conclusion.
 
 You can follow along by cloning the [rlipscombe/erlang-cluster](https://github.com/rlipscombe/erlang-cluster) project
 from Github. The posts in this series and the merge commits in that project are broadly lined up.
