@@ -115,10 +115,11 @@ hack; the other will use Wireshark.
 
 ## Broken remote console
 
-This does introduce one problem, however: `kubectl exec ... bin/erlclu remote_console` command now longer works. The
+This does introduce one problem, however: `kubectl exec ... bin/erlclu remote_console` command no longer works. The
 relx-generated script uses `erl_call` but `erl_call` knows nothing about TLS.
 
-I asked on [the Erlang forums](https://erlangforums.com/t/using-myapp-remote-console-with-tls-distribution/2052), but in the meantime, I came up with my own workaround:
+I asked on [the Erlang forums](https://erlangforums.com/t/using-myapp-remote-console-with-tls-distribution/2052), but in
+the meantime, I came up with my own workaround:
 
 In `vm.args.src`, put the two new arguments on the _same_ line:
 
