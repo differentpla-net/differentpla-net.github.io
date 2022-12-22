@@ -1,7 +1,7 @@
 ---
 title: "Rebar3 Umbrella Projects"
 date: 2022-12-21T14:29:00.000Z
-tags: erlang
+tags: erlang rebar3
 ---
 
 Some notes about using [rebar3](https://rebar3.org/) with an umbrella project.

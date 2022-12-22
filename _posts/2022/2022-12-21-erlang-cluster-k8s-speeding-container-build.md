@@ -4,7 +4,7 @@ short_title: "Speeding up the container build"
 date: 2022-12-21T19:49:00.000Z
 layout: series
 series: erlang-cluster-k8s
-tags: erlang kubernetes docker
+tags: erlang kubernetes docker rebar3
 ---
 
 I noticed that whenever I made any change to the application, it caused the ~~docker~~podman build to re-fetch and
