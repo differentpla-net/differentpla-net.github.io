@@ -7,8 +7,7 @@ series: erlang-cluster-k8s
 ---
 
 In the [previous post]({% post_url 2022/2022-12-22-erlang-cluster-k8s-ssh %}), I showed how to enable SSH access to the
-Erlang remote console on a pod. When we left it, it was using password authentication (with no password set). Let's fix
-that.
+Erlang remote console on a pod. When we left it, it had no authentication. Let's fix that.
 
 ## SSH daemon options
 
@@ -74,15 +73,14 @@ This needs to be made available to the container:
       - name: ssh-host-key
         mountPath: /erlclu/ssh/system
         readOnly: true
-      - name: authorized-keys
-        mountPath: /erlclu/ssh/user
-        readOnly: true
 volumes:
   - name: ssh-host-key
     secret:
       secretName: ssh-host-key
   #...
 ```
+
+Note that there's no reason for us to write to the volume, so we use `readOnly: true`.
 
 ## Authorized Keys
 
