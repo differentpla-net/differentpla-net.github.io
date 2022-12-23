@@ -1,7 +1,7 @@
 ---
 title: "Options for automatically creating certificates for mutual pod authentication"
 date: 2022-11-13T15:04:00Z
-tags: kubernetes certificates
+tags: kubernetes certificates cert-manager
 ---
 
 I want to set up an Erlang cluster in Kubernetes, using TLS with mutual authentication. This post discusses some of the
