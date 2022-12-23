@@ -39,6 +39,6 @@ This is fairly simplistic. After 5 attempts (~26 seconds), it gives up. If your 
 issue certificates, you might want to extend the sleep, or increase the number of retries. It might even be worth making
 them configurable.
 
-It wasn't worth it for me: me cluster issues certificates essentially immediately. There's also an argument to be had
+It wasn't worth it for me: my cluster issues certificates essentially immediately. There's also an argument to be had
 about whether it's better to fail to create a pod (by failing fairly quickly) or to leave the pod pending (by retrying
 for a long time).
