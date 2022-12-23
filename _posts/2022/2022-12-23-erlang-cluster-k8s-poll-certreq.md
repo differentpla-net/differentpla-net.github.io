@@ -7,7 +7,7 @@ series: erlang-cluster-k8s
 tags: kubernetes cert-manager
 ---
 
-In a [previous post]({% post_url 2022/2022-12-20-erlang-cluster-k8s-certificate-requests-cert-manager %}), I used `sleep
+In a [previous post]({% post_url 2022/2022-12-22-erlang-cluster-k8s-certificate-requests-cert-manager %}), I used `sleep
 5s` to wait for _cert-manager_ to complete the `CertificateRequest`. Instead, we should poll the `status` field.
 
 That looks like this:
