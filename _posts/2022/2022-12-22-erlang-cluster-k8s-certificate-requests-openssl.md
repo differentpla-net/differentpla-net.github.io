@@ -61,4 +61,4 @@ openssl req -new \
 This generates a CSR file, e.g. `/certs/tls-dist.csr`. You can submit that to your certificate authority and you should
 get a signed certificate back.
 
-As discussed at the in the introduction to this series, I'm going to use _cert-manager_. See the next post.
+As discussed in the introduction to this series, I'm going to use _cert-manager_. See the next post.
