@@ -94,3 +94,9 @@ This means deleting the `erlclu-dist-tls` volumes from the deployment, and then 
 ```
 kubectl --namespace erlclu delete secret erlclu-dist-tls
 ```
+
+## Limitations
+
+Because we use an init container to generate the certificates, they will not be renewed when they expire. This can be
+mitigated by simply restarting the pods before this happens, or by adding a sidecar container (based on the init
+container) to renew the certificates periodically.
