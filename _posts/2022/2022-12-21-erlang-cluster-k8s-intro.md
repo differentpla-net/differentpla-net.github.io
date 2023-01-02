@@ -13,9 +13,6 @@ turned into a series of blog posts.
 
 {% include _series_toc.html %}
 
-There are still some loose ends that need addressing, and some asides I'd like to mention. I'll publish those later
-today or tomorrow. I should probably also write a conclusion.
-
 You can follow along by cloning the [rlipscombe/erlang-cluster](https://github.com/rlipscombe/erlang-cluster) project
 from Github. The posts in this series and the merge commits in that project are broadly lined up.
 
