@@ -1,7 +1,7 @@
 ---
 title: "Using eunit to test private functions"
 date: 2022-10-25T17:33:00Z
-tags: erlang
+tags: erlang eunit
 ---
 
 You've got an Erlang module with a private (not-exported) function, and you want to add some unit tests for that
