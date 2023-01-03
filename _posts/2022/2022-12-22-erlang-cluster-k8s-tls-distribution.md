@@ -115,13 +115,23 @@ hack; the other will use Wireshark.
 
 ## Broken remote console
 
-This does introduce one problem, however: `kubectl exec ... bin/erlclu remote_console` command no longer works. The
-relx-generated script uses `erl_call` but `erl_call` knows nothing about TLS.
+This does introduce one problem, however: `kubectl exec ... bin/erlclu remote_console` command no longer works.
 
 I asked on [the Erlang forums](https://erlangforums.com/t/using-myapp-remote-console-with-tls-distribution/2052), but in
-the meantime, I came up with my own workaround:
+the meantime, I did my own investigation.
 
-In `vm.args.src`, put the two new arguments on the _same_ line:
+Before connecting to the remote node, the script uses `erl_call` to "ping" the node (check for aliveness); `erl_call`
+knows nothing about TLS distribution, so this fails.
+
+We can work around the first problem by using `nodetool` instead:
+
+```
+kubectl --namespace erlclu exec -it deploy/erlclu -- env "USE_NODETOOL=1" /erlclu/bin/erlclu remote_console
+```
+
+Once we get that working, it still fails, because it needs the correct TLS distribution options to pass to `erlexec`.
+
+To fix that, in `vm.args.src`, put the two new arguments on the _same_ line:
 
 ```
 -proto_dist inet_tls -ssl_dist_optfile ${ROOTDIR}/inet_tls_dist.config
@@ -130,18 +140,12 @@ In `vm.args.src`, put the two new arguments on the _same_ line:
 Because the startup script is looking for `/^-proto_dist/`, it picks up both arguments. This doesn't seem to break the
 default Erlang runtime parsing.
 
-Then tell it to use `nodetool`:
-
-```
-kubectl --namespace erlclu exec -it deploy/erlclu -- env "USE_NODETOOL=1" /erlclu/bin/erlclu remote_console
-```
-
-This works, but it takes several seconds to connect. I can think of two potential solutions:
+All of this works, but it takes several seconds to connect. I can think of a few potential solutions:
 
 1. Expose the remote console over SSH. This is the one I ended up choosing, because it's what we do at work. It was
    top-of-mind, and I wanted to know more about how it works.
 2. Write a custom distribution protocol that doesn't require TLS for localhost connections. CouchDB, as far as I can
-   tell, does this.
-
-The second option is perhaps more user-friendly, because it works the same as before, and is thus less surprising. I
-might spend some time looking at that in future.
+   tell, does this. This is perhaps more user-friendly, because it works the same as before, and is thus less
+   surprising. I might spend some time looking at this in future.
+3. Patch the startup script to stub out (or remove) the `ping_or_exit` function. This only occurred to me much later, so
+   I've not looked into this.
