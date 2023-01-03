@@ -12,13 +12,22 @@
                 {% for post in site.posts %}
                 <article class="excerpt">
                     <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xml_escape }}</a></h1>
+
                     <div class="details">
                         <span class="created_at timeago" data-bs-toggle="tooltip" data-bs-placement="top"
                             title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>
+
+                        <span class="tags">
+                            {% for tag in post.tags %}
+                            <a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a>
+                            {% endfor %}
+                        </span>
                     </div>
+
                     <div class="excerpt">
                         {{ post.excerpt }}
                     </div>
+
                     <a href="{{ post.url | prepend: site.baseurl }}">&raquo; read more</a>
                 </article>
                 {% endfor %}
