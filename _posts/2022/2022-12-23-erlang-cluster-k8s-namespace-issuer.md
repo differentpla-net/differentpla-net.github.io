@@ -27,9 +27,10 @@ openssl req -new -x509 -key erlclu-ca.key -sha256 \
 _cert-manager_ will look for the CA certificate and key in a K8s secret:
 
 ```bash
-kubectl --namespace erlclu create secret tls erlclu-ca-key-pair \
-    --cert=erlclu-ca.crt \
-    --key=erlclu-ca.key
+kubectl --namespace erlclu \
+    create secret tls erlclu-ca-key-pair \
+        --cert=erlclu-ca.crt \
+        --key=erlclu-ca.key
 ```
 
 ## Create an Issuer object

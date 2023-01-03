@@ -78,10 +78,11 @@ E0206 15:29:47.347247       1 setup.go:48] cert-manager/clusterissuers/setup
 By [default](https://cert-manager.io/docs/faq/cluster-resource/), `ClusterIssuer` resources look for the named secret in
 the `cert-manager` namespace, so:
 
-```
-kubectl --namespace cert-manager create secret tls k3s-ca-key-pair \
-    --cert=k3s-ca.crt \
-    --key=k3s-ca.key
+```bash
+kubectl --namespace cert-manager \
+    create secret tls k3s-ca-key-pair \
+        --cert=k3s-ca.crt \
+        --key=k3s-ca.key
 ```
 
 ## Issuing a certificate

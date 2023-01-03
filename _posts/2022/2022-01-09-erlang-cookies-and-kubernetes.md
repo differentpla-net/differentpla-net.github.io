@@ -109,7 +109,9 @@ do this in `rel/env.sh.eex`, or from a Kubernetes secret.
 
 ```bash
 ERLANG_COOKIE=$(head -c 40 < /dev/random | base64 | tr '/+' '_-')
-kubectl --namespace myapp create secret generic erlang-cookie --from-literal=cookie="$ERLANG_COOKIE"
+kubectl --namespace myapp \
+    create secret generic erlang-cookie \
+        --from-literal=cookie="$ERLANG_COOKIE"
 ```
 
 Remember:

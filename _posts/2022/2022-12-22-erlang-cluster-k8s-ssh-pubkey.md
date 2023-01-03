@@ -58,9 +58,10 @@ containers:
 
 Previously, the host key was kept in the `priv/ssh/system` directory and created either manually, or as part of the build. We'll move it to a secret:
 
-```
+```bash
 ssh-keygen -q -N "" -t rsa -f ssh_host_rsa_key
-kubectl --namespace erlclu create secret generic ssh-host-key \
+kubectl --namespace erlclu \
+    create secret generic ssh-host-key \
         --from-file=ssh_host_rsa_key=ssh_host_rsa_key \
         --from-file=ssh_host_rsa_key.pub=ssh_host_rsa_key.pub
 ```

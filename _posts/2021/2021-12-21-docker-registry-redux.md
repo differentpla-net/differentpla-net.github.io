@@ -54,9 +54,11 @@ sudo systemctl restart k3s-agent
 
 ### Create k8s secret
 
-```
-kubectl --namespace docker-registry create secret tls docker-registry-tls \
-  --cert=docker-registry.crt --key=docker-registry.key
+```bash
+kubectl --namespace docker-registry \
+  create secret tls docker-registry-tls \
+      --cert=docker-registry.crt \
+      --key=docker-registry.key
 ```
 
 ### Inspecting k8s secrets
