@@ -3,7 +3,7 @@ title: Installing 'robot-detect'
 date: 2017-12-13 11:44+0000
 ---
 
-Linux Mint 18.3. Yak shaving.
+Installing the [script](https://github.com/robotattackorg/robot-detect) to check for [The ROBOT Attack](https://www.robotattack.org/). On Linux Mint 18.3. Yak shaving.
 
 ## Install Python3
 
