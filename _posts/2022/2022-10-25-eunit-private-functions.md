@@ -83,7 +83,7 @@ TEST_ERLC_OPTS = +export_all +nowarn_export_all
 
 I don't like this approach, because I feel that it lacks deliberate intent.
 
-Plus there's the annoying wart to turn off the warning, literally next to the thing you've just turned on (see, for
+Plus there's the annoying wart to turn off the warning, literally next to the thing you've just turned on; see, for
 example, [this mailing list post](http://erlang.org/pipermail/erlang-questions/2017-October/094056.html) explaining the
 problem.
 
