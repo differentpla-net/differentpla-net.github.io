@@ -2,6 +2,7 @@ all: tags images proof
 
 tags:
 	./scripts/update-tags.sh
+	./scripts/update-series.sh
 
 DOTS = $(wildcard images/*.dot)
 PNGS = $(patsubst images/%.dot,images/%.png,$(DOTS))

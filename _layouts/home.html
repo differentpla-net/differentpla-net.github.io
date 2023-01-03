@@ -22,6 +22,12 @@
                             <a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a>
                             {% endfor %}
                         </span>
+
+                        {% if post.series %}
+                        <span class="series">
+                            <a href="/series/{{post.series}}"><span class="badge bg-dark">{{ post.series }}</span></a>
+                        </span>
+                        {% endif %}
                     </div>
 
                     <div class="excerpt">
