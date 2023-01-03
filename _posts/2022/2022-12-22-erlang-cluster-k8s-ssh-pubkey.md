@@ -92,8 +92,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: authorized-keys-cm
-  annotations:
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
 data:
   authorized-keys: |
 ```
