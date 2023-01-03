@@ -17,13 +17,13 @@ But when the node is running in a Docker container, this doesn't work, because
 You can't just use the IP address, because Erlang's distribution protocol
 requires the host to be specified the same way on both ends.
 
-This could be resolved by using `-name node@$MY_IP`, but I don't (for various reasons)
-want to do that right now.
+This could be resolved by changing the container so that it runs the Erlang node using `-name node@$MY_IP`, but I don't
+(for various reasons) want to do that right now.
 
 You can tell the host about the docker container IP addresses by:
 
 1. messing with `/etc/hosts` (which requires root access)
-2. or by specifying a custom inet configuration file (see http://erlang.org/pipermail/erlang-questions/2019-June/098036.html)
+2. or by specifying a custom inet configuration file (see <http://erlang.org/pipermail/erlang-questions/2019-June/098036.html>)
 
 The first two items are brittle, because you need to update that file every time
 your containers change their IP addresses.
@@ -79,7 +79,7 @@ port_please(Name, IP) ->
 {% endraw %}
 
 Somewhat annoyingly, `inet_tcp_dist` _also_ looks up the host in DNS, so we need
-to subvert that too:
+to subvert that too (this is only required prior to OTP-24.2):
 
 ```erlang
 -module(epmd_docker_dist).
@@ -148,3 +148,5 @@ erl -pa ebin \
 net_kernel:connect_node(Node).
 observer:start().
 ```
+
+See <https://github.com/rlipscombe/epmd_docker>.
