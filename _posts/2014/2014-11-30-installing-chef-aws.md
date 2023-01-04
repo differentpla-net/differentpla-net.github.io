@@ -2,6 +2,7 @@
 title: Installing Chef in AWS
 date: 2014-11-30 18:35:11
 tags: chef
+published: false
 ---
 
 *This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).

@@ -2,6 +2,7 @@
 title: "Moving to a new blog engine"
 date: 2013-02-17T19:48:21.000Z
 tags: blogging
+published: false
 ---
 
 <div class="callout callout-info" markdown="span">

@@ -2,6 +2,7 @@
 title: Starting with chef-solo
 date: 2014-11-30 18:39:07
 tags: chef
+published: false
 ---
 
 *This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).

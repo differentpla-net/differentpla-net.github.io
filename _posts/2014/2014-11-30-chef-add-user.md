@@ -2,6 +2,7 @@
 title: Using chef to add a user
 date: 2014-11-30 19:22:37
 tags: chef
+published: false
 ---
 
 *This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).

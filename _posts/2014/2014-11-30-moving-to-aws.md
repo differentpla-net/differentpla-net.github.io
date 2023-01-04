@@ -2,6 +2,7 @@
 title: Moving to AWS
 date: 2014-11-30 11:02:54
 tags: blogging
+published: false
 ---
 
 <div class="callout callout-info" markdown="span">

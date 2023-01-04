@@ -2,6 +2,7 @@
 title: I installed discourse
 date: 2015-02-22 14:41
 tags: blogging
+published: false
 ---
 
 <div class="callout callout-info" markdown="span">

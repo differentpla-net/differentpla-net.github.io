@@ -2,6 +2,7 @@
 title: Using Chef Solo with Vagrant
 date: 2014-11-13 11:17:13
 tags: chef vagrant
+published: false
 ---
 
 *This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).

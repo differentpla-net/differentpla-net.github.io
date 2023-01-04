@@ -2,6 +2,7 @@
 title: Installing Vagrant on Ubuntu
 date: 2014-11-13 10:15:31
 tags: vagrant
+published: false
 ---
 
 *This is part of my [quest to sort out my website]({% post_url 2014/2014-11-13-website-rebuild %}).
