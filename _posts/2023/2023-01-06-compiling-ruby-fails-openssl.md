@@ -24,7 +24,9 @@ make: *** [uncommon.mk:373: do-install-all] Error 1
 ```
 
 The problem is that Ubuntu now ships with OpenSSL 3.0.2. All of the workarounds on the Internet have us downloading and
-compiling our own OpenSSL version 1.x. Fortunately, `ruby-build` has us covered:
+compiling our own OpenSSL version 1.x. Life's too short for that.
+
+Fortunately, `ruby-build` has us covered.
 
 Install it by following the instructions at <https://github.com/rbenv/ruby-build#install-manually-as-a-standalone-program>, except for the destination:
 
