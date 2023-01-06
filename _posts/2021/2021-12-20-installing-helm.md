@@ -11,9 +11,11 @@ To install other things, we're going to want to use Helm. So let's install that 
 The latest release is available at <https://github.com/helm/helm/releases/tag/v3.10.3>.
 
 ```
-wget https://get.helm.sh/helm-v3.10.3-linux-arm64.tar.gz
+arch=arm64  # or amd64, or whatever
+wget https://get.helm.sh/helm-v3.10.3-linux-$arch.tar.gz
 tar xfz helm-v3.10.3-linux-arm64.tar.gz
 sudo mv linux-arm64/helm /usr/local/bin
+rm -r linux-$arch
 helm version
 ```
 
