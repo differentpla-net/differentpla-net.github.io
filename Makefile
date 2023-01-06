@@ -33,17 +33,24 @@ serve:
 serve-unpublished:
 	jekyll serve --future --unpublished --livereload
 
-build-container:
+build-the-container:
 	podman build -f Dockerfile -t differentpla-net
 
-run-container:
+build-in-container:
+	podman run \
+		--volume $(shell pwd):/web \
+		--workdir /web \
+		differentpla-net \
+		jekyll build --trace
+
+serve-in-container:
 	podman run -p 4000:4000 -p 35729:35729 \
 		--volume $(shell pwd):/web \
 		--workdir /web \
 		differentpla-net \
 		jekyll serve --livereload --host 0.0.0.0
 
-proof-container:
+proof-in-container:
 	podman run \
 		--volume $(shell pwd):/web \
 		--workdir /web \
