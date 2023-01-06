@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# Remove the existing tag indexes
-rm -f tag/*.md
+mkdir -p _tags
+touch _tags/.gitkeep
 
-# Get a list of uniq tags, and generate tag/foo.md for each one, using scripts/_tag.md
+# Remove the existing tag indexes
+rm -f _tags/*.md
+
+# Get a list of uniq tags, and generate _tags/foo.md for each one, using scripts/_tag.md
 # scripts/_tag.md uses layout: tag, and _layouts/tag.html uses Liquid to iterate over
 # pages with that tag, generating the index.
 grep -h '^tags:' -R _posts | \
@@ -13,4 +16,4 @@ grep -h '^tags:' -R _posts | \
     sort | \
     uniq | \
     xargs -r -I{} \
-        sh -c "sed 's/TAG/{}/g' < scripts/_tag.md > tag/{}.md"
+        sh -c "sed 's/TAG/{}/g' < scripts/_tag.md > _tags/{}.md"

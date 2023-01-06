@@ -29,6 +29,12 @@ defaults:
     values:
       layout: "post"
 
+# posts and drafts are implicit, afaict.
+collections:
+  tags:
+    output: true
+    permalink: /tag/:name
+
 plugins:
   - jekyll-feed
   - jekyll-redirect-from

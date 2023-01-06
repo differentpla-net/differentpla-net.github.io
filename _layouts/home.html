@@ -19,7 +19,11 @@
 
                         <span class="tags">
                             {% for tag in post.tags %}
-                            <a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a>
+                                {% for tag_template in site.tags %}
+                                    {% if tag == tag_template.name %}
+                                        <a href="{{tag_template.url}}"><span class="badge bg-primary">{{ tag }}</span></a>
+                                    {% endif %}
+                                {% endfor %}
                             {% endfor %}
                         </span>
 
