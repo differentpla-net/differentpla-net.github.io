@@ -24,13 +24,11 @@
         <h1>Tags</h1>
 
         <ul class="nav flex-column">
-        {% assign sorted_tags = site.tags | sort %}
-        {% for it in sorted_tags %}
-            {% assign tag = it[0] %}
-            {% assign count = it[1] | size %}
-            <li><a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a> ({{ count }} {% if count == 1 %}post{% else %}posts{% endif %})</li>
-        {% endfor %}
-        </ul>
+            <ul>
+                {% for tag in site.tags %}
+                    <li><a href="{{tag.url}}">{{tag.name}}</a></li>
+                {% endfor %}
+                </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
