@@ -3,9 +3,8 @@ title: "Using mod_rewrite, RewriteMap to re-arrange website content"
 date: 2006-10-27T12:39:30.000Z
 ---
 
-When [moving]({% post_url 2006/2006-10-06-differentplanet-is-moving %}) differentpla.net from one server to another, I
-decided to move the content (currently served using drupal) from the root to `/content`. I also decided to use more
-descriptive URLs.
+When moving differentpla.net from one server to another, I decided to move the content (currently served using drupal)
+from the root to `/content`. I also decided to use more descriptive URLs.
 
 But I didn't want to break too many external links.
 
