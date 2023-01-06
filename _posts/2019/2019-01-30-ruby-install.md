@@ -6,6 +6,10 @@ series: direnv-tool-versions
 tags: direnv ruby
 ---
 
+<div class="callout callout-info" markdown="span">
+On recent versions of Ubuntu, with older versions of Ruby, you'll get an error about missing openssl. See [this post]({% post_url 2023/2023-01-06-compiling-ruby-fails-openssl %}) for a solution.
+</div>
+
 Install `ruby-install`:
 
 https://github.com/postmodern/ruby-install/archive/refs/tags/v0.8.3.tar.gz
