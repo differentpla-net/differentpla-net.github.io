@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<h1>Tag: {{ page.tag }}</h1>
+<h1>{{ page.name }}</h1>
 <ul>
-{% for post in site.tags[page.tag] %}
+{% for post in site.tags[page.name] %}
 <li><a href="{{ post.url }}">{{ post.title | xml_escape }}</a> (<span class="timeago" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>)</li>
 {% endfor %}
 </ul>
