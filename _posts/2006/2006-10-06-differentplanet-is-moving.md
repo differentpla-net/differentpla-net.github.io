@@ -2,6 +2,8 @@
 title: "differentpla.net is moving!"
 date: 2006-10-06T10:12:03.000Z
 redirect_from: /content/2006/10/differentpla-net-is-moving
+tags: blog
+published: false
 ---
 
 <div class="callout callout-info" markdown="span">
