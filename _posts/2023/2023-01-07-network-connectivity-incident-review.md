@@ -16,8 +16,8 @@ This is the incident review.
 - The router, mesh points, NAS, are connected to each other and the rest of the house via a Netgear GS108 switch.
   - I should really update the cabling diagram.
 - The Ethernet cables for the kitchen and the office run _outside_ the house.
-  - It's a 1930's-era brick-built house; running cables is a major pain in the ass, so out-and-back-in is often the best
-    option.
+  - It's a 1930's-era cinder-block-built house; running cables is a major pain in the ass (I've _melted drill bits_ when
+    trying to drill into the walls), so out-and-back-in is often the best option.
 - "Office" is a garden office; it's connected to the main house over a pair of armoured Ethernet cables that run along
   the fence a foot or so above the ground.
 
