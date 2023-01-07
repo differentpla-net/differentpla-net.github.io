@@ -61,7 +61,7 @@ In the Log Center on the Synology RT2600ac, on the "Local" page, I can see that:
 On the "Wi-Fi Point" page, I can see the "Kitchen" access point being rebooted at 13:50:30. It took about 15 seconds to
 restart.
 
-In the Log Center on the DS416, I notice that between 10:52 and 13:47, LAN 2 repeatedly lost link. It seems to have gone down for about 4 seconds, then come back up for 1m20s and then gone down again. This repeats for seemingly the whole 2 hours (approx).
+In the Log Center on the DS416, I notice that between 10:52 and 13:47, LAN 2 repeatedly lost link. It seems to have gone down for about 4 seconds, then come back up for 1m20s and then gone down again. This repeats for seemingly the whole incident time.
 
 ## Root Cause
 
