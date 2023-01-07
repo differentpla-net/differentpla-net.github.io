@@ -14,7 +14,6 @@ Looking in the logs, I see the following:
 2023-01-07T14:50:58.126136+00:00 info: Supervisor: {<0.21079.3>,tls_dyn_connection_sup}. Started: id=sender,pid=<0.21080.3>.
 2023-01-07T14:50:58.126674+00:00 info: Supervisor: {<0.21079.3>,tls_dyn_connection_sup}. Started: id=receiver,pid=<0.21081.3>.
 2023-01-07T14:50:58.228820+00:00 notice: TLS server: In state certify received CLIENT ALERT: Fatal - Certificate Expired
-2
 ```
 
 That's a bit of a surprise; the pods were restarted this morning during an [Ubuntu upgrade]({% post_url
