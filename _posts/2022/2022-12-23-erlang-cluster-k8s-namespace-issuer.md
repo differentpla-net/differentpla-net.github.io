@@ -22,6 +22,10 @@ openssl req -new -x509 -key erlclu-ca.key -sha256 \
     -subj "/C=GB/L=London/O=differentpla.net/CN=erlclu CA" -out erlclu-ca.crt
 ```
 
+<div class="callout callout-warning" markdown="span">
+The default certificate lifetime is 30 days; you might want to do something about that. It'll [cause issues]({% post_url 2023/2023-01-07-erlang-cluster-k8s-certificate-expired %}) later if you don't.
+</div>
+
 ## CA Secret
 
 _cert-manager_ will look for the CA certificate and key in a K8s secret:

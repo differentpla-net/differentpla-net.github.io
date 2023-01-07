@@ -26,3 +26,7 @@ free to read it as one.
 - [Options for automatically creating certificates for mutual pod authentication]({% post_url 2022/2022-11-13-cert-signing-options %})
 - [Installing cert-manager]({% post_url 2022/2022-02-06-cert-manager %})
 - [Erlang application versioning]({% post_url 2022/2022-12-22-erlang-versioning %})
+
+## Follow-up posts
+
+- [Erlang cluster on Kubernetes: Fatal - Certificate Expired]({% post_url 2023/2023-01-07-erlang-cluster-k8s-certificate-expired %})
