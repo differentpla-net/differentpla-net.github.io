@@ -54,11 +54,10 @@ It occasionally screws up networking (particularly with WSL2) on my Surface Go.
 I also couldn't access my DS416, even though it was showing up on the Tailscale UI as recently connected. Since this is
 where I've got Tailscale subnet routing set up, this is probably why I couldn't connect to the rest of my network.
 
-My problems today also seem to have coincided with my home network being generally squirrely: my mesh network lost two
-of its access points (this is _not_ normal), and at least one device lost Internet connectivity for several hours.
+<div class="callout callout-info" markdown="span">
+So, yeah, [that]({% post_url 2023/2023-01-07-network-connectivity-incident-review %}) _wasn't_ Tailscale's fault.
+</div>
 
-Looking at the usage charts from my ISP, I can see that (based on the traffic profile) my son was online for most of
-this period, so that wasn't the problem.
 
 ### Wireguard
 
