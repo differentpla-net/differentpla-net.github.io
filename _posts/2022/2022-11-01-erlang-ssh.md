@@ -187,3 +187,4 @@ Users = [{C, ssh:connection_info(C, [user])} || C <- Connections].{% endraw %}
 ## TODO
 
 - Public key auth using custom behaviour (callback module?)
+- SSH certificates; are they supported?
