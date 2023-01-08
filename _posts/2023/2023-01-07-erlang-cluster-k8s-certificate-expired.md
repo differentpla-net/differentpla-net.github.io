@@ -27,7 +27,7 @@ I'll draw up an initial list of things to investigate:
 
 1. Do the nodes and pods have the correct time?
 2. What's the expiry on the [root CA]({% post_url 2022/2022-12-23-erlang-cluster-k8s-namespace-issuer %})?
-3. What are the expiries on the mTLS certificates?
+3. What are the expiries on the [mTLS certificates]({% post_url 2022/2022-12-22-erlang-cluster-k8s-certificate-requests-openssl %})?
 
 ## CA certificate
 
