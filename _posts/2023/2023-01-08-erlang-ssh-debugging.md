@@ -12,6 +12,12 @@ host key available". What's up with that?
 {error,"No host key available"}
 ```
 
+**tl;dr:** you don't have permission to read the SSH host keys or you don't have any SSH host keys (you do have an SSH
+server installed, right?)
+
+But, just in case you're interested, here's how I figured out the cause. There's a bit of looking in the Erlang/OTP
+source code, and a bit of using the `dbg` module.
+
 Searching for that text in the source code takes you to [this line](https://github.com/erlang/otp/blob/OTP-25.2/lib/ssh/src/ssh_connection_handler.erl#L1488) in the Erlang/OTP source code. It's in this function:
 
 ```erlang
