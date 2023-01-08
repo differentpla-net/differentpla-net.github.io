@@ -192,3 +192,9 @@ Users = [{C, ssh:connection_info(C, [user])} || C <- Connections].{% endraw %}
 
 We could even use password callback for FIDO/TOTP validation.
 
+## Securing the shell
+
+- preventing halt().
+
+## Aside: Ctrl+C; that's annoying.
+
