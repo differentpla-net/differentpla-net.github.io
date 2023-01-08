@@ -189,3 +189,6 @@ Users = [{C, ssh:connection_info(C, [user])} || C <- Connections].{% endraw %}
 - Public key auth using custom behaviour (callback module?)
 - SSH certificates; are they supported?
 - SSH certificates; what if we used an ssh daemon with implicit jumping?
+
+We could even use password callback for FIDO/TOTP validation.
+
