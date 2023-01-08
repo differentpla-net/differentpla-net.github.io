@@ -183,3 +183,7 @@ CSups = [S || D <- Daemons, {Id,S,_,_} <- supervisor:which_children(D), is_refer
 Connections = [C || S <- CSups, {connection,C,_,_} <- supervisor:which_children(S)].
 Users = [{C, ssh:connection_info(C, [user])} || C <- Connections].{% endraw %}
 ```
+
+## TODO
+
+- Public key auth using custom behaviour (callback module?)
