@@ -1,7 +1,9 @@
 ---
 title: "Empeg File Structures"
 date: 2005-02-13T10:17:00.000Z
-redirect_from: /node/view/387
+redirect_from:
+- /node/view/387
+- /content/2005/02/empeg-file-structures
 tags: empeg
 ---
 If you've ever gone looking for the music and playlists on your empeg, you'll find them in the `/empeg/fids0` and `/empeg/fids1` directories.

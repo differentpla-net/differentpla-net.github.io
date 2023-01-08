@@ -2,6 +2,7 @@
 title: "Displaying a tooltip when the user drags the scroll thumb"
 date: 2004-01-12T12:24:00.000Z
 tags: mfc
+redirect_from: /~roger/devel/tips/win32/thumbtrack_tooltips.html
 ---
 ## You wanna do this?
 
