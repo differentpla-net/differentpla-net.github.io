@@ -33,7 +33,7 @@ Once you've done that, you can put `use erlang source` in `.envrc`.
 
 ## Updating the installation
 
-If you're hacking on Erlang, and you rebuild it, you'll need to get kerl to reinstall it. This involves some trickery:
+If you're hacking on Erlang, and you rebuild it, you'll need to get kerl to reinstall it. This involves some more trickery:
 
 ```sh
 rm -r "$HOME/.kerl/erlangs/source"
