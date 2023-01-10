@@ -1,7 +1,7 @@
 ---
 title: Supervised event handlers in Erlang
 date: 2014-11-07 10:11:33Z
-tags: erlang
+tags: erlang erlang-cowboy
 ---
 
 I find Erlang's `gen_event` behaviour to be fairly tricky to understand,

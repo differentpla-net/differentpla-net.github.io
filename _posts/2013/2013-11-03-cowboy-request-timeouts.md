@@ -1,7 +1,9 @@
 ---
 title: Cowboy - Request Timeouts
 date: 2013-11-03T19:56:38Z
+tags: erlang-cowboy
 ---
+
 Cowboy protects itself against slow requests by doing the following:
 
 At the top of `cowboy_protocol:init`, it works out, in clock time, when the
