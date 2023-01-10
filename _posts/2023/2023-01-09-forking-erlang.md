@@ -31,13 +31,7 @@ git fetch upstream
 git checkout master && git merge upstream/master && git push
 ```
 
-```sh
-git fetch upstream
-
-for branch in master maint ; do
-    git checkout $branch && git merge upstream/$branch && git push
-done
-```
+## Rebasing your changes back onto master
 
 ```sh
 git checkout cool-thing
