@@ -11,7 +11,7 @@ There's more comprehensive information in various files in the `HOWTO` directory
 ```sh
 export LANG=C
 export ERL_TOP="$(pwd)"
-./otp_build configure --prefix="$ERL_TOP/install" && make -j$(nproc)
+./otp_build configure && make -j$(nproc)
 ```
 
 ## Using it

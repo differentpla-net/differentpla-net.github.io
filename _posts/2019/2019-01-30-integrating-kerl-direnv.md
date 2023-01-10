@@ -8,7 +8,7 @@ tags: direnv kerl erlang
 
 To integrate `direnv` with `kerl`, add the following to `~/.direnvrc`:
 
-```
+```sh
 use_erlang() {
     OTP_VERSION="$1"
     if has kerl; then
@@ -37,3 +37,7 @@ use_erlang() {
 Then add (e.g.) the following to your project's `.envrc`:
 
     use erlang OTP-21.2.4
+
+<div class="callout callout-info" markdown="span">
+The most up-to-date version of this function is [here](https://github.com/rlipscombe/direnv-tools/blob/main/lib/erlang.sh).
+</div>
