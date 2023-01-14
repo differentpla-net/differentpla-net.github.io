@@ -13,12 +13,16 @@ MSBuild (and Visual Studio) scatter `.targets` and `.tasks` files all over the s
 
 In PowerShell, something like this would work:
 
-        $msbuildPaths = 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319',
-                'C:\Program Files\MSBuild',
-                'C:\Program Files (x86)\MSBuild'
+```powershell
+$msbuildPaths = 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319',
+        'C:\Program Files\MSBuild',
+        'C:\Program Files (x86)\MSBuild'
 
-        $msbuildFiles = Get-ChildItem -Path $msbuildPaths -Recurse -Include *.targets,*.tasks
+$msbuildFiles = Get-ChildItem -Path $msbuildPaths -Recurse -Include *.targets,*.tasks
+```
 
 Then you can search in those files as follows:
 
-        $msbuildFiles | Select-String 'CodeAnalysisInputAssembly'
+```powershell
+$msbuildFiles | Select-String 'CodeAnalysisInputAssembly'
+```
