@@ -45,6 +45,18 @@ At this point, I'm going to check that my cluster's still working. This is proba
 - ArgoCD looks healthy. Refreshing the apps succeeded, which implies that Gitea is still OK.
 - I can log into Gitea and everything seems to be OK.
 
+```sh
+kubectl get volumes.longhorn.io -A
+```
+
+```sh
+argocd app list -o json | \
+    jq -r '.[].metadata.name' | \
+    xargs -I{} \
+        argocd app get {} --refresh
+# ...but I haven't figured out how to assert the status yet.
+```
+
 ## Upgrade the server
 
 ```
