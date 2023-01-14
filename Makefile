@@ -22,7 +22,7 @@ images/2021-02-15-ranch-error-closed-tls-connection-sup.png: images/2021-02-15-r
 build:
 	jekyll build
 
-proof:
+proof: build
 	htmlproofer --disable-external --empty-alt-ignore --enforce-https=false ./_site/
 
 serve:
