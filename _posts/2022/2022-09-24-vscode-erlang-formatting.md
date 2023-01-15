@@ -6,6 +6,10 @@ tags: vscode erlang rebar3
 
 The ErlangLS extension for VS Code includes formatting, using `rebar3_format`. I'd prefer to use `erlfmt`, so here's how I set it up.
 
+<div class="callout callout-info" markdown="span">
+You don't need to do this; see [this post]({% post_url 2023/2023-01-15-vscode-erlang-ls-erlfmt %}) instead.
+</div>
+
 These instructions are mostly lifted from <https://marketplace.visualstudio.com/items?itemName=szTheory.erlang-formatter>.
 
 ## Install rebar3
