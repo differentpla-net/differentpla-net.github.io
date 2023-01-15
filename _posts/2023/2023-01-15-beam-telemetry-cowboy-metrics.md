@@ -142,4 +142,4 @@ The code so far is here: <https://github.com/rlipscombe/cowboy_metrics_demo/tree
 ## What's next?
 
 Writing the metrics to the logger is a _start_, but it's not going to give us any pretty graphs. To do that, we'll need
-to discuss integration with Graphite, or Prometheus, or InfluxDB, or whatever. I'll discuss that in a later blog post.
+to integrate with Graphite, or Prometheus, or InfluxDB, or whatever. I'll discuss that in a later blog post.
