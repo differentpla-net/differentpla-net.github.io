@@ -16,7 +16,10 @@ This is a corrected version of [this post]({% post_url 2022/2022-09-24-vscode-er
 
 ## Configure the formatter
 
-If you want to do this globally, create `~/.config/rebar3/rebar.config` containing the following:
+The ErlangLS extension uses `rebar3_format`, and this is hard-coded. But you can configure `rebar3_format` to use a
+different formatter, instead of its default, built-in one. Here's how.
+
+To do this globally, create `~/.config/rebar3/rebar.config` containing the following:
 
 ```erlang
 {plugins, [rebar3_format, erlfmt]}.
