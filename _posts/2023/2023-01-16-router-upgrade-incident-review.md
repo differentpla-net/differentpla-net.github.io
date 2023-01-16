@@ -1,6 +1,6 @@
 ---
 title: "Router Upgrade Outage: Incident Review"
-date: 2023-01-16T17:48:00.000Z
+date: 2023-01-16T17:38:00.000Z
 tags: incident-review
 ---
 
