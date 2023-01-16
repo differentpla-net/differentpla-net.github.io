@@ -8,8 +8,8 @@ On January 16th, 2023 between approximately 03:15 and 08:00, the router on my ho
 
 ## Background
 
-- My home network has a Synology RT2600ac router, with 3 mesh points (wired backhaul) called "Kitchen", "Office" and
-"Loft".
+- My home network has a Synology RT2600ac router, with 3 Synology MR2200ac mesh points (wired backhaul) called
+"Kitchen", "Office" and "Loft".
 - There are wired connections to various other points in the house: living room, bedrooms, etc.
 
 ## Timeline
