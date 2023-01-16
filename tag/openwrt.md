@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: openwrt"
+title: "Posts tagged 'openwrt'"
 tag: openwrt
 ---

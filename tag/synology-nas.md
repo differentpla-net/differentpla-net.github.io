@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: synology-nas"
+title: "Posts tagged 'synology-nas'"
 tag: synology-nas
 ---

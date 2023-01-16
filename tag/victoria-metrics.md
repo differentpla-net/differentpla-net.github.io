@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: victoria-metrics"
+title: "Posts tagged 'victoria-metrics'"
 tag: victoria-metrics
 ---

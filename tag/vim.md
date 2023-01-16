@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: vim"
+title: "Posts tagged 'vim'"
 tag: vim
 ---

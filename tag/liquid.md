@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: liquid"
+title: "Posts tagged 'liquid'"
 tag: liquid
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: aws"
+title: "Posts tagged 'aws'"
 tag: aws
 ---

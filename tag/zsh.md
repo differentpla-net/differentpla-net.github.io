@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: zsh"
+title: "Posts tagged 'zsh'"
 tag: zsh
 ---

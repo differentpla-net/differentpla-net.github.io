@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: git"
+title: "Posts tagged 'git'"
 tag: git
 ---

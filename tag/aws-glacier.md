@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: aws-glacier"
+title: "Posts tagged 'aws-glacier'"
 tag: aws-glacier
 ---

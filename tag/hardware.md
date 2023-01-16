@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: hardware"
+title: "Posts tagged 'hardware'"
 tag: hardware
 ---

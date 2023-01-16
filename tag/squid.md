@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: squid"
+title: "Posts tagged 'squid'"
 tag: squid
 ---

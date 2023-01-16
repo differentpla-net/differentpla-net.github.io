@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: electric-imp"
+title: "Posts tagged 'electric-imp'"
 tag: electric-imp
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: dns"
+title: "Posts tagged 'dns'"
 tag: dns
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: post-mortem"
+title: "Posts tagged 'post-mortem'"
 tag: post-mortem
 ---

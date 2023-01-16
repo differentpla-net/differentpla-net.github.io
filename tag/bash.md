@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: bash"
+title: "Posts tagged 'bash'"
 tag: bash
 ---

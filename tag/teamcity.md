@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: teamcity"
+title: "Posts tagged 'teamcity'"
 tag: teamcity
 ---

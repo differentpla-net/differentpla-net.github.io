@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: chef"
+title: "Posts tagged 'chef'"
 tag: chef
 ---

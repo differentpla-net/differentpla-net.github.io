@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: openssl"
+title: "Posts tagged 'openssl'"
 tag: openssl
 ---

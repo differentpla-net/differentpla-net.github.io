@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: traefik"
+title: "Posts tagged 'traefik'"
 tag: traefik
 ---

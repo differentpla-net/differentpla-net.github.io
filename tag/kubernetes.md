@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: kubernetes"
+title: "Posts tagged 'kubernetes'"
 tag: kubernetes
 ---

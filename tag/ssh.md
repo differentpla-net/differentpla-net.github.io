@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: ssh"
+title: "Posts tagged 'ssh'"
 tag: ssh
 ---

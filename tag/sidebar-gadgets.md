@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: sidebar-gadgets"
+title: "Posts tagged 'sidebar-gadgets'"
 tag: sidebar-gadgets
 ---

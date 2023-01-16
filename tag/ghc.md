@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: ghc"
+title: "Posts tagged 'ghc'"
 tag: ghc
 ---

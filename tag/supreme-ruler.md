@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: supreme-ruler"
+title: "Posts tagged 'supreme-ruler'"
 tag: supreme-ruler
 ---

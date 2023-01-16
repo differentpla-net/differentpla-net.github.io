@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: bad-ui"
+title: "Posts tagged 'bad-ui'"
 tag: bad-ui
 ---

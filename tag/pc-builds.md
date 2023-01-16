@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: pc-builds"
+title: "Posts tagged 'pc-builds'"
 tag: pc-builds
 ---

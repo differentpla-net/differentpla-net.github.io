@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: windows-xp"
+title: "Posts tagged 'windows-xp'"
 tag: windows-xp
 ---

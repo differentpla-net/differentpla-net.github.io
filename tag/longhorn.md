@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: longhorn"
+title: "Posts tagged 'longhorn'"
 tag: longhorn
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: bouncy-castle"
+title: "Posts tagged 'bouncy-castle'"
 tag: bouncy-castle
 ---

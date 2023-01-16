@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: raspberry-pi"
+title: "Posts tagged 'raspberry-pi'"
 tag: raspberry-pi
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: direnv"
+title: "Posts tagged 'direnv'"
 tag: direnv
 ---

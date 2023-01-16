@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: rio-receiver"
+title: "Posts tagged 'rio-receiver'"
 tag: rio-receiver
 ---

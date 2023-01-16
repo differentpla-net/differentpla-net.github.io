@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: gitea"
+title: "Posts tagged 'gitea'"
 tag: gitea
 ---

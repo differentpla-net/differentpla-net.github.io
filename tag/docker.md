@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: docker"
+title: "Posts tagged 'docker'"
 tag: docker
 ---

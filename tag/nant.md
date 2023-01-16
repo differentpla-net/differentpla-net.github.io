@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: nant"
+title: "Posts tagged 'nant'"
 tag: nant
 ---

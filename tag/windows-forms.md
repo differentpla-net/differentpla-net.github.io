@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: windows-forms"
+title: "Posts tagged 'windows-forms'"
 tag: windows-forms
 ---

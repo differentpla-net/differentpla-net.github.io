@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: ingress"
+title: "Posts tagged 'ingress'"
 tag: ingress
 ---

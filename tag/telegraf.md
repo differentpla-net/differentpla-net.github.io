@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: telegraf"
+title: "Posts tagged 'telegraf'"
 tag: telegraf
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: erlang-cowboy"
+title: "Posts tagged 'erlang-cowboy'"
 tag: erlang-cowboy
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: pci48af"
+title: "Posts tagged 'pci48af'"
 tag: pci48af
 ---

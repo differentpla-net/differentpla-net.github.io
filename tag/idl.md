@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: idl"
+title: "Posts tagged 'idl'"
 tag: idl
 ---

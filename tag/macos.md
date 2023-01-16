@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: macos"
+title: "Posts tagged 'macos'"
 tag: macos
 ---

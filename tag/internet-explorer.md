@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: internet-explorer"
+title: "Posts tagged 'internet-explorer'"
 tag: internet-explorer
 ---

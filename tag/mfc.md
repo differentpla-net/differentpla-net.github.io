@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: mfc"
+title: "Posts tagged 'mfc'"
 tag: mfc
 ---

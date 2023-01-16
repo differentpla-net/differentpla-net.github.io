@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: lego"
+title: "Posts tagged 'lego'"
 tag: lego
 ---

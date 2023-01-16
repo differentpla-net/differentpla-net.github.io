@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: visual-studio"
+title: "Posts tagged 'visual-studio'"
 tag: visual-studio
 ---

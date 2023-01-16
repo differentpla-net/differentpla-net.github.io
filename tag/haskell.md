@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: haskell"
+title: "Posts tagged 'haskell'"
 tag: haskell
 ---

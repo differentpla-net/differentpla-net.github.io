@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: nginx"
+title: "Posts tagged 'nginx'"
 tag: nginx
 ---

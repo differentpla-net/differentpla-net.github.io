@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: linux"
+title: "Posts tagged 'linux'"
 tag: linux
 ---

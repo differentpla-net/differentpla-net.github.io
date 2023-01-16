@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: cryptography"
+title: "Posts tagged 'cryptography'"
 tag: cryptography
 ---

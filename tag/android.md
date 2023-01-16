@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: android"
+title: "Posts tagged 'android'"
 tag: android
 ---

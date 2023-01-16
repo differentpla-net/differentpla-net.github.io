@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: gradle"
+title: "Posts tagged 'gradle'"
 tag: gradle
 ---

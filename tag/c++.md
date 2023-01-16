@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: c++"
+title: "Posts tagged 'c++'"
 tag: c++
 ---

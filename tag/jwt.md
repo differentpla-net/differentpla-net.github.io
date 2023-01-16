@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: jwt"
+title: "Posts tagged 'jwt'"
 tag: jwt
 ---

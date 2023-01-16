@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: scons"
+title: "Posts tagged 'scons'"
 tag: scons
 ---

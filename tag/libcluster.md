@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: libcluster"
+title: "Posts tagged 'libcluster'"
 tag: libcluster
 ---

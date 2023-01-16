@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: argo-cd"
+title: "Posts tagged 'argo-cd'"
 tag: argo-cd
 ---

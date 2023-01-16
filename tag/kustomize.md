@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: kustomize"
+title: "Posts tagged 'kustomize'"
 tag: kustomize
 ---

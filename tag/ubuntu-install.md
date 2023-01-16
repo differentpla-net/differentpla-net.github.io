@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: ubuntu-install"
+title: "Posts tagged 'ubuntu-install'"
 tag: ubuntu-install
 ---

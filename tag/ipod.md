@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: ipod"
+title: "Posts tagged 'ipod'"
 tag: ipod
 ---

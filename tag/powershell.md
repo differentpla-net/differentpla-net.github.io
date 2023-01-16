@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: powershell"
+title: "Posts tagged 'powershell'"
 tag: powershell
 ---

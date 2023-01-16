@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: phoenix"
+title: "Posts tagged 'phoenix'"
 tag: phoenix
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: runbook"
+title: "Posts tagged 'runbook'"
 tag: runbook
 ---

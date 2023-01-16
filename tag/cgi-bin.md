@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: cgi-bin"
+title: "Posts tagged 'cgi-bin'"
 tag: cgi-bin
 ---

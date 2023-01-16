@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: wininet"
+title: "Posts tagged 'wininet'"
 tag: wininet
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: rabbitmq"
+title: "Posts tagged 'rabbitmq'"
 tag: rabbitmq
 ---

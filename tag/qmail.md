@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: qmail"
+title: "Posts tagged 'qmail'"
 tag: qmail
 ---

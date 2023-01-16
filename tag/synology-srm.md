@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: synology-srm"
+title: "Posts tagged 'synology-srm'"
 tag: synology-srm
 ---

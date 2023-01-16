@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: elixir"
+title: "Posts tagged 'elixir'"
 tag: elixir
 ---

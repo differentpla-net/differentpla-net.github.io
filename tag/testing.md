@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: testing"
+title: "Posts tagged 'testing'"
 tag: testing
 ---

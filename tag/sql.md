@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: sql"
+title: "Posts tagged 'sql'"
 tag: sql
 ---

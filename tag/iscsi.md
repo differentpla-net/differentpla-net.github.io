@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: iscsi"
+title: "Posts tagged 'iscsi'"
 tag: iscsi
 ---

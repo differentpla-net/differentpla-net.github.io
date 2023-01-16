@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: musicbrainz"
+title: "Posts tagged 'musicbrainz'"
 tag: musicbrainz
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: tdd"
+title: "Posts tagged 'tdd'"
 tag: tdd
 ---

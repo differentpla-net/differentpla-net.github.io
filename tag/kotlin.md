@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: kotlin"
+title: "Posts tagged 'kotlin'"
 tag: kotlin
 ---

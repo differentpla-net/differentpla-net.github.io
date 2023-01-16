@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: cert-manager"
+title: "Posts tagged 'cert-manager'"
 tag: cert-manager
 ---

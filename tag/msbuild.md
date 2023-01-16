@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: msbuild"
+title: "Posts tagged 'msbuild'"
 tag: msbuild
 ---

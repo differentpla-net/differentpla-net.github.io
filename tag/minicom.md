@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: minicom"
+title: "Posts tagged 'minicom'"
 tag: minicom
 ---

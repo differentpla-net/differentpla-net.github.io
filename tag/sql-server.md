@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: sql-server"
+title: "Posts tagged 'sql-server'"
 tag: sql-server
 ---

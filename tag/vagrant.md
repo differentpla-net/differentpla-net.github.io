@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: vagrant"
+title: "Posts tagged 'vagrant'"
 tag: vagrant
 ---

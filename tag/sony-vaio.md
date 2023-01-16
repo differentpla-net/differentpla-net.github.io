@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: sony-vaio"
+title: "Posts tagged 'sony-vaio'"
 tag: sony-vaio
 ---

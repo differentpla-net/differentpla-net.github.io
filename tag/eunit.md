@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: eunit"
+title: "Posts tagged 'eunit'"
 tag: eunit
 ---

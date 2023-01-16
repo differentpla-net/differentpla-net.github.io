@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: lager"
+title: "Posts tagged 'lager'"
 tag: lager
 ---

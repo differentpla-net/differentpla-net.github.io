@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: certificates"
+title: "Posts tagged 'certificates'"
 tag: certificates
 ---

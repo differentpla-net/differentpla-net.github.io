@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: nif"
+title: "Posts tagged 'nif'"
 tag: nif
 ---

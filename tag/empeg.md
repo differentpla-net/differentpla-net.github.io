@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: empeg"
+title: "Posts tagged 'empeg'"
 tag: empeg
 ---

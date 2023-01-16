@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: grafana"
+title: "Posts tagged 'grafana'"
 tag: grafana
 ---

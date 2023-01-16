@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: tailscale"
+title: "Posts tagged 'tailscale'"
 tag: tailscale
 ---

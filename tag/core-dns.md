@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: core-dns"
+title: "Posts tagged 'core-dns'"
 tag: core-dns
 ---

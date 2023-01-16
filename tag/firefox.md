@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: firefox"
+title: "Posts tagged 'firefox'"
 tag: firefox
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: wcf"
+title: "Posts tagged 'wcf'"
 tag: wcf
 ---

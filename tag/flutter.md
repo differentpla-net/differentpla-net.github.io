@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: flutter"
+title: "Posts tagged 'flutter'"
 tag: flutter
 ---

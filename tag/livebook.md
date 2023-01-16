@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: livebook"
+title: "Posts tagged 'livebook'"
 tag: livebook
 ---
