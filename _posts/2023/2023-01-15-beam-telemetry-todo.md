@@ -133,7 +133,9 @@ Later:
 - if I'm pushing OTel (or is it pull?), can I publish metrics from _there_, rather than from my daemon?
 - likewise: what OTel is there for host/node metrics?
 - what OTel stuff is there for K8s? In terms of exporters, I mean.
-- jaeger; what other options for that?
+- jaeger; what other options for that? tempo?
+  - what is loki? seeing that more recently.
+- https://signoz.io/blog/jaeger-vs-prometheus/
 - alerting -- on metrics, on other?
 - retag lager posts?
 
