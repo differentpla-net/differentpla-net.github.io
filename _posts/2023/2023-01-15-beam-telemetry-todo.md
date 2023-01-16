@@ -74,6 +74,14 @@ giving us more visibility into what's going on in our system.
   - Erlang VM stats, again.
 - different metrics types
   - counter, gauge, histogram, etc.
+- hooking logger to measure error, warning, events, since that's how they come out of the Erlang VM.
+- can we get stats out of other bits of Erlang?
+  - memory, ets, etc., are covered by prometheus.erl (and mostly by the others).
+  - what about inet metrics? what about httpd metrics?
+  - what about process queue lengths?
+- metrics/events for other things in general: poolboy, e.g. what other popular libraries are there?
+- can we use erlang trace ids as span ids? how do they even work anyway?
+- telemetry: pre-sampling, post-sampling, mix?
 
 Actually, why _does_ cowboy_telemetry_h wrap cowboy_metrics_h? Can't you just get cowboy_metrics_h to call out?
 
