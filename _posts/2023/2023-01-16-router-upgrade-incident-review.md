@@ -70,3 +70,7 @@ The idea of a single "root cause" is bullshit. I can think of several things tha
 - Put the USB stick back, but format it and configure it this time.
 - Be more assertive with the household Change Approval Board about the need to perform upgrades during normal "working"
   hours.
+
+## Further Investigation
+
+- There were no logs from the time of the incident. I think that they're on the SD card. Check.
