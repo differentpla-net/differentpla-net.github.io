@@ -19,9 +19,10 @@ All times are in UTC.
 January 13th-15th:
 - I plugged in a 256GB USB stick to use as extra storage on the router. I did NOT get around to formatting or
   configuring it.
-- The Synology "DS Router" has been notifying me about a pending firmware update for the router and mesh points. This
-  was not applied, due to the children having unfinished online homework, thus being unable to negotiate an appropriate
-  maintenance window.
+- The Synology "DS Router" app on my phone has been notifying me about a pending firmware update for the router and mesh
+  points.
+- This was not applied, due to the children having unfinished online homework, thus being unable to negotiate an
+  appropriate maintenance window.
 
 January 16th:
 
