@@ -56,6 +56,10 @@ code {
     padding-bottom: 1.7em;
 }
 
+div.excerpt > h2 {
+    font-size: 1.4rem;
+}
+
 article > div.details {
     padding-bottom: 0.3em;
     margin-bottom: 0.6em;
