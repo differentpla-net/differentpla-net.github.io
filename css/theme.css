@@ -79,6 +79,12 @@ article.post > div.details > .icons {
     color: var(--main-color);
 }
 
+div.tag-header {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--light-border-color);
+    margin-bottom: 0.6em;
+}
+
 svg.octicon {
     fill: currentColor;
 }

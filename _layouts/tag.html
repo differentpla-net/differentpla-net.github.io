@@ -2,9 +2,44 @@
 layout: default
 ---
 
-<h1>Tag: {{ page.tag }}</h1>
-<ul>
-{% for post in site.tags[page.tag] %}
-<li><a href="{{ post.url }}">{{ post.title | xml_escape }}</a> (<span class="timeago" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>)</li>
-{% endfor %}
-</ul>
+<div class="col-md-9 post-list">
+    {% assign posts = site.tags[page.tag] %}
+    {% assign count = posts | size %}
+    <div class="tag-header">
+    <h1 class="tag-title">Posts tagged &lsquo;{{ page.tag | xml_escape }}&rsquo;</h1>
+    {% if count == 1 %}
+        <span>{{ count }} post</span>
+    {% else %}
+        <span>{{ count }} posts</span>
+    {% endif %}
+    </div>
+
+    {% for post in posts %}
+    <article class="excerpt">
+        <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xml_escape }}</a></h1>
+
+        <div class="details">
+            <span class="created_at timeago" data-bs-toggle="tooltip" data-bs-placement="top"
+                title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>
+
+            <span class="tags">
+                {% for tag in post.tags %}
+                <a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a>
+                {% endfor %}
+            </span>
+
+            {% if post.series %}
+            <span class="series">
+                <a href="/series/{{post.series}}"><span class="badge bg-dark">{{ post.series }}</span></a>
+            </span>
+            {% endif %}
+        </div>
+
+        <div class="excerpt">
+            {{ post.excerpt }}
+        </div>
+
+        <a href="{{ post.url | prepend: site.baseurl }}">&raquo; read more</a>
+    </article>
+    {% endfor %}
+</div>
