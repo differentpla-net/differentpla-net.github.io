@@ -9,8 +9,8 @@ This is the incident review.
 
 ## Background
 
-- My home network has a Synology RT2600ac router, with 3 Synology MR2200ac mesh points (wired backhaul) called "Kitchen", "Office" and
-"Loft".
+- My home network has a Synology RT2600ac router, with 3 Synology MR2200ac mesh points (wired backhaul) called
+"Kitchen", "Office" and "Loft".
 - There are wired connections to various other points in the house: living room, bedrooms, etc.
 - In the cupboard with the router and modem, there is also a Synology DS416play NAS. The NAS runs a [Tailscale subnet router]({% post_url 2022/2022-11-25-tailscale-subnet-router %}).
 - The router, mesh points, NAS, are connected to each other and the rest of the house via a Netgear GS108 switch.
