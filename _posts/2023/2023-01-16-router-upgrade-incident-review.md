@@ -33,7 +33,7 @@ January 16th:
   to the garden office to find a USB/Ethernet adapter and a 6ft Ethernet cable.
 - 07:45: Armed with a laptop, USB adapter and cable, I power-cycled the router and waited. The "status" light went from
   yellow to green, but no dice.
-- 07:55: Concerned that it might be STP-spam (per the best-guess for the last outage) or that the router tripped up on
+- 07:55: Concerned that it might be STP-spam (per the best-guess for the [last outage]({% post_url 2023/2023-01-07-network-connectivity-incident-review %})) or that the router tripped up on
   the new USB stick, I turned off the mesh points, unplugged all of the router's Ethernet cables, except for the uplink
   to the modem and the laptop, pulled the SD card and USB stick, and tried power-cycling again.
 - 08:00: Internet connectivity was restored. I reconnected the Ethernet cables to the router and turned on the mesh
