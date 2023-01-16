@@ -11,7 +11,11 @@
     <link href="/css/rougify-style-github.css" rel="stylesheet">
     <link href="/css/theme.css" rel="stylesheet">
 
-    <title>{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}</title>
+    {% if page.title %}
+        <title>{{ page.title | xml_escape }} | {{ site.title | xml_escape }}</title>
+    {% else %}
+        <title>{{ site.title | xml_escape }}</title>
+    {% endif %}
 
     <meta property="og:title"
         content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}" />
