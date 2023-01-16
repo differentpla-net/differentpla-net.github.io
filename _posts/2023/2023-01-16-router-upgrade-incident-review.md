@@ -43,8 +43,8 @@ January 16th:
 ## Metrics
 
 - Time-to-detection: 5h15m.
-- Time-to-initial-response: 15m.
-- Time-to-resolution: 30m.
+- Time-to-acknowledge: 15m.
+- Time-to-resolution: 45m.
 
 ## Things that went poorly
 
