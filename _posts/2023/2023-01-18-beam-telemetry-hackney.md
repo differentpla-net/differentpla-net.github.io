@@ -23,7 +23,7 @@ The module that you specify in the configuration must implement certain function
 <div class="callout callout-warning" markdown="span">
 The latest version of Hackney uses an old version of `erlang_metrics`. The callback functions have changed a lot in the
 newer version. Make sure you're implementing the correct (older) ones.
-</span>
+</div>
 
 ```erlang
 -module(hackney_metrics_demo_metrics).
