@@ -8,8 +8,7 @@ series: beam-telemetry
 ---
 
 In the [previous post]({% post_url 2023/2023-01-15-beam-telemetry-cowboy-metrics %}) of the series, I added basic
-metrics reporting to Cowboy, and simply wrote them to the logger. In this post, I'm going to do the same for Hackney,
-but write them to Prometheus.
+metrics reporting to Cowboy, and simply wrote them to the logger. In this post, I'm going to do the same for the HTTP client, Hackney,.
 
 The documentation for Hackney says that [to enable metrics](https://github.com/benoitc/hackney#metrics), you must add a
 `mod_metrics` entry to its configuration. Let's put together a small demo app and do that.
