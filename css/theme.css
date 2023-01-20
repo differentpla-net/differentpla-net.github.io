@@ -89,6 +89,12 @@ div.tag-header {
     margin-bottom: 0.6em;
 }
 
+div.series-header {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--light-border-color);
+    margin-bottom: 0.6em;
+}
+
 svg.octicon {
     fill: currentColor;
 }

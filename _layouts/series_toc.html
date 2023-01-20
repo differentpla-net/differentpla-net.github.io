@@ -1,38 +1,47 @@
-<!doctype html>
-<html lang="en">
+---
+layout: default
+---
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="col-md-9 post-list">
+    {% assign posts = site.posts | where: "series", page.series %}
+    {% assign count = posts | size %}
+    <div class="series-header">
+        <h1 class="series-title">Posts in &lsquo;{{ page.series | xml_escape }}&rsquo; series</h1>
+        {% if count == 1 %}
+            <span>{{ count }} post</span>
+        {% else %}
+            <span>{{ count }} posts; oldest first</span>
+        {% endif %}
+        </div>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        {% for post in posts reversed %}
+        <article class="excerpt">
+            <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xml_escape }}</a></h1>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link href="/css/rougify-style-github.css" rel="stylesheet">
-    <link href="/css/theme.css" rel="stylesheet">
+            <div class="details">
+                <span class="created_at timeago" data-bs-toggle="tooltip" data-bs-placement="top"
+                    title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>
 
-    <title>{{ site.title }}</title>
+                <span class="tags">
+                    {% for tag in post.tags %}
+                    <a href="/tag/{{tag}}"><span class="badge bg-primary">{{ tag }}</span></a>
+                    {% endfor %}
+                </span>
 
-    <link rel="icon" type="image/png" href="/assets/profile-30px.png">
-</head>
-
-<body>
-    {% include _navbar.html %}
-
-    <div class="container-xxl my-md-4">
-        <h1>{{page.series}}</h1>
-
-        <ul class="nav flex-column">
-            {% for post in site.posts reversed %}
-                {% if post.series == page.series %}
-                    <li>
-                        <a href="{{ post.url }}">{{ post.title | xml_escape }}</a>
-                            (<span class="timeago" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>)
-                    </li>
+                {% if post.series %}
+                <span class="series">
+                    <a href="/series/{{post.series}}"><span class="badge bg-dark">{{ post.series }}</span></a>
+                </span>
                 {% endif %}
-            {% endfor %}
-        </ul>
+            </div>
+
+            <div class="excerpt">
+                {{ post.excerpt }}
+            </div>
+
+            <a href="{{ post.url | prepend: site.baseurl }}">&raquo; read more</a>
+        </article>
+        {% endfor %}
     </div>
 
     {% include _scripts.html %}
