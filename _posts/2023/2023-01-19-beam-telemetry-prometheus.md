@@ -11,8 +11,8 @@ In the previous posts, we gathered metrics from [Cowboy]({% post_url 2023/2023-0
 and [Hackney]({% post_url 2023/2023-01-18-beam-telemetry-hackney %}). I'd like to publish the metrics to Prometheus.
 
 <div class="callout callout-info" markdown="span">
-I'm actually going to publish the metrics to [VictoriaMetrics]({% post_url 2022/2022-10-16-victoria-metrics %}), because
-I already have that installed, but it's broadly the same.
+I'm actually going to publish the metrics to [VictoriaMetrics](https://victoriametrics.com/), because
+I already have that [installed]({% post_url 2022/2022-10-16-victoria-metrics %}), but it's broadly the same.
 </div>
 
 To export metrics to Prometheus, your application exposes an HTTP endpoint and that's regularly scraped for the metrics.
