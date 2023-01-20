@@ -130,8 +130,8 @@ In future, perform upgrades separately from each other.
 
 ### Take snapshots or backups before upgrades
 
-If I'd taken a snapshot before performing the upgrade, I wouldn't need to revert all the way back to November. This
-ought to be addressed by more frequent snapshots and by increased backup retention, describe below.
+If I'd taken a snapshot before performing the upgrade, I wouldn't have needed to revert all the way back to November.
+This ought to be addressed by more frequent snapshots and by increased backup retention, described below.
 
 ### Drain nodes before upgrading and restarting
 
@@ -141,7 +141,7 @@ triggered the situation where Kubernetes wiped the persistent volumes. Consider 
 ### Longhorn: Long-term retention of backups
 
 There doesn't seem to be an obvious way to configure Longhorn to keep daily/weekly/monthly backups. For example: keeping
-the last 7 days, the last 4 week and the last 6 months.
+the last 7 days, the last 4 weeks and the last 6 months.
 
 ### Longhorn: investigate using local snapshots
 
@@ -150,7 +150,8 @@ recovery easier. It should be possible to configure Longhorn to take more freque
 
 ### Longhorn: Recurring jobs are ambiguous
 
-It's not obvious in the UI how jobs are associated with volumes. I created a snapshot job that _appears_ to apply to all (or no) volumes.
+It's not obvious in the UI how jobs are associated with volumes. I created a snapshot job that _appears_ to apply to all
+(or no) volumes.
 
 I've got recurring backup jobs for each volume, but that's not obvious in the UI.
 
