@@ -130,3 +130,5 @@ default_color(emergency) -> "\e[1;41m".
 ```
 
 And that's basically it.
+
+The source code is here: <https://github.com/rlipscombe/logger_color_formatter>
