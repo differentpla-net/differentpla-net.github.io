@@ -34,7 +34,7 @@ option:
         {logger, [
             {handler, default, logger_std_h, #{
                 formatter =>
-                  {logger_default_formatter, #{
+                  {logger_formatter, #{
                     template => TemplateGoesHere
                   }}
             }}
