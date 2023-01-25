@@ -10,7 +10,13 @@ Several of our customers want their [Electric Imp](https://electricimp.com/) age
 
 As part of that, I'm implementing `RS256` signing for Electric Imp agents, so that agents can generate and sign JSON Web Tokens (JWT).
 
-_Disclaimer: any discussion of Electric Imp features, roadmap, etc. is basically rumour and hearsay, is totally unofficial and unsanctioned, and shouldn't be relied on._
+<div class="callout callout-warning" markdown="span">
+Disclaimer: any discussion of Electric Imp features, roadmap, etc. is basically rumour and hearsay, is totally unofficial and unsanctioned, and shouldn't be relied on.
+</div>
+
+<div class="callout callout-info" markdown="span">
+Except in this case. We shipped it. See the documentation for [crypto.sign](https://developer.electricimp.com/api/crypto/sign).
+</div>
 
 Rather than just dive in and knock out some C++ (and Squirrel) code, I
 thought I'd explore how it all works first.
