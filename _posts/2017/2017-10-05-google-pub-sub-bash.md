@@ -15,7 +15,7 @@ Disclaimer: any discussion of Electric Imp features, roadmap, etc. is basically 
 </div>
 
 <div class="callout callout-info" markdown="span">
-Except in this case. We shipped it. See the documentation for [crypto.sign](https://developer.electricimp.com/api/crypto/sign).
+Except in this case. We shipped it. See the documentation for [`crypto.sign()`](https://developer.electricimp.com/api/crypto/sign).
 </div>
 
 Rather than just dive in and knock out some C++ (and Squirrel) code, I
