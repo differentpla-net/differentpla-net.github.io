@@ -1,6 +1,7 @@
 ---
 title: Using Google Pub/Sub from bash
 date: 2017-10-05 14:35+0000
+tags: jwt
 ---
 
 ## Background
