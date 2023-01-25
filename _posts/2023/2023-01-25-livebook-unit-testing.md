@@ -13,6 +13,9 @@ ExUnit.configure(exclude: [:skip])
 ExUnit.start(autorun: false)
 ```
 
+The `exclude: [:skip]` part allows you to mark tests with `@tag :skip` to, well, skip them. There's an example of this
+below.
+
 Then, for each set of tests:
 
 ```elixir
@@ -33,6 +36,11 @@ defmodule BarTest do
 
   test "it doesn't not work" do
     refute false
+  end
+
+  @tag :skip
+  test "this is skipped" do
+    assert :up == :down
   end
 end
 
