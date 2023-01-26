@@ -17,3 +17,8 @@ I usually pick 568B.
 
 If you're making a cross-over cable, one end should be 568A and the other end should be 568B. Many network devices today
 support auto-crossover.
+
+<div class="callout callout-info" markdown="span">
+This is only correct for 100BASE-TX or 10BASE-T cross-over cables; 1000BASE-T cross-over cables also have blue and brown crossed.
+See https://www.flukenetworks.com/knowledge-base/dsx-cableanalyzer-series/crossover-cable-testing-dsx-cable-analyzer.
+</div>
