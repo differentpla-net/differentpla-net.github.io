@@ -1,7 +1,7 @@
 ---
 title: "Unit testing in Elixir Livebook"
 date: 2023-01-25T11:19:00Z
-tags: livebook testing
+tags: elixir livebook testing
 ---
 
 I've written some code in Elixir Livebook, and I'd like to write some unit tests for it. Here's how I did it.
