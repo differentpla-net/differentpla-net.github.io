@@ -124,11 +124,11 @@ class CChildFrame : public CMDIChildWnd
 
     /* ... */
 
-    //{{AFX_VIRTUAL(CChildFrame)
+    {% raw %}//{{AFX_VIRTUAL(CChildFrame)
     public:
     virtual BOOL LoadFrame(UINT nIDResource, DWORD dwDefaultStyle, CWnd *pParentWnd, CCreateContext *pContext = NULL);
     virtual void OnUpdateFrameMenu(BOOL bActive, CWnd *pActivateWnd, HMENU hMenuAlt);
-    //}}AFX_VIRTUAL
+    //}}AFX_VIRTUAL{% endraw %}
 };
 ```
 
