@@ -92,8 +92,26 @@ obviously also not a UUID.
 
 ```erlang
 KeyId = base64url:encode(crypto:hash(sha256, base64url:decode(N))).
-Header = jsx:encode(#{<<"alg">> => <<"RS256">>, <<"kid">> => KeyId}).
+Header = base64url:encode(jsx:encode(#{<<"alg">> => <<"RS256">>, <<"kid">> => KeyId})).
 ```
+
+Registered claims: https://www.rfc-editor.org/rfc/rfc7519.html#section-4.1
+
+exp, nbf, iat are NumericDate -- unix epoch, seconds.
+
+```erlang
+Payload = base64url:encode(jsx:encode(#{
+  <<"iss">> => Issuer,
+  <<"sub">> => Subject,
+  <<"aud">> => Audience,
+  <<"exp">> => Expiry,
+  <<"nbf">> => NotBefore,
+  <<"iat">> => IssuedAt,
+  <<"jti">> => UniqueId
+})).
+```
+
+
 
 ## TODO
 
