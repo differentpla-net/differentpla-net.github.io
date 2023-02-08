@@ -17,8 +17,8 @@ RSAPrivateKey = public_key:generate_key({rsa, Size, Exp}).
 ## Converting to PKCS#1
 
 ```erlang
-PEM = public_key:pem_encode([public_key:pem_entry_encode('RSAPrivateKey', RSAPrivateKey)]).
-file:write_file("key.pem", PEM).
+RSAPrivateKeyPEM = public_key:pem_encode([public_key:pem_entry_encode('RSAPrivateKey', RSAPrivateKey)]).
+file:write_file("key.pem", RSAPrivateKeyPEM).
 ```
 
 ```
@@ -40,6 +40,7 @@ openssl rsa -in key.pem -text -noout
 For RSA, it's pretty simple:
 
 ```erlang
+rr(public_key).   % if in the REPL
 #'RSAPrivateKey'{modulus = Modulus, publicExponent = PublicExponent} = RSAPrivateKey.
 RSAPublicKey = #'RSAPublicKey'{modulus = Modulus, publicExponent = PublicExponent}.
 ```
@@ -47,8 +48,8 @@ RSAPublicKey = #'RSAPublicKey'{modulus = Modulus, publicExponent = PublicExponen
 ## Converting that to PKCS#1
 
 ```erlang
-PEM = public_key:pem_encode([public_key:pem_entry_encode('RSAPublicKey', RSAPublicKey)]).
-file:write_file("pub.pem", PEM).
+RSAPublicKeyPEM = public_key:pem_encode([public_key:pem_entry_encode('RSAPublicKey', RSAPublicKey)]).
+file:write_file("pub.pem", RSAPublicKeyPEM).
 ```
 
 ```
@@ -60,6 +61,36 @@ IxbtysiR5Z8uES9jFMW5IMuciorjIhThuQIDAQAB
 ```
 
 openssl doesn't want to display that; we probably need PKCS#8, which I think is this: https://github.com/voltone/x509/blob/33ddd879c3d04478776262ad43b076791bdb3198/lib/x509/public_key.ex#L52
+
+We can't convert the public key from #1 to #8, so let's convert the private key and then unpack it:
+
+```sh
+openssl pkcs8 -topk8 -inform PEM -outform PEM -in key.pem -nocrypt > pkcs8.pem
+```
+
+```erlang
+
+```
+
+Fat nope. I can decode it all the way, but I can't actually _look_ at it.
+
+https://www.alvestrand.no/objectid/1.2.840.113549.1.1.1.html
+
+```erlang
+#'SubjectPublicKeyInfo'{algorithm = #'AlgorithmIdentifier'{algorithm = ?'rsaEncryption', parameters = <<5,0>>}, ...}.
+```
+
+```erlang
+SubjectPublicKeyInfo = #'SubjectPublicKeyInfo'{
+  algorithm = #'AlgorithmIdentifier'{algorithm = {1,2,840,113549,1,1,1}, parameters = <<5,0>>},
+  subjectPublicKey = public_key:der_encode('RSAPublicKey', RSAPublicKey)}.
+Wrapped = public_key:pem_encode([public_key:pem_entry_encode('SubjectPublicKeyInfo', SubjectPublicKeyInfo)]).
+file:write_file("wrapped.pem", Wrapped).
+```
+
+```sh
+openssl rsa -pubin -in wrapped.pem -text
+```
 
 ## How are `kid` generated?
 
@@ -88,6 +119,12 @@ N = <<"w0PgyEXUS2Stec6a5nxWPg_39M9D2x-zQedSwBEYthJ9d4x5mf-h69H2u555VYI6TUA59I0cy
 Can't find a hash that fits. The Google kid is 40 hex characters, so 160 bits. That's an odd hash length. But it's
 obviously also not a UUID.
 
+## Key ID
+
+https://stackoverflow.com/questions/68529053/fingerprint-of-rsa-public-key
+
+MD5(DER(public_key))
+
 ## Create JWT
 
 ```erlang
@@ -110,8 +147,6 @@ Payload = base64url:encode(jsx:encode(#{
   <<"jti">> => UniqueId
 })).
 ```
-
-
 
 ## TODO
 
