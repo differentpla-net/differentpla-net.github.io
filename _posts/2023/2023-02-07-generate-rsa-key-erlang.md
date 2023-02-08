@@ -80,6 +80,20 @@ Normally, you'd use the `?'rsaEncryption'` macro, but that doesn't work in the R
 
 The `<<5,0>>` is a `NULL`; the algorithm takes no parameters.
 
+That writes a file as follows:
+
+```
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA15Spy6QYxqlG25i1uygr
+...
+6QIDAQAB
+-----END PUBLIC KEY-----
+```
+
+PKCS#1 files have `-----BEGIN RSA PUBLIC KEY-----`; PKCS#8 files have `-----BEGIN PUBLIC KEY-----`.
+
+Obviously, substitute `PRIVATE`, `PUBLIC`, `BEGIN`, `END` as appropriate.
+
 And now we can load that with `openssl`:
 
 ```sh
