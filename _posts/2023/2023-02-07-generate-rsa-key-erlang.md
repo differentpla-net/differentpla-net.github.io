@@ -97,5 +97,5 @@ Obviously, substitute `PRIVATE`, `PUBLIC`, `BEGIN`, `END` as appropriate.
 And now we can load that with `openssl`:
 
 ```sh
-openssl rsa -pubin -in wrapped.pem -text -noout
+openssl rsa -pubin -in my.pub -text -noout
 ```
