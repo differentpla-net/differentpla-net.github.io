@@ -1,5 +1,5 @@
 ---
-title: "Wrapping an RSA private key with Erlang"
+title: "Using RSA keys for signing in Erlang"
 date: 2023-02-08T14:06:00Z
 tags: erlang cryptography
 ---
