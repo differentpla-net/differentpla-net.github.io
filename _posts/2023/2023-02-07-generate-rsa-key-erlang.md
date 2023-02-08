@@ -64,7 +64,8 @@ IxbtysiR5Z8uES9jFMW5IMuciorjIhThuQIDAQAB
 
 ## Writing the public key as PEM (PKCS#8)
 
-`openssl` -- as far as I can tell -- doesn't want to load public keys in this format, so we need to use PKCS#8 instead. To do this, we wrap the key in a `SubjectPublicKeyInfo` record:
+`openssl` -- as far as I can tell -- doesn't want to load public keys in this format, so we need to use PKCS#8 instead.
+To do this, we wrap the key in a `SubjectPublicKeyInfo` record:
 
 ```erlang
 SubjectPublicKeyInfo = #'SubjectPublicKeyInfo'{
