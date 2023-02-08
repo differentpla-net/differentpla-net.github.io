@@ -72,3 +72,17 @@ If you want to use `crypto:verify/5`, that looks like this:
 ```erlang
 true = crypto:verify(rsa, sha256, <<"Hello World">>, Signature, [E, N]).
 ```
+
+You can compare it with openssl, but note that you'll need the public key (`my.pub`) and the signature should be in a file (here, `sig`):
+
+```
+$ echo -n 'Hello World' | openssl dgst -sha256 -verify my.pub -signature sig
+Verified OK
+```
+
+If it fails:
+
+```
+$ echo -n 'Hello World!' | openssl dgst -sha256 -verify my.pub -signature sig
+Verification Failure
+```
