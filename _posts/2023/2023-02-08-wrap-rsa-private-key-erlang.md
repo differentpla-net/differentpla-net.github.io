@@ -26,8 +26,8 @@ PrivateKeyInfo = #'PrivateKeyInfo'{
     parameters = {'asn1_OPENTYPE', <<5,0>>}},
   privateKey = public_key:der_encode('RSAPrivateKey', RSAPrivateKey)}.
 
-Wrapped = public_key:pem_encode([public_key:pem_entry_encode('PrivateKeyInfo', PrivateKeyInfo)]).
-file:write_file("my.key", Wrapped).
+file:write_file("my.key",
+  public_key:pem_encode([public_key:pem_entry_encode('PrivateKeyInfo', PrivateKeyInfo)])).
 ```
 
 As before, the `{1,2,840,113549,1,1,1}` refers to the `rsaEncryption` OID; see
