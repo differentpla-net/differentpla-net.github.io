@@ -4,6 +4,17 @@ date: 2023-02-07T14:39:00Z
 tags: erlang jwt
 ---
 
+- Generate an RSA private key.
+- Save as PEM.
+- Derive public key.
+- Save as PEM.
+- Sign arbitrary data with the RSA key.
+- Verify the signature with the RSA key.
+- Encrypt arbitrary data with the RSA key.
+- Decrypt arbitrary data with the RSA key.
+
+Signing/encrypting with the same key?
+
 TODO: Regenerate the example data; it's a bit of a mishmash.
 
 ## Generating RSA keys in Erlang
