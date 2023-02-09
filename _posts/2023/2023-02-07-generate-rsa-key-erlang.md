@@ -70,7 +70,7 @@ To do this, we wrap the key in a `SubjectPublicKeyInfo` record:
 ```erlang
 SubjectPublicKeyInfo = #'SubjectPublicKeyInfo'{
   algorithm = #'AlgorithmIdentifier'{algorithm = {1,2,840,113549,1,1,1}, parameters = <<5,0>>},
-  subjectPublicKey = public_key:der_encode('RSAPublicKey', RSAPublicKey)}..
+  subjectPublicKey = public_key:der_encode('RSAPublicKey', RSAPublicKey)}.
 file:write_file("my.pub",
   public_key:pem_encode([public_key:pem_entry_encode('SubjectPublicKeyInfo', SubjectPublicKeyInfo)])).
 ```
