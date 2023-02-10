@@ -120,8 +120,10 @@ kubectl --namespace erlclu apply -f k8s/deployment.yaml
 
 - Did clustering break 6 days ago and I just didn't notice?
   - Investigate metrics for cluster membership.
+    - This is done.
 - Or did it keep going until I restarted the pods this morning?
   - Investigate and characterise what Erlang distribution does when the CA expires.
+    - Nodes already in the cluster stay connected. New nodes can't connect to the cluster.
   - Ditto, but for node certificate expiration.
 - Can we alert from the init container if the CA certificate has expired? Or just fail to start the pod, and then alert
   on that?
