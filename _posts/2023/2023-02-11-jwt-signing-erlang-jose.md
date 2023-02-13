@@ -4,7 +4,8 @@ date: 2023-02-11T14:45:00Z
 tags: erlang cryptography jwt jose
 ---
 
-In an earlier post, I showed how to [sign a JSON Web Token in Erlang]({% post_url 2023/2023-02-09-jwt-signing-erlang %}). I used plain-ol' Erlang. Here's how to use the [jose](https://hex.pm/packages/jose) package to do the same thing.
+In an earlier post, I showed how to [sign a JSON Web Token in Erlang]({% post_url 2023/2023-02-09-jwt-signing-erlang
+%}). I used plain-ol' Erlang. Here's how to use the [jose](https://hex.pm/packages/jose) package to do the same thing.
 
 ```erlang
 SigningKey = public_key:generate_key({rsa, 2048, 65537}).

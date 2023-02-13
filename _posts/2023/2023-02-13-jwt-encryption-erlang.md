@@ -4,7 +4,8 @@ date: 2023-02-13T15:37:00Z
 tags: erlang cryptography jwt
 ---
 
-Following on from [signing a web token in Erlang]({% post_url 2023/2023-02-09-jwt-signing-erlang %}), here's how to encrypt one.
+Following on from [signing a web token in Erlang]({% post_url 2023/2023-02-09-jwt-signing-erlang %}), here's how to
+encrypt one.
 
 Let's recap the JWT signing steps, so we've got something to encrypt. Here's our token header and payload:
 
