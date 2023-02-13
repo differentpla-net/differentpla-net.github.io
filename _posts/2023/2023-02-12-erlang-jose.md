@@ -56,7 +56,7 @@ Also, where did that binary come from? I assume crypto:strong_rand_bytes.
 
 ```erlang
 Key = crypto:strong_rand_bytes(16).
-EncryptedKey = public_key:encrypt_public(Cipher, EncryptionPubKey, [{rsa_padding, rsa_pkcs1_oaep_padding}]).
+EncryptedKey = public_key:encrypt_public(Key, EncryptionPubKey, [{rsa_padding, rsa_pkcs1_oaep_padding}]).
 IV = crypto:strong_rand_bytes(12).
 AAD = base64url:encode(
         jsx:encode(#{
