@@ -1,6 +1,6 @@
 ---
 title: "Encrypting a JSON Web Token in Erlang"
-date: 2023-02-11T15:37:00Z
+date: 2023-02-13T15:37:00Z
 tags: erlang cryptography jwt
 ---
 
