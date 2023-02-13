@@ -70,7 +70,6 @@ You'll need this:
 base64url() {
     base64 -w 0 | tr '+/' '-_' | tr -d '='
 }
-
 ```
 
 ### Service Account Email / Private Key
