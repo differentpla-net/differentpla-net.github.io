@@ -155,3 +155,12 @@ Then we can write it to a file:
 ```
 
 Let's try it this way
+
+
+TODO:
+
+- Erlang: AES encryption.
+- Erlang: AES decryption.
+- Erlang: JWE decryption w/o JOSE.
+- Does jose_jwt compact the JWS? Doesn't look like it. How can I get it to compact the JWS before encryption? Am I stuck
+  with using the slightly lower-level functions?
