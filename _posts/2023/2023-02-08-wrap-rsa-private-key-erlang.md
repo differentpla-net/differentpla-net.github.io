@@ -17,12 +17,12 @@ RSAPrivateKey = public_key:generate_key({rsa, Size, Exp}).
 Then we need to wrap it in a `PrivateKeyInfo` record:
 
 ```erlang
-rr(public_key).
+rr(public_key).   % if in the REPL, otherwise -include_lib("public_key/include/public_key.hrl").
 
 PrivateKeyInfo = #'PrivateKeyInfo'{
   version = 'v1',
   privateKeyAlgorithm = #'PrivateKeyInfo_privateKeyAlgorithm'{
-    algorithm = {1,2,840,113549,1,1,1},
+    algorithm = {1,2,840,113549,1,1,1},   % if in the REPL, otherwise ?'rsaEncryption'
     parameters = {'asn1_OPENTYPE', <<5,0>>}},
   privateKey = public_key:der_encode('RSAPrivateKey', RSAPrivateKey)}.
 

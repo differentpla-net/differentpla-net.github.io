@@ -42,7 +42,7 @@ openssl rsa -in my.key -text -noout
 For RSA, it's pretty simple; you just copy the modulus and exponent into an `RSAPublicKey` record:
 
 ```erlang
-rr(public_key).   % if in the REPL
+rr(public_key).   % if in the REPL, otherwise -include_lib("public_key/include/public_key.hrl").
 #'RSAPrivateKey'{modulus = Modulus, publicExponent = PublicExponent} = RSAPrivateKey.
 RSAPublicKey = #'RSAPublicKey'{modulus = Modulus, publicExponent = PublicExponent}.
 ```

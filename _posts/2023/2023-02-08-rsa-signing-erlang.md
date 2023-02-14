@@ -25,7 +25,7 @@ Signature = public_key:sign(<<"Hello World">>, sha256, RSAPrivateKey).
 You can also use `crypto:sign/4`, but you'll need to decompose the `RSAPrivateKey` record first:
 
 ```erlang
-rr(public_key).   % in the REPL
+rr(public_key).   % if in the REPL, otherwise -include_lib("public_key/include/public_key.hrl").
 
 #'RSAPrivateKey'{publicExponent = E, modulus = N, privateExponent = D} = RSAPrivateKey.
 Signature = crypto:sign(rsa, sha256, <<"Hello World">>, [E, N, D]).
@@ -34,7 +34,7 @@ Signature = crypto:sign(rsa, sha256, <<"Hello World">>, [E, N, D]).
 Or, using the longer key format (which is faster):
 
 ```erlang
-rr(public_key).   % in the REPL
+rr(public_key).   % if in the REPL, otherwise -include_lib("public_key/include/public_key.hrl").
 
 #'RSAPrivateKey'{publicExponent = E, modulus = N, privateExponent = D, prime1 = P1, prime2 = P2, exponent1 = E1, exponent2 = E2, coefficient = C} = RSAPrivateKey.
 Signature = crypto:sign(rsa, sha256, <<"Hello World">>, [E, N, D, P1, P2, E1, E2, C]).
