@@ -61,8 +61,16 @@ Let's try it this way
 
 TODO:
 
+
+
 - Erlang: AES encryption.
 - Erlang: AES decryption.
 - Erlang: JWE decryption w/o JOSE.
 - Does jose_jwt compact the JWS? Doesn't look like it. How can I get it to compact the JWS before encryption? Am I stuck
   with using the slightly lower-level functions?
+
+This appears to encrypt the JSON-serialized thing, but that's not making much sense, either:
+
+```
+JWE = jose_jwt:encrypt(EncryptionJWK, #{<<"alg">> => <<"RSA-OAEP">>, <<"enc">> => <<"A128GCM">>}, JWS).
+```
