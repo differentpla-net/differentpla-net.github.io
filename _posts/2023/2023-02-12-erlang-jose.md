@@ -1,16 +1,4 @@
 ```erlang
-Plaintext = <<"Hello World">>.
-```
-
-```erlang
-EncryptionKey = public_key:generate_key({rsa, 2048, 65537}).
-
-rr(public_key).
-#'RSAPrivateKey'{modulus = Modulus, publicExponent = PublicExponent} = EncryptionKey.
-EncryptionPubKey = #'RSAPublicKey'{modulus = Modulus, publicExponent = PublicExponent}.
-```
-
-```erlang
 JWK = jose_jwk:from_key(EncryptionKey).
 jose_jwk:block_encrypt(Plaintext, JWK).
 ```
@@ -54,92 +42,6 @@ Also, where did that binary come from? I assume crypto:strong_rand_bytes.
    <<"tag">> => <<"UQK8VPAxh4Bm2oj7ocfIcw">>}}
 ```
 
-```erlang
-Key = crypto:strong_rand_bytes(16).
-EncryptedKey = public_key:encrypt_public(Key, EncryptionPubKey, [{rsa_padding, rsa_pkcs1_oaep_padding}]).
-IV = crypto:strong_rand_bytes(12).
-AAD = base64url:encode(
-        jsx:encode(#{
-            <<"alg">> => <<"RSA-OAEP">>,
-            <<"enc">> => <<"A128GCM">>
-        })).
-{Ciphertext, Tag} = crypto:crypto_one_time_aead(aes_gcm, Key, IV, Plaintext, AAD, true).
-
-#{
-    <<"ciphertext">> => base64url:encode(Ciphertext),
-    <<"encrypted_key">> => base64url:encode(EncryptedKey),
-    <<"iv">> => base64url:encode(IV),
-    <<"protected">> => AAD,
-    <<"tag">> => base64url:encode(Tag)
-}.
-```
-
-
-base64url:decode(<<"eyJhbGciOiJSU0ExXzUiLCJraWQiOiJmcm9kby5iYWdnaW5zQGhvYmJpdG9uLmV4YW1wbGUiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0">>).
-<<"{\"alg\":\"RSA1_5\",\"kid\":\"frodo.baggins@hobbiton.example\",\"enc\":\"A128CBC-HS256\"}">>
-
-jose jwe enc
-
-```erlang
-SigningKey = public_key:generate_key({rsa, 2048, 65537}).
-JWK = jose_jwk:from_key(SigningKey).
-
-% write that to a file
-jose_jwk:to_file("signing.jwk", JWK).
-
-% equivalent to
-{_, Bin} = jose_jwk:to_binary(JWK).
-ok = file:write_file("signing.jwk", Bin).
-```
-
-% echo -n "Hello World" > hello.txt
-% jose jws sig -I hello.txt
-At least one JWK is required to sign!
-% jose jws sig -I hello.txt -k signing.jwk
-{"payload":"SGVsbG8gV29ybGQ","protected":"eyJhbGciOiJSUzI1NiJ9","signature":"AXkaStEfn0549OVloD5WIWKr57tq3cOY8Hvin6Zso-pygCLYPaC1WqqJwrJNJf-Gio57oT0-plrjEiAO9RfF1pPuUfn_YGvru-SmZH8mSnYcVzUvk5Y4-Nl-Au4EMLAqfDrzX1CtdYdwRDyobqBa8bzVq55m2NoVYysUt7uHt98gZPDzgHpzlV9vR53J4oQG16kkLzD2b1cwh6jZJnpbaGhDJ04bUfPbWqBmAjowdMO8O4HBBtgwccSRx0LbtnDaMVf5hNQ10Y91o6NtbK-jk7gt7eJYMZla5s0REs6riN9PeO3-GSQqJaeHFVqdHv2t56u5T7T6UiYMXX2ReNzEOw"}
-% jose jws sig -I hello.txt -k signing.jwk -c
-eyJhbGciOiJSUzI1NiJ9.SGVsbG8gV29ybGQ.AXkaStEfn0549OVloD5WIWKr57tq3cOY8Hvin6Zso-pygCLYPaC1WqqJwrJNJf-Gio57oT0-plrjEiAO9RfF1pPuUfn_YGvru-SmZH8mSnYcVzUvk5Y4-Nl-Au4EMLAqfDrzX1CtdYdwRDyobqBa8bzVq55m2NoVYysUt7uHt98gZPDzgHpzlV9vR53J4oQG16kkLzD2b1cwh6jZJnpbaGhDJ04bUfPbWqBmAjowdMO8O4HBBtgwccSRx0LbtnDaMVf5hNQ10Y91o6NtbK-jk7gt7eJYMZla5s0REs6riN9PeO3-GSQqJaeHFVqdHv2t56u5T7T6UiYMXX2ReNzEOw
-
-Let's compare JWS using my own stuff, JOSE and jose and openssl:
-
-We need a key. We'll use the same key for everything, so that we know it's working:
-
-```erlang
-SigningKey = public_key:generate_key({rsa, 2048, 65537}).
-```
-
-----
-
-Sign something with jose.
-
-```sh
-openssl genrsa -f4 2048 > signing.key
-```
-
-It doesn't seem to provide a way to generate a JWK from a PEM-formatted private key, so we need to do that ourselves. There are two ways to do it. We can use `JOSE`:
-
-```erlang
-JWK = jose_jwk:from_pem_file("signing.key").
-jose_jwk:to_file("signing.jwk", JWK).
-```
-
-Then we can sign something with it:
-
-```sh
-echo -n "Hello World" > message.txt
-% jose jws sig -I message.txt -k signing.jwk -c
-eyJhbGciOiJSUzI1NiJ9.SGVsbG8gV29ybGQ.TEVv1TsoJnvLvanbe9_axWfdywidorc5A8BweC5QxkcbPCUmzZyl6Y_PMyVgFCW-h78KSYU-SO9C5cKlLLl3ar4XLFBxSvQEeYwi3rVIp2hDFYecHvSKjkX1FGJeCtOr_c4E6d6dSSpfAvuhDa2DXDXFuno2nZoFiGL7GXAuzNNcykRYnawdyzhKO4Az1s1P_5TW-HVBRTa7imQos60tkLuy5SD53hLaXM_9j4c1vQ8LCE-h3O0ur9nTAlW_gVNejngQTLmFUonGmCRObdVCLP6YSUx0dhWmEY911iSmu_WaMmhWU6hpKe9Q0mUsGLRTxoUY-F5qavpIvdd9sUkMSw
-```
-
-Does that match what we'd get if we used `JOSE`?
-
-```erlang
-{_, Sig} = jose_jws:compact(jose_jwk:sign(<<"Hello World">>, #{<<"alg">> => <<"RS256">>}, JWK)).
-rp(Sig).
-<<"eyJhbGciOiJSUzI1NiJ9.SGVsbG8gV29ybGQ.TEVv1TsoJnvLvanbe9_axWfdywidorc5A8BweC5QxkcbPCUmzZyl6Y_PMyVgFCW-h78KSYU-SO9C5cKlLLl3ar4XLFBxSvQEeYwi3rVIp2hDFYecHvSKjkX1FGJeCtOr_c4E6d6dSSpfAvuhDa2DXDXFuno2nZoFiGL7GXAuzNNcykRYnawdyzhKO4Az1s1P_5TW-HVBRTa7imQos60tkLuy5SD53hLaXM_9j4c1vQ8LCE-h3O0ur9nTAlW_gVNejngQTLmFUonGmCRObdVCLP6YSUx0dhWmEY911iSmu_WaMmhWU6hpKe9Q0mUsGLRTxoUY-F5qavpIvdd9sUkMSw">>
-```
-
-Yes, it does.
 
 
 
