@@ -4,6 +4,7 @@ short_title: "SSH public key authentication"
 date: 2022-12-22T15:25:00.000Z
 layout: series
 series: erlang-cluster-k8s
+tags: erlang kubernetes ssh
 ---
 
 In the [previous post]({% post_url 2022/2022-12-22-erlang-cluster-k8s-ssh %}), I showed how to enable SSH access to the
