@@ -19,3 +19,11 @@ set_window_title(Title) when is_list(Title) ->
 
 The trick with `open_port` is required; if you try to use `io:format`, the Erlang shell hangs. I think I found it on the
 Erlang mailing list.
+
+## Other stuff
+
+- https://www.proctor-it.com/erlang-thursday-user_default/
+- https://www.erlang.org/doc/man/erl.html#configuration
+- https://www.erlang.org/doc/man/shell.html#prompt_func-1
+- https://www.erlang.org/doc/man/shell_default.html
+- https://azunyanmoe.wordpress.com/2011/04/05/the-erlangrc-file/
