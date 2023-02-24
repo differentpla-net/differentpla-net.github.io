@@ -23,7 +23,7 @@ JWS = jose_jwt:sign(SigningJWK, #{<<"alg">> => <<"RS256">>}, JWT).
 {_, CompactJWS} = jose_jws:compact(JWS).
 ```
 
-## Encrypted JWT
+## Encrypted JWT
 
 Then we'll encrypt it; note that the sender uses the recipient's _public_ key:
 
