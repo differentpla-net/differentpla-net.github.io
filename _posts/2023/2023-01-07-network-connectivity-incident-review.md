@@ -54,7 +54,7 @@ January 7th:
 In the Log Center on the Synology RT2600ac, on the "Local" page, I can see that:
 - The "Office" and "Kitchen" Wifi points were both offline from 10:50.
 - They both reconnected at about 13:50.
-- All three Wifi points -- "Office", "Kitchen", "Loft" diconnected and reconnected at about 14:45. I suspect that this
+- All three Wifi points -- "Office", "Kitchen", "Loft" disconnected and reconnected at about 14:45. I suspect that this
   was when I started messing around with some package installation on the router. It was initializing a database on the
   SD card and that severely impacted performance.
 
