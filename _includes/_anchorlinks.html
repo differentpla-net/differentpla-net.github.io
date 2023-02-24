@@ -1,0 +1,10 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Add anchorLink class; see CSS for section sign stuff.
+        $('div.body > h1, h2, h3, h4, h5, h6').each(function (i) {
+            $(this).append(
+                '<a class="anchorlink" title="Link to ' +
+                $(this).text() + '" href="#' + $(this).attr('id') + '"></a>');
+        });
+    });
+</script>
