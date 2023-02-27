@@ -51,21 +51,26 @@ If you want the return values:
 
 Note that you can use `dbg:fun2ms/1` to make that slightly more readable:
 
-    8> dbg:tpl(another_module, some_other_function, '_', dbg:fun2ms(fun(_) -> return_trace() end)).
+    9> dbg:tpl(another_module, some_other_function, '_', dbg:fun2ms(fun(_) -> return_trace() end)).
     {ok,[{matched,mynode@myhost,1},{saved,1}]}
+
+If you want every function in a module, that's:
+
+    10> dbg:tpl(big_module, []).
+    {ok,[{matched,mynode@myhost,31}]}
 
 For more examples, see [this Stackoverflow answer](https://stackoverflow.com/a/1954980).
 
 Make sure you tell it which processes you're interested in:
 
-    9> dbg:p(pid(0,891,0), c).
+    11> dbg:p(pid(0,891,0), c).
 
 Or:
 
-    10> dbg:p(all, c).
+    12> dbg:p(all, c).
 
 Do your thing; enjoy the tracing.
 
 Then turn it off:
 
-    11> dbg:stop_clear().
+    13> dbg:stop_clear().
