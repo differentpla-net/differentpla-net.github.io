@@ -23,7 +23,7 @@ looks like this:
 Port Module   Recv  Sent    Owner     Local Address    Foreign Address  State        Type
 24   inet_tcp 0     0       <0.489.0> *:46025          *:*              ACCEPTING    STREAM
 40   inet_tcp 6     21      <0.487.0> localhost:40110  localhost:epmd   CONNECTED(O) STREAM
-64   inet_tcp 0     0       <0.570.0> *:10022          *:*              ACCEPTING    STREAM
+64   inet_tcp 0     0       <0.570.0> *:22             *:*              ACCEPTING    STREAM
 72   inet_tcp 0     0       <0.573.0> *:http-alt       *:*              ACCEPTING    STREAM
 80   inet_tcp 0     0       <0.586.0> *:9153           *:*              ACCEPTING    STREAM
 216  inet_tcp 4591  4914    <0.663.0> 10.42.2.46:47606 10.42.1.94:46881 CONNECTED(O) STREAM
@@ -31,13 +31,13 @@ Port Module   Recv  Sent    Owner     Local Address    Foreign Address  State   
 296  inet_tcp 4609  4358    <0.693.0> 10.42.2.46:46025 10.42.2.47:33860 CONNECTED(O) STREAM
 320  inet_tcp 3354  3793    <0.701.0> 10.42.2.46:46025 10.42.0.89:42484 CONNECTED(O) STREAM
 368  inet_tcp 3247  1524923 <0.710.0> 10.42.2.46:9153  10.42.0.15:35612 CONNECTED(O) STREAM
-648  inet_tcp 19472 73069   <0.740.0> localhost:10022  localhost:36766  CONNECTED(O) STREAM
+648  inet_tcp 19472 73069   <0.740.0> localhost:22     localhost:36766  CONNECTED(O) STREAM
 ok
 ```
 
 There are a number of different connections in there. We can identify them as follows:
 
-- The ones on port `10022` are the [SSH daemon]({% post_url 2022/2022-12-22-erlang-cluster-k8s-ssh %}) and the current
+- The ones on port `22` are the [SSH daemon]({% post_url 2022/2022-12-22-erlang-cluster-k8s-ssh %}) and the current
   remote console connection.
 - The one listening on `http-alt` is the [cowboy endpoint]({% post_url 2022/2022-12-21-erlang-cluster-k8s-http-service %}).
 - The one connected to `epmd` is, well, connected to epmd.
