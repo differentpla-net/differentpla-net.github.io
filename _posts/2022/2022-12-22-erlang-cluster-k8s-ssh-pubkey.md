@@ -15,14 +15,14 @@ Erlang remote console on a pod. When we left it, it had no authentication. Let's
 To enable public key authentication, we need to change `erlclu_app.erl` as follows:
 
 ```erlang
-start_ssh_daemon(SystemDir, UserDir) when is_list(SystemDir), is_list(UserDir) ->
-    {ok, _} = ssh:daemon(10022, [
+start_ssh_daemon(Port, SystemDir, UserDir) when is_integer(Port), is_list(SystemDir), is_list(UserDir) ->
+    {ok, _} = ssh:daemon(Port, [
         {system_dir, SystemDir},
         {user_dir, UserDir},
         {auth_methods, "publickey"}
     ]),
-    ?LOG_INFO("SSH daemon listening on port 10022");
-start_ssh_daemon(_SystemDir, _UserDir) ->
+    ?LOG_INFO("SSH daemon listening on port ~B", [Port]);
+start_ssh_daemon(_Port, _SystemDir, _UserDir) ->
     ?LOG_WARNING("Not starting SSH daemon").
 ```
 
@@ -34,9 +34,10 @@ make that more flexible, we set `SystemDir` and `UserDir` from environment varia
 
 ```erlang
 start_ssh_daemon() ->
+    Port = list_to_integer(os:getenv("SSH_PORT", "22")),
     SystemDir = os:getenv("SSH_SYSTEM_DIR"),
     UserDir = os:getenv("SSH_USER_DIR"),
-    start_ssh_daemon(SystemDir, UserDir).
+    start_ssh_daemon(Port, SystemDir, UserDir).
 ```
 
 ## Setting environment variables
@@ -49,6 +50,8 @@ containers:
     #...
     env:
       #...
+      - name: SSH_PORT
+        value: "22"
       - name: SSH_SYSTEM_DIR
         value: /erlclu/ssh/system
       - name: SSH_USER_DIR
@@ -155,7 +158,7 @@ Add the new public key and save the configmap. Wait for a few seconds until it's
 This still requires the `kubectl port-forward` command from earlier:
 
 ```
-kubectl --namespace erlclu port-forward deployment/erlclu 10022:10022 &
+kubectl --namespace erlclu port-forward deployment/erlclu 10022:22 &
 ssh -p 10022 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null localhost
 ```
 
