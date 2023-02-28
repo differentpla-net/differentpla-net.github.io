@@ -38,9 +38,24 @@ Create the `kubectl-ssh` script as follows:
 ```bash
 #!/usr/bin/env bash
 
-pod=$1      # actually anything that kubectl port-forward will accept.
+if [ -z "$BASHPID" ]; then
+    echo "Need bash 4.x for \$BASHPID"
+    # If you're on macOS (which comes with bash 3.x), you'll need to:
+    #   brew install bash
+    #   export PATH="$HOMEBREW_PREFIX/opt/bash/bin:$PATH"
+    exit 1
+fi
 
-exec 3< <(kubectl port-forward "$pod" 0:22)
+# kill_pgrp: Kill the current process group.
+kill_pgrp() {
+    # Note the '-', which refers to the process *group*.
+    kill -- -$BASHPID
+}
+
+# When the script exits, kill the process group.
+trap kill_pgrp EXIT
+
+exec 3< <(kubectl port-forward "$@" 0:22)
 read <&3 -r line
 
 re='^Forwarding from .*:([0-9]+) -> 22$'
@@ -54,12 +69,9 @@ fi
 
 Mark it as executable and put it somewhere in `$PATH`.
 
-Bugs:
-- It only works with the default namespace, or that selected by `kubectl config set-context`; I'll figure that out
-  later.
-
 Of interest:
 
+- It passes `"$@"`, so that any other arguments are passed to `kubectl port-forward` as-is.
 - You can pass anything that `kubectl port-forward` will accept, not just pods, so it'll work as `kubectl ssh
   deployment/whatever`, etc.
 - It uses `0` as the local port; this causes `kubectl port-forward` to pick an arbitrary local port.
