@@ -38,29 +38,20 @@ Create the `kubectl-ssh` script as follows:
 ```bash
 #!/usr/bin/env bash
 
-if [ -z "$BASHPID" ]; then
-    echo "Need bash 4.x for \$BASHPID"
-    # If you're on macOS (which comes with bash 3.x), you'll need to:
-    #   brew install bash
-    #   export PATH="$HOMEBREW_PREFIX/opt/bash/bin:$PATH"
-    exit 1
-fi
-
-# kill_pgrp: Kill the current process group.
-kill_pgrp() {
-    # Note the '-', which refers to the process *group*.
-    kill -- -$BASHPID
-}
-
-# When the script exits, kill the process group.
-trap kill_pgrp EXIT
-
 exec 3< <(kubectl port-forward "$@" 0:22)
+
+# When the script exits, kill the port-forward process
+pid=$!
+trap "kill $pid" EXIT
+
+# Find out which port number was used
 read <&3 -r line
 
 re='^Forwarding from .*:([0-9]+) -> 22$'
 if [[ $line =~ $re ]]; then
     port="${BASH_REMATCH[1]}"
+
+    # Use ssh to connect to the local port; disable host key checking
     ssh -p "$port" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null localhost
 else
     exit 1
