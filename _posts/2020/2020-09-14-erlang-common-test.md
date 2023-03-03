@@ -83,8 +83,9 @@ Unfortunately (as far as I can tell) `ct_run` doesn't support the `-s` switch fr
 ```sh
 ct_run ... \
     -ct_hooks \
-        ei_ct_start_cth fixtures and \
-        mock_http_cth
+        ei_ct_start_cth \
+            fixtures and \
+            mock_http_cth
 ```
 
 We have a generic CT hook that just calls `application:ensure_all_started` with the arguments it's given. Then there's a more specific CT hook (for the mock HTTP server) that clears the recorded history when each test case starts.
