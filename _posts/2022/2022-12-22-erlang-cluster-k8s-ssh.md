@@ -42,6 +42,6 @@ The `kubectl port-forward` command connects to an arbitrary pod in the deploymen
 port 22. The second command uses SSH to connect. It turns off strict host key checking (because the host key will keep
 changing), and disables the `known_hosts` file by directing it to `/dev/null`.
 
-Note: The server completely disables authentication by using `no_auth_needed`. The [next blog post]({% post_url
-2022/2022-12-22-erlang-cluster-k8s-ssh-pubkey %}) will talk about how to enable public key authentication; we'll fix it
-then.
+Note: The server completely disables authentication by using `no_auth_needed` (supported since OTP-25.1). The [next blog
+post]({% post_url 2022/2022-12-22-erlang-cluster-k8s-ssh-pubkey %}) will talk about how to enable public key
+authentication; we'll fix it then.
