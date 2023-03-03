@@ -9,7 +9,7 @@ At Electric Imp (now part of Twilio), my team uses Erlang's Common Test for driv
 We do physical Internet-of-Things devices, so the "almost" allows us to exclude two things:
 
 1. The physical devices. We use virtual devices instead.
-2. The web UI. While we _have_ tests that exercise the UI, those belong to a different them; my team's tests talk to the underlying API.
+2. The web UI. While we _have_ tests that exercise the UI, those belong to a different team; my team's tests talk to the underlying API.
 
 Effectively what we do is stand up a cut-down clone of the production system, with data stores (Postgres, Redis, etc.), message brokers (RabbitMQ, VerneMQ, Redis), the customer-facing API (and its associated microservices), and a small number of instances of the device-facing services. All told, there are about 20 processes in the cut-down test environment.
 
