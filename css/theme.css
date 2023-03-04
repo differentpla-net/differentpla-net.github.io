@@ -115,6 +115,12 @@ pre.highlight {
     margin: 0;
 }
 
+pre.dark {
+    padding: 0.5rem;
+    background-color: #333;
+    color: white;
+}
+
 h1[id]:hover a.anchorlink:before,
 h2[id]:hover a.anchorlink:before,
 h3[id]:hover a.anchorlink:before,

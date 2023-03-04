@@ -44,7 +44,7 @@ code:add_patha(filename:join([os:getenv("HOME"), "ebin"])).
 
 That results in a shell prompt that looks like this:
 
-<pre><code>Erlang/OTP 25 [erts-13.0.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]
+<pre class="dark"><code>Erlang/OTP 25 [erts-13.0.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]
 
 Eshell V13.0.4  (abort with ^G)
 erl&gt; &block;</code></pre>
@@ -85,7 +85,7 @@ prompt_func(true, {history, N}) ->
 
 That looks like this:
 
-<pre><code>$ erl -sname foo
+<pre class="dark"><code>$ erl -sname foo
 Erlang/OTP 25 [erts-13.0.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]
 
 Eshell V13.0.4  (abort with ^G)
@@ -119,7 +119,7 @@ get_colour(_) -> ?IRed.
 
 That comes out looking like this:
 
-<pre><code>$ WHICH_ENVIRONMENT=dev erl -sname foo
+<pre class="dark"><code>$ WHICH_ENVIRONMENT=dev erl -sname foo
 Erlang/OTP 25 [erts-13.0.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]
 
 Eshell V13.0.4  (abort with ^G)
