@@ -30,7 +30,7 @@ We can do that when starting `erl` with:
 erl -run c erlangrc .
 ```
 
-Thanks to Ruan for the tip.
+_(Thanks to Ruan for the tip)_
 
 How can we do that automatically?
 
