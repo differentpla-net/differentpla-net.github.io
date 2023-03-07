@@ -24,6 +24,14 @@ directories to look in. For example:
 c:erlangrc(["."]).
 ```
 
+We can do that when starting `erl` with:
+
+```sh
+erl -run c erlangrc .
+```
+
+Thanks to Ruan for the tip.
+
 How can we do that automatically?
 
 My first thought was something like this:
