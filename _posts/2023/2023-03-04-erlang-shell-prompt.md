@@ -42,6 +42,11 @@ Alternatively, we could allow loading arbitrary modules from `$HOME/ebin`. In th
 code:add_patha(filename:join([os:getenv("HOME"), "ebin"])).
 ```
 
+<div class="callout callout-warning" markdown="span">
+The `.erlang` file is loaded on _every_ Erlang instantiation, including things like running Elixir's `mix` and so on.
+Bear that in mind before you do anything too involved.
+</div>
+
 That results in a shell prompt that looks like this:
 
 <pre class="dark"><code>Erlang/OTP 25 [erts-13.0.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]
