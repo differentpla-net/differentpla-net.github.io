@@ -41,7 +41,7 @@ ERL_ZFLAGS="-run c erlangrc ." erl
 ```
 
 ...which works fine. You could set `ERL_ZFLAGS` in your profile, even. As far as I can tell, it doesn't break anything.
-It even loads the default `.erlang` file first.
+It even loads the default `.erlang` file from `$HOME` first.
 
 So we're done, right? No.
 
