@@ -69,6 +69,11 @@ If you're using `erlang.mk`, you could use the `SHELL_OPTS` variable:
 SHELL_OPTS = -run c erlangrc .
 ```
 
+## rebar3
+
+I couldn't find a clean way to have this work in `rebar3 shell`. Look at [this Github
+issue](https://github.com/erlang/rebar3/issues/2425) for inspiration.
+
 ## See also
 
 - <https://azunyanmoe.wordpress.com/2011/04/05/the-erlangrc-file/>
