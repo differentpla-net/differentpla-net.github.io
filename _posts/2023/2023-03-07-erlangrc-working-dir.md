@@ -8,9 +8,10 @@ In the [previous post]({% post_url 2023/2023-03-04-erlang-shell-prompt %}), I wr
 prompt by using the `.erlang` file. Erlang looks for this file in `$HOME` (I'm simplifying here); it doesn't look in the
 current working directory. How can we fix that?
 
-I like the way that Elixir looks for an `.iex.exs` file in the current directory. But Erlang doesn't look for the
-`.erlang` file in the current directory. The [documentation](https://www.erlang.org/doc/man/erl.html#configuration)
-says:
+I like the way that Elixir looks for an `.iex.exs` file in the current directory. But Erlang (since OTP-21.0) doesn't
+look for the `.erlang` file in the current directory.
+
+The [documentation](https://www.erlang.org/doc/man/erl.html#configuration) says:
 
 > When Erlang/OTP is started, the system searches for a file named `.erlang` in the user's home directory and then
 > `filename:basedir(user_config, "erlang")`.
