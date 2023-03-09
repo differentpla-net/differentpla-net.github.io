@@ -13,14 +13,12 @@ markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-  -
-    scope:
+  - scope:
       path: ""
       type: "drafts"
     values:
