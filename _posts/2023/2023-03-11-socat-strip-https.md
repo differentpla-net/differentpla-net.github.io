@@ -30,7 +30,7 @@ clusters:
 
 ## Extracting the CA certificate
 
-So that socat can connect to the API server using HTTPS, we'll need the CA certificate. We can get it from the config file by using [`yq`](https://mikefarah.gitbook.io/yq/):
+So that socat can connect to the API server using HTTPS, we'll need the CA certificate. We can get it from the config file by using `yq`; see <https://mikefarah.gitbook.io/yq/>.
 
 ```sh
 yq -r < ~/.kube/config \
