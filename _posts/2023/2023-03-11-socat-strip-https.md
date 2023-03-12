@@ -92,7 +92,17 @@ User-Agent: kubectl/v1.26.1 (linux/amd64) kubernetes/8f94681
 ...
 ```
 
-Well, that certainly looks like unencrypted HTTP. I think we're done here.
+Well, that certainly looks like unencrypted HTTP.
+
+## Avoiding tcpdump
+
+If you're dealing with plaintext, you can skip the `tcpdump` step and just use `socat -v` -- from [here](https://superuser.com/a/1479602/4206):
+
+```sh
+socat -v \
+    "tcp-listen:8132,reuseaddr,fork" \
+    "openssl:${original_api_server},cafile=ca.crt,key=user.key,cert=user.crt"
+```
 
 ## Troubleshooting
 
