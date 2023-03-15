@@ -9,7 +9,7 @@ fixed it in zsh.
 
 Define a function as follows. I've got it in my `.zshrc`:
 
-```
+```sh
 rebar3 () {
 	set -o localoptions -o localtraps
 	trap '/bin/stty sane' INT
