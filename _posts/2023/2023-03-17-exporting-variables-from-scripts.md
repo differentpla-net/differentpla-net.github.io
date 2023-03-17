@@ -41,10 +41,6 @@ echo Agent pid 92365;
 Another example of using `eval` is the way that, say, `direnv hook zsh` (or `direnv hook bash`) or `kubectl completion
 zsh` work: as with `ssh-agent`, they output shell commands that set up various functions, aliases, hooks and so on.
 
-## aliases
-
-we could use an alias? could we?
-
 ## Functions
 
 Functions can also set environment variables. For example:
