@@ -77,10 +77,14 @@ Since v1.26.0 (so you might need to upgrade), kubectl supports tab completion fo
 that. Create a `kubectl_complete-ssh` script as follows (and `chmod +x` and put it in `$PATH`):
 
 ```bash
-#!/usr/bin/env bash
+#!/bin/sh
 
 exec kubectl __complete port-forward "$@"
 ```
 
 We take advantage of the fact that our tab completion is identical to that of `kubectl port-forward`, and that `kubectl`
 has a hidden `__complete` command.
+
+<div class="callout callout-warning" markdown="span">
+If you're on WSL, you need to be aware of [kubectl#1336](https://github.com/kubernetes/kubectl/issues/1336).
+</div>
