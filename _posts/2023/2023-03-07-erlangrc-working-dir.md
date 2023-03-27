@@ -44,6 +44,13 @@ ERL_ZFLAGS="-run c erlangrc ." erl
 ...which works fine. You could set `ERL_ZFLAGS` in your profile, even. As far as I can tell, it doesn't break anything.
 It even loads the default `.erlang` file from `$HOME` first.
 
+Given that it loads `$HOME/.erlang` first, can we take advantage of that, and do it in reverse? Yes:
+
+```erlang
+% In $HOME/.erlang...
+c:erlangrc(["."]).
+```
+
 So we're done, right? No.
 
 <div class="callout callout-warning" markdown="span">
