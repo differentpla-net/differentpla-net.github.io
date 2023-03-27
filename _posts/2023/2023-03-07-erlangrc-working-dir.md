@@ -78,3 +78,11 @@ issue](https://github.com/erlang/rebar3/issues/2425) for inspiration.
 ## See also
 
 - <https://azunyanmoe.wordpress.com/2011/04/05/the-erlangrc-file/>
+
+## Other stuff
+
+- https://www.proctor-it.com/erlang-thursday-user_default/
+- https://www.erlang.org/doc/man/erl.html#configuration
+- https://www.erlang.org/doc/man/shell.html#prompt_func-1
+- https://www.erlang.org/doc/man/shell_default.html
+- https://azunyanmoe.wordpress.com/2011/04/05/the-erlangrc-file/
