@@ -223,3 +223,7 @@ exit_and_wait(Pid, Reason) ->
             ok
     end.
 ```
+
+A note on naming: JUnit -- https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations -- uses before/after each/all, which might be better for the examples.
+
+There are also a few things in that list, like repeated tests, etc., that might be worth translating to eunit.
