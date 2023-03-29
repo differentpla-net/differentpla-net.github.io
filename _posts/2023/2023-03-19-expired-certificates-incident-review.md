@@ -56,6 +56,15 @@ This TLS secret doesn't appear to be managed by cert-manager.
 The certificate expired 2023-03-06, and was issued 2022-02-04, which ... is the date on [this blog post]({% post_url
 2022/2022-02-04-gitea-https %}). This means that I'm _not_ using cert-manager for that certificate.
 
+But: that duration's not an exact number of years or months. Where did that come from?
+
+It comes from [my `certs` script](https://github.com/rlipscombe/elixir-certs/blob/main/certs.exs#L73):
+
+```elixir
+# 1 year, plus a 30 days grace period
+validity: 365 + 30,
+```
+
 ## Immediate actions
 
 - Create a new `Certificate` resource.
