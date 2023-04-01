@@ -23,7 +23,7 @@ setup() ->
     Pid.
 
 cleanup(Pid) ->
-    % The result from suite_setup is passed as the argument to suite_cleanup.
+    % The result from setup is passed as the argument to cleanup.
     unlink(Pid),    % ...so we don't also get killed
     exit(Pid, kill),
     ok.
