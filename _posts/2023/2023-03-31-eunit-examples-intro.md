@@ -1,7 +1,7 @@
 ---
 title: "EUnit examples: Introduction"
 short_title: "Introduction"
-date: 2023-03-31T08:47:00.000Z
+date: 2023-03-31T08:00:00.000Z
 tags: erlang eunit
 layout: series
 series: erlang-eunit-examples

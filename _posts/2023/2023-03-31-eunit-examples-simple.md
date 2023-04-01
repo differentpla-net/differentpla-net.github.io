@@ -1,7 +1,7 @@
 ---
 title: "EUnit examples: a simple test"
 short_title: "A simple test"
-date: 2023-03-31T08:48:00.000Z
+date: 2023-03-31T08:10:00.000Z
 tags: erlang eunit
 layout: series
 series: erlang-eunit-examples
