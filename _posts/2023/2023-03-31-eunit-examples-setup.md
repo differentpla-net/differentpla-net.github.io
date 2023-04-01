@@ -18,7 +18,8 @@ suite_setup() ->
 
 suite_cleanup(Pid) ->
     % The result from suite_setup is passed as the argument to suite_cleanup.
-    exit(Pid, kill),    % ...but see below.
+    unlink(Pid),    % ...so we don't also get killed
+    exit(Pid, kill),
     ok.
 
 simple_setup_test_() ->
@@ -52,3 +53,7 @@ This example also shows a few of the different ways that you can specify a test:
 
 If you prefer (maybe you've used JUnit in the past), you can think of `suite_setup` and `suite_cleanup` as `before_all`
 and `after_all`, respectively.
+
+Note also that, because we called `some_server:start_link()`, we're linked to the server process. When we kill it in
+`cleanup`, this will occasionally kill the test process as well. To avoid this, we call `unlink` first. There are better
+ways to deal with this; I'll discuss those later.
