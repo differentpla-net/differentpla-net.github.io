@@ -1,11 +1,26 @@
 ---
 title: "EUnit examples: nested setup/foreach with results"
 short_title: "nested setup/foreach with results"
-date: 2023-03-31T09:47:00.000Z
+date: 2023-04-02T11:28:00.000Z
 tags: erlang eunit
 layout: series
 series: erlang-eunit-examples
 ---
+
+If you've got nested `setup` and `foreach`, how do you pass the result from `suite_setup/0` -- in `{setup, fun
+suite_setup/0...` -- to the tests?
+
+If you do this:
+
+```erlang
+nested_setup_result_foreach_test_() ->
+    % Because 'setup' accepts an instantiator, you can pass the result to the tests in foreach (by currying them, essentially):
+    {setup, fun suite_setup/0, fun suite_cleanup/1,
+        {foreach, fun setup/0, fun cleanup/1, [
+            fun() -> ?assertEqual(suite_setup, Suite) end
+        ]}
+    end}.
+```
 
 ```erlang
 nested_setup_result_foreach_test_() ->
