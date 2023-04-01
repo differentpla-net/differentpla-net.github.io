@@ -1,7 +1,7 @@
 ---
 title: "EUnit examples: foreach"
 short_title: "foreach"
-date: 2023-03-31T09:47:00.000Z
+date: 2023-03-31T08:30:00.000Z
 tags: erlang eunit
 layout: series
 series: erlang-eunit-examples
