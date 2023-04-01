@@ -10,6 +10,13 @@ series: erlang-eunit-examples
 What if we want to run some setup before a set of tests (and cleanup afterwards)?
 
 ```erlang
+simple_setup_test_() ->
+    % 'setup' sets up a single fixture for running all of the specified tests.
+    {setup, fun suite_setup/0, fun suite_cleanup/1, [
+        fun some_test/0,
+        fun another_test/0
+    ]}.
+
 suite_setup() ->
     % Setup for a group of tests goes here.
     % For example:
@@ -21,13 +28,6 @@ suite_cleanup(Pid) ->
     unlink(Pid),    % ...so we don't also get killed
     exit(Pid, kill),
     ok.
-
-simple_setup_test_() ->
-    % 'setup' sets up a single fixture for running all of the specified tests.
-    {setup, fun suite_setup/0, fun suite_cleanup/1, [
-        fun some_test/0,
-        fun another_test/0
-    ]}.
 
 some_test() -> ?assert(true).
 another_test() -> ?assert(true).
