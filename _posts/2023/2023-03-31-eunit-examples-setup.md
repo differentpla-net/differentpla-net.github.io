@@ -13,8 +13,8 @@ What if we want to run some setup before a set of tests (and cleanup afterwards)
 simple_setup_test_() ->
     % 'setup' sets up a single fixture for running all of the specified tests.
     {setup, fun suite_setup/0, fun suite_cleanup/1, [
-        fun some_test/0,
-        fun another_test/0
+        fun something/0,
+        fun another_thing/0
     ]}.
 
 suite_setup() ->
@@ -29,8 +29,8 @@ suite_cleanup(Pid) ->
     exit(Pid, kill),
     ok.
 
-some_test() -> ?assert(true).
-another_test() -> ?assert(true).
+something() -> ?assert(true).
+another_thing() -> ?assert(true).
 ```
 
 Here, we wrap a list of three tests with setup/cleanup functions. The setup function is called, then the tests are run,

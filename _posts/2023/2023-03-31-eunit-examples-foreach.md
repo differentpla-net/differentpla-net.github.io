@@ -14,8 +14,8 @@ test in a list, you can use `foreach`:
 simple_foreach_test_() ->
     % 'foreach' sets up a fixture for each of the specified tests.
     {foreach, fun setup/0, fun cleanup/1, [
-        fun some_test/0,
-        fun another_test/0
+        fun something/0,
+        fun another_thing/0
     ]}.
 
 setup() ->
@@ -28,8 +28,8 @@ cleanup(Pid) ->
     exit(Pid, kill),
     ok.
 
-some_test() -> ?assert(true).
-another_test() -> ?assert(true).
+something() -> ?assert(true).
+another_thing() -> ?assert(true).
 ```
 
 If you're coming from JUnit or similar, these are `before_each` and `after_each`.

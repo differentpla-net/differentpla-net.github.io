@@ -14,8 +14,8 @@ test, you can nest `setup` and `foreach`:
 nested_setup_foreach_test_() ->
     {setup, fun before_all/0, fun after_all/1,
         {foreach, fun before_each/0, fun after_each/1, [
-            fun some_test/0,
-            fun another_test/0
+            fun something/0,
+            fun another_thing/0
         ]}}.
 ```
 
