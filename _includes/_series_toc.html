@@ -1,14 +1,19 @@
 <ul>
     {% for post in site.posts reversed %}
         {% if post.series == page.series %}
+            {% assign title = post.title %}
+            {% if post.short_title %}
+                {% assign title = post.short_title %}
+            {% endif %}
+
             {% if post.url == page.url %}
                 <li class="active">
-                    <a href="{{ post.url }}">{{ post.title | xml_escape }}</a>
+                    <a href="{{ post.url }}">{{ title | xml_escape }}</a>
                         (this post; <span class="timeago" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>)
                 </li>
             {% else %}
                 <li>
-                    <a href="{{ post.url }}">{{ post.title | xml_escape }}</a>
+                    <a href="{{ post.url }}">{{ title | xml_escape }}</a>
                         (<span class="timeago" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ post.date }}">{{ post.date | date: "%-d %b %Y %H:%M" }}</span>)
                 </li>
             {% endif %}
