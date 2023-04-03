@@ -30,23 +30,7 @@ foreach_result_test_nope() ->
 
 Some nesting, and a reasonable example of foreachx, here: https://fossies.org/linux/apache-couchdb/src/couch/test/eunit/couch_db_split_tests.erl
 
-## gen_servers
-
-- <https://lookonmyworks.co.uk/2015/01/25/testing-a-gen_server-with-eunit/>
-
-Next: How to stop processes; exit(kill) ain't doing it for me. Do we need to wait? What about using a supervisor?
-
-https://stackoverflow.com/questions/21138442/stopping-an-erlang-supervisor
-
-```erlang
-exit_and_wait(Pid, Reason) ->
-    MRef = monitor(process, Pid),
-    exit(Pid, Reason),
-    receive
-        {'DOWN', MRef, process, Pid, _Reason} ->
-            ok
-    end.
-```
+exit_and_wait with a LOT of server processes. Or with a supervisor.
 
 A note on naming: JUnit -- https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations -- uses before/after each/all, which might be better for the examples.
 
