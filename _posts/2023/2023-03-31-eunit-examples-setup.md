@@ -1,6 +1,6 @@
 ---
-title: "EUnit examples: setup"
-short_title: "setup"
+title: "EUnit examples: Using 'setup'"
+short_title: "Using 'setup'"
 date: 2023-03-31T08:20:00.000Z
 tags: erlang eunit
 layout: series

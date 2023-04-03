@@ -1,6 +1,6 @@
 ---
-title: "EUnit examples: foreach result"
-short_title: "foreach result"
+title: "EUnit examples: Passing the result from 'foreach'"
+short_title: "Passing the result from 'foreach'"
 date: 2023-04-02T11:23:00.000Z
 tags: erlang eunit
 layout: series

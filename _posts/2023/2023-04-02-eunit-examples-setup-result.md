@@ -1,6 +1,6 @@
 ---
-title: "EUnit examples: Passing the result from setup"
-short_title: "Passing the result from setup"
+title: "EUnit examples: Passing the result from 'setup'"
+short_title: "Passing the result from 'setup'"
 date: 2023-04-02T08:20:00.000Z
 tags: erlang eunit
 layout: series

@@ -1,6 +1,6 @@
 ---
-title: "EUnit examples: Nested setup and foreach"
-short_title: "Nested setup and foreach"
+title: "EUnit examples: Nested 'setup' and 'foreach'"
+short_title: "Nested 'setup' and 'foreach'"
 date: 2023-04-02T08:14:00.000Z
 tags: erlang eunit
 layout: series
