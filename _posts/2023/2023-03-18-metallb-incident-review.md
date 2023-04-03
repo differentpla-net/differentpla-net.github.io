@@ -1,7 +1,7 @@
 ---
 title: "MetalLB ARP failure: Incident Review"
 date: 2023-03-18T11:54:00Z
-tags: kubernetes incident-review
+tags: kubernetes incident-review metallb
 ---
 
 On the morning of March 18th, 2023, accessing any sites hosted by my Kubernetes cluster would fail with a "Connection
