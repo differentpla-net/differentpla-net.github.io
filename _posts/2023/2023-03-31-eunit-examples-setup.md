@@ -33,7 +33,7 @@ something() -> ?assert(true).
 another_thing() -> ?assert(true).
 ```
 
-Here, we wrap a list of three tests with setup/cleanup functions. The setup function is called, then the tests are run,
+Here, we wrap a list of tests with setup/cleanup functions. The setup function is called, then the tests are run,
 then the cleanup function is called (even if any of the tests fail).
 
 If you prefer (maybe you've used JUnit in the past), you can think of `suite_setup` and `suite_cleanup` as `before_all`
