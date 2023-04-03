@@ -1,7 +1,7 @@
 ---
 title: "Installing MetalLB"
 date: 2021-12-20T20:55:00Z
-tags: raspberry-pi
+tags: kubernetes raspberry-pi metallb
 layout: series
 series: k3s
 ---
