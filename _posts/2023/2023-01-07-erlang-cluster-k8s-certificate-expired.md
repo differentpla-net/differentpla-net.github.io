@@ -2,7 +2,7 @@
 title: "Erlang cluster on Kubernetes: Fatal - Certificate Expired"
 short_title: "Fatal - Certificate Expired"
 date: 2023-01-07T17:11:00.000Z
-tags: erlang kubernetes
+tags: erlang kubernetes certificates
 ---
 
 The nodes in the [cluster]({% post_url 2022/2022-12-21-erlang-cluster-k8s-intro %}) stopped talking to each other at some point. I only noticed this afternoon after investigating [some other problem]({% post_url 2023/2023-01-07-network-connectivity-incident-review %}).
