@@ -11,7 +11,7 @@ talking to each other. This was caused by the [CA certificate expiring]({% post_
 without downtime?". This post explores some options.
 
 The root cause of the failure is that I set the CA certificate expiry to 30 days (the `openssl req` default), and that
-when the pods restarted (because of a K3s node upgrade) the Erlang nodes no longer trusted eachother.
+when the pods restarted (because of a K3s node upgrade) the Erlang nodes no longer trusted each other.
 
 I solved it, short term, by reissuing the CA certificate and restarting the pods. I could have deferred the problem for
 even longer by issuing, say, a 3 year CA certificate, but all that does is push the problem down the road.
@@ -43,18 +43,21 @@ You can expose Kubernetes Secrets to a pod via environment variables, or by moun
 You can't update the environment variables without restarting the pod (because they're copied into the process memory at
 startup).
 
-You _can_ update the mounted secrets.
+You _can_ update the mounted secrets. After a short delay, the files in the mounted volume will be updated to contain
+the new secrets.
 
-For example, we originally generated the CA certificate like this:
+## Creating the trusted CA secret
 
-```
+We originally generated the CA certificate like this:
+
+```sh
 openssl req -new -x509 -key erlclu-ca.key -sha256 \
     -subj "/C=GB/L=London/O=differentpla.net/CN=erlclu CA" -out erlclu-ca.crt
 ```
 
 Or we can retrieve it from the existing keypair secret as follows:
 
-```
+```sh
 kubectl --namespace erlclu get secret erlclu-ca-key-pair -o json | \
     jq -r '.data."tls.crt"' | \
     base64 -d > erlclu-ca.crt
@@ -62,24 +65,12 @@ kubectl --namespace erlclu get secret erlclu-ca-key-pair -o json | \
 
 We can put that in a secret as follows:
 
-```
+```sh
 kubectl --namespace erlclu create secret generic erlclu-ca-certificates \
     --from-file=ca.crt=erlclu-ca.crt
 ```
 
 (I chose the name "erlclu-ca-certificates" to make it clear that it's not the normal list of trusted CA certificates)
-
-We can issue a new CA certificate and update the secret as follows:
-
-```
-cert_timestamp="$(date +%FT%H-%M-%S)"
-openssl req -new -x509 -key erlclu-ca.key -sha256 \
-    -subj "/C=GB/L=London/O=differentpla.net/CN=erlclu CA" -out "erlclu-ca-$cert_timestamp.crt"
-cat erlclu-ca-*.crt > ca-certificates.crt
-kubectl --namespace erlclu delete secret erlclu-ca-certificates
-kubectl --namespace erlclu create secret generic erlclu-ca-certificates \
-    --from-file=ca.crt=ca-certificates.crt
-```
 
 It's at this point that I need to change the way that the `/certs/ca.crt` file is created. At the moment, the [init
 container]({% post_url 2022/2022-12-22-erlang-cluster-k8s-certificate-requests-cert-manager %}) pulls it from the signed
@@ -96,6 +87,25 @@ containing each node's key (and certificate) and the CA certificate, we'll need 
 I opted for `/certs/my` for the node's key (and certificate) and `/certs/ca` for the `erlclu-ca-certificates` secret.
 See the [0.10.4 tag](https://github.com/rlipscombe/erlang-cluster/tree/0.10.4) on Github for details.
 
+## Updating the trusted CA secret
+
+We can issue a new CA certificate as follows:
+
+```sh
+cert_timestamp="$(date +%FT%H-%M-%S)"
+openssl req -new -x509 -key erlclu-ca.key -sha256 \
+    -subj "/C=GB/L=London/O=differentpla.net/CN=erlclu CA $cert_timestamp" -out "erlclu-ca-$cert_timestamp.crt"
+```
+
+Then we update the secret:
+
+```sh
+cat erlclu-ca-*.crt > ca-certificates.crt
+kubectl --namespace erlclu delete secret erlclu-ca-certificates
+kubectl --namespace erlclu create secret generic erlclu-ca-certificates \
+    --from-file=ca.crt=ca-certificates.crt
+```
+
 And we can confirm that the `/certs/ca/ca.crt` file is updated without restarting the pod:
 
 ```
@@ -109,14 +119,19 @@ Where previously there was only one certificate in the file, there are now two.
 
 ## Rotating the CA certificate
 
-Putting all of that together gives us the following instructions.
-
-Assuming that the key hasn't changed, create a new certificate as follows:
+Optionally create a new key as follows:
 
 ```sh
 cert_timestamp="$(date +%FT%H-%M-%S)"
-openssl req -new -x509 -key erlclu-ca.key -sha256 \
-    -subj "/C=GB/L=London/O=differentpla.net/CN=erlclu CA" -out "erlclu-ca-$cert_timestamp.crt"
+openssl ecparam -name prime256v1 -genkey -noout -out erlclu-ca-$cert_timestamp.key
+```
+
+Create a new certificate as follows:
+
+```sh
+cert_timestamp="$(date +%FT%H-%M-%S)"
+openssl req -new -x509 -key erlclu-ca-$cert_timestamp.key -sha256 \
+    -subj "/C=GB/L=London/O=differentpla.net/CN=erlclu CA $cert_timestamp" -out "erlclu-ca-$cert_timestamp.crt"
 ```
 
 If we update the _cert-manager_ keypair at this point, new or restarted pods will fail to join the cluster, because the
@@ -125,14 +140,15 @@ existing nodes don't trust the newly-issued certificates. So we have to update t
 ```sh
 kubectl --namespace erlclu get secret erlclu-ca-certificates -o json | \
     jq -r '.data."ca.crt"' | base64 -d > erlclu-ca-existing.crt
-cat erlclu-ca-*.crt > ca-certificates.crt
+
+./filter-ca-certs.escript <(cat erlclu-ca-*.crt) > ca-certificates.crt
+
 kubectl --namespace erlclu delete secret erlclu-ca-certificates
 kubectl --namespace erlclu create secret generic erlclu-ca-certificates \
     --from-file=ca.crt=ca-certificates.crt
 ```
 
-Note that the above results in unbounded growth of the CA list, because we don't remove expired certificates or
-duplicates. I'll fix that later.
+The `filter-ca-certs.escript` file is [here]({% post_url https://github.com/rlipscombe/erlang-cluster/blob/main/certs/filter-ca-certs.escript %}).
 
 Now we can update the _cert-manager_ keypair as follows:
 
@@ -140,8 +156,9 @@ Now we can update the _cert-manager_ keypair as follows:
 kubectl --namespace erlclu delete secret erlclu-ca-key-pair
 kubectl --namespace erlclu create secret tls erlclu-ca-key-pair \
     --cert=erlclu-ca-$cert_timestamp.crt \
-    --key=erlclu-ca.key
+    --key=erlclu-ca-$cert_timestamp.key
 ```
 
-**But:** how _is_ it working out that the CA cert is valid? The authorityKeyId goes with the ca.key, so that's all that's
-needed? The issuer is the same, so there's something going on there. How do we generate a certificate chain?
+Note that it takes a short while for the updated `erlclu-ca-certificates` secret to be deployed. If you scale up the
+deployment before this is complete, you'll get two distinct clusters. This is temporary; it resolves itself after a few
+minutes.
