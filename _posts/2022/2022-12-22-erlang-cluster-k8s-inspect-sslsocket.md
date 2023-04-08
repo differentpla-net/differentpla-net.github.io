@@ -103,9 +103,14 @@ By converting one of those into an sslsocket, we can get the peer cert:
 (erlclu@10.42.2.46)3> S = erlclu_inspect:sslsocket_from_pid(pid(0,701,0)).
 {sslsocket,{gen_tcp,#Port<0.40>,tls_connection,undefined},
            [<0.701.0>,<0.700.0>]}
-(erlclu@10.42.2.46)4> ssl:peercert(S).
+(erlclu@10.42.2.46)4> {ok, Cert} = ssl:peercert(S).
 {ok,<<48,130,1,183,48,130,1,94,160,3,2,1,2,2,16,79,236,
       181,165,226,176,210,127,102,251,166,71,...>>}
+(erlclu@10.42.2.46)5> public_key:pkix_decode_cert(Cert, otp).
+{'OTPCertificate',{'OTPTBSCertificate',v3,
+                                       196364804971140105155375074250516311845,
+                                       {'SignatureAlgorithm',{1,2,840,10045,4,3,2},asn1_NOVALUE},
+                                       {rdnSequence,...}}}
 ```
 
 It _has_ a certificate. That means it's using mutual TLS. Job done.
