@@ -30,3 +30,4 @@ free to read it as one.
 ## Follow-up posts
 
 - [Erlang cluster on Kubernetes: Fatal - Certificate Expired]({% post_url 2023/2023-01-07-erlang-cluster-k8s-certificate-expired %})
+- [Erlang cluster on Kubernetes: Rotating CA certificates]({% post_url 2023/2023-04-07-erlang-cluster-k8s-rotating-ca %})

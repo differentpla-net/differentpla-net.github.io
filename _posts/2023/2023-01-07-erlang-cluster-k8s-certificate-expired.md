@@ -5,7 +5,9 @@ date: 2023-01-07T17:11:00.000Z
 tags: erlang kubernetes certificates
 ---
 
-The nodes in the [cluster]({% post_url 2022/2022-12-21-erlang-cluster-k8s-intro %}) stopped talking to each other at some point. I only noticed this afternoon after investigating [some other problem]({% post_url 2023/2023-01-07-network-connectivity-incident-review %}).
+The nodes in the [cluster]({% post_url 2022/2022-12-21-erlang-cluster-k8s-intro %}) stopped talking to each other at
+some point. I only noticed this afternoon after investigating [some other problem]({% post_url
+2023/2023-01-07-network-connectivity-incident-review %}).
 
 Looking in the logs, I see the following:
 
@@ -130,3 +132,4 @@ kubectl --namespace erlclu apply -f k8s/deployment.yaml
 - Can we fail pod startup if _our_ certificate (or the CA) has expired?
   - Does that suggest a custom distribution module?
 - What _are_ our options for CA expiry? How _do_ we roll the CA certificate without downtime?
+  - [Erlang cluster on Kubernetes: Rotating CA certificates]({% post_url 2023/2023-04-07-erlang-cluster-k8s-rotating-ca %})
