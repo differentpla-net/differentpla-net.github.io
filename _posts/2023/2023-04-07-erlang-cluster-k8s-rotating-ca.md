@@ -148,7 +148,7 @@ kubectl --namespace erlclu create secret generic erlclu-ca-certificates \
     --from-file=ca.crt=ca-certificates.crt
 ```
 
-The `filter-ca-certs.escript` file is [here]({% post_url https://github.com/rlipscombe/erlang-cluster/blob/main/certs/filter-ca-certs.escript %}).
+The `filter-ca-certs.escript` file is [here](https://github.com/rlipscombe/erlang-cluster/blob/main/certs/filter-ca-certs.escript).
 
 Now we can update the _cert-manager_ keypair as follows:
 
