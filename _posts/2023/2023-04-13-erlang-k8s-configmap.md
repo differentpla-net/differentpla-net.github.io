@@ -118,7 +118,6 @@ The `entrypoint.sh` file can look like this:
 
 set -eu
 
-mkdir -p "${CONFIG_TARGET}"
 cp -r "${CONFIG_SOURCE}" "${CONFIG_TARGET}"
 exec "$@"
 ```
