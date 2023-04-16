@@ -28,12 +28,21 @@ configInline:
      - 192.168.28.10-192.168.28.40
 ```
 
+Note that you don't need a ConfigMap (i.e. no values.yaml) since 0.13.x; you can [use CRDs to define the
+configuration]({% post_url 2023/2023-04-03-metallb-crds %}).
+
 ## Run the installation
 
 ```bash
 helm --namespace metallb-system \
     install --create-namespace \
     metallb metallb/metallb -f values.yaml
+```
+
+To upgrade later:
+
+```bash
+helm --namespace metallb-system upgrade metallb metallb/metallb
 ```
 
 ## Does it work?
