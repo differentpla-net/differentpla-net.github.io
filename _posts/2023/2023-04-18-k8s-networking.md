@@ -85,9 +85,9 @@ chain KUBE-SEP-T3JGICIP4GFFPRGP {
 }
 ```
 
-## Flannel
-
 It forwards to 10.42.0.204:80, which is a pod running on a different node -- `roger-nuc0`.
+
+## Flannel
 
 That goes via flannel:
 
@@ -96,9 +96,11 @@ roger@roger-nuc1:~ % ip route | grep ^10.42.0
 10.42.0.0/24 via 10.42.0.0 dev flannel.1 onlink
 ```
 
-## More Netfilter
+## More Netfilter?
 
-...and (presumably) magically ends up on the correct node, at which point it goes through netfilter again:
+...and (presumably) magically ends up on the correct node.
+
+I assumed that it went through netfilter again:
 
 ```
 chain KUBE-ROUTER-FORWARD {
@@ -119,11 +121,11 @@ chain KUBE-POD-FW-RQUZ3MEWHD65UI4P {
 }
 ```
 
-...which applies some network policy and then, as far as I can tell, accepts the packet.
+...but those counters are zero, so maybe not?
 
 ## Bridge
 
-From there, it gets routed to the `cni0` interface:
+It _does_ get routed to the `cni0` interface:
 
 ```
 roger@roger-nuc0:~ % ip route | grep ^10.42.0
@@ -139,9 +141,10 @@ roger@roger-nuc0:~ % ip link show
     link/ether 72:88:58:6b:d1:da brd ff:ff:ff:ff:ff:ff
 9: veth56cecc8b@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc noqueue master cni0 state UP mode DEFAULT group default
     link/ether f6:00:09:05:bd:fa brd ff:ff:ff:ff:ff:ff link-netns cni-357001b9-24ca-5619-df3a-4dfe972bb930
-...
+...more veths
 ```
 
-...which maps to the default network interface inside the pod.
+...which maps to the default network interface inside the pod. I haven't figured out a reliable to correlate those
+interfaces, so you'll just have to believe me.
 
 And my HTTP request turns up at nginx.
