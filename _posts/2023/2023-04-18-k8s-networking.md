@@ -144,7 +144,7 @@ roger@roger-nuc0:~ % ip link show
 ...more veths
 ```
 
-...which maps to the default network interface inside the pod. I haven't figured out a reliable to correlate those
+...which maps to the default network interface inside the pod. I haven't figured out a reliable way to correlate those
 interfaces, so you'll just have to believe me.
 
 And my HTTP request turns up at nginx.
