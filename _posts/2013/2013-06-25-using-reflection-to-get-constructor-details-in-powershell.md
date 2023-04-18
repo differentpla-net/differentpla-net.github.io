@@ -2,6 +2,8 @@
 title: Using Reflection to get constructor details in PowerShell
 date: 2013-06-25T18:54:25Z
 tags: powershell
+redirect_from:
+  - /b/2013/51/25/using-reflection-to-get-constructor-details-in-powershell
 ---
 I was attempting to convert some Java code that uses Bouncy Castle into the
 equivalent PowerShell. The Java code was using the `PKCS10CertificationRequest` class,

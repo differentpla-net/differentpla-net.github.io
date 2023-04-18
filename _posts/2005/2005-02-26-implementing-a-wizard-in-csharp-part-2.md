@@ -1,7 +1,9 @@
 ---
 title: "Implementing a Wizard in C#, Part 2"
 date: 2005-02-26T12:50:00.000Z
-redirect_from: /content/2005/02/implementing-wizard-c-part-2
+redirect_from:
+  - /content/2005/02/implementing-wizard-c-part-2
+  - /blog/2005/02/26/implementing-a-wizard-in-c-part-2/
 layout: series
 series: winformswizard
 tags: csharp wizard windows-forms

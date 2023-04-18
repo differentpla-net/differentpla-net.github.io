@@ -5,6 +5,8 @@ date: 2003-02-04T15:10:00.000Z
 layout: series
 series: linux-on-vaio
 tags: linux sony-vaio
+redirect_from:
+  - /~roger/hardware/vaio/linux
 ---
 Because the DVD-ROM drive supplied with the SRX87 is Firewire, and is not supported by the standard Debian boot images, you'll need to use network booting (using PXE) to get it going. This [page](http://theo.me.uk/pages.shtml?page=debremoteboot) has some instructions for installing Debian in this manner.
 
