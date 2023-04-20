@@ -19,6 +19,9 @@ gen_server:call(Name, Req).   % local by name -- uses whereis(Name)
 gen_server:call({local, Name}, Req).    % local by name -- uses whereis(Name)
 ```
 
+Note that `{local, Name}` is undocumented -- it's not listed under
+[`server_ref()`](https://www.erlang.org/doc/man/gen_server.html#type-server_ref) and might not always be supported.
+
 If it's registered in `global`:
 
 ```erlang
