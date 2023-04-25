@@ -9,7 +9,7 @@ Things to consider:
 - Active mode.
 - Maybe some basics about binary pattern matching and why it's awesome.
 - The need to collect the entire message before attempting to parse it.
-  - ferd's post about avoiding catenating the buffer on every packet until you need to.
+  - ferd's post about avoiding catenating the buffer on every packet until you need to. https://cohost.org/mononcqc/post/1128460-on-the-hunt-for-a-bu
 - Motivated by: messages larger than the MTU are split.
   - Are there any tools to deliberately introduce splits?
     - If you've got a length prefix, it probably fits in the packet, so you don't need to deal with it being split in two. You _should_.
