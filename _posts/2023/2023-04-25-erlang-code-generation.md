@@ -39,6 +39,8 @@ bin() -> <<"Hello">>.
 
 Compile it with erlc +to_pp, which is from here: http://erlang.org/pipermail/erlang-questions/2017-April/092141.html, possibly.
 
+Or maybe from here: https://marianoguerra.github.io/presentations/2020-erlug-elixir-flavoured-erlang/#16; did I go to that talk?
+
 That gives you something like this:
 
 ```erlang
