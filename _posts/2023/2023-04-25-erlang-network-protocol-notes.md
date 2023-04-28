@@ -55,3 +55,11 @@ Things to consider:
   -- {request|reply}_{encoder|decoder}? There's not necessarily any right answer. It depends, sure, but on what?
 - What _is_ the cross-module call penalty in Erlang these days anyway?
   - https://www.erlang.org/doc/efficiency_guide/functions.html#function-calls says "Calls to local or external functions (foo(), m:foo()) are the fastest calls."
+- Does the response have an ID tag in it?
+- Otherwise: need the correlation ID.
+- Pipelining: can we have multiple messages in flight at once?
+- Even if you do, you don't really need the correlation ID. You can correlate the responses to the requests by order.
+- But if the messages can _overlap_, _then_ you need the correlation ID.
+- Historical: CTI stuff at Aspect.
+  - request/response (solicited) and unsolicited messages. You set up a listen/subscription/whatever, and you get back an ID for that. Messages relevant to that have that ID in them, so you can correlate them.
+  - would you do it that way these days? Maybe. Or maybe you'd just open multiple sockets.
