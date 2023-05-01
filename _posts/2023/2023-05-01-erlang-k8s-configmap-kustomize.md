@@ -7,6 +7,8 @@ tags: erlang kubernetes kustomize
 In a [previous post]({% post_url 2023/2023-04-13-erlang-k8s-configmap %}), I showed how to store `sys.config` and
 `vm.args` in a ConfigMap. There are some problems with that approach, so I'm going to use Kustomize to fix that.
 
+Note that this solution has its own problems; I'm not sure what the best answer is yet.
+
 ## Why use a ConfigMap?
 
 Ordinarily, the `sys.config` file is stored in the container images. This makes it hard to vary the configuration at
