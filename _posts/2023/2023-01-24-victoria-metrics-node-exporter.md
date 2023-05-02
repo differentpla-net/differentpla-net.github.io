@@ -7,7 +7,7 @@ tags: victoria-metrics
 I'd like to get some CPU temperature metrics from the nodes in my K3s cluster. That's the job of Prometheus'
 `node-exporter`. I'm not using Prometheus; I'm using VictoriaMetrics. Here's how to get it working.
 
-The first thing we need is a Daemonset, so that the node-exporter is running on each node. This is lifted from [here](https://devopscube.com/node-exporter-kubernetes/).
+The first thing we need is a DaemonSet, so that the node-exporter is running on each node. This is lifted from [here](https://devopscube.com/node-exporter-kubernetes/).
 
 ```yaml
 apiVersion: apps/v1
