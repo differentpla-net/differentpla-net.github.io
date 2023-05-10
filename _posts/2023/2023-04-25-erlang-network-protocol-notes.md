@@ -72,6 +72,18 @@ General networking:
 - How to navigate through firewalls.
 - FTP active vs. passive, etc.
 - Using the same channel for control and data.
+- Correlation ID: start at zero and increment monotonically? Start at a different, fixed, number and increment monotonically? Start at a random number and increment monotonically? Completely PRNG each time? Completely CRNG each time?
+- Inspection:
+  - Client IDs
+- TLS
+- Authentication is out of scope for now, but later, maybe:
+  - SASL
+  - Client Certs
+- Naming: length vs size vs count
+- Inactivity timeouts. Heartbeating.
+- Something about load-shedding. Gracious disconnects.
+- Retry intervals, exponential backoff.
+- Use of connection pools.
 
 Things to consider:
 
@@ -94,3 +106,18 @@ Things to consider:
   - vs. reading it into a struct and then making it right.
 - What _is_ the cross-module call penalty in Erlang these days anyway?
   - https://www.erlang.org/doc/efficiency_guide/functions.html#function-calls says "Calls to local or external functions (foo(), m:foo()) are the fastest calls."
+
+```erlang
+handle_info(
+    {tcp, Socket, Data}, State = #state{socket = Socket, buffer = Buffer}
+) ->
+    % TODO: This needs to be in a separate module, for ease of testing.
+    case <<Buffer/binary, Data/binary>> of
+        % TODO: DoS protection against messages that are too long.
+        <<Length:32/big, Message:Length/binary, Rest/binary>> ->
+            ?LOG_DEBUG("Got message ~p", [Message]),
+            {noreply, State#state{buffer = Rest}};
+        NewBuffer ->
+            {noreply, State#state{buffer = NewBuffer}}
+    end.
+```
