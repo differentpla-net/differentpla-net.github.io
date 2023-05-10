@@ -150,16 +150,16 @@ You can see that it records the following:
 This allows you to install your own debugging function. For example, enter the following in the console:
 
 ```erlang
-DebugFun = {fun(DebugState, Event, ProcState) ->
+DebugFun = fun(DebugState, Event, ProcState) ->
     io:format("~p ~p\n", [Event, ProcState]),
     case DebugState of
         10 -> done;
         Count -> Count + 1
-    end,
-end, 1}.
+    end
+end.
 
 {ok, Pid} = example_server:start_link().
-sys:install(Pid, Debug).
+sys:install(Pid, {DebugFun, 1}).
 ```
 
 This installs a debug function that prints out the first ten debug events and then is automatically removed.
