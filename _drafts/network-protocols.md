@@ -4,6 +4,29 @@ date: 2023-04-20T13:02:00.000Z
 tags: erlang
 ---
 
+## On the difference between binary and text-based network protocols.
+
+Note that a lot of discussion about network protocols also applies to file formats.
+
+Give an example of a text-based protocol, such as HTTP/1.1, because:
+- It's relatively human-readable.
+- It demonstrates that numbers take up too much space.
+- It demonstrates that, for, e.g., multipart forms, we need to escape binary content.
+  - or we need a Content-Type header.
+- Tends to lean towards terminators, rather than length prefixes. Though note the Content-Length header in HTTP/1.1.
+
+The advantage of binary protocols is that they are, generally-speaking, more compact.
+
+The advantage of text-based protocols is that they are, generally-speaking, human-readable.
+
+They allow the use of already-existing tools, such as telnet, netcat, etc. Other tools in this space?
+
+Disadvantages: less compact; need to worry about character sets, though UTF-8 generally deals with that now. Refer to
+Dylan's presentation about character sets, maybe: https://www.youtube.com/results?search_query=dylan+beattie+plain+text.
+
+UTF-8 is endian-independent, because it specifies the encoding in octets, and defines the order in which they are
+transmitted and received.
+
 General networking:
 
 - Difference between UDP and TCP.
@@ -12,13 +35,16 @@ General networking:
 - Motivated by: messages larger than the MTU are split.
   - Are there any tools to deliberately introduce splits?
     - If you've got a length prefix, it probably fits in the packet, so you don't need to deal with it being split in two. You _should_.
-    - If the sender catenates a bunch of messages, at _that_ point, the size prefix might straddle the packet boundary.
+    - If the sender catenates a bunch of messages, at _that_ point, the size prefix might straddle the packet boundary. They might do this because of Nagle, e.g.
 - How to detect size?
   - Length prefix.
+    - Refer to Heartbleed, etc., here>
   - Terminator, particularly in text-based formats.
   - You know what message it is (based on magic number), so you know how large it is.
     - Doesn't work for compatibility -- if you see a message that you don't recognise, you don't know how to skip it, e.g.
     - On the other hand, if you don't recognise a message, that would be bad as well, right?
+    - Doesn't allow variable-length messages, which means things like strings are constrained to fixed sizes (truncation is bad) or padded (waste of space). That waste of space isn't so important in memory, where cache line alignment stuff might dominate, but it's important on the network, where space is usually at a premium.
+- Compression.
 - Version negotiation.
   - You don't want to send messages that the other end doesn't understand.
   - Upon connecting, the server could advertise its protocol version as the first message.
@@ -33,6 +59,7 @@ General networking:
   - Little-endian.
   - Receiver-makes-right.
 - Varint encoding.
+  - Relationship with UTF-8 encoding.
 - Checksums - don't bother for network protocols. The layer below you should be doing that.
 - Dealing with errors - just die, or return an error.
 - Serialization options.
@@ -73,7 +100,7 @@ General networking:
 - FTP active vs. passive, etc.
 - Using the same channel for control and data.
 
-Things to consider:
+Erlang considerations; some other more general language things:
 
 - Active mode.
 - Maybe some basics about binary pattern matching and why it's awesome.
