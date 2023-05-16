@@ -2,6 +2,7 @@
 title: "Formatting Erlang code in Visual Studio Code"
 date: 2023-01-15T17:04:00Z
 tags: vscode erlang rebar3
+published: false
 ---
 
 The ErlangLS extension for VS Code includes formatting, using `rebar3_format`. I'd prefer to use `erlfmt`, so here's how it should be set up.
