@@ -20,9 +20,11 @@ For example:
 
 ## Firewall rules
 
-You could use firewall (iptables, e.g.) rules.
+One option is to use firewall (iptables, e.g.) rules.
 
 ## Erlang options
+
+Another option is to specify which interface Erlang distribution uses.
 
 If you run the following commands to enable distribution...
 
