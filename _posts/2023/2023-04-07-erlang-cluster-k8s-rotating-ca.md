@@ -122,15 +122,15 @@ Where previously there was only one certificate in the file, there are now two.
 Optionally create a new key as follows:
 
 ```sh
-cert_timestamp="$(date +%FT%H-%M-%S)"
-openssl ecparam -name prime256v1 -genkey -noout -out erlclu-ca-$cert_timestamp.key
+key_timestamp="$(date +%FT%H-%M-%S)"
+openssl ecparam -name prime256v1 -genkey -noout -out erlclu-ca-$key_timestamp.key
 ```
 
 Create a new certificate as follows:
 
 ```sh
 cert_timestamp="$(date +%FT%H-%M-%S)"
-openssl req -new -x509 -key erlclu-ca-$cert_timestamp.key -sha256 \
+openssl req -new -x509 -key erlclu-ca-$key_timestamp.key -sha256 \
     -subj "/C=GB/L=London/O=differentpla.net/CN=erlclu CA $cert_timestamp" -out "erlclu-ca-$cert_timestamp.crt"
 ```
 
@@ -150,13 +150,17 @@ kubectl --namespace erlclu create secret generic erlclu-ca-certificates \
 
 The `filter-ca-certs.escript` file is [here](https://github.com/rlipscombe/erlang-cluster/blob/main/certs/filter-ca-certs.escript).
 
+Note that if the CA certificate has _already_ expired, the filter script will exclude it anyway, which means any new
+pods will be unable to join the cluster. Make sure you rotate the certificate before it expires. You might also need to
+rotate the pods using the old CA out of the cluster as well.
+
 Now we can update the _cert-manager_ keypair as follows:
 
 ```sh
 kubectl --namespace erlclu delete secret erlclu-ca-key-pair
 kubectl --namespace erlclu create secret tls erlclu-ca-key-pair \
     --cert=erlclu-ca-$cert_timestamp.crt \
-    --key=erlclu-ca-$cert_timestamp.key
+    --key=erlclu-ca-$key_timestamp.key
 ```
 
 Note that it takes a short while for the updated `erlclu-ca-certificates` secret to be deployed. If you scale up the
