@@ -84,7 +84,8 @@ resolved the problem.
 Gitea uses a Certificate resource, rather than an Ingress, because it has an SSH server, and needs its own
 load-balancer.
 
-Similarly, ArgoCD uses an IngressRoute, rather than an Ingress -- I don't recall why, but it needed the same fix: delete the existing Secret resource and create a new Certificate resource.
+Similarly, ArgoCD uses an IngressRoute, rather than an Ingress -- I don't recall why, but it needed the same fix: delete
+the existing Secret resource and create a new Certificate resource.
 
 ## Future Actions
 
