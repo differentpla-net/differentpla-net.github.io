@@ -84,6 +84,9 @@ resolved the problem.
 Gitea uses a Certificate resource, rather than an Ingress, because it has an SSH server, and needs its own
 load-balancer.
 
+It's also worth pointing out that Gitea _doesn't_ seem to reload the certificate when it's renewed. You'll need to
+restart it every 30-60 days or so. I tried sending it a HUP signal, but that just killed the pod.
+
 Similarly, ArgoCD uses an IngressRoute, rather than an Ingress -- I don't recall why, but it needed the same fix: delete
 the existing Secret resource and create a new Certificate resource.
 
