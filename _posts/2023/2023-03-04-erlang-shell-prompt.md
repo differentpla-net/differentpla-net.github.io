@@ -36,16 +36,26 @@ shell:prompt_func({shell_prompt, prompt_func}).
 The first line loads `$HOME/ebin/shell_prompt.beam`; the second line sets a function from that module as the prompt
 function.
 
-Alternatively, we could allow loading arbitrary modules from `$HOME/ebin`. In that case, the first line would look like this instead:
-
-```erlang
-code:add_patha(filename:join([os:getenv("HOME"), "ebin"])).
-```
-
 <div class="callout callout-warning" markdown="span">
 The `.erlang` file is loaded on _every_ Erlang instantiation, including things like running Elixir's `mix` and so on.
 Bear that in mind before you do anything too involved.
 </div>
+
+## Embedded mode
+
+Why don't we allow loading arbitrary modules from `$HOME/ebin`? In that case, the first line would look like this
+instead:
+
+```erlang
+% Doesn't work in "embedded" mode.
+code:add_patha(filename:join([os:getenv("HOME"), "ebin"])).
+```
+
+Unfortunately, if you run an Erlang release (in "embedded" mode) -- `_build/prod/rel/foo/bin/foo console`, for example
+-- it doesn't allow implicitly loading arbitrary modules, and you'll get `** exception error: undefined function
+shell_prompt:prompt_func/1` every time it attempts to display a prompt.
+
+## Shell Prompt
 
 That results in a shell prompt that looks like this:
 
@@ -76,7 +86,7 @@ I decided to allow for the case where future Erlang adds more things to the list
 Aside: the default prompt implementation uses `~w` (format as an Erlang term) to display the history number. I'm not
 sure why. I suspect it's just in case it's _not_ a number.
 
-I like to also display the shell process ID in the prompt:
+I like to also display the current process ID in the prompt:
 
 ```erlang
 prompt_func(Opts) ->
@@ -95,6 +105,8 @@ Erlang/OTP 25 [erts-13.0.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threa
 
 Eshell V13.0.4  (abort with ^G)
 <0.86.0> (foo@ROGER-SURFACEBOOK3)1&gt; &block;</code></pre>
+
+## Colour
 
 Let's add some colour:
 
@@ -133,6 +145,8 @@ Eshell V13.0.4  (abort with ^G)
 
 I had problems in the distant past (Erlang R16 or so) which made me go back to a monochrome prompt. Maybe I'll have
 better luck this time.
+
+## File location
 
 Unlike Elixir and its `.iex.exs` file, Erlang doesn't look in the current directory for the `.erlang` file; per the
 [documentation](https://www.erlang.org/doc/man/erl.html#configuration):
