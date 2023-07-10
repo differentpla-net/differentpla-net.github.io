@@ -33,7 +33,7 @@ YYYYYYYYYYYYYYYYYYYYYYYYYYYY....................................
 ```
 
 | Units         | Count                 | Approx    | Bits      | Remaining |
-| --            | --                    | --        | --        | --        |
+| ---           | ---                   | ---       | ---:      | ---:      |
 |               |                       |           |           | 64 bits   |
 | Milliseconds  | 1000                  | ~1024     | 10 bits   | 54 bits   |
 | Seconds       | 60                    | ~63       | 6 bits    | 48 bits   |
