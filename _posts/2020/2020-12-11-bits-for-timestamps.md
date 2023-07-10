@@ -10,7 +10,7 @@ instead.
 
 Here's a quick way to estimate how long that'll last.
 
-Note that 2^10 (1024) ~= 10^3 (1000) meaning that every unit of one thousand needs 10 bits.
+Note that $2^{10} = 1024 \approx 1000$ meaning that every unit of one thousand needs 10 bits.
 
 Given **64 bits**, take 10 bits for milliseconds, leaving **54 bits**.
 
@@ -44,14 +44,15 @@ YYYYYYYYYYYYYYYYYYYYYYYYYYYY....................................
 
 As it happens, we're out by about a factor of 2. The actual number is roughly 536 million. Why?
 
-We wasted ~0.4 bits in the hours/day conversion, plus another ~0.5 bits in the days/year conversion. This gives us about
-a bit (i.e. our factor of two). We also wasted some other fractional bits elsewhere (1000 &ne; 1024 and 60 &ne; 64). We
-erred on the cautious side, by using more bits than needed, so our result is a lower limit.
+We wasted $log_2({32 \div 24}) \approx 0.4 $ bits in the hours/day conversion, plus another $log_2({512 \div 365})
+\approx 0.5 $ bits in the days/year conversion. This gives us about a bit (i.e. our factor of two). We also wasted some
+other fractional bits elsewhere (1000 &ne; 1024 and 60 &ne; 64). We erred on the cautious side, by using more bits than
+needed, so our result is a lower limit.
 
 But at these timescales it doesn't particularly matter (unless you're doing astrophysics, maybe).
 
-If we did it all again, but with microseconds, we'd use another 10 bits, giving us 2^18 years, which is (2^10 * 2^8) or
-(~10^3 * 256), or roughly 250,000 years.
+If we did it all again, but with microseconds, we'd use another 10 bits, giving us $2^{18}$ years, which is $2^8 \times
+2^{10}$ or $256 \times 10^3$, or roughly 250,000 years.
 
 Note that we're still off by that factor of two, so it's actually about half a million years.
 
