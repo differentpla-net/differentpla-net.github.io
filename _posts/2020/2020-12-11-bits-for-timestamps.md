@@ -1,6 +1,7 @@
 ---
 title: "How many bits for timestamps?"
 date: 2020-12-11T13:43:07Z
+uses: MathJax
 ---
 
 Signed 32-bit `time_t`, which counts seconds since 1970 runs out after 2^31 seconds; i.e. in 2038.
