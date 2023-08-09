@@ -11,7 +11,8 @@ There's more comprehensive information in various files in the `HOWTO` directory
 ```sh
 export LANG=C
 export ERL_TOP="$(pwd)"
-./otp_build configure && make -j$(nproc)
+./otp_build configure
+make -j$(nproc)
 ```
 
 ## Using it
@@ -28,12 +29,28 @@ erl
 But, more often, you'll need to install it:
 
 ```sh
-make install
+export RELEASE_ROOT="$HOME/OTP"
+cd "$ERL_TOP"
+make release
+```
+
+```sh
+cd "$RELEASE_ROOT"
+./Install -minimal "$RELEASE_ROOT"
 ```
 
 ...and you can use it from there:
 
 ```sh
-export PATH="$ERL_TOP/install/bin:$PATH"
+export PATH="$RELEASE_ROOT/bin:$PATH"
 erl
+```
+
+It will display something like the following:
+
+```
+Erlang/OTP 27 [DEVELOPMENT] [erts-14.0.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit]
+
+Eshell V14.0.2 (press Ctrl+G to abort, type help(). for help)
+1>
 ```
