@@ -16,3 +16,16 @@ rebar3 () {
 	command rebar3 "$@"
 }
 ```
+
+
+```zsh
+precmd () {
+	stty -a | \grep -q -e '-icrnl'
+	if [ $? -ne 1 ]
+	then
+		echo
+		echo 'STTY SETTINGS HAVE CHANGED !!!!!!!!!!!!!!!!'
+		echo
+	fi
+}
+```
