@@ -40,13 +40,14 @@ start(_StartType, _StartArgs) ->
         cowboy:start_clear(http,
                            [{port, ?PORT}],
                            #{env => #{dispatch => Dispatch},
-                             metrics_callback => fun prometheus_cowboy2_instrumenter:observe/1,
-                             stream_handlers => [cowboy_metrics_h, cowboy_stream_h]}),
+                             stream_handlers => [cowboy_stream_h]}),
     ?LOG_INFO("Cowboy server listening on port ~p", [?PORT]),
     %...
 ```
 
 ...then we can browse to `http://localhost:8126/metrics/default` and see all of the exported metrics.
+
+## Erlang VM Metrics
 
 Each one looks something like this:
 
@@ -89,5 +90,17 @@ It's saying that the `binary_alloc` allocator, instance 6, kind multi-block carr
 If you've got multiple instances of your service, you'll want the scraper to add node/pod labels to the metrics when it
 imports them. Fortunately, VictoriaMetrics does that automatically. I assume Prometheus (and other scrapers) will do the
 same.
+
+## Cowboy Metrics
+
+The `prometheus_cowboy` package also provides an easy way to export cowboy's own metrics. We use `cowboy_metrics_h` as
+describe in the [previous post]({% post_url 2023/2023-01-15-beam-telemetry-cowboy-metrics %}), but we can use
+`prometheus_cowboy2_instrumenter:observe/1`, rather than writing our own conversion function:
+
+```erlang
+  #{env => #{dispatch => Dispatch},
+    metrics_callback => fun prometheus_cowboy2_instrumenter:observe/1,
+    stream_handlers => [cowboy_metrics_h, cowboy_stream_h]}),
+```
 
 Next up: turning the Hackney metrics into Prometheus metrics.
