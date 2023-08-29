@@ -5,7 +5,7 @@ tags: gitlab
 ---
 
 I wanted to get a list of all of the GitLab projects of which I'm a member. Here's how I used `glab` -- GitLab's CLI
-tool to do that.
+tool -- to do that.
 
 ## Log In
 
