@@ -1,0 +1,35 @@
+- Motivation
+  - Blame-free.
+- Incident response/management out of scope, probably.
+- Compensation
+  - None.
+    - Problem when you want to get someone on rotation who previously wasn't.
+  - Bonus for being in the rotation.
+  - Extra when on call.
+  - Extra when paged.
+  - Note about perverse incentives here.
+- Rotation
+  - Avoiding someone getting every Friday, e.g.
+  - Daily/weekly?
+    - If weekly, what to do when on call during office hours.
+    - Follow up/work on incident tickets.
+    - Improve monitoring, etc.
+  - Follow-the-sun
+    - Great for customer service, less so for on call. Handover lacking.
+  - 24/7 for one week: burn out
+    - Rotate to next person if paged.
+    - Andrew and I did this when there were only the two of us (Rich was on vacation).
+- Getting cover.
+  - Vacation and, e.g., afk, and e.g. concert/cinema are different scenarios.
+  - People problem, not process problem...?
+- Responsibilities if paged:
+  - Acknowledge.
+  - Triage
+  - File JIRA ticket/s.
+  - Make sure that the responsible team follows up on those tickets. If you're doing the "work on improvements while on
+    call in office hours", that might be you anyway.
+- Escalation
+  - Primary/secondary
+  - Primary/manager
+  - If you're always escalating to the same person (even unofficially) then that person is on call 24/7/365. Burnout.
+  - Burnout anyway.
