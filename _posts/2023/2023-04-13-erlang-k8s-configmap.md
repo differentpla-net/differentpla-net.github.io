@@ -86,8 +86,8 @@ Because ConfigMap volumes are mounted read-only, the relx startup script will be
 
 ## Copying from the ConfigMap
 
-To solve this, we need some way to copy the files from the (read-only) ConfigMap volume to the somewhere writeable.
-There are a number of options.
+To solve this, we need some way to copy the files from the (read-only) ConfigMap volume to somewhere writeable. There
+are a number of options.
 
 ### A relx pre-start hook
 
