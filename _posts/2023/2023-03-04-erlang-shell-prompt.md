@@ -75,7 +75,13 @@ beam/beam_load.c(1886): Error loading module shell_prompt:
 ```
 
 You can fix the first problem by compiling the file with the oldest version of Erlang you're likely to use. It will
-usually load into newer versions of Erlang without problem.
+usually load into newer versions of Erlang without problem. I've tested with OTP-23.x and OTP-26.x.
+
+If you're using `kerl`, that's something like this (depending on where you keep your Erlang installations):
+
+```sh
+~/.kerl/erlangs/OTP-23.3.4.19/bin/erlc -o "$HOME/ebin" shell_prompt.erl
+```
 
 You can _partially_ fix the first problem by checking the result of `code:load_abs`, but you still get the error report
 the first time you attempt to load the file.
