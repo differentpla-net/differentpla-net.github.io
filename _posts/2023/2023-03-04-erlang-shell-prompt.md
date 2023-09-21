@@ -55,6 +55,48 @@ Unfortunately, if you run an Erlang release (in "embedded" mode) -- `_build/prod
 -- it doesn't allow implicitly loading arbitrary modules, and you'll get `** exception error: undefined function
 shell_prompt:prompt_func/1` every time it attempts to display a prompt.
 
+## This BEAM file was compiled for a later version
+
+If you compile `shell_prompt.erl` with, say, Erlang 26.x, and then attempt to load it into an Erlang 23.x session,
+you'll get the following error message:
+
+```
+=ERROR REPORT==== 21-Sep-2023::14:30:11.433270 ===
+Loading of .../ebin/shell_prompt.beam failed: badfile
+
+=ERROR REPORT==== 21-Sep-2023::14:30:11.706057 ===
+beam/beam_load.c(1886): Error loading module shell_prompt:
+  This BEAM file was compiled for a later version of the run-time system than 23.
+  To fix this, please recompile this module with an 23 compiler.
+  (Use of opcode 172; this emulator supports only up to 170.)
+
+** exception error: undefined function shell_prompt:prompt_func/1
+* Bad prompt function: {shell_prompt,prompt_func}
+```
+
+You can fix the first problem by compiling the file with the oldest version of Erlang you're likely to use. It will
+usually load into newer versions of Erlang without problem.
+
+You can _partially_ fix the first problem by checking the result of `code:load_abs`, but you still get the error report
+the first time you attempt to load the file.
+
+You can fix the second problem by checking that the function is exported. The following snippet does both:
+
+```erlang
+% Load the module explicity, otherwise it doesn't work in 'embedded' mode.
+case code:load_abs(filename:join([os:getenv("HOME"), "ebin", "shell_prompt"])) of
+    {module, _} ->
+        case erlang:function_exported(shell_prompt, prompt_func, 1) of
+            true ->
+                shell:prompt_func({shell_prompt, prompt_func});
+            _ ->
+                skip
+        end;
+    _ ->
+        skip
+end.
+```
+
 ## Shell Prompt
 
 That results in a shell prompt that looks like this:
