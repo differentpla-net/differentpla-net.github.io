@@ -80,6 +80,8 @@ Is there a way we could wrap this in a macro, to add the fun() bits?
 
 Look at meck for its syntactic sugar; look at hamcrest (both Erlang and Python).
 
-Naming: at imp, we used Probe/Condition. I just saw a post on the socials where someone changed Predicate to Matcher. Is 'Matcher' a useful difference from 'Condition'?
+Naming: at imp, we used Probe/Condition. I just saw a post on the socials where someone (Quick/Nimble, a testing thing
+for Swift, inspired by Cedar) changed Predicate to Matcher. Is 'Matcher' a useful difference from 'Condition'?
 
-What about logging? Do we want to sprinkle ?LOG_DEBUG inside the loop, so we can see what the probe/matcher return on each iteration? Does that need a bunch of macros, so we can ??Expr them...?
+What about logging? Do we want to sprinkle ?LOG_DEBUG inside the loop, so we can see what the probe/matcher return on
+each iteration? Does that need a bunch of macros, so we can ??Expr them...?
