@@ -171,20 +171,20 @@ This didn't resolve the problem.
 
 Going to the `Edit Node and Disks` page for a node, I could see that the default disk for that node displayed a red exclamation mark, saying that the disk wasn't schedulable or ready. It said something about the disk type not being detected.
 
-Looking in `kubectl --namespace longhorn-system get events`, I could see the same:
+By running `kubectl --namespace longhorn-system get events | grep Warning`, I could see the same:
 
 ```
-31m         Warning   Ready                    node/roger-bee2                                                           Disk default-disk-27afb7a391d5e615(/var/lib/longhorn/) on node roger-bee2 is not ready: failed to get disk config: error: unknown disk type
-31m         Warning   Schedulable              node/roger-bee2                                                           the disk default-disk-27afb7a391d5e615(/var/lib/longhorn/) on the node roger-bee2 is not ready
-29m         Warning   Ready                    node/roger-nuc0                                                           Disk default-disk-279c062d423c12e8(/var/lib/longhorn/) on node roger-nuc0 is not ready: failed to get disk config: error: unknown disk type
-29m         Warning   Schedulable              node/roger-nuc0                                                           the disk default-disk-279c062d423c12e8(/var/lib/longhorn/) on the node roger-nuc0 is not ready
+31m         Warning   Ready                    node/roger-bee2    Disk default-disk-27afb7a391d5e615(/var/lib/longhorn/) on node roger-bee2 is not ready: failed to get disk config: error: unknown disk type
+31m         Warning   Schedulable              node/roger-bee2    the disk default-disk-27afb7a391d5e615(/var/lib/longhorn/) on the node roger-bee2 is not ready
+29m         Warning   Ready                    node/roger-nuc0    Disk default-disk-279c062d423c12e8(/var/lib/longhorn/) on node roger-nuc0 is not ready: failed to get disk config: error: unknown disk type
+29m         Warning   Schedulable              node/roger-nuc0    the disk default-disk-279c062d423c12e8(/var/lib/longhorn/) on the node roger-nuc0 is not ready
 ```
 
 ## Dinner
 
-At about 19:00, I went for dinner with the family, which took about 30 minutes.
+At about 19:00, I went for dinner with the family, which took about 30-40 minutes.
 
-## Rolling back?
+## Rolling back the chart
 
 I tried to roll back the Helm chart, but it did literally nothing. I reapplied the upgrade and it did nothing.
 
@@ -196,7 +196,9 @@ restart, so I tried that.
 Shortly after the node came back up, I decided to create a new disk on the node, in `/var/lib/longhorn2`, to see if
 there was any obvious difference (maybe a marker file had got corrupted or gone missing, or something).
 
-**The node recovered**
+<div class="callout callout-success" markdown="span">
+The node recovered.
+</div>
 
 It wasn't clear to me whether it was creating a new disk that fixed the problem, or whether that was a coincidence and it was the node restart.
 
