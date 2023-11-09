@@ -50,8 +50,15 @@ On macOS, the `lo0` loopback device is only bound to `127.0.0.1`, so you'll have
 question](https://superuser.com/questions/458875/how-do-you-get-loopback-addresses-other-than-127-0-0-1-to-work-on-os-x),
 but (tl;dr):
 
-```bash
-sudo ipconfig lo0 alias 127.0.0.2 up
-sudo ipconfig lo0 alias 127.0.0.3 up
+```sh
+sudo ifconfig lo0 alias 127.0.0.2 up
+sudo ifconfig lo0 alias 127.0.0.3 up
 # ... repeat as many times as needed
+```
+
+To remove the aliases:
+
+```sh
+sudo ifconfig lo0 -alias 127.0.0.2
+# ... and so on
 ```
