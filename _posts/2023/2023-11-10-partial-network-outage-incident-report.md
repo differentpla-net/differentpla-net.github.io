@@ -13,7 +13,7 @@ tl;dr: foxes
 
 - My home network has a Synology RT2600ac router, with 3 Synology MR2200ac mesh points (wired backhaul) called
   "Kitchen", "Office" and "Loft".
-- "Office" is a garden office; it's connected to the main house over a pair of armoured Ethernet cables that run along
+- "Office" is a garden office; it's connected to the main house over a pair of Ethernet cables that run along
   the fence a foot or so above the ground.
 
 ## Timeline
@@ -49,6 +49,9 @@ Foxes have dug under the fence and damaged one of the Ethernet cables running be
 _just_ at the point where the cable crosses from the fence to the office, so it's lying on the ground.
 
 Fortunately, they've only damaged one of the cables, and fortunately (for the foxes) it's not the power cable (40A is a bit spicy).
+
+It turns out that the Ethernet cables are _not_ armoured. The power cable is chonky enough that it probably _is_. I'm
+going to check the electrician's invoice.
 
 ## Remediation
 
