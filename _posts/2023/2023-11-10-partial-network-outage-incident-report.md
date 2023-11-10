@@ -36,7 +36,7 @@ November 10th
   - It did not reconnect.
 - 09:05: Realised that the office access point is the only thing currently connected to the second ethernet socket in
   the office.
-  - Moved the connection to the office switch (i.e. the first ethernet socket in the office).
+  - Moved the connection to the switch connected to the other ethernet socket.
 - 09:07: **Connectivity was restored.**
 
 ## Investigation
