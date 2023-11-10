@@ -53,6 +53,13 @@ Fortunately, they've only damaged one of the cables, and fortunately (for the fo
 It turns out that the Ethernet cables are _not_ armoured. The power cable is chonky enough that it probably _is_. I'm
 going to check the electrician's invoice.
 
+## Root Cause Analysis
+
+- The cables shouldn't be lying on the ground. That's just asking for trouble.
+- We had the rear fence replaced about a week ago.
+  - Prior to that, the foxes would get into the garden through a gap where the old fence wasn't attached properly.
+  - So they got into the garden by digging under the side fence.
+
 ## Remediation
 
 Looks like I'm going to need to:
@@ -60,3 +67,10 @@ Looks like I'm going to need to:
 1. Lift the cables away from the ground at this point.
 2. Splice in a new connection.
 3. Somehow weatherproof the splice.
+
+Alternatively, consider armoured trunking and/or burial.
+
+In terms of the foxes:
+
+1. Backfill the hole under the side fence.
+2. Cut a "fox hole" (not an actual "foxhole") in the back fence, so they're not tempted to dig under the side fence.
