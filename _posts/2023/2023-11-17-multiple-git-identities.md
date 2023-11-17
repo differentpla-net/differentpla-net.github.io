@@ -8,11 +8,11 @@ I want to keep my work and personal Github accounts separate. Here's how I set t
 
 ## Background
 
-I've had a personal Github account -- [@rlipscombe](https://github.com/rlipscombe/) -- since 2010. In the past I've just
-added my work email address to my account, and made sure I've [configured my email address properly]({% post_url 2020/2020-01-24-git-emails %}), for correct attribution.
+I've had a personal Github account -- [@rlipscombe](https://github.com/rlipscombe/) -- since 2010. In the past when I've
+needed to use Github for work, I've just used that account and added my work email to it.
 
-This time, my work account is going to be managed by Corporate IT, and I don't feel comfortable blurring that boundary,
-so I need to set up a separate Github account.
+This time, my work account is going to be managed by Corporate IT, and they've got more stringent security and sign-on
+requirements, and I don't feel comfortable blurring that boundary, so I'm going to set up a separate Github account.
 
 Because I still want to be able to access both my personal and work accounts from my work laptop, I need to set up git
 to manage multiple identities.
@@ -25,16 +25,14 @@ Github doesn't let you attach the same SSH public key to multiple accounts, so y
 ssh-keygen -t ed25519 -f ~/.ssh/id_work -C "$USER@$(hostname)-Work"
 ```
 
-For more information: [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
-
-Then you'll need to add it to the new account. See [the docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+Github has documentation for this process [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), and you can add it to your new account by following the docs [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
 My company requires that the SSH key be authorized for SSO, which is something I've never seen before, but it's just a
 couple of clicks, so that's easy enough.
 
 ## Using the alternative SSH key
 
-To use the new (non-default) SSH key:
+To use the new (non-default) SSH key, you need to use the `GIT_SSH_COMMAND` environment variable:
 
 ```sh
 GIT_SSH_COMMAND='ssh -i ~/.ssh/id_work -o IdentitiesOnly=yes' git clone git@github.com:work-org/some-repo.git
