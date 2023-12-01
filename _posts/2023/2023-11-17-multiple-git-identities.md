@@ -119,5 +119,5 @@ separate directories (until now, I just stuck everything in `~/Source`).
   in the newly-checked-out `.git/config` file.
   - git won't let you replace built-in commands with aliases, so I'd have to use a shell alias or function.
   - I rejected this because I thought it might be fragile.
-- I'm already using <https://github.com/DrVanScott/git-clone-init>, but that only works to patch the configuration
+- I was previously using <https://github.com/DrVanScott/git-clone-init>, but that only works to patch the configuration
   _after_ you've cloned the repo.
