@@ -33,6 +33,10 @@ Hello kubectl!
 
 ## kubectl ssh
 
+<div class="callout callout-info" markdown="span">
+Source code is at <https://github.com/rlipscombe/kubectl-ssh>
+</div>
+
 Create the `kubectl-ssh` script as follows:
 
 ```bash
