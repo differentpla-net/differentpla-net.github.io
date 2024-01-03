@@ -11,8 +11,8 @@ If `Module:init/1` takes a long time to run, this can cause several problems:
 - If your process is being started from a supervisor, the supervisor will be unable to handle any messages until
   `init/1` completes. This will result in calls such as `supervisor:which_children/1` blocking, or delays in restarting
   other supervised processes.
-- If you want to start a number of server processes, they'll be initialised sequentially, rather than in parallel. This
-  can result in slow startup for your application.
+- If you want to start a number of processes, they'll be initialised sequentially, rather than in parallel. This can
+  result in slow startup for your application.
 
 Here are a few ways to mitigate the problem. They're not all appropriate for all situations.
 
