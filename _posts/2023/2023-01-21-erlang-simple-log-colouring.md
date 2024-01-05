@@ -50,7 +50,7 @@ Here's something pretty close to lager's default formatting:
 formatter =>
   {logger_formatter, #{
     legacy_header => false,
-    single_line => true
+    single_line => true,
     template => [
       time, " ", "[", level, "]",
       {pid, [" ", pid, ""], ""},
@@ -69,7 +69,7 @@ To do that, we're going to need our own formatter:
 formatter =>
   {logger_color_formatter, #{
     legacy_header => false,
-    single_line => true
+    single_line => true,
     template => [
       time, " ", color, "[", level, "]",
       {pid, [" ", pid, ""], ""},
