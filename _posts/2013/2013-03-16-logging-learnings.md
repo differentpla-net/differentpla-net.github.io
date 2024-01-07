@@ -4,7 +4,8 @@ date: 2013-03-16 11:16:58
 ---
 
 I've just spent the bulk of the morning attempting to understand a bug by
-reading through some fairly large log files. I've come to the realisation that:
+reading through some fairly large log files. Because of that, I've come to
+some realisations about log files and logging.
 
 ## Make them text-editor-friendly
 
