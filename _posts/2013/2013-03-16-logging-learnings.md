@@ -6,8 +6,7 @@ date: 2013-03-16 11:16:58
 I've just spent the bulk of the morning attempting to understand a bug by
 reading through some fairly large log files. I've come to the realisation that:
 
-Make them text-editor-friendly
---
+## Make them text-editor-friendly
 
 Most log files are text. This means that, if you're tracking down a problem,
 you'll probably want to search them, and you may want to edit them.
@@ -54,8 +53,7 @@ So, either include the context on every line:
 
 Or, don't spread your output over multiple lines.
 
-Consider using CSV (or JSON)
---
+## Consider using CSV (or JSON)
 
 Yeah, your log files are human readable. That's great, provided you can find a
 human prepared to read through a couple of million lines of log file.
@@ -64,8 +62,7 @@ Why don't you make them machine-readable? Then you'd allow the file to be
 parsed and processed by a vast number of tools that already understand CSV (or
 JSON).
 
-Don't use XML
---
+## Don't use XML
 
 Whatever you do, don't use XML. If you do, you've got two choices:
 
@@ -77,8 +74,7 @@ Whatever you do, don't use XML. If you do, you've got two choices:
 
 Also, it's massively verbose. Just use CSV or JSON.
 
-Consider using one file per client
---
+## Consider using one file per client
 
 Obviously, this isn't going to work for *your* web-scale application, because
 you've got millions of clients visiting every second. However, if you've only
