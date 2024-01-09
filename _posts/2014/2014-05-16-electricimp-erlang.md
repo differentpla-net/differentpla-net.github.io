@@ -4,7 +4,7 @@ date: 2014-05-16T00:00:00Z
 tags: erlang electric-imp
 ---
 
-*Originally posted to the Electric Imp blog. Preserved here.*
+*Originally posted, 16 June 2014, to the Electric Imp blog. Preserved here.*
 
 At the heart of the [Electric Imp](https://electricimp.com) platform is our cloud connectivity service which provides
 the secure connection between every imp out in the wild and their corresponding agents. From there, imps can interact
@@ -49,3 +49,9 @@ offer the most advanced, scalable and innovative connectivity platform possible.
 <div class="callout callout-info" markdown="span">
 This post is no longer available on the Electric Imp blog, so to preserve it, I took a copy from the [Internet Archive Wayback Machine](https://web.archive.org/web/20140702010121/http://blog.electricimp.com/post/85932940180/electric-imp-moves-to-erlang-programming-language).
 </div>
+
+Looking in the Wayback Machine, I see that we migrated the other core cloud component -- the agent server -- to Erlang
+about a year later, in June 2015.
+
+It's mentioned in passing in a blog post about hitting 5 billion messages between devices and agents per month. This is
+a noteworthy milestone, but adds nothing to this blog, so I haven't taken a copy.
