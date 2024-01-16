@@ -33,5 +33,5 @@ RUN --mount=type=ssh \
     npm install
 ```
 
-Figuring out to to make this work for people (or CI pipelines) who _aren't_ using multiple identities is left as an
+Figuring out how to make this work for people (or CI pipelines) who _aren't_ using multiple identities is left as an
 exercise for the reader.
