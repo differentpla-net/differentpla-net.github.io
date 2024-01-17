@@ -18,14 +18,15 @@ The first thing we need to do is make the private key available to `docker build
 docker build \
     --ssh default \
     --secret id=ssh,src=$(HOME)/.ssh/id_other \
+    --build-arg GIT_SSH_COMMAND="ssh -i /run/secrets/ssh -o IdentitiesOnly=yes" \
     .
 ```
 
 Then we need to edit the `Dockerfile` to tell SSH that we want to use that identity:
 
 ```dockerfile
-# tell git which identity we want to use
-RUN git config --global core.sshcommand "ssh -i /run/secrets/ssh -o IdentitiesOnly=yes"
+# Set the GIT_SSH_COMMAND environment variable.
+ARG GIT_SSH_COMMAND
 
 # mount the ssh-agent *and* the private key secret, then run 'npm install' (or whatever)
 RUN --mount=type=ssh \
@@ -33,5 +34,28 @@ RUN --mount=type=ssh \
     npm install
 ```
 
-Figuring out how to make this work for people (or CI pipelines) who _aren't_ using multiple identities is left as an
-exercise for the reader.
+To make this transparent for people (or CI pipelines) who _aren't_ using multiple identities, you can omit the
+`--secret` and `--build-arg` options from the `docker build` command:
+
+```sh
+docker build \
+    --ssh default \
+    .
+```
+
+In my Makefile, that looks like this:
+
+```makefile
+# If you're using more than one SSH identity, set DOCKER_SSH_ID_SECRET to point to the ~/.ssh/id_whatever file.
+ifdef DOCKER_SSH_ID_SECRET
+_DOCKER_BUILD_SECRET_ARG = --secret id=ssh_id,src=$(DOCKER_SSH_ID_SECRET)
+_DOCKER_BUILD_GIT_CONFIG_ARG = --build-arg GIT_SSH_COMMAND="ssh -i /run/secrets/ssh_id -o IdentitiesOnly=yes"
+endif
+
+docker-image:
+	docker build \
+		$(_DOCKER_BUILD_SECRET_ARG) \
+		$(_DOCKER_BUILD_GIT_CONFIG_ARG) \
+		--ssh default \
+		.
+```
