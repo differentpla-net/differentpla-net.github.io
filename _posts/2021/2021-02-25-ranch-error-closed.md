@@ -52,7 +52,8 @@ Capturing on 'Loopback: lo'
     6 0.001306859    127.0.0.1 → 127.0.0.1    TCP 66 5555 → 55513 [RST, ACK] Seq=1 Ack=286 ...
 ```
 
-You can see the standard SYN / SYN,ACK / ACK for connection establishment, then a "Client Hello" (and corresponding ACK). Then, more or less immediately, an RST as the server drops the connection.
+You can see the standard `[SYN]` / `[SYN,ACK]` / `[ACK]` for connection establishment, then a `Client Hello` (and
+corresponding `[ACK]`). Then, more or less immediately, an `[RST, ACK]` as the server drops the connection.
 
 But nothing appears in the server log, so what's going on?
 
