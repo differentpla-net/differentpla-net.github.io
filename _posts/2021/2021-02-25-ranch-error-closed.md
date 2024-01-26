@@ -63,9 +63,11 @@ I started digging into the ranch source code, to see if I could figure out what 
 
 ![](/images/2021-02-15-ranch-error-closed-ranch-sup.png)
 
-Ranch has a pool of `ranch_acceptor` processes, which are all listening on the socket and accepting connections. It defaults to 10 acceptors, but the diagram only shows 3.
+Ranch has a pool of `ranch_acceptor` processes, which are all listening on the socket and accepting connections. It
+defaults to 10 acceptors, but the diagram only shows 3.
 
-When there's an incoming connection, the operating system (and Erlang) will wake up one of them (arbitrarily) to accept the socket. The acceptor will ask its associated `ranch_conns_sup` to start the protocol handler.
+When there's an incoming connection, the operating system (and Erlang) will wake up one of them (arbitrarily) to accept
+the socket. The acceptor will ask its associated `ranch_conns_sup` to start the protocol handler.
 
 The relevant part of the Ranch source code looks like this:
 
@@ -82,9 +84,12 @@ loop(LSocket, Transport, Logger, ConnsSup, MonitorRef) ->
 ```
 ...etc.
 
-I'm not going to include all of the source code here, but if an error occurs in `Transport:accept/2` (which in our case is `ranch_ssl:accept`), the error is quietly ignored and the acceptor loops.
+I'm not going to include all of the source code here, but if an error occurs in `Transport:accept/2` (which in our case
+is `ranch_ssl:accept`), the error is quietly ignored and the acceptor loops.
 
-At this point, I fired up the Erlang/Elixir debugger, and immediately regretted it, but somehow I managed to figure out that `Transport:controlling_process` was being called, which means that `Transport:accept` was succeeding. So either `Transport:controlling_process` was failing or `ranch_conns_sup:start_protocol` was failing.
+At this point, I fired up the Erlang/Elixir debugger, and immediately regretted it, but somehow I managed to figure out
+that `Transport:controlling_process` was being called, which means that `Transport:accept` was succeeding. So either
+`Transport:controlling_process` was failing or `ranch_conns_sup:start_protocol` was failing.
 
 So I looked at `ranch_conns_sup:start_protocol`. It looks like this:
 
@@ -100,7 +105,9 @@ start_protocol(SupPid, MonitorRef, Socket) ->
     end.
 ```
 
-That is: it sends a `start_protocol` message to the relevant `ranch_conns_sup` (see the earlier supervision diagram) and waits for a response. If that fails, the whole thing errors out. That's uncaught, which means that the `ranch_acceptor` would be killed, and I wasn't seeing that.
+That is: it sends a `start_protocol` message to the relevant `ranch_conns_sup` (see the earlier supervision diagram) and
+waits for a response. If that fails, the whole thing errors out. That's uncaught, which means that the `ranch_acceptor`
+would be killed, and I wasn't seeing that.
 
 If you look at the handling for the `start_protocol` message, it looks like this:
 
@@ -117,11 +124,15 @@ If you look at the handling for the `start_protocol` message, it looks like this
                 loop(...)
 ```
 
-At this point, I should note that I hadn't actually implemented `example_protocol`, so Ranch would have been completely correct to error out.
+At this point, I should note that I hadn't actually implemented `example_protocol`, so Ranch would have been completely
+correct to error out.
 
-That is: it would have tried to invoke my non-existent protocol, which would have thrown an error, but that would have been caught, and Ranch would have logged a warning. I confirmed that that works properly by temporarily switching to using `ranch_tcp` rather than `ranch_ssl`. It logged the warning.
+That is: it would have tried to invoke my non-existent protocol, which would have thrown an error, but that would have
+been caught, and Ranch would have logged a warning. I confirmed that that works properly by temporarily switching to
+using `ranch_tcp` rather than `ranch_ssl`. It logged the warning.
 
-So I now had a solid suspicion that `Transport:controlling_process` was failing. I checked that by using a custom Ranch transport, with extra logging. Since I'm actually writing Elixir, it looked a lot like this:
+So I now had a solid suspicion that `Transport:controlling_process` was failing. I checked that by using a custom Ranch
+transport, with extra logging. Since I'm actually writing Elixir, it looked a lot like this:
 
 ```elixir
 # fake_transport.ex
@@ -163,7 +174,8 @@ controlling_process(#sslsocket{pid = [Pid|_]}, NewOwner) when is_pid(Pid), is_pi
 % ...another two function clauses
 ```
 
-So the first question is: am I sure that this is the correct function clause? It's a good question, and one I can answer by modifying the custom transport:
+So the first question is: am I sure that this is the correct function clause? It's a good question, and one I can answer
+by modifying the custom transport:
 
 ```elixir
 # fake_transport.ex
@@ -202,7 +214,8 @@ socket(Pids, Transport, Socket, ConnectionCb) ->
 
 It looks like the `pid` field is now a list of pids, and the `fd` field is, well, some stuff.
 
-Whatever. Our `socket` has a list of pids in it, so the first clause of the `ssl:controlling_process/2` function is the one we want. It calls `ssl_connection:new_user(Pid, NewOwner)` using the first pid in the list, which looks like this:
+Whatever. Our `socket` has a list of pids in it, so the first clause of the `ssl:controlling_process/2` function is the
+one we want. It calls `ssl_connection:new_user(Pid, NewOwner)` using the first pid in the list, which looks like this:
 
 ```erlang
 new_user(ConnectionPid, User) ->
@@ -230,11 +243,13 @@ call(FsmPid, Event) ->
 
 ### Down the rabbit hole
 
-I need to confess that at this point, I wasted an hour or so looking at how `new_user` was handled in `ssl_connection`, before figuring out that I was looking in the wrong place. That first pid in the list isn't an `ssl_connection`.
+I need to confess that at this point, I wasted an hour or so looking at how `new_user` was handled in `ssl_connection`,
+before figuring out that I was looking in the wrong place. That first pid in the list isn't an `ssl_connection`.
 
 Allow me to continue down this particular rabbit hole for a while first, though -- it's not without interest.
 
-The first thing to look at is that `call`, above, converts process death (or an already dead process) to `{error, closed}`, which is precisely what I'm looking for. So is the process dead?
+The first thing to look at is that `call`, above, converts process death (or an already dead process) to `{error,
+closed}`, which is precisely what I'm looking for. So is the process dead?
 
 ```elixir
   def controlling_process(socket, pid) do
@@ -251,11 +266,14 @@ The first thing to look at is that `call`, above, converts process death (or an 
 
 Answer: no. The process is still alive and kicking. So the `{error, closed}` has to be coming from the state machine.
 
-It can't be coming from `gen_statem:call` itself because why would `gen_statem` know anything about `closed` sockets? So I ignored that possibility.
+It can't be coming from `gen_statem:call` itself because why would `gen_statem` know anything about `closed` sockets? So
+I ignored that possibility.
 
-Also remember I was still looking at the wrong code at this point. If I'd been paying closer attention at this point, I'd have figured that out sooner. I'll pick that thread up later.
+Also remember I was still looking at the wrong code at this point. If I'd been paying closer attention at this point,
+I'd have figured that out sooner. I'll pick that thread up later.
 
-I spent some time digging in the `ssl_connection` source code, looking at how it handled `new_user`, and couldn't figure out exactly what was happening. I got to this piece of code:
+I spent some time digging in the `ssl_connection` source code, looking at how it handled `new_user`, and couldn't figure
+out exactly what was happening. I got to this piece of code:
 
 ```erlang
 % ssl_connection.erl
@@ -269,7 +287,8 @@ handle_call({new_user, User}, From, StateName,
 
 ...but that doesn't return the error, and doesn't seem to have any obvious way to fail.
 
-Maybe the state machine's not in the state I think it is? We can query a `gen_statem` for its state by calling `sys:get_state(Pid)`, so I did that:
+Maybe the state machine's not in the state I think it is? We can query a `gen_statem` for its state by calling
+`sys:get_state(Pid)`, so I did that:
 
 
 ```elixir
@@ -296,7 +315,8 @@ get_state(Name) ->
     end.
 ```
 
-Ah. `gen_statem` returns `{StateName, StateData}`, but our state machine is apparently in the `error` state, so it returns `{error, Data}`, which `sys:get_state` interprets, well, as an _error_, and converts it to an exception. Whoops.
+Ah. `gen_statem` returns `{StateName, StateData}`, but our state machine is apparently in the `error` state, so it
+returns `{error, Data}`, which `sys:get_state` interprets, well, as an _error_, and converts it to an exception. Whoops.
 
 ### dbg to the rescue?
 
@@ -319,7 +339,9 @@ This:
 - and logs the return values.
 - turns on call tracing for all processes.
 
-The trace output from that was noisy, but I spotted an interesting thing in it: there was a call to `ssl_connection:ssl_config` immediately after the call to `ssl_connection:new_user` and its call to `ssl_connection:call`.
+The trace output from that was noisy, but I spotted an interesting thing in it: there was a call to
+`ssl_connection:ssl_config` immediately after the call to `ssl_connection:new_user` and its call to
+`ssl_connection:call`.
 
 But I had already looked at the code that handles `new_user`:
 
@@ -335,7 +357,8 @@ handle_call({new_user, User}, From, StateName,
 
 ...and _that_ doesn't call `ssl_connection:ssl_config`. So who the hell does?
 
-It's called from a few places inside `ssl_connection`, none of which looked particularly relevant, and from `tls_connection:init/1`, which might be relevant (narrator: extremely relevant, as it turns out).
+It's called from a few places inside `ssl_connection`, none of which looked particularly relevant, and from
+`tls_connection:init/1`, which might be relevant (narrator: extremely relevant, as it turns out).
 
 `ssl_connection:ssl_config` calls `ssl_config:init`, so I added some more call tracing:
 
@@ -361,7 +384,8 @@ Looking in the trace, I didn't see a return from `ssl_config:init`, but I did se
   ]}}
 ```
 
-So the last thing to happen was that something called `ssl_config:file_error`. Now, I already knew that `"server.crt"` wasn't a valid certificate file, but what's going on in `file_error`?
+So the last thing to happen was that something called `ssl_config:file_error`. Now, I already knew that `"server.crt"`
+wasn't a valid certificate file, but what's going on in `file_error`?
 
 It looks like this:
 
@@ -377,9 +401,11 @@ file_error(File, Throw) ->
     end.
 ```
 
-It throws the error, which means that some code somewhere is either catching it, or dying. I know that nothing's dying, because I checked for that earlier, so something's catching it and... then what?
+It throws the error, which means that some code somewhere is either catching it, or dying. I know that nothing's dying,
+because I checked for that earlier, so something's catching it and... then what?
 
-Looking for `ssl_config` in the `ssl_connection.erl` file (remember: I'm still on a wild goose chase at this point) leads to this section of code:
+Looking for `ssl_config` in the `ssl_connection.erl` file (remember: I'm still on a wild goose chase at this point)
+leads to this section of code:
 
 ```erlang
 init({call, From}, {start, {Opts, EmOpts}, Timeout}, #state{...} = State0) ->
@@ -392,7 +418,9 @@ init({call, From}, {start, {Opts, EmOpts}, Timeout}, #state{...} = State0) ->
     end;
 ```
 
-...which looks plausible -- we're probably in the `init` state (at this point I forgot that I already knew that we were in the `error` state). But `{stop_and_reply, {shutdown, normal}, ...}` causes the process to die, and we know that's not happening (because `erlang:process_info` succeeds).
+...which looks plausible -- we're probably in the `init` state (at this point I forgot that I already knew that we were
+in the `error` state). But `{stop_and_reply, {shutdown, normal}, ...}` causes the process to die, and we know that's not
+happening (because `erlang:process_info` succeeds).
 
 ### Sniffing around the right tree
 
@@ -413,7 +441,8 @@ init([...]) ->
     end.
 ```
 
-Interesting. If `ssl_connection:ssl_config` throws an error (and we know that it does), we call `gen_statem:enter_loop` with `error` as our initial state.
+Interesting. If `ssl_connection:ssl_config` throws an error (and we know that it does), we call `gen_statem:enter_loop`
+with `error` as our initial state.
 
 So, who calls `tls_connection:init/1`? That's an easy question: `tls_connection:start_link/1` causes it to be called.
 
@@ -425,11 +454,13 @@ Searching for `tls_connection:start_link` doesn't return any results -- it's not
 
 Searching for `tls_connection` in `ssl.erl` reveals that it's commonly found in the `connection_cb` field in `#config{}`.
 
-I then noticed the `tls_connection_sup` module, which sounds like it might be supervising `tls_connection` processes. Some more digging, and I'd got this:
+I then noticed the `tls_connection_sup` module, which sounds like it might be supervising `tls_connection` processes.
+Some more digging, and I'd got this:
 
 ![](/images/2021-02-15-ranch-error-closed-tls-connection-sup.png)
 
-So I'd got a `tls_connection` process, which was already in the `error` state. At this point I was starting to suspect that I wasn't looking at an `ssl_connection` process after all.
+So I'd got a `tls_connection` process, which was already in the `error` state. At this point I was starting to suspect
+that I wasn't looking at an `ssl_connection` process after all.
 
 Then I realised that `ssl:controlling_process` looks like this:
 
@@ -462,7 +493,8 @@ Taking a closer look at that, we find the following:
 ]
 ```
 
-Which confirms that we're looking at a `tls_connection`, and shows its supervisor tree. If I'd been paying more attention earlier, I'd have spotted that and would have saved a bunch of time.
+Which confirms that we're looking at a `tls_connection`, and shows its supervisor tree. If I'd been paying more
+attention earlier, I'd have spotted that and would have saved a bunch of time.
 
 ### Barking up the right tree
 
