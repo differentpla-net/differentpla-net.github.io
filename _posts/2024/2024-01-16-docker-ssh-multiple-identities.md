@@ -17,8 +17,8 @@ The first thing we need to do is make the private key available to `docker build
 ```sh
 docker build \
     --ssh default \
-    --secret id=ssh,src=$(HOME)/.ssh/id_other \
-    --build-arg GIT_SSH_COMMAND="ssh -i /run/secrets/ssh -o IdentitiesOnly=yes" \
+    --secret id=ssh_id,src=$(HOME)/.ssh/id_other \
+    --build-arg GIT_SSH_COMMAND="ssh -i /run/secrets/ssh_id -o IdentitiesOnly=yes" \
     .
 ```
 
@@ -30,7 +30,7 @@ ARG GIT_SSH_COMMAND
 
 # mount the ssh-agent *and* the private key secret, then run 'npm install' (or whatever)
 RUN --mount=type=ssh \
-    --mount=type=secret,id=ssh \
+    --mount=type=secret,id=ssh_id \
     npm install
 ```
 
