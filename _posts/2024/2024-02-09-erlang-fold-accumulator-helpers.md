@@ -95,7 +95,7 @@ add_records(Topic, PartitionIndex, Records, Acc = {Records0, Errors}) ->
 
 ## Accumulator as State
 
-Another idea is to treat the accumulator as state:
+A related idea is to treat the accumulator as state:
 
 ```erlang
 lists:foldl(
@@ -124,7 +124,7 @@ if we wanted to reduce nesting:
 handle_responses(Responses) ->
     lists:foldl(fun handle_response/2, new_acc(), Responses).
 
-handle_response(Response = #{topic := Topic, partitions := Partitions}, Acc1) ->
+handle_response(Response = #{topic := Topic, partitions := Partitions}, Acc) ->
     lists:foldl(fun handle_partition/2, set_topic(Topic, Acc), Partitions).
 
 % and so on.
