@@ -12,15 +12,12 @@ whether introducing helper functions specifically to abstract over the accumulat
 To recap, in Erlang, `lists:foldl/3` takes an accumulator:
 
 ```erlang
+% Calculate the product of the items in the list.
 lists:foldl(
     fun(Item, Acc) ->
-        Key = get_key(Item),
-        Value = get_value(Item),
-        Acc#{Key => Value}
-    end, #{}, List).
+        Item * Acc
+    end, 1, List).
 ```
-
-Yes, this is `maps:group_from_list/3`. It's just an example.
 
 ## Problem
 
