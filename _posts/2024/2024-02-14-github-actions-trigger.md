@@ -41,6 +41,9 @@ jobs:
       run: ./integration-tests.sh
 ```
 
+The `types:` value allows you to trigger different workflows. Here, we're triggering on the `integration-tests` event
+type. We'll see this again below.
+
 I've shown it in a separate workflow file above, but if you want to use it to trigger an existing workflow, you can add
 it to that file along with the others. For example:
 
@@ -56,8 +59,6 @@ on:
       - integration-tests
 # ...
 ```
-
-We'll see what `types:` is used for later.
 
 ## Triggering it with curl
 
@@ -81,6 +82,7 @@ curl -qs \
 - `$BEARER_TOKEN` is a _Fine-grained Personal Access Token_, of which more below.
 - `$TARGET_REPO_OWNER` is the owner of the target repository. This is the GitHub organization or user name.
 - `$TARGET_REPO` is the name of the target repository. In this example, this would be `the-tests`.
+- `{"event_type":"integration-tests"}` matches the `types:` value above.
 
 The GitHub documentation doesn't include the `-q` (don't load the config file), `-s` (no progress reporting) or
 `--fail-with-body` options, but I think they're a good idea.
