@@ -51,38 +51,9 @@ init(Req0, Opts) ->
     {ok, Req, Opts}.
 ```
 
-## Middlewares
-
-<div class="callout callout-info" markdown="span">
-This is of historical interest only. I add it for context.
-</div>
-
-In cowboy 1.x, we needed to use middlewares to instrument cowboy and add metrics. It would look something like this:
-
-```erlang
-% This is cowboy 1.x; this doesn't work in cowboy 2.x.
-{ok, _} = cowboy:start_http(http, 100,
-    [{port, ?PORT}],
-    [{env, [{dispatch, Dispatch}],
-     {middlewares, [cowboy_metrics_demo_start, cowboy_router, cowboy_handler]},
-     {onresponse, fun onresponse/4}]),
-```
-
-The idea is that `cowboy_metrics_demo_start` puts the current time into the `Req` object. Then, in `onresponse/4`, we
-can use that and the new current time to work out the elapsed time for the request pipeline. We would usually also do
-Apache-style access logging in `onresponse/4`.
-
-We can't just put another middleware (`cowboy_metrics_demo_end`, for example) at the end of the pipeline, because other
-middlewares can stop the pipeline deliberately (or crash); cowboy doesn't call the remaining middlewares.
-
-But: this only works in cowboy 1.x; cowboy 2.0 added [streams](https://ninenines.eu/docs/en/cowboy/2.9/guide/streams/)
-and removed the `onresponse` callback.
-
-For cowboy 2.x, we need to do something complicated, like wrap `cowboy_handler`, or write a custom stream handler.
-
 ## Metrics
 
-Fortunately, cowboy's got us covered. Cowboy 2.x introduces `cowboy_metrics_h`. See
+For reporting metrics, cowboy 2.x gives us `cowboy_metrics_h`. See
 <https://ninenines.eu/docs/en/cowboy/2.9/manual/cowboy_metrics_h/> for the documentation.
 
 To expose metrics from the cowboy pipeline, update the cowboy options as follows:
