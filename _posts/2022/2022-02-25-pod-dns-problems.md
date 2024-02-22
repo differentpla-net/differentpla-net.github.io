@@ -22,16 +22,17 @@ failed, complaining that the name didn't resolve. This threw me because it works
 See <https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/>.
 
 ```
-$ kubectl run dnsutils --image=k8s.gcr.io/e2e-test-images/jessie-dnsutils:1.3 --command -- sleep 3600
-pod/dnsutils created
-
-$ kubectl get pod dnsutils      # ...repeat until it's 'Running'.
+$ kubectl run dnsutils -it \
+  --restart=Never --rm \
+  --image=registry.k8s.io/e2e-test-images/jessie-dnsutils:1.3 -- /bin/bash
 ```
+
+You probably need to press Enter.
 
 DNS queries:
 
 ```
-$ kubectl exec -i -t dnsutils -- nslookup kubernetes.default
+root@dnsutils:/# nslookup kubernetes.default
 Server:		10.43.0.10
 Address:	10.43.0.10#53
 
@@ -46,7 +47,7 @@ Address: 10.43.0.1
 ### k3s.differentpla.net?
 
 ```
-$ kubectl exec -i -t dnsutils -- nslookup git.k3s.differentpla.net
+root@dnsutils:/# nslookup git.k3s.differentpla.net
 Server:		10.43.0.10
 Address:	10.43.0.10#53
 
@@ -60,7 +61,7 @@ So, yeah, DNS lookup of `*.k3s.differentpla.net` from inside a pod isn't working
 Do external names resolve? I'd probably have noticed if they didn't, but let's check:
 
 ```
-$ kubectl exec -i -t dnsutils -- nslookup blog.differentpla.net
+root@dnsutils:/# nslookup blog.differentpla.net
 Server:		10.43.0.10
 Address:	10.43.0.10#53
 
@@ -74,7 +75,7 @@ Address: 185.199.110.153
 It also works if I specify my router explicitly:
 
 ```
-$ kubectl exec -i -t dnsutils -- nslookup git.k3s.differentpla.net 192.168.28.1
+root@dnsutils:/# nslookup git.k3s.differentpla.net 192.168.28.1
 Server:		192.168.28.1
 Address:	192.168.28.1#53
 
