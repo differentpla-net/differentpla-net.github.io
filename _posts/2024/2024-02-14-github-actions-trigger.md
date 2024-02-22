@@ -146,7 +146,7 @@ Notes:
 
 ## Secrets
 
-Workflows can access secrets using the `${{ secrets.NAME }}` syntax. We'll use this to access the Personal Access Token
+Workflows can access secrets using the `{% raw %}${{ secrets.NAME }}{% endraw %}` syntax. We'll use this to access the Personal Access Token
 that we created above.
 
 1. In the `the-app` repository (the "source"), click on "Settings" at the top.
