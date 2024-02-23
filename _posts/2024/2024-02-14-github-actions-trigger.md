@@ -23,7 +23,7 @@ Fortunately, GitHub provides a `repository_dispatch` trigger that can be used to
 `the-tests`, like this:
 
 ```yaml
-# .github/workflows/integration-tests.yml
+# .github/workflows/integration-tests.yaml
 name: "Integration Tests"
 
 on:
@@ -48,7 +48,7 @@ I've shown it in a separate workflow file above, but if you want to use it to tr
 it to that file along with the others. For example:
 
 ```yaml
-# .github/workflows/main.yml
+# .github/workflows/main.yaml
 on:
   push:
     branches: ["main"]
@@ -110,7 +110,7 @@ to your repositories. Here's how I generated a fine-grained one:
 Create a workflow in `the-app` that includes the curl command from above.
 
 ```yaml
-# .github/workflows/trigger-integration-tests.yml
+# .github/workflows/trigger-integration-tests.yaml
 name: "Trigger Integration Tests"
 
 # Run this action when there's a push to 'main'.
