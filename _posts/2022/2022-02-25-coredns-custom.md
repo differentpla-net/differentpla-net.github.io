@@ -41,7 +41,13 @@ configmap/coredns-custom created
 ## Test it
 
 ```
-$ kubectl exec -i -t dnsutils -- nslookup kubernetes.default
+$ kubectl run dnsutils -it \
+  --restart=Never --rm \
+  --image=registry.k8s.io/e2e-test-images/jessie-dnsutils:1.3 -- /bin/bash
+```
+
+```
+root@dnsutils:/# nslookup kubernetes.default
 Server:		10.43.0.10
 Address:	10.43.0.10#53
 
@@ -50,7 +56,7 @@ Address: 10.43.0.1
 ```
 
 ```
-$ kubectl exec -i -t dnsutils -- nslookup git.k3s.differentpla.net
+root@dnsutils:/# nslookup git.k3s.differentpla.net
 Server:		10.43.0.10
 Address:	10.43.0.10#53
 
@@ -59,7 +65,7 @@ Address: 192.168.28.13
 ```
 
 ```
-$ kubectl exec -i -t dnsutils -- nslookup www.slashdot.org  # showing my age here
+root@dnsutils:/# nslookup www.slashdot.org  # showing my age here
 Server:		10.43.0.10
 Address:	10.43.0.10#53
 
