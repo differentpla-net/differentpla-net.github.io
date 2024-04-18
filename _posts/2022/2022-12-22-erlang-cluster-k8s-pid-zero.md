@@ -8,8 +8,13 @@ series: erlang-cluster-k8s
 
 Erlang doesn't like running as pid 0 (usually the init process). I used `tini` to fix it.
 
+<div class="callout callout-info" markdown="span">
+Apparently, running as pid 0 was addressed in OTP-23.x, so this might not be necessary.
+</div>
+
+
 ```dockerfile
-#
+# final stage of multi-stage build...
 FROM docker.io/alpine
 
 RUN apk add --no-cache openssl && \
