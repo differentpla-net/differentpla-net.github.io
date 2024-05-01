@@ -72,6 +72,13 @@ handle_event(internal, loop, _, StateData) ->
     {keep_state_and_data, [{next_event, internal, loop}]}.
 ```
 
+<div class="callout callout-warning" markdown="span">
+Caution: if you do this, you'll find that your `gen_statem` won't respond to `call` events or system events. In
+particular, you won't be able to ask it to stop. Consider inserting a short timeout action in between each iteration of
+the loop. Or, if you're calling another process, use something like `send_request`...`check_response` to make it
+asynchronous.
+</div>
+
 ## `state_enter`
 
 `gen_statem` can use **state enter calls**. You can use these as a way to defer initialization work, but with a **major caveat**.
