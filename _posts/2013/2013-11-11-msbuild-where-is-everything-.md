@@ -3,8 +3,6 @@ title: MSBuild - where is everything?
 date: 2013-11-11T14:47:09Z
 tags: msbuild
 ---
-# MSBuild - Where is everything?
-
 MSBuild (and Visual Studio) scatter `.targets` and `.tasks` files all over the shop. Try looking in:
 
 * `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\...`
