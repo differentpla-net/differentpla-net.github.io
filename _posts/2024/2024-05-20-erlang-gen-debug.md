@@ -79,7 +79,10 @@ To avoid this, always explicitly use the second form (as shown at the top of the
 
 ## Performance
 
-`gen_statem` and `gen_server` go out of their way to optimise for the case where `debug` is unset, so you might want to think about how to enable and disable this, _before_ it gets as far as `logger`. Something like this would work:
+`gen_statem` and `gen_server` go out of their way to optimise for the case where `debug` is unset -- see, for example
+[this line in the source](https://github.com/erlang/otp/blob/OTP-27.0/lib/stdlib/src/gen_statem.erl#L3705) -- so you
+might want to think about how to enable and disable this, _before_ it gets as far as `logger`. Something like this would
+work:
 
 ```erlang
 start_link() ->
