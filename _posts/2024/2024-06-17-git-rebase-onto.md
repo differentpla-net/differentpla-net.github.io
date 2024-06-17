@@ -22,4 +22,9 @@ Then, in the Github web UI, change the base branch by clicking the _Edit_ button
 
 Once you've done that, your PR should be based on a different branch, and should include just the relevant changes.
 
-If you mess it up, I have no idea how to fix it. I usually just close the PR, and create a new one with a fresh, cherry-picked branch in the correct place.
+If you mess it up, I have no idea how to fix it. I usually just close the PR, and create a new one with a fresh,
+cherry-picked branch in the correct place.
+
+## References
+
+- [How to git rebase a branch with the onto command?](https://stackoverflow.com/a/29916361)
