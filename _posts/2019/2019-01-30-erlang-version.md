@@ -21,3 +21,7 @@ erlang_version() {
         halt().' -noshell
 }
 ```
+
+<div class="callout callout-warning" markdown="span">
+Note that this only works when you run `erl`; it doesn't work in a released application.
+</div>
