@@ -4,7 +4,7 @@ date: 2023-11-10T10:42:00Z
 tags: incident-review
 ---
 
-At approximately 08:45 on November 10th, 2033, there were network connectivity issues on my home network. This is the
+At approximately 08:45 on November 10th, 2023, there were network connectivity issues on my home network. This is the
 incident review.
 
 tl;dr: foxes
