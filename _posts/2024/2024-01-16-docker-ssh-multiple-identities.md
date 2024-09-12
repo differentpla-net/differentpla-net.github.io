@@ -1,7 +1,7 @@
 ---
 title: "Using the correct identity when SSH forwarding in Docker"
 date: 2024-01-16T14:16:00.000Z
-tags: docker
+tags: docker git ssh
 ---
 
 Back in October, I wrote a post explaining [how to do SSH forwarding]({% post_url 2023/2023-10-02-docker-ssh %}) with
