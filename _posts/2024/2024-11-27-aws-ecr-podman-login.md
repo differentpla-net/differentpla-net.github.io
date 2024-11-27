@@ -9,7 +9,7 @@ get-login-password ... | podman login ...`. How does that work?
 
 ## `aws ecr get-login-password`
 
-If you run `aws ecr get-login-password`, it will spit out a big chunk of base64-encoded JSON. You can recognise this because [it starts with `eyJ`]{% post_url 2024/2024-11-27-json-base64-recognition %}.
+If you run `aws ecr get-login-password`, it will spit out a big chunk of base64-encoded JSON. You can recognise this because [it starts with `eyJ`]({% post_url 2024/2024-11-27-json-base64-recognition %}).
 
 If we pipe that output to `| base64 -d | jq`, we get something like this:
 
