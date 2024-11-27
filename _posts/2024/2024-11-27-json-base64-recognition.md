@@ -1,5 +1,5 @@
 ---
-title: Recognising base64-encodeed JSON
+title: Recognising base64-encoded JSON
 date: 2024-11-27T09:12:00Z
 tags: 
 ---
