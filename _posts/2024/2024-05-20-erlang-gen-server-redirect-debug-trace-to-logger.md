@@ -23,7 +23,7 @@ start_link() ->
     gen_statem:start_link(?MODULE, [],
         [
             {debug, [
-                {install, {?MODULE, {fun tracer/3, undefined}}}
+                {install, {?MODULE, fun tracer/3, undefined}}
             ]}
         ]).
 ```
@@ -61,20 +61,22 @@ tracer(TraceState = #{metadata := Metadata}, Event, StateData) ->
 
 One thing that you need to be careful of is that `install` comes in two forms:
 - `{install, {Func, FuncState}}`
-- `{install, {FuncId, {Func, FuncState}}}`
+- `{install, {FuncId, Func, FuncState}}`
 
-If you pass a 2-tuple (or a single-item record) as `FuncState`, like this...
+The latter variant gets handled internally as `{FuncId, {Func, FuncState}}`, and if you pass a 2-tuple (or a single-item
+record) as `FuncState`, like this...
 
 ```erlang
 {install, {fun tracer/3, Tuple2}}
 ```
 
-...then it gets misinterpreted as the latter -- the `fun` gets passed as the ID, and the first element of the tuple (or the record tag) gets used as the `Func`. So it doesn't work.
+...then it gets misinterpreted as the latter -- the `fun` gets passed as the ID, and the first element of the tuple (or
+the record tag) gets used as the `Func`. So it doesn't work.
 
-To avoid this, always explicitly use the second form (as shown at the top of the page):
+To avoid this, always explicitly use the 3-tuple form (as shown at the top of the page):
 
 ```erlang
-{install, {?MODULE, {fun tracer/3, TraceState}}}
+{install, {?MODULE, fun tracer/3, TraceState}}
 ```
 
 ## Performance
