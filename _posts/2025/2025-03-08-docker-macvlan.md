@@ -191,3 +191,4 @@ kinda lacking: no wildcards unless you're using Synology's DDNS, and it's very m
   - This will involve some kind of messing around with the router. Currently, adding host entries requires manual steps and restarting things.
   - I solved that already [for the K3s cluster]({% post_url 2021/2021-12-29-coredns %}), so I'm thinking that running CoreDNS inside a container on the NAS would work. I found a [docker plugin](https://github.com/kevinjqiu/coredns-dockerdiscovery) for it. If that doesn't work, I already wrote <https://github.com/rlipscombe/dockerns>.
 - TLS and certificates. I need to look at Let's Encrypt.
+- Actually installing Forgejo. This is just a prerequisite for SSH access.
