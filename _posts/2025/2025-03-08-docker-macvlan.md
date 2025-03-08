@@ -1,7 +1,7 @@
 ---
 title: Using docker with macvlan on Synology NAS
 date: 2025-03-08T12:04:47Z
-tags: docker
+tags: docker synology-nas
 ---
 
 If you use the `bridge` or `host` network drivers in Docker, containers must use different port numbers to be accessible on the host network. Here's how to use the `macvlan` driver to assign a unique IP address to each container.
