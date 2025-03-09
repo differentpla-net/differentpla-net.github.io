@@ -4,6 +4,10 @@
     --main-color: #008cba;
 }
 
+body {
+    font-size: 1.05rem;
+}
+
 .blog-navbar {
     background-color: var(--main-color);
 }
