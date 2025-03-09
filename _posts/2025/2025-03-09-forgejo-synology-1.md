@@ -193,7 +193,8 @@ Specifically:
 
 ## Configuration
 
-At this point, I can browse to `http://forgejo.differentpla.net`, and I'm presented with the Forgejo installation page.
+At this point, I can browse to `https://forgejo.differentpla.net`, and (once I've accepted the untrusted certificate)
+I'm presented with the Forgejo installation page.
 
 The default settings are mostly fine. I changed the instance title and slogan. I disabled OpenID authentication.
 
