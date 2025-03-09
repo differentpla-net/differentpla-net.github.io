@@ -4,7 +4,9 @@ date: 2025-03-08T12:04:47Z
 tags: docker synology-nas
 ---
 
-If you use the `bridge` or `host` network drivers in Docker, containers must use different port numbers to be accessible on the host network. Here's how to use the `macvlan` driver to assign a unique IP address to each container.
+If you use the `bridge` or `host` network drivers in Docker, containers must use different port numbers to be accessible
+on the host network. Here's how to use the `macvlan` driver to assign a unique IP address to each container, allowing
+containers (and the host) to use the same port numbers.
 
 ## Background
 
