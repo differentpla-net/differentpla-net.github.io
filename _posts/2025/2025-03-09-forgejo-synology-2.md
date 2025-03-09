@@ -93,7 +93,8 @@ backend forgejo_sshd
 
 ## Testing it
 
-Browsing to `http://forgejo.differentpla.net` redirects to `https://forgejo.differentpla.net`, so that's all good.
+Browsing to `http://forgejo.differentpla.net` redirects to `https://forgejo.differentpla.net`, and the Forgejo site
+appears, so that's all good.
 
 After creating a user, adding SSH public keys, and creating a test repository, `git clone
 git@forgejo.differentpla.net:roger/test.git` also works.
