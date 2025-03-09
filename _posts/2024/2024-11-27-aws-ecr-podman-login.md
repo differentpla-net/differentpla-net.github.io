@@ -54,22 +54,18 @@ aws ecr get-login-password --region eu-west-1 | podman login --username AWS --pa
 
 The important part is the `--password-stdin` which tells `podman login` to read the password from stdin.
 
-<div class="callout callout-info" markdown="span">
-<p>This is a security feature: We don't want to pass it on the command line:
 
-</p>
 
-<p>
+<div class="callout callout-info" markdown="block">
+This is a security feature; we don't want to pass it on the command line:
+
 ```sh
 # DON'T DO THIS!
 podman login --username AWS --password $(aws ecr get-login-password)
 ```
-</p>
 
-<p>
 If we did that, the password would be visible in the process list (in `ps` or `/proc/PID/cmdline`). Other users might be
 able to see it. So the convention is to pass it via stdin.
-</p>
 </div>
 
 The registry is specified as `$AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com`
