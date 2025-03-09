@@ -136,6 +136,14 @@ sudo docker run --net=macvlan0 --ip=192.168.28.66 --detach --name nginx-2 -v "$(
 If I browse to `http://192.168.28.65` or `http://192.168.28.66` from my Windows laptop, I get the expected `One` or
 `Two` page. Success.
 
+After publishing this, my friend Mike asked me on Mastodon whether I could access the host from the container, so I
+checked:
+
+- curl from another host to either container works.
+- curl from the host to either container works.
+- running nginx on the host and starting an Ubuntu container; curl from that container to either container works; curl
+  from that container to the host works.
+
 ## Implementing (Synology)
 
 The steps are basically the same as above, but the numbers are different (the Synology NAS is going to get
@@ -173,6 +181,8 @@ sudo docker run --net=macvlan0 --ip=192.168.28.34 --detach --name nginx-2 -v "/v
 ```
 
 And, again, browsing to `http://192.168.28.33` or `http://192.168.28.34`, I see the expected `One` or `Two` responses.
+
+Moreover, both of those are accessible from the Ubuntu container started on the Linux host above.
 
 ## Conclusions
 
