@@ -153,7 +153,7 @@ I also wanted to create a `git.differentpla.net` alias, mostly for SSH access:
 I'm not in a position to use Let's Encrypt for TLS certificates yet, but I can at least use a self-signed certificate or
 private CA for now.
 
-I'll use my [elixir-certs script]({% 2021/2021-12-21-elixir-certs %}):
+I'll use my [elixir-certs script]({% post_url 2021/2021-12-21-elixir-certs %}):
 
 ```sh
 ./certs create-cert \
