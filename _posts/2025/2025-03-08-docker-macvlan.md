@@ -56,7 +56,8 @@ It should be noted that my network isn't _actually_ divided into CIDR-sized subn
 But if docker wants a network specified as a /28 or a /29, it's just easier if I line everything up like that.
 
 I found a handy [Visual Subnet Calculator](https://www.davidc.net/sites/default/subnets/subnets.html) that allowed me to
-divide my /24 into CIDR-sized chunks.
+divide my /24 into CIDR-sized chunks. The results of that are
+[here](https://www.davidc.net/sites/default/subnets/subnets.html?network=192.168.28.0&mask=24&division=13.7910).
 
 I moved the DHCP range to 192.168.28.96 - 192.168.28.254 (which spans a /27 and a /25), and I moved the K3s cluster to
 192.168.28.48 - 192.168.28.63 (a /28). Both of these ranges encompass their corresponding old range, so nothing should
@@ -168,6 +169,8 @@ sudo ip link set macvlan0 up
 sudo ip route add 192.168.28.32/28 dev macvlan0
 ```
 
+Note that these settings are _not_ persistent.
+
 ### Testing
 
 Basically the same as above; the HTML files go in `/volume1/docker/nginx`.
@@ -199,8 +202,24 @@ kinda lacking: no wildcards unless you're using Synology's DDNS, and it's very m
 
 - I've not made the settings persist over a restart. I'll fix that tomorrow (and update this page). If you're feeling
   impatient, the links above have you covered.
+  - _Something_ made the link (specifically the route) vanish even without a restart. I'm not sure what, yet.
 - It would be nice if we didn't have to use IP addresses, so I need to do something with DNS.
   - This will involve some kind of messing around with the router. Currently, adding host entries requires manual steps and restarting things.
   - I solved that already [for the K3s cluster]({% post_url 2021/2021-12-29-coredns %}), so I'm thinking that running CoreDNS inside a container on the NAS would work. I found a [docker plugin](https://github.com/kevinjqiu/coredns-dockerdiscovery) for it. If that doesn't work, I already wrote <https://github.com/rlipscombe/dockerns>.
 - TLS and certificates. I need to look at Let's Encrypt.
-- Actually installing Forgejo. This is just a prerequisite for SSH access.
+- Actually installing Forgejo.
+
+## Follow-ups
+
+- Instead of running multiple instances of `nginx` with different web roots, it's easier to use the `traefik/whoami`
+  image.
+- It's not necessary to specify `--ip=` when starting the container; Docker will just use the next available address
+  from the configured address range.
+  - Once the addresses have run out, you'll get `Error response from daemon: no available IPv4 addresses on this network's address pools`.
+  - The container will be created, but not started.
+  - If you stop and delete another container, you'll be able to start the failing container.
+- This is useful, because _Container Manager_ doesn't allow you to specify the IP address, even though it does allow you
+  to specify `macvlan0` as the attached network.
+- You can get the assigned IP addresses with `sudo docker network inspect macvlan0 | jq '.[].Containers[] | {Name,IPv4Address}'`
+- But you probably _do_ want to specify an IP address. You want fixed IP addresses so you can put your containers in
+  DNS, right?
