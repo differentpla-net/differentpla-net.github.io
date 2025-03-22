@@ -1,7 +1,10 @@
 ---
-title: Installing Forgejo on Synology NAS, part 1
+title: "Forgejo on Synology NAS, part 1: Installation"
+short_title: "Installation"
 date: 2025-03-09T10:06:47Z
 tags: forgejo synology-nas
+layout: series
+series: forgejo-synology-nas
 ---
 
 I want to install Forgejo on my Synology NAS. I'm going to attach it to the macvlan network I createed yesterday. I'm

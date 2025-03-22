@@ -1,7 +1,10 @@
 ---
-title: Installing Forgejo on Synology NAS, part 2
+title: "Forgejo on Synology NAS, part 2: Fixing SSH"
+short_title: "Fixing SSH"
 date: 2025-03-09T14:32:47Z
 tags: forgejo synology-nas
+layout: series
+series: forgejo-synology-nas
 ---
 
 In [part 1]({% post_url 2025/2025-03-09-forgejo-synology-1 %}), I'd got Forgejo running on my Synology NAS, but SSH
@@ -103,7 +106,7 @@ git@forgejo.differentpla.net:roger/test.git` also works.
 
 It works.
 
-### What's missing?
+## What's missing?
 
 - Backup and restore.
 - Certificates from Let's Encrypt. That's not strictly a Forgejo concern though, so I'll deal with that later.
