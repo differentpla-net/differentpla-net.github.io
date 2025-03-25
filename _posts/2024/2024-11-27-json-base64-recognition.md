@@ -1,7 +1,7 @@
 ---
 title: Recognising base64-encoded JSON
 date: 2024-11-27T09:12:00Z
-tags: 
+tags: base64 json
 ---
 
 If you see a chunk of text beginning with `eyJ`, it's probably base64-encoded JSON. Here's a demonstration.
