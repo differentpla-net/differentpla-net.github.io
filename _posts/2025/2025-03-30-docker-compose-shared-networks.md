@@ -85,6 +85,7 @@ the service name (`nginx`) and the network name (`nginx`) defined previously.
 For the web server, I'll use nginx. The compose file for that looks like this:
 
 ```yaml
+# nginx.compose.yaml
 services:
   nginx:
     image: nginx:alpine
