@@ -171,6 +171,22 @@ sudo ip route add 192.168.28.32/28 dev macvlan0
 
 Note that these settings are _not_ persistent.
 
+### Creating macvlan0 at boot-up
+
+To make them persistent, create a file (I called mine `/volume1/docker/macvlan0-up.sh`) and put the commands in it (we
+don't need `sudo`), like this:
+
+```sh
+#!/bin/sh
+ip link add macvlan0 link eth0 type macvlan mode bridge
+ip addr add 192.168.28.46/32 dev macvlan0
+ip link set macvlan0 up
+ip route add 192.168.28.32/28 dev macvlan0
+```
+
+Mark it as executable and then use Control Panel / Scheduled Tasks / Create / Triggered Task to run the script as root
+at Boot-up.
+
 ### Testing
 
 Basically the same as above; the HTML files go in `/volume1/docker/nginx`.
