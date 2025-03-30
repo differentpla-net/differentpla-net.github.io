@@ -97,6 +97,7 @@ That seems to work.
 ```
 SynologyRouter:/etc/dhcpd # cat dhcpd-differentpla-net.conf
 server=/differentpla.net/192.168.28.45#53
+local=/internal.differentpla.net/
 
 SynologyRouter:/etc/dhcpd # cat dhcpd-differentpla-net.info
 enable="yes"
