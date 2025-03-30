@@ -33,12 +33,20 @@ The `proxy` service is then attached to two separate networks:
     # ...continued from above.
     networks:
       macvlan0:
-        ipv4_address: 192.168.28.32
+        ipv4_address: 192.168.28.64
       nginx:
 ```
 
 The first network, `macvlan0` is the one I defined in [this post]({% post_url 2025/2025-03-08-docker-macvlan %}). The
 second is the network where the `nginx` container will be running.
+
+{% capture addresses %}
+**Warning:** Make sure that the IP address that you specify is unique. Docker doesn't enforce the `--ip-range` setting.
+
+I lost access to my Forgejo server this afternoon because I accidentally specified the same IP address for two different
+containers on two different hosts.
+{% endcapture %}
+{% include alerts/danger.html content=addresses %}
 
 The two networks are defined at the top level of the compose file, as follows:
 
