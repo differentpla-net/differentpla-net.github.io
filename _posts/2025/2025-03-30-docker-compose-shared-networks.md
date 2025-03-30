@@ -4,9 +4,9 @@ date: 2025-03-30T11:20Z
 tags: docker
 ---
 
-I'm setting up a number of docker containers on my Synology NAS, and one of the things I want to do is put a reverse
-proxy in front of all of them. Since they're defined in separate docker compose projects, this means that I need to
-allow the reverse proxy access to the docker network defined by each project.
+I run a number of docker containers on my Synology NAS, and I want to is put a reverse proxy in front of them. Since
+they're defined in separate docker compose projects, I need to attach the reverse proxy to the network defined by each
+project.
 
 Here's a simple example. I'll put a reverse proxy in one project and nginx in another project, and connect the two.
 
