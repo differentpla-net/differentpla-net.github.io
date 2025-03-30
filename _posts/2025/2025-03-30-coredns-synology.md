@@ -72,12 +72,21 @@ differentpla.net {
     192.168.28.32 forgejo.differentpla.net
     192.168.28.33 homepage.differentpla.net
     192.168.28.45 coredns.differentpla.net
+
+    fallthrough
   }
+
+  forward . 1.1.1.1
 }
 ```
 
 At this point, I was too lazy to put together a proper DNS zone file, so I manually added the entries. By using the
 `reload` plugin, I only need to edit the file; I don't need to manually restart anything.
+
+The `fallthrough` directive passes the request onto the next plugin if none of the entries match. In this case, this is
+`forward . 1.1.1.1`, which forwards the request to CloudFlare's `1.1.1.1` DNS servers.
+
+Note: I actually used my ISP's DNS server address here, `1.1.1.1` is just for illustration.
 
 I'd prefer to use a docker discovery plugin, because then I could use docker labels both for DNS discovery and for
 Caddy/Traefik routing (when I get around to installing one of them), but there doesn't seem to be an officially-listed
