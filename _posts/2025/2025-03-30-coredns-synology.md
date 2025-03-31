@@ -88,6 +88,8 @@ The `fallthrough` directive passes the request onto the next plugin if none of t
 
 Note: I actually used my ISP's DNS server address here, `1.1.1.1` is just for illustration.
 
+Updated to add: I should probably use the public DNS server for `differentpla.net` for this setting.
+
 I'd prefer to use a docker discovery plugin, because then I could use docker labels both for DNS discovery and for
 Caddy/Traefik routing (when I get around to installing one of them), but there doesn't seem to be an officially-listed
 one. That's a job for another day.
