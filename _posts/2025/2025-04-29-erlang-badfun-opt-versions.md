@@ -42,7 +42,7 @@ true
 
 ## Register shell processes
 
-To communicated between the two nodes, we'll need a registered process; we'll register the shell:
+To communicate between the two nodes, we'll need a registered process; we'll register the shell:
 
 ```
 (otp26@roger-m1)3> register(shell, self()).
