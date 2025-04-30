@@ -19,6 +19,12 @@ In Kubernetes, you can force particular pods to run on particular nodes by using
     differentpla.net/longhorn-storage-node: "true"
 ```
 
+Some more examples:
+- You want particular workloads to run on nodes that have GPU acceleration.
+- You want a particular pod to run on a node that's got a software-defined radio (SDR) dongle attached.
+  - You can use [Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/v0.17/get-started/index.html) for this.
+    - The RTL-SDR Blog V3 dongle can be detected with `feature.node.kubernetes.io/usb-ff_0bda_2838.present: "true"`
+
 Or you might want your pod to run only on x86_64 (amd64) nodes:
 
 ```yaml
@@ -64,7 +70,7 @@ This is great, but what if you add some nodes to your cluster, and you _don't_ w
 them?
 
 For example: let's say you're adding arm64 nodes (at work, Graviton; at home, RPi 4) and you don't want to update all of
-the existing deployments to add the missing `nodeSelector` or `nodeAffinity`.
+the existing deployments (which were only built for amd64) to add the missing `nodeSelector` or `nodeAffinity`.
 
 You can add a "taint" to those nodes; Kubernetes won't schedule any workloads on the tainted nodes. Here, I'm tainting
 my 3 new RPi 4 nodes with `differentpla.net/arch=arm64:NoSchedule`.
