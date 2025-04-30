@@ -8,7 +8,7 @@ Today I learned, in a way that's going to stick, the difference between Kubernet
 Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) and [Node
 Affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity).
 
-Well, I say "today", but it was actually two almost-identical occurrences.
+Well, I say "today", but it was actually two almost-identical occurrences over the last few days.
 
 ## Recapping nodeSelector and nodeAffinity
 
@@ -44,11 +44,11 @@ on:
     requiredDuringSchedulingIgnoredDuringExecution:
       nodeSelectorTerms:
         - matchExpressions:
-          - key: kubernetes.io/arch
-            operator: In
-            values:
-              - amd64
-              - arm64
+            - key: kubernetes.io/arch
+              operator: In
+              values:
+                - amd64
+                - arm64
 ```
 
 We're saying that the architecture must be in the `['amd64', 'arm64']` set.
@@ -60,13 +60,14 @@ pods weren't being scheduled on ARM64 nodes -- I'd added the `nodeAffinity` as a
 
 ## Taints
 
-This is great, but what if you add some nodes to your cluster, and you _don't_ want existing workloads scheduled on them?
+This is great, but what if you add some nodes to your cluster, and you _don't_ want existing workloads scheduled on
+them?
 
 For example: let's say you're adding arm64 nodes (at work, Graviton; at home, RPi 4) and you don't want to update all of
 the existing deployments to add the missing `nodeSelector` or `nodeAffinity`.
 
-You can add a "taint" to those nodes; Kubernetes won't schedule any workloads on the tainted nodes. Here, I'm tainted my
-3 new RPi 4 nodes with `differentpla.net/arch=arm64:NoSchedule`.
+You can add a "taint" to those nodes; Kubernetes won't schedule any workloads on the tainted nodes. Here, I'm tainting
+my 3 new RPi 4 nodes with `differentpla.net/arch=arm64:NoSchedule`.
 
 ```
 kubectl taint nodes rpi401 rpi402 rpi403 differentpla.net/arch=arm64:NoSchedule
