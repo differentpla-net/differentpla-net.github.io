@@ -7,6 +7,10 @@ tags: docker podman containers
 While building my [erlang-cluster](https://github.com/rlipscombe/erlang-cluster) demonstration project for
 multi-architecture, using podman, I noticed some weirdness about using `FROM --platform=...`.
 
+<div class="callout callout-info" markdown="span">
+tl;dr: docker always uses the build platform for `FROM`; podman uses whatever you last pulled.
+</div>
+
 After various amounts of head-scratching, I discovered that -- to get the correct architecture built -- I needed to add
 `--platform=...` to the `FROM` command in my `Dockerfile`:
 
