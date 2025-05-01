@@ -99,3 +99,7 @@ $ docker build -t uname .
  1 warning found (use docker --debug to expand):
  - RedundantTargetPlatform: Setting platform to predefined $TARGETPLATFORM in FROM is redundant as this is the default behavior (line 2)
 ```
+
+## Conclusion
+
+For podman, _always_ specify `--platform` when building, either on the `FROM` directive, or with `podman build --platform=...`
