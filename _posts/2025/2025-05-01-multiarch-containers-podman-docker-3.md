@@ -5,14 +5,14 @@ tags: docker podman containers
 ---
 
 While building my [erlang-cluster](https://github.com/rlipscombe/erlang-cluster) demonstration project for
-multi-architecture, using podman, I noticed some weirdness about using `FROM --platform=...`.
+multi-architecture, using podman, I noticed some weirdness about using `FROM --platform=$TARGETPLATFORM`.
 
 <div class="callout callout-info" markdown="span">
-tl;dr: docker always uses the build platform for `FROM`; podman uses whatever you last pulled.
+tl;dr: docker uses the target platform for `FROM`; podman uses whatever you last pulled.
 </div>
 
 After various amounts of head-scratching, I discovered that -- to get the correct architecture built -- I needed to add
-`--platform=...` to the `FROM` command in my `Dockerfile`:
+`--platform=$TARGETPLATFORM` to the `FROM` command in my `Dockerfile`:
 
 ```dockerfile
 FROM --platform=$TARGETPLATFORM docker.io/erlang:27.3.3-alpine AS build
@@ -56,7 +56,8 @@ aarch64
 ```
 
 This is on amd64 (my Windows laptop running WSL2); you can see that it used whichever platform image was pulled last.
-But, as shown in the earlier post, Docker uses the current (build) platform for the base image. This is the difference.
+But, as shown in the earlier post, Docker always uses the target platform (which defaults to the build platform) for the
+base image. This is the difference.
 
 If I change the `Dockerfile` to this...
 
@@ -85,15 +86,14 @@ $ podman run --rm --name uname -it uname
 x86_64
 ```
 
-Adding `FROM --platform=...` makes podman work like docker, but also explains why the VS Code extension for Docker
-complains that it's superfluous -- because, to Docker, _it is_:
+Adding `FROM --platform=$TARGETPLATFORM` makes podman work like docker, but also explains why the VS Code extension for
+Docker complains that it's superfluous -- because, to Docker, _it is_:
 
 ```sh
 $ docker build -t uname .
 ...
 
- => WARN: RedundantTargetPlatform: Setting platform to predefined $TARGETPLATFORM in FROM is redundant as this is the default behavior (line 2)                                                                                                                     s
-
+ => WARN: RedundantTargetPlatform: Setting platform to predefined $TARGETPLATFORM in FROM is redundant as this is the default behavior (line 2)
 ...
 
  1 warning found (use docker --debug to expand):
@@ -102,4 +102,5 @@ $ docker build -t uname .
 
 ## Conclusion
 
-For podman, _always_ specify `--platform` when building, either on the `FROM` directive, or with `podman build --platform=...`
+For podman, _always_ specify `--platform` when building, either on the `FROM` directive, or with `podman build
+--platform=...`
