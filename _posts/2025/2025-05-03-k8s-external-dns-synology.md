@@ -12,9 +12,9 @@ that with `ExternalDNS`, making everything work again.
 
 I'm running a number of containers ([Forgejo]({% post_url 2025/2025-03-09-forgejo-synology-1 %}), Immich, etc.) on my
 Synology NAS. Because I want to use a wildcard _Let's Encrypt_ certificate for them, I needed them to resolve internally
-as (e.g.) `forgejo.differentpla.net`. I initially messed around with editing the dnsmasq configuration files, adding
-manual entries to my Pi-Hole server and forwarding the DNS to a [CoreDNS container on the NAS]({% post_url
-2025/2025-03-30-coredns-synology %}).
+as (e.g.) `forgejo.differentpla.net`. I initially messed around with editing the dnsmasq configuration files, then I
+tried adding manual entries to my Pi-Hole server and finally forwarding the DNS to a [CoreDNS container on the NAS]({%
+post_url 2025/2025-03-30-coredns-synology %}).
 
 This turned out to be over-complicated and brittle, so I bit the bullet and replaced dnsmasq with BIND, which makes it
 easier to add multiple authoritative zones, so I could add `differentpla.net` and `home.differentpla.net`. But when I
