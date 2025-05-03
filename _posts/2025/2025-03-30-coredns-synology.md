@@ -7,6 +7,10 @@ tags: core-dns synology-nas
 My home DNS is a bit of a mess, so I want to install CoreDNS on my Synology NAS to tidy it all up. I'll run it in a
 container.
 
+<div class="callout callout-info" markdown="span">
+About a month after I wrote this, I decided to use Synology's "DNS Server" (it's BIND) on my router instead. This post might still be of interest, though, so I'm leaving it up.
+</div>
+
 ## Background
 
 As I add more containers to my local network (Forgejo, Homepage, etc.), I need to add them to DNS.
