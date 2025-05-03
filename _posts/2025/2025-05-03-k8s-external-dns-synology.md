@@ -30,6 +30,8 @@ Initially, I thought I'd have to write a custom controller to talk to the Synolo
 
 It's a pretty good article, but it left out a couple of details, so I'll write up what I did.
 
+## Installation
+
 I installed ExternalDNS in my K3s cluster by following the [instructions for the RFC 2136 provider](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/rfc2136.md), including RBAC.
 
 ## Creating a TSIG key
