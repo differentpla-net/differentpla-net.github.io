@@ -4,7 +4,7 @@ date: 2025-05-03T08:49Z
 tags: dns synology-srm
 ---
 
-My router is a Synology RT2600ac; by default it runs `dnsmasq`. I recently replaced it with Synology's full-far DNS
+My router is a Synology RT2600ac; by default it runs `dnsmasq`. I recently replaced it with Synology's full-fat DNS
 Service (it's BIND); this broke [DNS for my K3s cluster]({% post_url 2021/2021-12-29-coredns %}); here's how I replaced
 that with `ExternalDNS`, making everything work again.
 
