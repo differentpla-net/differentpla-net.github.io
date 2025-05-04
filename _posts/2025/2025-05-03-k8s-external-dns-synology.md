@@ -1,7 +1,7 @@
 ---
 title: "Using Kubernetes External DNS with Synology DNS Server"
 date: 2025-05-03T08:49Z
-tags: dns synology-srm
+tags: dns synology-srm kubernetes external-dns
 ---
 
 My router is a Synology RT2600ac; by default it runs `dnsmasq`. I recently replaced it with Synology's full-fat DNS
