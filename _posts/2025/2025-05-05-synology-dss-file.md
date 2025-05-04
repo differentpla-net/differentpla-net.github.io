@@ -6,7 +6,7 @@ tags: synology-srm
 
 I'm considering monkeying around with the firewall rules on my Synology router. If I mess that up, I'll need to
 factory-reset the router. So I should probably back up the current configuration first. The _Back Up Configuration_
-button downlaods a `SynologyRouter_YYYYMMDD.dss` file. What's in it?
+button downloads a `SynologyRouter_YYYYMMDD.dss` file. What's in it?
 
 tl;dr: it's a `.tar.gz` file containing a SQLite database and a bunch of configuration files.
 
