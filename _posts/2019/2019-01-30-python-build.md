@@ -8,6 +8,8 @@ tags: direnv python
 
 Install `pyenv`. We're not going to use it as-is, but it includes the `python-build` script that we will use:
 
+_The script below is now included in my `direnv-tools` repository at <https://github.com/rlipscombe/direnv-tools>; it's in `~/.direnv/bin/install-pyenv.sh`_
+
 ```sh
 PYENV_VERSION=2.3.11
 
