@@ -111,7 +111,7 @@ spec:
 
 Of note here:
 - We've changed some of the args to use environment variables.
-- We've added an `env` section where some of those variables from from a secret.
+- We've added an `env` section where some of those variables come from a secret.
 - The other environment variables are specified in the `env` section. I could have used a `ConfigMap` for these, but
   decided not to at this point.
 
