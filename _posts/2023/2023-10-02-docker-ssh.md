@@ -22,6 +22,10 @@ the following:
 RUN --mount=type=ssh npm install
 ```
 
+<div class="callout callout-warning" markdown="span">
+Note that this doesn't work with Podman on macOS; see <https://github.com/containers/podman/issues/14074>
+</div>
+
 ## Restricting SSH key use
 
 Try to restrict the scope of the SSH keys to just the step that fetches your dependencies.
