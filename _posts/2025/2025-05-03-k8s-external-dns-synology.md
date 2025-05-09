@@ -206,7 +206,7 @@ kubectl -n argocd annotate ingressroute argocd-server "external-dns.alpha.kubern
 kubectl -n argocd annotate ingressroute argocd-server "external-dns.alpha.kubernetes.io/hostname=argocd.k3s.differentpla.net"
 ```
 
-I should probably add these to the GitOps repo; I didn't. I'll bite me later, I'm sure.
+I should probably add these to the GitOps repo; I didn't. It'll bite me later, I'm sure.
 
 ## Conclusion
 
