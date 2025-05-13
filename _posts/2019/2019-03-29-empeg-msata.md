@@ -10,9 +10,11 @@ The hard disk in my spare empeg player ("toothgnip") died at some point. I'm usi
 my main empeg player ("crowley"), but they're getting harder and harder to find, so I opted for a Kingston mSATA disk
 (240G) and a JMicron-based mSATA to PATA adapter.
 
-But that left me with a problem: I had no way to install the player software. Ordinarily, you'd download the `.upgrade` file and apply it over a serial port with _empegUpgrade_.
+But that left me with a problem: I had no way to install the player software. Ordinarily, you'd download the `.upgrade`
+file and apply it over a serial port with _empegUpgrade_.
 
-But I don't have a suitable Windows PC any more. I have a Surface Go, running Windows 10. It only just runs _emplode_ correctly. I think my odds of getting _empegUpgrade_ to work on Windows 10, with a USB-serial adapter are slim-to-none.
+But I don't have a suitable Windows PC any more. I have a Surface Go, running Windows 10. It only just runs _emplode_
+correctly. I think my odds of getting _empegUpgrade_ to work on Windows 10, with a USB-serial adapter are slim-to-none.
 
 So: how to get the player software installed?
 
