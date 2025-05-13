@@ -122,7 +122,8 @@ AssertElapsed =
 ```
 
 It asserts two things: that the elapsed time between entering and leaving the function was less than 5ms, and that there
-are no more than 5 messages in the queue. It uses `ec_date:format` (from Erlware Commons) for formatting the time.
+are no more than 5 messages in the queue. It uses `ec_date:format` (from Erlware Commons, which was already included in
+the release) for formatting the time.
 
 Now all we need to do is hook it up:
 
