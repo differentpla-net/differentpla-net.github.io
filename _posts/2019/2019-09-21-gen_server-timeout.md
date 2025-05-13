@@ -106,15 +106,20 @@ AssertElapsed =
         ElapsedMicros = erlang:convert_time_unit(Now - Then, native, microsecond),
         if
             ElapsedMicros > 5000 ->
-                io:format("~s ~p(~p) took ~B us\n",
-                    [lists:flatten(ec_date:format("c", calendar:universal_time())), Call, Req, ElapsedMicros]);
+                io:format("~s ~p(~p) took ~B us\n", [
+                    lists:flatten(ec_date:format("c", calendar:universal_time())),
+                    Call, Req, ElapsedMicros
+                ]);
             true ->
                 ok
         end,
         {message_queue_len, QueueLen} = erlang:process_info(Pid, message_queue_len),
         if
             QueueLen > 5 ->
-                io:format("~s ~p\n", [lists:flatten(ec_date:format("c", calendar:universal_time())), erlang:process_info(Pid, messages)]);
+                io:format("~s ~p\n", [
+                    lists:flatten(ec_date:format("c", calendar:universal_time())),
+                    erlang:process_info(Pid, messages)
+                ]);
             true ->
                 ok
         end
