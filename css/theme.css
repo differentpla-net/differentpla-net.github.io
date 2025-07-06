@@ -45,14 +45,26 @@ hr {
     opacity: 1.0;
 }
 
+@media (prefers-color-scheme: light) {
+    blockquote {
+        border: 1px solid #dee2e6;
+        background-color: #f2f3f5;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    blockquote {
+        border: 1px solid #4f5458;
+        background-color: #2f3438;
+    }
+}
+
 blockquote {
     padding: 0.75rem 1rem 0.25rem 1rem;
     margin-top: 1.25rem;
     margin-bottom: 1.15rem;
-    border: 1px solid var(--light-border-color);
     border-left-width: .5rem;
     border-radius: .25rem;
-    background-color: #f2f3f5;
 }
 
 code {
