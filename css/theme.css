@@ -8,6 +8,18 @@ body {
     font-size: 1.05rem;
 }
 
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(33, 37, 41);
+    }
+}
+
 .blog-navbar {
     background-color: var(--main-color);
 }
