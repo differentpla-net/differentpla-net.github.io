@@ -36,3 +36,15 @@ Since all of the GoPro mounts are compatible with each other, I can use the old 
 
 The camera is set to take photos with 2s intervals. The Hero 12 has a mode that makes a timelapse video directly, but
 I'm not sure if I trust that yet.
+
+## Camera App
+
+The reason I got the Hero 12 is because the Hero Session is only really controllable with an app. Ironically, when the
+camera is mounted as shown, it's basically impossible to control with the touchscreen anyway. So I guess I need the app.
+
+The GoPro app, Quik, seems OK. Pairing the app with the camera uses Bluetooth, and just worked. It still uses a
+temporary Wifi network for previewing the camera, but that's now controlled from the app, rather than from the camera,
+which makes things easier.
+
+It asked me about whether I wanted to sign in, or subscribe or whatever -- I don't -- but it seems to work fine in
+"guest" mode. I wonder if that'll get enshittified at some point, but for now it's fine.
