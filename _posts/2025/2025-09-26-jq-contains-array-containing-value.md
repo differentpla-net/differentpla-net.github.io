@@ -32,23 +32,23 @@ For non-K8s people out there, the JSON looks like this (severely trimmed):
 
 ```json
 {
-	"items": [
-		{
-			"spec": {
-				"nodeName"
-			},
-			"status": {
-				"containerStatuses": [
-					{
-						"state": {
-							"waiting": {
-								"reason": "ImagePullBackOff"
-							}
-						}
-					}
-				]
-			}
-		}
-	]
+    "items": [
+        {
+            "spec": {
+                "nodeName"
+            },
+            "status": {
+                "containerStatuses": [
+                    {
+                        "state": {
+                            "waiting": {
+                                "reason": "ImagePullBackOff"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
 }
 ```
