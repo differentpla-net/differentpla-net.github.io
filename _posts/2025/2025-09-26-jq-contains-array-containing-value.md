@@ -14,7 +14,7 @@ kubectl get pods -A -o wide | grep ImagePullBackOff | awk '{print $8}' | sort | 
 
 But I wanted to use `jq`.
 
-In the end, I came up with either of the following:
+In the end, I came up with two options. The first uses a nested `select`:
 
 ```sh
 kubectl get pods -A -o json | \
@@ -24,7 +24,7 @@ kubectl get pods -A -o json | \
         .spec.nodeName'
 ```
 
-I think I prefer this one using `any(_;_)`, though:
+I think I prefer this one using `any(_ ; _)`, though:
 
 ```sh
 kubectl get pods -A -o json | \
