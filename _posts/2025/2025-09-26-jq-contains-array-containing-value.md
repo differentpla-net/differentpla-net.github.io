@@ -17,13 +17,23 @@ But I wanted to use `jq`.
 In the end, I came up with either of the following:
 
 ```sh
-kubectl get pods -A -o json | jq '.items[] | select((.status.containerStatuses[] | select(.state.waiting.reason == "ImagePullBackOff"))) | .spec.nodeName'
+kubectl get pods -A -o json | \
+    jq '.items[] |
+        select((.status.containerStatuses[] |
+            select(.state.waiting.reason == "ImagePullBackOff"))) |
+        .spec.nodeName'
 ```
 
 I think I prefer this one using `any(_;_)`, though:
 
 ```sh
-kubectl get pods -A -o json | jq '.items[] | select(any(.status.containerStatuses[]; .state.waiting.reason == "ImagePullBackOff")) | .spec.nodeName'
+kubectl get pods -A -o json | \
+    jq '.items[] |
+        select(
+            any(
+                .status.containerStatuses[];
+                .state.waiting.reason == "ImagePullBackOff")) |
+        .spec.nodeName'
 ```
 
 That is: inside `items[]`, look at `status.containerStatuses[]`. Do any of them have `.state.waiting.reason` set to `"ImagePullBackOff"`?
