@@ -86,4 +86,6 @@ Let's add negative tests for those cases:
     }
 ```
 
+These tests aren't great: they don't check the content of the error; but they'll do for now.
+
 We've added numbers to the grammar. In the next post, we'll add strings.
