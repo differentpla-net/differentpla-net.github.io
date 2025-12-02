@@ -45,7 +45,7 @@ fn main() {
 
 For now, we'll add a grammar that parses `true` or `false` as a boolean:
 
-```lalrpop
+```
 // lox.lalrpop
 grammar;
 

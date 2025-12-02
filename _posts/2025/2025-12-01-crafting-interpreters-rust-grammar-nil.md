@@ -9,7 +9,7 @@ tags: crafting-interpreters rust lox lalrpop december-adventure
 
 In the previous post, we wrote a simple grammar that parses `true` or `false` as a boolean:
 
-```lalrpop
+```
 // lox.lalrpop
 grammar;
 
@@ -42,7 +42,7 @@ pub enum Primary {
 
 Then we can add it to the grammar, with `Bool` as one of its variants:
 
-```lalrpop
+```
 use crate::ast::*;
 
 grammar;
@@ -54,7 +54,7 @@ pub Primary: Primary = {
 Bool: bool = {
     "true" => true,
     "false" => false,
-}'
+};
 ```
 
 We also have to change `main.rs` to look like this:
@@ -121,13 +121,13 @@ mod tests {
     #[test]
     fn true_() {
         let parser = lox::PrimaryParser::new();
-        assert_eq!(Primary::Bool(true), parser.parse("true").unwrap());
+        assert_eq!(parser.parse("true").unwrap(), Primary::Bool(true));
     }
 
     #[test]
     fn false_() {
         let parser = lox::PrimaryParser::new();
-        assert_eq!(Primary::Bool(false), parser.parse("false").unwrap());
+        assert_eq!(parser.parse("false").unwrap(), Primary::Bool(false));
     }
 }
 ```
@@ -149,7 +149,7 @@ Those pass, so we can add a failing test for `nil`:
     #[test]
     fn nil() {
         let parser = lox::PrimaryParser::new();
-        assert_eq!(Primary::Nil, parser.parse("nil").unwrap());
+        assert_eq!(parser.parse("nil").unwrap(), Primary::Nil);
     }
 ```
 
@@ -165,7 +165,7 @@ pub enum Primary {
 
 And we need to update the grammar:
 
-```lalrpop
+```
 // ...
 
 pub Primary: Primary = {
