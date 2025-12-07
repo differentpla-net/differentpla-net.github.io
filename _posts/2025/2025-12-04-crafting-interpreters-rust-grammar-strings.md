@@ -9,7 +9,7 @@ tags: crafting-interpreters rust lox lalrpop december-adventure
 
 We're implementing Lox's `primary` rule. So far, we've done booleans, `nil` and numbers. Let's move on to strings.
 
-In the book, Lox's `primary` rule looks like this:
+In the book, Lox's [`primary` rule](https://craftinginterpreters.com/parsing-expressions.html) looks like this:
 
 ```
 primary        → NUMBER | STRING | "true" | "false" | "nil"
@@ -51,7 +51,7 @@ We use a raw string literal: `r#"...."#`. See https://doc.rust-lang.org/rust-by-
 
 Actually, we should go back and use that instead of the escapes in the test:
 
-```
+```rust
         assert_eq!(parser.parse(r#""""#).unwrap(), Primary::String(""));
         assert_eq!(parser.parse(r#""hello""#).unwrap(), Primary::String("hello"));
 ```

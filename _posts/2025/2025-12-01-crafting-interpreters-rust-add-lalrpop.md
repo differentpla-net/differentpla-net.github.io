@@ -55,7 +55,7 @@ pub Bool: bool = {
 };
 ```
 
-Why start with booleans? Because they're two of Lox's `primary` rules from the book:
+Why start with booleans? Because they're two of Lox's `primary` rules from [the book](https://craftinginterpreters.com/parsing-expressions.html):
 
 ```
 primary        → NUMBER | STRING | "true" | "false" | "nil"
