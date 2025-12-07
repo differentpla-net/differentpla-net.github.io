@@ -4,7 +4,7 @@ short_title: Parsing numbers
 date: 2025-12-02T17:23:00Z
 layout: series
 series: crafting-interpreters-rust
-tags: crafting-interpreters rust lox lalrpop december-adventure
+tags: crafting-interpreters rust lox lalrpop december-adventure-2025
 ---
 
 So far, we've got a grammar that can parse `true`, `false` and `nil` literals. In this post, we'll add the ability to

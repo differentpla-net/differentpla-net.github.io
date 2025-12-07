@@ -4,7 +4,7 @@ short_title: Parsing unary-NOT
 date: 2025-12-07T12:00:00Z
 layout: series
 series: crafting-interpreters-rust
-tags: crafting-interpreters rust lox lalrpop december-adventure
+tags: crafting-interpreters rust lox lalrpop december-adventure-2025
 ---
 
 We're implementing Lox's `primary` rule. So far, we've done booleans, `nil`, numbers and strings. Let's move on to some

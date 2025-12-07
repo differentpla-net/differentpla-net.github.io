@@ -4,7 +4,7 @@ short_title: Parsing strings
 date: 2025-12-04T08:23:00Z
 layout: series
 series: crafting-interpreters-rust
-tags: crafting-interpreters rust lox lalrpop december-adventure
+tags: crafting-interpreters rust lox lalrpop december-adventure-2025
 ---
 
 We're implementing Lox's `primary` rule. So far, we've done booleans, `nil` and numbers. Let's move on to strings.

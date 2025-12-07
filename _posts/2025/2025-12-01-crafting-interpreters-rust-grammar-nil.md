@@ -4,7 +4,7 @@ short_title: Parsing nil
 date: 2025-12-01T20:07:00Z
 layout: series
 series: crafting-interpreters-rust
-tags: crafting-interpreters rust lox lalrpop december-adventure
+tags: crafting-interpreters rust lox lalrpop december-adventure-2025
 ---
 
 In the previous post, we wrote a simple grammar that parses `true` or `false` as a boolean:

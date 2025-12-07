@@ -4,7 +4,7 @@ short_title: Starting with LALRPOP
 date: 2025-12-01T19:25:00Z
 layout: series
 series: crafting-interpreters-rust
-tags: crafting-interpreters rust lox lalrpop december-adventure
+tags: crafting-interpreters rust lox lalrpop december-adventure-2025
 ---
 
 For the parser, I'm going to use [LALRPOP](https://crates.io/crates/lalrpop). I used it in my previous attempt at this,

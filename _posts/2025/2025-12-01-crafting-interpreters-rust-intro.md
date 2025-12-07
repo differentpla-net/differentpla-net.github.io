@@ -4,7 +4,7 @@ short_title: Introduction
 date: 2025-12-01T19:14:00Z
 layout: series
 series: crafting-interpreters-rust
-tags: crafting-interpreters rust lox lalrpop december-adventure
+tags: crafting-interpreters rust lox lalrpop december-adventure-2025
 ---
 
 For my `#DecemberAdventure`, I'm going to have another go at working through ["Crafting
