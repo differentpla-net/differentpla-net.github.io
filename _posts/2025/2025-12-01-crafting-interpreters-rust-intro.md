@@ -18,3 +18,5 @@ I did this last time, but when I look back at the grammar, I don't understand an
 it down in this series of blog posts, so that I'll remember for next time.
 
 {% include _series_toc.html %}
+
+If you want to follow along, the code's on Codeberg: <https://codeberg.org/rlipscombe/rlox>
