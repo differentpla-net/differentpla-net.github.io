@@ -19,7 +19,7 @@ pub Bool: bool = {
 };
 ```
 
-In the book, Lox's `primary` rule looks like this:
+In the book, Lox's [`primary` rule](https://craftinginterpreters.com/parsing-expressions.html) looks like this:
 
 ```
 primary        → NUMBER | STRING | "true" | "false" | "nil"
