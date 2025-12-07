@@ -1,6 +1,6 @@
 ---
 title: "Crafting Interpreters in Rust: Adding nil to the grammar"
-short_title: Adding nil
+short_title: Parsing nil
 date: 2025-12-01T20:07:00Z
 layout: series
 series: crafting-interpreters-rust

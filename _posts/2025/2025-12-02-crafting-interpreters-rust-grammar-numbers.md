@@ -1,6 +1,6 @@
 ---
 title: "Crafting Interpreters in Rust: Adding numbers to the grammar"
-short_title: Adding numbers
+short_title: Parsing numbers
 date: 2025-12-02T17:23:00Z
 layout: series
 series: crafting-interpreters-rust
