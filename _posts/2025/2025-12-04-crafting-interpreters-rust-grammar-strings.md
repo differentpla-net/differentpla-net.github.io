@@ -70,7 +70,13 @@ We need to trim those in the grammar. For the first step, we'll name the symbol,
 String: &'input str = <s:r#""[^"]*""#> => s;
 ```
 
-The test still fails, so we update the action:
+The test still fails, so we update the action to trim the surrounding quotes:
+
+```
+String: &'input str = <s:r#""[^"]*""#> => &s[1..s.len() - 1];
+```
+
+And then we can add some explanatory comments.
 
 ```
 // A literal string is a quote, followed by zero-or-more non-quote characters, followed by a terminating quote.
