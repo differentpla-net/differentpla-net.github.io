@@ -47,7 +47,8 @@ String: &'input str = r#""[^"]*""#;
 
 The regex matches a double quote, followed by anything that's not a dquote, followed by another dquote.
 
-We use a raw string literal: `r#"...."#`. See https://doc.rust-lang.org/rust-by-example/std/str.html#literals-and-escapes
+We use a raw string literal: `r#"...."#`. See
+<https://doc.rust-lang.org/rust-by-example/std/str.html#literals-and-escapes>
 
 Actually, we should go back and use that instead of the escapes in the test:
 
