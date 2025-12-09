@@ -46,3 +46,9 @@ I've been using it -- installing the basics, light web browsing, writing this
 blog post (with neovim in the terminal) -- for about 2 hours on battery;
 Kubuntu claims that there's about 4h30 left. That seems reasonable for my use
 case, but you're not going to get a full day on the road with it.
+
+## Updates
+
+To switch from X11 to Wayland, it seems like you need to use Kubuntu 24.10
+(which is not LTS) or newer, so I did an in-place upgrade to that. It seems to
+have fixed the screen tearing.
