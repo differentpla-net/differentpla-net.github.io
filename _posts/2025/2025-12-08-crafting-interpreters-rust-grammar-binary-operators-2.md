@@ -1,7 +1,7 @@
 ---
 title: "Crafting Interpreters in Rust: Parsing Binary Operators, part 2"
 short_title: Parsing binary operators, part 2
-date: 2025-12-08T18:27:00Z
+date: 2025-12-09T18:27:00Z
 layout: series
 series: crafting-interpreters-rust
 tags: crafting-interpreters rust lox lalrpop december-adventure-2025
