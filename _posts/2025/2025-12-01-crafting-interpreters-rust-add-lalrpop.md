@@ -41,6 +41,10 @@ fn main() {
 }
 ```
 
+## Language Server
+
+If you're using VS Code, it's a good idea to install the "LALRPOP Language Server" extension.
+
 ## Add a simple grammar
 
 For now, we'll add a grammar that parses `true` or `false` as a boolean:
