@@ -8,7 +8,7 @@ tags: crafting-interpreters rust lox lalrpop december-adventure-2025
 ---
 
 It's time to move on to Chapter 8: ["Statements and State"](https://craftinginterpreters.com/statements-and-state.html)
-from the book. To do this, we'll implement parsing (and executing) statements.
+from the book. To do this, we'll implement parsing (and executing) some simple statements.
 
 The book gives us this:
 
