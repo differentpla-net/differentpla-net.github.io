@@ -11,12 +11,13 @@ instead.
 
 Here's a quick way to estimate how long that'll last.
 
-Note that $2^{10} = 1024 \approx 1000$ meaning that every unit of one thousand needs 10 bits.
+Note that $2^{10} = 1024 \approx 1000$ meaning that every unit of one thousand needs 10 bits, which allows representing
+numbers 0-1023.
 
 Given **64 bits**, take 10 bits for milliseconds, leaving **54 bits**.
 
-There are 60 seconds in a minute, which is pretty close to 64 (i.e. 6 bits). That leaves you with **48 bits**.
-Similarly, 60 minutes in an hour. That leaves you with **42 bits**.
+There are 60 seconds in a minute, which is pretty close to 64 (i.e. 6 bits, which can represent 0-63). That leaves you
+with **48 bits**. Similarly, 60 minutes in an hour. That leaves you with **42 bits**.
 
 Next up is hours. There are 24 hours in a day. The next largest power of two is 32, which takes 5 bits (0-31). That
 leaves you with **37 bits**.
@@ -36,11 +37,11 @@ YYYYYYYYYYYYYYYYYYYYYYYYYYYY....................................
 | Units         | Count                 | Approx    | Bits      | Remaining |
 | ---           | ---                   | ---       | ---:      | ---:      |
 |               |                       |           |           | 64 bits   |
-| Milliseconds  | 1000                  | ~1024     | 10 bits   | 54 bits   |
+| Milliseconds  | 1000                  | ~1023     | 10 bits   | 54 bits   |
 | Seconds       | 60                    | ~63       | 6 bits    | 48 bits   |
 | Minutes       | 60                    | ~63       | 6 bits    | 42 bits   |
-| Hours         | 24                    | ~32       | 5 bits    | 37 bits   |
-| Days          | 365.25                | <512      | 9 bits    | 28 bits   |
+| Hours         | 24                    | ~31       | 5 bits    | 37 bits   |
+| Days          | 365.25                | <511      | 9 bits    | 28 bits   |
 | Years         | ~250My (but read on)  |           |           |           |
 
 As it happens, we're out by about a factor of 2. The actual number is roughly 536 million. Why?
