@@ -44,6 +44,9 @@ PrintStmt: Statement<'input> = "print" <expr:Expression> ";" => Statement::Print
 
 Note: we make use of LALRPOP's `*` macro, which returns a `Program` as a `Vec<Statement>`.
 
+Aside: the book chooses a `print` statement rather than a standard library function. This is because adding the
+machinery for function calls is kinda involved, and we want to play with the interpreter _now_.
+
 Then we need to update the AST:
 
 ```rust
@@ -107,14 +110,17 @@ pub fn interpret(program: Vec<Statement>) {
 
 fn execute(stmt: Statement<'_>) {
     match stmt {
+        // An expression statement: function call, essentially.
         Statement::Expr(_) => todo!(),
+
+        // 'print' is a keyword, rather than a global function.
         Statement::Print(expression) => println!("{}", evaluate(expression)),
     }
 }
 ```
 
-Note that I've not implemented `execute` for `Statement::Expr` yet. There are no possible side-effects, so it didn't
-seem necessary. I'll get to that in the next part of Chapter 8, when we implement state (i.e. global variables).
+Note that I've not implemented `execute` for `Statement::Expr` yet. The book explains that this is for expressions that
+have side effects -- i.e. function or method calls. Since we don't have those yet, we can implement this later.
 
 The most interesting thing here is the `println!("{}", evaluate(expression))`. At the moment, `evaluate` returns
 `Expression`. Because we use `{}`, we need to implement the `Display` trait for `Expression`.

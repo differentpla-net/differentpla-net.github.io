@@ -60,7 +60,7 @@ Identifier = r"[a-zA-Z_][a-zA-Z0-9_]*";
 
 ## Using the `?` macro to parse VarDecl
 
-There are a few options for `VarDecl`. 
+There are a few options for `VarDecl`.
 
 If we convert the given EBNF directly to LALRPOP, using the `?` macro, we get the following valid LALRPOP grammar:
 
@@ -149,6 +149,29 @@ VarDecl: Statement<'input> = {
 };
 ```
 
+Or even this, taking advantage of Rust's _everything is an expression_:
+
+```
+VarDecl: Statement<'input> = {
+    "var" <id:Identifier> <expr:( "=" <Expression> )?> ";" =>
+        Statement::Var(id, match expr {
+            None => Expression::Nil,
+            Some(expr) => expr
+        })
+};
+```
+
+Or, if you prefer a combinator:
+
+```
+VarDecl: Statement<'input> = {
+    "var" <id:Identifier> <expr:( "=" <Expression> )?> ";" =>
+        Statement::Var(id, expr.unwrap_or(Expression::Nil))
+};
+```
+
+Or, I guess, `unwrap_or_default`, if we wanted to implement `Default` for `Expression` to return `Expression::Nil`...
+
 ## Alternatively
 
 Or, if you prefer, you could write it as follows:
@@ -160,7 +183,7 @@ VarDecl: Statement<'input> = {
 };
 ```
 
-Honestly, I don't know which one I prefer.
+Honestly, I don't know which option I prefer.
 
 ## Tests
 
@@ -209,9 +232,16 @@ We also need a placeholder in the interpreter:
 ```rust
     // ...
     match stmt {
+        // An expression statement: function call, essentially.
         Statement::Expr(_) => todo!(),
+
+        // 'print' is a keyword, rather than a global function.
         Statement::Print(expression) => println!("{}", evaluate(expression)),
-        
+
+        // A global variable declaration
         Statement::Var(_, _expression) => todo!(),
     }
 ```
+
+We'll deal with this when we get around to adding global variables to the interpreter. That's the next part of the
+chapter in the book.
