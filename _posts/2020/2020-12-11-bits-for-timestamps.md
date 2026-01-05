@@ -56,8 +56,8 @@ As a table:
 
 As it happens, we're out by about a factor of 2. The actual number is roughly 536 million. Why?
 
-We wasted $log_2({32 \div 24}) \approx 0.4 $ bits in the hours/day conversion, plus another $log_2({512 \div 365})
-\approx 0.5 $ bits in the days/year conversion. This gives us about a bit (i.e. our factor of two). We also wasted some
+We wasted $log_2({32 \div 24}) \approx 0.4$ bits in the hours/day conversion, plus another $log_2({512 \div 365})
+\approx 0.5$ bits in the days/year conversion. This gives us about a bit (i.e. our factor of two). We also wasted some
 other fractional bits elsewhere ($1000 \ne 1024$ and $60 \ne 64$). We erred on the cautious side, by using more bits than
 needed, so our result is a lower limit.
 
