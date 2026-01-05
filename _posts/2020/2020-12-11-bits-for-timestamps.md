@@ -22,7 +22,8 @@ with **48 bits**. Similarly, 60 minutes in an hour. That leaves you with **42 bi
 Next up is hours. There are 24 hours in a day. The next largest power of two is 32, which takes 5 bits (0-31). That
 leaves you with **37 bits**.
 
-There are 365 and a bit days in a year. That's going to need 9 bits (0-511). That leaves you with **28 bits**.
+There are 365 and a bit days in a year. That's more than 256, so 8 bits won't be enough. It's less than 512, so 9 bits
+is sufficient (0-511). That leaves you with **28 bits**.
 
 That's about 250 million years.
 
