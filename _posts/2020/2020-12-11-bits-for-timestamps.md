@@ -42,7 +42,7 @@ YYYYYYYYYYYYYYYYYYYYYYYYYYYY....................................
 | Seconds       | 60                    | ~63       | 6 bits    | 48 bits   |
 | Minutes       | 60                    | ~63       | 6 bits    | 42 bits   |
 | Hours         | 24                    | ~31       | 5 bits    | 37 bits   |
-| Days          | 365.25                | <511      | 9 bits    | 28 bits   |
+| Days          | 365.25                | <512      | 9 bits    | 28 bits   |
 | Years         | ~250My (but read on)  |           |           |           |
 
 As it happens, we're out by about a factor of 2. The actual number is roughly 536 million. Why?
